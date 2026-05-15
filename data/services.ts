@@ -166,6 +166,26 @@ export const SERVICES: Service[] = [
     brands: ["Carrier", "Trane", "Lennox", "Rheem", "Goodman", "American Standard", "Bryant", "York"],
   },
   {
+    slug: "garbage-disposal-repair",
+    name: "Garbage Disposal Repair",
+    shortName: "Garbage Disposal",
+    seoNoun: "garbage disposal",
+    description:
+      "Garbage disposal jammed, humming, or leaking? Same-day repair or replacement. $59 service call.",
+    longDescription:
+      "We repair and replace garbage disposals from every major brand — InSinkErator, Waste King, Moen, KitchenAid, GE, Whirlpool. Jams, motor failures, leaking flanges, dishwasher drain hookups — same-day in most cases. If replacement makes more sense than repair, we'll tell you up front and quote a fair install.",
+    commonIssues: [
+      "Disposal humming but not turning",
+      "Won't turn on at all",
+      "Leaking under the sink",
+      "Strange grinding or rattling noise",
+      "Slow drain or backed up",
+      "Disposal reset button keeps tripping",
+      "Smelly disposal that won't clear",
+    ],
+    brands: ["InSinkErator", "Waste King", "Moen", "KitchenAid", "GE", "Whirlpool", "Frigidaire", "Kohler"],
+  },
+  {
     slug: "wine-cooler-repair",
     name: "Wine Cooler Repair",
     shortName: "Wine Cooler",

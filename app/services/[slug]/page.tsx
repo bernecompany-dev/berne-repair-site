@@ -110,7 +110,7 @@ export default async function ServicePage({ params }: Props) {
             </div>
 
             {heroImages ? (
-              <div className="hidden lg:block">
+              <div className="mt-8 lg:mt-0">
                 <Carousel images={heroImages} aspectClass="aspect-[4/5]" priority />
               </div>
             ) : null}

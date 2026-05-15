@@ -21,11 +21,11 @@ export const TEAM: TeamMember[] = [
   {
     slug: "evgenii-knyazev",
     name: "Evgenii Knyazev",
-    role: "Owner & Operations",
-    specialty: "Strategy · Customer experience · Commercial accounts",
+    role: "Commercial Technician",
+    specialty: "Commercial accounts · Restaurants · Property management",
     years: 10,
     photo: "/images/team/evgenii-knyazev.webp",
-    bio: "Founded Berne Repair. Built the dispatch system that gets a technician to your door in under an hour across South Florida.",
+    bio: "Lead tech for Berne's commercial book — restaurants, property management, retail. The first call when a Target, Publix, or Petco location needs an appliance back online today.",
     featured: true,
   },
   {
@@ -71,11 +71,11 @@ export const TEAM: TeamMember[] = [
   {
     slug: "mike",
     name: "Mike",
-    role: "Dispatch Lead",
-    specialty: "Scheduling · Customer intake · Routing",
+    role: "Sub-Zero Technician",
+    specialty: "Sub-Zero · Wolf · Built-in refrigeration",
     years: 5,
     photo: "/images/team/mike.webp",
-    bio: "Mike or one of his team picks up when you call. He finds a same-day slot when everyone else is booked.",
+    bio: "Mike is the Sub-Zero specialist on the team — built-in columns, integrated wine coolers, dual-zone units. Factory-trained on sealed systems.",
     featured: true,
   },
   {
