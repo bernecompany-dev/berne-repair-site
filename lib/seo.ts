@@ -3,6 +3,7 @@ import { CITIES, type City } from "@/data/cities";
 import { SERVICES, type Service } from "@/data/services";
 import { BRANDS } from "@/data/brands";
 import { REVIEWS, REVIEW_AGGREGATE } from "@/data/reviews";
+import { TEAM } from "@/data/team";
 import type { FAQ } from "@/data/faqs";
 
 export const SITE_URL =
@@ -33,8 +34,32 @@ const REVIEW_NODES = REVIEWS.map((r) => ({
   author: { "@type": "Person", name: r.author },
   reviewBody: r.quote,
   datePublished: r.datePublished,
-  locationCreated: { "@type": "Place", name: `${r.location}, FL` },
+  ...(r.location ? { locationCreated: { "@type": "Place", name: `${r.location}, FL` } } : {}),
   itemReviewed: { "@id": BUSINESS_ID },
+}));
+
+/** Public photo references for the business — both team and on-the-job shots. */
+const PHOTO_PATHS = [
+  "/images/team/tech-mikhail.webp",
+  "/images/team/tech-dmitry.webp",
+  "/images/team/tech-andrei.webp",
+  "/images/team/tech-akhmed.webp",
+  "/images/team/dispatch-vladimir.webp",
+  "/images/services/refrigerator-repair/1.webp",
+  "/images/services/refrigerator-repair/2.webp",
+  "/images/services/washer-repair/1.webp",
+  "/images/services/washer-repair/4.webp",
+  "/images/services/dryer-repair/1.webp",
+  "/images/services/oven-repair/1.webp",
+  "/images/services/dishwasher-repair/1.webp",
+  "/images/services/air-duct-cleaning/1.webp",
+];
+const PHOTO_URLS = PHOTO_PATHS.map((p) => absoluteUrl(p));
+
+const PHOTO_OBJECTS = PHOTO_PATHS.map((p) => ({
+  "@type": "ImageObject",
+  contentUrl: absoluteUrl(p),
+  url: absoluteUrl(p),
 }));
 
 export function websiteJsonLd() {
@@ -60,7 +85,8 @@ export function localBusinessJsonLd() {
     url: SITE_URL,
     telephone: COMPANY.phone.tel,
     email: COMPANY.email.public,
-    image: absoluteUrl("/og.png"),
+    image: PHOTO_URLS,
+    photo: PHOTO_OBJECTS,
     logo: absoluteUrl("/og.png"),
     priceRange: `$${COMPANY.serviceCallPrice}+`,
     paymentAccepted: ["Cash", "Credit Card", "Apple Pay", "Google Pay", "Zelle"],
@@ -118,6 +144,13 @@ export function localBusinessJsonLd() {
     })),
     aggregateRating: AGGREGATE,
     review: REVIEW_NODES,
+    employee: TEAM.map((m) => ({
+      "@type": "Person",
+      name: m.name,
+      jobTitle: m.role,
+      image: absoluteUrl(m.photo),
+      knowsAbout: m.specialty.split("·").map((s) => s.trim()),
+    })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Appliance Repair Services",
@@ -238,6 +271,17 @@ export function faqJsonLd(faqs: FAQ[]) {
 }
 
 export type Crumb = { name: string; href: string };
+
+export function imageGalleryJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    name: `${COMPANY.legalName} — Work Gallery`,
+    description:
+      "Real appliance repair and installation jobs by Berne Repair across South Florida — Sub-Zero, Wolf, Viking, Bosch, LG, Samsung and more.",
+    image: PHOTO_OBJECTS,
+  };
+}
 
 export function breadcrumbJsonLd(crumbs: Crumb[]) {
   return {

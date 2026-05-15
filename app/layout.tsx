@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { StickyCTA } from "@/components/site/sticky-cta";
 import { JsonLd } from "@/components/site/json-ld";
 import { localBusinessJsonLd, websiteJsonLd } from "@/lib/seo";
 import { COMPANY } from "@/data/company";
@@ -70,7 +72,11 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <StickyCTA />
         <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        ) : null}
       </body>
     </html>
   );
