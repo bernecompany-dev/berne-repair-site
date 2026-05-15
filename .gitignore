@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local-only source photo dump — optimized copies live in public/images/
+/Services
+
+# Editor / agent settings
+/.claude
+.idea
+.vscode
