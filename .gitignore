@@ -42,8 +42,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Local-only source photo dump — optimized copies live in public/images/
+# Local-only source photo dumps — optimized copies live in public/images/
 /Services
+/фото команды
+/отзывы гугл
 
 # Editor / agent settings
 /.claude
