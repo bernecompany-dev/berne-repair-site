@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/hero";
+import { StatsStrip } from "@/components/sections/stats-strip";
+import { ProcessSteps } from "@/components/sections/process-steps";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { WhyUs } from "@/components/sections/why-us";
 import { Areas } from "@/components/sections/areas";
@@ -39,7 +41,9 @@ export default function HomeES() {
   return (
     <>
       <Hero locale="es" />
+      <StatsStrip />
       <ServicesGrid />
+      <ProcessSteps />
       <WhyUs />
       <Areas />
       <Brands />

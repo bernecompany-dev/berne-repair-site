@@ -5,6 +5,8 @@ import { Phone, ShieldCheck, Clock3, BadgeDollarSign, CheckCircle2, ArrowRight }
 import { Carousel } from "@/components/site/carousel";
 import { SERVICE_HERO_IMAGES } from "@/lib/service-images";
 import { CTARow } from "@/components/site/cta-row";
+import { StatsStrip } from "@/components/sections/stats-strip";
+import { ProcessSteps } from "@/components/sections/process-steps";
 import { Brands } from "@/components/sections/brands";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
@@ -116,6 +118,8 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      <StatsStrip />
+
       {/* Common issues */}
       <section className="container-prose py-20 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:items-start">
@@ -150,6 +154,8 @@ export default async function ServicePage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      <ProcessSteps />
 
       {/* Brands for this service */}
       <section className="border-y border-border/60 bg-background/40">

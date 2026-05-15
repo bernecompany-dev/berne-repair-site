@@ -40,11 +40,12 @@ const REVIEW_NODES = REVIEWS.map((r) => ({
 
 /** Public photo references for the business — both team and on-the-job shots. */
 const PHOTO_PATHS = [
-  "/images/team/tech-mikhail.webp",
-  "/images/team/tech-dmitry.webp",
-  "/images/team/tech-andrei.webp",
-  "/images/team/tech-akhmed.webp",
-  "/images/team/dispatch-vladimir.webp",
+  "/images/team/evgenii-knyazev.webp",
+  "/images/team/refat-bekirov.webp",
+  "/images/team/akhmed-osmanov.webp",
+  "/images/team/andrei-lavrov.webp",
+  "/images/team/dzmitrii-kitou.webp",
+  "/images/team/mike.webp",
   "/images/services/refrigerator-repair/1.webp",
   "/images/services/refrigerator-repair/2.webp",
   "/images/services/washer-repair/1.webp",

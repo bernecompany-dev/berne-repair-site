@@ -10,6 +10,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
+import { CityMap } from "@/components/site/city-map";
+import { StatsStrip } from "@/components/sections/stats-strip";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
@@ -181,6 +183,13 @@ export default async function CityPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Coverage map */}
+      <section className="container-prose py-16">
+        <CityMap cityName={city.name} lat={city.geo.lat} lng={city.geo.lng} />
+      </section>
+
+      <StatsStrip />
 
       {/* Trust strip */}
       <section className="container-prose py-16">

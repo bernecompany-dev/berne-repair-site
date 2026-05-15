@@ -11,6 +11,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
+import { CityMap } from "@/components/site/city-map";
+import { StatsStrip } from "@/components/sections/stats-strip";
+import { ProcessSteps } from "@/components/sections/process-steps";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
@@ -230,6 +233,15 @@ export default async function ServiceCityPage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Coverage map for this city */}
+      <section className="container-prose py-12">
+        <CityMap cityName={city.name} lat={city.geo.lat} lng={city.geo.lng} />
+      </section>
+
+      <StatsStrip />
+
+      <ProcessSteps />
 
       {/* Trust strip */}
       <section className="container-prose pb-16">

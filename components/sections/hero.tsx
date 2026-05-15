@@ -77,9 +77,9 @@ function HeroImage({ label, suffix }: { label: string; suffix: string }) {
       />
       <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-[0_30px_80px_-30px_oklch(0.67_0.21_252/0.35)]">
         <Image
-          src="/images/team/tech-portrait.jpg"
-          alt="Berne Repair technician inspecting a dryer motor — South Florida appliance repair"
-          width={900}
+          src="/images/team/evgenii-knyazev.webp"
+          alt="Evgenii Knyazev — Owner of Berne Repair, South Florida appliance repair"
+          width={800}
           height={1100}
           priority
           sizes="(min-width: 1024px) 40vw, 100vw"

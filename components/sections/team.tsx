@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Users, ArrowRight } from "lucide-react";
-import { TEAM } from "@/data/team";
+import { FEATURED_TEAM } from "@/data/team";
 
 export function TeamSection() {
   return (
@@ -26,8 +26,8 @@ export function TeamSection() {
         </Link>
       </div>
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        {TEAM.map((m) => (
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        {FEATURED_TEAM.map((m) => (
           <article
             key={m.slug}
             className="group flex flex-col gap-3 rounded-2xl border border-border bg-card/50 p-4 transition-all hover:-translate-y-0.5 hover:border-brand/40"

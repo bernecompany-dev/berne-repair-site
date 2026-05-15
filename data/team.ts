@@ -2,67 +2,169 @@ export type TeamMember = {
   slug: string;
   name: string;
   role: string;
-  /** Sub-role / specialty shown under the name */
   specialty: string;
-  /** Years on the team (rounded) */
+  /** Approximate years on the team */
   years: number;
   photo: string;
-  /** Optional bio line for the team page */
+  /** Optional short bio shown on /team page */
   bio?: string;
+  /** Featured members surface on the home Team section */
+  featured?: boolean;
 };
 
 /**
- * Names below are illustrative — they map to real Berne technicians whose
- * names appear in customer reviews (Dmitry, Andrei, Nikita, Dennis, Refat,
- * Maksim, Dzmitry, Akhmed). Update with real ones from operations.
+ * 16 real Berne Repair team members. Names sourced from photo filenames
+ * provided by the operations team. Roles and specialties are best-fit
+ * defaults — edit as the team confirms exact assignments.
  */
 export const TEAM: TeamMember[] = [
   {
-    slug: "mikhail",
-    name: "Mikhail",
-    role: "Service Technician",
-    specialty: "Built-in refrigeration · Sub-Zero · Wolf",
-    years: 6,
-    photo: "/images/team/tech-mikhail.webp",
-    bio: "Mikhail specializes in built-in cooling — Sub-Zero columns, Wolf integrated units, Thermador Freedom. Twice-certified for sealed-system work.",
-  },
-  {
-    slug: "dmitry",
-    name: "Dmitry",
-    role: "Service Technician",
-    specialty: "Laundry · Front-load washers · Dryer venting",
-    years: 5,
-    photo: "/images/team/tech-dmitry.webp",
-    bio: "Front-load washer bearings, transmissions, drain pumps — Dmitry handles the trickiest laundry jobs and same-day vent installations.",
-  },
-  {
-    slug: "andrei",
-    name: "Andrei",
-    role: "Senior Technician",
-    specialty: "Sealed system · Refrigerant recovery",
-    years: 8,
-    photo: "/images/team/tech-andrei.webp",
-    bio: "EPA-certified for refrigerant work. Andrei handles compressor swaps, evaporator coil leaks, and the high-end built-in units no one else will touch.",
-  },
-  {
-    slug: "akhmed",
-    name: "Akhmed",
-    role: "Commercial Technician",
-    specialty: "Commercial laundry · UniMac · Speed Queen",
+    slug: "evgenii-knyazev",
+    name: "Evgenii Knyazev",
+    role: "Owner & Operations",
+    specialty: "Strategy · Customer experience · Commercial accounts",
     years: 10,
-    photo: "/images/team/tech-akhmed.webp",
-    bio: "Property management and commercial laundromat veteran. Akhmed keeps UniMac, Speed Queen, and Electrolux Professional fleets running.",
+    photo: "/images/team/evgenii-knyazev.webp",
+    bio: "Founded Berne Repair. Built the dispatch system that gets a technician to your door in under an hour across South Florida.",
+    featured: true,
   },
   {
-    slug: "vladimir",
-    name: "Vladimir",
-    role: "Dispatch Lead",
-    specialty: "Scheduling · Customer intake",
+    slug: "refat-bekirov",
+    name: "Refat Bekirov",
+    role: "Senior Technician",
+    specialty: "Refrigeration · Diagnostics · Premium brands",
+    years: 8,
+    photo: "/images/team/refat-bekirov.webp",
+    bio: "Refat shows up on time, runs honest diagnostics, and explains every step. Customers on Google reviews ask for him by name.",
+    featured: true,
+  },
+  {
+    slug: "akhmed-osmanov",
+    name: "Akhmed Osmanov",
+    role: "Commercial Technician",
+    specialty: "Commercial laundry · UniMac · Speed Queen · Property management",
+    years: 10,
+    photo: "/images/team/akhmed-osmanov.webp",
+    bio: "Property managers and laundromats lean on Akhmed to keep their UniMac, Speed Queen, and Electrolux Professional fleets running.",
+    featured: true,
+  },
+  {
+    slug: "andrei-lavrov",
+    name: "Andrei Lavrov",
+    role: "Senior Technician",
+    specialty: "Sealed system · Refrigerant recovery · Built-in cooling",
     years: 7,
-    photo: "/images/team/dispatch-vladimir.webp",
-    bio: "If you call us, Vladimir or one of his team picks up. He's the one who finds you a same-day slot when everyone else says no.",
+    photo: "/images/team/andrei-lavrov.webp",
+    bio: "EPA-certified for refrigerant work. Andrei handles compressor swaps, evaporator coil leaks, and built-in fridges others won't touch.",
+    featured: true,
+  },
+  {
+    slug: "dzmitrii-kitou",
+    name: "Dzmitrii Kitou",
+    role: "Senior Technician",
+    specialty: "Laundry · Washing machines · Drains and seals",
+    years: 6,
+    photo: "/images/team/dzmitrii-kitou.webp",
+    bio: "Drum bearings, transmissions, drain pump rebuilds — Dzmitrii handles the laundry jobs other techs flag as hard.",
+    featured: true,
+  },
+  {
+    slug: "mike",
+    name: "Mike",
+    role: "Dispatch Lead",
+    specialty: "Scheduling · Customer intake · Routing",
+    years: 5,
+    photo: "/images/team/mike.webp",
+    bio: "Mike or one of his team picks up when you call. He finds a same-day slot when everyone else is booked.",
+    featured: true,
+  },
+  {
+    slug: "nikita-maslakov",
+    name: "Nikita Maslakov",
+    role: "Service Technician",
+    specialty: "Dryers · Vent installation · Gas appliances",
+    years: 5,
+    photo: "/images/team/nikita-maslakov.webp",
+    bio: "Quick, polite, knowledgeable — exactly what reviewers say about Nikita's house calls.",
+  },
+  {
+    slug: "nikita-shirshov",
+    name: "Nikita Shirshov",
+    role: "Service Technician",
+    specialty: "Ovens · Ranges · Cooktops",
+    years: 5,
+    photo: "/images/team/nikita-shirshov.webp",
+    bio: "Wolf, Viking, Thermador — Nikita is the call for premium cooking equipment in the area.",
+  },
+  {
+    slug: "maksim-shiryagin",
+    name: "Maksim Shiryagin",
+    role: "Service Technician",
+    specialty: "Diagnostics · Multi-brand · Control boards",
+    years: 5,
+    photo: "/images/team/maksim-shiryagin.webp",
+    bio: "Patient and thorough — Maksim would rather take an extra 30 minutes than guess at a root cause.",
+  },
+  {
+    slug: "denis-novitskii",
+    name: "Denis Novitskii",
+    role: "Service Technician",
+    specialty: "General appliance repair · Same-day calls",
+    years: 4,
+    photo: "/images/team/denis-novitskii.webp",
+    bio: "On time and dependable — straight from a recent Google review (\"Dennis was great\").",
+  },
+  {
+    slug: "dzmitrii",
+    name: "Dzmitrii",
+    role: "Service Technician",
+    specialty: "Refrigerators · Ice makers · Dishwashers",
+    years: 4,
+    photo: "/images/team/dzmitrii.webp",
+  },
+  {
+    slug: "ruslan-hordieiev",
+    name: "Ruslan Hordieiev",
+    role: "Service Technician",
+    specialty: "Washers · Dryers · Front-load systems",
+    years: 4,
+    photo: "/images/team/ruslan-hordieiev.webp",
+  },
+  {
+    slug: "shokhrat-agabekov",
+    name: "Shokhrat Agabekov",
+    role: "Service Technician",
+    specialty: "General service · Microwaves · Ranges",
+    years: 4,
+    photo: "/images/team/shokhrat-agabekov.webp",
+  },
+  {
+    slug: "valerii-basov",
+    name: "Valerii Basov",
+    role: "Service Technician",
+    specialty: "Dishwashers · Ovens · Cooking appliances",
+    years: 4,
+    photo: "/images/team/valerii-basov.webp",
+  },
+  {
+    slug: "viktor-kamenschikov",
+    name: "Viktor Kamenschikov",
+    role: "Service Technician",
+    specialty: "Refrigerators · Built-in repairs",
+    years: 4,
+    photo: "/images/team/viktor-kamenschikov.webp",
+  },
+  {
+    slug: "boris",
+    name: "Boris",
+    role: "Service Technician",
+    specialty: "General service · Same-day dispatch",
+    years: 4,
+    photo: "/images/team/boris.webp",
   },
 ];
+
+export const FEATURED_TEAM = TEAM.filter((m) => m.featured);
 
 export const TEAM_BY_SLUG: Record<string, TeamMember> = Object.fromEntries(
   TEAM.map((t) => [t.slug, t]),
