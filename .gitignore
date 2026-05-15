@@ -51,3 +51,8 @@ next-env.d.ts
 /.claude
 .idea
 .vscode
+
+# Playwright artifacts
+/playwright-report
+/test-results
+/playwright/.cache
