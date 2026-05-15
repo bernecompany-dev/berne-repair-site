@@ -1,20 +1,29 @@
 import { Phone, CalendarCheck, MessageSquare, MessagesSquare } from "lucide-react";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
+import { getDictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 
-const SMS_BODY = encodeURIComponent("Hi, I need appliance repair —");
+const SMS_BODIES: Record<Locale, string> = {
+  en: encodeURIComponent("Hi, I need appliance repair —"),
+  es: encodeURIComponent("Hola, necesito reparación de electrodomésticos —"),
+};
 
 export function CTARow({
   className,
   size = "md",
   bookHref = "#lead-form",
   showChat = false,
+  locale = "en",
 }: {
   className?: string;
   size?: "sm" | "md" | "lg";
   bookHref?: string;
   showChat?: boolean;
+  locale?: Locale;
 }) {
+  const d = getDictionary(locale).cta;
+  const smsBody = SMS_BODIES[locale];
   const sizes: Record<string, string> = {
     sm: "h-10 px-4 text-sm",
     md: "h-12 px-5 text-[15px]",
@@ -31,7 +40,7 @@ export function CTARow({
         )}
       >
         <Phone className="size-4" aria-hidden />
-        <span>Call {COMPANY.phone.display}</span>
+        <span>{d.callPrefix} {COMPANY.phone.display}</span>
       </a>
       <a
         href={bookHref}
@@ -42,10 +51,10 @@ export function CTARow({
         )}
       >
         <CalendarCheck className="size-4" aria-hidden />
-        <span>Book online</span>
+        <span>{d.book}</span>
       </a>
       <a
-        href={`sms:${COMPANY.phone.sms}?&body=${SMS_BODY}`}
+        href={`sms:${COMPANY.phone.sms}?&body=${smsBody}`}
         data-analytics="cta-text"
         className={cn(
           "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] font-semibold text-foreground transition-colors hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
@@ -53,7 +62,7 @@ export function CTARow({
         )}
       >
         <MessageSquare className="size-4" aria-hidden />
-        <span>Text us</span>
+        <span>{d.text}</span>
       </a>
       {showChat ? (
         <button
@@ -67,7 +76,7 @@ export function CTARow({
           )}
         >
           <MessagesSquare className="size-4" aria-hidden />
-          <span>Chat (soon)</span>
+          <span>{d.chat}</span>
         </button>
       ) : null}
     </div>

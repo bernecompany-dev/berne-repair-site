@@ -7,7 +7,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const home: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
+    {
+      url: `${SITE_URL}/`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1,
+      alternates: { languages: { "es-US": `${SITE_URL}/es` } },
+    },
+    {
+      url: `${SITE_URL}/es`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
+      alternates: { languages: { "en-US": `${SITE_URL}/` } },
+    },
   ];
 
   const services: MetadataRoute.Sitemap = SERVICES.map((s) => ({

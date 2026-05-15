@@ -2,8 +2,11 @@ import Image from "next/image";
 import { BadgeDollarSign, Star, ShieldCheck, Clock3 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { COMPANY } from "@/data/company";
+import { getDictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 
-export function Hero() {
+export function Hero({ locale = "en" }: { locale?: Locale }) {
+  const d = getDictionary(locale).hero;
   return (
     <section className="relative isolate overflow-hidden border-b border-border/60">
       <BackgroundGrid />
@@ -14,59 +17,58 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium tracking-wide text-brand">
                 <BadgeDollarSign className="size-3.5" aria-hidden />
-                ${COMPANY.serviceCallPrice} service call · same-day
+                {d.badgePrice}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                 <ShieldCheck className="size-3.5 text-brand" aria-hidden />
-                Licensed & insured
+                {d.badgeLicensed}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                 <Star className="size-3.5 text-brand" aria-hidden />
-                {COMPANY.socialProof.repairsCompleted} of repairs
+                {d.badgeRepairs}
               </span>
             </div>
 
             <h1 className="heading-hero mt-7">
-              Premium appliance repair.
+              {d.title1}
               <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-brand via-[oklch(0.78_0.18_252)] to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-                Same-day across South Florida.
+                {d.title2}
               </span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              17 technicians. Trucks stocked for Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch
-              and every major brand. <span className="text-foreground">${COMPANY.serviceCallPrice} flat service call</span> — applied toward the repair if you say go.
+              {d.body} <span className="text-foreground">{d.bodyHighlight}</span>{d.bodySuffix}
             </p>
 
             <div className="mt-9">
-              <CTARow size="lg" />
+              <CTARow size="lg" locale={locale} />
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Clock3 className="size-4 text-brand" aria-hidden />
-                <span>Open today · 8 AM – 9 PM</span>
+                <span>{d.openToday}</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="size-4 text-brand" aria-hidden />
-                <span>{COMPANY.socialProof.warranty}</span>
+                <span>{d.warranty}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-mono text-foreground/80">{COMPANY.socialProof.technicians}</span>
-                <span>full-time technicians</span>
+                <span>{d.technicians}</span>
               </div>
             </div>
           </div>
 
-          <HeroImage />
+          <HeroImage label={d.priceCardLabel} suffix={d.priceCardSuffix} />
         </div>
       </div>
     </section>
   );
 }
 
-function HeroImage() {
+function HeroImage({ label, suffix }: { label: string; suffix: string }) {
   return (
     <div className="relative hidden lg:block">
       <div
@@ -85,19 +87,15 @@ function HeroImage() {
         />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
 
-        {/* Floating price card */}
         <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-border bg-card/85 p-4 backdrop-blur-md">
           <div className="flex items-center justify-between">
             <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-              Service call
-            </span>
-            <span className="rounded-full bg-brand/15 px-2 py-0.5 text-[10px] font-medium text-brand">
-              Today
+              {label}
             </span>
           </div>
           <div className="mt-1 flex items-baseline gap-1">
             <span className="text-4xl font-semibold tracking-tight text-foreground">${COMPANY.serviceCallPrice}</span>
-            <span className="text-sm text-muted-foreground">flat · applied toward repair</span>
+            <span className="text-sm text-muted-foreground">{suffix}</span>
           </div>
         </div>
       </div>

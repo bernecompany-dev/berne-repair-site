@@ -1,29 +1,35 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, BadgeDollarSign } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { PhoneCTA } from "@/components/site/phone-cta";
+import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
-
-const NAV = [
-  { href: "/#services", label: "Services" },
-  { href: "/#areas", label: "Areas" },
-  { href: "/team", label: "Team" },
-  { href: "/#why", label: "Why us" },
-  { href: "/#contact", label: "Contact" },
-];
+import { getDictionary } from "@/lib/dictionary";
+import { localePath, type Locale } from "@/lib/i18n";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const locale: Locale = pathname.startsWith("/es") ? "es" : "en";
+  const t = getDictionary(locale).nav;
+  const NAV = [
+    { href: localePath(locale, "/#services"), label: t.services },
+    { href: localePath(locale, "/#areas"), label: t.areas },
+    { href: localePath(locale, "/team"), label: t.team },
+    { href: localePath(locale, "/#why"), label: t.whyUs },
+    { href: localePath(locale, "/#contact"), label: t.contact },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/55">
       <div className="container-prose flex h-16 items-center justify-between gap-6">
         <div className="flex items-center gap-4">
-          <Logo />
+          <Logo href={localePath(locale, "/")} />
           <span className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2.5 py-1 text-[11px] font-medium text-brand">
             <BadgeDollarSign className="size-3.5" aria-hidden />
             ${COMPANY.serviceCallPrice} service call
@@ -43,6 +49,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageSwitcher className="hidden md:inline-flex" />
           <PhoneCTA size="sm" variant="solid" className="hidden sm:inline-flex" />
           <PhoneCTA size="sm" variant="solid" withLabel={false} className="sm:hidden" />
           <button
@@ -76,9 +83,12 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <div className="mt-2 inline-flex items-center gap-1.5 self-start rounded-full border border-brand/30 bg-brand/10 px-2.5 py-1 text-[11px] font-medium text-brand">
-            <BadgeDollarSign className="size-3.5" aria-hidden />
-            ${COMPANY.serviceCallPrice} service call · same-day
+          <div className="mt-3 flex items-center justify-between gap-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2.5 py-1 text-[11px] font-medium text-brand">
+              <BadgeDollarSign className="size-3.5" aria-hidden />
+              ${COMPANY.serviceCallPrice} service call · same-day
+            </span>
+            <LanguageSwitcher />
           </div>
         </nav>
       </div>

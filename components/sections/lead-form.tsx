@@ -10,9 +10,20 @@ import { CITIES } from "@/data/cities";
 import { SERVICES } from "@/data/services";
 import { BRANDS } from "@/data/brands";
 import { cn } from "@/lib/utils";
+import { getDictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 
-export function LeadForm({ defaultCity, defaultAppliance }: { defaultCity?: string; defaultAppliance?: string }) {
+export function LeadForm({
+  defaultCity,
+  defaultAppliance,
+  locale = "en",
+}: {
+  defaultCity?: string;
+  defaultAppliance?: string;
+  locale?: Locale;
+}) {
   const [state, action] = useActionState(submitLead, initialLeadState);
+  const d = getDictionary(locale).leadForm;
 
   const errors = state.status === "error" ? state.errors : {};
   const values = state.status === "error" ? state.values : {};
@@ -23,10 +34,10 @@ export function LeadForm({ defaultCity, defaultAppliance }: { defaultCity?: stri
         <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-brand/10 text-brand">
           <CheckCircle2 className="size-6" aria-hidden />
         </span>
-        <h3 className="text-2xl font-semibold tracking-tight">Got it — talk soon.</h3>
+        <h3 className="text-2xl font-semibold tracking-tight">{d.success}</h3>
         <p className="text-muted-foreground">{state.message}</p>
         <p className="text-sm text-muted-foreground">
-          Need us faster? Call{" "}
+          {d.needFaster}{" "}
           <a href={`tel:${COMPANY.phone.tel}`} className="font-semibold text-brand hover:underline">
             {COMPANY.phone.display}
           </a>
@@ -39,10 +50,8 @@ export function LeadForm({ defaultCity, defaultAppliance }: { defaultCity?: stri
   return (
     <form action={action} className="surface-card p-6 sm:p-8" noValidate>
       <div className="mb-6 flex flex-col gap-1.5">
-        <h3 className="text-2xl font-semibold tracking-tight">Get a free quote</h3>
-        <p className="text-sm text-muted-foreground">
-          Fill in the basics — we'll call back within minutes during open hours.
-        </p>
+        <h3 className="text-2xl font-semibold tracking-tight">{d.title}</h3>
+        <p className="text-sm text-muted-foreground">{d.subtitle}</p>
       </div>
 
       {"form" in errors && (
@@ -53,74 +62,63 @@ export function LeadForm({ defaultCity, defaultAppliance }: { defaultCity?: stri
       )}
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Your name" error={errors.name}>
+        <Field label={d.fields.name} error={errors.name}>
           <input
-            type="text"
-            name="name"
-            autoComplete="name"
-            defaultValue={values.name}
-            required
+            type="text" name="name" autoComplete="name"
+            defaultValue={values.name} required
             className={inputCls(errors.name)}
             placeholder="Maria Reyes"
           />
         </Field>
-        <Field label="Phone" error={errors.phone}>
+        <Field label={d.fields.phone} error={errors.phone}>
           <input
-            type="tel"
-            name="phone"
-            autoComplete="tel"
-            inputMode="tel"
-            defaultValue={values.phone}
-            required
+            type="tel" name="phone" autoComplete="tel" inputMode="tel"
+            defaultValue={values.phone} required
             className={inputCls(errors.phone)}
             placeholder="(305) 555-0123"
           />
         </Field>
-        <Field label="Email (optional)" error={errors.email}>
+        <Field label={d.fields.emailOptional} error={errors.email}>
           <input
-            type="email"
-            name="email"
-            autoComplete="email"
+            type="email" name="email" autoComplete="email"
             defaultValue={values.email}
             className={inputCls(errors.email)}
             placeholder="you@example.com"
           />
         </Field>
-        <Field label="City" error={errors.city}>
+        <Field label={d.fields.city} error={errors.city}>
           <select
             name="city"
             defaultValue={values.city ?? defaultCity ?? ""}
             required
             className={inputCls(errors.city)}
           >
-            <option value="" disabled>Select your city</option>
+            <option value="" disabled>{d.fields.cityPlaceholder}</option>
             {CITIES.map((c) => (
               <option key={c.slug} value={c.slug}>{c.name} ({c.county})</option>
             ))}
           </select>
         </Field>
-        <Field label="Appliance" error={errors.appliance}>
+        <Field label={d.fields.appliance} error={errors.appliance}>
           <select
             name="appliance"
             defaultValue={values.appliance ?? defaultAppliance ?? ""}
             required
             className={inputCls(errors.appliance)}
           >
-            <option value="" disabled>What needs fixing?</option>
+            <option value="" disabled>{d.fields.appliancePlaceholder}</option>
             {SERVICES.map((s) => (
               <option key={s.slug} value={s.slug}>{s.shortName}</option>
             ))}
-            <option value="other">Other / not sure</option>
+            <option value="other">{d.fields.other}</option>
           </select>
         </Field>
-        <Field label="Brand (optional)" error={errors.brand}>
+        <Field label={d.fields.brandOptional} error={errors.brand}>
           <input
-            type="text"
-            name="brand"
-            list="brands-list"
+            type="text" name="brand" list="brands-list"
             defaultValue={values.brand}
             className={inputCls(errors.brand)}
-            placeholder="Sub-Zero, LG, Bosch…"
+            placeholder={d.fields.brandPlaceholder}
           />
           <datalist id="brands-list">
             {BRANDS.map((b) => (
@@ -130,13 +128,12 @@ export function LeadForm({ defaultCity, defaultAppliance }: { defaultCity?: stri
         </Field>
       </div>
 
-      <Field label="What's going on? (optional)" error={errors.description} className="mt-4">
+      <Field label={d.fields.description} error={errors.description} className="mt-4">
         <textarea
-          name="description"
-          rows={4}
+          name="description" rows={4}
           defaultValue={values.description}
           className={cn(inputCls(errors.description), "min-h-28 resize-y")}
-          placeholder="Sub-Zero stopped cooling overnight. Freezer side still cold."
+          placeholder={d.fields.descriptionPlaceholder}
         />
       </Field>
 
@@ -149,17 +146,17 @@ export function LeadForm({ defaultCity, defaultAppliance }: { defaultCity?: stri
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <SubmitBtn />
+        <SubmitBtn submit={d.submit} sending={d.sending} />
         <p className="flex items-center gap-2 text-xs text-muted-foreground">
           <ShieldCheck className="size-3.5 text-brand" aria-hidden />
-          We don't share or sell your info.
+          {d.privacy}
         </p>
       </div>
     </form>
   );
 }
 
-function SubmitBtn() {
+function SubmitBtn({ submit, sending }: { submit: string; sending: string }) {
   const { pending } = useFormStatus();
   return (
     <button
@@ -170,12 +167,12 @@ function SubmitBtn() {
       {pending ? (
         <>
           <Loader2 className="size-4 animate-spin" aria-hidden />
-          Sending…
+          {sending}
         </>
       ) : (
         <>
           <Send className="size-4" aria-hidden />
-          Request a callback
+          {submit}
         </>
       )}
     </button>

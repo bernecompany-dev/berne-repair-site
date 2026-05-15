@@ -13,22 +13,32 @@ import { Contact } from "@/components/sections/contact";
 import { JsonLd } from "@/components/site/json-ld";
 import { faqJsonLd, imageGalleryJsonLd, absoluteUrl } from "@/lib/seo";
 import { GENERAL_FAQS } from "@/data/faqs";
+import { getDictionary } from "@/lib/dictionary";
 
 export const metadata: Metadata = {
+  title: getDictionary("es").meta.homeTitle,
+  description: getDictionary("es").meta.homeDescription,
   alternates: {
-    canonical: "/",
+    canonical: "/es",
     languages: {
       "en-US": absoluteUrl("/"),
       "es-US": absoluteUrl("/es"),
       "x-default": absoluteUrl("/"),
     },
   },
+  openGraph: {
+    title: getDictionary("es").meta.homeTitle,
+    description: getDictionary("es").meta.homeDescription,
+    url: absoluteUrl("/es"),
+    type: "website",
+    locale: "es_US",
+  },
 };
 
-export default function Home() {
+export default function HomeES() {
   return (
     <>
-      <Hero />
+      <Hero locale="es" />
       <ServicesGrid />
       <WhyUs />
       <Areas />
@@ -37,8 +47,8 @@ export default function Home() {
       <Reviews />
       <Commercial />
       <FAQSection faqs={GENERAL_FAQS} />
-      <Contact />
-      <CTABand />
+      <Contact locale="es" />
+      <CTABand locale="es" />
       <JsonLd data={[faqJsonLd(GENERAL_FAQS), imageGalleryJsonLd()]} />
     </>
   );
