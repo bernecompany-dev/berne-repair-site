@@ -20,12 +20,12 @@ export type TeamMember = {
 export const TEAM: TeamMember[] = [
   {
     slug: "evgenii-knyazev",
-    name: "Evgenii Knyazev",
-    role: "Commercial Technician",
-    specialty: "Commercial accounts · Restaurants · Property management",
-    years: 10,
+    name: "Eugene Berne",
+    role: "Owner",
+    specialty: "Founder · Commercial accounts · Personal guarantee on every job",
+    years: 4,
     photo: "/images/team/evgenii-knyazev.webp",
-    bio: "Lead tech for Berne's commercial book — restaurants, property management, retail. The first call when a Target, Publix, or Petco location needs an appliance back online today.",
+    bio: "Founded Berne Repair after moving to the US in 2022. Still picks up the phone, still goes out on commercial calls, still backs every single repair personally. 30,000+ jobs and counting.",
     featured: true,
   },
   {
