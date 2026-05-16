@@ -74,9 +74,7 @@ export default function RootLayout({
         <SiteFooter />
         <StickyCTA />
         <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
-        {process.env.NEXT_PUBLIC_GA_ID ? (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-        ) : null}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
       </body>
     </html>
   );
