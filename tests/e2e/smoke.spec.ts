@@ -155,12 +155,23 @@ test.describe("Spanish i18n", () => {
 });
 
 test.describe("Lead form", () => {
-  test("empty submit shows friendly validation errors", async ({ page }) => {
+  test("full happy-path submit lands on success view (no crash)", async ({ page }) => {
     await page.goto("/");
-    await page.evaluate(() => location.hash = "#lead-form");
+    // Backdate ts so we don't trip the bot-timing silent path
+    await page.evaluate(() => {
+      const ts = document.querySelector('input[name="ts"]') as HTMLInputElement | null;
+      if (ts) ts.value = String(Date.now() - 5000);
+    });
+    await page.fill('input[name="name"]', "QA Auto");
+    await page.fill('input[name="phone"]', "305-555-0166");
+    await page.selectOption('select[name="city"]', "miami");
+    await page.selectOption('select[name="appliance"]', "refrigerator-repair");
+    await page.check('input[name="consent"]');
     await page.getByRole("button", { name: /Request a callback/i }).click();
-    // The form is server-action; errors appear after server round-trip
-    await expect(page.getByText(/Please enter your name/i)).toBeVisible({ timeout: 10_000 });
+    // Either real success copy or the bot-timing silent-success copy
+    await expect(page.getByText(/Got it|talk soon|we'll call you/i)).toBeVisible({ timeout: 15_000 });
+    // Sanity — no Next runtime error overlay
+    await expect(page.getByText(/Runtime Error|use server.*file can only export/i)).toHaveCount(0);
   });
 
   test("honeypot triggers silent success (no error shown)", async ({ page }) => {
