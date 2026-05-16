@@ -15,9 +15,22 @@ const HAS_ES_MIRROR = new Set<string>([
   "/",
 ]);
 
+// Patterns we know have Spanish mirrors. If the path matches any, the
+// switcher links directly to the corresponding /es/... URL; otherwise it
+// falls back to the Spanish home.
+const ES_MIRROR_PATTERNS: RegExp[] = [
+  /^\/$/,
+  /^\/team\/?$/,
+  /^\/areas\/?$/,
+  /^\/areas\/[a-z0-9-]+\/?$/,
+  /^\/services\/[a-z0-9-]+\/?$/,
+  /^\/services\/[a-z0-9-]+\/[a-z0-9-]+\/?$/,
+];
+
 function targetHref(currentLocale: Locale, pathname: string): string {
   if (currentLocale === "en") {
-    return HAS_ES_MIRROR.has(pathname) ? "/es" : "/es";
+    const hasMirror = ES_MIRROR_PATTERNS.some((rx) => rx.test(pathname));
+    return hasMirror ? `/es${pathname === "/" ? "" : pathname}` : "/es";
   }
   // currentLocale === "es": strip the /es prefix and go to the English mirror
   const stripped = pathname.replace(/^\/es(\/|$)/, "/");

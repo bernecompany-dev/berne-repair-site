@@ -11,7 +11,9 @@ import {
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { CityMap } from "@/components/site/city-map";
+import { PersonalNote } from "@/components/site/personal-note";
 import { StatsStrip } from "@/components/sections/stats-strip";
+import { cityPersonalCopy } from "@/lib/personal-copy";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
@@ -57,6 +59,7 @@ export default async function CityPage({ params }: Props) {
     { name: "Areas", href: "/#areas" },
     { name: city.name, href: `/areas/${city.slug}` },
   ];
+  const personal = cityPersonalCopy(city);
 
   const cityFaqs = [
     {
@@ -183,6 +186,8 @@ export default async function CityPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <PersonalNote {...personal} />
 
       {/* Coverage map */}
       <section className="container-prose py-16">
