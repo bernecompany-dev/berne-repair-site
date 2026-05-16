@@ -167,7 +167,7 @@ test.describe("Lead form", () => {
     await page.goto("/");
     // Fill honeypot via DOM (it's hidden offscreen but exists)
     await page.evaluate(() => {
-      const hp = document.querySelector('input[name="website"]') as HTMLInputElement | null;
+      const hp = document.querySelector('input[name="company_url"]') as HTMLInputElement | null;
       if (hp) hp.value = "https://spam.example/" + Date.now();
     });
     // Fill required minimally so submit fires
@@ -175,9 +175,23 @@ test.describe("Lead form", () => {
     await page.fill('input[name="phone"]', "305-555-0188");
     await page.selectOption('select[name="city"]', "miami");
     await page.selectOption('select[name="appliance"]', "refrigerator-repair");
+    await page.check('input[name="consent"]');
     await page.getByRole("button", { name: /Request a callback/i }).click();
     // Honeypot → silent success message
     await expect(page.getByText(/talk soon|Got it/i)).toBeVisible({ timeout: 10_000 });
+  });
+
+  test("submit without TCPA consent shows error", async ({ page }) => {
+    await page.goto("/");
+    await page.fill('input[name="name"]', "TCPA Test");
+    await page.fill('input[name="phone"]', "305-555-0199");
+    await page.selectOption('select[name="city"]', "miami");
+    await page.selectOption('select[name="appliance"]', "refrigerator-repair");
+    // Skip consent checkbox — browser-level required will block submit
+    const submitBtn = page.getByRole("button", { name: /Request a callback/i });
+    await submitBtn.click();
+    // Form still on page (browser blocks submit), not on success state
+    await expect(page.getByText(/Got it/i)).toHaveCount(0);
   });
 });
 

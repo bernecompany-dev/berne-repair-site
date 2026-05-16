@@ -39,7 +39,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: { canonical: `/areas/${city.slug}` },
+    alternates: {
+      canonical: `/areas/${city.slug}`,
+      languages: {
+        "en-US": absoluteUrl(`/areas/${city.slug}`),
+        "es-US": absoluteUrl(`/es/areas/${city.slug}`),
+        "x-default": absoluteUrl(`/areas/${city.slug}`),
+      },
+    },
     openGraph: {
       title,
       description,

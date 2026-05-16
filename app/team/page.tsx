@@ -14,7 +14,14 @@ import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "The Berne Repair Team — 17 South Florida Technicians",
   description: `Meet the ${COMPANY.socialProof.technicians} licensed technicians and dispatch team at ${COMPANY.legalName}. Real names, real specialties — the same people customers ask for by name on Google reviews.`,
-  alternates: { canonical: "/team" },
+  alternates: {
+    canonical: "/team",
+    languages: {
+      "en-US": absoluteUrl("/team"),
+      "es-US": absoluteUrl("/es/team"),
+      "x-default": absoluteUrl("/team"),
+    },
+  },
 };
 
 export default function TeamPage() {

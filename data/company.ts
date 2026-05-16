@@ -25,9 +25,9 @@ export const COMPANY = {
     serviceArea: "South Florida",
   },
   socialProof: {
-    technicians: 17,
+    technicians: 16,
     repairsCompleted: "thousands",
-    yearsInBusiness: 10,
+    yearsInBusiness: 4,
     licensed: true,
     insured: true,
     warranty: "90-day labor & parts warranty",

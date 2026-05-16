@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useId, useState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { Send, ShieldCheck, Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
 import { submitLead } from "@/app/actions/lead";
@@ -24,6 +24,12 @@ export function LeadForm({
 }) {
   const [state, action] = useActionState(submitLead, initialLeadState);
   const d = getDictionary(locale).leadForm;
+  const formId = useId();
+  const [renderedAt, setRenderedAt] = useState("");
+
+  useEffect(() => {
+    setRenderedAt(String(Date.now()));
+  }, []);
 
   const errors = state.status === "error" ? state.errors : {};
   const values = state.status === "error" ? state.values : {};
@@ -47,50 +53,67 @@ export function LeadForm({
     );
   }
 
+  const errId = (field: string) => (errors[field] ? `${formId}-${field}-err` : undefined);
+
   return (
-    <form action={action} className="surface-card p-6 sm:p-8" noValidate>
+    <form action={action} className="surface-card p-6 sm:p-8" noValidate aria-labelledby={`${formId}-title`}>
+      <input type="hidden" name="locale" value={locale} />
+      <input type="hidden" name="ts" value={renderedAt} />
+
       <div className="mb-6 flex flex-col gap-1.5">
-        <h3 className="text-2xl font-semibold tracking-tight">{d.title}</h3>
+        <h3 id={`${formId}-title`} className="text-2xl font-semibold tracking-tight">{d.title}</h3>
         <p className="text-sm text-muted-foreground">{d.subtitle}</p>
       </div>
 
       {"form" in errors && (
-        <div className="mb-5 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">
+        <div className="mb-5 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive" role="alert">
           <AlertTriangle className="size-4 shrink-0" aria-hidden />
           <span>{errors.form}</span>
         </div>
       )}
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label={d.fields.name} error={errors.name}>
+        <Field id={`${formId}-name`} label={d.fields.name} error={errors.name} errId={errId("name")}>
           <input
+            id={`${formId}-name`}
             type="text" name="name" autoComplete="name"
             defaultValue={values.name} required
+            aria-invalid={!!errors.name}
+            aria-describedby={errId("name")}
             className={inputCls(errors.name)}
             placeholder="Maria Reyes"
           />
         </Field>
-        <Field label={d.fields.phone} error={errors.phone}>
+        <Field id={`${formId}-phone`} label={d.fields.phone} error={errors.phone} errId={errId("phone")}>
           <input
+            id={`${formId}-phone`}
             type="tel" name="phone" autoComplete="tel" inputMode="tel"
             defaultValue={values.phone} required
+            aria-invalid={!!errors.phone}
+            aria-describedby={errId("phone")}
             className={inputCls(errors.phone)}
             placeholder="(305) 555-0123"
           />
         </Field>
-        <Field label={d.fields.emailOptional} error={errors.email}>
+        <Field id={`${formId}-email`} label={d.fields.emailOptional} error={errors.email} errId={errId("email")}>
           <input
+            id={`${formId}-email`}
             type="email" name="email" autoComplete="email"
             defaultValue={values.email}
+            aria-invalid={!!errors.email}
+            aria-describedby={errId("email")}
             className={inputCls(errors.email)}
             placeholder="you@example.com"
           />
         </Field>
-        <Field label={d.fields.city} error={errors.city}>
+        <Field id={`${formId}-city`} label={d.fields.city} error={errors.city} errId={errId("city")}>
           <select
+            id={`${formId}-city`}
             name="city"
             defaultValue={values.city ?? defaultCity ?? ""}
             required
+            aria-invalid={!!errors.city}
+            aria-describedby={errId("city")}
             className={inputCls(errors.city)}
           >
             <option value="" disabled>{d.fields.cityPlaceholder}</option>
@@ -99,11 +122,14 @@ export function LeadForm({
             ))}
           </select>
         </Field>
-        <Field label={d.fields.appliance} error={errors.appliance}>
+        <Field id={`${formId}-appliance`} label={d.fields.appliance} error={errors.appliance} errId={errId("appliance")}>
           <select
+            id={`${formId}-appliance`}
             name="appliance"
             defaultValue={values.appliance ?? defaultAppliance ?? ""}
             required
+            aria-invalid={!!errors.appliance}
+            aria-describedby={errId("appliance")}
             className={inputCls(errors.appliance)}
           >
             <option value="" disabled>{d.fields.appliancePlaceholder}</option>
@@ -113,35 +139,55 @@ export function LeadForm({
             <option value="other">{d.fields.other}</option>
           </select>
         </Field>
-        <Field label={d.fields.brandOptional} error={errors.brand}>
+        <Field id={`${formId}-brand`} label={d.fields.brandOptional} error={errors.brand} errId={errId("brand")}>
           <input
-            type="text" name="brand" list="brands-list"
+            id={`${formId}-brand`}
+            type="text" name="brand" list={`${formId}-brands`}
             defaultValue={values.brand}
             className={inputCls(errors.brand)}
             placeholder={d.fields.brandPlaceholder}
           />
-          <datalist id="brands-list">
-            {BRANDS.map((b) => (
-              <option key={b} value={b} />
-            ))}
+          <datalist id={`${formId}-brands`}>
+            {BRANDS.map((b) => <option key={b} value={b} />)}
           </datalist>
         </Field>
       </div>
 
-      <Field label={d.fields.description} error={errors.description} className="mt-4">
+      <Field id={`${formId}-description`} label={d.fields.description} error={errors.description} errId={errId("description")} className="mt-4">
         <textarea
+          id={`${formId}-description`}
           name="description" rows={4}
           defaultValue={values.description}
+          aria-invalid={!!errors.description}
+          aria-describedby={errId("description")}
           className={cn(inputCls(errors.description), "min-h-28 resize-y")}
           placeholder={d.fields.descriptionPlaceholder}
         />
       </Field>
 
-      {/* Honeypot — hidden from users, visible to bots */}
+      {/* TCPA explicit consent — required, unchecked by default (regulator requirement). */}
+      <label className="mt-6 flex items-start gap-3 rounded-xl border border-border bg-background/40 p-4 cursor-pointer hover:bg-background/60">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          aria-invalid={!!errors.consent}
+          aria-describedby={errId("consent")}
+          className="mt-0.5 size-4 rounded border-border accent-brand"
+        />
+        <span className="text-xs leading-relaxed text-muted-foreground">
+          {d.consentLabel}
+        </span>
+      </label>
+      {errors.consent && (
+        <span id={errId("consent")} className="mt-1.5 block text-xs text-destructive">{errors.consent}</span>
+      )}
+
+      {/* Honeypot — hidden from users, visible to dumb bots */}
       <div aria-hidden className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden">
         <label>
-          Website
-          <input type="text" name="website" tabIndex={-1} autoComplete="off" defaultValue="" />
+          Company URL
+          <input type="text" name="company_url" tabIndex={-1} autoComplete="off" defaultValue="" />
         </label>
       </div>
 
@@ -149,7 +195,10 @@ export function LeadForm({
         <SubmitBtn submit={d.submit} sending={d.sending} />
         <p className="flex items-center gap-2 text-xs text-muted-foreground">
           <ShieldCheck className="size-3.5 text-brand" aria-hidden />
-          {d.privacy}
+          {d.privacy}{" "}
+          <a href={locale === "es" ? "/es/privacy" : "/privacy"} className="underline-offset-2 hover:underline">
+            {d.privacyLink}
+          </a>
         </p>
       </div>
     </form>
@@ -180,24 +229,28 @@ function SubmitBtn({ submit, sending }: { submit: string; sending: string }) {
 }
 
 function Field({
+  id,
   label,
   error,
+  errId,
   children,
   className,
 }: {
+  id?: string;
   label: string;
   error?: string;
+  errId?: string;
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <label className={cn("block", className)}>
+    <label className={cn("block", className)} htmlFor={id}>
       <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
         {label}
       </span>
       {children}
       {error ? (
-        <span className="mt-1.5 block text-xs text-destructive">{error}</span>
+        <span id={errId} className="mt-1.5 block text-xs text-destructive">{error}</span>
       ) : null}
     </label>
   );

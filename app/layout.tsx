@@ -4,8 +4,9 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { StickyCTA } from "@/components/site/sticky-cta";
+import { LangSync } from "@/components/site/lang-sync";
 import { JsonLd } from "@/components/site/json-ld";
-import { localBusinessJsonLd, websiteJsonLd } from "@/lib/seo";
+import { localBusinessJsonLd, websiteJsonLd, organizationJsonLd } from "@/lib/seo";
 import { COMPANY } from "@/data/company";
 import "./globals.css";
 
@@ -64,16 +65,17 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <LangSync />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <StickyCTA />
-        <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
+        <JsonLd data={[organizationJsonLd(), localBusinessJsonLd(), websiteJsonLd()]} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
       </body>
     </html>

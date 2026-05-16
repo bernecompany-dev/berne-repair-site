@@ -12,7 +12,14 @@ import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: `All ${CITIES.length} Cities We Serve`,
   description: `Same-day appliance repair across ${CITIES.length} cities in Miami-Dade, Broward, and Palm Beach. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`,
-  alternates: { canonical: "/areas" },
+  alternates: {
+    canonical: "/areas",
+    languages: {
+      "en-US": absoluteUrl("/areas"),
+      "es-US": absoluteUrl("/es/areas"),
+      "x-default": absoluteUrl("/areas"),
+    },
+  },
 };
 
 export default function AreasIndex() {

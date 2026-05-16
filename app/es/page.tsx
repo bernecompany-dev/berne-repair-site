@@ -14,7 +14,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { JsonLd } from "@/components/site/json-ld";
 import { faqJsonLd, imageGalleryJsonLd, absoluteUrl } from "@/lib/seo";
-import { GENERAL_FAQS } from "@/data/faqs";
+import { GENERAL_FAQS_ES } from "@/data/faqs";
 import { getDictionary } from "@/lib/dictionary";
 
 export const metadata: Metadata = {
@@ -50,10 +50,10 @@ export default function HomeES() {
       <TeamSection />
       <Reviews />
       <Commercial />
-      <FAQSection faqs={GENERAL_FAQS} />
+      <FAQSection faqs={GENERAL_FAQS_ES} />
       <Contact locale="es" />
       <CTABand locale="es" />
-      <JsonLd data={[faqJsonLd(GENERAL_FAQS), imageGalleryJsonLd()]} />
+      <JsonLd data={[faqJsonLd(GENERAL_FAQS_ES, "es"), imageGalleryJsonLd()]} />
     </>
   );
 }

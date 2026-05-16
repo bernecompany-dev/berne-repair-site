@@ -4,47 +4,97 @@ import { Resend } from "resend";
 import { headers } from "next/headers";
 import { z } from "zod";
 import { COMPANY } from "@/data/company";
-import { CITY_BY_SLUG } from "@/data/cities";
-import { SERVICE_BY_SLUG } from "@/data/services";
-import { rateLimit } from "@/lib/rate-limit";
+import { CITIES, CITY_BY_SLUG } from "@/data/cities";
+import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
+import { rateLimit, globalRateLimit } from "@/lib/rate-limit";
 import type { LeadFormState } from "@/lib/lead-types";
 
 const PHONE_FORMAT_RE = /^[+()\-\d\s.]{7,}$/;
+const HEADER_INJECTION_RE = /[\r\n,;<>]/;
 const countDigits = (s: string) => (s.match(/\d/g)?.length ?? 0);
 
-// Note: undefined fields are coerced to "" before parsing, so .min() catches "missing".
+const CITY_SLUGS = CITIES.map((c) => c.slug) as [string, ...string[]];
+const APPLIANCE_SLUGS = ["other", ...SERVICES.map((s) => s.slug)] as [string, ...string[]];
+
 const LeadSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(80),
-  phone: z
-    .string()
-    .trim()
-    .min(7, "Please enter a valid phone number")
-    .max(30)
+  name: z.string().trim().min(2, "Please enter your name").max(80)
+    .refine((v) => !HEADER_INJECTION_RE.test(v), "Invalid characters in name"),
+  phone: z.string().trim().min(7, "Please enter a valid phone number").max(30)
     .regex(PHONE_FORMAT_RE, "Please enter a valid phone number")
     .refine((v) => countDigits(v) >= 10, "Please enter a 10-digit US phone"),
-  email: z.string().trim().email().optional().or(z.literal("")),
-  city: z.string().trim().min(1, "Please choose a city"),
-  appliance: z.string().trim().min(1, "Please choose an appliance"),
+  email: z
+    .string()
+    .trim()
+    .email()
+    .refine((v) => !HEADER_INJECTION_RE.test(v), "Invalid email")
+    .optional()
+    .or(z.literal("")),
+  city: z.enum(CITY_SLUGS, { message: "Please choose a city" }),
+  appliance: z.enum(APPLIANCE_SLUGS, { message: "Please choose an appliance" }),
   brand: z.string().trim().max(60).optional().or(z.literal("")),
   description: z.string().trim().max(2000).optional().or(z.literal("")),
-  // Honeypot — bots fill all fields, humans never see this one
-  website: z.string().max(0).optional().or(z.literal("")),
+  /** TCPA: explicit opt-in for calls/SMS. Required to submit. */
+  consent: z.literal("on", { message: "Please agree to be contacted about your request" }),
+  /** Honeypot — name chosen to look plausible to bots. Must stay empty. */
+  company_url: z.string().max(0).optional().or(z.literal("")),
+  /** Time-since-render check (bots fill forms in <2s). Soft validation. */
+  ts: z.string().optional().or(z.literal("")),
+  locale: z.enum(["en", "es"]).optional().or(z.literal("")),
 });
+
+export const initialLeadState: LeadFormState = { status: "idle" };
+
+type Lang = "en" | "es";
+const M = {
+  en: {
+    successCallback: "Thanks — we'll call you shortly to confirm a time.",
+    successHoneypot: "Thanks — we'll be in touch shortly.",
+    tooMany: `Too many submissions. Please call us at ${COMPANY.phone.display}`,
+    sendFail: `Couldn't send. Please call ${COMPANY.phone.display}.`,
+  },
+  es: {
+    successCallback: "Recibido — le llamaremos pronto para confirmar la hora.",
+    successHoneypot: "Recibido — le contactaremos pronto.",
+    tooMany: `Demasiados envíos. Por favor llame al ${COMPANY.phone.display}`,
+    sendFail: `No se pudo enviar. Por favor llame al ${COMPANY.phone.display}.`,
+  },
+} as const;
+
+function pickIp(h: Headers): string {
+  // Vercel sets x-vercel-forwarded-for to the immediate client IP — not spoofable.
+  const vercel = h.get("x-vercel-forwarded-for");
+  if (vercel) return vercel.split(",")[0]?.trim() || "unknown";
+  // Fallback: take the *last* hop in x-forwarded-for (closest to our edge).
+  const xff = h.get("x-forwarded-for");
+  if (xff) {
+    const parts = xff.split(",").map((p) => p.trim()).filter(Boolean);
+    if (parts.length) return parts[parts.length - 1];
+  }
+  return h.get("x-real-ip") || "unknown";
+}
 
 export async function submitLead(
   _prev: LeadFormState,
   formData: FormData,
 ): Promise<LeadFormState> {
   const raw = Object.fromEntries(formData.entries()) as Record<string, string>;
-  // FormData always yields strings, but defend against tampered submissions
-  // (programmatic POST omitting a field) so zod returns our friendly messages.
-  for (const k of ["name", "phone", "city", "appliance", "email", "brand", "description", "website"]) {
+  for (const k of [
+    "name", "phone", "city", "appliance", "email", "brand",
+    "description", "consent", "company_url", "ts", "locale",
+  ]) {
     if (typeof raw[k] !== "string") raw[k] = "";
   }
+  const lang: Lang = raw.locale === "es" ? "es" : "en";
+  const msg = M[lang];
 
-  // Honeypot first — silently "succeed" so bots can't even learn the form is server-validated.
-  if (typeof raw.website === "string" && raw.website.length > 0) {
-    return { status: "success", message: "Thanks — we'll be in touch shortly." };
+  // Honeypot check first — bots reveal themselves; humans never see this field.
+  if (raw.company_url.length > 0) {
+    return { status: "success", message: msg.successHoneypot };
+  }
+  // Soft bot check: form rendered in <1.5s means likely a script.
+  const ts = parseInt(raw.ts || "0", 10);
+  if (ts > 0 && Date.now() - ts < 1500) {
+    return { status: "success", message: msg.successHoneypot };
   }
 
   const parsed = LeadSchema.safeParse(raw);
@@ -57,23 +107,20 @@ export async function submitLead(
     return { status: "error", errors, values: raw };
   }
 
-  // Per-IP rate limit: 5 submissions / 10 minutes
+  // Rate limits — per-IP plus a global circuit breaker for distributed floods.
   const h = await headers();
-  const ip =
-    h.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-    h.get("x-real-ip") ||
-    "unknown";
+  const ip = pickIp(h);
   const rl = rateLimit({ key: `lead:${ip}`, limit: 5, windowMs: 10 * 60_000 });
-  if (!rl.ok) {
+  const globalRl = globalRateLimit({ limit: 60, windowMs: 60 * 60_000 });
+  if (!rl.ok || !globalRl.ok) {
     return {
       status: "error",
-      errors: { form: "Too many submissions. Please call us at " + COMPANY.phone.display },
+      errors: { form: msg.tooMany },
       values: raw,
     };
   }
 
   const { name, phone, email, city, appliance, brand, description } = parsed.data;
-
   const cityName = CITY_BY_SLUG[city]?.name ?? city;
   const applianceName = SERVICE_BY_SLUG[appliance]?.name ?? appliance;
 
@@ -82,52 +129,31 @@ export async function submitLead(
   const to = process.env.LEAD_TO_EMAIL ?? COMPANY.email.leads;
 
   if (!apiKey) {
-    // Dev fallback — log the lead so the user can still test the form locally
-    console.warn("[lead] RESEND_API_KEY missing — lead not sent. Payload:", {
-      name, phone, email, city: cityName, appliance: applianceName, brand, description, ip,
-    });
-    return {
-      status: "success",
-      message: "Thanks — we'll call you shortly.",
-    };
+    console.warn("[lead] RESEND_API_KEY missing — lead not sent.");
+    return { status: "success", message: msg.successCallback };
   }
 
   const resend = new Resend(apiKey);
   const subject = `New lead: ${name} · ${cityName} · ${applianceName}`;
-
   const html = renderLeadEmail({
-    name, phone, email, cityName, applianceName, brand, description, ip,
+    name, phone, email, cityName, applianceName, brand, description, locale: lang,
   });
 
   try {
-    const result = await resend.emails.send({
-      from,
-      to,
-      replyTo: email || undefined,
-      subject,
-      html,
-    });
+    const replyTo = email
+      ? [email, COMPANY.email.leads]
+      : [COMPANY.email.leads];
+    const result = await resend.emails.send({ from, to, replyTo, subject, html });
     if (result.error) {
       console.error("[lead] resend error:", result.error);
-      return {
-        status: "error",
-        errors: { form: `Couldn't send. Please call ${COMPANY.phone.display}.` },
-        values: raw,
-      };
+      return { status: "error", errors: { form: msg.sendFail }, values: raw };
     }
   } catch (err) {
     console.error("[lead] resend threw:", err);
-    return {
-      status: "error",
-      errors: { form: `Couldn't send. Please call ${COMPANY.phone.display}.` },
-      values: raw,
-    };
+    return { status: "error", errors: { form: msg.sendFail }, values: raw };
   }
 
-  return {
-    status: "success",
-    message: "Thanks — we'll call you shortly to confirm a time.",
-  };
+  return { status: "success", message: msg.successCallback };
 }
 
 function renderLeadEmail(p: {
@@ -138,7 +164,7 @@ function renderLeadEmail(p: {
   applianceName: string;
   brand?: string;
   description?: string;
-  ip: string;
+  locale: Lang;
 }) {
   const row = (label: string, value?: string) =>
     value
@@ -148,7 +174,7 @@ function renderLeadEmail(p: {
   <div style="font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:#0a0f1a;color:#e6e6e6;padding:24px">
     <div style="max-width:560px;margin:0 auto;background:#10172a;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden">
       <div style="padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06)">
-        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#7aa2ff">New lead</div>
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#7aa2ff">New lead${p.locale === "es" ? " (ES)" : ""}</div>
         <div style="font-size:20px;font-weight:600;margin-top:4px">Berne Repair · website</div>
       </div>
       <table style="width:100%;border-collapse:collapse;font-size:14px;color:#e6e6e6">
@@ -159,7 +185,7 @@ function renderLeadEmail(p: {
         ${row("Appliance", p.applianceName)}
         ${row("Brand", p.brand)}
         ${row("Description", p.description)}
-        ${row("IP", p.ip)}
+        ${row("Language", p.locale.toUpperCase())}
       </table>
       <div style="padding:14px 24px;border-top:1px solid rgba(255,255,255,.06);color:#7a8aa3;font-size:12px">
         Reply directly to this email to respond to the customer.

@@ -113,6 +113,9 @@ export const es: Dictionary = {
     privacy: "No compartimos ni vendemos su información.",
     success: "¡Recibido! Hablamos pronto.",
     needFaster: "¿Más rápido? Llame al",
+    consentLabel: "Acepto recibir llamadas y/o mensajes de texto de Berne Repair sobre mi solicitud. Pueden aplicar tarifas de mensajería y datos. Responda STOP para cancelar.",
+    consentError: "Por favor acepte ser contactado sobre su solicitud",
+    privacyLink: "Política de privacidad",
   },
   footer: {
     tagline:

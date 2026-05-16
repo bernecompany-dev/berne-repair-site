@@ -33,7 +33,8 @@ export function CityMap({
           width="100%"
           height="380"
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          referrerPolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
           className="block w-full"
         />
       </div>

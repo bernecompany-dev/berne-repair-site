@@ -111,6 +111,9 @@ export const en = {
     privacy: "We don't share or sell your info.",
     success: "Got it — talk soon.",
     needFaster: "Need us faster? Call",
+    consentLabel: "I agree to receive calls and/or text messages from Berne Repair about my request. Msg & data rates may apply. Reply STOP to opt out.",
+    consentError: "Please agree to be contacted about your request",
+    privacyLink: "Privacy policy",
   },
   footer: {
     tagline:

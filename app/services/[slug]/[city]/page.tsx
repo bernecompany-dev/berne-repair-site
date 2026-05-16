@@ -50,11 +50,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service || !city) return {};
 
   const title = `${service.name} in ${city.name}, FL · $${COMPANY.serviceCallPrice} Service Call`;
-  const description = `Same-day ${service.seoNoun} repair in ${city.name}, ${city.county} County. $${COMPANY.serviceCallPrice} service call. Licensed & insured. Sub-Zero, Wolf, Viking, Bosch and every major brand. Call ${COMPANY.phone.display}.`;
+  // Vary description openings by (slug, city) so 700+ combos aren't near-identical.
+  const seed = (service.slug + city.slug).split("").reduce((a, ch) => (a + ch.charCodeAt(0)) | 0, 0);
+  const openers = [
+    `Same-day ${service.seoNoun} repair in ${city.name}, ${city.county} County.`,
+    `${service.name} for ${city.name} homes and businesses — same-day available.`,
+    `Trusted ${service.seoNoun} service across ${city.name} and the ${city.county} County area.`,
+    `Local ${service.shortName.toLowerCase()} repair in ${city.name} — call before noon, technician same day.`,
+  ];
+  const opener = openers[Math.abs(seed) % openers.length];
+  const brandList = service.brands.slice(0, 4).join(", ");
+  const description = `${opener} $${COMPANY.serviceCallPrice} service call. Licensed & insured. ${brandList} and every major brand. Call ${COMPANY.phone.display}.`;
   return {
     title,
     description,
-    alternates: { canonical: `/services/${service.slug}/${city.slug}` },
+    alternates: {
+      canonical: `/services/${service.slug}/${city.slug}`,
+      languages: {
+        "en-US": absoluteUrl(`/services/${service.slug}/${city.slug}`),
+        "es-US": absoluteUrl(`/es/services/${service.slug}/${city.slug}`),
+        "x-default": absoluteUrl(`/services/${service.slug}/${city.slug}`),
+      },
+    },
     openGraph: {
       title,
       description,

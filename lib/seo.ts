@@ -14,9 +14,25 @@ export function absoluteUrl(path = "/") {
 }
 
 const BUSINESS_ID = absoluteUrl("/#business");
+const ORG_ID = absoluteUrl("/#organization");
 
-/** Approximate primary service-area centroid (Miami metro). */
-const PRIMARY_GEO = { lat: 25.9, lng: -80.2 };
+/** Primary service-area centroid, shifted slightly north to cover Jupiter. */
+const PRIMARY_GEO = { lat: 26.1, lng: -80.15 };
+/** Founding year — verifiable, doesn't drift each Jan 1. */
+const FOUNDING_YEAR = "2022";
+
+/**
+ * External profiles for entity disambiguation. Fill these in as each
+ * profile goes live. Empty strings are filtered out at serialization.
+ */
+const SAME_AS: string[] = [
+  // "https://www.google.com/maps/place/?q=place_id:XXXX",
+  // "https://www.yelp.com/biz/berne-repair",
+  // "https://www.facebook.com/BerneRepair",
+  // "https://www.bbb.org/us/fl/...",
+  // "https://www.instagram.com/bernerepair",
+  // "https://nextdoor.com/pages/berne-repair-...",
+].filter(Boolean);
 
 const AGGREGATE = {
   "@type": "AggregateRating",
@@ -38,7 +54,6 @@ const REVIEW_NODES = REVIEWS.map((r) => ({
   itemReviewed: { "@id": BUSINESS_ID },
 }));
 
-/** Public photo references for the business — both team and on-the-job shots. */
 const PHOTO_PATHS = [
   "/images/team/evgenii-knyazev.webp",
   "/images/team/refat-bekirov.webp",
@@ -56,12 +71,25 @@ const PHOTO_PATHS = [
   "/images/services/air-duct-cleaning/1.webp",
 ];
 const PHOTO_URLS = PHOTO_PATHS.map((p) => absoluteUrl(p));
-
 const PHOTO_OBJECTS = PHOTO_PATHS.map((p) => ({
   "@type": "ImageObject",
   contentUrl: absoluteUrl(p),
   url: absoluteUrl(p),
 }));
+
+export function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": ORG_ID,
+    name: COMPANY.legalName,
+    alternateName: COMPANY.dbaNames,
+    url: SITE_URL,
+    logo: absoluteUrl("/og.png"),
+    sameAs: SAME_AS,
+    subOrganization: { "@id": BUSINESS_ID },
+  };
+}
 
 export function websiteJsonLd() {
   return {
@@ -72,14 +100,14 @@ export function websiteJsonLd() {
     name: COMPANY.legalName,
     alternateName: COMPANY.dbaNames,
     publisher: { "@id": BUSINESS_ID },
-    inLanguage: "en-US",
+    inLanguage: ["en-US", "es-US"],
   };
 }
 
 export function localBusinessJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": ["HomeAndConstructionBusiness", "ProfessionalService", "LocalBusiness"],
+    "@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
     "@id": BUSINESS_ID,
     name: COMPANY.legalName,
     alternateName: COMPANY.dbaNames,
@@ -89,7 +117,7 @@ export function localBusinessJsonLd() {
     image: PHOTO_URLS,
     photo: PHOTO_OBJECTS,
     logo: absoluteUrl("/og.png"),
-    priceRange: `$${COMPANY.serviceCallPrice}+`,
+    priceRange: `$${COMPANY.serviceCallPrice}-$800`,
     paymentAccepted: ["Cash", "Credit Card", "Apple Pay", "Google Pay", "Zelle"],
     currenciesAccepted: "USD",
     knowsLanguage: ["en", "es"],
@@ -101,8 +129,8 @@ export function localBusinessJsonLd() {
       "Built-in refrigerator service",
     ],
     slogan: COMPANY.tagline,
-    foundingDate: `${new Date().getFullYear() - COMPANY.socialProof.yearsInBusiness}`,
-    numberOfEmployees: COMPANY.socialProof.technicians,
+    foundingDate: FOUNDING_YEAR,
+    numberOfEmployees: TEAM.length,
     address: {
       "@type": "PostalAddress",
       addressRegion: COMPANY.address.region,
@@ -120,7 +148,7 @@ export function localBusinessJsonLd() {
         latitude: PRIMARY_GEO.lat,
         longitude: PRIMARY_GEO.lng,
       },
-      geoRadius: 100000, // 100km — covers all of South Florida
+      geoRadius: 130000, // meters — covers Homestead in the south to Jupiter in the north
     },
     areaServed: CITIES.map((c) => ({
       "@type": "City",
@@ -147,10 +175,12 @@ export function localBusinessJsonLd() {
     review: REVIEW_NODES,
     employee: TEAM.map((m) => ({
       "@type": "Person",
+      "@id": absoluteUrl(`/team#${m.slug}`),
       name: m.name,
       jobTitle: m.role,
       image: absoluteUrl(m.photo),
       knowsAbout: m.specialty.split("·").map((s) => s.trim()),
+      worksFor: { "@id": BUSINESS_ID },
     })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -164,10 +194,11 @@ export function localBusinessJsonLd() {
         },
       })),
     },
+    sameAs: SAME_AS,
   };
 }
 
-export function serviceJsonLd(service: Service) {
+export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -176,28 +207,34 @@ export function serviceJsonLd(service: Service) {
     provider: { "@id": BUSINESS_ID },
     areaServed: CITIES.map((c) => c.name),
     description: service.longDescription,
-    url: absoluteUrl(`/services/${service.slug}`),
+    url: absoluteUrl(
+      locale === "es" ? `/es/services/${service.slug}` : `/services/${service.slug}`,
+    ),
+    inLanguage: locale === "es" ? "es-US" : "en-US",
     offers: {
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
       priceCurrency: "USD",
       description: `${COMPANY.serviceCallPrice} service call — applied toward the repair`,
       availability: "https://schema.org/InStock",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        minPrice: COMPANY.serviceCallPrice,
+        maxPrice: 800,
+        priceCurrency: "USD",
+      },
     },
     brand: service.brands.map((b) => ({ "@type": "Brand", name: b })),
-    aggregateRating: AGGREGATE,
   };
 }
 
-export function cityJsonLd(city: City) {
+export function cityJsonLd(city: City, locale: "en" | "es" = "en") {
+  const cityPath = locale === "es" ? `/es/areas/${city.slug}` : `/areas/${city.slug}`;
   return {
     "@context": "https://schema.org",
-    "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
-    name: `${COMPANY.legalName} — ${city.name}`,
-    parentOrganization: { "@id": BUSINESS_ID },
-    telephone: COMPANY.phone.tel,
-    url: absoluteUrl(`/areas/${city.slug}`),
-    priceRange: `$${COMPANY.serviceCallPrice}+`,
+    "@type": "Place",
+    "@id": absoluteUrl(`${cityPath}#place`),
+    name: city.name,
     address: {
       "@type": "PostalAddress",
       addressLocality: city.name,
@@ -209,60 +246,50 @@ export function cityJsonLd(city: City) {
       latitude: city.geo.lat,
       longitude: city.geo.lng,
     },
-    areaServed: {
-      "@type": "City",
-      name: city.name,
+    containedInPlace: {
+      "@type": "AdministrativeArea",
+      name: `${city.county} County, Florida`,
     },
-    aggregateRating: AGGREGATE,
+    url: absoluteUrl(cityPath),
   };
 }
 
-export function serviceCityJsonLd(service: Service, city: City) {
+export function serviceCityJsonLd(service: Service, city: City, locale: "en" | "es" = "en") {
+  const path = locale === "es"
+    ? `/es/services/${service.slug}/${city.slug}`
+    : `/services/${service.slug}/${city.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `${service.name} in ${city.name}`,
     serviceType: service.name,
-    provider: {
-      "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
-      name: `${COMPANY.legalName} — ${city.name}`,
-      telephone: COMPANY.phone.tel,
-      priceRange: `$${COMPANY.serviceCallPrice}+`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: city.name,
-        addressRegion: "FL",
-        addressCountry: "US",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: city.geo.lat,
-        longitude: city.geo.lng,
-      },
-      parentOrganization: { "@id": BUSINESS_ID },
-    },
-    areaServed: {
-      "@type": "City",
-      name: city.name,
-    },
+    provider: { "@id": BUSINESS_ID },
+    areaServed: { "@type": "City", name: city.name },
     description: `${service.longDescription} Serving ${city.name} and surrounding ${city.county} County.`,
-    url: absoluteUrl(`/services/${service.slug}/${city.slug}`),
+    url: absoluteUrl(path),
+    inLanguage: locale === "es" ? "es-US" : "en-US",
     offers: {
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
       priceCurrency: "USD",
       description: `${COMPANY.serviceCallPrice} service call — applied toward the repair`,
       areaServed: { "@type": "City", name: city.name },
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        minPrice: COMPANY.serviceCallPrice,
+        maxPrice: 800,
+        priceCurrency: "USD",
+      },
     },
     brand: service.brands.map((b) => ({ "@type": "Brand", name: b })),
-    aggregateRating: AGGREGATE,
   };
 }
 
-export function faqJsonLd(faqs: FAQ[]) {
+export function faqJsonLd(faqs: FAQ[], locale: "en" | "es" = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: locale === "es" ? "es-US" : "en-US",
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.question,
@@ -270,8 +297,6 @@ export function faqJsonLd(faqs: FAQ[]) {
     })),
   };
 }
-
-export type Crumb = { name: string; href: string };
 
 export function imageGalleryJsonLd() {
   return {
@@ -284,6 +309,8 @@ export function imageGalleryJsonLd() {
   };
 }
 
+export type Crumb = { name: string; href: string };
+
 export function breadcrumbJsonLd(crumbs: Crumb[]) {
   return {
     "@context": "https://schema.org",
@@ -294,5 +321,19 @@ export function breadcrumbJsonLd(crumbs: Crumb[]) {
       name: c.name,
       item: absoluteUrl(c.href),
     })),
+  };
+}
+
+/** Helper for pages to build hreflang alternates symmetrically. */
+export function buildAlternates(canonicalPath: string, locale: "en" | "es") {
+  const enPath = canonicalPath.replace(/^\/es/, "") || "/";
+  const esPath = canonicalPath.startsWith("/es") ? canonicalPath : `/es${canonicalPath === "/" ? "" : canonicalPath}`;
+  return {
+    canonical: canonicalPath,
+    languages: {
+      "en-US": absoluteUrl(enPath),
+      "es-US": absoluteUrl(esPath),
+      "x-default": absoluteUrl(enPath),
+    },
   };
 }

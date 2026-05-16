@@ -57,9 +57,10 @@ export default async function OG({
               justifyContent: "center",
               fontSize: 36,
               fontWeight: 800,
+              color: "white",
             }}
           >
-            ⚡
+            B
           </div>
           <div style={{ display: "flex", gap: 10, fontSize: 30, fontWeight: 700, letterSpacing: -0.5 }}>
             <span>Berne</span>

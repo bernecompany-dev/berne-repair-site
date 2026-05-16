@@ -1,0 +1,50 @@
+# Berne Repair
+
+> Premium appliance repair company in South Florida. Same-day service across Miami-Dade, Broward, and Palm Beach. $59 flat service call, 16 full-time licensed technicians, three DBAs (Berne Repair / Berne Appliance Repair / Norma Appliance Repair).
+
+## Key facts
+
+- Phone: (305) 520-7833 — tel:+13055207833
+- Email: BerneRepair@gmail.com
+- Service call: $59 flat (applied toward repair if approved)
+- Hours: 7 days/week, 8 AM – 9 PM Eastern
+- Warranty: 90-day labor & parts
+- Founded: 2022
+- Owner: Eugene Berne
+- Service area: Miami-Dade County, Broward County, Palm Beach County (all 65 cities listed in /sitemap.xml)
+- Languages: English, Spanish
+
+## Services (12)
+
+- Refrigerator Repair — /services/refrigerator-repair
+- Washer Repair — /services/washer-repair
+- Dryer Repair — /services/dryer-repair
+- Dishwasher Repair — /services/dishwasher-repair
+- Oven & Range Repair — /services/oven-repair
+- Microwave Repair — /services/microwave-repair
+- Ice Maker Repair — /services/ice-maker-repair
+- Wine Cooler Repair — /services/wine-cooler-repair
+- Garbage Disposal Repair — /services/garbage-disposal-repair
+- Air Duct Cleaning — /services/air-duct-cleaning
+- Range Hood Repair — /services/range-hood-repair
+
+## Brands serviced
+
+Premium: Sub-Zero, Wolf, Viking, Thermador, Miele, GE Monogram.
+Standard: Bosch, KitchenAid, LG, Samsung, Whirlpool, GE, Maytag, Frigidaire, Electrolux, Jenn-Air, Speed Queen, Scotsman, U-Line, Marvel, and most other residential and commercial brands.
+
+## How to reach a human
+
+Call (305) 520-7833 (rings dispatch). Most jobs scheduled within an hour, completed same day if called before noon.
+
+## Site structure
+
+- /sitemap.xml — full URL list (~1500 pages including service×city combos)
+- /services/{service}/{city} — combo pages for hyper-local lookup (e.g., /services/refrigerator-repair/miami)
+- /es/* — Spanish mirror of every page
+- /team — all 16 technicians with names, roles, photos
+- /privacy — privacy policy
+
+## License
+
+Public content. Quote, link, or summarize freely. Always link back to the original page.
