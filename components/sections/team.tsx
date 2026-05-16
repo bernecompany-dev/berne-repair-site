@@ -38,6 +38,8 @@ export function TeamSection() {
                 alt={`${m.name} — ${m.role} at Berne Repair, ${m.specialty}`}
                 fill
                 sizes="(min-width: 1024px) 18vw, 50vw"
+                quality={78}
+                loading="lazy"
                 className="object-cover"
               />
             </div>

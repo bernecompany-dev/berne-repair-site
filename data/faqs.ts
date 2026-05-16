@@ -43,6 +43,69 @@ export const GENERAL_FAQS: FAQ[] = [
   },
 ];
 
+export const GENERAL_FAQS_ES: FAQ[] = [
+  {
+    question: "¿Cuánto cuesta una visita técnica?",
+    answer:
+      "$59. Cubre el viaje y un diagnóstico completo. Si decide proceder con la reparación, esos $59 se aplican al costo total.",
+  },
+  {
+    question: "¿Ofrecen servicio el mismo día?",
+    answer:
+      "Sí. Llame antes del mediodía y en la mayoría de los casos tenemos un técnico en su puerta el mismo día — en Miami-Dade, Broward y Palm Beach.",
+  },
+  {
+    question: "¿Tienen licencia y seguro?",
+    answer:
+      "Sí. Berne Repair tiene licencia completa y seguro para operar en el estado de Florida. Tenemos seguro de responsabilidad general que protege su hogar y equipo.",
+  },
+  {
+    question: "¿Qué marcas reparan?",
+    answer:
+      "Todas las marcas residenciales y comerciales principales — incluyendo líneas premium como Sub-Zero, Wolf, Viking, Thermador, Miele y GE Monogram, además de marcas comunes como LG, Samsung, Whirlpool, KitchenAid y Bosch.",
+  },
+  {
+    question: "¿Qué tipo de garantía ofrecen?",
+    answer:
+      "Garantía de 90 días en mano de obra y piezas que instalamos. Si el mismo problema vuelve dentro de 90 días, regresamos sin costo.",
+  },
+  {
+    question: "¿Reparan electrodomésticos comerciales?",
+    answer:
+      "Sí. Servimos restaurantes, administradores de propiedades y retail — incluyendo trabajo previo con Target, Publix y Petco. Pregunte por contratos de volumen.",
+  },
+  {
+    question: "¿Qué métodos de pago aceptan?",
+    answer:
+      "Efectivo, todas las tarjetas de crédito principales, Apple Pay, Google Pay y Zelle. Enviamos recibo por correo después de cada trabajo.",
+  },
+  {
+    question: "¿El técnico tendrá la pieza en su camión?",
+    answer:
+      "Para las piezas más comunes — sí. Con 17 técnicos y camiones equipados para las marcas que más servimos, resolvemos una gran parte de los trabajos en la primera visita. Si hay que pedir una pieza, normalmente la tenemos en 1-3 días hábiles.",
+  },
+];
+
+export const SERVICE_FAQS_ES: Record<string, FAQ[]> = {
+  "refrigerator-repair": [
+    {
+      question: "Mi refrigerador está caliente pero el congelador está frío. ¿Qué pasa?",
+      answer:
+        "Lo más común es un ventilador del evaporador fallado, flujo de aire bloqueado, o problema con el sistema de descongelado. Nuestro técnico diagnosticará en sitio y cotizará antes de empezar.",
+    },
+    {
+      question: "¿Vale la pena reparar un Sub-Zero o debería reemplazarlo?",
+      answer:
+        "Casi siempre vale la pena reparar. Las unidades Sub-Zero están diseñadas para 20+ años de servicio — reemplazar una cuesta $10K-$20K, mientras que la mayoría de reparaciones quedan entre $200-$800. Le daremos una evaluación honesta.",
+    },
+    {
+      question: "¿Reparan refrigeradores empotrados y de columna?",
+      answer:
+        "Sí — incluyendo Sub-Zero empotrados, columnas integradas, Thermador Freedom, Miele MasterCool, y Viking Professional.",
+    },
+  ],
+};
+
 export const SERVICE_FAQS: Record<string, FAQ[]> = {
   "refrigerator-repair": [
     {

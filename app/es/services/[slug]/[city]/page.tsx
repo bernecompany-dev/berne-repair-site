@@ -16,7 +16,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
 import { CITIES, CITY_BY_SLUG } from "@/data/cities";
 import { COMPANY } from "@/data/company";
-import { GENERAL_FAQS, SERVICE_FAQS } from "@/data/faqs";
+import { GENERAL_FAQS_ES, SERVICE_FAQS_ES } from "@/data/faqs";
 import { serviceCityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import { comboPersonalCopy } from "@/lib/personal-copy";
 
@@ -72,8 +72,8 @@ export default async function ServiceCityPageES({ params }: Props) {
       question: `¿Reparan mi marca de ${service.seoNoun} en ${city.name}?`,
       answer: `Casi seguro que sí. Nuestros técnicos en ${city.name} están entrenados en ${service.brands.slice(0, 4).join(", ")} y todas las marcas principales. Llevamos piezas comunes en el camión para terminar en la primera visita.`,
     },
-    ...(SERVICE_FAQS[service.slug] ?? []),
-    ...GENERAL_FAQS.slice(0, 4),
+    ...(SERVICE_FAQS_ES[service.slug] ?? []),
+    ...GENERAL_FAQS_ES.slice(0, 4),
   ];
 
   const crumbs = [
@@ -164,8 +164,8 @@ export default async function ServiceCityPageES({ params }: Props) {
         <CityMap cityName={city.name} lat={city.geo.lat} lng={city.geo.lng} />
       </section>
 
-      <StatsStrip />
-      <ProcessSteps />
+      <StatsStrip locale="es" />
+      <ProcessSteps locale="es" />
 
       <section className="border-t border-border/60 bg-background/40">
         <div className="container-prose py-16 grid gap-10 lg:grid-cols-2">

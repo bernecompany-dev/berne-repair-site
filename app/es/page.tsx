@@ -41,10 +41,10 @@ export default function HomeES() {
   return (
     <>
       <Hero locale="es" />
-      <StatsStrip />
+      <StatsStrip locale="es" />
       <ServicesGrid />
-      <ProcessSteps />
-      <WhyUs />
+      <ProcessSteps locale="es" />
+      <WhyUs locale="es" />
       <Areas />
       <Brands />
       <TeamSection />

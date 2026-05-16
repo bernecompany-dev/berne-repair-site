@@ -13,7 +13,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { CITIES, CITY_BY_SLUG } from "@/data/cities";
 import { SERVICES } from "@/data/services";
 import { COMPANY } from "@/data/company";
-import { GENERAL_FAQS } from "@/data/faqs";
+import { GENERAL_FAQS_ES } from "@/data/faqs";
 import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import { cityPersonalCopy } from "@/lib/personal-copy";
 
@@ -65,7 +65,7 @@ export default async function CityPageES({ params }: Props) {
       question: `¿Qué tan rápido pueden llegar a ${city.name}?`,
       answer: `La mayoría de los trabajos en ${city.name} se programan en menos de una hora. Llame antes del mediodía y normalmente tenemos un técnico en su puerta el mismo día.`,
     },
-    ...GENERAL_FAQS.slice(0, 6),
+    ...GENERAL_FAQS_ES.slice(0, 6),
   ];
 
   return (
@@ -116,7 +116,7 @@ export default async function CityPageES({ params }: Props) {
         <CityMap cityName={city.name} lat={city.geo.lat} lng={city.geo.lng} />
       </section>
 
-      <StatsStrip />
+      <StatsStrip locale="es" />
 
       <section className="container-prose py-16">
         <div className="grid gap-4 sm:grid-cols-3">

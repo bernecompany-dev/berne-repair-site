@@ -1,39 +1,13 @@
 import { Clock3, Users, ShieldCheck, Wrench, Award, Truck } from "lucide-react";
+import { getDictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 
-const REASONS = [
-  {
-    icon: Clock3,
-    title: "Same-day service",
-    body: "Call before noon — we can have a technician at your door today across all three counties.",
-  },
-  {
-    icon: Users,
-    title: "17 technicians",
-    body: "Real bench, not a one-man show. Faster scheduling and the right specialist for the job.",
-  },
-  {
-    icon: Truck,
-    title: "Trucks stocked for premium brands",
-    body: "Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch — common parts ride in the truck.",
-  },
-  {
-    icon: Wrench,
-    title: "Honest diagnosis, $59 flat",
-    body: "Up-front pricing. Service call applied toward the repair if you say go ahead.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "90-day warranty",
-    body: "Parts and labor backed for 90 days. Same issue comes back, so do we — at no charge.",
-  },
-  {
-    icon: Award,
-    title: "Trusted by commercial clients",
-    body: "We service property management, restaurants, and retail — including Target, Publix, Petco.",
-  },
-];
+const ICONS = [Clock3, Users, Truck, Wrench, ShieldCheck, Award];
 
-export function WhyUs() {
+export function WhyUs({ locale = "en" }: { locale?: Locale }) {
+  const dict = getDictionary(locale);
+  const t = dict.whyUs;
+  const REASONS = dict.whyReasons.map((r, i) => ({ icon: ICONS[i] ?? Wrench, ...r }));
   return (
     <section
       id="why"
@@ -41,10 +15,8 @@ export function WhyUs() {
     >
       <div className="container-prose py-20 sm:py-28">
         <div className="max-w-2xl">
-          <span className="eyebrow">Why Berne Repair</span>
-          <h2 className="heading-section mt-3">
-            Built like a fleet operation — priced like a local.
-          </h2>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="heading-section mt-3">{t.title}</h2>
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

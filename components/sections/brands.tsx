@@ -1,9 +1,6 @@
 import Image from "next/image";
 import { BRANDS, PREMIUM_BRANDS } from "@/data/brands";
 
-type LogoStyle = "image" | "wordmark";
-type BrandSpec = { name: string; src?: string; style?: LogoStyle; cls?: string };
-
 const LOGOS: Record<string, string> = {
   Samsung: "/brands/samsung.svg",
   LG: "/brands/lg.svg",
@@ -13,22 +10,27 @@ const LOGOS: Record<string, string> = {
   Maytag: "/brands/maytag.svg",
 };
 
-// Distinctive wordmark styles for brands without logo images
-const WORDMARK_CLS: Record<string, string> = {
-  "Sub-Zero":  "font-serif tracking-tight",
-  Wolf:        "font-serif italic",
-  Viking:      "font-serif uppercase tracking-[0.18em]",
-  Thermador:   "tracking-tight font-light uppercase",
-  Miele:       "font-serif uppercase tracking-[0.24em]",
-  KitchenAid:  "tracking-tight italic",
-  Whirlpool:   "tracking-tight",
-  Frigidaire:  "uppercase tracking-[0.18em] font-light",
-  Electrolux:  "uppercase tracking-[0.18em]",
-  "Jenn-Air":  "uppercase tracking-tight",
-  "Speed Queen": "uppercase tracking-[0.14em]",
-  Scotsman:    "tracking-tight",
-  "U-Line":    "uppercase tracking-[0.18em]",
-  Marvel:      "uppercase tracking-tight font-semibold",
+/**
+ * Typographic wordmarks for brands without licensed logo assets.
+ * We use brand-appropriate typography + accent colors so each mark
+ * reads as a distinct, considered piece of branding — not a generic
+ * text list — while staying clear of trademarked logo art.
+ */
+const WORDMARK: Record<string, { text: string; cls: string; style?: React.CSSProperties }> = {
+  "Sub-Zero":  { text: "SUB·ZERO",    cls: "font-serif font-medium tracking-[0.24em]", style: { color: "#dfe6f2" } },
+  Wolf:        { text: "WOLF",        cls: "font-serif font-bold tracking-[0.18em]",   style: { color: "#e44a3b" } },
+  Viking:      { text: "VIKING",      cls: "font-serif font-bold tracking-[0.30em]",   style: { color: "#dfe6f2" } },
+  Thermador:   { text: "Thermador",   cls: "font-serif italic font-medium tracking-tight", style: { color: "#c98a4a" } },
+  Miele:       { text: "MIELE",       cls: "font-sans font-bold tracking-[0.20em]",    style: { color: "#9b0e10" } },
+  KitchenAid:  { text: "KitchenAid",  cls: "italic font-bold tracking-tight",          style: { color: "#cf2127" } },
+  Whirlpool:   { text: "whirlpool",   cls: "lowercase font-bold tracking-tight",       style: { color: "#dfe6f2" } },
+  Frigidaire:  { text: "FRIGIDAIRE",  cls: "font-bold tracking-[0.18em]",              style: { color: "#dfe6f2" } },
+  Electrolux:  { text: "Electrolux",  cls: "font-light tracking-[0.04em]",             style: { color: "#dfe6f2" } },
+  "Jenn-Air":  { text: "JENN-AIR",    cls: "font-bold tracking-[0.14em]",              style: { color: "#dfe6f2" } },
+  "Speed Queen": { text: "SPEED QUEEN", cls: "font-bold tracking-[0.10em]",            style: { color: "#dfe6f2" } },
+  Scotsman:    { text: "Scotsman",    cls: "font-serif font-medium tracking-tight",    style: { color: "#dfe6f2" } },
+  "U-Line":    { text: "U-LINE",      cls: "font-bold tracking-[0.18em]",              style: { color: "#dfe6f2" } },
+  Marvel:      { text: "MARVEL",      cls: "font-bold tracking-tight",                 style: { color: "#dfe6f2" } },
 };
 
 export function Brands() {
@@ -48,23 +50,27 @@ export function Brands() {
           {list.map((brand) => (
             <li
               key={brand}
-              className="flex h-16 items-center justify-center rounded-xl border border-border bg-card/40 px-3 transition-colors hover:border-brand/40 hover:bg-card/60"
-              title={brand}
+              className="flex h-16 items-center justify-center rounded-xl border border-border bg-card/40 px-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+              title={`Berne Repair services ${brand}`}
             >
               {LOGOS[brand] ? (
                 <Image
                   src={LOGOS[brand]}
-                  alt={`${brand} logo — Berne Repair services ${brand} appliances`}
+                  alt={`${brand} — Berne Repair services ${brand} appliances`}
                   width={84}
                   height={36}
-                  className="h-7 w-auto opacity-85 transition-opacity"
+                  loading="lazy"
+                  className="h-7 w-auto opacity-85"
                 />
-              ) : (
+              ) : WORDMARK[brand] ? (
                 <span
-                  className={`text-base font-semibold text-foreground/85 ${
-                    WORDMARK_CLS[brand] ?? "tracking-tight"
-                  }`}
+                  className={`text-base ${WORDMARK[brand].cls}`}
+                  style={WORDMARK[brand].style}
                 >
+                  {WORDMARK[brand].text}
+                </span>
+              ) : (
+                <span className="text-base font-semibold tracking-tight text-foreground/85">
                   {brand}
                 </span>
               )}

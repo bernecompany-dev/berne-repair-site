@@ -20,6 +20,8 @@ export function PersonalNote({
               alt="Eugene Berne, owner of Berne Repair"
               fill
               sizes="(min-width: 1024px) 120px, 96px"
+              quality={80}
+              loading="lazy"
               className="object-cover"
             />
           </div>

@@ -107,6 +107,8 @@ export default function TeamPage() {
                   alt={`${m.name}, ${m.role} at Berne Repair`}
                   fill
                   sizes="(min-width: 1024px) 30vw, 100vw"
+                  quality={78}
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>

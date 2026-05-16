@@ -15,7 +15,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { COMPANY } from "@/data/company";
-import { GENERAL_FAQS, SERVICE_FAQS } from "@/data/faqs";
+import { GENERAL_FAQS_ES, SERVICE_FAQS_ES } from "@/data/faqs";
 import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import { SERVICE_HERO_IMAGES } from "@/lib/service-images";
 import { servicePersonalCopy } from "@/lib/personal-copy";
@@ -57,7 +57,7 @@ export default async function ServicePageES({ params }: Props) {
   const service = SERVICE_BY_SLUG[slug];
   if (!service) notFound();
 
-  const faqs = [...(SERVICE_FAQS[service.slug] ?? []), ...GENERAL_FAQS.slice(0, 5)];
+  const faqs = [...(SERVICE_FAQS_ES[service.slug] ?? []), ...GENERAL_FAQS_ES.slice(0, 5)];
   const heroImages = SERVICE_HERO_IMAGES[service.slug];
   const personal = servicePersonalCopy(service, "es");
   const crumbs = [
@@ -125,7 +125,7 @@ export default async function ServicePageES({ params }: Props) {
         </div>
       </section>
 
-      <StatsStrip />
+      <StatsStrip locale="es" />
       <PersonalNote {...personal} />
 
       <section className="container-prose py-20 sm:py-24">
@@ -157,7 +157,7 @@ export default async function ServicePageES({ params }: Props) {
         </div>
       </section>
 
-      <ProcessSteps />
+      <ProcessSteps locale="es" />
 
       <section className="border-y border-border/60 bg-background/40">
         <div className="container-prose py-14">

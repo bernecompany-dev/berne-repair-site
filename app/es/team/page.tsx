@@ -81,7 +81,7 @@ export default function TeamPageES() {
         </div>
       </section>
 
-      <OwnerIntro />
+      <OwnerIntro locale="es" />
 
       <section id="team-grid" className="container-prose py-16 sm:py-20 scroll-mt-20">
         <div className="mb-10 max-w-2xl">
@@ -94,7 +94,7 @@ export default function TeamPageES() {
           {TEAM.map((m) => (
             <article key={m.slug} className="flex flex-col gap-4 rounded-3xl border border-border bg-card/50 p-6 transition-colors hover:border-brand/40">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-                <Image src={m.photo} alt={`${m.name}, ${m.role} en Berne Repair`} fill sizes="(min-width: 1024px) 30vw, 100vw" className="object-cover" />
+                <Image src={m.photo} alt={`${m.name}, ${m.role} en Berne Repair`} fill sizes="(min-width: 1024px) 30vw, 100vw" quality={78} loading="lazy" className="object-cover" />
               </div>
               <div className="space-y-1">
                 <h2 className="text-xl font-semibold tracking-tight">{m.name}</h2>
