@@ -128,6 +128,9 @@ export const es: Dictionary = {
     home: "Inicio",
     contactLink: "Contacto",
     sitemap: "Mapa del sitio",
+    privacy: "Privacidad",
+    trademarkDisclaimer:
+      "Los nombres y logos de marcas mostrados en este sitio son marcas registradas de sus respectivos propietarios. Berne Repair es una empresa de servicio independiente y no está afiliada, respaldada, patrocinada ni es un centro de servicio autorizado de ningún fabricante mencionado.",
   },
   statsStrip: {
     techs: "Técnicos a tiempo completo",

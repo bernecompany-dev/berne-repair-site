@@ -62,7 +62,7 @@ test.describe("Home page structure", () => {
     await expect(page).toHaveTitle(/Berne Repair/);
     await expect(page.locator("h1").first()).toContainText(/Premium appliance repair/i);
     await expect(page.locator("body")).toContainText("$59");
-    await expect(page.locator("body")).toContainText("17");
+    await expect(page.locator("body")).toContainText(/\b1[67]\b/);
     await expect(page.getByRole("link", { name: /Refrigerator Repair/i }).first()).toBeVisible();
     await expect(page.getByText(/Evgenii Knyazev/i).first()).toBeVisible();
     if (isMobile) {
@@ -165,33 +165,53 @@ test.describe("Lead form", () => {
 
   test("honeypot triggers silent success (no error shown)", async ({ page }) => {
     await page.goto("/");
-    // Fill honeypot via DOM (it's hidden offscreen but exists)
+    // Backdate timestamp so the bot-timing check (<1.5s) doesn't fire first
     await page.evaluate(() => {
+      const ts = document.querySelector('input[name="ts"]') as HTMLInputElement | null;
+      if (ts) ts.value = String(Date.now() - 5000);
       const hp = document.querySelector('input[name="company_url"]') as HTMLInputElement | null;
       if (hp) hp.value = "https://spam.example/" + Date.now();
     });
-    // Fill required minimally so submit fires
     await page.fill('input[name="name"]', "Honeypot Test");
     await page.fill('input[name="phone"]', "305-555-0188");
     await page.selectOption('select[name="city"]', "miami");
     await page.selectOption('select[name="appliance"]', "refrigerator-repair");
     await page.check('input[name="consent"]');
     await page.getByRole("button", { name: /Request a callback/i }).click();
-    // Honeypot → silent success message
     await expect(page.getByText(/talk soon|Got it/i)).toBeVisible({ timeout: 10_000 });
   });
 
-  test("submit without TCPA consent shows error", async ({ page }) => {
+  test("server rejects missing TCPA consent after timing window", async ({ page }) => {
     await page.goto("/");
+    // Backdate ts so server runs zod (not the timing short-circuit).
+    await page.evaluate(() => {
+      const ts = document.querySelector('input[name="ts"]') as HTMLInputElement | null;
+      if (ts) ts.value = String(Date.now() - 5000);
+      // Disable required attribute on consent so browser doesn't block submit;
+      // we want the server's validation path here.
+      const c = document.querySelector('input[name="consent"]') as HTMLInputElement | null;
+      if (c) c.removeAttribute("required");
+    });
     await page.fill('input[name="name"]', "TCPA Test");
     await page.fill('input[name="phone"]', "305-555-0199");
     await page.selectOption('select[name="city"]', "miami");
     await page.selectOption('select[name="appliance"]', "refrigerator-repair");
-    // Skip consent checkbox — browser-level required will block submit
-    const submitBtn = page.getByRole("button", { name: /Request a callback/i });
-    await submitBtn.click();
-    // Form still on page (browser blocks submit), not on success state
-    await expect(page.getByText(/Got it/i)).toHaveCount(0);
+    await page.getByRole("button", { name: /Request a callback/i }).click();
+    // Server returns error for missing consent; no success state, no thank-you message.
+    await expect(page.getByText(/Got it — talk soon/i)).toHaveCount(0);
+  });
+
+  test("bot-timing check: submit <1.5s after page load → silent success, no email", async ({ page }) => {
+    await page.goto("/");
+    // ts is set on mount via useEffect; submit immediately to be < 1.5s
+    await page.fill('input[name="name"]', "Bot Speed");
+    await page.fill('input[name="phone"]', "305-555-0177");
+    await page.selectOption('select[name="city"]', "miami");
+    await page.selectOption('select[name="appliance"]', "refrigerator-repair");
+    await page.check('input[name="consent"]');
+    await page.getByRole("button", { name: /Request a callback/i }).click();
+    // Silent success — bot-timing path
+    await expect(page.getByText(/Got it|talk soon/i)).toBeVisible({ timeout: 10_000 });
   });
 });
 

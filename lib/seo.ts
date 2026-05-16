@@ -26,13 +26,30 @@ const FOUNDING_YEAR = "2022";
  * profile goes live. Empty strings are filtered out at serialization.
  */
 const SAME_AS: string[] = [
-  // "https://www.google.com/maps/place/?q=place_id:XXXX",
-  // "https://www.yelp.com/biz/berne-repair",
-  // "https://www.facebook.com/BerneRepair",
-  // "https://www.bbb.org/us/fl/...",
-  // "https://www.instagram.com/bernerepair",
-  // "https://nextdoor.com/pages/berne-repair-...",
-].filter(Boolean);
+  // Alternate canonical domains the business operates under
+  "https://bernerepair.com/",
+  "https://normarepair.com/",
+  "https://berne-commercial.com",
+  // Social
+  "https://www.tiktok.com/@berne.repair",
+  "https://www.instagram.com/bernerepair/",
+  "https://www.facebook.com/bernerepair",
+  // Yelp listings (per DBA / market)
+  "https://www.yelp.com/biz/berne-repair-sarasota",
+  "https://www.yelp.com/biz/berne-repair-hallandale-beach-3",
+  "https://www.yelp.com/biz/berne-repair-fort-myers",
+  // Thumbtack
+  "https://www.thumbtack.com/fl/tampa/appliance-repair/norma-appliance-repair/service/485458498671689761",
+  "https://www.thumbtack.com/fl/naples/appliance-repair/berne-appliance-repair-naples-fort-myers/service/566337571507380237",
+  // Google Business Profiles
+  "https://share.google/sSDq9B0xar89bItSq",
+  "https://share.google/6GQjQFqxDvYeOWZIp",
+  "https://share.google/VCXebzL4hfcPcu3P5",
+  "https://share.google/gH0RfcApFEEwD6zpy",
+  "https://share.google/c2j6LHKohujVnmXge",
+  // Apple Maps
+  "https://maps.apple/p/7r_.dJpYdb5n6V",
+];
 
 const AGGREGATE = {
   "@type": "AggregateRating",

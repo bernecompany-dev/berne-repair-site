@@ -19,6 +19,7 @@ const SMS_BODIES: Record<Locale, string> = {
  */
 export function StickyCTA() {
   const [show, setShow] = useState(false);
+  const [formInView, setFormInView] = useState(false);
   const pathname = usePathname() ?? "/";
   const locale: Locale = pathname.startsWith("/es") ? "es" : "en";
   const d = getDictionary(locale).stickyCta;
@@ -39,12 +40,27 @@ export function StickyCTA() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Hide when the contact/lead-form is in view so the bar doesn't cover the submit button on mobile.
+  useEffect(() => {
+    const target =
+      document.getElementById("lead-form") ?? document.getElementById("contact");
+    if (!target) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setFormInView(entry.isIntersecting),
+      { rootMargin: "-10% 0px -10% 0px", threshold: 0.05 },
+    );
+    io.observe(target);
+    return () => io.disconnect();
+  }, [pathname]);
+
+  const visible = show && !formInView;
+
   return (
     <div
       aria-label="Quick actions"
       role="region"
       className={`pointer-events-none fixed inset-x-0 bottom-0 z-40 lg:hidden transition-[opacity,transform] duration-300 ${
-        show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+        visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
     >
       <div className="pointer-events-auto m-3 grid grid-cols-3 gap-1.5 rounded-2xl border border-border bg-card/95 p-1.5 shadow-[0_-10px_40px_-15px_oklch(0_0_0/0.5)] backdrop-blur-md">

@@ -9,6 +9,11 @@ import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
 import { rateLimit, globalRateLimit } from "@/lib/rate-limit";
 import type { LeadFormState } from "@/lib/lead-types";
 
+// NOTE: do NOT re-export initialLeadState from this "use server" file.
+// Server-action modules can ONLY export async functions; consts/objects
+// (even type-erased ones) blow up the action loader. Initial state lives
+// in lib/lead-types.ts.
+
 const PHONE_FORMAT_RE = /^[+()\-\d\s.]{7,}$/;
 const HEADER_INJECTION_RE = /[\r\n,;<>]/;
 const countDigits = (s: string) => (s.match(/\d/g)?.length ?? 0);
@@ -41,8 +46,6 @@ const LeadSchema = z.object({
   ts: z.string().optional().or(z.literal("")),
   locale: z.enum(["en", "es"]).optional().or(z.literal("")),
 });
-
-export const initialLeadState: LeadFormState = { status: "idle" };
 
 type Lang = "en" | "es";
 const M = {

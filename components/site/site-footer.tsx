@@ -70,15 +70,22 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-border/60">
-        <div className="container-prose flex flex-col items-start justify-between gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} {COMPANY.legalName} · DBA: {COMPANY.dbaNames.join(", ")}</p>
-          <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <Link href={localePath(locale, "/")} className="hover:text-foreground">{t.home}</Link>
-            <span aria-hidden>·</span>
-            <Link href={localePath(locale, "/#contact")} className="hover:text-foreground">{t.contactLink}</Link>
-            <span aria-hidden>·</span>
-            <Link href="/sitemap.xml" className="hover:text-foreground">{t.sitemap}</Link>
+        <div className="container-prose py-6 space-y-4">
+          <p className="text-[11px] leading-relaxed text-muted-foreground/80">
+            {t.trademarkDisclaimer}
           </p>
+          <div className="flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
+            <p>© {new Date().getFullYear()} {COMPANY.legalName} · DBA: {COMPANY.dbaNames.join(", ")}</p>
+            <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <Link href={localePath(locale, "/")} className="hover:text-foreground">{t.home}</Link>
+              <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/#contact")} className="hover:text-foreground">{t.contactLink}</Link>
+              <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/privacy")} className="hover:text-foreground">{t.privacy}</Link>
+              <span aria-hidden>·</span>
+              <Link href="/sitemap.xml" className="hover:text-foreground">{t.sitemap}</Link>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

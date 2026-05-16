@@ -126,6 +126,9 @@ export const en = {
     home: "Home",
     contactLink: "Contact",
     sitemap: "Sitemap",
+    privacy: "Privacy",
+    trademarkDisclaimer:
+      "Brand names and logos shown on this site are the trademarks of their respective owners. Berne Repair is an independent service company and is not affiliated with, endorsed by, sponsored by, or an authorized service center for any manufacturer listed.",
   },
   statsStrip: {
     techs: "Full-time technicians",
