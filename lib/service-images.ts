@@ -18,4 +18,5 @@ export const SERVICE_HERO_IMAGES: Record<string, CarouselImage[]> = {
   "microwave-repair": set("microwave-repair", "Microwave repair", 4),
   "dishwasher-repair": set("dishwasher-repair", "Dishwasher repair", 3),
   "air-duct-cleaning": set("air-duct-cleaning", "Air duct cleaning", 3),
+  "range-hood-repair": set("range-hood-repair", "Range hood repair", 4),
 };
