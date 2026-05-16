@@ -186,6 +186,26 @@ export const SERVICES: Service[] = [
     brands: ["InSinkErator", "Waste King", "Moen", "KitchenAid", "GE", "Whirlpool", "Frigidaire", "Kohler"],
   },
   {
+    slug: "range-hood-repair",
+    name: "Range Hood Repair",
+    shortName: "Range Hood",
+    seoNoun: "range hood",
+    description:
+      "Range hood fan, light, or controls dead? Same-day repair. $59 service call.",
+    longDescription:
+      "Wall-mount, island, under-cabinet, and downdraft range hood repair. Failed blowers, burnt-out LEDs, dead touch panels, broken dampers, loud bearings, grease-clogged ducts — we handle all of it. Premium hoods (Wolf, Viking, Thermador, Vent-A-Hood, Zephyr) get senior techs who know the proprietary control boards.",
+    commonIssues: [
+      "Fan won't turn on at any speed",
+      "Lights work but blower is dead",
+      "Loud rattling or grinding from the motor",
+      "Touch panel unresponsive or flickering",
+      "Damper stuck open or won't close",
+      "Weak suction or grease buildup",
+      "Burnt-out LED strip or halogen bulbs",
+    ],
+    brands: ["Wolf", "Viking", "Thermador", "Vent-A-Hood", "Zephyr", "Broan", "Best", "Faber", "Bosch", "KitchenAid", "GE", "Samsung"],
+  },
+  {
     slug: "wine-cooler-repair",
     name: "Wine Cooler Repair",
     shortName: "Wine Cooler",
