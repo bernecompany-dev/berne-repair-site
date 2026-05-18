@@ -20,6 +20,16 @@ import { GENERAL_FAQS_ES, SERVICE_FAQS_ES } from "@/data/faqs";
 import { serviceCityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import { comboPersonalCopy } from "@/lib/personal-copy";
 
+function haversine(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
 export function generateStaticParams() {
   const params: { slug: string; city: string }[] = [];
   for (const service of SERVICES) for (const city of CITIES) params.push({ slug: service.slug, city: city.slug });
@@ -33,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = SERVICE_BY_SLUG[slug];
   const city = CITY_BY_SLUG[citySlug];
   if (!service || !city) return {};
-  const title = `${service.name} en ${city.name}, FL · Visita técnica $${COMPANY.serviceCallPrice}`;
+  const title = `${service.shortName} en ${city.name} · Visita $${COMPANY.serviceCallPrice}`;
   const description = `Reparación de ${service.seoNoun} el mismo día en ${city.name}, condado de ${city.county}. Visita técnica $${COMPANY.serviceCallPrice}. Con licencia y asegurados. Sub-Zero, Wolf, Viking, Bosch y todas las marcas. Llame al ${COMPANY.phone.display}.`;
   return {
     title,
@@ -56,7 +66,12 @@ export default async function ServiceCityPageES({ params }: Props) {
   const city = CITY_BY_SLUG[citySlug];
   if (!service || !city) notFound();
 
-  const otherCities = CITIES.filter((c) => c.slug !== city.slug).slice(0, 6);
+  const otherCities = [...CITIES]
+    .filter((c) => c.slug !== city.slug)
+    .map((c) => ({ c, d: haversine(city.geo, c.geo) }))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 6)
+    .map((x) => x.c);
   const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 6);
 
   const comboFaqs = [

@@ -11,6 +11,8 @@ import { TEAM } from "@/data/team";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
+const TECH_COUNT = TEAM.length - 1;
+
 export const metadata: Metadata = {
   title: `El equipo de Berne Repair — ${COMPANY.socialProof.technicians} técnicos en el sur de Florida`,
   description: `Conozca a los ${COMPANY.socialProof.technicians} técnicos con licencia y al equipo de despacho de ${COMPANY.legalName}. Nombres reales, especialidades reales.`,
@@ -87,7 +89,7 @@ export default function TeamPageES() {
         <div className="mb-10 max-w-2xl">
           <span className="eyebrow">El equipo</span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Dieciséis técnicos que elegí personalmente.
+            {`${TECH_COUNT} técnicos que elegí personalmente.`}
           </h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

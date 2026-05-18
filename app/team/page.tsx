@@ -11,8 +11,10 @@ import { TEAM } from "@/data/team";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
+const TECH_COUNT = TEAM.length - 1; // minus the owner
+
 export const metadata: Metadata = {
-  title: "The Berne Repair Team — 17 South Florida Technicians",
+  title: `The Berne Repair Team — ${TECH_COUNT} South Florida Technicians`,
   description: `Meet the ${COMPANY.socialProof.technicians} licensed technicians and dispatch team at ${COMPANY.legalName}. Real names, real specialties — the same people customers ask for by name on Google reviews.`,
   alternates: {
     canonical: "/team",
@@ -99,7 +101,7 @@ export default function TeamPage() {
         <div className="mb-10 max-w-2xl">
           <span className="eyebrow">The crew</span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Sixteen technicians I hand-picked.
+            {`${TECH_COUNT} technicians I hand-picked.`}
           </h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

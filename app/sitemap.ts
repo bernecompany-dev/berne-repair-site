@@ -3,91 +3,90 @@ import { SERVICES } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+/**
+ * Static last-modified date — bump intentionally when content meaningfully
+ * changes. Avoids every-build churn that Google treats as low-signal noise.
+ */
+const LAST_MOD = new Date("2026-05-18");
 
+function bothLocales(path: string) {
+  return {
+    "en-US": `${SITE_URL}${path}`,
+    "es-US": `${SITE_URL}/es${path === "/" ? "" : path}`,
+    "x-default": `${SITE_URL}${path}`,
+  };
+}
+function esCounterpart(path: string) {
+  return {
+    "en-US": `${SITE_URL}${path}`,
+    "es-US": `${SITE_URL}/es${path === "/" ? "" : path}`,
+    "x-default": `${SITE_URL}${path}`,
+  };
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/`,
-      lastModified: now,
+      lastModified: LAST_MOD,
       changeFrequency: "weekly",
       priority: 1,
-      alternates: { languages: { "es-US": `${SITE_URL}/es` } },
+      alternates: { languages: bothLocales("/") },
     },
     {
       url: `${SITE_URL}/es`,
-      lastModified: now,
+      lastModified: LAST_MOD,
       changeFrequency: "weekly",
       priority: 0.95,
-      alternates: { languages: { "en-US": `${SITE_URL}/` } },
+      alternates: { languages: bothLocales("/") },
     },
   ];
 
-  const services: MetadataRoute.Sitemap = SERVICES.flatMap((s) => [
-    {
-      url: `${SITE_URL}/services/${s.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-      alternates: { languages: { "es-US": `${SITE_URL}/es/services/${s.slug}` } },
-    },
-    {
-      url: `${SITE_URL}/es/services/${s.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-      alternates: { languages: { "en-US": `${SITE_URL}/services/${s.slug}` } },
-    },
-  ]);
+  const services: MetadataRoute.Sitemap = SERVICES.flatMap((s) => {
+    const p = `/services/${s.slug}`;
+    return [
+      { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.9, alternates: { languages: esCounterpart(p) } },
+      { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
+    ];
+  });
 
-  const areas: MetadataRoute.Sitemap = CITIES.flatMap((c) => [
-    {
-      url: `${SITE_URL}/areas/${c.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-      alternates: { languages: { "es-US": `${SITE_URL}/es/areas/${c.slug}` } },
-    },
-    {
-      url: `${SITE_URL}/es/areas/${c.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-      alternates: { languages: { "en-US": `${SITE_URL}/areas/${c.slug}` } },
-    },
-  ]);
+  const areas: MetadataRoute.Sitemap = CITIES.flatMap((c) => {
+    const p = `/areas/${c.slug}`;
+    return [
+      { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.9, alternates: { languages: esCounterpart(p) } },
+      { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
+    ];
+  });
 
   const combos: MetadataRoute.Sitemap = [];
   for (const s of SERVICES) {
     for (const c of CITIES) {
+      const p = `/services/${s.slug}/${c.slug}`;
       combos.push({
-        url: `${SITE_URL}/services/${s.slug}/${c.slug}`,
-        lastModified: now,
+        url: `${SITE_URL}${p}`,
+        lastModified: LAST_MOD,
         changeFrequency: "monthly",
         priority: 0.8,
-        alternates: { languages: { "es-US": `${SITE_URL}/es/services/${s.slug}/${c.slug}` } },
+        alternates: { languages: esCounterpart(p) },
       });
       combos.push({
-        url: `${SITE_URL}/es/services/${s.slug}/${c.slug}`,
-        lastModified: now,
+        url: `${SITE_URL}/es${p}`,
+        lastModified: LAST_MOD,
         changeFrequency: "monthly",
         priority: 0.75,
-        alternates: { languages: { "en-US": `${SITE_URL}/services/${s.slug}/${c.slug}` } },
+        alternates: { languages: esCounterpart(p) },
       });
     }
   }
 
-  // Static index/team
-  const indexes: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/areas`, lastModified: now, changeFrequency: "monthly", priority: 0.7,
-      alternates: { languages: { "es-US": `${SITE_URL}/es/areas` } } },
-    { url: `${SITE_URL}/es/areas`, lastModified: now, changeFrequency: "monthly", priority: 0.65,
-      alternates: { languages: { "en-US": `${SITE_URL}/areas` } } },
-    { url: `${SITE_URL}/team`, lastModified: now, changeFrequency: "monthly", priority: 0.7,
-      alternates: { languages: { "es-US": `${SITE_URL}/es/team` } } },
-    { url: `${SITE_URL}/es/team`, lastModified: now, changeFrequency: "monthly", priority: 0.65,
-      alternates: { languages: { "en-US": `${SITE_URL}/team` } } },
-  ];
+  const statics: MetadataRoute.Sitemap = [
+    "/areas",
+    "/team",
+    "/privacy",
+  ].flatMap((p) => [
+    { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: esCounterpart(p) } },
+    { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },
+  ]);
 
-  return [...home, ...services, ...areas, ...combos, ...indexes];
+  return [...home, ...services, ...areas, ...combos, ...statics];
 }

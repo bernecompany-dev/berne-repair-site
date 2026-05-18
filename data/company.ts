@@ -33,7 +33,7 @@ export const COMPANY = {
     warranty: "90-day labor & parts warranty",
     sameDay: true,
   },
-  url: "https://berne-repair.com",
+  url: "https://www.berne-repair.com",
 } as const;
 
 export type Company = typeof COMPANY;

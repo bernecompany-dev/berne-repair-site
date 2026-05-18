@@ -92,6 +92,12 @@ const COMBO_OPENERS_ES: Array<(s: Service, c: City) => string> = [
     `Directo del dueño: ${c.name} es uno de los puntos más activos para nosotros. Tres técnicos viven a menos de veinte minutos de su zona, por eso "el mismo día" aquí sí significa el mismo día.`,
   (s, c) =>
     `${c.name} — sí, trabajamos en este zip todos los días. Reparaciones de ${s.shortName} especialmente. Soy Eugene, soy el dueño, y me lo tomo personal cuando un trabajo aquí no sale bien.`,
+  (s, c) =>
+    `Si está leyendo esto probablemente ya intentó lo obvio — desconectar, revisar el breaker. Eugene Berne aquí, fundador. Vemos las fallas reales de ${s.seoNoun} todos los días en ${c.name}. Déjeme ahorrarle la lectura.`,
+  (s, c) =>
+    `Honesto del que tiene el nombre en el camión. ${s.seoNoun} en ${c.name} cuesta entre $150-$600 la mayoría de las veces. Si alguien en el condado de ${c.county} le cotiza cuatro cifras por un arreglo básico, pida una segunda opinión.`,
+  (s, c) =>
+    `Habla el dueño. La razón por la que listo ciudades como ${c.name} individualmente no es SEO — es para que sepa que tengo técnicos que viven cerca de usted. Los trabajos de ${s.shortName} en esta zona van siempre a los mismos tres muchachos.`,
 ];
 
 const COMBO_BODIES_ES: Array<(s: Service, c: City) => string> = [
@@ -103,12 +109,22 @@ const COMBO_BODIES_ES: Array<(s: Service, c: City) => string> = [
     `Dos cosas que siempre le digo a los clientes de ${c.name} sobre ${s.seoNoun}: primero, no espere — entre más espera, más caro sale. Segundo, pida el número de pieza OEM en la factura. Siempre lo damos.`,
   (s, c) =>
     `Tiempos reales en ${c.name}: llama antes del mediodía → técnico el mismo día. Llama después de las 4 PM → mañana temprano. Fines de semana corremos con menos personal, pero el mismo día sigue siendo posible para emergencias.`,
+  (s, c) =>
+    `Si tiene equipo premium — Sub-Zero, Wolf, Thermador, Miele — mando a un técnico senior. Esas unidades tienen detalles que el manufacturero no pone en el manual.`,
+  (s, c) =>
+    `La parte que nadie más le dice: a veces ${s.seoNoun} no vale la pena repararlo. Si la unidad tiene 12+ años y la falla es el compresor o la tarjeta principal, se lo digo por teléfono antes de salir.`,
+  (s, c) =>
+    `Los barrios donde más veo ${s.seoNoun} en ${c.name}: ${c.neighborhoods.slice(0, 3).join(", ")}. Edificios antiguos tienden a tener unidades antiguas, así que más trabajo de sistema sellado y eléctrico.`,
+  (s, c) =>
+    `Sobre la garantía. 90 días, piezas y mano de obra que tocamos. Si el mismo síntoma regresa dentro de esa ventana, la próxima visita es por nuestra cuenta.`,
 ];
 
 const COMBO_CLOSERS_ES: Array<(s: Service, c: City) => string> = [
   () => `Llame o llene el formulario — ambos me llegan a mí. — Eugene`,
   () => `El camino más fácil: el botón de llamar. Suena en despacho. — E.B.`,
   () => `Hablamos pronto — y gracias por considerarnos. — Eugene Berne`,
+  () => `Leo cada formulario que llega. Mientras más rápido lo manda, más rápido lo veo. — Eugene`,
+  () => `Si ${"{service}"} en ${"{city}"} es lo que necesita hoy, está a un toque. — E.B.`,
 ];
 
 // ---- Spanish service templates ----

@@ -7,7 +7,7 @@ import { Phone, Mail, Clock, ShieldCheck } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { COMPANY } from "@/data/company";
 import { SERVICES } from "@/data/services";
-import { PRIORITY_CITIES } from "@/data/cities";
+import { CITIES, PRIORITY_CITIES } from "@/data/cities";
 import { BRANDS } from "@/data/brands";
 import { getDictionary } from "@/lib/dictionary";
 import { localePath, type Locale } from "@/lib/i18n";
@@ -17,8 +17,8 @@ export function SiteFooter() {
   const locale: Locale = pathname.startsWith("/es") ? "es" : "en";
   const t = getDictionary(locale).footer;
   const cityLinkMore = locale === "es"
-    ? "Ver todas las 64 ciudades →"
-    : "All 60+ cities →";
+    ? `Ver las ${CITIES.length} ciudades →`
+    : `All ${CITIES.length} cities →`;
 
   return (
     <footer className="mt-24 border-t border-border/60 bg-background">

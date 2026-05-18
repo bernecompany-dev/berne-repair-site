@@ -41,14 +41,15 @@ const SAME_AS: string[] = [
   // Thumbtack
   "https://www.thumbtack.com/fl/tampa/appliance-repair/norma-appliance-repair/service/485458498671689761",
   "https://www.thumbtack.com/fl/naples/appliance-repair/berne-appliance-repair-naples-fort-myers/service/566337571507380237",
-  // Google Business Profiles
+  // Google Business Profiles (share.google redirects; resolve to canonical
+  // /maps/place URLs when you have time to click each)
   "https://share.google/sSDq9B0xar89bItSq",
   "https://share.google/6GQjQFqxDvYeOWZIp",
   "https://share.google/VCXebzL4hfcPcu3P5",
   "https://share.google/gH0RfcApFEEwD6zpy",
   "https://share.google/c2j6LHKohujVnmXge",
   // Apple Maps
-  "https://maps.apple/p/7r_.dJpYdb5n6V",
+  "https://maps.apple.com/p/7r_.dJpYdb5n6V",
 ];
 
 const AGGREGATE = {
@@ -219,10 +220,15 @@ export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": absoluteUrl(`/services/${service.slug}#service`),
     name: service.name,
     serviceType: service.name,
     provider: { "@id": BUSINESS_ID },
-    areaServed: CITIES.map((c) => c.name),
+    areaServed: CITIES.map((c) => ({
+      "@type": "City",
+      name: c.name,
+      address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: "FL", addressCountry: "US" },
+    })),
     description: service.longDescription,
     url: absoluteUrl(
       locale === "es" ? `/es/services/${service.slug}` : `/services/${service.slug}`,

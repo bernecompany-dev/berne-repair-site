@@ -31,6 +31,16 @@ import {
   absoluteUrl,
 } from "@/lib/seo";
 
+function haversine(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
 export function generateStaticParams() {
   const params: { slug: string; city: string }[] = [];
   for (const service of SERVICES) {
@@ -49,7 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = CITY_BY_SLUG[citySlug];
   if (!service || !city) return {};
 
-  const title = `${service.name} in ${city.name}, FL · $${COMPANY.serviceCallPrice} Service Call`;
+  // Short enough to survive SERP truncation (<60 chars on the longest combos).
+  const title = `${service.shortName} Repair in ${city.name} · $${COMPANY.serviceCallPrice}`;
   // Vary description openings by (slug, city) so 700+ combos aren't near-identical.
   const seed = (service.slug + city.slug).split("").reduce((a, ch) => (a + ch.charCodeAt(0)) | 0, 0);
   const openers = [
@@ -87,7 +98,14 @@ export default async function ServiceCityPage({ params }: Props) {
   const city = CITY_BY_SLUG[citySlug];
   if (!service || !city) notFound();
 
-  const otherCities = CITIES.filter((c) => c.slug !== city.slug).slice(0, 6);
+  // Sort nearby cities by haversine distance — surfaces the actually-closest
+  // cities first instead of the array order from data/cities.ts.
+  const otherCities = [...CITIES]
+    .filter((c) => c.slug !== city.slug)
+    .map((c) => ({ c, d: haversine(city.geo, c.geo) }))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 6)
+    .map((x) => x.c);
   const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 6);
 
   const comboFaqs = [
