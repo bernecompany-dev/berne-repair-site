@@ -19,8 +19,8 @@ function rateLimit({ key, limit, windowMs }) {
 const PHONE_FORMAT_RE = /^[+()\-\d\s.]{7,}$/;
 const HEADER_INJECTION_RE = /[\r\n,;<>]/;
 const countDigits = (s) => (s.match(/\d/g)?.length ?? 0);
-const CITY_SLUGS = ["miami", "boca-raton", "parkland", "jupiter"];
-const APPLIANCE_SLUGS = ["other", "refrigerator-repair", "washer-repair", "dryer-repair"];
+const CITY_SLUGS = ["", "miami", "boca-raton", "parkland", "jupiter"];
+const APPLIANCE_SLUGS = ["", "other", "refrigerator-repair", "washer-repair", "dryer-repair"];
 
 const LeadSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80)
@@ -29,8 +29,8 @@ const LeadSchema = z.object({
     .regex(PHONE_FORMAT_RE, "Please enter a valid phone number")
     .refine((v) => countDigits(v) >= 10, "Please enter a 10-digit US phone"),
   email: z.string().trim().email().refine((v) => !HEADER_INJECTION_RE.test(v), "Invalid email").optional().or(z.literal("")),
-  city: z.enum(CITY_SLUGS, { message: "Please choose a city" }),
-  appliance: z.enum(APPLIANCE_SLUGS, { message: "Please choose an appliance" }),
+  city: z.enum(CITY_SLUGS).optional().or(z.literal("")),
+  appliance: z.enum(APPLIANCE_SLUGS).optional().or(z.literal("")),
   brand: z.string().trim().max(60).optional().or(z.literal("")),
   description: z.string().trim().max(2000).optional().or(z.literal("")),
   consent: z.literal("on", { message: "Please agree to be contacted about your request" }),
@@ -117,16 +117,20 @@ test("10-digit international format accepted", () => {
   eq(r.status, "success", "status");
 });
 
-test("invalid city slug -> errors.city (enum guard)", () => {
-  const r = submitLead({ ...good, city: "atlantis" }, "10.0.0.7");
-  eq(r.status, "error", "status");
-  assert(r.errors?.city, "expected errors.city");
+test("city omitted -> success (city is optional now)", () => {
+  const r = submitLead({ ...good, city: "" }, "10.0.0.7");
+  eq(r.status, "success", "status");
 });
 
-test("invalid appliance slug -> errors.appliance (enum guard)", () => {
-  const r = submitLead({ ...good, appliance: "spaceship" }, "10.0.0.8");
+test("appliance omitted -> success (appliance is optional now)", () => {
+  const r = submitLead({ ...good, appliance: "" }, "10.0.0.8");
+  eq(r.status, "success", "status");
+});
+
+test("invalid city slug -> errors.city (still enum-guarded if provided)", () => {
+  const r = submitLead({ ...good, city: "atlantis" }, "10.0.0.7b");
   eq(r.status, "error", "status");
-  assert(r.errors?.appliance, "expected errors.appliance");
+  assert(r.errors?.city, "expected errors.city");
 });
 
 test("header injection in name -> errors.name", () => {

@@ -111,12 +111,11 @@ export function LeadForm({
             id={`${formId}-city`}
             name="city"
             defaultValue={values.city ?? defaultCity ?? ""}
-            required
             aria-invalid={!!errors.city}
             aria-describedby={errId("city")}
             className={inputCls(errors.city)}
           >
-            <option value="" disabled>{d.fields.cityPlaceholder}</option>
+            <option value="">{d.fields.cityPlaceholder}</option>
             {CITIES.map((c) => (
               <option key={c.slug} value={c.slug}>{c.name} ({c.county})</option>
             ))}
@@ -127,12 +126,11 @@ export function LeadForm({
             id={`${formId}-appliance`}
             name="appliance"
             defaultValue={values.appliance ?? defaultAppliance ?? ""}
-            required
             aria-invalid={!!errors.appliance}
             aria-describedby={errId("appliance")}
             className={inputCls(errors.appliance)}
           >
-            <option value="" disabled>{d.fields.appliancePlaceholder}</option>
+            <option value="">{d.fields.appliancePlaceholder}</option>
             {SERVICES.map((s) => (
               <option key={s.slug} value={s.slug}>{s.shortName}</option>
             ))}

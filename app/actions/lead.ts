@@ -18,8 +18,8 @@ const PHONE_FORMAT_RE = /^[+()\-\d\s.]{7,}$/;
 const HEADER_INJECTION_RE = /[\r\n,;<>]/;
 const countDigits = (s: string) => (s.match(/\d/g)?.length ?? 0);
 
-const CITY_SLUGS = CITIES.map((c) => c.slug) as [string, ...string[]];
-const APPLIANCE_SLUGS = ["other", ...SERVICES.map((s) => s.slug)] as [string, ...string[]];
+const CITY_SLUGS = ["", ...CITIES.map((c) => c.slug)] as [string, ...string[]];
+const APPLIANCE_SLUGS = ["", "other", ...SERVICES.map((s) => s.slug)] as [string, ...string[]];
 
 const LeadSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80)
@@ -34,8 +34,8 @@ const LeadSchema = z.object({
     .refine((v) => !HEADER_INJECTION_RE.test(v), "Invalid email")
     .optional()
     .or(z.literal("")),
-  city: z.enum(CITY_SLUGS, { message: "Please choose a city" }),
-  appliance: z.enum(APPLIANCE_SLUGS, { message: "Please choose an appliance" }),
+  city: z.enum(CITY_SLUGS).optional().or(z.literal("")),
+  appliance: z.enum(APPLIANCE_SLUGS).optional().or(z.literal("")),
   brand: z.string().trim().max(60).optional().or(z.literal("")),
   description: z.string().trim().max(2000).optional().or(z.literal("")),
   /** TCPA: explicit opt-in for calls/SMS. Required to submit. */
@@ -123,9 +123,11 @@ export async function submitLead(
     };
   }
 
-  const { name, phone, email, city, appliance, brand, description } = parsed.data;
-  const cityName = CITY_BY_SLUG[city]?.name ?? city;
-  const applianceName = SERVICE_BY_SLUG[appliance]?.name ?? appliance;
+  const { name, phone, email, brand, description } = parsed.data;
+  const city = parsed.data.city ?? "";
+  const appliance = parsed.data.appliance ?? "";
+  const cityName = city ? CITY_BY_SLUG[city]?.name ?? city : "—";
+  const applianceName = appliance ? SERVICE_BY_SLUG[appliance]?.name ?? appliance : "—";
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM ?? "Berne Repair Leads <onboarding@resend.dev>";
