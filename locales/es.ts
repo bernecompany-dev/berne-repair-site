@@ -131,6 +131,19 @@ export const es: Dictionary = {
     privacy: "Privacidad",
     trademarkDisclaimer:
       "Los nombres y logos de marcas mostrados en este sitio son marcas registradas de sus respectivos propietarios. Berne Repair es una empresa de servicio independiente y no está afiliada, respaldada, patrocinada ni es un centro de servicio autorizado de ningún fabricante mencionado.",
+    divisionsTitle: "Otras divisiones de Berne",
+    divisions: [
+      {
+        href: "https://bernerepair.com/",
+        name: "Berne Appliance Repair",
+        desc: "Servicio residencial general en el Sur de Florida",
+      },
+      {
+        href: "https://www.berne-commercial.com/",
+        name: "Berne Commercial Repair",
+        desc: "Restaurantes, producción, hoteles, administración de propiedad",
+      },
+    ],
   },
   statsStrip: {
     techs: "Técnicos a tiempo completo",

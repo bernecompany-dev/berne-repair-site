@@ -105,6 +105,12 @@ export function organizationJsonLd() {
     url: SITE_URL,
     logo: absoluteUrl("/og.png"),
     sameAs: SAME_AS,
+    parentOrganization: {
+      "@type": "Organization",
+      "@id": "https://bernerepair.com/#organization",
+      name: "Berne Appliance Repair",
+      url: "https://bernerepair.com/",
+    },
     subOrganization: { "@id": BUSINESS_ID },
   };
 }

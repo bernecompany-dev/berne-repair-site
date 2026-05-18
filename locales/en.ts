@@ -129,6 +129,19 @@ export const en = {
     privacy: "Privacy",
     trademarkDisclaimer:
       "Brand names and logos shown on this site are the trademarks of their respective owners. Berne Repair is an independent service company and is not affiliated with, endorsed by, sponsored by, or an authorized service center for any manufacturer listed.",
+    divisionsTitle: "Other Berne divisions",
+    divisions: [
+      {
+        href: "https://bernerepair.com/",
+        name: "Berne Appliance Repair",
+        desc: "General residential service across South Florida",
+      },
+      {
+        href: "https://www.berne-commercial.com/",
+        name: "Berne Commercial Repair",
+        desc: "Restaurants, production, hotels, property management",
+      },
+    ],
   },
   statsStrip: {
     techs: "Full-time technicians",

@@ -69,6 +69,31 @@ export function SiteFooter() {
         </FooterCol>
       </div>
 
+      <div className="border-t border-border/60 bg-muted/30">
+        <div className="container-prose py-8">
+          <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            {t.divisionsTitle}
+          </h3>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {t.divisions.map((d) => (
+              <a
+                key={d.href}
+                href={d.href}
+                rel="noopener"
+                className="group flex flex-col gap-1 rounded-lg border border-border/60 bg-background/60 p-4 transition-colors hover:border-brand/40"
+              >
+                <span className="text-sm font-semibold text-foreground group-hover:text-brand">
+                  {d.name} →
+                </span>
+                <span className="text-xs leading-relaxed text-muted-foreground">
+                  {d.desc}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="border-t border-border/60">
         <div className="container-prose py-6 space-y-4">
           <p className="text-[11px] leading-relaxed text-muted-foreground/80">
