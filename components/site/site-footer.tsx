@@ -5,6 +5,7 @@ import { Children } from "react";
 import { usePathname } from "next/navigation";
 import { Phone, Mail, Clock, ShieldCheck } from "lucide-react";
 import { Logo } from "@/components/site/logo";
+import { SocialIcons } from "@/components/site/social-icons";
 import { COMPANY } from "@/data/company";
 import { SERVICES } from "@/data/services";
 import { CITIES, PRIORITY_CITIES } from "@/data/cities";
@@ -90,6 +91,9 @@ export function SiteFooter() {
                 </span>
               </a>
             ))}
+          </div>
+          <div className="mt-6 border-t border-border/60 pt-6">
+            <SocialIcons locale={locale} />
           </div>
         </div>
       </div>
