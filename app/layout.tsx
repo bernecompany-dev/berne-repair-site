@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { StickyCTA } from "@/components/site/sticky-cta";
+import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import { LangSync } from "@/components/site/lang-sync";
 import { JsonLd } from "@/components/site/json-ld";
 import { MetaPixel } from "@/components/site/meta-pixel";
@@ -80,6 +81,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <StickyCTA />
+        <WhatsAppFab />
         <JsonLd data={[organizationJsonLd(), localBusinessJsonLd(), websiteJsonLd()]} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
         <MetaPixel />
