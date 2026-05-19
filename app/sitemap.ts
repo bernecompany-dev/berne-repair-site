@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SERVICES } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
+import { publishedArticles } from "@/lib/blog/articles";
 
 /**
  * Static last-modified date — bump intentionally when content meaningfully
@@ -88,5 +89,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },
   ]);
 
-  return [...home, ...services, ...areas, ...combos, ...statics];
+  const blogIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: LAST_MOD,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+  ];
+
+  const blogPosts: MetadataRoute.Sitemap = publishedArticles().map((a) => ({
+    url: `${SITE_URL}/blog/${a.slug}`,
+    lastModified: a.updatedAt ?? a.publishedAt,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...home, ...services, ...areas, ...combos, ...statics, ...blogIndex, ...blogPosts];
 }
