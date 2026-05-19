@@ -15,6 +15,7 @@ export function absoluteUrl(path = "/") {
 
 const BUSINESS_ID = absoluteUrl("/#business");
 const ORG_ID = absoluteUrl("/#organization");
+const FOUNDER_ID = absoluteUrl("/#founder");
 
 /** Primary service-area centroid, shifted slightly north to cover Jupiter. */
 const PRIMARY_GEO = { lat: 26.1, lng: -80.15 };
@@ -105,6 +106,8 @@ export function organizationJsonLd() {
     url: SITE_URL,
     logo: absoluteUrl("/og.png"),
     sameAs: SAME_AS,
+    founder: { "@id": FOUNDER_ID },
+    foundingDate: "2015",
     parentOrganization: {
       "@type": "Organization",
       "@id": "https://bernerepair.com/#organization",
@@ -112,6 +115,27 @@ export function organizationJsonLd() {
       url: "https://bernerepair.com/",
     },
     subOrganization: { "@id": BUSINESS_ID },
+  };
+}
+
+/**
+ * Standalone Person schema for Eugene Bernitsky, founder of the Berne
+ * family of brands (Berne Appliance Repair, Berne Repair, Berne Commercial
+ * Repair). Emit on the homepage only — Google stitches via @id from any
+ * page that references "founder": { "@id": "...#founder" }.
+ */
+export function founderJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": FOUNDER_ID,
+    name: "Eugene Bernitsky",
+    jobTitle: "Founder & CEO",
+    worksFor: { "@id": ORG_ID },
+    sameAs: [
+      "https://bernerepair.com/",
+      "https://berne-commercial.com/",
+    ],
   };
 }
 

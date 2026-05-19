@@ -13,7 +13,7 @@ import { CTABand } from "@/components/sections/cta-band";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { JsonLd } from "@/components/site/json-ld";
-import { faqJsonLd, imageGalleryJsonLd, absoluteUrl } from "@/lib/seo";
+import { faqJsonLd, imageGalleryJsonLd, founderJsonLd, absoluteUrl } from "@/lib/seo";
 import { GENERAL_FAQS_ES } from "@/data/faqs";
 import { getDictionary } from "@/lib/dictionary";
 
@@ -53,7 +53,7 @@ export default function HomeES() {
       <FAQSection faqs={GENERAL_FAQS_ES} />
       <Contact locale="es" />
       <CTABand locale="es" />
-      <JsonLd data={[faqJsonLd(GENERAL_FAQS_ES, "es"), imageGalleryJsonLd()]} />
+      <JsonLd data={[faqJsonLd(GENERAL_FAQS_ES, "es"), imageGalleryJsonLd(), founderJsonLd()]} />
     </>
   );
 }

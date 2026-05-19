@@ -13,7 +13,7 @@ import { CTABand } from "@/components/sections/cta-band";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { JsonLd } from "@/components/site/json-ld";
-import { faqJsonLd, imageGalleryJsonLd, absoluteUrl } from "@/lib/seo";
+import { faqJsonLd, imageGalleryJsonLd, founderJsonLd, absoluteUrl } from "@/lib/seo";
 import { GENERAL_FAQS } from "@/data/faqs";
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ export default function Home() {
       <FAQSection faqs={GENERAL_FAQS} />
       <Contact />
       <CTABand />
-      <JsonLd data={[faqJsonLd(GENERAL_FAQS), imageGalleryJsonLd()]} />
+      <JsonLd data={[faqJsonLd(GENERAL_FAQS), imageGalleryJsonLd(), founderJsonLd()]} />
     </>
   );
 }
