@@ -108,7 +108,11 @@ export function SiteFooter() {
             <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <Link href={localePath(locale, "/")} className="hover:text-foreground">{t.home}</Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/#contact")} className="hover:text-foreground">{t.contactLink}</Link>
+              <Link href={localePath(locale, "/contact")} className="hover:text-foreground">{t.contactLink}</Link>
+              <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/request-dispatch")} className="hover:text-foreground">Request dispatch</Link>
+              <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/family")} className="hover:text-foreground">The family</Link>
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/privacy")} className="hover:text-foreground">{t.privacy}</Link>
               <span aria-hidden>·</span>

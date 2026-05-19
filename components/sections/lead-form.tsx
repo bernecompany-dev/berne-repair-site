@@ -137,31 +137,39 @@ export function LeadForm({
             <option value="other">{d.fields.other}</option>
           </select>
         </Field>
-        <Field id={`${formId}-brand`} label={d.fields.brandOptional} error={errors.brand} errId={errId("brand")}>
-          <input
-            id={`${formId}-brand`}
-            type="text" name="brand" list={`${formId}-brands`}
-            defaultValue={values.brand}
-            className={inputCls(errors.brand)}
-            placeholder={d.fields.brandPlaceholder}
-          />
-          <datalist id={`${formId}-brands`}>
-            {BRANDS.map((b) => <option key={b} value={b} />)}
-          </datalist>
-        </Field>
       </div>
 
-      <Field id={`${formId}-description`} label={d.fields.description} error={errors.description} errId={errId("description")} className="mt-4">
-        <textarea
-          id={`${formId}-description`}
-          name="description" rows={4}
-          defaultValue={values.description}
-          aria-invalid={!!errors.description}
-          aria-describedby={errId("description")}
-          className={cn(inputCls(errors.description), "min-h-28 resize-y")}
-          placeholder={d.fields.descriptionPlaceholder}
-        />
-      </Field>
+      <details className="group mt-4 rounded-xl border border-border bg-background/30 open:bg-background/50">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-medium text-foreground/90 hover:text-foreground">
+          <span>Add brand / details (optional)</span>
+          <span className="text-xs text-muted-foreground transition-transform group-open:rotate-180" aria-hidden>▾</span>
+        </summary>
+        <div className="space-y-4 px-4 pb-4 pt-1">
+          <Field id={`${formId}-brand`} label={d.fields.brandOptional} error={errors.brand} errId={errId("brand")}>
+            <input
+              id={`${formId}-brand`}
+              type="text" name="brand" list={`${formId}-brands`}
+              defaultValue={values.brand}
+              className={inputCls(errors.brand)}
+              placeholder={d.fields.brandPlaceholder}
+            />
+            <datalist id={`${formId}-brands`}>
+              {BRANDS.map((b) => <option key={b} value={b} />)}
+            </datalist>
+          </Field>
+          <Field id={`${formId}-description`} label={d.fields.description} error={errors.description} errId={errId("description")}>
+            <textarea
+              id={`${formId}-description`}
+              name="description" rows={4}
+              defaultValue={values.description}
+              aria-invalid={!!errors.description}
+              aria-describedby={errId("description")}
+              className={cn(inputCls(errors.description), "min-h-28 resize-y")}
+              placeholder={d.fields.descriptionPlaceholder}
+            />
+          </Field>
+        </div>
+      </details>
 
       {/* TCPA explicit consent — required, unchecked by default (regulator requirement). */}
       <label className="mt-6 flex items-start gap-3 rounded-xl border border-border bg-background/40 p-4 cursor-pointer hover:bg-background/60">

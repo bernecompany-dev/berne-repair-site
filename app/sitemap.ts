@@ -83,6 +83,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const statics: MetadataRoute.Sitemap = [
     "/areas",
     "/team",
+    "/contact",
+    "/request-dispatch",
+    "/family",
     "/privacy",
   ].flatMap((p) => [
     { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: esCounterpart(p) } },
