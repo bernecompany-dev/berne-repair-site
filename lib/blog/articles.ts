@@ -1261,7 +1261,7 @@ For domestic luxury ranges (Wolf, Viking, Thermador), our standard service appli
     author: AUTHOR,
     readingMinutes: 7,
     topic: "sub-zero",
-    body: `A kitchen designer in Coral Gables called me to talk through a client's decision: Pro 48 or Pro 36 for a new build in the historic neighborhood. The kitchen had room for either. The cabinet maker had designed for both possibilities. The client wanted my honest take on service cost difference, capacity, and which one I'd put in my own kitchen. I spent forty minutes on the phone with that designer and her client. Here's the framework that conversation usually follows.
+    body: `A kitchen designer in Coral Gables called me to talk through a client's decision: Pro 48 or Pro 36 for a new build in the historic neighborhood. The kitchen had room for either. The cabinet maker had designed for both possibilities. The client wanted my honest take on service cost difference, capacity, and which one I'd put in my own kitchen. I spent forty minutes on the phone with that designer and her client. Here's the framework that conversation usually follows. In ten years of luxury-appliance service across Miami, I've watched these failures cluster around the same two or three parts.
 
 The Sub-Zero Pro 48 (current model PRO4850, predecessor PRO48) and Pro 36 (current PRO3650, predecessor PRO36) are both excellent. The choice between them isn't about quality — both are the best of their respective sizes. It's about capacity, service access, repair economics, and a few factors most buyers don't think about until five years in.
 
@@ -1301,7 +1301,7 @@ One service-relevant point owners often don't think about: the Pro 48's dual com
 
 For households that store medications, breast milk, or other items that can't tolerate any warming event, the Pro 48's redundancy is worth real money. For typical households, it's a minor benefit.
 
-## Kitchen design — the install width constraint
+## Kitchen design, the install width constraint
 
 The Pro 48 needs a 48 1/8 inch rough opening. The Pro 36 needs 36 1/8 inch. Cabinet design has to accommodate either.
 
@@ -1313,7 +1313,7 @@ Before signing a Pro 48 order in any condo install, get the exact crated dimensi
 
 In coastal South Florida homes, the Pro 48's dual compressors actually wear slightly more evenly than the Pro 36's single compressor. The reason is duty cycle: each Pro 48 compressor runs at a lower percentage of its rated load than the single Pro 36 compressor handling the equivalent thermal envelope. Lower duty cycle generally means longer life per component.
 
-This effect is small — maybe a 15 to 20% reduction in compressor stress per side — but it means the Pro 48's compressors usually outlast the Pro 36's single by a meaningful margin. Across our service records, Pro 36 compressors typically need replacement at year fifteen to seventeen; Pro 48 compressors often make twenty-plus years.
+This effect is small, maybe a 15 to 20% reduction in compressor stress per side, but it means the Pro 48's compressors usually outlast the Pro 36's single by a meaningful margin. Across our service records, Pro 36 compressors typically need replacement at year fifteen to seventeen; Pro 48 compressors often make twenty-plus years.
 
 ## Resale value
 
@@ -2205,7 +2205,7 @@ For non-Integrated built-in refrigerators (Thermador Freedom, JennAir Rise), our
     author: AUTHOR,
     readingMinutes: 6,
     topic: "thermador",
-    body: `A client in Manalapan called us about her Thermador PRD606REG range. Three of the six burners were lighting slowly — five to eight clicks each before flame caught — and the front-right burner had stopped lighting entirely. She'd cleaned the burner caps, scrubbed the igniters, and reseated everything. The pattern told the cause: coastal salt pitting on the ceramic spark insulators across multiple burners simultaneously. The repair was straightforward but it gave us a chance to talk about why salt-air damage on igniters happens the way it does, and what owners in oceanfront properties can do about it.
+    body: `A client in Manalapan called us about her Thermador PRD606REG range. Three of the six burners were lighting slowly — five to eight clicks each before flame caught — and the front-right burner had stopped lighting entirely. She'd cleaned the burner caps, scrubbed the igniters, and reseated everything. The pattern told the cause: coastal salt pitting on the ceramic spark insulators across multiple burners simultaneously. The repair was straightforward but it gave us a chance to talk about why salt-air damage on igniters happens the way it does, and what owners in oceanfront properties can do about it. In ten years of luxury-appliance service across Miami, I've watched these failures cluster around the same two or three parts.
 
 Thermador Professional ranges (PRD, PRG, PRL, and the older PG models) use spark igniters with ceramic insulators around the electrodes. In coastal South Florida, those ceramic surfaces pit and corrode in ways that don't happen in inland kitchens. The failure pattern is recognizable, the symptoms are consistent, and the fix is manageable if caught at the right time.
 
@@ -2273,7 +2273,7 @@ When pitted igniters create shorting paths, the spark module works harder and ru
 
 Spark module replacement runs $180 to $260 in parts plus labor (roughly 90 minutes). If you're already replacing multiple igniters, ask the tech to verify the module's condition with a spark output check before reassembly. Catching a marginal module during igniter replacement adds 15 minutes; finding out later means another full service call.
 
-## Manalapan, Palm Beach, Jupiter — coastal exposure ranking
+## Manalapan, Palm Beach, Jupiter, coastal exposure ranking
 
 Across our service area, the coastal exposure ranking from worst to best for ceramic salt pitting is roughly:
 
@@ -2287,7 +2287,7 @@ Across our service area, the coastal exposure ranking from worst to best for cer
 
 5. **Inland (5+ miles)**: Weston, Doral, Hialeah. Igniter replacement every 13 to 18 years, often beyond the unit's service life.
 
-The differential between oceanfront and inland is large enough that some buyers planning a coastal install actually reconsider the brand based on this kind of analysis. We don't usually recommend that — Thermador's other strengths outweigh the igniter wear issue — but it's worth knowing.
+The differential between oceanfront and inland is large enough that some buyers planning a coastal install actually reconsider the brand based on this kind of analysis. We don't usually recommend that, Thermador's other strengths outweigh the igniter wear issue, but it's worth knowing.
 
 ## Preventive maintenance
 
