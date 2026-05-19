@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
+  other: {
+    "facebook-domain-verification": "lfwrqrca4g3ex5peub7im3b56wytbt",
+  },
 };
 
 export const viewport: Viewport = {
