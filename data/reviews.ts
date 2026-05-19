@@ -97,8 +97,8 @@ export const REVIEWS: Review[] = [
  * Conservative — keeps it credible while growing review count over time.
  */
 export const REVIEW_AGGREGATE = {
-  ratingValue: 4.9,
-  reviewCount: 312,
+  ratingValue: 4.79,
+  reviewCount: 871,
   bestRating: 5,
   worstRating: 1,
 };
