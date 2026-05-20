@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Users, Wrench, ShieldCheck, BadgeDollarSign } from "lucide-react";
+import { Users, Wrench, ShieldCheck, BadgeDollarSign, ArrowRight } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { OwnerIntro } from "@/components/sections/owner-intro";
 import { JsonLd } from "@/components/site/json-ld";
 import { TEAM } from "@/data/team";
+import { BACK_OFFICE } from "@/data/team-bios";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, personJsonLd, SITE_URL } from "@/lib/seo";
 
 const TECH_COUNT = TEAM.length - 1; // minus the owner
 
@@ -36,6 +37,38 @@ export default function TeamPage() {
   // See lib/seo.ts → personJsonLd() for the full node shape (hasCredential,
   // knowsAbout, knowsLanguage, worksFor reference, sameAs, etc.).
   const peopleJsonLd = TEAM.map((m) => personJsonLd(m));
+
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/team#roster`,
+    name: "Berne Repair — Technician roster",
+    itemListOrder: "https://schema.org/ItemListUnordered",
+    numberOfItems: TEAM.length,
+    itemListElement: TEAM.map((m, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: absoluteUrl(`/team/${m.slug}`),
+      item: {
+        "@type": "Person",
+        "@id": absoluteUrl(`/team/${m.slug}#person`),
+        name: m.name,
+        jobTitle: m.role,
+        image: absoluteUrl(m.photo),
+      },
+    })),
+  };
+
+  const collectionPage = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE_URL}/team#collection`,
+    url: absoluteUrl("/team"),
+    name: "Berne Repair — Team",
+    isPartOf: { "@id": absoluteUrl("/#website") },
+    about: { "@id": absoluteUrl("/#organization") },
+    mainEntity: { "@id": `${SITE_URL}/team#roster` },
+  };
 
   return (
     <>
@@ -99,9 +132,10 @@ export default function TeamPage() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {TEAM.map((m) => (
-            <article
+            <Link
               key={m.slug}
-              className="flex flex-col gap-4 rounded-3xl border border-border bg-card/50 p-6 transition-colors hover:border-brand/40"
+              href={`/team/${m.slug}`}
+              className="group flex flex-col gap-4 rounded-3xl border border-border bg-card/50 p-6 transition-colors hover:border-brand/40"
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
@@ -111,20 +145,68 @@ export default function TeamPage() {
                   sizes="(min-width: 1024px) 30vw, 100vw"
                   quality={78}
                   loading="lazy"
-                  className="object-cover"
+                  className="object-cover transition-transform group-hover:scale-[1.02]"
                 />
               </div>
               <div className="space-y-1">
-                <h2 className="text-xl font-semibold tracking-tight">{m.name}</h2>
+                <h2 className="text-xl font-semibold tracking-tight group-hover:text-brand">{m.name}</h2>
                 <p className="text-xs uppercase tracking-[0.18em] text-brand">{m.role}</p>
                 <p className="text-sm text-muted-foreground">{m.specialty}</p>
               </div>
               {m.bio ? <p className="text-sm leading-relaxed text-foreground/85">{m.bio}</p> : null}
-              <div className="mt-auto flex items-center gap-2 border-t border-border/60 pt-3 text-xs text-muted-foreground">
-                <Wrench className="size-3.5" aria-hidden />
-                {m.years} years with Berne
+              <div className="mt-auto flex items-center justify-between border-t border-border/60 pt-3 text-xs text-muted-foreground">
+                <span className="flex items-center gap-2">
+                  <Wrench className="size-3.5" aria-hidden />
+                  {m.years} years with Berne
+                </span>
+                <span className="font-medium text-brand">Read bio →</span>
               </div>
-            </article>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section id="back-office" className="container-prose pb-16 sm:pb-20 scroll-mt-20">
+        <div className="mb-8 max-w-2xl">
+          <span className="eyebrow">Back office</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            The dispatch and operations team
+          </h2>
+          <p className="mt-3 text-base text-muted-foreground">
+            The technicians on the trucks are the front line. These five roles
+            are the back-end that keeps Berne dispatchable. Photos and names
+            being finalized — role descriptions are live now.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {BACK_OFFICE.map((m) => (
+            <Link
+              key={m.slug}
+              href={`/team/${m.slug}`}
+              className="group flex flex-col gap-4 rounded-3xl border border-border bg-card/30 p-6 transition-colors hover:border-brand/40"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
+                <Image
+                  src={m.photo}
+                  alt={`${m.role} at Berne Repair`}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-lg font-semibold tracking-tight group-hover:text-brand">
+                  {m.role}
+                </h3>
+                <p className="text-xs uppercase tracking-[0.18em] text-brand">
+                  Operations team
+                </p>
+              </div>
+              <div className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-brand">
+                Read role <ArrowRight className="size-3.5" aria-hidden />
+              </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -132,7 +214,7 @@ export default function TeamPage() {
       <Contact />
       <CTABand />
 
-      <JsonLd data={[...peopleJsonLd, breadcrumbJsonLd(crumbs)]} />
+      <JsonLd data={[...peopleJsonLd, itemList, collectionPage, breadcrumbJsonLd(crumbs)]} />
     </>
   );
 }

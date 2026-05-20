@@ -4,6 +4,8 @@ import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
 import { publishedArticles } from "@/lib/blog/articles";
 import { RESIDENTIAL_BRAND_SLUGS } from "@/lib/data/residential-brand-profiles";
+import { TEAM } from "@/data/team";
+import { BACK_OFFICE } from "@/data/team-bios";
 
 /**
  * Static last-modified date — bump intentionally when content meaningfully
@@ -126,6 +128,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const teamBios: MetadataRoute.Sitemap = [
+    ...TEAM.map((t) => t.slug),
+    ...BACK_OFFICE.map((b) => b.slug),
+  ].map((slug) => ({
+    url: `${SITE_URL}/team/${slug}`,
+    lastModified: LAST_MOD,
+    changeFrequency: "monthly" as const,
+    priority: 0.65,
+  }));
+
   return [
     ...home,
     ...services,
@@ -136,5 +148,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brandPages,
     ...blogIndex,
     ...blogPosts,
+    ...teamBios,
   ];
 }

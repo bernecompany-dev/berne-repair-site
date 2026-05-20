@@ -129,6 +129,8 @@ export function SiteFooter() {
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/about")} className="hover:text-foreground">About</Link>
               <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/team")} className="hover:text-foreground">Team</Link>
+              <span aria-hidden>·</span>
               <Link href={localePath(locale, "/contact")} className="hover:text-foreground">{t.contactLink}</Link>
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/request-dispatch")} className="hover:text-foreground">Request dispatch</Link>
