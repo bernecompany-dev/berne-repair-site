@@ -60,6 +60,18 @@ export type ResidentialBrandProfile = {
   serviceArea: string;
   /** Brand-specific FAQs (5-7) */
   faqs: ResidentialFAQ[];
+  /** Spanish localization. If absent, EN content is used as fallback. */
+  es?: {
+    teaser: string;
+    metaTitle: string;
+    metaDescription: string;
+    about: string;
+    equipment: ResidentialEquipment[];
+    failureModes: ResidentialFailureMode[];
+    whyBerne: string;
+    serviceArea: string;
+    faqs: ResidentialFAQ[];
+  };
 };
 
 // ---------------------------------------------------------------------------
@@ -199,6 +211,44 @@ const subZero: ResidentialBrandProfile = {
         "Whenever scheduling allows, yes. We keep a service history on each unit in our system, so even if a different tech goes back, they have your full record — what was replaced, what readings were logged, what the customer noted. For Sub-Zero relationships this matters.",
     },
   ],
+  es: {
+    teaser:
+      "La refrigeración built-in es lo que hacemos con más frecuencia. Columnas Sub-Zero, side-by-sides clásicas y built-ins BI — diagnosticados y reparados por técnicos que han reconstruido estas unidades suficiente tiempo para conocer los hábitos de la plataforma.",
+    metaTitle: "Reparación Sub-Zero · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación Sub-Zero el mismo día en Miami-Dade, Broward y Palm Beach. Built-ins, columnas, BI-36, 648PRO. Licenciados, EPA-608, garantía de 90 días.",
+    about:
+      "Sub-Zero es la marca que tocamos más que cualquier otra en el segmento built-in. Las side-by-sides clásicas (632, 642, 685), la línea BI built-in (BI-30, BI-36, BI-42, BI-48), la serie de columnas integradas (IC-30, IC-24, IC-27) y las unidades viejas PRO 600-series son tickets estándar para nuestro equipo. El clima del Sur de Florida es duro con estos compresores — la humedad carga el sistema dual-refrigeration, los coils del condensador se ensucian rápido en aire salino, y los homeowners que dejan acumular polvo en el grille frontal usualmente nos llaman primero por el lado fresh-food tibio. Diagnosticamos en la plataforma, no por adivinar: sistemas dual-evap significan que un lado tibio no siempre es compresor — la mitad del tiempo es el motor del evap fan en el compartimento afectado, un defrost terminator, o un relé de control board que dejó de switchear el loop secundario. Cargamos los gauges correctos (R-134a y R-600a, porque la Designer Series moderna se movió a isobutano), y nuestros técnicos están EPA-608 certified para el trabajo de sealed-system que muchos talleres no pueden tocar legalmente.",
+    equipment: [
+      { series: "Clásicas 600-series (632 / 642 / 685)", description: "Side-by-side built-ins de finales de los '90 a mediados de los 2000. Todavía en servicio en muchas cocinas de Coral Gables y Pinecrest — motores de condenser fan, evap fans, calentadores de defrost y empaques de door cassette son la lista usual." },
+      { series: "Línea BI built-in (BI-30, BI-36, BI-42, BI-48)", description: "La plataforma built-in actual — all-fridge de 36 pulgadas, French door de 48 pulgadas, variantes BI-36UFD y BI-48SD. Dual-refrigeration, dos compresores, evap fans separados por compartimento. Control boards (generación 715549) y reemplazo de módulo de ice maker son comunes." },
+      { series: "Columnas integradas Designer (IC-24, IC-27, IC-30)", description: "Columnas de refrigerador y freezer integradas flush-mount. Fallas del calentador anti-condensación, alineación de bisagra después de que la cabinetry asienta, y el swap dual-compresor en IC-30 más viejas son lo que vemos más." },
+      { series: "Pro 648 / 632 PRO", description: "Built-ins Pro Series — 648PRO es la unidad de 48 pulgadas dual-refrigeration con interior stainless. Cycling de compresor post-firmware-update, fallas del módulo de ice maker y reemplazo de solenoide de water valve son los temas regulares." },
+      { series: "Undercounter (UC-15, UC-24, 700-series drawers)", description: "Cajones de refrigerador undercounter y beverage centers. Sellos malos en empaques de cajón, compresor short-cycling y fallas de control board en la generación 700BCI vieja." },
+      { series: "Wine storage (424, 427, 430)", description: "Unidades de wine single y dual-zone — falla de motor de ventilador, drift de temperatura dual-zone y reemplazo de LED board en la línea 427 más nueva." },
+    ],
+    failureModes: [
+      { title: "Cycling de compresor 648PRO después de update de firmware", detail: "Lo vemos en unidades 648PRO que recibieron el update de control board de finales de los 2010s. Síntomas: compresor secundario ciclando cada 3-4 minutos, freezer manteniendo temp pero usando 40% más energía, fault 'PROBE' ocasional en el display. El fix es usualmente un reflash del control board más un termistor nuevo en el evap secundario — ambos tienen que hacerse juntos o regresa de inmediato." },
+      { title: "Reemplazo de módulo de ice maker BI-36", detail: "El módulo de ice maker interno en unidades BI-36 (y 685, 632) tiene un patrón de falla conocido alrededor de los 8-10 años — los dedos dejan de rotar, el water inlet no actúa, o el módulo hace corto y dispara el breaker del ice maker. Cargamos el módulo Sub-Zero OEM (no el reemplazo universal, que no habla correctamente con el control board) y el clip del arnés que siempre se quiebra durante el install." },
+      { title: "Falla de balero del motor del condenser fan 632 (~año 12)", detail: "El motor del condenser fan en la 632 original desgasta sus baleros alrededor de los 10-12 años en nuestro clima. Síntomas comienzan como chillido agudo atrás de la unidad, escalan a grille frontal caliente, luego food side tibio. Swap del motor OEM, limpieza de condensador a fondo, verificación de amp draw — listo." },
+      { title: "Stall de dual evap fan BI-48 en el lado freezer", detail: "El evap fan del freezer en unidades BI-48 se atora con escarcha en las puntas de la aspa cuando el ciclo del defrost heater es incompleto. Lo vemos cuando el defrost terminator se debilita — el heater corre, pero no suficiente tiempo. El fix es el terminator + un clear manual de escarcha + un check del fan. Salta el check del fan y estarás de vuelta en 6 meses." },
+      { title: "Circuito abierto del anti-sweat heater integrado IC-30", detail: "El calentador anti-condensación envuelto alrededor del frame de la puerta en columnas IC-30 se abre, y una vez que pasa, hay sweating en el borde del cabinet en nuestra humedad. Los clientes usualmente notan daño en cabinetry antes de notar que el heater está muerto. Diagnostique con multímetro en el arnés, reemplace el loom del heater — es un trabajo largo por el panel de acceso." },
+      { title: "Relé soldado en control board Designer 700TCI", detail: "Los control boards Designer 700TCI y 700BCI tienen un problema conocido donde el relé del compresor se suelda en posición cerrada. La unidad corre continuamente, congela todo, y la única forma de pararlo es sacar el breaker. Reemplazo de board es el único fix real — no recomendamos los boards rebuilt de terceros, fallan otra vez en un año." },
+      { title: "Fuga de water valve solenoid atrás de la unidad", detail: "En built-ins con through-the-door water, el water valve solenoid (pared trasera, accedido jalando la unidad hacia adelante) desarrolla un drip lento después de 7-9 años. Verá un baseboard húmedo antes de verlo dentro de la unidad. Reemplazo de la válvula, reemplazo del saddle valve en la pared si el homeowner tiene el barato, flush de la línea, y listo." },
+    ],
+    whyBerne:
+      "El trabajo Sub-Zero no es un side hustle para nosotros. Nuestros técnicos senior cada uno tienen cientos de tickets Sub-Zero registrados, y cargamos partes BI/PRO/IC comunes en el camión — control boards (generación 715549), módulos de ice maker, motores de condenser y evap fan, water valves, anti-condensation heaters y empaques de puerta en los tamaños más comunes. Estamos EPA-608 Universal certified para el trabajo de sealed-system, que es un requisito duro para cualquier taller Sub-Zero que toque el loop dual-refrigeration. Y porque somos un taller W-2 — no subs — el mismo técnico que diagnosticó su BI-48 el año pasado es el que regresamos si un tema relacionado aparece. Los built-ins son una relación larga, y el work record se queda con la unidad en nuestro sistema.",
+    serviceArea:
+      "Cubrimos hogares Sub-Zero desde Homestead al norte hasta Jupiter — Coral Gables, Pinecrest, Coconut Grove, Brickell, Miami Beach, Bal Harbour, Aventura, Hallandale, Fort Lauderdale, Boca Raton, Delray, Palm Beach y Wellington. Los built-ins están concentrados en esos vecindarios, así que ruteamos llamadas Sub-Zero al técnico más cercano a su ZIP code la mañana del despacho.",
+    faqs: [
+      { question: "¿Vale la pena reparar un Sub-Zero o debería reemplazar?", answer: "Casi siempre vale la pena reparar. Una BI-48 nueva corre $14K-$20K instalada; la gran mayoría de reparaciones que hacemos caen en el rango de $200-$900. Sub-Zero diseñó estas unidades para 20+ años de servicio — compresores, evap fans y control boards son las partes que se desgastan, y las reemplazamos. Le daremos una evaluación honesta si una unidad realmente no vale la pena salvar (raro — usualmente una fuga de sealed-system en una 600-series vieja)." },
+      { question: "¿Manejan trabajo de sealed-system en unidades dual-refrigeration?", answer: "Sí. Nuestros técnicos están EPA-608 Universal certified. Sacamos vacío, pesamos refrigerante y verificamos el loop dual-refrigeration con gauges apropiados — tanto R-134a como R-600a (isobutano) en unidades Designer más nuevas. Muchos talleres no pueden hacer este trabajo legalmente." },
+      { question: "¿Cuánto toma usualmente una reparación Sub-Zero?", answer: "La mayoría de trabajos son first-visit complete porque cargamos las partes BI/PRO/IC comunes en el camión — motores de ventilador, módulos de ice maker, control boards en dos generaciones, water valves, empaques. Si necesitamos una parte menos común (boards de especialidad 600-series viejos, empaques vintage), típicamente la tenemos en 2-3 días hábiles del distribuidor Sub-Zero." },
+      { question: "Mi BI-48 hace sonido de click y el lado de comida está tibio. ¿Cuál es la causa más probable?", answer: "En una BI-48 esa combinación usualmente apunta al relé del food-side compressor o al start device — el click es el relé tratando de engancharse, y el lado tibio es el compresor fallando arrancar. Menos común es el evap fan del food side trancado. Diagnosticamos con amp clamp + lectura de termistor en la primera visita y cotizamos antes de que entre cualquier parte." },
+      { question: "¿Atienden unidades de vino y cajones undercounter Sub-Zero?", answer: "Sí — cobertura completa. Wine 400-series (424, 427, 430), undercounter 700-series, las nuevas plataformas UC-15 y UC-24, y la línea PRO 248 wine más vieja. Cycling de compresor, drift dual-zone, motores de ventilador y fallas de LED board son los temas regulares." },
+      { question: "¿El mismo técnico manejará mi reparación si llamo otra vez después?", answer: "Cuando el scheduling lo permite, sí. Mantenemos historial de servicio en cada unidad en nuestro sistema, así que aunque un técnico diferente regrese, tienen su record completo — qué se reemplazó, qué lecturas se registraron, qué notó el cliente. Para relaciones Sub-Zero esto importa." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -328,6 +378,44 @@ const wolf: ResidentialBrandProfile = {
         "Yes. Wolf provides the LP conversion kit for each model, and our techs are licensed gas installers. We re-jet the burners, adjust the air shutter, swap the regulator, and verify with a manometer reading before sign-off.",
     },
   ],
+  es: {
+    teaser:
+      "Las estufas Wolf, rangetops y hornos dual-fuel están construidos para el largo plazo. Fallas de spark module, elementos de infrarrojo del broiler, control boards de dual-fuel — diagnosticamos en la plataforma y cargamos las partes OEM correctas.",
+    metaTitle: "Reparación Wolf Estufas y Hornos · Sur de Florida · $59",
+    metaDescription:
+      "Reparación de estufas Wolf, rangetops, hornos dual-fuel y convección en el Sur de Florida. El mismo día. Partes OEM. EPA-608. Garantía de 90 días.",
+    about:
+      "Wolf es la marca hermana de Sub-Zero — mismo parent, misma barra de calidad, mismo patrón de relación larga con el homeowner. Vemos estufas Wolf de gas (series DF dual-fuel, AG all-gas, GR all-gas residencial), los hornos de pared M Series (las plataformas MDO y SO más nuevas), rangetops Wolf, y los rangetops SRT clásicos contour-handle en muchas cocinas del Sur de Florida. Los trabajos más grandes son reemplazos de spark module en los rangetops (el módulo standalone es una parte conocida de desgaste alrededor del año 8-10), reemplazos del elemento infrarrojo del broiler en los hornos dual-fuel, fallas de control board dual-fuel, y swaps de motor del convection fan. También somos uno de los pocos talleres en Miami-Dade y Broward que trabajará en los hornos de vapor de convección Wolf (CSO) — tienen un generador de vapor separado con problemas de descalcificación y sensor de nivel de agua que requieren un approach específico. Las partes Wolf no siempre son next-day; mantenemos los spark modules, ignitors, elementos infrarrojos, control boards y sensores dual-fuel más comunes en el camión, y el resto lo sourceamos por la red de distribuidor Sub-Zero con típicamente 2-3 días.",
+    equipment: [
+      { series: "Estufa dual-fuel (DF304, DF364, DF484, DF606)", description: "Top de gas, horno eléctrico. Cuatro anchos comunes — 30, 36, 48 y 60 pulgadas. Control board dual-fuel, elemento de broiler de infrarrojo del horno, motor del convection fan y spark module del rangetop son los trabajos regulares." },
+      { series: "Estufa all-gas (GR304, GR364, GR484, GR606)", description: "Estufas todo gas. El ignitor del horno (la barra Norton glow-bar), termocoples y los orificios del dual-stack burner son los que tocamos más. Swaps de motor del convection fan en las variantes de convección." },
+      { series: "Rangetop / cooktop (SRT, RT, ICBSRT, contour-handle)", description: "Rangetops standalone, tanto el SRT clásico (contour handle) como la generación RT actual. Fallas de spark module, limpieza/reemplazo del ignitor de quemador, y el ensamble de la válvula de gas cuando un quemador no enciende." },
+      { series: "Horno de pared M Series (SO30, SO30CM, MDO30, DO30)", description: "Hornos de pared single y double M Series — el M Series actual (controles M-touch) y el E Series más viejo. Fallas de touch panel, burnout del elemento de convección, reemplazo de bisagra de puerta y el socket del temperature probe son comunes." },
+      { series: "Horno de vapor convección (CSO30)", description: "Horno de pared combi-steam. Descalcificación del generador de vapor, fallas del sensor de nivel de agua, reemplazo de empaque de puerta y fallas del control panel. Plataforma de especialidad — la mayoría de talleres no la toca." },
+      { series: "Warming drawer (WWD30)", description: "Warming drawer Wolf — falla de elemento, termostato y problemas del slide assembly en unidades más viejas." },
+    ],
+    failureModes: [
+      { title: "Fault de continuous-spark del spark module del rangetop", detail: "El spark module clásico del rangetop Wolf (SRT y RT temprano) desarrolla un fault donde un quemador chispea continuamente incluso con todas las knobs apagadas. Usualmente humedad entrando al módulo o un contacto del switch fallido. Reemplazamos el módulo y limpiamos los switches del quemador — ambos, no solo uno." },
+      { title: "DF484 dual-fuel sin calentar, falla de control board", detail: "Los boards DF484 (y DF364) dual-fuel desarrollan una falla de relé donde el elemento de bake no engancha. El display muestra que la temperatura está subiendo pero el elemento está frío. Reemplazo del board es el fix — Wolf soporta esta parte." },
+      { title: "Falla de bisagra de puerta del horno M Series", detail: "Las puertas de horno M Series son pesadas y las bisagras empiezan a sentirse flojas alrededor del año 7-8. Si lo dejas, eventualmente la puerta no cierra completamente y el sello se rompe. Reemplazamos bisagras en pares, nunca un solo lado." },
+      { title: "Burnout del elemento infrarrojo del broiler", detail: "El broiler infrarrojo en unidades DF y SO es parte de desgaste — la mayoría fallan entre años 6 y 10. Síntomas: el broiler no se pone rojo, la comida dora desparejo, o la unidad tira un F-code. Reemplazo directo, pero hay que verificar el tipo de elemento." },
+      { title: "Ruido y falla de balero del motor de convection fan", detail: "Los motores de convection fan se ponen ruidosos alrededor del año 9-12 — sonido grinding o chillido a velocidad alta. Baleros gastados. Reemplazamos el motor; mientras el panel trasero está afuera, aspiramos la cámara de convección e inspeccionamos el elemento." },
+      { title: "Fault de descalcificación CSO30, sensor de nivel de agua", detail: "Los hornos de vapor de convección necesitan descalcificación regular. Si se brincan, el sensor de nivel de agua se cubre con cal y lee incorrectamente — a veces muy bajo (el horno no corre), a veces muy alto (el horno inunda). Descalcificamos, reemplazamos el sensor y educamos al homeowner sobre el intervalo." },
+      { title: "Ignitor débil de estufa all-gas", detail: "Los hornos all-gas GR-series tienen un ignitor Norton-style glow-bar que se debilita alrededor del año 5-7. Síntomas: el horno toma 3-4 intentos de ignición para encender, o el lado de bake huele a gas antes de prender. Test de resistencia confirma. Reemplazar con OEM, no universal." },
+    ],
+    whyBerne:
+      "Wolf y Sub-Zero comparten parent, y los homeowners que poseen uno usualmente poseen ambos — así que tratamos Wolf de la misma forma: relación larga, partes reales, el mismo técnico de vuelta cuando el scheduling lo permite. Cargamos las partes Wolf de alta falla en el camión (spark modules, glow-bar igniters, elementos infrarrojos en specs comunes, bisagras, convection motors, sensores dual-fuel), estamos set up con el distribuidor Sub-Zero/Wolf para las partes que no están en el camión, y trabajaremos en las plataformas más duras (CSO steam oven, E Series wall ovens viejos) que la mayoría de talleres declinan. Nuestros técnicos son installers de gas appliance licenciados, lo que importa en trabajo de rangetop y estufa de gas.",
+    serviceArea:
+      "Los installs Wolf están cluster en los mismos vecindarios del Sur de Florida que Sub-Zero — Coral Gables, Pinecrest, Coconut Grove, Brickell, Miami Beach, Bal Harbour, Aventura, Sunny Isles, Hallandale, Fort Lauderdale, Las Olas, Boca, Delray, Palm Beach. Ruteamos llamadas Wolf a los mismos técnicos manejando Sub-Zero.",
+    faqs: [
+      { question: "¿Reparan hornos dual-fuel Wolf?", answer: "Sí — todas las generaciones DF (DF304, DF364, DF484, DF606), boards actuales y viejos. Trabajos más comunes son reemplazos de control board, elementos de broiler infrarrojo y motores de convection fan. Cargamos las partes de alta falla en el camión." },
+      { question: "Mi rangetop Wolf sigue chispeando con las knobs apagadas.", answer: "Eso casi siempre es el spark module — humedad entró o un switch del quemador falló. Reemplazamos el módulo (OEM) e inspeccionamos los seis switches del quemador; si uno es intermitente, reemplazar solo el módulo es un fix de corto plazo. Hacemos ambos." },
+      { question: "¿Atienden el horno de vapor de convección Wolf (CSO)?", answer: "Sí. La plataforma CSO necesita approach específico — descalcificación del generador de vapor, diagnóstico del sensor de nivel de agua, inspección del empaque de puerta. La mayoría de appliance shops no la toca." },
+      { question: "¿Cuánto duran los appliances Wolf?", answer: "Wolf construye para 15-20+ años de uso residencial. Las partes de desgaste (igniters, elementos infrarrojos, bisagras, motores de convection, spark modules) se reemplazan una o dos veces en esa vida útil. El chassis y los quemadores son esencialmente permanentes." },
+      { question: "¿El ignitor de horno Wolf es universal?", answer: "No — los glow-bar igniters Wolf están spec por modelo y siempre instalamos OEM. Los igniters universales caben físicamente pero jalan un amperage distinto y no disparan el circuito de safety correctamente." },
+      { question: "¿Pueden re-jet una estufa Wolf para propano?", answer: "Sí. Wolf provee el LP conversion kit para cada modelo, y nuestros técnicos son installers de gas licenciados. Re-jeteamos los quemadores, ajustamos el air shutter, hacemos swap del regulador y verificamos con manómetro antes del sign-off." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -468,6 +556,46 @@ const viking: ResidentialBrandProfile = {
         "Yes, both platforms. Control boards, drain pumps, door cables, water valves. Viking dishwashers use a different control board class than Bosch or KitchenAid — we carry the common ones.",
     },
   ],
+  es: {
+    teaser:
+      "Estufas Viking pro-style, refrigeradores built-in, lavavajillas y rangetops. 5-series y 7-series más viejas y la plataforma Tuscany más nueva — sabemos qué falla en cada generación.",
+    metaTitle: "Reparación Viking · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación de estufa Viking, refrigerador, lavavajillas y cooktop en Miami-Dade, Broward, Palm Beach. Pro-style 5-series, 7-series, Tuscany. EPA-608.",
+    about:
+      "Viking construyó la categoría de estufa residencial pro-style, y vemos muchas en el Sur de Florida — desde la 5-series original (VGR548, VGR530) que todavía corre en cocinas de 20 años hasta la 7-series Professional actual y la Tuscany más nueva. Las plataformas tienen patrones de falla significativamente distintos: el spark module 5-series y el simmer burner signature de Viking tienen quirks de diseño de décadas, los control panels 7-series son un punto débil conocido en unidades instaladas antes del rediseño 2018, y la serie Tuscany usa un motor de convection fan distinto que en realidad ha sido más confiable que la plataforma vieja. También manejamos refrigeración Viking (built-ins VCBB, la línea FreeStanding French door y la línea Designer column), lavavajillas Viking (FDW y las plataformas VDB30 más nuevas), y rangetops Viking incluyendo la línea pro open-burner. Trabajo de sealed-system en refrigeración Viking requiere EPA-608 — nuestros técnicos están certified.",
+    equipment: [
+      { series: "Pro-Style range — 5-series (VGR530, VGR548, VGSC560, VDSC530)", description: "All-gas (VGR), dual-fuel (VDSC) y variantes self-clean. La plataforma pro-style original. Spark modules, orificios del simmer-burner, ignitors del horno y el ensamble de safety valve son los trabajos comunes." },
+      { series: "Pro-Style 7-series (VGR7361, VGR7488, VDR7488)", description: "Generación pro-style actual. Fallas del touch control panel (pre-2018), convection fan, bisagras de puerta del horno, y la conversión LP cuando los homeowners cambian de combustible." },
+      { series: "Tuscany (TVDR4801, TVDR6601)", description: "Dual-fuel y all-gas residencial mid-tier. Plataforma de convección más nueva, control panel rediseñado. Empaque de puerta y elemento de bake son los items de servicio más comunes." },
+      { series: "Refrigerador built-in (VCBB, FDB, FCB)", description: "Built-in side-by-side, French door y column. Compresor, motor del evap fan, defrost terminator, water valve. Trabajo de sealed-system donde se necesita." },
+      { series: "Columnas Designer (VRI, VFI)", description: "Columnas de refrigerador y freezer integradas — flush mount. Calentadores anti-condensación, alineación de bisagra, reemplazo de empaque." },
+      { series: "Lavavajillas (FDW, VDB30, RVDW)", description: "Lavavajillas Viking — control boards, ensambles de bomba de drenaje, resorte/cable de puerta y water inlet valve. Clase distinta de control board que Bosch/KitchenAid stock." },
+      { series: "Rangetop (VGRT, VRT)", description: "Rangetops pro-style con open burners. Spark module, orificio del quemador, reemplazo de knob/valve." },
+    ],
+    failureModes: [
+      { title: "Spark module 5-series chispeando continuo por humedad", detail: "El spark module 5-series está en una bahía apretada bajo el cooktop y la humedad del Sur de Florida lo alcanza. Síntoma: uno o más quemadores chispea con las knobs apagadas, especialmente después de una semana lluviosa. Secamos, inspeccionamos y reemplazamos el módulo si los contactos están picados. Los switches del quemador van en el mismo trabajo." },
+      { title: "Simmer burner VGR548 no se mantiene a low setting", detail: "El simmer burner VGR548 tiene un orificio delicado y un termocople que se sienta muy cerca de la flama. Después de años de uso el termocople se debilita y apaga el quemador apenas la válvula de gas se libera. Reemplazar el termocople, verificar limpieza del orificio, ajustar el low-flame stop." },
+      { title: "Falla del touch panel 7-series pre-2018", detail: "Las estufas 7-series pre-2018 tienen un tema conocido del control panel capacitive-touch donde el panel se vuelve no-responsivo en parches o registra ghost presses. Viking hizo un rediseño mid-2018. El fix es reemplazo del panel — pedimos vía distribuidor Viking, 3-5 días. No recomendamos los paneles rebuilt en eBay; fallan otra vez en un año." },
+      { title: "Falla de motor del condenser fan en refrigerador built-in VCBB", detail: "El compartimento del compresor VCBB corre más caliente que el equivalente Sub-Zero, y el motor del condenser fan se desgasta más temprano — usualmente año 8-11. Chillido agudo atrás, lado fresh-food tibio. Swap del motor OEM, limpieza del condensador, verificación de amp draw." },
+      { title: "Atasco del impulsor de bomba de drenaje (FDW)", detail: "Lavavajillas FDW tienen un impulsor de bomba de drenaje que se atora con debris duro — semillas de fruta, esquirlas de vidrio, ocasional clip plástico. Síntoma: tub mantiene agua, ciclo de drenaje es silencioso o zumba sin flujo. Sacamos la bomba, limpiamos el impulsor, verificamos rotación, y reemplazamos la bomba si el magneto está quebrado." },
+      { title: "Falla de resorte de bisagra de puerta del horno", detail: "Los resortes de bisagra en hornos Viking pro-style se desgastan y eventualmente dejan que la puerta se cierre sola con fuerza. Vemos resortes rotos alrededor del año 10-13. El reemplazo viene en pares (izquierdo + derecho) — reemplazos de un solo lado siempre regresan como queja." },
+      { title: "Anti-sweat heater abierto en columna Designer", detail: "Calentadores anti-condensación en columnas integradas VRI/VFI se rompen alrededor del año 9-12. El resultado es condensación en cabinetry que el homeowner usualmente atrapa antes del código de error. Reemplazo del calentador requiere desensamble parcial del frame de puerta — trabajo de unos 90 minutos." },
+      { title: "Corrosión de brass head en rangetop open-burner (hogares costeros)", detail: "Los brass heads open-burner en rangetops Viking se corroen en cocinas con aire salino (Sunny Isles, Bal Harbour, Key Biscayne). Heads picados causan irregularidad de flama. Limpiar si es leve, reemplazar si pesado — cargamos los heads comunes en el camión." },
+    ],
+    whyBerne:
+      "Viking tiene múltiples generaciones de plataforma con partes y patrones de falla significativamente distintos — un técnico genérico de 'pro range' obtendrá el diagnóstico mal en un trabajo de touch panel 7-series o un simmer burner 5-series. Nuestro equipo ha trabajado en Viking suficiente tiempo para saber qué plataforma tienes desde una foto del control panel, y cargamos las partes de alta falla: spark modules 5-series, harnesses de panel 7-series, termocoples del simmer burner, ignitors comunes, motores de convection, y condenser fans para la línea built-in. Somos installers de gas licenciados y EPA-608 certified.",
+    serviceArea:
+      "Las estufas Viking aparecen en todo el Sur de Florida — concentradas en Coral Gables, Pinecrest, Coconut Grove, Brickell, Miami Beach, Bal Harbour, Sunny Isles, Aventura, Fort Lauderdale, Las Olas, Boca Raton, Delray, Palm Beach y Wellington, pero atendemos Viking de Homestead a Jupiter en despacho estándar.",
+    faqs: [
+      { question: "¿Las estufas Viking todavía valen la pena reparar?", answer: "Casi siempre, sí — especialmente la 5-series y 7-series, que se construyeron para ser reconstruidas. Una estufa Viking pro-style nueva corre $9K-$15K; la mayoría de reparaciones que hacemos son $250-$900. El chassis y los quemadores duran décadas; las partes de desgaste se reemplazan una o dos veces en la vida útil." },
+      { question: "¿Cuál es el problema más común de estufa Viking?", answer: "En la 5-series, es el spark module (driven por humedad en la costa del Sur de Florida) y el termocople del simmer burner. En la 7-series, es el touch control panel en unidades pre-2018. En la Tuscany, es el elemento de bake y el empaque de puerta. Sabemos qué esperar solo del número de modelo." },
+      { question: "¿Reemplazan touch control panels Viking?", answer: "Sí. Pedimos paneles Viking-spec vía distribuidor — turnaround 3-5 días hábiles. No instalamos paneles rebuilt de terceros; su tasa de falla es alta." },
+      { question: "¿Mi Viking funcionará con propano en una casa costera de Florida?", answer: "Sí — Viking envía LP conversion kits para cada estufa y rangetop. Re-jeteamos los quemadores, hacemos swap del regulador, ajustamos el low-flame stop y verificamos con manómetro. Requerido para installs de gas appliance en Florida." },
+      { question: "¿Atienden la línea de refrigerador built-in Viking (VCBB)?", answer: "Sí — cobertura completa. Compresores, evap fans, sistemas de defrost, water valves, módulos de ice maker. EPA-608 certified para trabajo de sealed-system." },
+      { question: "¿Y los lavavajillas Viking — FDW y VDB?", answer: "Sí, ambas plataformas. Control boards, bombas de drenaje, cables de puerta, water valves. Los lavavajillas Viking usan una clase de control board distinta que Bosch o KitchenAid." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -608,6 +736,46 @@ const thermador: ResidentialBrandProfile = {
         "Yes. CIT induction cooktops have generator board and surface unit replacements available through BSH. Error codes (E22, E15) usually point to specific subassemblies, which makes diagnosis quick.",
     },
   ],
+  es: {
+    teaser:
+      "Thermador Pro Grand, Pro Harmony, cooktops Star Burner, refrigeración de columna Freedom y lavavajillas Sapphire. Plataforma común con Bosch y Gaggenau — conocemos los procedimientos de servicio BSH.",
+    metaTitle: "Reparación Thermador · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación Thermador Pro Grand, Pro Harmony, cooktop Star Burner, columna Freedom y lavavajillas Sapphire. Sur de Florida el mismo día. EPA-608.",
+    about:
+      "Thermador es parte de la familia BSH (junto con Bosch y Gaggenau), lo que significa que procedimientos de servicio, herramientas de diagnóstico y muchas partes se solapan. Vemos la línea Thermador completa en el Sur de Florida: estufas pro-style Pro Grand y Pro Harmony, cooktops de gas Star Burner, los cooktops de inducción, hornos de pared Masterpiece y Professional, la línea de refrigeración de columna Freedom, undercounter Freedom y el lavavajillas Sapphire. El Star Burner de Thermador — el patrón propietario de cinco puntas — tiene requerimientos específicos de cleaning y alineación del igniter que un técnico genérico frecuentemente obtiene mal. La línea Freedom column comparte plataforma con Gaggenau, y el lavavajillas Sapphire comparte generaciones de bomba de circulación y control board con Bosch. Nuestros técnicos cargan herramientas de diagnóstico BSH (el conector para acceso a service-mode), y estamos entrenados en la plataforma BSH a través de las tres líneas de marca. Las partes Thermador vienen por la red de distribuidor BSH — típicamente 2-3 días en cualquier cosa que no tengamos en stock.",
+    equipment: [
+      { series: "Estufa Pro Grand (PRD364, PRD486, PRD606)", description: "Pro Grand de 48, 60 y la vieja 36 pulgadas. Igniters Star Burner, control boards del horno (M Series), motores de convection fan y reemplazo de bisagra de puerta." },
+      { series: "Estufa Pro Harmony (PRG304, PRG364, PRG484)", description: "Pro-style de perfil más bajo — misma plataforma Star Burner que Pro Grand pero sin el back guard y módulo de grill. Igniter, harness del switch de ignición, elemento del horno y convection fan." },
+      { series: "Cooktop Star Burner (SGSXP, PCG, CIT)", description: "Cooktops de gas standalone (SGSXP, PCG) y cooktops de inducción (CIT). Cleaning del Star Burner, alineación del igniter, spark module y ensamble de surface-burner valve." },
+      { series: "Refrigeración de columna Freedom (T18, T24, T30, T36, T48)", description: "Columnas integradas de refrigerador y freezer — 18 a 48 pulgadas. Compresores, evap fan, condenser fan, calentadores anti-condensación, y el control board atrás del grille superior." },
+      { series: "Hornos de pared — Masterpiece y Professional (PO, PODMW, PODC)", description: "Unidades de pared single, double y combinación microondas/horno. Control panel (controles M Series), elementos de bake/broil, bisagras de puerta y el socket del meat probe." },
+      { series: "Lavavajillas Sapphire (DWHD650, DWHD770)", description: "Lavavajillas Sapphire star-shaped fully-integrated. Bomba de circulación, bomba de drenaje, control board, resorte/cable de puerta y reemplazo del Sapphire glow LED." },
+      { series: "Warming drawer (WD30, WDC30)", description: "Warming drawer slide-in — elemento, termostato, hardware de slide." },
+    ],
+    failureModes: [
+      { title: "Alineación del igniter Star Burner después de cleaning por homeowner", detail: "El Star Burner tiene cinco puntos de contacto del igniter y son sensibles a alineación. Cuando un homeowner pasa el burner cap por un ciclo de lavavajillas (que Thermador no recomienda), el cap se pandea ligeramente y el igniter ya no toca el cap correctamente. Síntoma: el quemador hace click pero no enciende. Realineación + reemplazo de cap si está pandeado — usualmente bajo una hora." },
+      { title: "Falla de balero de motor del convection fan Pro Grand", detail: "Los hornos de convección Pro Grand tienen un motor de fan que desgasta baleros alrededor del año 8-11. Síntoma: grinding ruidoso o chillido durante convection bake. Reemplazar el motor; mientras el back está afuera, inspeccionar el elemento de convección y la aspa del fan por cualquier grieta." },
+      { title: "Falla del control board del dispenser de ice/water Freedom column", detail: "Las columnas Freedom T36 con through-the-door water tienen un control board del dispenser separado atrás de la cara del dispenser. Falla alrededor del año 9-12, usualmente después de que una water valve ha estado fugando sobre él lentamente. Reemplazar el board, reemplazar la water valve, y verificar que el saddle valve en la pared no tenga drip lento." },
+      { title: "Capacitor de start de bomba de circulación Sapphire", detail: "Las bombas de circulación Sapphire (DWHD650/770) comparten una generación con Bosch 800 Series — y comparten la misma debilidad de capacitor de start. Síntoma: la bomba zumba pero no circula agua; el ciclo toma el tiempo completo y los platos salen sucios. Reemplazamos el capacitor, a veces la bomba completa." },
+      { title: "Respuesta intermitente del touch panel M Series", detail: "Los controles de horno de pared M Series tienen un tema conocido de sensibilidad del touch panel en la generación 2015-2018. Síntoma: algunos botones responden, otros no, o aparecen ghost presses. Reemplazo del panel es el fix — vía distribuidor BSH." },
+      { title: "Safety valve del horno Pro Harmony clickeando sin encender", detail: "El safety valve del horno Pro Harmony desarrolla un click sin abrir — oyes el relé, pero no hay flujo de gas al igniter del horno. Frecuentemente emparejado con un igniter débil que no jala suficiente corriente para disparar la válvula. Reemplazar el igniter (current spec, OEM), y verificar relé de válvula si el click persiste." },
+      { title: "Cooktop de inducción (CIT) código E22 falla del generator board", detail: "Los generator boards de inducción CIT tienen un fault E22 conocido (over-temp/generator fault) que apunta a un módulo de power específico en el board. Diagnosticamos con la interfaz de service-mode BSH, reemplazamos el generator board vía distribuidor BSH." },
+    ],
+    whyBerne:
+      "Thermador, Bosch y Gaggenau comparten una plataforma BSH — significando que las herramientas de diagnóstico, la interfaz de service-mode y muchos subensambles son comunes. Nuestros técnicos cargan el service connector BSH, están entrenados en la plataforma BSH, y tienen acceso directo al distribuidor de partes BSH. Cargamos partes de desgaste Thermador comunes en el camión (igniters Star Burner, harnesses M Series, capacitores de start de bomba Sapphire, calentadores anti-condensación de columna), y las partes menos comunes vienen en 2-3 días. Somos EPA-608 Universal certified para trabajo de sealed-system Freedom column, y installers de gas licenciados para trabajo de estufa Pro Grand y Pro Harmony.",
+    serviceArea:
+      "Las cocinas Thermador están cluster en Coral Gables, Pinecrest, Coconut Grove, Brickell, Miami Beach, Bal Harbour, Sunny Isles, Aventura, Fort Lauderdale, Boca Raton, Delray, Palm Beach y Wellington. Los installs Freedom column están distribuidos similarmente — ruteamos al técnico más cercano a su ZIP en despacho.",
+    faqs: [
+      { question: "¿Qué es un Star Burner y qué lo hace distinto de atender?", answer: "El Star Burner es el patrón propietario de cinco puntas de Thermador — da cobertura de flama más amplia y deja al quemador sentarse más bajo en el cooktop. En servicio, el cap del quemador y alineación del igniter importan más que en un quemador redondo estándar. Un cap mal alineado no enciende correctamente, y el igniter tiene que tocar el cap en un punto específico." },
+      { question: "¿Atienden la línea de refrigeración Freedom column?", answer: "Sí — cobertura completa en columnas T18 a T48. Compresores, evap fans, sistemas de defrost, water valves, control boards, calentadores anti-condensación. EPA-608 certified para trabajo de sealed-system." },
+      { question: "¿Thermador es lo mismo que Bosch?", answer: "Mismo parent (BSH), así que comparten procedimientos de servicio, herramientas de diagnóstico y muchos subensambles — pero las líneas de modelo son distintas. Lavavajillas Sapphire y Bosch 800 Series comparten una generación de bomba de circulación, por ejemplo. Atendemos todas las marcas BSH." },
+      { question: "Mi horno Pro Grand muestra un F-code. ¿Pueden diagnosticar remoto?", answer: "Los F-codes nos dan un punto de partida pero no diagnóstico completo. La mayoría de F-codes en hornos Thermador apuntan a temas de sensor o control-board, pero verificamos onsite con el BSH service connector para leer la historia completa de fault antes de cotizar partes." },
+      { question: "¿Cuánto toma usualmente una reparación de lavavajillas Sapphire?", answer: "First-visit complete en la mayoría de trabajos. Cargamos capacitores de start de bomba de circulación, bombas de drenaje, cables/resortes de puerta y control boards en las generaciones comunes. Partes menos comunes toman 2-3 días vía BSH." },
+      { question: "¿Pueden convertir una estufa Pro Grand de gas natural a propano?", answer: "Sí. BSH suministra el LP conversion kit por modelo — orificios de quemador, regulador, a veces un spec distinto de módulo de ignición. Nuestros técnicos son installers de gas licenciados, y verificamos la conversión con manómetro antes del sign-off." },
+      { question: "¿Y los cooktops de inducción — hay partes disponibles?", answer: "Sí. Los cooktops de inducción CIT tienen reemplazos de generator board y surface unit disponibles vía BSH. Códigos de error (E22, E15) usualmente apuntan a subensambles específicos, lo que hace el diagnóstico rápido." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -754,6 +922,47 @@ const miele: ResidentialBrandProfile = {
         "Yes, with Miele's stacking kit. We install and re-level the pair, and verify the door swings clear the cabinetry. Many Miele owners stack in laundry closets where space is tight.",
     },
   ],
+  es: {
+    teaser:
+      "La ingeniería alemana de Miele es engaño en costo: las máquinas duran 20+ años cuando se atienden correctamente. Lavavajillas G-series, lavadoras y secadoras W1/T1, MasterCool refrigeración, hornos H 7000 — la plataforma completa, con el Miele Service Tool.",
+    metaTitle: "Reparación Miele · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación Miele lavavajillas, W1 lavadora, T1 secadora, MasterCool refrigeración, hornos H 7000 y de vapor. Service Tool, partes OEM, EPA-608.",
+    about:
+      "Miele es el patrón de oro residencial — la única marca que en serio diseña para 20+ años de servicio. La plataforma Generation 7000 (G 7000 lavavajillas, H 7000 hornos de pared, hornos de vapor DG, MasterCool refrigeración KF/KS) es engineering-heavy, repair-intensive una vez que envejece, y crítica al homeowner que la compró. Trabajamos en la línea completa con el Miele Service Tool (requerido para fault-code reads, parámetros y firmware flashes en plataforma actual), partes OEM Miele vía distribuidor Miele USA, y técnicos senior entrenados específicamente en la plataforma. Vemos lavavajillas G-series con sus AutoOpen y AutoDos, lavadoras W1 y secadoras heat-pump T1, MasterCool side-by-sides y columnas, hornos de pared H 7000 con M Touch, hornos de vapor DG, y los sistemas de café CM/CVA — todos los cuales tienen modos de falla específicos del platform.",
+    equipment: [
+      { series: "Lavavajillas G 7000 / G 5000 / Futura", description: "Generación G 7000 actual con AutoOpen y AutoDos, plus G 5000 y Futura más viejos. Bomba de circulación, bomba de drenaje, actuador AutoOpen, panel M Touch, y los componentes AutoDos." },
+      { series: "Lavadora W1 / Secadora T1 (WWB, TWB, heat-pump)", description: "Pares de lavandería W1 y secadora T1 heat-pump. Bomba de drenaje, motor del tambor, evap coil cleaning en T1, panel de control y resorte/empaque de puerta." },
+      { series: "MasterCool refrigeración (KF 2911, KS 1801)", description: "Built-in side-by-sides y columnas. Compresores, evap fan motors, condenser fans, sistemas de defrost, water valves." },
+      { series: "Hornos de pared H 7000 / H 6000", description: "Single, double, y combi wall ovens con M Touch panel. Elementos de bake/broil, motor del convection fan, bisagras y panel M Touch." },
+      { series: "Horno de vapor (DG, DGC combi-steam)", description: "Hornos built-in de vapor y combi-steam. Descalcificación del generador de vapor, sensor de nivel de agua, empaque de puerta y panel M Touch." },
+      { series: "Sistema de café (CM, CVA, CM 7750)", description: "Máquinas de café bean-to-cup built-in y freestanding. Calibración del grinder, reemplazo de brew unit, descalcificación y cleaning del sistema de leche." },
+      { series: "Cooktop y range (KM, HR)", description: "Cooktops de inducción (KM 7000), cooktops de gas y la estufa pro-style HR. Generator boards en inducción, igniters en gas." },
+    ],
+    failureModes: [
+      { title: "Falla del actuador AutoOpen G 7000", detail: "La serie G 7000 tiene un feature AutoOpen que abre la puerta al final del ciclo para liberar vapor. El motor del actuador tiene un punto de desgaste conocido alrededor del año 4-6 — la puerta no abre, o abre y luego se traba. Reemplazar el actuador, re-flash del firmware del panel si la unidad no ha recibido el último update." },
+      { title: "Fuga de bomba de circulación G-series desde sello del impulsor", detail: "Las bombas de circulación G 5000 y Futura más viejas desarrollan una fuga lenta en el sello del eje del impulsor alrededor del año 7-10. La fuga va bajo el tub antes de aparecer en el kick panel frontal, así que el homeowner frecuentemente no la ve hasta daño en el piso de abajo. Reemplazo de bomba + inspección del base pan + check del sensor float-switch." },
+      { title: "Evaporador T1 heat-pump tapado con lint, ciclos largos", detail: "Las secadoras T1 (heat-pump) dependen de un coil de evaporador limpio para intercambio de calor. Incluso con el filtro de lint limpiado cada load, lint fino llega al evap y corta eficiencia del heat-pump. Síntoma: ciclos corren 50%+ más que normal. Sacamos el evap, lo limpiamos, verificamos función de bomba de drenaje. Trabajo de unas 2 horas hecho a fondo." },
+      { title: "Obstrucción de objeto extraño en bomba de drenaje W1", detail: "Las bombas de drenaje W1 atrapan monedas, clips de pelo y ocasional underwire — igual que cualquier front-loader. Síntoma: fault code F24 o F11 (dependiendo de generación). Sacamos la bomba, limpiamos la obstrucción, verificamos rotación y operación del float-switch." },
+      { title: "Falla de motor del evap fan MasterCool KF 2911 lado freezer", detail: "Los built-ins MasterCool side-by-side (KF 2911) tienen un motor de evap fan del lado freezer que se desgasta alrededor del año 8-11. Síntoma: lado freezer tibio, lado fresh-food normal, fault de sensor ocasional en el touch panel. Swap del motor OEM e inspección del sistema de defrost." },
+      { title: "Acumulación de escala en sensor de nivel de agua del horno de vapor (DG)", detail: "Los hornos de vapor DG dependen de descalcificación regular — cuando los descales se brincan, el sensor de nivel de agua acumula escala y lee incorrectamente. Resultado: el horno piensa que el tank está vacío cuando está lleno, o viceversa. Descalcificamos a fondo, reemplazamos el sensor si ha estado atorado." },
+      { title: "Drift de calibración del grinder de café", detail: "Los grinders bean-to-cup CM y CVA drifteen fuera de calibración después de 18-24 meses de uso regular. Síntoma: el espresso sale más ligero, el dose se siente corto. Recalibramos usando el Miele Service Tool, limpiamos la brew unit, reemplazamos las burrs del grinder si están gastadas." },
+      { title: "Respuesta intermitente del M Touch panel en hornos H 7000", detail: "Los M Touch panels en hornos de pared H 7000 desarrollan temas de sensibilidad de touch — parches de la pantalla que no responden o ghost-press. Reemplazo del panel es el fix; pedimos vía Miele USA, típicamente 3-5 días." },
+    ],
+    whyBerne:
+      "El servicio Miele requiere el Miele Service Tool, partes Miele reales, y un técnico que conozca la plataforma suficientemente bien para leer el fault code en contexto. Tenemos el tool, pedimos partes vía la red de distribuidor Miele USA, y nuestros técnicos senior han trabajado en G-series, W1/T1, MasterCool y plataformas Generation 7000 por años. Estamos EPA-608 certified para trabajo de sealed-system MasterCool, y cargamos los consumibles de alta falla en el camión — actuadores G 7000, kits de bomba de circulación, bombas de drenaje, partes AutoDos, suministros de cleaning de evaporador para T1. Los homeowners Miele valoran el appliance suficiente tiempo que el approach de relación larga importa.",
+    serviceArea:
+      "Los installs Miele están concentrados en Coral Gables, Pinecrest, Coconut Grove, Brickell, Miami Beach, Bal Harbour, Aventura, Hallandale, Fort Lauderdale, Las Olas, Boca Raton, Delray, Palm Beach y Wellington. Despachamos llamadas Miele a los técnicos entrenados en el Miele Service Tool — usualmente mismo día en Miami-Dade, Broward y Palm Beach.",
+    faqs: [
+      { question: "¿Tienen el Miele Service Tool?", answer: "Sí. El Miele Service Tool es requerido para fault-code reads, ajustes de parámetro y firmware flashes en la plataforma Miele actual — lavavajillas G-series, lavandería W1/T1, refrigeración MasterCool, hornos de pared H 7000, hornos de vapor. Tenemos el tool y nuestros técnicos están entrenados." },
+      { question: "Mi secadora T1 heat-pump está tomando 2+ horas por load. ¿Qué pasa?", answer: "Casi siempre el coil del evaporador tapado con lint fino. Incluso con el filtro de lint limpiado cada load, lint microscópico llega al evaporador del heat-pump y corta eficiencia. Sacamos el evap, lo limpiamos a fondo, verificamos la bomba de drenaje y el path de condensado." },
+      { question: "¿Qué tan frecuente debo descalcificar mi horno de vapor Miele?", answer: "Miele recomienda descalcificar cada 200 horas de uso de vapor, que sale a cada 3-4 meses para uso típico de hogar. Brincar descales es la causa #1 de fallas de sensor de horno de vapor y errores de nivel de agua. Si ha pasado un año sin descalcificar, podemos hacerlo como parte de un service call." },
+      { question: "¿Atienden sistemas de café Miele (CM/CVA)?", answer: "Sí. Calibración del grinder, reemplazo de brew unit, descalcificación, cleaning del sistema de leche, y diagnósticos del panel. CM 7750 y las máquinas built-in CVA más viejas ambas soportadas." },
+      { question: "¿Hay partes Miele disponibles en US?", answer: "Sí. Miele USA mantiene red de distribuidor — partes comunes vienen en 2-4 días, y cargamos consumibles de alta falla en el camión (actuadores G 7000, kits de bomba de circulación, bombas de drenaje). Solo Miele genuino; no aftermarket — no lo recomendamos." },
+      { question: "¿Miele vale la pena el costo de reparar?", answer: "Sí para la mayoría de trabajos. Miele diseña sus appliances para 20 años de vida útil — mucho más que cualquier competidor americano — y el costo de reemplazo es alto (un par MasterCool nuevo es $15K-$20K; un lavavajillas G 7000 es $2.5K-$3.5K). La mayoría de reparaciones caen muy por debajo del costo de reemplazo." },
+      { question: "¿La lavadora W1 y secadora T1 pueden apilarse?", answer: "Sí, con el stacking kit de Miele. Instalamos y re-levelamos el par, y verificamos que las puertas swinging clear de la cabinetry. Muchos owners Miele apilan en laundry closets donde el espacio es apretado." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -884,6 +1093,45 @@ const kitchenAid: ResidentialBrandProfile = {
         "Yes — high-failure parts on the truck (diverter motors, igniters, icemaker modules, evap fans, door cables, drain pumps). Less common parts come in 1-2 business days through Whirlpool's distributor.",
     },
   ],
+  es: {
+    teaser:
+      "Refrigeración KitchenAid built-in, estufas, cooktops y la línea workhorse de lavavajillas. Construido en plataformas Whirlpool — conocemos las partes compartidas y los quirks específicos de KitchenAid.",
+    metaTitle: "Reparación KitchenAid · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación KitchenAid refrigerador, estufa, lavavajillas y cooktop. El mismo día en Miami-Dade, Broward, Palm Beach. $59 service call. Garantía de 90 días.",
+    about:
+      "KitchenAid es la marca premium de Whirlpool — comparte plataformas Whirlpool en lavavajillas, refrigeración y lavandería pero con interiores y controles upgrade. Vemos el rango completo en cocinas del Sur de Florida: refrigeradores French door y side-by-side (KRFC, KBSD, KBSN series), built-ins KSC y la línea KitchenAid columns, lavavajillas KDFE/KDTE/KDPE de stainless interior, estufas slide-in y freestanding KSEG/KSGB/KSGG, hornos de pared single y double KOSE/KODE, y la línea cooktop con quemadores Even-Heat. KitchenAid comparte modos de falla con Whirlpool en muchos casos — diverter motors de lavavajillas, evap fan motors, módulos de ice maker — entonces atendemos ambas marcas con las mismas partes y procedimientos. Donde KitchenAid es distinto es en los controles touch (más sofisticados que Whirlpool stock) y los hornos con sistemas True Convection.",
+    equipment: [
+      { series: "Refrigerador French door (KRFC, KRFF, KRMF)", description: "French door con freezer abajo — el formato más común. Ice maker, water valve, evap fan, defrost heater son las llamadas recurrentes." },
+      { series: "Built-in side-by-side (KBSD, KBSN)", description: "Built-in side-by-side de 42 y 48 pulgadas. Compresor, motor del evap fan, módulo de ice maker, water valve y control board." },
+      { series: "KitchenAid columns (KCFCX, KCRCX)", description: "Columnas integradas full-height refrigerador y freezer. Anti-condensación heater, alineación de bisagra, control board." },
+      { series: "Lavavajillas (KDFE, KDTE, KDPE)", description: "Lavavajillas KitchenAid de stainless interior. Bomba de circulación, motor diverter, control board, door cable/resorte y water inlet valve." },
+      { series: "Estufa slide-in/freestanding (KSEG, KSGB, KSGG)", description: "Estufas slide-in eléctricas y de gas. Igniter del horno (glow-bar), elemento de bake, control board, switches de superficie." },
+      { series: "Hornos de pared (KOSE, KODE, KOCE)", description: "Hornos de pared single, double y combi-microwave. Touch control, elementos de bake/broil, motor del convection fan, bisagras de puerta." },
+      { series: "Cooktop Even-Heat (KCED, KCGD)", description: "Cooktops eléctricos e inducción Even-Heat. Switches de superficie, elementos, generator board en inducción." },
+    ],
+    failureModes: [
+      { title: "Motor diverter del lavavajillas atascado", detail: "Los lavavajillas KitchenAid (compartido con Whirlpool) usan un motor diverter que rota para dirigir agua a brazos de rocío superior/inferior. Se atasca alrededor del año 5-7, frecuentemente con debris de comida. Síntoma: solo un brazo de rocío activo, platos saliendo sucios en la repisa de arriba o abajo. Reemplazo del motor diverter es trabajo de una visita." },
+      { title: "Falla del motor del evap fan en French door", detail: "El motor del evap fan en refrigeradores French door KitchenAid (compartido con Whirlpool) falla alrededor del año 7-10. Síntoma: lado fresh-food tibio, freezer normal, ruido de chillido o silencio del fan. Reemplazo OEM y check del sistema de defrost." },
+      { title: "Reemplazo de módulo de ice maker (KRFC)", detail: "Los módulos de ice maker en KitchenAid French door tienen patrón de falla conocido alrededor del año 6-9 — los dedos dejan de rotar, water inlet no actúa, o el módulo hace corto. Reemplazo de módulo OEM, no aftermarket." },
+      { title: "Igniter del horno glow-bar débil (KSGB/KSGG)", detail: "Los hornos de gas KitchenAid usan un igniter Norton glow-bar que se debilita alrededor del año 5-7. Síntoma: el horno toma múltiples intentos de ignición, o el lado de bake huele a gas antes de prender. Test de resistencia confirma — sobre ~120 ohms en frío y el igniter está de salida." },
+      { title: "Falla del touch control en hornos de pared (KOSE)", detail: "Los touch controls en hornos de pared KOSE 2015-2018 tienen sensibilidad intermitente — algunos botones responden, otros no. Reemplazo del panel es el fix; pedimos vía distribuidor Whirlpool, 1-2 días." },
+      { title: "Door cable del lavavajillas roto", detail: "Los cables/resortes de puerta del lavavajillas se rompen alrededor del año 5-8 por uso normal. La puerta cae abierta o no se queda cerrada. Reemplazo de cable y resorte como par." },
+      { title: "Switch de superficie del cooktop intermitente", detail: "Los switches de superficie en cooktops Even-Heat pierden continuidad después de uso pesado. Síntoma: el quemador no calienta o calienta intermitente. Test con multímetro confirma, reemplazo del switch." },
+    ],
+    whyBerne:
+      "KitchenAid comparte plataforma con Whirlpool, así que las partes y procedimientos son compartidos — pero KitchenAid tiene su propio set de quirks de controles y series exclusivas que un técnico tiene que conocer. Atendemos ambas marcas con los mismos técnicos, partes y procedimientos. Cargamos las partes de alta falla en el camión (motores diverter, igniters glow-bar, módulos de ice maker, evap fans, cables de puerta, bombas de drenaje), y las partes menos comunes vienen en 1-2 días vía distribuidor Whirlpool. EPA-608 certified para trabajo de sealed-system en refrigeración built-in y column.",
+    serviceArea:
+      "Cobertura completa del Sur de Florida — Miami-Dade, Broward y Palm Beach. KitchenAid es marca mass-premium así que vemos installs en toda la región, de tract homes a high-rises.",
+    faqs: [
+      { question: "¿Atienden built-ins y columnas KitchenAid?", answer: "Sí — cobertura completa en KitchenAid built-ins (KBSD, KBSN) y la línea KitchenAid columns. EPA-608 certified para sealed-system." },
+      { question: "¿Cuál es la reparación de estufa KitchenAid más común?", answer: "Igniter del horno en estufas de gas KSGB/KSGG — Norton glow-bar se debilita alrededor del año 5-7. Fix rápido con partes OEM. En las estufas eléctricas, el elemento de bake es el más común." },
+      { question: "Mi refri French door KitchenAid tiene el lado fresh-food tibio. ¿Cuál es la causa?", answer: "Usualmente una de tres cosas: (1) falla del defrost heater, evaporador del freezer engelado, sin airflow al fresh-food; (2) motor del evap fan trancado; (3) control board principal no comandando defrost. Testeamos los tres en la primera llamada." },
+      { question: "¿Cargan partes KitchenAid en el camión?", answer: "Sí — partes de alta falla en el camión (motores diverter, igniters, módulos de ice maker, evap fans, cables de puerta, bombas de drenaje). Partes menos comunes vienen en 1-2 días vía distribuidor Whirlpool." },
+      { question: "¿KitchenAid y Whirlpool usan las mismas partes?", answer: "En muchas plataformas, sí — lavavajillas, French door refrigeración, lavandería. Los controles y interiores son diferentes pero las partes mecánicas frecuentemente son las mismas. Atendemos ambas marcas con los mismos técnicos." },
+      { question: "¿Cuánto cuesta un service call KitchenAid?", answer: "$59 service call. La cuota cubre diagnóstico y se aplica a la reparación si autoriza el trabajo en la misma visita." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -1030,6 +1278,44 @@ const ge: ResidentialBrandProfile = {
         "Yes — GE has a solid distribution network and most common parts come in 1-2 business days. We carry the high-failure parts on the truck across all four sub-brands (ice maker modules, water valves, drain pumps, igniters, evap fans).",
     },
   ],
+  es: {
+    teaser:
+      "GE Appliances cubre cuatro líneas — GE estándar, Profile, Cafe y Monogram premium built-in. Atendemos las cuatro con los mismos técnicos y partes compartidas a través de tiers.",
+    metaTitle: "Reparación GE / Profile / Cafe / Monogram · Sur de FL",
+    metaDescription:
+      "Reparación de refrigeradores, estufas, lavavajillas y hornos GE, Profile, Cafe y Monogram en el Sur de Florida. El mismo día, $59 service call.",
+    about:
+      "GE Appliances (ahora una compañía Haier) cubre cuatro sub-marcas que vemos a diario en el Sur de Florida: GE estándar (mass-market), Profile (mid-tier con más features), Cafe (mid-premium con hardware custom) y Monogram (línea premium built-in que compite con Sub-Zero y Thermador). Las plataformas comparten significativamente — Profile y Cafe en particular tienen plataforma overlap pesado — así que nuestro truck stock cubre fallas de alta frecuencia a través de las cuatro marcas al mismo tiempo. La línea Monogram built-in incluye refrigeradores ZIC/ZIS column, French door ZWE/ZWS, y los slide-in y pro-style ranges ZGP/ZDP. Las estufas Cafe incluyen la línea induction CHS9 y las gas pro-style con burners high-output. Hornos Advantium speed-cook (ZSC, PSB) son una plataforma específica con magnetrons high-voltage que necesitan procedimiento de safety apropiado.",
+    equipment: [
+      { series: "Refrigerador French door (GFE, PFE, CFE — GE, Profile, Cafe)", description: "French door con freezer abajo. Ice maker, water valve dual-solenoid, evap fan, defrost heater son las llamadas recurrentes." },
+      { series: "Side-by-side (GSE, GFE — through-the-door agua/hielo)", description: "Refrigeradores side-by-side. Dispenser, water valve, módulo de ice maker y motor del auger son los items estándar." },
+      { series: "Built-in Monogram (ZIC, ZIS column / ZIK)", description: "Línea Monogram built-in y columns — compite con Sub-Zero. Compresores, evap fan motors, control boards, anti-condensación heaters." },
+      { series: "Estufa Profile/Cafe (PGB, PHB, CHS, CGS)", description: "Estufas slide-in y freestanding gas y eléctricas. Igniters, control boards, elementos de bake. CHS9 línea induction." },
+      { series: "Monogram pro-style (ZGP, ZDP)", description: "Estufas Monogram pro-style — competidor directo de Viking/Wolf. Igniters, válvulas de safety, control boards." },
+      { series: "Lavavajillas (GDF, PDT, CDT)", description: "Lavavajillas GE estándar, Profile y Cafe. Bombas de drenaje, motor diverter, control board, water valves." },
+      { series: "Hornos de pared y Advantium (JT, JK, ZSC, PSB)", description: "Hornos single, double y Advantium speed-cook. Magnetrons (Advantium), touch controls, elementos, bisagras." },
+    ],
+    failureModes: [
+      { title: "Diverter motor del lavavajillas atascado (GDF/PDT/CDT)", detail: "Motor diverter rota para dirigir agua a brazos de rocío superior/inferior. Se atasca alrededor del año 5-7 con debris. Síntoma: solo un brazo activo, platos sucios en una repisa. Reemplazo del diverter — trabajo de una visita." },
+      { title: "Falla de motor del evap fan (French door)", detail: "Motor del evap fan en refrigeradores French door GE falla alrededor del año 7-10. Síntoma: fresh-food tibio, freezer normal, ruido o silencio del fan. Reemplazo OEM y check del sistema de defrost." },
+      { title: "Reemplazo de módulo de ice maker", detail: "Los módulos de ice maker GE tienen patrón de falla alrededor del año 6-9. Reemplazo de módulo, no el ensamble completo, en la mayoría de casos." },
+      { title: "Falla de water valve dual-solenoid", detail: "Side-by-sides GFE y GSE con through-the-door water tienen water valve dual-solenoid que falla alrededor del año 5-8. Síntoma: ice maker dropea cero o cubos parciales, water dispenser funciona pero lento. Reemplazo de válvula, flush de línea." },
+      { title: "Falla de magnetron en Advantium speed-cook", detail: "Hornos combi Advantium (ZSC, PSB) tienen magnetron que se desgasta alrededor del año 7-10. Síntoma: modo microondas no calienta, modo horno normal. Reemplazo de magnetron requiere descarga de high-voltage y procedimiento de safety apropiado — no es trabajo DIY." },
+      { title: "Falla de control board en hornos de pared", detail: "Los hornos de pared GE/Profile con touch control desarrollan respuesta intermitente alrededor del año 6-9. Reemplazo del touch panel es el fix; vía distribuidor GE." },
+    ],
+    whyBerne:
+      "GE Appliances cubre cuatro sub-marcas y trabajamos en todas — de un refri freestanding GFE básico en Hialeah a un install Monogram ZIP column en Pinecrest. Las partes se comparten a través de los tiers (Profile y Cafe en particular tienen overlap pesado de plataforma), lo que significa que nuestro truck stock cubre la mayoría de trabajos de alta falla en las cuatro marcas al mismo tiempo. Estamos EPA-608 certified para trabajo de sealed-system Monogram built-in, installers de gas licenciados para Monogram ZGP/ZDP y estufas de gas Cafe, y entrenados en los procedimientos de servicio Advantium high-voltage.",
+    serviceArea:
+      "Installs GE, Profile, Cafe y Monogram cubren el footprint completo del Sur de Florida — de Homestead al norte hasta Jupiter. Monogram tiende a cluster en los mismos vecindarios que Sub-Zero y Thermador, mientras GE estándar y Profile se distribuyen ampliamente. Despacho el mismo día en el área de cobertura.",
+    faqs: [
+      { question: "¿Cuál es la diferencia entre GE, Profile, Cafe y Monogram?", answer: "Mismo parent (GE Appliances, una compañía Haier). GE estándar es mass-market. Profile es mid-tier con más features. Cafe es mid-premium con hardware y acabados custom. Monogram es la línea premium built-in que compite con Sub-Zero y Thermador. Las partes se comparten a través de los tiers en muchas plataformas." },
+      { question: "Estufa de inducción Cafe — ¿pueden repararla?", answer: "Sí. La estufa de inducción CHS9 comparte una generación de generator board con los cooktops de inducción Profile. Trabajo más común es reemplazo de generator board cuando una o dos surface units dejan de responder. Vía distribuidor GE en 2-3 días." },
+      { question: "¿Cuánto duran los refrigeradores GE?", answer: "Refrigeradores GE estándar y Profile están diseñados para unos 12-15 años de servicio. Cafe y Monogram están construidos para más — 18-25+ años en la línea Monogram built-in. Las partes de desgaste típicamente se reemplazan una vez durante la vida útil de la unidad." },
+      { question: "Mi lavavajillas GE Profile no drena. ¿Cuál es la causa?", answer: "Casi siempre el impulsor de la bomba de drenaje atrapando debris. Sacamos la bomba en la primera visita, limpiamos la obstrucción, verificamos integridad del magneto y reemplazamos si está agrietado." },
+      { question: "¿Manejan hornos Advantium speed-cook?", answer: "Sí — ambas plataformas Profile y Monogram Advantium. Reemplazo de magnetron (requiere procedimiento de descarga high-voltage), control panel y elemento de convección." },
+      { question: "¿Las partes GE son fáciles de encontrar?", answer: "Sí — GE tiene red de distribución sólida y la mayoría de partes comunes vienen en 1-2 días. Cargamos las partes de alta falla en el camión a través de las cuatro sub-marcas (módulos de ice maker, water valves, bombas de drenaje, igniters, evap fans)." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -1176,6 +1462,44 @@ const whirlpool: ResidentialBrandProfile = {
         "Often yes, but it depends on the part. Older direct-drive washers (WTW pre-2010) and older dryers usually have parts available. Refrigerators 15+ years old are sometimes harder to source specialty parts for — we'll quote honestly and tell you if a repair doesn't make economic sense.",
     },
   ],
+  es: {
+    teaser:
+      "Whirlpool es el workhorse mass-market — la marca que está en la mayoría de single-family homes, condos y rentals del Sur de Florida. Plataforma confiable, partes en stock, reparaciones de una visita.",
+    metaTitle: "Reparación Whirlpool · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación Whirlpool lavadora, secadora, refrigerador, lavavajillas y estufa en Miami-Dade, Broward, Palm Beach. El mismo día, $59 service call.",
+    about:
+      "Whirlpool es la marca americana mass-market más instalada en el Sur de Florida — la opción default para builders, property management y homeowners que valoran confiabilidad y partes disponibles sobre features premium. La plataforma Whirlpool es predecible: motores direct-drive en lavadoras top-load WTW Cabrio, plataforma compartida en lavavajillas con KitchenAid (motor diverter, control board), refrigeradores French door WRF/WRX, secadoras eléctricas WED y de gas WGD. Las partes son fáciles de sourcer — Whirlpool tiene una de las redes de distribución más fuertes en la industria, partes comunes en 1-2 días, y nosotros cargamos las partes de alta falla en el camión para completar en una visita.",
+    equipment: [
+      { series: "Lavadora top-load Cabrio (WTW)", description: "Lavadoras top-load Cabrio direct-drive. Lid switch, sensor de level de agua, motor del actuator, control board son las llamadas estándar." },
+      { series: "Lavadora front-load (WFW)", description: "Lavadoras front-load. Door lock, switch de puerta, bomba de drenaje, motor de tambor y control board." },
+      { series: "Secadora eléctrica/gas (WED, WGD)", description: "Secadoras eléctricas WED y de gas WGD. Thermal fuse, elemento de calor (eléctrica), igniter y válvula de gas (gas), drum belt, idler pulley." },
+      { series: "Refrigerador French door (WRF, WRX)", description: "French door con freezer abajo. Ice maker, water valve, evap fan, defrost heater." },
+      { series: "Side-by-side (WRS, GSS)", description: "Side-by-side con through-the-door agua/hielo. Water valve, dispenser, auger motor, control board." },
+      { series: "Lavavajillas (WDF, WDT)", description: "Lavavajillas mass-market. Motor diverter (compartido con KitchenAid), bomba de drenaje, water inlet valve, control board, door cable/resorte." },
+      { series: "Estufa eléctrica/gas (WFE, WFG)", description: "Estufas freestanding y slide-in. Igniter (gas), elemento de bake (eléctrica), control board, switches de superficie." },
+    ],
+    failureModes: [
+      { title: "Lid switch fallido en Cabrio WTW", detail: "El lid switch en lavadoras top-load Cabrio falla alrededor del año 4-7. Síntoma: lavadora no entra a spin. Reemplazo del switch es trabajo de una visita." },
+      { title: "Bomba de drenaje atascada (WFW front-load)", detail: "Las bombas de drenaje en front-load atrapan monedas, hair clips y la ocasional underwire. Síntoma: lavadora no drena, fault code F21 o F33. Sacamos la bomba, limpiamos obstrucción, verificamos rotación." },
+      { title: "Thermal fuse de secadora soplado", detail: "Las thermal fuses de secadora soplan cuando el vent está tapado. Síntoma: el tambor gira pero no calienta. Testeamos el fuse, elemento de calor y termostato, plus inspeccionamos el vent. Reemplazar el fuse sin limpiar el vent significa que regresamos." },
+      { title: "Falla de motor del evap fan en French door", detail: "Motor del evap fan en refrigeradores French door Whirlpool falla alrededor del año 7-10. Síntoma: fresh-food tibio, freezer normal. Reemplazo OEM y check del sistema de defrost." },
+      { title: "Motor diverter del lavavajillas atascado", detail: "Mismo motor diverter que KitchenAid — se atasca alrededor del año 5-7. Síntoma: solo un brazo de rocío activo. Reemplazo del diverter." },
+      { title: "Falla del igniter de estufa de gas (WFG)", detail: "El igniter Norton glow-bar en estufas de gas Whirlpool se debilita alrededor del año 5-7. Síntoma: horno toma intentos múltiples para encender. Test de resistencia confirma." },
+    ],
+    whyBerne:
+      "Las reparaciones Whirlpool son trabajo de high-volume — la marca está en la mayoría de cocinas y lavanderías del Sur de Florida, y nuestro truck stock está construido alrededor de los patrones de falla más comunes de Whirlpool. Cargamos lid switches, drain pumps, thermal fuses, igniters glow-bar, motores diverter, control boards en las generaciones más comunes, y water valves. Partes adicionales vienen en 1-2 días vía distribuidor Whirlpool. Compartimos partes con KitchenAid en muchas plataformas, así que un técnico atiende ambas marcas con el mismo set de partes. Servicio el mismo día en el área de cobertura completa.",
+    serviceArea:
+      "Los installs Whirlpool están ampliamente distribuidos en el Sur de Florida — single-family homes, condos, rentals y portfolios de property-management. Despachamos el mismo día en el footprint completo de Homestead a Jupiter.",
+    faqs: [
+      { question: "Mi lavadora Whirlpool no centrifuga. ¿Cuál es el problema más probable?", answer: "En una top-load Cabrio (WTW), es usualmente el lid switch — falla alrededor del año 4-7. En una front-load (WFW), es el door lock o switch de puerta. Diagnosticamos en la primera visita y cotizamos antes de que entren partes." },
+      { question: "¿Cuánto duran los appliances Whirlpool?", answer: "Whirlpool construye para 10-12 años de vida útil típica en la mayoría de productos. Las partes de desgaste (lid switches, bombas de drenaje, igniters, thermal fuses) se reemplazan una o dos veces en esa ventana — es mantenimiento normal." },
+      { question: "¿Las partes Whirlpool son fáciles de sourcer?", answer: "Sí — Whirlpool tiene una de las redes de distribución de partes más fuertes en la industria. La mayoría de partes comunes vienen en 1-2 días, y cargamos las partes de alta falla en el camión para completar en la primera visita." },
+      { question: "Mi secadora Whirlpool no calienta pero el tambor gira. ¿Cuál es la causa?", answer: "En una secadora eléctrica (WED), más frecuente el thermal fuse — sopló porque el vent está tapado. Testeamos el fuse, el elemento de calor y el termostato de operación, plus inspeccionamos el vent. Reemplazar el fuse sin limpiar el vent significa que regresamos." },
+      { question: "¿Atienden secadoras de gas Whirlpool (WGD)?", answer: "Sí — servicio completo de secadora de gas. Igniter, sensor de flama, solenoide de válvula de gas, thermal fuse. Nuestros técnicos son installers de gas appliance licenciados." },
+      { question: "¿Pueden reparar appliances Whirlpool viejos (15+ años)?", answer: "Frecuentemente sí, pero depende de la parte. Lavadoras direct-drive viejas (WTW pre-2010) y secadoras viejas usualmente tienen partes disponibles. Refrigeradores 15+ años a veces son más difíciles de sourcer partes especialty — cotizaremos honestamente." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -1322,6 +1646,44 @@ const lg: ResidentialBrandProfile = {
         "Yes. LSEL induction ranges have generator boards and individual surface coils — most common job is a surface unit not detecting cookware, which we diagnose with LG's procedure and replace the relevant component.",
     },
   ],
+  es: {
+    teaser:
+      "Refrigeradores French door LG, lavadoras WashTower y TwinWash, secadoras heat-pump, estufas de inducción. La plataforma Linear Inverter y los patrones de falla documentados — sabemos qué está cubierto bajo class-action.",
+    metaTitle: "Reparación LG · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación LG French door, WashTower, TwinWash, secadora heat-pump y estufa de inducción en el Sur de Florida. EPA-608, $59, garantía de 90 días.",
+    about:
+      "LG ha sido una de las marcas más vendidas en el Sur de Florida en la última década — la línea French door (LFXS, LRMVS), la lavadora WashTower que apila lavadora y secadora en un solo chassis, la TwinWash con un pedestal mini-washer abajo, las secadoras heat-pump DLHC, y la línea de estufa de inducción LSEL. La plataforma de mayor visibilidad es el Linear Inverter Compressor en refrigeradores French door — el class-action settlement cubre rangos seriales específicos construidos 2014-2017, y verificamos elegibilidad onsite. Los modos de falla LG son bien documentados: Linear Inverter Compressor falla, water filter housing crack, ice maker module en French door, drain pump WashTower, evap coil tapado en secadora heat-pump, control board en LSEL induction. Estamos EPA-608 certified para trabajo de sealed-system del compresor.",
+    equipment: [
+      { series: "Refrigerador French door (LFXS, LRMVS, LFXC)", description: "French door con freezer abajo, algunos con InstaView (panel de vidrio que ilumina). Linear Inverter Compressor, ice maker, water valve, evap fan." },
+      { series: "Side-by-side (LSXS, LRSXS)", description: "Side-by-side con through-the-door agua/hielo. Water valve, dispenser, control board, motor del auger." },
+      { series: "Lavadora WashTower (WKEX)", description: "Lavadora y secadora apiladas en un solo chassis integrado. Drain pump, motor del tambor, elemento de secadora, panel de control." },
+      { series: "Lavadora TwinWash con pedestal (WM, TWINW)", description: "Lavadora front-load con mini-washer pedestal abajo. Drain pump del pedestal, motor del tambor, control board." },
+      { series: "Secadora heat-pump (DLHC)", description: "Secadoras heat-pump energy-efficient. Coil del evaporador (cleaning regular), drain pump, motor del compresor." },
+      { series: "Estufa de inducción (LSEL)", description: "Estufas slide-in de inducción. Generator boards, surface coils individuales, control panel." },
+    ],
+    failureModes: [
+      { title: "Falla del Linear Inverter Compressor (French door)", detail: "El Linear Inverter Compressor en unidades French door construidas 2014-2017 tiene un patrón de falla conocido — el class-action settlement cubre rangos seriales específicos. Síntoma: refri no enfría, freezer tibio, compresor zumba sin compresión. Verificamos elegibilidad contra el número serial onsite. EPA-608 certified para reemplazo de compresor." },
+      { title: "Reemplazo de módulo de ice maker (RF/LFXS)", detail: "Los módulos de ice maker en LG French door tienen patrón de falla alrededor del año 5-8 — los dedos no rotan, water inlet no actúa. Módulo OEM reemplazo. Si la water valve también está fallando (común en este punto), las cambiamos juntas." },
+      { title: "Crack del water filter housing", detail: "El housing del water filter en algunas French door cracks alrededor del año 6-9, especialmente si el filter no se ha cambiado regularmente. Síntoma: fuga lenta atrás del refri o agua en el piso. Reemplazo del housing." },
+      { title: "Drain pump WashTower atascado", detail: "La drain pump en WashTower atrapa monedas y debris. Síntoma: lavadora no drena, fault code. Sacamos el front panel del chassis integrado, limpiamos pump, verificamos rotación." },
+      { title: "Evap coil tapado en secadora heat-pump (DLHC)", detail: "Las secadoras DLHC heat-pump dependen de un coil de evaporador limpio. Lint fino llega al evap y corta eficiencia. Síntoma: ciclos largos, drum tibio pero no caliente. Limpieza del evap restaura performance." },
+      { title: "Falla de control board en estufa de inducción LSEL", detail: "Las estufas de inducción LSEL tienen generator boards que pueden fallar cuando una o más surface units dejan de detectar cookware. Diagnóstico con procedimiento LG y reemplazo del generator board específico." },
+    ],
+    whyBerne:
+      "El servicio LG necesita un técnico que sepa qué unidades están bajo el class-action del Linear Inverter Compressor, qué patrones de falla son documentados vs. uno-en-mil, y cómo navegar las relaciones con Samsung's distributor para partes específicas. Verificamos elegibilidad de class-action onsite, manejamos reemplazo de compresor bajo el settlement (parte cubierta), y cargamos las partes de alta falla en el camión: ice maker modules, water valves, drain pumps, control boards en generaciones comunes. EPA-608 certified para sealed-system. Servicio el mismo día en el footprint completo del Sur de Florida.",
+    serviceArea:
+      "LG está ampliamente distribuido en el Sur de Florida — single-family homes, condos y construcción nueva. Despacho el mismo día de Homestead a Miami-Dade, Broward y hasta Jupiter.",
+    faqs: [
+      { question: "Mi refri LG French door no enfría. ¿Podría ser el compresor?", answer: "Muy probable — el Linear Inverter Compressor en unidades French door construidas 2014-2017 tiene patrón de falla conocido. Chequeamos elegibilidad contra el settlement del class-action, documentamos la unidad para el homeowner, y manejamos el reemplazo de compresor. EPA-608 certified." },
+      { question: "¿Cómo sé si mi compresor LG está cubierto bajo el class-action?", answer: "Verificamos onsite contra el número serial y los rangos seriales documentados del settlement. Si su unidad está cubierta, la parte del compresor es sin costo; el labor puede o no estar — explicaremos los specifics antes de cualquier trabajo." },
+      { question: "¿Reparan LG WashTower?", answer: "Sí — cobertura completa en la columna stacked WashTower. Drain pump de la lavadora, problemas de motor, elemento de la secadora y bloqueos del lint-duct. Sacamos el front panel para servicio." },
+      { question: "Mi pedestal TwinWash no drena. ¿Qué pasa?", answer: "Casi siempre la drain pump del pedestal atrapando un item pequeño — moneda, hair clip o calcetín. Sacamos la pump, la limpiamos y verificamos rotación en la misma visita." },
+      { question: "¿Las secadoras heat-pump LG (DLHC) valen la pena reparar?", answer: "Sí — la secadora heat-pump es energy-efficient y bien construida. El service issue más común es el evap tapado con lint fino, que limpiamos como parte del service call. Los tiempos de ciclo regresan a normal después." },
+      { question: "¿Cuánto duran los appliances LG?", answer: "LG construye para 10-15 años de servicio en la mayoría de productos. El Linear Inverter Compressor específicamente ha tenido temas de confiabilidad en ciertos rangos de build, pero unidades más nuevas han mejorado." },
+      { question: "¿Atienden estufas de inducción LG (LSEL)?", answer: "Sí. Las estufas LSEL de inducción tienen generator boards y surface coils individuales — el trabajo más común es una surface unit no detectando cookware, que diagnosticamos con el procedimiento de LG." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -1473,6 +1835,45 @@ const samsung: ResidentialBrandProfile = {
         "Yes. Samsung induction ranges (NE58 induction variants and the NX60) have generator boards and surface coils we can service. Most common job is a surface unit not detecting cookware — diagnosed with Samsung's procedure and replaced accordingly.",
     },
   ],
+  es: {
+    teaser:
+      "Refrigeradores Samsung Family Hub, lavandería FlexWash, estufas de inducción slide-in y la línea modular Bespoke. Conocemos la plataforma — y los patrones de falla documentados.",
+    metaTitle: "Reparación Samsung · Sur de Florida · $59 Service Call",
+    metaDescription:
+      "Reparación Samsung refrigerador, lavadora, secadora, estufa y lavavajillas en el Sur de Florida. Family Hub, FlexWash, Bespoke. El mismo día, $59.",
+    about:
+      "La línea residencial Samsung se ha expandido pesado en la última década — de los refrigeradores French door Family Hub (RF) con touch screen en la puerta, al sistema modular Bespoke que deja a los homeowners cambiar door panels, a la lavadora FlexWash que tiene un mini-washer top-load separado encima de una lavadora principal front-load. Vemos todo en el Sur de Florida. La confiabilidad Samsung ha sido mixta comparada con LG o Whirlpool — el ice maker en la línea French door (RF28, RF22, RF23) ha sido service ticket frecuente, el sistema de sello del FlexWash en el mini-washer superior ha sido tema conocido, y las estufas slide-in (NE63, NE58) han tenido fallas de control board en ciertos años de build. Dicho eso, disponibilidad de partes es buena vía distribuidor Samsung (1-2 días para la mayoría), los códigos de diagnóstico son detallados, y la mayoría de reparaciones son first-visit complete.",
+    equipment: [
+      { series: "Refrigerador French door Family Hub (RF28, RF22, RF23)", description: "French door con touch screen en la puerta para apps, cámaras internas y conectividad. Ice maker assembly, touch screen, water valve son las llamadas estándar." },
+      { series: "Refrigerador Bespoke (modular)", description: "Sistema modular Bespoke que permite swap de door panels por homeowner. Bisagras, panels, alineación." },
+      { series: "Lavadora FlexWash (WV)", description: "Front-load main washer con mini top-load encima. Sello del mini-washer, drain pump, motor del tambor, control board." },
+      { series: "Lavadora front-load estándar (WF)", description: "Lavadoras front-load. Drain pump, motor del tambor, door lock, control board." },
+      { series: "Secadora eléctrica/gas (DV)", description: "Secadoras eléctricas DV42 y de gas DV45. Heating element, igniter (gas), thermal fuse, drum belt." },
+      { series: "Estufa slide-in (NE63, NE58)", description: "Estufas eléctricas y de inducción slide-in. Control board, surface elements/coils, generator boards (inducción)." },
+      { series: "Lavavajillas (DW80)", description: "Lavavajillas Samsung. Heating element (dry cycle), drain pump, control board." },
+    ],
+    failureModes: [
+      { title: "Ice maker French door congelado/no produce (RF28, RF22, RF23)", detail: "El service ticket más común en la línea French door Samsung. El módulo del ice maker tiene patrón de falla — los dedos no rotan, ice queda atorado en la cavity, o el módulo congela completo. Reemplazamos con el módulo revisado, defrosteamos la cavity, inspeccionamos los seals." },
+      { title: "FlexWash top mini-washer sello fugando", detail: "El sello del top mini-washer en FlexWash desarrolla fugas alrededor del año 3-5. Síntoma: agua atrás del mini-washer durante ciclo. Reemplazo del sello, check de daño electrónico por la fuga." },
+      { title: "Falla del heating element en secadora DV42", detail: "Las secadoras eléctricas (DV42 y DV45 matching) tienen heating element que se quema alrededor del año 6-9. Síntoma: drum gira, sin calor. Reemplazo del elemento, check del thermal fuse y termostato de operación." },
+      { title: "Touch screen Family Hub negro / falla de power-up", detail: "Las unidades Family Hub con touch screen (RF28, RF22, RF23 variantes) tienen pantalla que pierde poder alrededor del año 5-7. El refri continúa funcionando pero la pantalla está muerta. Reemplazo del screen assembly — vía distribuidor Samsung, disponible pero caro." },
+      { title: "Sag de bisagra Bespoke después de panel swap", detail: "Los refrigeradores Bespoke permiten swap de door panels, y las bisagras del panel pueden desarrollar sag si los panels se cambian frecuentemente o se instalan incorrectamente. Re-shim, reemplazo de bisagras si se necesita." },
+      { title: "Falla del heating element del lavavajillas (DW80)", detail: "Los lavavajillas DW80 tienen un heating element usado para el ciclo de secado que falla alrededor del año 5-7. Síntoma: platos salen mojados, ciclo sensor brinca secado. Reemplazo del elemento, verificación del termistor." },
+    ],
+    whyBerne:
+      "Samsung tiene patrones de servicio conocidos — el ice maker French door, el sello FlexWash, el control board NE63, la pantalla Family Hub — y nuestros técnicos los conocen. Cargamos las partes de alta falla Samsung en el camión (ice maker assemblies, drain pumps, heating elements, control boards en las variantes comunes), sourceamos vía distribuidor Samsung para cualquier otra cosa (1-2 días). EPA-608 certified para trabajo de sealed-system de refrigerador, installers de gas licenciados para secadoras de gas DV y estufas de gas NX.",
+    serviceArea:
+      "Samsung está ampliamente distribuido en el Sur de Florida — concentrado pesado en construcción más nueva en Doral, Aventura, Hallandale, Sunny Isles, Fort Lauderdale, Boca Raton, Delray y Palm Beach. Despacho el mismo día en el área de cobertura completa.",
+    faqs: [
+      { question: "Mi ice maker Samsung French door está congelado. ¿Se puede arreglar?", answer: "Sí. El ice maker French door Samsung (RF28, RF22, RF23) es el service ticket más común en la plataforma. El fix usualmente involucra reemplazar el ice maker assembly con el módulo revisado, defrostear la cavity e inspeccionar los seals. Cargamos la parte en el camión." },
+      { question: "¿Vale la pena reparar el FlexWash si el top mini-washer fuga?", answer: "Usualmente sí. El reemplazo del top seal es trabajo moderado (rango $250-$450), mucho menos que una unidad FlexWash nueva. Chequeamos daño electrónico por la fuga antes del sign-off." },
+      { question: "¿Reparan touch screens Family Hub?", answer: "Sí — screen assemblies disponibles vía distribuidor Samsung. La pantalla es cara (rango $600-$900 dependiendo de generación), pero el resto del refri típicamente funciona normal aunque la pantalla esté muerta. Discutimos si el reemplazo tiene sentido para su situación." },
+      { question: "¿Cuánto duran los appliances Samsung?", answer: "Samsung construye para 10-13 años de servicio en la mayoría de productos. Las partes de desgaste (ice makers, drain pumps, heating elements, control boards) se reemplazan en la vida útil. La confiabilidad ha variado por año y plataforma — daremos una evaluación honesta de su unidad específica." },
+      { question: "Mi lavadora Samsung dice 4C o 5E. ¿Qué significa?", answer: "Códigos 4C / 5E indican tema de drenaje — usualmente atasco del impulsor de la drain pump, a veces drain hose tapado. Sacamos la pump en la primera visita y la limpiamos." },
+      { question: "¿Las partes Samsung están disponibles?", answer: "Sí — Samsung mantiene red de distribuidor US con la mayoría de partes comunes disponibles en 1-2 días. Cargamos las partes de alta falla (ice maker assemblies, drain pumps, heating elements) en el camión." },
+      { question: "¿Manejan estufas de inducción Samsung?", answer: "Sí. Estufas de inducción Samsung (variantes NE58 y NX60) tienen generator boards y surface coils que podemos atender. Trabajo más común es surface unit no detectando cookware — diagnosticado con procedimiento Samsung." },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
