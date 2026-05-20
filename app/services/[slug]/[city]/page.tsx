@@ -26,6 +26,7 @@ import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS, SERVICE_FAQS } from "@/data/faqs";
 import {
   serviceCityJsonLd,
+  localBusinessForCityJsonLd,
   faqJsonLd,
   breadcrumbJsonLd,
   absoluteUrl,
@@ -39,6 +40,38 @@ function haversine(a: { lat: number; lng: number }, b: { lat: number; lng: numbe
     Math.sin(dLat / 2) ** 2 +
     Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
   return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+// FNV-1a 32-bit. Same generator used in lib/personal-copy.ts. Keeps the
+// failure-mode picks deterministic per (service, city) so the same combo
+// renders the same 5 entries every build — important for SEO consistency.
+function fnv1a(s: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+// Deterministic pick-K-without-replacement using the seed as an offset and
+// stride. With K=5 over banks of size 10 we get distinct combos across
+// nearby cities for the same service.
+function pickK<T>(arr: T[], k: number, seed: number): T[] {
+  if (arr.length <= k) return [...arr];
+  const offset = seed % arr.length;
+  const stride = 1 + ((seed >>> 8) % (arr.length - 1));
+  const picked: T[] = [];
+  const seen = new Set<number>();
+  let cur = offset;
+  while (picked.length < k && seen.size < arr.length) {
+    if (!seen.has(cur)) {
+      picked.push(arr[cur]);
+      seen.add(cur);
+    }
+    cur = (cur + stride) % arr.length;
+  }
+  return picked;
 }
 
 export function generateStaticParams() {
@@ -59,19 +92,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = CITY_BY_SLUG[citySlug];
   if (!service || !city) return {};
 
-  // Short enough to survive SERP truncation (<60 chars on the longest combos).
-  const title = `${service.shortName} Repair in ${city.name} · $${COMPANY.serviceCallPrice}`;
+  // Title template — Next layout appends " · Berne Repair" (15 chars) so we
+  // budget the page-level title at ~45 chars to land the SERP title ≤60.
+  // Longest combo without trim: "Garbage Disposal Repair in Bay Harbor Islands · $59"
+  // (51) which becomes 66 after the suffix. Drop "Repair" + "$" prefix for
+  // those over 45 chars so we land in budget. Short combos keep the full
+  // marker for click-through clarity.
+  const naturalTitle = `${service.shortName} Repair in ${city.name} · $${COMPANY.serviceCallPrice}`;
+  const title = naturalTitle.length <= 45
+    ? naturalTitle
+    : `${service.shortName} in ${city.name} · $${COMPANY.serviceCallPrice}`;
   // Vary description openings by (slug, city) so 700+ combos aren't near-identical.
+  // Each variant is hand-tuned to land ≤155 chars including the trailing CTA,
+  // so SERP descriptions don't get truncated by Google.
   const seed = (service.slug + city.slug).split("").reduce((a, ch) => (a + ch.charCodeAt(0)) | 0, 0);
-  const openers = [
-    `Same-day ${service.seoNoun} repair in ${city.name}, ${city.county} County.`,
-    `${service.name} for ${city.name} homes and businesses — same-day available.`,
-    `Trusted ${service.seoNoun} service across ${city.name} and the ${city.county} County area.`,
-    `Local ${service.shortName.toLowerCase()} repair in ${city.name} — call before noon, technician same day.`,
+  const phone = COMPANY.phone.display;
+  // Each opener fully crafted; ≤155 chars total. Verified via test in scripts/verify-meta.ts.
+  // seoNoun for normal appliances is "refrigerator", "washer", etc.
+  // For "air-duct-cleaning" / "ice-maker-repair" / "garbage-disposal-repair" seoNoun
+  // is a longer phrase like "air duct cleaning" — we drop the trailing "repair"
+  // in those cases so the meta reads cleanly.
+  const isPhraseNoun = service.seoNoun.includes(" ");
+  const noun = isPhraseNoun ? service.seoNoun : `${service.seoNoun} repair`;
+  const variants = [
+    `Same-day ${noun} in ${city.name}, FL. $${COMPANY.serviceCallPrice} diagnostic, licensed techs. Call ${phone}.`,
+    `${service.shortName} service for ${city.name} homes — same-day, 18 techs, $${COMPANY.serviceCallPrice} call. ${phone}.`,
+    `Trusted ${noun} in ${city.name}, ${city.county} County. $${COMPANY.serviceCallPrice} flat diagnostic. ${phone}.`,
+    `Local ${noun} in ${city.name} — call before noon, technician same day. $${COMPANY.serviceCallPrice} diagnostic. ${phone}.`,
   ];
-  const opener = openers[Math.abs(seed) % openers.length];
-  const brandList = service.brands.slice(0, 4).join(", ");
-  const description = `${opener} $${COMPANY.serviceCallPrice} service call. Licensed & insured. ${brandList} and every major brand. Call ${COMPANY.phone.display}.`;
+  const description = variants[Math.abs(seed) % variants.length];
   return {
     title,
     description,
@@ -107,6 +156,17 @@ export default async function ServiceCityPage({ params }: Props) {
     .slice(0, 6)
     .map((x) => x.c);
   const otherServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 6);
+
+  // Deterministic single-entry pick from the failure-mode bank. We surface
+  // ONE technician-voice diagnostic block per combo (not 5) because the
+  // larger render hung Turbopack workers at ~75% page generation across the
+  // 1540-combo build. The full 10-mode banks live in data/services.ts and
+  // can be surfaced more broadly on per-service hub pages where build cost
+  // is bounded to 11 pages instead of 770.
+  const comboSeed = fnv1a(`${service.slug}__${city.slug}`);
+  const pickedFailures = service.failureModes
+    ? pickK(service.failureModes, 1, comboSeed)
+    : [];
 
   const comboFaqs = [
     {
@@ -223,6 +283,41 @@ export default async function ServiceCityPage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      {/* Failure-mode mini-callout — one technician-voice entry picked per
+          (service, city) seed. The full 10-mode bank is kept in
+          data/services.ts; we only surface ONE on each page to keep
+          static-generation memory in budget across 770 EN + 770 ES combos.
+          The picked entry varies across cities for the same service so SERP
+          crawlers see distinct mid-page content per URL. */}
+      {pickedFailures.length > 0 ? (
+        <section className="border-y border-border/60 bg-background/40">
+          <div className="container-prose py-16">
+            <span className="eyebrow">{service.shortName} diagnostics — {city.name}</span>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+              {pickedFailures[0].symptom}
+            </h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-card/40 p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-brand">
+                  Likely cause
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/85">
+                  {pickedFailures[0].cause}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-card/40 p-5">
+                <div className="text-xs font-semibold uppercase tracking-wide text-brand">
+                  What we do on the truck
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/85">
+                  {pickedFailures[0].fix}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* Neighborhoods served */}
       <section className="border-y border-border/60 bg-background/40">
@@ -357,6 +452,7 @@ export default async function ServiceCityPage({ params }: Props) {
       <JsonLd
         data={[
           serviceCityJsonLd(service, city),
+          localBusinessForCityJsonLd(city),
           faqJsonLd(comboFaqs),
           breadcrumbJsonLd(crumbs),
         ]}
