@@ -161,7 +161,23 @@ export default function AboutPage() {
               We&apos;re a young company. The craft behind it isn&apos;t — our senior
               technicians bring 7-10 years of bench experience each, and the
               broader Berne family of repair operations has been running calls
-              in Florida since 2015. If you want the long version, the{" "}
+              in Florida since 2015. The general residential brand operates as{" "}
+              <a
+                href="https://bernerepair.com/"
+                rel="noopener"
+                className="text-brand hover:underline"
+              >
+                Berne Appliance Repair
+              </a>
+              , and commercial / restaurant / hotel work is dispatched through{" "}
+              <a
+                href="https://www.berne-commercial.com/"
+                rel="noopener"
+                className="text-brand hover:underline"
+              >
+                Berne Commercial Repair
+              </a>
+              . If you want the long version, the{" "}
               <Link href="/family" className="text-brand hover:underline">
                 family page
               </Link>{" "}

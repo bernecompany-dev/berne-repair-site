@@ -114,6 +114,22 @@ export default async function ServicePage({ params }: Props) {
                 {service.longDescription}
               </p>
 
+              {["refrigerator-repair", "washer-repair", "dryer-repair", "dishwasher-repair", "oven-repair"].includes(service.slug) ? (
+                <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground/85">
+                  Running commercial-grade equipment — walk-in coolers, ice
+                  machines, restaurant ranges, commercial laundry?{" "}
+                  <a
+                    href="https://www.berne-commercial.com/"
+                    rel="noopener"
+                    className="text-brand hover:underline"
+                  >
+                    Berne Commercial Repair
+                  </a>{" "}
+                  handles restaurants, production facilities, hotels and
+                  property management across South Florida.
+                </p>
+              ) : null}
+
               <div className="mt-9">
                 <CTARow size="lg" />
               </div>
