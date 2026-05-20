@@ -150,7 +150,9 @@ export async function submitLead(
   }
 
   const resend = new Resend(apiKey);
-  const subject = `New lead: ${name} · ${cityName} · ${applianceName}`;
+  // Subject prefix unified across all 3 Berne sites: "ЗАКАЗ" so Eugene can
+  // filter/sort leads in Gmail regardless of which site they came from.
+  const subject = `ЗАКАЗ — ${name} · ${cityName} · ${applianceName}`;
   const html = renderLeadEmail({
     name, phone, email, cityName, applianceName, brand, description, locale: lang,
   });
