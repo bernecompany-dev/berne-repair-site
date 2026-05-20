@@ -24,6 +24,20 @@ import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS } from "@/data/faqs";
 import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
+// Same haversine pattern as /services/[slug]/[city]/. Used to rank
+// nearby city hubs by geo-distance (not array order from data/cities.ts)
+// so the "Nearby cities we serve" block surfaces the actually-closest
+// neighbors first.
+function haversineKm(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const toRad = (d: number) => (d * Math.PI) / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
 export function generateStaticParams() {
   return CITIES.map((c) => ({ city: c.slug }));
 }
@@ -67,6 +81,24 @@ export default async function CityPage({ params }: Props) {
     { name: city.name, href: `/areas/${city.slug}` },
   ];
   const personal = cityPersonalCopy(city);
+
+  // Rank nearby cities: same-county neighbors first (county-locality matters
+  // for service-area SEO and user intent — someone in Aventura looks for
+  // Sunny Isles, not for West Palm), then global haversine distance as
+  // tie-breaker / fallback when county runs out.
+  const nearbyCities = [...CITIES]
+    .filter((c) => c.slug !== city.slug)
+    .map((c) => ({
+      c,
+      d: haversineKm(city.geo, c.geo),
+      sameCounty: c.county === city.county,
+    }))
+    .sort((a, b) => {
+      if (a.sameCounty !== b.sameCounty) return a.sameCounty ? -1 : 1;
+      return a.d - b.d;
+    })
+    .slice(0, 6)
+    .map((x) => x.c);
 
   const cityFaqs = [
     {
@@ -193,6 +225,48 @@ export default async function CityPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Nearby cities we also serve — same-county neighbors first, then by
+          distance. Cross-links between /areas/[city]/ hubs improve crawl
+          paths and surface real coverage to users on the city page. */}
+      {nearbyCities.length > 0 ? (
+        <section className="container-prose py-16">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Nearby cities we also serve</span>
+            <h2 className="heading-section mt-3">
+              {city.county} County coverage around {city.name}.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Same-day appliance repair across the cities closest to{" "}
+              {city.name}. Trucks dispatched from the same routes serve all
+              of {city.county} County.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {nearbyCities.map((nc) => (
+              <li key={nc.slug}>
+                <Link
+                  href={`/areas/${nc.slug}`}
+                  className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <div>
+                    <div className="text-sm font-semibold">
+                      Appliance Repair in {nc.name}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {nc.county} County
+                    </div>
+                  </div>
+                  <ArrowRight
+                    className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                    aria-hidden
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <PersonalNote {...personal} />
 
