@@ -204,6 +204,14 @@ export const CITIES: City[] = [
     neighborhoods: ["Downtown Homestead", "Keys Gate", "Silver Palm"],
     geo: { lat: 25.4687, lng: -80.4776 },
   },
+  {
+    slug: "sweetwater",
+    name: "Sweetwater",
+    county: "Miami-Dade",
+    zips: ["33172", "33174", "33182"],
+    neighborhoods: ["Fountainebleau border", "FIU area", "West Flagler"],
+    geo: { lat: 25.7634, lng: -80.3731 },
+  },
 
   // -------------------- BROWARD --------------------
   {
@@ -395,6 +403,38 @@ export const CITIES: City[] = [
     neighborhoods: ["Stirling Ranch", "Sunshine Ranches"],
     geo: { lat: 26.0598, lng: -80.3531 },
   },
+  {
+    slug: "lighthouse-point",
+    name: "Lighthouse Point",
+    county: "Broward",
+    zips: ["33064"],
+    neighborhoods: ["Hillsboro Mile", "Lighthouse Point Yacht Club", "Venetian Isles"],
+    geo: { lat: 26.2756, lng: -80.0876 },
+  },
+  {
+    slug: "hillsboro-beach",
+    name: "Hillsboro Beach",
+    county: "Broward",
+    zips: ["33062"],
+    neighborhoods: ["Hillsboro Mile", "Hillsboro Inlet"],
+    geo: { lat: 26.2934, lng: -80.0792 },
+  },
+  {
+    slug: "north-lauderdale",
+    name: "North Lauderdale",
+    county: "Broward",
+    zips: ["33068"],
+    neighborhoods: ["Kimberly Forest", "Boulevard Heights", "Broadview Park"],
+    geo: { lat: 26.2173, lng: -80.2256 },
+  },
+  {
+    slug: "sea-ranch-lakes",
+    name: "Sea Ranch Lakes",
+    county: "Broward",
+    zips: ["33308"],
+    neighborhoods: ["Sea Ranch Lakes Village"],
+    geo: { lat: 26.1948, lng: -80.0973 },
+  },
 
   // -------------------- PALM BEACH --------------------
   {
@@ -544,6 +584,14 @@ export const CITIES: City[] = [
     zips: ["33483"],
     neighborhoods: ["Gulf Stream Core", "Place au Soleil"],
     geo: { lat: 26.4795, lng: -80.0537 },
+  },
+  {
+    slug: "lake-park",
+    name: "Lake Park",
+    county: "Palm Beach",
+    zips: ["33403"],
+    neighborhoods: ["Park Avenue District", "Kelsey Park"],
+    geo: { lat: 26.7995, lng: -80.0656 },
   },
 ];
 
