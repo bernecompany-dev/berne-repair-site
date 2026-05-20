@@ -175,6 +175,35 @@ const HAS_CREDENTIAL = [
     name: "IRS Form W-9 — Request for Taxpayer Identification Number",
     url: absoluteUrl("/credentials/w9.pdf"),
   },
+  // Industry-association membership + ongoing training (added 2026-05-20).
+  // MSA = Marcone Servicers Association; "MSA World" is the members' portal
+  // brand. We use the formal name in recognizedBy and the familiar "MSA World"
+  // in visible copy. No fabricated certifications.
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "membership",
+    name: "MSA World Member",
+    description:
+      "Member of Marcone Servicers Association (MSA), the leading industry association for appliance service contractors in North America.",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "Marcone Servicers Association",
+      url: "https://msaworld.com/",
+    },
+    url: "https://msaworld.com/",
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "training",
+    name: "Continuous Manufacturer Training",
+    description:
+      "Berne technicians complete ongoing training on emerging appliance technology through MSA World coursework and OEM programs (Sub-Zero, Wolf, Miele, LG, Samsung, GE).",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "Marcone Servicers Association",
+      url: "https://msaworld.com/",
+    },
+  },
 ];
 
 export function organizationJsonLd() {

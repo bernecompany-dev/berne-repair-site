@@ -44,13 +44,23 @@ export default function CredentialsPage() {
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Berne Repair is a licensed and insured Florida appliance repair
-            vendor. EPA Section 608 certified (refrigerant work). Below: the
-            full document set we send to property managers, hotel ops, and
-            chain procurement teams &mdash; certificate of insurance, FL DBPR
-            technician license, EPA Section 608 cert, DBA filing, FL Workers&apos;
-            Comp exemption, FL resale certificate, IRS EIN assignment letter,
-            and a current W-9. Background checks for individual technicians
-            are available on request to onboarding teams.
+            vendor. EPA Section 608 certified (refrigerant work). Member of{" "}
+            <a
+              href="https://msaworld.com/"
+              target="_blank"
+              rel="noopener noreferrer external"
+              className="text-brand hover:underline"
+            >
+              MSA World
+            </a>
+            {" "}(Marcone Servicers Association) with continuous training on
+            emerging appliance technology. Below: the full document set we
+            send to property managers, hotel ops, and chain procurement teams
+            &mdash; certificate of insurance, FL DBPR technician license, EPA
+            Section 608 cert, DBA filing, FL Workers&apos; Comp exemption, FL
+            resale certificate, IRS EIN assignment letter, and a current W-9.
+            Background checks for individual technicians are available on
+            request to onboarding teams.
           </p>
         </div>
       </section>

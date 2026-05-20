@@ -47,6 +47,22 @@ export function SiteFooter() {
               <ShieldCheck className="size-4 text-brand" aria-hidden />
               <span>Licensed · Insured · EPA 608 · {COMPANY.socialProof.warranty}</span>
             </Link>
+            <a
+              href="https://msaworld.com/"
+              target="_blank"
+              rel="noopener noreferrer external"
+              className="flex items-center gap-2.5 text-muted-foreground hover:text-brand"
+            >
+              <ShieldCheck className="size-4 text-brand" aria-hidden />
+              <span>
+                {locale === "es" ? "Miembro de MSA World" : "MSA World Member"}
+                <span className="ml-1.5 text-muted-foreground/60">
+                  {locale === "es"
+                    ? "· Capacitación continua"
+                    : "· Continuous training"}
+                </span>
+              </span>
+            </a>
           </address>
         </div>
 

@@ -184,6 +184,24 @@ export default function AboutPage() {
               has it.
             </p>
             <p>
+              Berne is a member of{" "}
+              <a
+                href="https://msaworld.com/"
+                rel="noopener external"
+                target="_blank"
+                className="text-brand hover:underline"
+              >
+                MSA World
+              </a>
+              {" "}(Marcone Servicers Association), the leading industry
+              association for appliance service contractors. Our technicians
+              complete continuous training programs on emerging appliance
+              technology through MSA World coursework and OEM (Sub-Zero, Wolf,
+              Miele, LG, Samsung, GE) certification updates &mdash; so the
+              truck arriving at your home is equipped to service the appliance
+              you actually own, not the one made five years ago.
+            </p>
+            <p>
               If you call us today before noon, odds are we&apos;ll have a
               technician at your door by dinner. That&apos;s the operating
               standard. That&apos;s what {COMPANY.socialProof.repairsCompleted} jobs has
