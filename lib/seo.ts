@@ -121,6 +121,10 @@ const HAS_CREDENTIAL = [
     credentialCategory: "certification",
     name: "EPA Section 608 Universal",
     identifier: "16-8019803514-2",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "U.S. Environmental Protection Agency",
+    },
     url: absoluteUrl("/credentials/epa-certificate.pdf"),
   },
   {
@@ -133,6 +137,43 @@ const HAS_CREDENTIAL = [
     "@type": "InsurancePolicy",
     name: "Certificate of Insurance",
     url: absoluteUrl("/credentials/coi.pdf"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "exemption",
+    name: "Florida Workers' Compensation Exemption",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "Florida Division of Workers' Compensation",
+    },
+    url: absoluteUrl("/credentials/wc-exemption.pdf"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "registration",
+    name: "Florida Annual Resale Certificate for Sales Tax",
+    identifier: "16-8019803514-2",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "Florida Department of Revenue",
+    },
+    url: absoluteUrl("/credentials/florida-resale-certificate.pdf"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "registration",
+    name: "IRS EIN Assignment (CP 575)",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "Internal Revenue Service",
+    },
+    url: absoluteUrl("/credentials/ein-cp575.pdf"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "registration",
+    name: "IRS Form W-9 — Request for Taxpayer Identification Number",
+    url: absoluteUrl("/credentials/w9.pdf"),
   },
 ];
 

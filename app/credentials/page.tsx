@@ -8,7 +8,7 @@ import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Credentials — Licensed, Insured & EPA Certified · Berne Repair",
   description:
-    "Berne Repair vendor paperwork: Florida technician license, EPA Section 608 certification (16-8019803514-2), Certificate of Insurance (COI), and DBA registration.",
+    "Berne Repair vendor paperwork: FL technician license, EPA Section 608 cert (16-8019803514-2), COI, DBA, FL Workers' Comp exemption, FL resale certificate, IRS EIN (CP 575), and W-9 — all downloadable.",
   alternates: {
     canonical: "/credentials",
     languages: {
@@ -44,10 +44,13 @@ export default function CredentialsPage() {
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Berne Repair is a licensed and insured Florida appliance repair
-            vendor. EPA Section 608 certified (refrigerant work). COI and DBA
-            registration on file. Below: the four documents we send to
-            property managers, hotel ops, and chain procurement teams when
-            asked.
+            vendor. EPA Section 608 certified (refrigerant work). Below: the
+            full document set we send to property managers, hotel ops, and
+            chain procurement teams &mdash; certificate of insurance, FL DBPR
+            technician license, EPA Section 608 cert, DBA filing, FL Workers&apos;
+            Comp exemption, FL resale certificate, IRS EIN assignment letter,
+            and a current W-9. Background checks for individual technicians
+            are available on request to onboarding teams.
           </p>
         </div>
       </section>
