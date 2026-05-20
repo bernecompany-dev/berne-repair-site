@@ -290,7 +290,22 @@ export function localBusinessJsonLd() {
   };
 }
 
+/**
+ * Build ImageObject entries for a service slug. Returns empty array when the
+ * service has no photo set (ice-maker-repair, garbage-disposal-repair,
+ * wine-cooler-repair) — Google ignores empty arrays cleanly.
+ */
+function serviceImageNodes(slug: string) {
+  const paths = SERVICE_IMAGE_PATHS[slug] ?? [];
+  return paths.map((p) => ({
+    "@type": "ImageObject",
+    contentUrl: absoluteUrl(p),
+    url: absoluteUrl(p),
+  }));
+}
+
 export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
+  const imageNodes = serviceImageNodes(service.slug);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -308,6 +323,7 @@ export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
       locale === "es" ? `/es/services/${service.slug}` : `/services/${service.slug}`,
     ),
     inLanguage: locale === "es" ? "es-US" : "en-US",
+    ...(imageNodes.length > 0 ? { image: imageNodes } : {}),
     offers: {
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
@@ -355,6 +371,7 @@ export function serviceCityJsonLd(service: Service, city: City, locale: "en" | "
   const path = locale === "es"
     ? `/es/services/${service.slug}/${city.slug}`
     : `/services/${service.slug}/${city.slug}`;
+  const imageNodes = serviceImageNodes(service.slug);
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -365,6 +382,7 @@ export function serviceCityJsonLd(service: Service, city: City, locale: "en" | "
     description: `${service.longDescription} Serving ${city.name} and surrounding ${city.county} County.`,
     url: absoluteUrl(path),
     inLanguage: locale === "es" ? "es-US" : "en-US",
+    ...(imageNodes.length > 0 ? { image: imageNodes } : {}),
     offers: {
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
