@@ -3,6 +3,7 @@ import { SERVICES } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
 import { publishedArticles } from "@/lib/blog/articles";
+import { RESIDENTIAL_BRAND_SLUGS } from "@/lib/data/residential-brand-profiles";
 
 /**
  * Static last-modified date — bump intentionally when content meaningfully
@@ -93,6 +94,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },
   ]);
 
+  // Premium residential brand pages — English only for now.
+  const brandsIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/brands`,
+      lastModified: LAST_MOD,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+  ];
+  const brandPages: MetadataRoute.Sitemap = RESIDENTIAL_BRAND_SLUGS.map((slug) => ({
+    url: `${SITE_URL}/brands/${slug}`,
+    lastModified: LAST_MOD,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   const blogIndex: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/blog`,
@@ -109,5 +126,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...home, ...services, ...areas, ...combos, ...statics, ...blogIndex, ...blogPosts];
+  return [
+    ...home,
+    ...services,
+    ...areas,
+    ...combos,
+    ...statics,
+    ...brandsIndex,
+    ...brandPages,
+    ...blogIndex,
+    ...blogPosts,
+  ];
 }
