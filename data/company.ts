@@ -4,19 +4,22 @@ export const COMPANY = {
   shortName: "Berne Repair",
   tagline: "Premium appliance repair across South Florida",
   serviceCallPrice: 59,
+  // Canonical primary dispatch line — see Berne_Commercial/_docs/canonical-facts.md.
+  // Unified across all three Berne sites on 2026-05-20 (NAP-consistency sweep).
+  // The legacy (305) 520-7833 number was retired and folded into the dispatch trunk.
   phone: {
-    display: "(305) 520-7833",
-    tel: "+13055207833",
-    sms: "+13055207833",
+    display: "(754) 345-4515",
+    tel: "+17543454515",
+    sms: "+17543454515",
   },
   email: {
     public: "BerneRepair@gmail.com",
     leads: "BerneRepair@gmail.com",
   },
   hours: {
-    label: "Open 7 days · 8 AM – 9 PM",
+    label: "Open 7 days · 7 AM – 9 PM",
     structured: [
-      { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], open: "08:00", close: "21:00" },
+      { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], open: "07:00", close: "21:00" },
     ],
   },
   address: {

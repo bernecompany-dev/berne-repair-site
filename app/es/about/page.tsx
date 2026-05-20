@@ -293,7 +293,7 @@ export default function AboutPageES() {
               icon={<Clock3 className="size-5 text-brand" aria-hidden />}
               value="Mismo día"
               label="Estándar de despacho"
-              sub="Abierto 7 días · 8 AM – 9 PM"
+              sub="Abierto 7 días · 7 AM – 9 PM"
             />
             <Stat
               icon={<ShieldCheck className="size-5 text-brand" aria-hidden />}

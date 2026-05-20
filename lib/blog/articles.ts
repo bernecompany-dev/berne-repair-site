@@ -101,7 +101,7 @@ Before you book, here's what a Berne Repair tech does on a Sub-Zero diagnostic c
 
 ## When to call us
 
-If you've cleaned the condenser, confirmed both fans spin, checked the gaskets, and the unit still drifts warm after two hours, the next step is diagnostic. We charge a $59 service call, applied toward any repair. Berne Repair runs factory-trained Sub-Zero technicians out of a Miami truck stocked with the common 600 and 700 series parts. Call (305) 520-7833 — most days we can have a tech at your door within three hours.
+If you've cleaned the condenser, confirmed both fans spin, checked the gaskets, and the unit still drifts warm after two hours, the next step is diagnostic. We charge a $59 service call, applied toward any repair. Berne Repair runs factory-trained Sub-Zero technicians out of a Miami truck stocked with the common 600 and 700 series parts. Call (754) 345-4515 — most days we can have a tech at your door within three hours.
 
 A few related reads on our site:
 
@@ -182,7 +182,7 @@ Quick owner checklist before scheduling service:
 4. Confirm gas valve at the wall is fully open.
 5. Try a different burner — if one works and one doesn't, the issue is local.
 
-If you've done all five and it still clicks without lighting, we're a phone call away. Berne Repair runs Wolf-trained technicians on every truck. (305) 520-7833. The $59 service call applies toward the repair if you go ahead with us.
+If you've done all five and it still clicks without lighting, we're a phone call away. Berne Repair runs Wolf-trained technicians on every truck. (754) 345-4515. The $59 service call applies toward the repair if you go ahead with us.
 
 Related service pages:
 
@@ -267,7 +267,7 @@ Both brands' control boards are sensitive to power-quality issues — brown-outs
 
 ## Calling us for either
 
-Berne Repair handles both Viking and Thermador in the field. (305) 520-7833. Same $59 diagnostic visit, applied to repair. If you're in the buying decision and you'd rather not guess, we'll do a paid one-hour kitchen consult and walk through your specific install context.
+Berne Repair handles both Viking and Thermador in the field. (754) 345-4515. Same $59 diagnostic visit, applied to repair. If you're in the buying decision and you'd rather not guess, we'll do a paid one-hour kitchen consult and walk through your specific install context.
 
 Related reading on our site:
 
@@ -356,7 +356,7 @@ Salt regeneration is genuinely necessary in Miami. Municipal water in much of Mi
 
 ## When to book service
 
-If your Miele shows any of the above codes and an owner check doesn't clear it within thirty minutes, the diagnostic is faster than the trial-and-error. Berne Repair runs Miele-trained technicians on Miami-Dade routes daily. (305) 520-7833. Standard $59 service call applies toward repair.
+If your Miele shows any of the above codes and an owner check doesn't clear it within thirty minutes, the diagnostic is faster than the trial-and-error. Berne Repair runs Miele-trained technicians on Miami-Dade routes daily. (754) 345-4515. Standard $59 service call applies toward repair.
 
 Related service pages:
 
@@ -457,7 +457,7 @@ Replacement makes financial sense when (a) the repair quote exceeds 40% of repla
 
 ## Our position
 
-Berne Repair handles post-warranty service on every premium brand we've named here, plus a few we haven't. (305) 520-7833. The $59 service call applies toward the repair. We won't sell you an extended plan because we don't offer them — but we'll tell you honestly whether the one in your mailbox is worth signing.
+Berne Repair handles post-warranty service on every premium brand we've named here, plus a few we haven't. (754) 345-4515. The $59 service call applies toward the repair. We won't sell you an extended plan because we don't offer them — but we'll tell you honestly whether the one in your mailbox is worth signing.
 
 Related service pages on our site:
 
@@ -533,7 +533,7 @@ Every quarter, wipe the drawer gasket with a damp microfiber and a drop of mild 
 
 ## Booking service
 
-We carry the common 700 series gaskets on our trucks. Most calls are same-week, often same-day for our regular Aventura, Sunny Isles, and Bal Harbour clients. (305) 520-7833. The $59 service call applies toward repair.
+We carry the common 700 series gaskets on our trucks. Most calls are same-week, often same-day for our regular Aventura, Sunny Isles, and Bal Harbour clients. (754) 345-4515. The $59 service call applies toward repair.
 
 Related service pages:
 
@@ -614,7 +614,7 @@ If the budget runs to a 48-inch unit, the AG484 is the same all-gas architecture
 
 ## Booking service or pre-purchase consult
 
-If you're in the buying decision and want a non-dealer perspective on the outdoor install, we offer a one-hour paid consult that walks through your specific lanai geometry and prevailing-wind exposure. (305) 520-7833. For active service calls, same $59 diagnostic visit applies toward repair.
+If you're in the buying decision and want a non-dealer perspective on the outdoor install, we offer a one-hour paid consult that walks through your specific lanai geometry and prevailing-wind exposure. (754) 345-4515. For active service calls, same $59 diagnostic visit applies toward repair.
 
 ## A regional note on permitting
 
@@ -709,7 +709,7 @@ If your Star Burner is lighting clean but burning yellow at the tips, owners oft
 
 ## Booking service
 
-If your Star Burners are past the point where home maintenance recovers them, we stock heads for current PRD, PRG, and PCG production on our trucks. (305) 520-7833. The $59 diagnostic visit applies toward repair.
+If your Star Burners are past the point where home maintenance recovers them, we stock heads for current PRD, PRG, and PCG production on our trucks. (754) 345-4515. The $59 diagnostic visit applies toward repair.
 
 Related service pages:
 
@@ -803,7 +803,7 @@ In oceanfront penthouses where the unit pulls 8 to 14 shots a day for entertaini
 
 ## Booking service
 
-If your Miele coffee system is throwing F-codes, pulling weak shots, or just hasn't been serviced in over a year, we'll handle it. (305) 520-7833. The $59 service call applies toward the work. Brewing unit service is typically same-day.
+If your Miele coffee system is throwing F-codes, pulling weak shots, or just hasn't been serviced in over a year, we'll handle it. (754) 345-4515. The $59 service call applies toward the work. Brewing unit service is typically same-day.
 
 Related pages:
 
@@ -895,7 +895,7 @@ Current Sub-Zero wine storage uses R-600a (isobutane) refrigerant in new builds,
 
 ## Booking service
 
-We service Sub-Zero wine storage across South Florida and stock common parts for the 427, 424, 315, and 424FS lines on our trucks. (305) 520-7833. The $59 service call applies toward repair.
+We service Sub-Zero wine storage across South Florida and stock common parts for the 427, 424, 315, and 424FS lines on our trucks. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -982,7 +982,7 @@ If you've just had a new CSO30 installed and the first few cook cycles produce a
 
 ## Booking service
 
-If your CSO is throwing fault codes, preheating slow, or you suspect scale damage from prior water choices, we'll inspect and quote honest options. (305) 520-7833. The $59 service call applies toward the repair.
+If your CSO is throwing fault codes, preheating slow, or you suspect scale damage from prior water choices, we'll inspect and quote honest options. (754) 345-4515. The $59 service call applies toward the repair.
 
 Related pages:
 
@@ -1071,7 +1071,7 @@ After cam replacement, the door's self-close action will feel slightly different
 
 ## Booking service
 
-If your Viking is showing any of these symptoms, get the cam swapped before the cascade starts. (305) 520-7833. The $59 service call applies toward the repair. We carry cams for current Professional series and most VCBB/VCSB production on our trucks.
+If your Viking is showing any of these symptoms, get the cam swapped before the cascade starts. (754) 345-4515. The $59 service call applies toward the repair. We carry cams for current Professional series and most VCBB/VCSB production on our trucks.
 
 Related pages:
 
@@ -1162,7 +1162,7 @@ If your Benchmark is past ten years and the CrystalDry chamber has saturated, re
 
 ## Booking service
 
-If your Benchmark is drying poorly, we'll diagnose accurately the first visit. (305) 520-7833. The $59 service call applies toward repair.
+If your Benchmark is drying poorly, we'll diagnose accurately the first visit. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -1242,7 +1242,7 @@ The first three questions usually get vague answers. The fourth almost always ge
 
 ## When we can help
 
-Berne Repair works on La Cornue ranges across Miami-Dade, Broward, and Palm Beach. We're not factory-authorized — that path doesn't exist meaningfully in South Florida — but our techs have hands-on experience on most current and recent-historical La Cornue models. (305) 520-7833. The $59 service call applies toward repair.
+Berne Repair works on La Cornue ranges across Miami-Dade, Broward, and Palm Beach. We're not factory-authorized — that path doesn't exist meaningfully in South Florida — but our techs have hands-on experience on most current and recent-historical La Cornue models. (754) 345-4515. The $59 service call applies toward repair.
 
 The honest reality on La Cornue service is that we'll often need to order parts and return in two to three weeks for the actual repair. That's the brand reality, not a Berne Repair limitation. Where we add value over the dealer-coordinated service path is response speed on the diagnostic visit, hands-on experience that beats most "we don't work on those" shops, and clear quotes before parts arrive.
 
@@ -1337,7 +1337,7 @@ For builders speccing for spec-home resale: Pro 48 in homes priced above $4M, Pr
 
 ## Service in either case
 
-We service both Pro 48 and Pro 36 across South Florida and stock common parts for both on our trucks. Whichever you buy, factory-trained service is available. (305) 520-7833. The $59 service call applies toward repair.
+We service both Pro 48 and Pro 36 across South Florida and stock common parts for both on our trucks. Whichever you buy, factory-trained service is available. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -1428,7 +1428,7 @@ Owners sometimes use "Vario" interchangeably with "modular" but BSH actually use
 
 ## Booking service
 
-We service Gaggenau Vario across South Florida and have established parts pipeline relationships with BSH for both common and special-order items. (305) 520-7833. The $59 service call applies toward repair.
+We service Gaggenau Vario across South Florida and have established parts pipeline relationships with BSH for both common and special-order items. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -1522,7 +1522,7 @@ Doral, Hialeah, and other inland Miami areas with newer electrical service gener
 
 ## Booking service
 
-We service Thermador Freedom Induction across South Florida. Sensor diagnostic is a same-day visit; sensor replacement typically requires a return visit two to three days later once parts are confirmed on the truck. (305) 520-7833. The $59 service call applies toward repair.
+We service Thermador Freedom Induction across South Florida. Sensor diagnostic is a same-day visit; sensor replacement typically requires a return visit two to three days later once parts are confirmed on the truck. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -1632,7 +1632,7 @@ Salt that spills onto the stainless tub floor during refill and isn't wiped up c
 
 ## Booking service
 
-If your Miele's been showing salt indicators or spotted glassware persistently, we can diagnose the underlying cause and verify hardness settings during a routine service visit. (305) 520-7833. The $59 service call applies toward repair.
+If your Miele's been showing salt indicators or spotted glassware persistently, we can diagnose the underlying cause and verify hardness settings during a routine service visit. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -1737,7 +1737,7 @@ Hardwood Integrated panels in coastal South Florida need ongoing care that build
 
 ## Booking service
 
-We service both Sub-Zero Built-In and Integrated across South Florida. Integrated service runs slightly longer per visit but our techs are familiar with the panel-removal sequence on every current Sub-Zero Integrated model. (305) 520-7833. The $59 service call applies toward repair.
+We service both Sub-Zero Built-In and Integrated across South Florida. Integrated service runs slightly longer per visit but our techs are familiar with the panel-removal sequence on every current Sub-Zero Integrated model. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -1850,7 +1850,7 @@ Don't use these on the griddle. The chrome plating doesn't survive abrasive clea
 
 ## Booking service
 
-If your Wolf griddle has visible pitting or rust developing, we can assess whether refinishing recovers it. (305) 520-7833. The $59 service call applies toward refinishing or replacement work.
+If your Wolf griddle has visible pitting or rust developing, we can assess whether refinishing recovers it. (754) 345-4515. The $59 service call applies toward refinishing or replacement work.
 
 Related pages:
 
@@ -1952,7 +1952,7 @@ Many Viking Professional hoods include integrated halogen or LED task lighting. 
 
 ## Booking service
 
-If your Viking hood is making bearing noise or showing thermal cutout symptoms, the motor needs replacement before complete failure. We stock common Viking Professional hood motors on our trucks for Boca, Delray, and surrounding markets. (305) 520-7833. The $59 service call applies toward repair.
+If your Viking hood is making bearing noise or showing thermal cutout symptoms, the motor needs replacement before complete failure. We stock common Viking Professional hood motors on our trucks for Boca, Delray, and surrounding markets. (754) 345-4515. The $59 service call applies toward repair.
 
 Related pages:
 
@@ -2067,7 +2067,7 @@ Five-to-ten years into the install, the millwork around the two units often shif
 
 ## Booking service
 
-We service Sub-Zero and Bosch Benchmark combination installs across South Florida. (305) 520-7833. The $59 service call applies toward repair. We'll diagnose both units on the visit regardless of which one initiated the call.
+We service Sub-Zero and Bosch Benchmark combination installs across South Florida. (754) 345-4515. The $59 service call applies toward repair. We'll diagnose both units on the visit regardless of which one initiated the call.
 
 Related pages:
 
@@ -2192,7 +2192,7 @@ If your Integrated Sub-Zero is past year 15 and the panel needs replacement, fac
 
 ## Booking service
 
-We work with several millworkers across South Florida who specialize in Sub-Zero Integrated panels. We can coordinate the diagnostic, panel fabrication, and installation as a single project. (305) 520-7833. The $59 service call applies toward the assessment.
+We work with several millworkers across South Florida who specialize in Sub-Zero Integrated panels. We can coordinate the diagnostic, panel fabrication, and installation as a single project. (754) 345-4515. The $59 service call applies toward the assessment.
 
 Related pages:
 
@@ -2317,7 +2317,7 @@ Older Thermador Professional ranges (pre-2013) used a different igniter family t
 
 ## Booking service
 
-If your Thermador Professional is showing slow ignition or burner-specific failures, we'll diagnose accurately and quote honestly. (305) 520-7833. The $59 service call applies toward the repair. We carry common igniters and spark modules for current Thermador Professional production on our trucks.
+If your Thermador Professional is showing slow ignition or burner-specific failures, we'll diagnose accurately and quote honestly. (754) 345-4515. The $59 service call applies toward the repair. We carry common igniters and spark modules for current Thermador Professional production on our trucks.
 
 Related pages:
 
@@ -2396,13 +2396,15 @@ A compressor swap on a 648PRO runs $2,200 to $2,800 with refrigerant recovery, e
 
 We won't quote a Sub-Zero compressor without first completing the five-step upstream diagnostic. If a dealer or another shop has quoted compressor replacement on a unit that received recent firmware, call us for a $59 second-opinion diagnostic. Roughly 60 percent of the post-firmware short-cycling calls we've taken resolved upstream of the compressor.
 
-(305) 520-7833. Berne Repair runs factory-trained Sub-Zero techs out of Miami trucks stocked with 600 series sensors, heaters, and gaskets. We service coastal South Florida from Key Biscayne through Palm Beach.
+(754) 345-4515. Berne Repair runs factory-trained Sub-Zero techs out of Miami trucks stocked with 600 series sensors, heaters, and gaskets. We service coastal South Florida from Key Biscayne through Palm Beach.
 
 Related reading:
 
 - [Sub-Zero refrigerator troubleshooting in South Florida](/blog/sub-zero-refrigerator-troubleshooting-miami)
 - [Refrigerator repair across South Florida](/services/refrigerator-repair)
-- [Service in Bal Harbour](/areas/bal-harbour)`,
+- [Service in Bal Harbour](/areas/bal-harbour)
+
+If your refrigerator is a standard-brand built-in (GE Monogram, KitchenAid, Bosch standard), our [Berne Appliance Repair sister operation](https://bernerepair.com) handles those at the same response speed.`,
   },
   {
     slug: "sub-zero-12-year-replace-vs-restore",
@@ -2483,13 +2485,15 @@ We won't sell you a restoration that doesn't make sense. A second-opinion diagno
 
 For homeowners who do restore, we schedule the work across one or two visits, document each component swap with model and part numbers for your records, and warranty the restoration work for 24 months parts and labor.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Sub-Zero compressor diagnostics after firmware updates](/blog/sub-zero-648pro-compressor-firmware-coastal)
 - [Refrigerator repair across South Florida](/services/refrigerator-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For year-12 decisions on standard-brand refrigeration (LG, Samsung, Whirlpool, GE), our [sister operation at bernerepair.com](https://bernerepair.com) runs the same restoration-vs-replace conversation at mass-market price points.`,
   },
   {
     slug: "sub-zero-integrated-panel-gasket-door-alignment",
@@ -2562,13 +2566,15 @@ Hinge adjustment as a standalone service: $180 to $240 depending on access. Hing
 
 We service integrated Sub-Zeros across South Florida. We bring a digital protractor and a thickness gauge to every integrated service call — measurement, not estimation. Custom panel weight, hinge deflection, panel-to-cabinet gap, gasket compression at six points around the door. Documented, photographed, and reported back to the owner before any work is quoted.
 
-(305) 520-7833. We service Sub-Zero, Wolf, Viking, Thermador, Miele, Gaggenau, and La Cornue.
+(754) 345-4515. We service Sub-Zero, Wolf, Viking, Thermador, Miele, Gaggenau, and La Cornue.
 
 Related reading:
 
 - [Sub-Zero 700 drawer seal failure patterns](/blog/sub-zero-700-drawer-seal-failure)
 - [Refrigerator repair across South Florida](/services/refrigerator-repair)
-- [Service in Coral Gables](/areas/coral-gables)`,
+- [Service in Coral Gables](/areas/coral-gables)
+
+For panel-ready built-ins outside the Sub-Zero ecosystem (Fisher & Paykel integrated, Bosch 800 series panel), our [sister site bernerepair.com](https://bernerepair.com) handles those calls.`,
   },
   {
     slug: "sub-zero-wine-column-compressor-lifespan-miami",
@@ -2659,13 +2665,15 @@ Avoid stocking near-room-temperature bottles in large batches. A case of 70°F w
 
 We don't push preventive compressor replacement on wine columns. The compressor isn't usually the right target before year 14, and we'll tell you so. Our restoration approach on year-10 to year-14 wine columns targets the components that actually wear: gaskets, fans, sensors, humidification. A $900 to $1,400 mid-life refresh extends most columns to year 18-20 on the original compressor.
 
-(305) 520-7833. Wine column service across Miami-Dade, Broward, and Palm Beach.
+(754) 345-4515. Wine column service across Miami-Dade, Broward, and Palm Beach.
 
 Related reading:
 
 - [Sub-Zero wine storage compressor in Florida](/blog/sub-zero-wine-storage-compressor-florida)
 - [Wine cooler repair](/services/wine-cooler-repair)
-- [Service in Sunny Isles Beach](/areas/sunny-isles-beach)`,
+- [Service in Sunny Isles Beach](/areas/sunny-isles-beach)
+
+For commercial wine storage in restaurant cellars or hotel banquet refrigeration, [Berne's commercial division](https://berne-commercial.com) handles refrigeration at that scale.`,
   },
   {
     slug: "sub-zero-ice-maker-module-oem-only",
@@ -2746,13 +2754,15 @@ This is another reason genuine parts matter for coastal installs: the salt envir
 
 We carry genuine Sub-Zero ice maker modules for current production platforms on our trucks. If your unit needs the part replaced, we install OEM, document the part number on your invoice, and warranty the replacement for 24 months parts and labor. We do not install owner-supplied aftermarket modules. If you've already purchased one, we'll perform the service call to assess what's needed but we'll recommend genuine before reinstalling the unit.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Sub-Zero wine column compressor lifespan](/blog/sub-zero-wine-column-compressor-lifespan-miami)
 - [Ice maker repair](/services/ice-maker-repair)
-- [Service in Aventura](/areas/aventura)`,
+- [Service in Aventura](/areas/aventura)
+
+For commercial ice production (Hoshizaki, Manitowoc, Scotsman head units) in restaurants and bars, our [commercial team at berne-commercial.com](https://berne-commercial.com) covers that platform separately.`,
   },
   {
     slug: "wolf-range-igniter-vs-spark-module",
@@ -2841,13 +2851,15 @@ If you have a Wolf range within a quarter-mile of the water and you notice any o
 
 We carry Wolf spark modules and common igniters for DF/AG/R/SRT series on our trucks. If the diagnostic identifies a module failure, we have the part with us 90% of the time. We don't quote both module and full set of igniters unless the diagnostic shows the igniters are also worn — sometimes the module fails alone and the igniters are healthy; sometimes both have aged together and replacing the module without the igniters means a callback in a few months.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Wolf range burner ignition diagnosis](/blog/wolf-range-burner-issues)
 - [Range and cooktop repair](/services/oven-repair)
-- [Service in Surfside](/areas/surfside)`,
+- [Service in Surfside](/areas/surfside)
+
+For standard-brand range ignition diagnostics (GE Profile, Samsung, KitchenAid), our [sister operation at bernerepair.com](https://bernerepair.com) handles those at the same response speed.`,
   },
   {
     slug: "wolf-dual-fuel-thermostat-calibration-drift",
@@ -2939,13 +2951,15 @@ The net effect: oceanfront and high-rise installs see thermostat drift about 30%
 
 Every Wolf service call we run includes a thermostat verification at 400°F, whether the customer called about temperature or not. It takes 15 minutes during the service window and it catches drift before the homeowner notices. We document the measurement on the service invoice. If the drift is under 5°F, no action. Between 5-10°F, we discuss recalibration during the visit. Over 10°F, we recommend it then or schedule it as a follow-up.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Wolf range burner ignition diagnosis](/blog/wolf-range-burner-issues)
 - [Oven repair across South Florida](/services/oven-repair)
-- [Service in Brickell area Miami](/areas/miami)`,
+- [Service in Brickell area Miami](/areas/miami)
+
+For commercial gas ranges in restaurant kitchens (Vulcan, Garland, Southbend), [Berne's commercial division](https://berne-commercial.com) covers calibration on that platform.`,
   },
   {
     slug: "wolf-double-oven-convection-blower-imbalance",
@@ -3030,13 +3044,15 @@ We measure blower runout on every Wolf double oven diagnostic past year five, wh
 
 This builds a longitudinal record of wear that lets us recommend preventive replacement at the right time — not too early (wasting money) and not too late (risking element contact).
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Wolf range thermostat calibration drift](/blog/wolf-dual-fuel-thermostat-calibration-drift)
 - [Oven repair across South Florida](/services/oven-repair)
-- [Service in Coral Gables](/areas/coral-gables)`,
+- [Service in Coral Gables](/areas/coral-gables)
+
+For standard-brand double ovens (GE Profile, KitchenAid, Maytag), our [sister site bernerepair.com](https://bernerepair.com) handles those calls.`,
   },
   {
     slug: "wolf-gas-top-burner-cleaning-ritual",
@@ -3129,13 +3145,15 @@ Every Wolf rangetop or range service visit we run ends with a full burner-cap-an
 
 We also send customers home with a one-page printed copy of this ritual, laminated. Stick it on the inside of a cabinet door near the rangetop and the habit forms.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Wolf range igniter vs spark module diagnosis](/blog/wolf-range-igniter-vs-spark-module)
 - [Range and cooktop repair](/services/oven-repair)
-- [Service in Bal Harbour](/areas/bal-harbour)`,
+- [Service in Bal Harbour](/areas/bal-harbour)
+
+For mass-market gas cooktops (GE, Samsung, LG), our [sister operation at bernerepair.com](https://bernerepair.com) covers routine service and burner head replacement.`,
   },
   {
     slug: "viking-vgr548-battery-igniter-combo",
@@ -3228,13 +3246,15 @@ That backup-capability advantage disappears if the battery is dead. We test batt
 
 Every VGR548 diagnostic past year 5 includes a battery test, documented on the invoice. We carry the common battery and igniter parts on our trucks. If the diagnostic shows combined-failure-mode, we present both the single-fix and the full-refresh options with honest pricing on both, and we explain the callback risk of the single-fix on units past year 8.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Wolf range igniter vs spark module](/blog/wolf-range-igniter-vs-spark-module)
 - [Range and cooktop repair](/services/oven-repair)
-- [Service in Coral Gables](/areas/coral-gables)`,
+- [Service in Coral Gables](/areas/coral-gables)
+
+For standard-brand gas ranges (GE Profile, KitchenAid), our [sister operation at bernerepair.com](https://bernerepair.com) handles those calls at the same response speed.`,
   },
   {
     slug: "viking-professional-oven-door-hinge-replacement",
@@ -3341,13 +3361,15 @@ We track Viking hinge condition on every service visit, regardless of whether th
 
 Hinge work is one of the few Viking jobs where the labor materially exceeds the parts cost. We don't pad the labor. The job takes the time it takes. We charge the time it took.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Viking VGR548 ignition diagnosis](/blog/viking-vgr548-battery-igniter-combo)
 - [Oven repair across South Florida](/services/oven-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For mass-market oven door hardware (Samsung, LG, Whirlpool), our [sister site bernerepair.com](https://bernerepair.com) handles those at the same response speed.`,
   },
   {
     slug: "viking-vs-wolf-vs-thermador-service-ecosystem",
@@ -3456,13 +3478,15 @@ Those brands deserve their own treatment. The Viking/Wolf/Thermador comparison i
 
 We service all three brands with factory-current training. When customers ask which to buy, we recommend based on the kitchen, the cooking style, and the location — not based on what's most profitable for us to repair. We've talked customers out of all three brands when a fourth would fit better.
 
-(305) 520-7833. Honest pre-purchase consultations available at the diagnostic-call rate ($59) if you want a working tech's input before signing a $12,000 range order.
+(754) 345-4515. Honest pre-purchase consultations available at the diagnostic-call rate ($59) if you want a working tech's input before signing a $12,000 range order.
 
 Related reading:
 
 - [Viking vs Thermador for South Florida coastal homes](/blog/viking-vs-thermador-comparison)
 - [Range and oven repair](/services/oven-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For mass-market range service ecosystems (LG, Samsung, GE, Whirlpool), our [sister operation at bernerepair.com](https://bernerepair.com) covers the standard-brand market.`,
   },
   {
     slug: "thermador-star-burner-flame-spread",
@@ -3567,13 +3591,15 @@ For coastal owners, run both interventions on the appropriate intervals: port cl
 
 We carry replacement Star Burner heads, caps, and igniters on our trucks for current Thermador Professional production. When we service a Thermador, we open the burners regardless of the original complaint and assess port condition. If we find a head that's been damaged by aggressive cleaning, we tell the owner before recommending replacement; sometimes the damage is cosmetic and the burner still performs adequately for another year or two before replacement becomes mandatory.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Thermador igniters and coastal salt pitting](/blog/thermador-igniters-coastal-salt-pitting)
 - [Range and oven repair](/services/oven-repair)
-- [Service in Aventura](/areas/aventura)`,
+- [Service in Aventura](/areas/aventura)
+
+For commercial open-burner range work (Vulcan, Garland, Wolf commercial), [Berne's commercial team](https://berne-commercial.com) handles those installations separately.`,
   },
   {
     slug: "thermador-combi-oven-steam-descaling",
@@ -3682,13 +3708,15 @@ When we service a Thermador combi-oven, we ask the owner when the last descale w
 
 We carry Thermador-approved descaler on our trucks and we can perform the descale cycle as part of the service call. The cycle runs while we work on other items in the kitchen or while we wait for any parts that need pickup.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Thermador igniters and coastal salt pitting](/blog/thermador-igniters-coastal-salt-pitting)
 - [Oven repair across South Florida](/services/oven-repair)
-- [Service in Coral Gables](/areas/coral-gables)`,
+- [Service in Coral Gables](/areas/coral-gables)
+
+For commercial combi-ovens in restaurant and hotel kitchens (Rational, Alto-Shaam, Convotherm), [Berne's commercial division](https://berne-commercial.com) covers that platform.`,
   },
   {
     slug: "thermador-freedom-induction-failures",
@@ -3799,13 +3827,15 @@ We're factory-trained on Thermador induction service. Freedom Induction service 
 
 When we service a Freedom Induction, we run the full coil-array diagnostic regardless of the customer complaint. The diagnostic shows the health of every coil in the array and lets us flag developing failures before they become acute. This is the kind of preventive insight that's unique to the Freedom Induction platform — the array architecture lets us see component-level health that fixed-zone induction doesn't expose.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Thermador star burner cleaning](/blog/thermador-star-burner-flame-spread)
 - [Range and cooktop repair](/services/oven-repair)
-- [Service in Brickell area Miami](/areas/miami)`,
+- [Service in Brickell area Miami](/areas/miami)
+
+For standard-brand induction cooktops (GE Profile, Samsung, LG), our [sister site bernerepair.com](https://bernerepair.com) handles those calls.`,
   },
   {
     slug: "miele-g7000-water-inlet-diagnostics",
@@ -3898,13 +3928,15 @@ We carry G 7000 water-management boards, inlet valves, and inlet hoses on our tr
 
 We also bring the Miele service-mode interface dongle, which connects to the dishwasher and reads the live diagnostic data plus the historical fault log. The dongle shows when each fault was first registered, how often it has recurred, and what the system attempted as remediation. That history is often more valuable than the current symptom for diagnosing intermittent issues.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Miele dishwasher error codes — what they actually mean](/blog/miele-dishwasher-error-codes)
 - [Dishwasher repair across South Florida](/services/dishwasher-repair)
-- [Service in Brickell area Miami](/areas/miami)`,
+- [Service in Brickell area Miami](/areas/miami)
+
+For commercial dishwashers in restaurant kitchens (Hobart, Jackson, CMA), [Berne's commercial team](https://berne-commercial.com) covers that platform separately.`,
   },
   {
     slug: "miele-w1-washer-bearing-assembly-reality",
@@ -4023,13 +4055,15 @@ For vacation-home installations, running a single empty hot-water cycle once a m
 
 We perform Miele W1 bearing replacements in-house with the correct tooling. We carry the bearing kit and seal kit on our trucks for the most common W1 platforms. When the diagnostic confirms bearing wear, we schedule the full-day work session with proper preparation rather than trying to compress it into a normal-length service call.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Miele dishwasher error codes](/blog/miele-dishwasher-error-codes)
 - [Washer repair across South Florida](/services/washer-repair)
-- [Service in Coral Gables](/areas/coral-gables)`,
+- [Service in Coral Gables](/areas/coral-gables)
+
+For multi-family or laundromat washer service (Speed Queen, Wascomat, Huebsch), [Berne's commercial division](https://berne-commercial.com) handles commercial laundry at scale.`,
   },
   {
     slug: "miele-generation-6000-oven-door-spring-hinge",
@@ -4136,13 +4170,15 @@ We carry Generation 6000 hinges for current and prior production on our trucks f
 
 We don't recommend hinge replacement on otherwise heavily-aged ovens unless the rest of the unit supports another 5-7 years of service. On units past year 14 with multiple component issues, we'll discuss whether hinge replacement is the right call vs replacement of the appliance.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Miele G 7000 dishwasher water inlet diagnostics](/blog/miele-g7000-water-inlet-diagnostics)
 - [Oven repair across South Florida](/services/oven-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For standard-brand wall oven hardware (GE Profile, KitchenAid, Bosch standard), our [sister site bernerepair.com](https://bernerepair.com) handles those calls.`,
   },
   {
     slug: "bertazzoni-heritage-range-thermostat-igniter",
@@ -4263,13 +4299,15 @@ We bring soft cloth covers and dedicated handling tools to every Bertazzoni serv
 
 We carry Bertazzoni Heritage igniters and common spark modules on our trucks. We're factory-trained on the platform and we maintain current technical documentation on all current and recent-production Heritage models. When we service Bertazzoni, we use Bertazzoni-specific tooling for thermostat calibration and convection diagnostics.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Viking vs Wolf vs Thermador service ecosystem](/blog/viking-vs-wolf-vs-thermador-service-ecosystem)
 - [Oven and range repair](/services/oven-repair)
-- [Service in Coral Gables](/areas/coral-gables)`,
+- [Service in Coral Gables](/areas/coral-gables)
+
+For standard-brand European-style ranges (Bosch, Bertazzoni Master series, KitchenAid), our [sister operation at bernerepair.com](https://bernerepair.com) handles those at the same response speed.`,
   },
   {
     slug: "bluestar-performance-burner-head-venturi",
@@ -4388,13 +4426,15 @@ Every Bluestar service call we run includes a venturi verification on all burner
 
 We're factory-familiar with Bluestar Performance and RNB series. Parts logistics for Bluestar in our market is workable for common items (igniters, knobs, valves) and require ordering for less common parts (control boards, specific oven elements).
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Wolf gas top burner cleaning ritual](/blog/wolf-gas-top-burner-cleaning-ritual)
 - [Range and cooktop repair](/services/oven-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For commercial open-burner ranges in restaurant kitchens (Vulcan, Garland, Wolf commercial), [Berne's commercial team](https://berne-commercial.com) handles those installations.`,
   },
   {
     slug: "sub-zero-wolf-oem-only-counterfeit-risk",
@@ -4509,13 +4549,15 @@ We refuse to install owner-supplied parts on Sub-Zero or Wolf service unless we 
 
 If you've already purchased a part and you're not certain about its authenticity, we'll run a diagnostic visit to assess the situation and recommend a path forward.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Sub-Zero ice maker module OEM only](/blog/sub-zero-ice-maker-module-oem-only)
 - [Refrigerator repair across South Florida](/services/refrigerator-repair)
-- [Service in Aventura](/areas/aventura)`,
+- [Service in Aventura](/areas/aventura)
+
+For mass-market parts authenticity questions (Samsung, LG, GE OEM verification), our [sister operation at bernerepair.com](https://bernerepair.com) runs the same OEM-only policy on those brands.`,
   },
   {
     slug: "white-glove-service-window-hnw",
@@ -4656,7 +4698,7 @@ We've built our service operation around premium expectations from the start. Ev
 
 For homeowners new to premium service: the first call is the test. If we deliver the experience we describe here on the first call, the relationship has a foundation. If we don't, we've earned the right to be replaced.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
@@ -4815,13 +4857,15 @@ Our pre-purchase inspections are written reports with photographic documentation
 
 If the buyer subsequently engages us for service, the inspection findings become the baseline for the service plan. Continuity of service from inspection through the ownership period is one of the advantages of using the same contractor for both.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [When to replace a 12-year-old Sub-Zero vs full restoration](/blog/sub-zero-12-year-replace-vs-restore)
 - [Service in Coral Gables](/areas/coral-gables)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For pre-purchase inspections on standard-brand kitchens (GE, Samsung, LG, Whirlpool builds), our [sister site bernerepair.com](https://bernerepair.com) offers the same inspection service scaled to mass-market price points.`,
   },
   {
     slug: "vintage-premium-appliance-restoration-economics",
@@ -4944,13 +4988,15 @@ For estate trustees uncertain how to handle premium appliances, a pre-dispositio
 
 We won't oversell restoration on units where the economics don't justify it. Our written restoration assessment includes the side-by-side replacement option, with cost ranges for both, and our honest recommendation. If the owner chooses restoration despite a replacement-favorable analysis, we'll do excellent work on the restoration — but they'll know what they're choosing.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [When to replace a 12-year-old Sub-Zero vs full restoration](/blog/sub-zero-12-year-replace-vs-restore)
 - [Service in Coral Gables](/areas/coral-gables)
-- [Service in Coconut Grove area Miami](/areas/miami)`,
+- [Service in Coconut Grove area Miami](/areas/miami)
+
+For vintage standard-brand restoration (older GE Monogram, KitchenAid Architect, Maytag), our [sister operation at bernerepair.com](https://bernerepair.com) handles those calls separately.`,
   },
   {
     slug: "built-in-vs-freestanding-refrigerator-service-cost",
@@ -5091,13 +5137,15 @@ We service all three architectures with factory-current training. We don't push 
 
 When clients call us for refrigerator replacement decisions on units approaching end-of-life, we walk through the architectural choice explicitly. The decision is fundamentally about ownership timeline and aesthetic priority — not about which architecture is "better."
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Sub-Zero built-in vs integrated service](/blog/sub-zero-built-in-vs-integrated-service)
 - [Refrigerator repair across South Florida](/services/refrigerator-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For mass-market freestanding refrigeration (LG, Samsung, Whirlpool, GE), our [sister site bernerepair.com](https://bernerepair.com) covers that segment with standard-brand pricing.`,
   },
   {
     slug: "premium-dishwasher-integration-panel-alignment",
@@ -5256,13 +5304,15 @@ We're factory-trained on Miele, Bosch, and Thermador panel-ready dishwasher inte
 
 For new installations, we recommend the appliance integrator perform the panel attachment and alignment as part of the installation, with the cabinet manufacturer providing the panel and weight specification in advance.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Miele G 7000 dishwasher diagnostics](/blog/miele-g7000-water-inlet-diagnostics)
 - [Dishwasher repair across South Florida](/services/dishwasher-repair)
-- [Service in Brickell area Miami](/areas/miami)`,
+- [Service in Brickell area Miami](/areas/miami)
+
+For standard-brand integrated dishwashers (Bosch standard, KitchenAid, Samsung StormWash), our [sister operation at bernerepair.com](https://bernerepair.com) handles those at the same response speed.`,
   },
   {
     slug: "wine-cellar-climate-sub-zero-eurocave",
@@ -5407,13 +5457,15 @@ For collections above $50k insured value, the contract math is straightforward �
 
 We service Sub-Zero wine columns, EuroCave cellar conditioners, and full purpose-built cellar systems across South Florida. We're factory-familiar with both brands and we maintain the tooling for both. For collectors with significant collections, we provide service contracts with scheduled visits, documented work, and priority response on unscheduled issues.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Sub-Zero wine column compressor lifespan](/blog/sub-zero-wine-column-compressor-lifespan-miami)
 - [Wine cooler repair](/services/wine-cooler-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For commercial wine storage in restaurant cellars or hotel cellars, [Berne's commercial division](https://berne-commercial.com) handles refrigeration at that scale.`,
   },
   {
     slug: "coastal-salt-air-stainless-protection-pro",
@@ -5572,13 +5624,15 @@ We assess stainless condition on every premium appliance service call in coastal
 
 For owners new to coastal premium ownership, we provide a one-page printed care guide laminated to keep near the kitchen, with the cleaning routine and the products we recommend. The routine takes 10 minutes a week. The result is appliances that look new at year 10.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Coastal salt-air protection patterns](/blog/wolf-48-griddle-saltair-care)
 - [Service in Bal Harbour](/areas/bal-harbour)
-- [Service in Surfside](/areas/surfside)`,
+- [Service in Surfside](/areas/surfside)
+
+For mass-market stainless care across LG/Samsung/GE Profile freestanding appliances, our [sister site bernerepair.com](https://bernerepair.com) handles routine coastal maintenance at standard-brand price points.`,
   },
   {
     slug: "service-contract-economics-premium-appliances",
@@ -5737,13 +5791,15 @@ We're contract-neutral. We service contract customers, manufacturer-extended-ser
 
 If you're trying to make this decision, schedule a 30-minute consultation. We'll review your appliance ages, household use patterns, and budget preferences and recommend the approach that fits. The consultation is free; we're not selling a contract during the meeting.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [White-glove service expectations for high-net-worth households](/blog/white-glove-service-window-hnw)
 - [Luxury appliance warranty after expiration](/blog/luxury-appliance-warranty-after-expiration)
-- [Service across South Florida](/services/refrigerator-repair)`,
+- [Service across South Florida](/services/refrigerator-repair)
+
+For service-contract structure on standard-brand kitchens (LG/Samsung/GE/Whirlpool), our [sister operation at bernerepair.com](https://bernerepair.com) runs a parallel program calibrated to mass-market repair economics.`,
   },
   {
     slug: "diagnostic-fee-structure-premium-transparency",
@@ -5928,13 +5984,15 @@ We have a "no surprise repairs" policy: we don't proceed with repair work beyond
 
 For new customers uncertain about our approach: ask for references. We provide them readily. Many of our clients have been with us 7-15 years; that relationship history is the best indicator of how we operate.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Service contract economics for premium appliances](/blog/service-contract-economics-premium-appliances)
 - [Sub-Zero and Wolf OEM parts and counterfeit risk](/blog/sub-zero-wolf-oem-only-counterfeit-risk)
-- [Service across South Florida](/services/refrigerator-repair)`,
+- [Service across South Florida](/services/refrigerator-repair)
+
+Our [sister site bernerepair.com](https://bernerepair.com) uses the same transparent diagnostic-fee structure on standard-brand calls (GE, Samsung, LG, Whirlpool) — $59 applied to the repair, no upsell.`,
   },
   {
     slug: "aventura-condo-refrigeration-highrise-dispatch",
@@ -6091,13 +6149,15 @@ We've built our Aventura service operation specifically for high-rise constraint
 
 For households new to premium high-rise service in Aventura, the first call establishes the relationship. Subsequent visits proceed with established protocols and minimal overhead.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [White-glove service expectations](/blog/white-glove-service-window-hnw)
 - [Refrigerator repair across South Florida](/services/refrigerator-repair)
-- [Service in Aventura](/areas/aventura)`,
+- [Service in Aventura](/areas/aventura)
+
+For mass-market condo refrigeration (LG, Samsung, GE freestanding builds), our [sister operation at bernerepair.com](https://bernerepair.com) runs the same Aventura high-rise dispatch for standard brands.`,
   },
   {
     slug: "brickell-skyrise-kitchen-renovation-service-planning",
@@ -6254,13 +6314,15 @@ We consult on high-rise kitchen renovations regularly. Our involvement during th
 
 For new owners planning a Brickell tower renovation, a 60-90 minute consultation during the design phase can prevent service-access issues that become expensive after the renovation is complete. The consultation is provided at our standard service-call rate ($59).
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Premium dishwasher integration — panel alignment](/blog/premium-dishwasher-integration-panel-alignment)
 - [Aventura condo refrigeration maintenance](/blog/aventura-condo-refrigeration-highrise-dispatch)
-- [Service in Brickell area Miami](/areas/miami)`,
+- [Service in Brickell area Miami](/areas/miami)
+
+For standard-brand kitchen renovations in Brickell rentals or smaller condos (GE Profile, Samsung, LG builds), our [sister site bernerepair.com](https://bernerepair.com) covers that segment.`,
   },
   {
     slug: "pinecrest-historic-estate-vintage-sub-zero",
@@ -6427,13 +6489,15 @@ For restoration candidates that aren't being kept by the original estate, we som
 
 We service Pinecrest estates regularly with comprehensive maintenance plans tailored to multi-kitchen, mixed-age installations. We handle vintage Sub-Zero, Wolf, Viking, and Thermador restoration work in-house, including R-12 to R-134a refrigerant conversion on legacy refrigeration. We coordinate with household management for scheduling and document service history at the estate level rather than unit level.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Vintage premium appliance restoration economics](/blog/vintage-premium-appliance-restoration-economics)
 - [Refrigerator repair across South Florida](/services/refrigerator-repair)
-- [Service in Pinecrest](/areas/pinecrest)`,
+- [Service in Pinecrest](/areas/pinecrest)
+
+For vintage standard-brand appliances in estate properties (older GE Monogram, KitchenAid Architect, Dacor), our [sister operation at bernerepair.com](https://bernerepair.com) handles those calls.`,
   },
   {
     slug: "bal-harbour-beachfront-corrosion-timeline",
@@ -6598,13 +6662,15 @@ We service Bal Harbour installations regularly with awareness of the specific en
 
 For beachfront owners new to premium ownership, we provide initial-visit consultations that include environmental assessment, protective protocol setup, and ongoing service-plan recommendations specific to the property's exposure profile.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Coastal salt-air protection for premium stainless](/blog/coastal-salt-air-stainless-protection-pro)
 - [Aventura condo refrigeration maintenance](/blog/aventura-condo-refrigeration-highrise-dispatch)
-- [Service in Bal Harbour](/areas/bal-harbour)`,
+- [Service in Bal Harbour](/areas/bal-harbour)
+
+For mass-market refrigeration in oceanfront condos (LG/Samsung built-ins), our [sister site bernerepair.com](https://bernerepair.com) runs the same corrosion-monitoring approach at standard-brand price points.`,
   },
   {
     slug: "coral-gables-mediterranean-viking-wolf-restoration",
@@ -6775,13 +6841,15 @@ We service Coral Gables Mediterranean Revival estates regularly. Our restoration
 
 For owners new to a Mediterranean Revival estate, we provide initial-visit consultations that assess the kitchen's current condition, recommend restoration vs replacement decisions for each appliance, and develop a maintenance plan tailored to the property.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Pinecrest historic estate vintage Sub-Zero restoration](/blog/pinecrest-historic-estate-vintage-sub-zero)
 - [Vintage premium appliance restoration economics](/blog/vintage-premium-appliance-restoration-economics)
-- [Service in Coral Gables](/areas/coral-gables)`,
+- [Service in Coral Gables](/areas/coral-gables)
+
+For mass-market kitchen restoration in Coral Gables historic homes (GE, KitchenAid, Whirlpool installs), our [sister operation at bernerepair.com](https://bernerepair.com) handles those projects.`,
   },
   {
     slug: "repair-vs-replace-20k-sub-zero-year-12",
@@ -6924,13 +6992,15 @@ We perform year-12 Sub-Zero decisions with a structured framework and documented
 
 For owners facing this decision, the diagnostic visit provides the data to make the right call.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [When to replace a 12-year-old Sub-Zero vs full restoration](/blog/sub-zero-12-year-replace-vs-restore)
 - [Built-in vs freestanding refrigerator service cost](/blog/built-in-vs-freestanding-refrigerator-service-cost)
-- [Refrigerator repair across South Florida](/services/refrigerator-repair)`,
+- [Refrigerator repair across South Florida](/services/refrigerator-repair)
+
+For year-12 repair-vs-replace decisions on standard-brand refrigeration (LG, Samsung, GE), our [sister site bernerepair.com](https://bernerepair.com) runs the same framework at mass-market price points.`,
   },
   {
     slug: "oem-vs-independent-service-by-brand",
@@ -7143,13 +7213,15 @@ We're authorized for Sub-Zero, Wolf, Thermador, Bosch (BSH brands), Viking, Miel
 
 For owners uncertain whether to call factory direct or independent, we'll honestly tell you which is the better fit for your specific situation. If we think factory direct is the right call, we'll say so even though we don't get the work. Long-term reliability matters more than any individual job.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Service contract economics for premium appliances](/blog/service-contract-economics-premium-appliances)
 - [Diagnostic fee structure and premium transparency](/blog/diagnostic-fee-structure-premium-transparency)
-- [Service across South Florida](/services/refrigerator-repair)`,
+- [Service across South Florida](/services/refrigerator-repair)
+
+On standard-brand OEM-vs-independent decisions (LG, Samsung, GE, Whirlpool, KitchenAid), our [sister operation at bernerepair.com](https://bernerepair.com) maps the same brand-by-brand independent-service landscape.`,
   },
   {
     slug: "insurance-claim-guide-premium-appliance-damage",
@@ -7352,13 +7424,15 @@ Continued contractor relationship through claim resolution and beyond.
 
 For owners with current premium appliance installations: we maintain service history records that support future claims by demonstrating pre-damage functional condition.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Service contract economics for premium appliances](/blog/service-contract-economics-premium-appliances)
 - [Coastal salt-air protection for premium stainless](/blog/coastal-salt-air-stainless-protection-pro)
-- [Service across South Florida](/services/refrigerator-repair)`,
+- [Service across South Florida](/services/refrigerator-repair)
+
+For insurance claims on standard-brand appliance damage (LG, Samsung, GE, Whirlpool), our [sister site bernerepair.com](https://bernerepair.com) handles documentation and claim support at mass-market replacement values.`,
   },
   {
     slug: "pre-listing-appliance-audit-south-florida-30k-kitchen",
@@ -7535,13 +7609,15 @@ We perform pre-listing service work efficiently and document it for the listing 
 
 For agents working with high-end listings: we can coordinate directly with the agent on timing, scope, and documentation requirements.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Pre-purchase appliance inspection — what to check](/blog/pre-purchase-appliance-inspection-40k-kitchen)
 - [Service contract economics for premium appliances](/blog/service-contract-economics-premium-appliances)
-- [Service across South Florida](/services/refrigerator-repair)`,
+- [Service across South Florida](/services/refrigerator-repair)
+
+For pre-listing audits on standard-brand kitchens (GE, Samsung, LG, Whirlpool builds), our [sister operation at bernerepair.com](https://bernerepair.com) handles those inspections at mass-market price points.`,
   },
   {
     slug: "estate-planning-appliance-warranties-transfer",
@@ -7772,13 +7848,15 @@ For estate trustees, we provide pre-disposition assessments that document kitche
 
 For high-net-worth households with multi-property portfolios, our service relationship can support coordinated transitions and continuity across properties.
 
-(305) 520-7833.
+(754) 345-4515.
 
 Related reading:
 
 - [Pre-listing appliance audit — selling a $30k kitchen](/blog/pre-listing-appliance-audit-south-florida-30k-kitchen)
 - [Luxury appliance warranty after expiration](/blog/luxury-appliance-warranty-after-expiration)
-- [Service across South Florida](/services/refrigerator-repair)`,
+- [Service across South Florida](/services/refrigerator-repair)
+
+For warranty transfer on standard-brand appliances (LG, Samsung, GE, Whirlpool, KitchenAid), our [sister site bernerepair.com](https://bernerepair.com) covers those records and transfer documentation.`,
   },
 ];
 

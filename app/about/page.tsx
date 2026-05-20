@@ -271,7 +271,7 @@ export default function AboutPage() {
               icon={<Clock3 className="size-5 text-brand" aria-hidden />}
               value="Same-day"
               label="Dispatch standard"
-              sub="Open 7 days · 8 AM – 9 PM"
+              sub="Open 7 days · 7 AM – 9 PM"
             />
             <Stat
               icon={<ShieldCheck className="size-5 text-brand" aria-hidden />}
