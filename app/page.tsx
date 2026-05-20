@@ -9,6 +9,7 @@ import { Brands } from "@/components/sections/brands";
 import { Reviews } from "@/components/sections/reviews";
 import { TeamSection } from "@/components/sections/team";
 import { Commercial } from "@/components/sections/commercial";
+import { CredentialsSection } from "@/components/sections/credentials-section";
 import { CTABand } from "@/components/sections/cta-band";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
@@ -40,6 +41,7 @@ export default function Home() {
       <TeamSection />
       <Reviews />
       <Commercial />
+      <CredentialsSection />
       <FAQSection faqs={GENERAL_FAQS} />
       <Contact />
       <CTABand />

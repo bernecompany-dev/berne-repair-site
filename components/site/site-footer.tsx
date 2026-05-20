@@ -40,10 +40,13 @@ export function SiteFooter() {
               <Clock className="size-4 text-brand" aria-hidden />
               <time dateTime="Mo-Su 08:00-21:00">{COMPANY.hours.label}</time>
             </div>
-            <div className="flex items-center gap-2.5 text-muted-foreground">
+            <Link
+              href={localePath(locale, "/credentials")}
+              className="flex items-center gap-2.5 text-muted-foreground hover:text-brand"
+            >
               <ShieldCheck className="size-4 text-brand" aria-hidden />
-              <span>{t.licensedShort} · {COMPANY.socialProof.warranty}</span>
-            </div>
+              <span>Licensed · Insured · EPA 608 · {COMPANY.socialProof.warranty}</span>
+            </Link>
           </address>
         </div>
 
@@ -113,6 +116,8 @@ export function SiteFooter() {
               <Link href={localePath(locale, "/contact")} className="hover:text-foreground">{t.contactLink}</Link>
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/request-dispatch")} className="hover:text-foreground">Request dispatch</Link>
+              <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/credentials")} className="hover:text-foreground">Credentials</Link>
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/family")} className="hover:text-foreground">The family</Link>
               <span aria-hidden>·</span>

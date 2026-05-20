@@ -5,6 +5,7 @@ import { BRANDS } from "@/data/brands";
 import { REVIEWS, REVIEW_AGGREGATE } from "@/data/reviews";
 import { TEAM } from "@/data/team";
 import type { FAQ } from "@/data/faqs";
+import { SERVICE_IMAGE_PATHS } from "@/lib/service-images";
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -99,6 +100,42 @@ const PHOTO_OBJECTS = PHOTO_PATHS.map((p) => ({
   url: absoluteUrl(p),
 }));
 
+/**
+ * Verifiable credentials surfaced via Organization.hasCredential. Files are
+ * served from /public/credentials/. Keep in sync with
+ * components/sections/credentials-section.tsx.
+ */
+const HAS_CREDENTIAL = [
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "license",
+    name: "Florida Technician License",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "Florida Department of Business and Professional Regulation",
+    },
+    url: absoluteUrl("/credentials/technician-license.jpg"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "certification",
+    name: "EPA Section 608 Universal",
+    identifier: "16-8019803514-2",
+    url: absoluteUrl("/credentials/epa-certificate.pdf"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "license",
+    name: "DBA Registration — Berne Appliance Repair",
+    url: absoluteUrl("/credentials/dba-berne-appliance-repair.pdf"),
+  },
+  {
+    "@type": "InsurancePolicy",
+    name: "Certificate of Insurance",
+    url: absoluteUrl("/credentials/coi.pdf"),
+  },
+];
+
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -112,6 +149,7 @@ export function organizationJsonLd() {
     founder: { "@id": FOUNDER_ID },
     foundingDate: FOUNDING_YEAR,
     aggregateRating: AGGREGATE,
+    hasCredential: HAS_CREDENTIAL,
     parentOrganization: {
       "@type": "Organization",
       "@id": "https://bernerepair.com/#organization",
@@ -247,6 +285,7 @@ export function localBusinessJsonLd() {
         },
       })),
     },
+    hasCredential: HAS_CREDENTIAL,
     sameAs: SAME_AS,
   };
 }
