@@ -3,7 +3,7 @@ import { CITIES, type City } from "@/data/cities";
 import { SERVICES, type Service } from "@/data/services";
 import { BRANDS } from "@/data/brands";
 import { REVIEWS, REVIEW_AGGREGATE } from "@/data/reviews";
-import { TEAM } from "@/data/team";
+import { TEAM, type TeamMember } from "@/data/team";
 import type { FAQ } from "@/data/faqs";
 import { SERVICE_IMAGE_PATHS } from "@/lib/service-images";
 
@@ -158,6 +158,45 @@ export function organizationJsonLd() {
     },
     subOrganization: { "@id": BUSINESS_ID },
   };
+}
+
+/**
+ * Per-technician Person JSON-LD with full E-E-A-T signal set:
+ *   - hasCredential (EPA Section 608, FL technician license)
+ *   - knowsAbout (specialty tokens + Appliance Repair)
+ *   - knowsLanguage (en / ru / es)
+ *   - worksFor pointer to the #business node
+ *
+ * Emit on /team (all members), /about (full team), and / (top 5 featured).
+ */
+export function personJsonLd(m: TeamMember) {
+  const knowsAbout = [
+    "Appliance Repair",
+    ...m.specialty.split("·").map((s) => s.trim()).filter(Boolean),
+  ];
+  const credentials = (m.credentials ?? []).map((c) => ({
+    "@type": "EducationalOccupationalCredential" as const,
+    credentialCategory: c.category,
+    name: c.name,
+  }));
+  const node: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": absoluteUrl(`/team#person-${m.slug}`),
+    name: m.name,
+    image: absoluteUrl(m.photo),
+    jobTitle: m.role,
+    worksFor: { "@id": BUSINESS_ID },
+    knowsAbout,
+    url: absoluteUrl("/team"),
+  };
+  if (m.givenName) node.givenName = m.givenName;
+  if (m.familyName) node.familyName = m.familyName;
+  if (m.languages && m.languages.length > 0) node.knowsLanguage = m.languages;
+  if (credentials.length > 0) node.hasCredential = credentials;
+  if (m.sameAs && m.sameAs.length > 0) node.sameAs = m.sameAs;
+  if (m.bio) node.description = m.bio;
+  return node;
 }
 
 /**

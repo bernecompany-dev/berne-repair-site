@@ -14,8 +14,9 @@ import { CTABand } from "@/components/sections/cta-band";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { JsonLd } from "@/components/site/json-ld";
-import { faqJsonLd, imageGalleryJsonLd, founderJsonLd, absoluteUrl } from "@/lib/seo";
+import { faqJsonLd, imageGalleryJsonLd, founderJsonLd, personJsonLd, absoluteUrl } from "@/lib/seo";
 import { GENERAL_FAQS } from "@/data/faqs";
+import { FEATURED_TEAM } from "@/data/team";
 
 export const metadata: Metadata = {
   alternates: {
@@ -45,7 +46,15 @@ export default function Home() {
       <FAQSection faqs={GENERAL_FAQS} />
       <Contact />
       <CTABand />
-      <JsonLd data={[faqJsonLd(GENERAL_FAQS), imageGalleryJsonLd(), founderJsonLd()]} />
+      <JsonLd
+        data={[
+          faqJsonLd(GENERAL_FAQS),
+          imageGalleryJsonLd(),
+          founderJsonLd(),
+          // Top-5 featured technicians — E-E-A-T signal on the homepage.
+          ...FEATURED_TEAM.slice(0, 5).map((m) => personJsonLd(m)),
+        ]}
+      />
     </>
   );
 }

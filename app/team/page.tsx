@@ -9,7 +9,7 @@ import { OwnerIntro } from "@/components/sections/owner-intro";
 import { JsonLd } from "@/components/site/json-ld";
 import { TEAM } from "@/data/team";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
 
 const TECH_COUNT = TEAM.length - 1; // minus the owner
 
@@ -32,17 +32,10 @@ export default function TeamPage() {
     { name: "Team", href: "/team" },
   ];
 
-  // Person schema for each member — improves rich results
-  const peopleJsonLd = TEAM.map((m) => ({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: m.name,
-    jobTitle: m.role,
-    description: m.bio ?? m.specialty,
-    image: absoluteUrl(m.photo),
-    worksFor: { "@id": absoluteUrl("/#business") },
-    knowsAbout: m.specialty.split("·").map((s) => s.trim()),
-  }));
+  // Person schema for each member — improves rich results, E-E-A-T signal.
+  // See lib/seo.ts → personJsonLd() for the full node shape (hasCredential,
+  // knowsAbout, knowsLanguage, worksFor reference, sameAs, etc.).
+  const peopleJsonLd = TEAM.map((m) => personJsonLd(m));
 
   return (
     <>

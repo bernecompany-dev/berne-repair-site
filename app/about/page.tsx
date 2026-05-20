@@ -18,7 +18,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { TEAM } from "@/data/team";
 import { REVIEW_AGGREGATE } from "@/data/reviews";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About Berne Repair — South Florida Appliance Repair Since 2022",
@@ -352,7 +352,14 @@ export default function AboutPage() {
       <Contact />
       <CTABand />
 
-      <JsonLd data={[aboutJsonLd, breadcrumbJsonLd(crumbs)]} />
+      {/* Person JSON-LD for every member of the field team — E-E-A-T. */}
+      <JsonLd
+        data={[
+          aboutJsonLd,
+          breadcrumbJsonLd(crumbs),
+          ...TEAM.map((m) => personJsonLd(m)),
+        ]}
+      />
     </>
   );
 }
