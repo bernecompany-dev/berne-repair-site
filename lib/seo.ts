@@ -406,6 +406,57 @@ export function cityJsonLd(city: City, locale: "en" | "es" = "en") {
   };
 }
 
+/**
+ * City-scoped LocalBusiness — emitted on every combo page so Google ties the
+ * {City} keyword to a business node with the matching addressLocality, geo
+ * coordinates, and aggregate review numbers. References the canonical
+ * BUSINESS_ID via parentOrganization/sameAs so the entity graph stays unified.
+ */
+export function localBusinessForCityJsonLd(city: City, locale: "en" | "es" = "en") {
+  const path = locale === "es" ? `/es/areas/${city.slug}` : `/areas/${city.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
+    "@id": absoluteUrl(`${path}#localbusiness`),
+    name: `${COMPANY.legalName} — ${city.name}`,
+    url: absoluteUrl(path),
+    telephone: COMPANY.phone.tel,
+    email: COMPANY.email.public,
+    priceRange: `$${COMPANY.serviceCallPrice}-$800`,
+    image: PHOTO_URLS.slice(0, 6),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: city.name,
+      addressRegion: "FL",
+      postalCode: city.zips[0],
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: city.geo.lat,
+      longitude: city.geo.lng,
+    },
+    areaServed: {
+      "@type": "City",
+      name: city.name,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: `${city.county} County, Florida`,
+      },
+    },
+    aggregateRating: AGGREGATE,
+    openingHoursSpecification: COMPANY.hours.structured.map((h) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: h.days,
+      opens: h.open,
+      closes: h.close,
+    })),
+    parentOrganization: { "@id": ORG_ID },
+    sameAs: SAME_AS,
+    hasCredential: HAS_CREDENTIAL,
+  };
+}
+
 export function serviceCityJsonLd(service: Service, city: City, locale: "en" | "es" = "en") {
   const path = locale === "es"
     ? `/es/services/${service.slug}/${city.slug}`
