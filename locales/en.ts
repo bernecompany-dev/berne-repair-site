@@ -1,8 +1,8 @@
 export const en = {
   meta: {
-    homeTitle: "Berne Repair — Premium Appliance Repair in South Florida · $59 Service Call",
+    homeTitle: "Berne Repair — Same-Day Appliance Repair · South Florida",
     homeDescription:
-      "Same-day appliance repair across Miami-Dade, Broward, and Palm Beach. $59 service call. 17 technicians. Licensed & insured. Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch and all major brands.",
+      "Same-day appliance repair across Miami-Dade, Broward & Palm Beach. $59 service call. 18 technicians, licensed & insured. Sub-Zero, Wolf, Viking, Miele.",
   },
   nav: {
     services: "Services",
@@ -19,7 +19,7 @@ export const en = {
     badgeRepairs: "Thousands of repairs",
     title1: "Premium appliance repair.",
     title2: "Same-day across South Florida.",
-    body: "17 technicians. Trucks stocked for Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch and every major brand.",
+    body: "18 technicians. Trucks stocked for Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch and every major brand.",
     bodyHighlight: "$59 flat service call",
     bodySuffix: " — applied toward the repair if you say go.",
     openToday: "Open today · 8 AM – 9 PM",
@@ -55,7 +55,7 @@ export const en = {
   team: {
     eyebrow: "The team",
     title: "Real technicians on every truck — not a callcenter.",
-    body: "17 full-time technicians dispatched from across South Florida. The same people customers ask for by name on Google reviews.",
+    body: "18 full-time technicians dispatched from across South Florida. The same people customers ask for by name on Google reviews.",
     cta: "Meet the team",
     yearsSuffix: "yrs with Berne",
   },
@@ -117,7 +117,7 @@ export const en = {
   },
   footer: {
     tagline:
-      "Premium appliance repair across Miami-Dade, Broward, and Palm Beach. 17 technicians. Same-day service. Licensed & insured.",
+      "Premium appliance repair across Miami-Dade, Broward, and Palm Beach. 18 technicians. Same-day service. Licensed & insured.",
     services: "Services",
     serviceArea: "Service area",
     brandsCol: "Brands we service",
@@ -146,8 +146,8 @@ export const en = {
   statsStrip: {
     techs: "Full-time technicians",
     techsSub: "Not subcontractors",
-    rating: "From {count}+ Google reviews",
-    ratingSub: "Across 3 DBAs",
+    rating: "From {count}+ verified reviews",
+    ratingSub: "Google, Yelp & other platforms",
     price: "Flat service call",
     priceSub: "Applied toward repair",
     cities: "Cities covered",
@@ -183,7 +183,7 @@ export const en = {
   },
   whyReasons: [
     { title: "Same-day service", body: "Call before noon — we can have a technician at your door today across all three counties." },
-    { title: "17 technicians", body: "Real bench, not a one-man show. Faster scheduling and the right specialist for the job." },
+    { title: "18 technicians", body: "Real bench, not a one-man show. Faster scheduling and the right specialist for the job." },
     { title: "Trucks stocked for premium brands", body: "Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch — common parts ride in the truck." },
     { title: "Honest diagnosis, $59 flat", body: "Up-front pricing. Service call applied toward the repair if you say go ahead." },
     { title: "90-day warranty", body: "Parts and labor backed for 90 days. Same issue comes back, so do we — at no charge." },

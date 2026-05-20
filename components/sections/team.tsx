@@ -13,7 +13,7 @@ export function TeamSection() {
             Real technicians on every truck — not a callcenter.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            17 full-time technicians dispatched from across South Florida. The same
+            18 full-time technicians dispatched from across South Florida. The same
             people customers ask for by name on Google reviews.
           </p>
         </div>

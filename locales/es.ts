@@ -2,9 +2,9 @@ import type { Dictionary } from "./en";
 
 export const es: Dictionary = {
   meta: {
-    homeTitle: "Berne Repair — Reparación premium de electrodomésticos en el sur de Florida · Visita $59",
+    homeTitle: "Berne Repair — Reparación de electrodomésticos · Sur de Florida",
     homeDescription:
-      "Reparación de electrodomésticos el mismo día en Miami-Dade, Broward y Palm Beach. Visita técnica $59. 17 técnicos. Con licencia y asegurados. Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch y todas las marcas principales.",
+      "Reparación el mismo día en Miami-Dade, Broward y Palm Beach. Visita $59. 18 técnicos, con licencia y asegurados. Sub-Zero, Wolf, Viking, Miele.",
   },
   nav: {
     services: "Servicios",
@@ -21,7 +21,7 @@ export const es: Dictionary = {
     badgeRepairs: "Miles de reparaciones",
     title1: "Reparación premium de electrodomésticos.",
     title2: "El mismo día en todo el sur de Florida.",
-    body: "17 técnicos. Camiones equipados para Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch y todas las marcas principales.",
+    body: "18 técnicos. Camiones equipados para Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch y todas las marcas principales.",
     bodyHighlight: "Visita técnica $59 fija",
     bodySuffix: " — se aplica al costo de la reparación si decide proceder.",
     openToday: "Abierto hoy · 8 AM – 9 PM",
@@ -57,7 +57,7 @@ export const es: Dictionary = {
   team: {
     eyebrow: "El equipo",
     title: "Técnicos reales en cada camión — no un call center.",
-    body: "17 técnicos a tiempo completo despachados desde todo el sur de Florida. Los mismos que los clientes nombran en sus reseñas de Google.",
+    body: "18 técnicos a tiempo completo despachados desde todo el sur de Florida. Los mismos que los clientes nombran en sus reseñas de Google.",
     cta: "Conoce al equipo",
     yearsSuffix: "años con Berne",
   },
@@ -119,7 +119,7 @@ export const es: Dictionary = {
   },
   footer: {
     tagline:
-      "Reparación premium de electrodomésticos en Miami-Dade, Broward y Palm Beach. 17 técnicos. Servicio el mismo día. Con licencia y asegurados.",
+      "Reparación premium de electrodomésticos en Miami-Dade, Broward y Palm Beach. 18 técnicos. Servicio el mismo día. Con licencia y asegurados.",
     services: "Servicios",
     serviceArea: "Área de servicio",
     brandsCol: "Marcas que reparamos",
@@ -148,8 +148,8 @@ export const es: Dictionary = {
   statsStrip: {
     techs: "Técnicos a tiempo completo",
     techsSub: "No subcontratistas",
-    rating: "De {count}+ reseñas en Google",
-    ratingSub: "En 3 marcas (DBAs)",
+    rating: "De {count}+ reseñas verificadas",
+    ratingSub: "Google, Yelp y otras plataformas",
     price: "Visita técnica fija",
     priceSub: "Se aplica a la reparación",
     cities: "Ciudades cubiertas",
@@ -185,7 +185,7 @@ export const es: Dictionary = {
   },
   whyReasons: [
     { title: "Servicio el mismo día", body: "Llame antes del mediodía — tenemos un técnico en su puerta hoy en los tres condados." },
-    { title: "17 técnicos", body: "Equipo real, no un solo hombre. Programación más rápida y el especialista adecuado para el trabajo." },
+    { title: "18 técnicos", body: "Equipo real, no un solo hombre. Programación más rápida y el especialista adecuado para el trabajo." },
     { title: "Camiones equipados para marcas premium", body: "Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch — piezas comunes van en el camión." },
     { title: "Diagnóstico honesto, $59 fijo", body: "Precios claros. La visita técnica se aplica a la reparación si dice que sí." },
     { title: "Garantía 90 días", body: "Piezas y mano de obra respaldadas 90 días. Vuelve el problema, volvemos nosotros — sin costo." },

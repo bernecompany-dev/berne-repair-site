@@ -54,12 +54,14 @@ const M = {
     successHoneypot: "Thanks — we'll be in touch shortly.",
     tooMany: `Too many submissions. Please call us at ${COMPANY.phone.display}`,
     sendFail: `Couldn't send. Please call ${COMPANY.phone.display}.`,
+    configError: `Server configuration error. Please call us directly at ${COMPANY.phone.display}.`,
   },
   es: {
     successCallback: "Recibido — le llamaremos pronto para confirmar la hora.",
     successHoneypot: "Recibido — le contactaremos pronto.",
     tooMany: `Demasiados envíos. Por favor llame al ${COMPANY.phone.display}`,
     sendFail: `No se pudo enviar. Por favor llame al ${COMPANY.phone.display}.`,
+    configError: `Error de configuración del servidor. Por favor llame directamente al ${COMPANY.phone.display}.`,
   },
 } as const;
 
@@ -134,8 +136,17 @@ export async function submitLead(
   const to = process.env.LEAD_TO_EMAIL ?? COMPANY.email.leads;
 
   if (!apiKey) {
-    console.warn("[lead] RESEND_API_KEY missing — lead not sent.");
-    return { status: "success", message: msg.successCallback };
+    // Loud-fail: surface a real error to ops + a graceful message to the user.
+    // Previously this silently returned success, hiding broken lead capture.
+    console.error(
+      "[lead] RESEND_API_KEY missing — lead form is BROKEN. " +
+      "Lead from", raw.name || "(no name)", raw.phone || "(no phone)", "was NOT delivered.",
+    );
+    return {
+      status: "error",
+      errors: { form: msg.configError },
+      values: raw,
+    };
   }
 
   const resend = new Resend(apiKey);

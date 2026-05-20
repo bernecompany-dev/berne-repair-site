@@ -30,11 +30,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Berne Repair — Premium Appliance Repair in South Florida · $59 Service Call",
+    default: "Berne Repair — Same-Day Appliance Repair · South Florida",
     template: "%s · Berne Repair",
   },
   description:
-    "Same-day appliance repair across Miami-Dade, Broward, and Palm Beach. $59 service call. 17 technicians. Licensed & insured. Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch and all major brands.",
+    "Same-day appliance repair across Miami-Dade, Broward & Palm Beach. $59 service call. 18 technicians, licensed & insured. Sub-Zero, Wolf, Viking, Miele.",
   applicationName: COMPANY.legalName,
   openGraph: {
     type: "website",

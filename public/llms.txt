@@ -1,6 +1,6 @@
 # Berne Repair
 
-> Premium appliance repair company in South Florida. Same-day service across Miami-Dade, Broward, and Palm Beach. $59 flat service call, 16 full-time licensed technicians, three DBAs (Berne Repair / Berne Appliance Repair / Norma Appliance Repair).
+> Premium appliance repair company in South Florida. Same-day service across Miami-Dade, Broward, and Palm Beach. $59 flat service call, 18 full-time licensed technicians, three DBAs (Berne Repair / Berne Appliance Repair / Norma Appliance Repair).
 
 ## Key facts
 
@@ -42,7 +42,7 @@ Call (305) 520-7833 (rings dispatch). Most jobs scheduled within an hour, comple
 - /sitemap.xml — full URL list (~1700 pages including service×city combos and Spanish mirror)
 - /services/{service}/{city} — combo pages for hyper-local lookup (e.g., /services/refrigerator-repair/miami)
 - /es/* — Spanish mirror of every page
-- /team — all 16 technicians with names, roles, photos
+- /team — all 18 technicians with names, roles, photos
 - /privacy — privacy policy
 - /llms-full.txt — extended plain-text reference
 

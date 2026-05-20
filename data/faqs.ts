@@ -39,7 +39,7 @@ export const GENERAL_FAQS: FAQ[] = [
   {
     question: "Will the technician have the part in their truck?",
     answer:
-      "For the most common parts — yes. With 17 technicians and trucks stocked for the brands we service most, we resolve a large share of jobs on the first visit. If a part needs ordering we typically get it in 1–3 business days.",
+      "For the most common parts — yes. With 18 technicians and trucks stocked for the brands we service most, we resolve a large share of jobs on the first visit. If a part needs ordering we typically get it in 1–3 business days.",
   },
 ];
 
