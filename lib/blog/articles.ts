@@ -29,7 +29,7 @@ export type Article = {
   body: string;
 };
 
-const AUTHOR = "Evgenii Knyazev, Owner — Berne Repair";
+const AUTHOR = "Eugene Berne, Owner — Berne Repair";
 
 export const ARTICLES: Article[] = [
   {

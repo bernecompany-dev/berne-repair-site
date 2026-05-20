@@ -83,6 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const statics: MetadataRoute.Sitemap = [
     "/areas",
     "/team",
+    "/about",
     "/contact",
     "/request-dispatch",
     "/family",

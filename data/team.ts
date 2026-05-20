@@ -25,7 +25,7 @@ export const TEAM: TeamMember[] = [
     specialty: "Founder · Commercial accounts · Personal guarantee on every job",
     years: 4,
     photo: "/images/team/evgenii-knyazev.webp",
-    bio: "Founded Berne Repair after moving to the US in 2022. Still picks up the phone, still goes out on commercial calls, still backs every single repair personally. 30,000+ jobs and counting.",
+    bio: "Founded Berne Repair after moving to the US in 2022. Still picks up the phone, still goes out on commercial calls, still backs every single repair personally. 29,000+ jobs and counting.",
     featured: true,
   },
   {

@@ -64,7 +64,7 @@ test.describe("Home page structure", () => {
     await expect(page.locator("body")).toContainText("$59");
     await expect(page.locator("body")).toContainText(/\b1[67]\b/);
     await expect(page.getByRole("link", { name: /Refrigerator Repair/i }).first()).toBeVisible();
-    await expect(page.getByText(/Evgenii Knyazev/i).first()).toBeVisible();
+    await expect(page.getByText(/Eugene Berne/i).first()).toBeVisible();
     if (isMobile) {
       await page.evaluate(() => window.scrollTo(0, 1500));
       await page.waitForTimeout(500);

@@ -107,7 +107,8 @@ export function organizationJsonLd() {
     logo: absoluteUrl("/og.png"),
     sameAs: SAME_AS,
     founder: { "@id": FOUNDER_ID },
-    foundingDate: "2015",
+    foundingDate: FOUNDING_YEAR,
+    aggregateRating: AGGREGATE,
     parentOrganization: {
       "@type": "Organization",
       "@id": "https://bernerepair.com/#organization",
