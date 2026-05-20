@@ -58,7 +58,7 @@ export default function ServicesIndex() {
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            Every major appliance.
+            Every major appliance.{" "}
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               Every major brand.
             </span>

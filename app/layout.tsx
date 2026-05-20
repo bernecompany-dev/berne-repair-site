@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s · Berne Repair",
   },
   description:
-    "Same-day appliance repair across Miami-Dade, Broward & Palm Beach. $59 service call. 18 technicians, licensed & insured. Sub-Zero, Wolf, Viking, Miele.",
+    "Same-day appliance repair across Miami-Dade, Broward & Palm Beach. $59 service call. 18 W-2 techs, licensed. Sub-Zero, Wolf, Viking, Miele.",
   applicationName: COMPANY.legalName,
   openGraph: {
     type: "website",

@@ -88,7 +88,7 @@ export default function AboutPage() {
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            South Florida&apos;s premium appliance team.
+            South Florida&apos;s premium appliance team.{" "}
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               Built on craft, not on subcontractors.
             </span>
