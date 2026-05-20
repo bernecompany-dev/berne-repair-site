@@ -400,6 +400,130 @@ export function serviceCityJsonLd(service: Service, city: City, locale: "en" | "
   };
 }
 
+/**
+ * Enriched BlogPosting payload for blog/[slug] pages. Centralizes the schema
+ * so every article emits the same structured fields (alternativeHeadline,
+ * articleSection, wordCount, keywords, mainEntityOfPage) without each page
+ * having to spell out the shape.
+ */
+export function blogPostingJsonLd(args: {
+  url: string;
+  headline: string;
+  alternativeHeadline?: string;
+  description: string;
+  image?: string;
+  datePublished: string;
+  dateModified: string;
+  authorName: string;
+  articleSection?: string;
+  wordCount?: number;
+  keywords?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${args.url}#blogposting`,
+    headline: args.headline.slice(0, 110),
+    ...(args.alternativeHeadline && args.alternativeHeadline !== args.headline
+      ? { alternativeHeadline: args.alternativeHeadline }
+      : {}),
+    description: args.description,
+    image: args.image ?? absoluteUrl("/og.png"),
+    datePublished: args.datePublished,
+    dateModified: args.dateModified,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": args.url,
+    },
+    author: {
+      "@type": "Person",
+      name: args.authorName,
+      url: absoluteUrl("/about"),
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: COMPANY.legalName,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/og.png"),
+      },
+    },
+    inLanguage: "en-US",
+    ...(args.articleSection ? { articleSection: args.articleSection } : {}),
+    ...(typeof args.wordCount === "number" ? { wordCount: args.wordCount } : {}),
+    ...(args.keywords && args.keywords.length > 0
+      ? { keywords: args.keywords.join(", ") }
+      : {}),
+  };
+}
+
+/**
+ * HowTo schema. Steps must reflect actual procedure copy from the article —
+ * fabricated steps trigger a structured-data mismatch penalty in Search
+ * Console. Callers curate this from verified body content (see
+ * lib/blog/howto-allowlist.ts).
+ */
+export type HowToStepInput = {
+  name: string;
+  text: string;
+  url?: string;
+  image?: string;
+};
+
+export function howToJsonLd(args: {
+  url: string;
+  name: string;
+  description: string;
+  totalTimeISO: string; // e.g. "PT30M"
+  estimatedCostUSD?: string;
+  supply?: string[];
+  tool?: string[];
+  steps: HowToStepInput[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${args.url}#howto`,
+    name: args.name,
+    description: args.description,
+    totalTime: args.totalTimeISO,
+    ...(args.estimatedCostUSD
+      ? {
+          estimatedCost: {
+            "@type": "MonetaryAmount",
+            currency: "USD",
+            value: args.estimatedCostUSD,
+          },
+        }
+      : {}),
+    ...(args.supply && args.supply.length > 0
+      ? {
+          supply: args.supply.map((s) => ({
+            "@type": "HowToSupply",
+            name: s,
+          })),
+        }
+      : {}),
+    ...(args.tool && args.tool.length > 0
+      ? {
+          tool: args.tool.map((t) => ({
+            "@type": "HowToTool",
+            name: t,
+          })),
+        }
+      : {}),
+    step: args.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      url: s.url ?? `${args.url}#step${i + 1}`,
+      ...(s.image ? { image: s.image } : {}),
+    })),
+  };
+}
+
 export function faqJsonLd(faqs: FAQ[], locale: "en" | "es" = "en") {
   return {
     "@context": "https://schema.org",

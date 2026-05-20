@@ -11,7 +11,13 @@ import {
   relatedArticles,
 } from "@/lib/blog/articles";
 import { renderMarkdown } from "@/lib/blog/render";
-import { absoluteUrl, breadcrumbJsonLd } from "@/lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  blogPostingJsonLd,
+  howToJsonLd,
+} from "@/lib/seo";
+import { HOWTO_BLUEPRINTS } from "@/lib/blog/howto-allowlist";
 import { COMPANY } from "@/data/company";
 
 export const revalidate = 3600;
@@ -78,20 +84,36 @@ export default async function BlogArticlePage({ params }: Props) {
     { name: article.title, href: `/blog/${article.slug}` },
   ];
 
-  const blogPostingJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": `${url}#post`,
+  // Word count — strip markdown link/heading punctuation lightly for accuracy.
+  const wordCount = article.body
+    .replace(/[#*_`>\-]/g, " ")
+    .replace(/\[(.+?)\]\(.+?\)/g, "$1")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  const articleSchema = blogPostingJsonLd({
+    url,
     headline: article.title,
     description: article.description,
-    url,
-    mainEntityOfPage: url,
+    image: absoluteUrl("/og.png"),
     datePublished: article.publishedAt.toISOString(),
-    dateModified: article.updatedAt?.toISOString() ?? article.publishedAt.toISOString(),
-    author: { "@type": "Person", name: article.author },
-    publisher: { "@id": absoluteUrl("/#business") },
-    inLanguage: "en-US",
-  };
+    dateModified:
+      article.updatedAt?.toISOString() ?? article.publishedAt.toISOString(),
+    authorName: article.author,
+    articleSection: article.topic,
+    wordCount,
+    keywords: [article.topic],
+  });
+
+  const howtoBlueprint = HOWTO_BLUEPRINTS[article.slug];
+  const howtoSchema = howtoBlueprint
+    ? howToJsonLd({ url, ...howtoBlueprint })
+    : null;
+
+  const jsonLdNodes = howtoSchema
+    ? [articleSchema, howtoSchema, breadcrumbJsonLd(crumbs)]
+    : [articleSchema, breadcrumbJsonLd(crumbs)];
 
   return (
     <>
@@ -185,7 +207,7 @@ export default async function BlogArticlePage({ params }: Props) {
 
       <CTABand />
 
-      <JsonLd data={[blogPostingJsonLd, breadcrumbJsonLd(crumbs)]} />
+      <JsonLd data={jsonLdNodes} />
     </>
   );
 }
