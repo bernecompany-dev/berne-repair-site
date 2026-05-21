@@ -324,6 +324,17 @@ export function websiteJsonLd() {
     alternateName: COMPANY.dbaNames,
     publisher: { "@id": BUSINESS_ID },
     inLanguage: ["en-US", "es-US"],
+    // SearchAction qualifies the site for Google's sitelinks searchbox.
+    // The target URL template MUST resolve (200); `/` does. If we ever add
+    // a real /search route, swap the template here.
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
