@@ -91,6 +91,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/request-dispatch",
     "/family",
     "/privacy",
+    "/terms",
+    "/cookies",
   ].flatMap((p) => [
     { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: esCounterpart(p) } },
     { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },

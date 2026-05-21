@@ -153,6 +153,10 @@ export function SiteFooter() {
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/privacy")} className="hover:text-foreground">{t.privacy}</Link>
               <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/terms")} className="hover:text-foreground">{t.terms}</Link>
+              <span aria-hidden>·</span>
+              <Link href={localePath(locale, "/cookies")} className="hover:text-foreground">{t.cookies}</Link>
+              <span aria-hidden>·</span>
               <Link href="/sitemap.xml" className="hover:text-foreground">{t.sitemap}</Link>
             </p>
           </div>

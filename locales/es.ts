@@ -129,6 +129,8 @@ export const es: Dictionary = {
     contactLink: "Contacto",
     sitemap: "Mapa del sitio",
     privacy: "Privacidad",
+    terms: "Términos",
+    cookies: "Cookies",
     trademarkDisclaimer:
       "Los nombres y logos de marcas mostrados en este sitio son marcas registradas de sus respectivos propietarios. Berne Appliance Repair es una empresa de servicio independiente y no está afiliada, respaldada, patrocinada ni es un centro de servicio autorizado de ningún fabricante mencionado.",
     divisionsTitle: "Otras divisiones de Berne",

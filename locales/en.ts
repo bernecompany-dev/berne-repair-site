@@ -127,6 +127,8 @@ export const en = {
     contactLink: "Contact",
     sitemap: "Sitemap",
     privacy: "Privacy",
+    terms: "Terms",
+    cookies: "Cookies",
     trademarkDisclaimer:
       "Brand names and logos shown on this site are the trademarks of their respective owners. Berne Appliance Repair is an independent service company and is not affiliated with, endorsed by, sponsored by, or an authorized service center for any manufacturer listed.",
     divisionsTitle: "Other Berne divisions",
