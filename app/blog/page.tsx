@@ -4,12 +4,12 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { publishedArticles } from "@/lib/blog/articles";
-import { absoluteUrl, breadcrumbJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { COMPANY } from "@/data/company";
 
 export const revalidate = 3600;
 
-const PAGE_TITLE = "Berne Repair Field Notes — Premium Appliance Repair Blog";
+const PAGE_TITLE = "Berne Appliance Repair Field Notes — Premium Repair Blog";
 const PAGE_DESCRIPTION =
   "Field-tested guidance from working technicians on Sub-Zero, Wolf, Viking, Thermador, and Miele appliance service across South Florida.";
 
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION,
     url: absoluteUrl("/blog"),
     type: "website",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

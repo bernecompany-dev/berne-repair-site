@@ -21,7 +21,7 @@ export function OwnerIntro({ locale = "en" }: { locale?: Locale }) {
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_30px_80px_-30px_oklch(0.67_0.21_252/0.35)]">
             <Image
               src="/images/team/evgenii-knyazev.webp"
-              alt="Eugene Berne — owner of Berne Repair, South Florida appliance repair company"
+              alt="Eugene Berne — owner of Berne Appliance Repair, South Florida appliance repair company"
               width={800}
               height={1000}
               priority

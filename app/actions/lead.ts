@@ -132,7 +132,7 @@ export async function submitLead(
   const applianceName = appliance ? SERVICE_BY_SLUG[appliance]?.name ?? appliance : "—";
 
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.RESEND_FROM ?? "Berne Repair Leads <onboarding@resend.dev>";
+  const from = process.env.RESEND_FROM ?? "Berne Appliance Repair Leads <onboarding@resend.dev>";
   const to = process.env.LEAD_TO_EMAIL ?? COMPANY.email.leads;
 
   if (!apiKey) {
@@ -193,7 +193,7 @@ function renderLeadEmail(p: {
     <div style="max-width:560px;margin:0 auto;background:#10172a;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden">
       <div style="padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06)">
         <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#7aa2ff">New lead${p.locale === "es" ? " (ES)" : ""}</div>
-        <div style="font-size:20px;font-weight:600;margin-top:4px">Berne Repair · website</div>
+        <div style="font-size:20px;font-weight:600;margin-top:4px">Berne Appliance Repair · website</div>
       </div>
       <table style="width:100%;border-collapse:collapse;font-size:14px;color:#e6e6e6">
         ${row("Name", p.name)}

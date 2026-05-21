@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Home, ChefHat, Crown } from "lucide-react";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "The Berne Family of Companies — How Our 3 Brands Work Together",
   description:
-    "Berne Repair, Berne Appliance Repair, and Berne Commercial Repair — three brands, one operator, one engineering-built service standard. Premium residential, standard residential, and commercial dispatch across South Florida.",
+    "berne-repair.com, bernerepair.com, and berne-commercial.com — three brands, one operator, one engineering-built service standard. Premium residential, standard residential, and commercial dispatch across South Florida.",
   alternates: {
     canonical: "/family",
     languages: {
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       "Three brands, one operator, one engineering-built service standard.",
     url: absoluteUrl("/family"),
     type: "website",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { COMPANY } from "@/data/company";
 
 export const runtime = "nodejs";
-export const alt = "Berne Repair — premium appliance repair in South Florida";
+export const alt = "Berne Appliance Repair — premium appliance repair in South Florida";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -28,10 +28,22 @@ export function SiteFooter() {
           <Logo href={localePath(locale, "/")} />
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">{t.tagline}</p>
           <address className="space-y-2 text-sm not-italic">
-            <a href={`tel:${COMPANY.phone.tel}`} className="flex items-center gap-2.5 text-foreground hover:text-brand">
-              <Phone className="size-4 text-brand" aria-hidden />
-              <span className="font-medium" itemProp="telephone">{COMPANY.phone.display}</span>
-            </a>
+            {COMPANY.phones.map((p, i) => (
+              <a
+                key={p.tel}
+                href={`tel:${p.tel}`}
+                data-analytics={i === 0 ? "footer-call-primary" : "footer-call-regional"}
+                className="flex items-center gap-2.5 text-foreground hover:text-brand"
+              >
+                <Phone className="size-4 text-brand" aria-hidden />
+                <span className="font-medium" itemProp={i === 0 ? "telephone" : undefined}>
+                  {p.display}
+                </span>
+                <span className="text-[11px] text-muted-foreground">
+                  · {p.label}
+                </span>
+              </a>
+            ))}
             <a href={`mailto:${COMPANY.email.public}`} className="flex items-center gap-2.5 text-foreground hover:text-brand">
               <Mail className="size-4 text-brand" aria-hidden />
               <span itemProp="email">{COMPANY.email.public}</span>
@@ -123,7 +135,7 @@ export function SiteFooter() {
             {t.trademarkDisclaimer}
           </p>
           <div className="flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
-            <p>© {new Date().getFullYear()} {COMPANY.legalName} · DBA: {COMPANY.dbaNames.join(", ")}</p>
+            <p>© {new Date().getFullYear()} {COMPANY.legalEntity} · DBA: {COMPANY.dbaNames.join(", ")}</p>
             <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <Link href={localePath(locale, "/")} className="hover:text-foreground">{t.home}</Link>
               <span aria-hidden>·</span>

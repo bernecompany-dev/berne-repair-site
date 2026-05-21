@@ -12,10 +12,13 @@ import { BACK_OFFICE } from "@/data/team-bios";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, personJsonLd, SITE_URL } from "@/lib/seo";
 
-const TECH_COUNT = TEAM.length - 1; // minus the owner
+// Canonical headcount per the brand's NAP — 18 W-2 field technicians.
+// `TEAM` (data/team.ts) lists the 16 published bios; the remaining roles
+// are dispatched but not yet bio-ready. See data/company.ts → socialProof.
+const TECH_COUNT = COMPANY.socialProof.technicians;
 
 export const metadata: Metadata = {
-  title: `The Berne Repair Team — ${TECH_COUNT} South Florida Technicians`,
+  title: `The Berne Appliance Repair Team — ${TECH_COUNT} South Florida Technicians`,
   description: `Meet the ${COMPANY.socialProof.technicians} licensed technicians and dispatch team at ${COMPANY.legalName}. Real names, real specialties — the same people customers ask for by name on Google reviews.`,
   alternates: {
     canonical: "/team",
@@ -42,7 +45,7 @@ export default function TeamPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${SITE_URL}/team#roster`,
-    name: "Berne Repair — Technician roster",
+    name: "Berne Appliance Repair — Technician roster",
     itemListOrder: "https://schema.org/ItemListUnordered",
     numberOfItems: TEAM.length,
     itemListElement: TEAM.map((m, i) => ({
@@ -64,7 +67,7 @@ export default function TeamPage() {
     "@type": "CollectionPage",
     "@id": `${SITE_URL}/team#collection`,
     url: absoluteUrl("/team"),
-    name: "Berne Repair — Team",
+    name: "Berne Appliance Repair — Team",
     isPartOf: { "@id": absoluteUrl("/#website") },
     about: { "@id": absoluteUrl("/#organization") },
     mainEntity: { "@id": `${SITE_URL}/team#roster` },
@@ -105,12 +108,12 @@ export default function TeamPage() {
           <h1 className="heading-hero mt-6 max-w-4xl">
             The people on the trucks.
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              Berne Repair team.
+              Berne Appliance Repair team.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Berne Repair is a fleet operation, not a hand-off to subcontractors. Every technician
+            Berne Appliance Repair is a fleet operation, not a hand-off to subcontractors. Every technician
             here is a Berne employee — trained on the brands we service, EPA-certified where
             refrigerant is involved, on the same warranty page as everyone else.
           </p>
@@ -140,7 +143,7 @@ export default function TeamPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
                   src={m.photo}
-                  alt={`${m.name}, ${m.role} at Berne Repair`}
+                  alt={`${m.name}, ${m.role} at Berne Appliance Repair`}
                   fill
                   sizes="(min-width: 1024px) 30vw, 100vw"
                   quality={78}
@@ -189,7 +192,7 @@ export default function TeamPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
                 <Image
                   src={m.photo}
-                  alt={`${m.role} at Berne Repair`}
+                  alt={`${m.role} at Berne Appliance Repair`}
                   fill
                   sizes="(min-width: 1024px) 30vw, 100vw"
                   className="object-cover"

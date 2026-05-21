@@ -35,7 +35,7 @@ export function TeamSection() {
             <div className="relative aspect-square overflow-hidden rounded-xl">
               <Image
                 src={m.photo}
-                alt={`${m.name} — ${m.role} at Berne Repair, ${m.specialty}`}
+                alt={`${m.name} — ${m.role} at Berne Appliance Repair, ${m.specialty}`}
                 fill
                 sizes="(min-width: 1024px) 18vw, 50vw"
                 quality={78}

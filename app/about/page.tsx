@@ -21,9 +21,9 @@ import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Berne Repair — South Florida Appliance Repair Since 2022",
+  title: "About Berne Appliance Repair — South Florida Appliance Repair Since 2022",
   description:
-    "Berne Repair: 18 technicians, 29,000+ jobs, 4.79/871 reviews across Miami-Dade, Broward & Palm Beach. Founded 2022 by Eugene Berne on 11+ years of industry heritage.",
+    "Berne Appliance Repair: 18 technicians, 29,000+ jobs, 4.79/871 reviews across Miami-Dade, Broward & Palm Beach. Founded 2022 by Eugene Berne on 11+ years of industry heritage.",
   alternates: {
     canonical: "/about",
     languages: {
@@ -43,7 +43,7 @@ export default function AboutPage() {
   const aboutJsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "About Berne Repair",
+    name: "About Berne Appliance Repair",
     url: absoluteUrl("/about"),
     mainEntity: { "@id": absoluteUrl("/#business") },
     breadcrumb: { "@id": absoluteUrl("/about#breadcrumb") },
@@ -95,7 +95,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Berne Repair was established in 2022 as the premium South Florida
+            Berne Appliance Repair was established in 2022 as the premium South Florida
             branch of a family of appliance repair operations with{" "}
             <span className="text-foreground">11+ years of industry heritage</span>.
             Today: {COMPANY.socialProof.technicians} W-2 technicians,{" "}
@@ -121,7 +121,7 @@ export default function AboutPage() {
             {/* TODO(eugene): replace owner photo with team-on-truck or workshop hero for /about if available */}
             <Image
               src="/images/team/evgenii-knyazev.webp"
-              alt="Eugene Berne, founder of Berne Repair, photographed in the Berne Repair workshop"
+              alt="Eugene Berne, founder of Berne Appliance Repair, photographed in the Berne Appliance Repair workshop"
               width={800}
               height={1000}
               sizes="(min-width: 1024px) 35vw, 100vw"
@@ -138,7 +138,7 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/90 sm:text-lg">
             <p>
-              I founded Berne Repair in 2022 after a decade in the appliance
+              I founded Berne Appliance Repair in 2022 after a decade in the appliance
               repair trade. The plan was simple: build a fleet operation in
               South Florida where every technician on the truck is a Berne
               employee — not a dispatcher&apos;s cousin, not a same-day subcontractor
@@ -222,7 +222,7 @@ export default function AboutPage() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
             >
               <Users className="size-4 text-brand" aria-hidden />
-              Meet the {TEAM.length - 1} techs
+              Meet the {COMPANY.socialProof.technicians} techs
             </Link>
           </div>
         </div>
@@ -233,7 +233,7 @@ export default function AboutPage() {
           <div className="mb-10 max-w-2xl">
             <span className="eyebrow">By the numbers</span>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              What Berne Repair looks like today.
+              What Berne Appliance Repair looks like today.
             </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -297,7 +297,7 @@ export default function AboutPage() {
               Three counties, 60+ cities.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Berne Repair dispatches across all of Miami-Dade, Broward and
+              Berne Appliance Repair dispatches across all of Miami-Dade, Broward and
               Palm Beach counties — from Homestead in the south to Jupiter in
               the north. Priority neighborhoods include Bal Harbour, Sunny
               Isles, Fisher Island, Key Biscayne, Coral Gables, Pinecrest,

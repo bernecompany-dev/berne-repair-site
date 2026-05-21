@@ -1,6 +1,6 @@
 export const en = {
   meta: {
-    homeTitle: "Berne Repair — Same-Day Appliance Repair · South Florida",
+    homeTitle: "Berne Appliance Repair — Same-Day Appliance Repair · South Florida",
     homeDescription:
       "Same-day appliance repair across Miami-Dade, Broward & Palm Beach. $59 service call. 18 technicians, licensed & insured. Sub-Zero, Wolf, Viking, Miele.",
   },
@@ -40,7 +40,7 @@ export const en = {
     body: "From Sub-Zero columns to a Whirlpool washer — our trucks are stocked for the brands and models we see every day in South Florida homes and businesses.",
   },
   whyUs: {
-    eyebrow: "Why Berne Repair",
+    eyebrow: "Why Berne Appliance Repair",
     title: "Built like a fleet operation — priced like a local.",
   },
   areas: {
@@ -111,7 +111,7 @@ export const en = {
     privacy: "We don't share or sell your info.",
     success: "Got it — talk soon.",
     needFaster: "Need us faster? Call",
-    consentLabel: "I agree to receive calls and/or text messages from Berne Repair about my request. Msg & data rates may apply. Reply STOP to opt out.",
+    consentLabel: "I agree to receive calls and/or text messages from Berne Appliance Repair about my request. Msg & data rates may apply. Reply STOP to opt out.",
     consentError: "Please agree to be contacted about your request",
     privacyLink: "Privacy policy",
   },
@@ -128,7 +128,7 @@ export const en = {
     sitemap: "Sitemap",
     privacy: "Privacy",
     trademarkDisclaimer:
-      "Brand names and logos shown on this site are the trademarks of their respective owners. Berne Repair is an independent service company and is not affiliated with, endorsed by, sponsored by, or an authorized service center for any manufacturer listed.",
+      "Brand names and logos shown on this site are the trademarks of their respective owners. Berne Appliance Repair is an independent service company and is not affiliated with, endorsed by, sponsored by, or an authorized service center for any manufacturer listed.",
     divisionsTitle: "Other Berne divisions",
     divisions: [
       {
@@ -190,10 +190,10 @@ export const en = {
     { title: "Trusted by commercial clients", body: "We service property management, restaurants, and retail — including Target, Publix, Petco." },
   ],
   ownerIntro: {
-    eyebrow: "From the owner",
+    eyebrow: "Founder · Eugene Berne",
     title: "Hey — I'm Eugene Berne.",
     p1: "I moved to the United States in 2022. Didn't speak the industry, didn't know a soul in it. I fell into appliance repair by accident — picked up a wrench because the rent wasn't going to pay itself, and I figured I could learn something useful while I did.",
-    p2Pre: "Seven months later I launched Berne Repair. No investors, no playbook, just a couple of trucks and a phone that I answered myself. Three years on we've completed",
+    p2Pre: "Seven months later I launched Berne Appliance Repair. No investors, no playbook, just a couple of trucks and a phone that I answered myself. Three years on we've completed",
     p2Bold: "over 30,000 service calls",
     p2Post: " across South Florida — Sub-Zero columns in Coral Gables, commercial laundromats in Hialeah, ovens in Boca Raton kitchens the night before a dinner party.",
     p3: "I don't run this from behind a desk. I personally hire every technician on this page, and I personally back every repair we do. If a job goes sideways — call me. The number on this site rings me.",

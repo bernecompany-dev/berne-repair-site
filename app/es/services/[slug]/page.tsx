@@ -16,7 +16,7 @@ import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS_ES, SERVICE_FAQS_ES } from "@/data/faqs";
-import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { SERVICE_HERO_IMAGES } from "@/lib/service-images";
 import { servicePersonalCopy } from "@/lib/personal-copy";
 
@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: absoluteUrl(`/es/services/${service.slug}`),
       type: "website",
       locale: "es_US",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

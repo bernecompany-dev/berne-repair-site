@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
   if (back) {
     return {
-      title: `${back.role} — Berne Repair Operations`,
+      title: `${back.role} — Berne Appliance Repair Operations`,
       description: `${back.role} role at ${COMPANY.legalName}. Part of the dispatch and operations team behind the technician fleet.`,
       alternates: {
         canonical: `/team/${slug}`,
@@ -67,8 +67,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     };
   }
   return {
-    title: "Team — Berne Repair",
-    description: "Berne Repair team member.",
+    title: "Team — Berne Appliance Repair",
+    description: "Berne Appliance Repair team member.",
     robots: { index: false, follow: false },
   };
 }

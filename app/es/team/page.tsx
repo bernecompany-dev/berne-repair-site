@@ -11,10 +11,10 @@ import { TEAM } from "@/data/team";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
-const TECH_COUNT = TEAM.length - 1;
+const TECH_COUNT = COMPANY.socialProof.technicians;
 
 export const metadata: Metadata = {
-  title: `El equipo de Berne Repair — ${COMPANY.socialProof.technicians} técnicos en el sur de Florida`,
+  title: `El equipo de Berne Appliance Repair — ${COMPANY.socialProof.technicians} técnicos en el sur de Florida`,
   description: `Conozca a los ${COMPANY.socialProof.technicians} técnicos con licencia y al equipo de despacho de ${COMPANY.legalName}. Nombres reales, especialidades reales.`,
   alternates: {
     canonical: "/es/team",
@@ -71,12 +71,12 @@ export default function TeamPageES() {
           <h1 className="heading-hero mt-6 max-w-4xl">
             La gente en los camiones.
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              Equipo Berne Repair.
+              Equipo Berne Appliance Repair.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Berne Repair es una operación de flota — no subcontratamos. Cada técnico aquí es empleado de Berne, entrenado en las marcas que servimos, certificado EPA donde corresponde.
+            Berne Appliance Repair es una operación de flota — no subcontratamos. Cada técnico aquí es empleado de Berne, entrenado en las marcas que servimos, certificado EPA donde corresponde.
           </p>
 
           <div className="mt-9"><CTARow size="lg" locale="es" /></div>
@@ -96,7 +96,7 @@ export default function TeamPageES() {
           {TEAM.map((m) => (
             <article key={m.slug} className="flex flex-col gap-4 rounded-3xl border border-border bg-card/50 p-6 transition-colors hover:border-brand/40">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-                <Image src={m.photo} alt={`${m.name}, ${m.role} en Berne Repair`} fill sizes="(min-width: 1024px) 30vw, 100vw" quality={78} loading="lazy" className="object-cover" />
+                <Image src={m.photo} alt={`${m.name}, ${m.role} en Berne Appliance Repair`} fill sizes="(min-width: 1024px) 30vw, 100vw" quality={78} loading="lazy" className="object-cover" />
               </div>
               <div className="space-y-1">
                 <h2 className="text-xl font-semibold tracking-tight">{m.name}</h2>

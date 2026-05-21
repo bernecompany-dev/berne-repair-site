@@ -28,7 +28,7 @@ export function CityMap({
       </div>
       <div className="overflow-hidden rounded-2xl border border-border bg-card">
         <iframe
-          title={`${cityName}, FL — Berne Repair service area`}
+          title={`${cityName}, FL — Berne Appliance Repair service area`}
           src={src}
           width="100%"
           height="380"

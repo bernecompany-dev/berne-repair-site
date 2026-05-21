@@ -6,9 +6,9 @@ import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Credenciales — Licenciados, asegurados y EPA certificados · Berne Repair",
+  title: "Credenciales — Licenciados, asegurados y EPA certificados · Berne Appliance Repair",
   description:
-    "Documentación verificable de Berne Repair: licencia FL DBPR, EPA Section 608 (16-8019803514-2), COI, DBA, exención Workers' Comp FL, certificado de reventa FL, asignación EIN del IRS (CP 575) y W-9 — todos descargables.",
+    "Documentación verificable de Berne Appliance Repair: licencia FL DBPR, EPA Section 608 (16-8019803514-2), COI, DBA, exención Workers' Comp FL, certificado de reventa FL, asignación EIN del IRS (CP 575) y W-9 — todos descargables.",
   alternates: {
     canonical: "/es/credentials",
     languages: {
@@ -43,7 +43,7 @@ export default function CredentialsPageES() {
             Credenciales, documentación y prueba de seguro.
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Berne Repair es un vendor de reparación de electrodomésticos
+            Berne Appliance Repair es un vendor de reparación de electrodomésticos
             licenciado y asegurado en Florida. Certificado EPA Section 608
             (trabajo con refrigerante). Abajo: el set completo de documentos
             que enviamos a property managers, operaciones hoteleras y equipos

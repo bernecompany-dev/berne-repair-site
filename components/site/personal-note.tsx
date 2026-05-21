@@ -17,7 +17,7 @@ export function PersonalNote({
           <div className="relative size-20 shrink-0 overflow-hidden rounded-2xl border border-border sm:size-24 lg:size-28">
             <Image
               src="/images/team/evgenii-knyazev.webp"
-              alt="Eugene Berne, owner of Berne Repair"
+              alt="Eugene Berne, owner of Berne Appliance Repair"
               fill
               sizes="(min-width: 1024px) 120px, 96px"
               quality={80}
@@ -28,7 +28,7 @@ export function PersonalNote({
           <div>
             <div className="text-base font-semibold tracking-tight">Eugene Berne</div>
             <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              Owner · Berne Repair
+              Owner · Berne Appliance Repair
             </div>
           </div>
         </div>

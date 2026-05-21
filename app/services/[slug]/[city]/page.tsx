@@ -30,6 +30,7 @@ import {
   faqJsonLd,
   breadcrumbJsonLd,
   absoluteUrl,
+  DEFAULT_OG_IMAGE,
 } from "@/lib/seo";
 
 function haversine(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
@@ -92,12 +93,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = CITY_BY_SLUG[citySlug];
   if (!service || !city) return {};
 
-  // Title template — Next layout appends " · Berne Repair" (15 chars) so we
-  // budget the page-level title at ~45 chars to land the SERP title ≤60.
-  // Longest combo without trim: "Garbage Disposal Repair in Bay Harbor Islands · $59"
-  // (51) which becomes 66 after the suffix. Drop "Repair" + "$" prefix for
-  // those over 45 chars so we land in budget. Short combos keep the full
-  // marker for click-through clarity.
+  // Title template — Next layout appends " · Berne Appliance Repair" (~25 chars)
+  // so we budget the page-level title at ~35 chars to land the SERP title ≤60.
+  // Drop "Repair" + "$" prefix for combos over the budget so we stay in range.
+  // Short combos keep the full marker for click-through clarity.
   const naturalTitle = `${service.shortName} Repair in ${city.name} · $${COMPANY.serviceCallPrice}`;
   const title = naturalTitle.length <= 45
     ? naturalTitle
@@ -137,6 +136,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: absoluteUrl(`/services/${service.slug}/${city.slug}`),
       type: "website",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

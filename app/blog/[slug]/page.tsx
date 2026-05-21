@@ -16,6 +16,7 @@ import {
   breadcrumbJsonLd,
   blogPostingJsonLd,
   howToJsonLd,
+  DEFAULT_OG_IMAGE,
 } from "@/lib/seo";
 import { HOWTO_BLUEPRINTS } from "@/lib/blog/howto-allowlist";
 import { COMPANY } from "@/data/company";
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article || !isPublished(article)) return {};
   const url = absoluteUrl(`/blog/${article.slug}`);
   return {
-    title: `${article.title} · Berne Repair`,
+    title: `${article.title} · Berne Appliance Repair`,
     description: article.description,
     alternates: {
       canonical: `/blog/${article.slug}`,
@@ -52,11 +53,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: article.publishedAt.toISOString(),
       modifiedTime: article.updatedAt?.toISOString() ?? article.publishedAt.toISOString(),
       authors: [article.author],
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
+      images: [DEFAULT_OG_IMAGE.url],
     },
   };
 }

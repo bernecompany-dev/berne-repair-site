@@ -6,11 +6,14 @@ import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
+const TITLE = "Solicitar despacho — Berne Appliance Repair · Servicio mismo día";
+const DESC = `Solicite despacho de electrodomésticos el mismo día en el sur de Florida. Visita técnica de $${COMPANY.serviceCallPrice}. ${COMPANY.socialProof.technicians} técnicos con licencia. Sub-Zero, Wolf, Viking, Bosch y todas las marcas principales.`;
+
 export const metadata: Metadata = {
-  title: "Request Dispatch — Berne Appliance Repair · Same-Day Service",
-  description: `Request same-day appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} service call. ${COMPANY.socialProof.technicians} licensed technicians. Sub-Zero, Wolf, Viking, Bosch and every major brand.`,
+  title: TITLE,
+  description: DESC,
   alternates: {
-    canonical: "/request-dispatch",
+    canonical: "/es/request-dispatch",
     languages: {
       "en-US": absoluteUrl("/request-dispatch"),
       "es-US": absoluteUrl("/es/request-dispatch"),
@@ -18,10 +21,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Request Dispatch — Berne Appliance Repair · Same-Day Service",
-    description: `Request same-day appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`,
-    url: absoluteUrl("/request-dispatch"),
+    title: TITLE,
+    description: DESC,
+    url: absoluteUrl("/es/request-dispatch"),
     type: "website",
+    locale: "es_US",
     images: [DEFAULT_OG_IMAGE],
   },
 };
@@ -29,8 +33,9 @@ export const metadata: Metadata = {
 const requestDispatchSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Request Dispatch — Berne Appliance Repair",
-  "url": absoluteUrl("/request-dispatch"),
+  "name": "Solicitar despacho — Berne Appliance Repair",
+  "url": absoluteUrl("/es/request-dispatch"),
+  "inLanguage": "es-US",
   "mainEntity": {
     "@type": "LocalBusiness",
     "@id": absoluteUrl("/#business"),
@@ -42,13 +47,13 @@ const requestDispatchSchema = {
     "openingHours": "Mo-Su 08:00-21:00",
     "potentialAction": {
       "@type": "ReserveAction",
-      "name": "Request appliance repair dispatch",
-      "target": absoluteUrl("/request-dispatch#lead-form"),
+      "name": "Solicitar despacho de reparación de electrodomésticos",
+      "target": absoluteUrl("/es/request-dispatch#lead-form"),
     },
   },
 };
 
-export default function RequestDispatchPage() {
+export default function RequestDispatchPageES() {
   return (
     <>
       {/* Hero */}
@@ -63,48 +68,57 @@ export default function RequestDispatchPage() {
         />
         <div className="container-prose pt-14 pb-12 sm:pt-20 sm:pb-16">
           <nav className="mb-6 flex items-center gap-2 text-xs text-muted-foreground" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-foreground">Home</Link>
+            <Link href="/es" className="hover:text-foreground">Inicio</Link>
             <span aria-hidden>/</span>
-            <span className="text-foreground/80">Request dispatch</span>
+            <span className="text-foreground/80">Solicitar despacho</span>
           </nav>
 
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <Wrench className="size-3.5" aria-hidden />
-              Same-day dispatch
+              Despacho el mismo día
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              Visita técnica ${COMPANY.serviceCallPrice}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
-              Licensed &amp; insured
+              Con licencia y asegurados
             </span>
           </div>
 
           <h1 className="heading-hero mt-6 max-w-3xl">
-            Request{" "}
+            Solicitar{" "}
             <span className="bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              service dispatch.
+              despacho de servicio.
             </span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Tell us what&apos;s broken and where you are — we&apos;ll call back with a
-            slot within minutes during open hours. Sub-Zero, Wolf, Viking, Thermador,
-            Miele, Bosch and every major residential brand.
+            Cuéntenos qué se dañó y dónde está usted — le devolvemos la llamada
+            con un horario en minutos durante el horario de atención. Sub-Zero,
+            Wolf, Viking, Thermador, Miele, Bosch y todas las marcas residenciales
+            principales.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href={`tel:${COMPANY.phone.tel}`}
-              data-analytics="cta-call"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-brand px-5 text-[15px] font-semibold text-brand-foreground shadow-[0_0_0_1px_oklch(1_0_0/0.08),0_10px_30px_-10px_var(--brand-glow)] hover:-translate-y-px hover:brightness-110"
-            >
-              <Phone className="size-4" aria-hidden />
-              <span>Or call {COMPANY.phone.display}</span>
-            </a>
+            {COMPANY.phones.map((p, i) => (
+              <a
+                key={p.tel}
+                href={`tel:${p.tel}`}
+                data-analytics={i === 0 ? "cta-call-primary" : "cta-call-regional"}
+                className={
+                  i === 0
+                    ? "inline-flex h-12 items-center gap-2 rounded-full bg-brand px-5 text-[15px] font-semibold text-brand-foreground shadow-[0_0_0_1px_oklch(1_0_0/0.08),0_10px_30px_-10px_var(--brand-glow)] hover:-translate-y-px hover:brightness-110"
+                    : "inline-flex h-12 items-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 text-[15px] font-semibold text-foreground hover:bg-white/[0.07]"
+                }
+              >
+                <Phone className="size-4" aria-hidden />
+                <span>{p.display}</span>
+                <span className="text-xs text-muted-foreground">· {p.label}</span>
+              </a>
+            ))}
             <span className="flex items-center gap-2 text-sm text-muted-foreground">
               <Clock3 className="size-4 text-brand" aria-hidden />
               {COMPANY.hours.label}
@@ -118,7 +132,7 @@ export default function RequestDispatchPage() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight">
-              How dispatch works
+              Cómo funciona el despacho
             </h2>
             <ol className="mt-6 space-y-5">
               <li className="flex gap-3">
@@ -127,11 +141,11 @@ export default function RequestDispatchPage() {
                 </span>
                 <div>
                   <div className="font-semibold text-foreground">
-                    You submit the form (or call)
+                    Usted envía el formulario (o llama)
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Three minutes, two required fields. SMS works too — text the
-                    same number.
+                    Tres minutos, dos campos requeridos. El SMS también funciona —
+                    envíe un texto al mismo número.
                   </p>
                 </div>
               </li>
@@ -141,11 +155,11 @@ export default function RequestDispatchPage() {
                 </span>
                 <div>
                   <div className="font-semibold text-foreground">
-                    Dispatch calls back
+                    Despacho le devuelve la llamada
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Same-day if you&apos;re reaching out before noon. Otherwise next
-                    morning. A real human, not a chatbot.
+                    Mismo día si llama antes del mediodía. De lo contrario, la
+                    próxima mañana. Una persona real, no un chatbot.
                   </p>
                 </div>
               </li>
@@ -155,10 +169,11 @@ export default function RequestDispatchPage() {
                 </span>
                 <div>
                   <div className="font-semibold text-foreground">
-                    Technician arrives, ${COMPANY.serviceCallPrice} diagnostic
+                    Llega el técnico, diagnóstico de ${COMPANY.serviceCallPrice}
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Applied toward the repair if you say go. {COMPANY.socialProof.warranty}.
+                    Aplicado a la reparación si nos da luz verde.{" "}
+                    {COMPANY.socialProof.warranty}.
                   </p>
                 </div>
               </li>
@@ -167,18 +182,19 @@ export default function RequestDispatchPage() {
             <div className="mt-8 rounded-2xl border border-border bg-card/40 p-5">
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
                 <ShieldCheck className="size-3.5 text-brand" aria-hidden />
-                Brand &amp; warranty
+                Marca y garantía
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                {COMPANY.socialProof.technicians} licensed technicians.{" "}
-                {COMPANY.socialProof.warranty} on parts and labor. Independent —
-                not an authorized service center for any manufacturer.
+                {COMPANY.socialProof.technicians} técnicos con licencia.{" "}
+                {COMPANY.socialProof.warranty} en piezas y mano de obra.
+                Independiente — no somos un centro de servicio autorizado de
+                ningún fabricante.
               </p>
             </div>
           </div>
 
           <div id="lead-form">
-            <LeadForm />
+            <LeadForm locale="es" />
           </div>
         </div>
       </section>

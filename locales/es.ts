@@ -2,7 +2,7 @@ import type { Dictionary } from "./en";
 
 export const es: Dictionary = {
   meta: {
-    homeTitle: "Berne Repair — Reparación de electrodomésticos · Sur de Florida",
+    homeTitle: "Berne Appliance Repair — Reparación de electrodomésticos · Sur de Florida",
     homeDescription:
       "Reparación el mismo día en Miami-Dade, Broward y Palm Beach. Visita $59. 18 técnicos, con licencia y asegurados. Sub-Zero, Wolf, Viking, Miele.",
   },
@@ -42,7 +42,7 @@ export const es: Dictionary = {
     body: "Desde columnas Sub-Zero hasta una lavadora Whirlpool — nuestros camiones llevan piezas para las marcas y modelos que vemos a diario en hogares y negocios del sur de Florida.",
   },
   whyUs: {
-    eyebrow: "Por qué Berne Repair",
+    eyebrow: "Por qué Berne Appliance Repair",
     title: "Operación de flota — con precios de empresa local.",
   },
   areas: {
@@ -113,7 +113,7 @@ export const es: Dictionary = {
     privacy: "No compartimos ni vendemos su información.",
     success: "¡Recibido! Hablamos pronto.",
     needFaster: "¿Más rápido? Llame al",
-    consentLabel: "Acepto recibir llamadas y/o mensajes de texto de Berne Repair sobre mi solicitud. Pueden aplicar tarifas de mensajería y datos. Responda STOP para cancelar.",
+    consentLabel: "Acepto recibir llamadas y/o mensajes de texto de Berne Appliance Repair sobre mi solicitud. Pueden aplicar tarifas de mensajería y datos. Responda STOP para cancelar.",
     consentError: "Por favor acepte ser contactado sobre su solicitud",
     privacyLink: "Política de privacidad",
   },
@@ -130,7 +130,7 @@ export const es: Dictionary = {
     sitemap: "Mapa del sitio",
     privacy: "Privacidad",
     trademarkDisclaimer:
-      "Los nombres y logos de marcas mostrados en este sitio son marcas registradas de sus respectivos propietarios. Berne Repair es una empresa de servicio independiente y no está afiliada, respaldada, patrocinada ni es un centro de servicio autorizado de ningún fabricante mencionado.",
+      "Los nombres y logos de marcas mostrados en este sitio son marcas registradas de sus respectivos propietarios. Berne Appliance Repair es una empresa de servicio independiente y no está afiliada, respaldada, patrocinada ni es un centro de servicio autorizado de ningún fabricante mencionado.",
     divisionsTitle: "Otras divisiones de Berne",
     divisions: [
       {
@@ -192,10 +192,10 @@ export const es: Dictionary = {
     { title: "Clientes comerciales confían", body: "Servimos administradores de propiedades, restaurantes y retail — incluyendo Target, Publix, Petco." },
   ],
   ownerIntro: {
-    eyebrow: "Del dueño",
+    eyebrow: "Fundador · Eugene Berne",
     title: "Hola — soy Eugene Berne.",
     p1: "Me mudé a Estados Unidos en 2022. No conocía la industria, no conocía a nadie en ella. Caí en la reparación de electrodomésticos por accidente — agarré una llave porque la renta no se iba a pagar sola, y pensé que podría aprender algo útil en el proceso.",
-    p2Pre: "Siete meses después lancé Berne Repair. Sin inversionistas, sin plan, solo un par de camiones y un teléfono que yo mismo contestaba. Tres años después hemos completado",
+    p2Pre: "Siete meses después lancé Berne Appliance Repair. Sin inversionistas, sin plan, solo un par de camiones y un teléfono que yo mismo contestaba. Tres años después hemos completado",
     p2Bold: "más de 30,000 visitas",
     p2Post: " en el sur de Florida — columnas Sub-Zero en Coral Gables, lavanderías comerciales en Hialeah, hornos en cocinas de Boca Raton la noche antes de una cena.",
     p3: "No dirijo esto desde un escritorio. Contrato personalmente a cada técnico de esta página, y respaldo personalmente cada reparación. Si un trabajo sale mal — llámeme. El número de este sitio suena en mi bolsillo.",

@@ -59,7 +59,7 @@ test.describe("Sitemap + robots integrity", () => {
 test.describe("Home page structure", () => {
   test("home renders hero, stats, services, team, contact, sticky CTA on mobile", async ({ page, isMobile }) => {
     await page.goto("/");
-    await expect(page).toHaveTitle(/Berne Repair/);
+    await expect(page).toHaveTitle(/Berne Appliance Repair/);
     await expect(page.locator("h1").first()).toContainText(/Premium appliance repair/i);
     await expect(page.locator("body")).toContainText("$59");
     await expect(page.locator("body")).toContainText(/\b1[67]\b/);

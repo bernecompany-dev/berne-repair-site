@@ -35,7 +35,7 @@ export type Article = {
   body: string;
 };
 
-const AUTHOR = "Eugene Berne, Owner — Berne Repair";
+const AUTHOR = "Eugene Berne, Owner — Berne Appliance Repair";
 
 export const ARTICLES: Article[] = [
   {
@@ -97,11 +97,11 @@ The second is grid power quality. High-rise transformers serving 30 to 60 units 
 
 ## What a diagnostic visit actually does
 
-Before you book, here's what a Berne Repair tech does on a Sub-Zero diagnostic call so you know what you're paying for. Five steps: pressure-test the condenser fans at full load, current-draw measurement on the compressor against Sub-Zero's spec table, evaporator coil temperature differential check, gasket integrity test with a smoke pencil, and electronics fault log download from the system board. The whole visit is 40 to 60 minutes. We leave you with either a working unit or a written quote with parts numbers and labor breakdown — no upsell, no diagnostic fee on top of the $59 call.
+Before you book, here's what a Berne Appliance Repair tech does on a Sub-Zero diagnostic call so you know what you're paying for. Five steps: pressure-test the condenser fans at full load, current-draw measurement on the compressor against Sub-Zero's spec table, evaporator coil temperature differential check, gasket integrity test with a smoke pencil, and electronics fault log download from the system board. The whole visit is 40 to 60 minutes. We leave you with either a working unit or a written quote with parts numbers and labor breakdown — no upsell, no diagnostic fee on top of the $59 call.
 
 ## When to call us
 
-If you've cleaned the condenser, confirmed both fans spin, checked the gaskets, and the unit still drifts warm after two hours, the next step is diagnostic. We charge a $59 service call, applied toward any repair. Berne Repair runs factory-trained Sub-Zero technicians out of a Miami truck stocked with the common 600 and 700 series parts. Call (754) 345-4515 — most days we can have a tech at your door within three hours.
+If you've cleaned the condenser, confirmed both fans spin, checked the gaskets, and the unit still drifts warm after two hours, the next step is diagnostic. We charge a $59 service call, applied toward any repair. Berne Appliance Repair runs factory-trained Sub-Zero technicians out of a Miami truck stocked with the common 600 and 700 series parts. Call (754) 345-4515 — most days we can have a tech at your door within three hours.
 
 A few related reads on our site:
 
@@ -109,7 +109,7 @@ A few related reads on our site:
 - [Wine cooler and undercounter built-in service](/services/wine-cooler-repair)
 - [Ice maker diagnosis on Sub-Zero and Scotsman units](/services/ice-maker-repair)
 
-Berne Repair specializes in high-end built-ins like Sub-Zero, Wolf, Viking, and Thermador. For standard-brand refrigerators (LG, Samsung, GE, Whirlpool) our sister operation at [bernerepair.com](https://bernerepair.com) handles those calls at the same response speed.`,
+Berne Appliance Repair specializes in high-end built-ins like Sub-Zero, Wolf, Viking, and Thermador. For standard-brand refrigerators (LG, Samsung, GE, Whirlpool) our sister operation at [bernerepair.com](https://bernerepair.com) handles those calls at the same response speed.`,
   },
   {
     slug: "wolf-range-burner-issues",
@@ -148,7 +148,7 @@ The fix is usually a burner switch (807894 on most pre-2014 ranges, 9013098 on n
 
 Wolf burners are sealed-bottom, so a leak above the burner is rare. Almost all gas-side faults trace to the brass valve under the cooktop. Symptoms: gas smell when you turn the knob, hissing without click sound, or the burner lights on simmer but won't hold on medium.
 
-Stop and call. We will not — and you should not — chase a gas-side fault past the knob. South Florida gas service in condo high-rises adds complexity; most buildings shut a riser to one apartment for valve work. Berne Repair coordinates with building engineering on every condo job in Miami Beach, Sunny Isles, Brickell, and Aventura.
+Stop and call. We will not — and you should not — chase a gas-side fault past the knob. South Florida gas service in condo high-rises adds complexity; most buildings shut a riser to one apartment for valve work. Berne Appliance Repair coordinates with building engineering on every condo job in Miami Beach, Sunny Isles, Brickell, and Aventura.
 
 The valve part on most DF366 and DF484 models is the 9019700 sealed brass dual-pressure valve. Replacement is a tech-only job because Wolf requires a manometer pressure test before re-commissioning.
 
@@ -182,7 +182,7 @@ Quick owner checklist before scheduling service:
 4. Confirm gas valve at the wall is fully open.
 5. Try a different burner — if one works and one doesn't, the issue is local.
 
-If you've done all five and it still clicks without lighting, we're a phone call away. Berne Repair runs Wolf-trained technicians on every truck. (754) 345-4515. The $59 service call applies toward the repair if you go ahead with us.
+If you've done all five and it still clicks without lighting, we're a phone call away. Berne Appliance Repair runs Wolf-trained technicians on every truck. (754) 345-4515. The $59 service call applies toward the repair if you go ahead with us.
 
 Related service pages:
 
@@ -267,7 +267,7 @@ Both brands' control boards are sensitive to power-quality issues — brown-outs
 
 ## Calling us for either
 
-Berne Repair handles both Viking and Thermador in the field. (754) 345-4515. Same $59 diagnostic visit, applied to repair. If you're in the buying decision and you'd rather not guess, we'll do a paid one-hour kitchen consult and walk through your specific install context.
+Berne Appliance Repair handles both Viking and Thermador in the field. (754) 345-4515. Same $59 diagnostic visit, applied to repair. If you're in the buying decision and you'd rather not guess, we'll do a paid one-hour kitchen consult and walk through your specific install context.
 
 Related reading on our site:
 
@@ -336,7 +336,7 @@ Causes of F70 in our service experience:
 
 The bottom pan has a styrofoam float that triggers the F70 reed switch. Even small intermittent leaks can soak the styrofoam and lock the system. A tech needs to dry the pan, find the leak source, repair, and reset the float manually.
 
-Berne Repair carries F70 parts on the truck for the G6000 and G7000 series. Same-day reset turnaround is standard for our Miami, Miami Beach, and Coral Gables clients.
+Berne Appliance Repair carries F70 parts on the truck for the G6000 and G7000 series. Same-day reset turnaround is standard for our Miami, Miami Beach, and Coral Gables clients.
 
 ## Other codes worth knowing
 
@@ -356,7 +356,7 @@ Salt regeneration is genuinely necessary in Miami. Municipal water in much of Mi
 
 ## When to book service
 
-If your Miele shows any of the above codes and an owner check doesn't clear it within thirty minutes, the diagnostic is faster than the trial-and-error. Berne Repair runs Miele-trained technicians on Miami-Dade routes daily. (754) 345-4515. Standard $59 service call applies toward repair.
+If your Miele shows any of the above codes and an owner check doesn't clear it within thirty minutes, the diagnostic is faster than the trial-and-error. Berne Appliance Repair runs Miele-trained technicians on Miami-Dade routes daily. (754) 345-4515. Standard $59 service call applies toward repair.
 
 Related service pages:
 
@@ -425,7 +425,7 @@ A reasonable rule: in warranty, use factory-authorized to keep the coverage clea
 
 This is where the market is murky. The official term is "factory-authorized," which means a service firm has a contract with the manufacturer to perform warranty work. "Factory-trained" is a step down — technicians who have completed manufacturer training but whose firm doesn't carry the authorization contract. Both groups are competent; the distinction matters mainly for warranty work.
 
-At Berne Repair we run factory-trained technicians on Sub-Zero, Wolf, Viking, Thermador, and Miele. We're not factory-authorized for warranty claims; for in-warranty work we'll refer you to your authorized firm. Past warranty, we'll be on-site within 24 hours in most South Florida markets.
+At Berne Appliance Repair we run factory-trained technicians on Sub-Zero, Wolf, Viking, Thermador, and Miele. We're not factory-authorized for warranty claims; for in-warranty work we'll refer you to your authorized firm. Past warranty, we'll be on-site within 24 hours in most South Florida markets.
 
 ## Questions to ask any independent shop
 
@@ -457,7 +457,7 @@ Replacement makes financial sense when (a) the repair quote exceeds 40% of repla
 
 ## Our position
 
-Berne Repair handles post-warranty service on every premium brand we've named here, plus a few we haven't. (754) 345-4515. The $59 service call applies toward the repair. We won't sell you an extended plan because we don't offer them — but we'll tell you honestly whether the one in your mailbox is worth signing.
+Berne Appliance Repair handles post-warranty service on every premium brand we've named here, plus a few we haven't. (754) 345-4515. The $59 service call applies toward the repair. We won't sell you an extended plan because we don't offer them — but we'll tell you honestly whether the one in your mailbox is worth signing.
 
 Related service pages on our site:
 
@@ -541,7 +541,7 @@ Related service pages:
 - [Service in Aventura](/areas/aventura)
 - [Service in Sunny Isles Beach](/areas/sunny-isles-beach)
 
-Berne Repair focuses on premium built-ins like Sub-Zero, Wolf, Viking, and Thermador. Standard-brand drawer refrigerators (Fisher & Paykel, GE Cafe) are handled by our sister site [bernerepair.com](https://bernerepair.com).`,
+Berne Appliance Repair focuses on premium built-ins like Sub-Zero, Wolf, Viking, and Thermador. Standard-brand drawer refrigerators (Fisher & Paykel, GE Cafe) are handled by our sister site [bernerepair.com](https://bernerepair.com).`,
   },
   {
     slug: "wolf-dual-fuel-vs-all-gas-outdoor",
@@ -1242,9 +1242,9 @@ The first three questions usually get vague answers. The fourth almost always ge
 
 ## When we can help
 
-Berne Repair works on La Cornue ranges across Miami-Dade, Broward, and Palm Beach. We're not factory-authorized — that path doesn't exist meaningfully in South Florida — but our techs have hands-on experience on most current and recent-historical La Cornue models. (754) 345-4515. The $59 service call applies toward repair.
+Berne Appliance Repair works on La Cornue ranges across Miami-Dade, Broward, and Palm Beach. We're not factory-authorized — that path doesn't exist meaningfully in South Florida — but our techs have hands-on experience on most current and recent-historical La Cornue models. (754) 345-4515. The $59 service call applies toward repair.
 
-The honest reality on La Cornue service is that we'll often need to order parts and return in two to three weeks for the actual repair. That's the brand reality, not a Berne Repair limitation. Where we add value over the dealer-coordinated service path is response speed on the diagnostic visit, hands-on experience that beats most "we don't work on those" shops, and clear quotes before parts arrive.
+The honest reality on La Cornue service is that we'll often need to order parts and return in two to three weeks for the actual repair. That's the brand reality, not a Berne Appliance Repair limitation. Where we add value over the dealer-coordinated service path is response speed on the diagnostic visit, hands-on experience that beats most "we don't work on those" shops, and clear quotes before parts arrive.
 
 ## A note on competing service options
 
@@ -2396,7 +2396,7 @@ A compressor swap on a 648PRO runs $2,200 to $2,800 with refrigerant recovery, e
 
 We won't quote a Sub-Zero compressor without first completing the five-step upstream diagnostic. If a dealer or another shop has quoted compressor replacement on a unit that received recent firmware, call us for a $59 second-opinion diagnostic. Roughly 60 percent of the post-firmware short-cycling calls we've taken resolved upstream of the compressor.
 
-(754) 345-4515. Berne Repair runs factory-trained Sub-Zero techs out of Miami trucks stocked with 600 series sensors, heaters, and gaskets. We service coastal South Florida from Key Biscayne through Palm Beach.
+(754) 345-4515. Berne Appliance Repair runs factory-trained Sub-Zero techs out of Miami trucks stocked with 600 series sensors, heaters, and gaskets. We service coastal South Florida from Key Biscayne through Palm Beach.
 
 Related reading:
 
@@ -2686,7 +2686,7 @@ For commercial wine storage in restaurant cellars or hotel banquet refrigeration
     topic: "sub-zero",
     body: `An owner in Aventura was quoted $480 for a Sub-Zero ice maker module replacement on her 632. She found the same-looking module on a parts site for $135 and bought it. The unit ran for nine weeks before the harvest motor stalled at a half-completed cycle. She called us. By the time we opened the unit, the ice cabin had a thin sheet of ice across the floor from melt-and-refreeze cycles, the bin temp sensor had been pulled out of position by the stalled motor, and the eject arm had bent against a frozen-in cube. The aftermarket module came out, a genuine Sub-Zero part went in, and we spent an hour and a half cleaning up the cabin damage that wouldn't have happened with the OEM part. Total cost to her with the cleanup: $640 — more than the original quote.
 
-That story plays out about once a quarter at Berne Repair, and the pattern is consistent enough that we no longer install aftermarket Sub-Zero ice maker modules under any circumstances. Three reasons drive that policy.
+That story plays out about once a quarter at Berne Appliance Repair, and the pattern is consistent enough that we no longer install aftermarket Sub-Zero ice maker modules under any circumstances. Three reasons drive that policy.
 
 ## Reason 1: The harvest cycle timing is not standard
 
@@ -5763,7 +5763,7 @@ For households with one or two premium appliances in a kitchen of mid-tier units
 
 ## What we offer
 
-Berne Repair direct maintenance contracts:
+Berne Appliance Repair direct maintenance contracts:
 
 Standard (2 scheduled visits, priority response): $580 per year for a kitchen with 5-8 premium appliances.
 
@@ -5805,7 +5805,7 @@ For service-contract structure on standard-brand kitchens (LG/Samsung/GE/Whirlpo
     slug: "diagnostic-fee-structure-premium-transparency",
     title: "Diagnostic-Fee Structure and Premium Service Transparency",
     description:
-      "How premium appliance service contractors structure diagnostic fees, what owners should expect from a diagnostic visit, and the transparent pricing model we use at Berne Repair. The questions to ask before scheduling.",
+      "How premium appliance service contractors structure diagnostic fees, what owners should expect from a diagnostic visit, and the transparent pricing model we use at Berne Appliance Repair. The questions to ask before scheduling.",
     publishedAt: new Date("2026-11-24T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
@@ -5870,7 +5870,7 @@ If any of these patterns appear during your diagnostic visit, pause the work and
 
 ## Our diagnostic structure
 
-Berne Repair's diagnostic-fee structure:
+Berne Appliance Repair's diagnostic-fee structure:
 
 $59 flat diagnostic fee for residential premium appliance service. Applied as credit toward authorized repair if the customer proceeds with us within 90 days.
 

@@ -32,7 +32,7 @@ export function PhoneCTA({
     <a
       href={`tel:${COMPANY.phone.tel}`}
       data-analytics="click-to-call"
-      aria-label={`Call Berne Repair at ${COMPANY.phone.display}`}
+      aria-label={`Call Berne Appliance Repair at ${COMPANY.phone.display}`}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-[transform,box-shadow,background-color,color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         sizes[size],

@@ -33,7 +33,7 @@ const COMBO_OPENERS: Array<(s: Service, c: City) => string> = [
   (s, c) =>
     `Quick note from the owner. I've personally been on ${s.seoNoun} jobs in ${c.name} from ${c.neighborhoods[0]} to ${c.neighborhoods[1] ?? c.neighborhoods[0]} — and the answer's almost always the same: get a real diagnostic before anyone quotes you a number.`,
   (s, c) =>
-    `Hi, Eugene Berne — I run Berne Repair. ${s.shortName} stuff in ${c.name} is something we do every week. If you called us today before noon, odds are we'd have a tech at your door by dinner.`,
+    `Hi, Eugene Berne — I run Berne Appliance Repair. ${s.shortName} stuff in ${c.name} is something we do every week. If you called us today before noon, odds are we'd have a tech at your door by dinner.`,
   (s, c) =>
     `Straight from the owner: ${c.name} is one of our busiest pockets for ${s.seoNoun}. Three of our techs are based within twenty minutes of you, which is why same-day actually means same-day here, not 'in two business days.'`,
   (s, c) =>
@@ -87,7 +87,7 @@ const COMBO_OPENERS_ES: Array<(s: Service, c: City) => string> = [
   (s, c) =>
     `Una nota rápida del dueño. He estado personalmente en trabajos de ${s.seoNoun} en ${c.name}, desde ${c.neighborhoods[0]} hasta ${c.neighborhoods[1] ?? c.neighborhoods[0]} — la respuesta casi siempre es la misma: pida un diagnóstico real antes de que alguien le cotice un número.`,
   (s, c) =>
-    `Hola, Eugene Berne — yo dirijo Berne Repair. ${s.shortName} en ${c.name} es algo que hacemos todas las semanas. Si nos llama hoy antes del mediodía, lo más probable es que tengamos un técnico en su puerta antes de la cena.`,
+    `Hola, Eugene Berne — yo dirijo Berne Appliance Repair. ${s.shortName} en ${c.name} es algo que hacemos todas las semanas. Si nos llama hoy antes del mediodía, lo más probable es que tengamos un técnico en su puerta antes de la cena.`,
   (s, c) =>
     `Directo del dueño: ${c.name} es uno de los puntos más activos para nosotros. Tres técnicos viven a menos de veinte minutos de su zona, por eso "el mismo día" aquí sí significa el mismo día.`,
   (s, c) =>

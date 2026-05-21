@@ -14,7 +14,7 @@ import { CITIES, CITY_BY_SLUG } from "@/data/cities";
 import { SERVICES } from "@/data/services";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS_ES } from "@/data/faqs";
-import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { cityPersonalCopy } from "@/lib/personal-copy";
 
 export function generateStaticParams() {
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "x-default": absoluteUrl(`/areas/${city.slug}`),
       },
     },
-    openGraph: { title, description, url: absoluteUrl(`/es/areas/${city.slug}`), type: "website", locale: "es_US" },
+    openGraph: { title, description, url: absoluteUrl(`/es/areas/${city.slug}`), type: "website", locale: "es_US", images: [DEFAULT_OG_IMAGE] },
   };
 }
 

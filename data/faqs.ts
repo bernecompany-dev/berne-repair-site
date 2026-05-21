@@ -14,7 +14,7 @@ export const GENERAL_FAQS: FAQ[] = [
   {
     question: "Are you licensed and insured?",
     answer:
-      "Yes. Berne Repair is fully licensed and insured to operate in the state of Florida. We carry general liability so your home and equipment are protected.",
+      "Yes. Berne Appliance Repair is fully licensed and insured to operate in the state of Florida. We carry general liability so your home and equipment are protected.",
   },
   {
     question: "Which brands do you service?",
@@ -57,7 +57,7 @@ export const GENERAL_FAQS_ES: FAQ[] = [
   {
     question: "¿Tienen licencia y seguro?",
     answer:
-      "Sí. Berne Repair tiene licencia completa y seguro para operar en el estado de Florida. Tenemos seguro de responsabilidad general que protege su hogar y equipo.",
+      "Sí. Berne Appliance Repair tiene licencia completa y seguro para operar en el estado de Florida. Tenemos seguro de responsabilidad general que protege su hogar y equipo.",
   },
   {
     question: "¿Qué marcas reparan?",

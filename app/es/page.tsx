@@ -13,7 +13,7 @@ import { CTABand } from "@/components/sections/cta-band";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { JsonLd } from "@/components/site/json-ld";
-import { faqJsonLd, imageGalleryJsonLd, founderJsonLd, absoluteUrl } from "@/lib/seo";
+import { faqJsonLd, imageGalleryJsonLd, founderJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { GENERAL_FAQS_ES } from "@/data/faqs";
 import { getDictionary } from "@/lib/dictionary";
 
@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     url: absoluteUrl("/es"),
     type: "website",
     locale: "es_US",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

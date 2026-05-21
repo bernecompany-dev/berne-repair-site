@@ -18,7 +18,7 @@ import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS, SERVICE_FAQS } from "@/data/faqs";
-import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -47,6 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: service.description,
       url: absoluteUrl(`/services/${service.slug}`),
       type: "website",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

@@ -4,11 +4,11 @@ import { Phone, Mail, Clock3, MapPin, ShieldCheck } from "lucide-react";
 import { LeadForm } from "@/components/sections/lead-form";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact Berne Repair — Premium Appliance Service",
-  description: `Reach Berne Repair dispatch for premium appliance service across South Florida. ${COMPANY.phone.display} · ${COMPANY.hours.label}. Same-day service. Licensed & insured.`,
+  title: "Contact Berne Appliance Repair — Premium Service",
+  description: `Reach Berne Appliance Repair dispatch for premium appliance service across South Florida. ${COMPANY.phone.display} · ${COMPANY.hours.label}. Same-day service. Licensed & insured.`,
   alternates: {
     canonical: "/contact",
     languages: {
@@ -17,18 +17,19 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Contact Berne Repair — Premium Appliance Service",
+    title: "Contact Berne Appliance Repair — Premium Service",
     description:
-      "Reach Berne Repair dispatch for premium appliance service across South Florida.",
+      "Reach Berne Appliance Repair dispatch for premium appliance service across South Florida.",
     url: absoluteUrl("/contact"),
     type: "website",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
 const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact Berne Repair",
+  "name": "Contact Berne Appliance Repair",
   "url": absoluteUrl("/contact"),
   "mainEntity": {
     "@type": "LocalBusiness",
@@ -70,7 +71,7 @@ export default function ContactPage() {
           <h1 className="heading-hero mt-6 max-w-3xl">
             Contact{" "}
             <span className="bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              Berne Repair.
+              Berne Appliance Repair.
             </span>
           </h1>
 
@@ -92,20 +93,30 @@ export default function ContactPage() {
             </p>
 
             <ul className="mt-8 space-y-4 text-base">
-              <li className="flex items-center gap-3">
-                <span className="inline-flex size-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <li className="flex items-start gap-3">
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
                   <Phone className="size-4" aria-hidden />
                 </span>
                 <div>
                   <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
                     Phone &amp; SMS
                   </div>
-                  <a
-                    href={`tel:${COMPANY.phone.tel}`}
-                    className="font-semibold text-foreground hover:text-brand"
-                  >
-                    {COMPANY.phone.display}
-                  </a>
+                  <div className="mt-1 space-y-1.5">
+                    {COMPANY.phones.map((p, i) => (
+                      <div key={p.tel} className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                        <a
+                          href={`tel:${p.tel}`}
+                          data-analytics={i === 0 ? "click-to-call-primary" : "click-to-call-regional"}
+                          className="font-semibold text-foreground hover:text-brand"
+                        >
+                          {p.display}
+                        </a>
+                        <span className="text-xs text-muted-foreground">
+                          {p.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </li>
               <li className="flex items-center gap-3">

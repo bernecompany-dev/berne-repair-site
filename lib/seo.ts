@@ -7,12 +7,35 @@ import { TEAM, type TeamMember } from "@/data/team";
 import type { FAQ } from "@/data/faqs";
 import { SERVICE_IMAGE_PATHS } from "@/lib/service-images";
 
+/**
+ * Canonical site origin. Production is `https://www.berne-repair.com` —
+ * every canonical / hreflang / og:url / JSON-LD URL must use the `www`
+ * subdomain so Google does not record a 308 redirect on the canonical
+ * itself. The Vercel project should also set NEXT_PUBLIC_SITE_URL with the
+ * `www.` prefix; the literal default below is the safe fallback if the env
+ * var is missing in production.
+ */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.berne-repair.com";
 
 export function absoluteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();
 }
+
+/**
+ * Shared default Open Graph image. Resolves to Next's dynamic
+ * `/opengraph-image` route (see `app/opengraph-image.tsx`). Page metadata
+ * blocks that set their own `openGraph` MUST include this in their `images:`
+ * array — Next.js replaces (not merges) the openGraph key when a child
+ * segment defines it, so a missing `images` field would emit no og:image at
+ * all.
+ */
+export const DEFAULT_OG_IMAGE = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "Berne Appliance Repair — premium appliance repair across South Florida",
+} as const;
 
 const BUSINESS_ID = absoluteUrl("/#business");
 const ORG_ID = absoluteUrl("/#organization");
@@ -36,10 +59,10 @@ const SAME_AS: string[] = [
   "https://www.tiktok.com/@berne.repair",
   "https://www.instagram.com/bernerepair/",
   "https://www.facebook.com/bernerepair",
-  // Yelp listings (per DBA / market)
+  // Yelp listings (per DBA / market). The Hallandale Beach "-3" listing was
+  // retired 2026-05-20 — "-4" (280 reviews) is the canonical Hallandale Yelp.
   "https://www.yelp.com/biz/berne-appliance-repair-hallandale-beach-4",
   "https://www.yelp.com/biz/berne-repair-sarasota",
-  "https://www.yelp.com/biz/berne-repair-hallandale-beach-3",
   "https://www.yelp.com/biz/berne-repair-fort-myers",
   // Thumbtack
   "https://www.thumbtack.com/fl/tampa/appliance-repair/norma-appliance-repair/service/485458498671689761",
@@ -703,7 +726,7 @@ export function imageGalleryJsonLd() {
     "@type": "ImageGallery",
     name: `${COMPANY.legalName} — Work Gallery`,
     description:
-      "Real appliance repair and installation jobs by Berne Repair across South Florida — Sub-Zero, Wolf, Viking, Bosch, LG, Samsung and more.",
+      "Real appliance repair and installation jobs by Berne Appliance Repair across South Florida — Sub-Zero, Wolf, Viking, Bosch, LG, Samsung and more.",
     image: PHOTO_OBJECTS,
   };
 }

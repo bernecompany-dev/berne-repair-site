@@ -22,7 +22,7 @@ import { CITIES, CITY_BY_SLUG } from "@/data/cities";
 import { SERVICES } from "@/data/services";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS } from "@/data/faqs";
-import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 // Same haversine pattern as /services/[slug]/[city]/. Used to rank
 // nearby city hubs by geo-distance (not array order from data/cities.ts)
@@ -66,6 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: absoluteUrl(`/areas/${city.slug}`),
       type: "website",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

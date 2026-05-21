@@ -16,14 +16,13 @@ import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
-import { TEAM } from "@/data/team";
 import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Sobre Berne Repair — Reparación de electrodomésticos en el sur de Florida",
+  title: "Sobre Berne Appliance Repair — Reparación de electrodomésticos en el sur de Florida",
   description:
-    "Berne Repair: 18 técnicos, más de 29,000 servicios, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach. Fundada en 2022 por Eugene Berne, con 11+ años de herencia en el sector.",
+    "Berne Appliance Repair: 18 técnicos, más de 29,000 servicios, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach. Fundada en 2022 por Eugene Berne, con 11+ años de herencia en el sector.",
   alternates: {
     canonical: "/es/about",
     languages: {
@@ -43,7 +42,7 @@ export default function AboutPageES() {
   const aboutJsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: "Sobre Berne Repair",
+    name: "Sobre Berne Appliance Repair",
     url: absoluteUrl("/es/about"),
     inLanguage: "es-US",
     mainEntity: { "@id": absoluteUrl("/#business") },
@@ -111,7 +110,7 @@ export default function AboutPageES() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Berne Repair se estableció en 2022 como la sucursal premium del sur
+            Berne Appliance Repair se estableció en 2022 como la sucursal premium del sur
             de Florida de una familia de operaciones de reparación de
             electrodomésticos con{" "}
             <span className="text-foreground">11+ años de herencia en el sector</span>.
@@ -137,7 +136,7 @@ export default function AboutPageES() {
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_30px_80px_-30px_oklch(0.67_0.21_252/0.35)]">
             <Image
               src="/images/team/evgenii-knyazev.webp"
-              alt="Eugene Berne, fundador de Berne Repair, fotografiado en el taller de Berne Repair"
+              alt="Eugene Berne, fundador de Berne Appliance Repair, fotografiado en el taller de Berne Appliance Repair"
               width={800}
               height={1000}
               sizes="(min-width: 1024px) 35vw, 100vw"
@@ -154,7 +153,7 @@ export default function AboutPageES() {
 
           <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/90 sm:text-lg">
             <p>
-              Fundé Berne Repair en 2022 tras una década en el oficio de
+              Fundé Berne Appliance Repair en 2022 tras una década en el oficio de
               reparación de electrodomésticos. El plan era simple: construir
               una operación de flota en el sur de Florida donde cada técnico
               en el camión sea un empleado de Berne — no el primo de un
@@ -244,7 +243,7 @@ export default function AboutPageES() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
             >
               <Users className="size-4 text-brand" aria-hidden />
-              Conozca a los {TEAM.length - 1} técnicos
+              Conozca a los {COMPANY.socialProof.technicians} técnicos
             </Link>
           </div>
         </div>
@@ -255,7 +254,7 @@ export default function AboutPageES() {
           <div className="mb-10 max-w-2xl">
             <span className="eyebrow">En cifras</span>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Cómo se ve Berne Repair hoy.
+              Cómo se ve Berne Appliance Repair hoy.
             </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -319,7 +318,7 @@ export default function AboutPageES() {
               Tres condados, más de 60 ciudades.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Berne Repair despacha en todo Miami-Dade, Broward y Palm Beach —
+              Berne Appliance Repair despacha en todo Miami-Dade, Broward y Palm Beach —
               desde Homestead al sur hasta Jupiter al norte. Vecindarios
               prioritarios incluyen Bal Harbour, Sunny Isles, Fisher Island,
               Key Biscayne, Coral Gables, Pinecrest, Aventura, Hollywood,

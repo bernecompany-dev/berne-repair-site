@@ -5,7 +5,7 @@ export function Logo({ className, href = "/" }: { className?: string; href?: str
   return (
     <Link
       href={href}
-      aria-label="Berne Repair — home"
+      aria-label="Berne Appliance Repair — home"
       className={cn(
         "group inline-flex items-center gap-2.5 font-semibold tracking-tight",
         className,

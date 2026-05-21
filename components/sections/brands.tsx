@@ -51,12 +51,12 @@ export function Brands() {
             <li
               key={brand}
               className="flex h-16 items-center justify-center rounded-xl border border-border bg-card/40 px-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
-              title={`Berne Repair services ${brand}`}
+              title={`Berne Appliance Repair services ${brand}`}
             >
               {LOGOS[brand] ? (
                 <Image
                   src={LOGOS[brand]}
-                  alt={`${brand} — Berne Repair services ${brand} appliances`}
+                  alt={`${brand} — Berne Appliance Repair services ${brand} appliances`}
                   width={84}
                   height={36}
                   loading="lazy"

@@ -33,9 +33,9 @@ export type ExtendedBio = {
 export const TECH_BIOS: Record<string, ExtendedBio> = {
   "evgenii-knyazev": {
     lede:
-      "I'm Eugene — founder of Berne Repair. 18 years in appliance service, 4 of them building this company here in South Florida. I still take service calls. I still back every repair personally.",
+      "I'm Eugene — founder of Berne Appliance Repair. 18 years in appliance service, 4 of them building this company here in South Florida. I still take service calls. I still back every repair personally.",
     background:
-      "Trained as an engineer before moving into appliance service. Picked up refrigeration first because it's the category that punishes shortcuts — refrigerant, compressors, sealed systems, and electronics all have to line up before the job is real. Built Berne Repair so I'd want to work here: W-2 only, paid training, real trucks, real parts.",
+      "Trained as an engineer before moving into appliance service. Picked up refrigeration first because it's the category that punishes shortcuts — refrigerant, compressors, sealed systems, and electronics all have to line up before the job is real. Built Berne Appliance Repair so I'd want to work here: W-2 only, paid training, real trucks, real parts.",
     workOn:
       "Still on the schedule for commercial dispatch, Sub-Zero 648PRO and 700-series diagnostics, Wolf range work, and any control-board call a tech in the field needs a second pair of eyes on. About a third of my week is on the trucks. Two thirds is dispatch, training, and customer escalations that need an owner's signature.",
     whyBerne:
@@ -379,7 +379,7 @@ export const BACK_OFFICE: BackOfficeMember[] = [
       serviceArea:
         "Phone and email coverage during business hours across all Berne service areas.",
       related: [
-        { href: "/contact", label: "Contact Berne Repair" },
+        { href: "/contact", label: "Contact Berne Appliance Repair" },
         { href: "/request-dispatch", label: "Request service" },
       ],
     },
@@ -403,7 +403,7 @@ export const BACK_OFFICE: BackOfficeMember[] = [
         "Operations support for the full Berne service area.",
       related: [
         { href: "/credentials", label: "Berne credentials" },
-        { href: "/about", label: "About Berne Repair" },
+        { href: "/about", label: "About Berne Appliance Repair" },
       ],
     },
   },
@@ -448,8 +448,8 @@ export const BACK_OFFICE: BackOfficeMember[] = [
       serviceArea:
         "Billing and admin support for the full Berne service area.",
       related: [
-        { href: "/contact", label: "Contact Berne Repair" },
-        { href: "/about", label: "About Berne Repair" },
+        { href: "/contact", label: "Contact Berne Appliance Repair" },
+        { href: "/about", label: "About Berne Appliance Repair" },
       ],
     },
   },

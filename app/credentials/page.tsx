@@ -6,9 +6,9 @@ import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Credentials — Licensed, Insured & EPA Certified · Berne Repair",
+  title: "Credentials — Licensed, Insured & EPA Certified · Berne Appliance Repair",
   description:
-    "Berne Repair vendor paperwork: FL technician license, EPA Section 608 cert (16-8019803514-2), COI, DBA, FL Workers' Comp exemption, FL resale certificate, IRS EIN (CP 575), and W-9 — all downloadable.",
+    "Berne Appliance Repair vendor paperwork: FL technician license, EPA Section 608 cert (16-8019803514-2), COI, DBA, FL Workers' Comp exemption, FL resale certificate, IRS EIN (CP 575), and W-9 — all downloadable.",
   alternates: {
     canonical: "/credentials",
     languages: {
@@ -43,7 +43,7 @@ export default function CredentialsPage() {
             Credentials, paperwork, and proof of insurance.
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Berne Repair is a licensed and insured Florida appliance repair
+            Berne Appliance Repair is a licensed and insured Florida appliance repair
             vendor. EPA Section 608 certified (refrigerant work). Member of{" "}
             <a
               href="https://msaworld.com/"

@@ -10,7 +10,7 @@ import {
   RESIDENTIAL_BRAND_PROFILES,
   type ResidentialBrandProfile,
 } from "@/lib/data/residential-brand-profiles";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const PAGE_TITLE = "Premium Appliance Brands We Repair";
 const PAGE_DESC = `Sub-Zero, Wolf, Viking, Thermador, Miele, KitchenAid, GE, Whirlpool, LG, Samsung — same-day service across South Florida. $${COMPANY.serviceCallPrice} service call.`;
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: PAGE_DESC,
     url: absoluteUrl("/brands"),
     type: "website",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

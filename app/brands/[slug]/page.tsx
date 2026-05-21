@@ -28,6 +28,7 @@ import {
   breadcrumbJsonLd,
   faqJsonLd,
   SITE_URL,
+  DEFAULT_OG_IMAGE,
 } from "@/lib/seo";
 
 const TIER_BADGE: Record<ResidentialBrandProfile["tier"], string> = {
@@ -61,6 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: brand.metaDescription,
       url: absoluteUrl(`/brands/${brand.slug}`),
       type: "website",
+      images: [DEFAULT_OG_IMAGE],
     },
   };
 }

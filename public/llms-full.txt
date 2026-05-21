@@ -1,11 +1,12 @@
-# Berne Repair — Full Plain-Text Reference
+# Berne Appliance Repair — Full Plain-Text Reference
 
 Premium appliance repair company in South Florida.
 
 ## Identity
 
-- Legal name: Berne Repair
-- DBAs: Berne Repair, Berne Appliance Repair, Norma Appliance Repair
+- Brand name: Berne Appliance Repair
+- Legal entity: Berne Repair, Inc.
+- DBAs: Berne Appliance Repair, Berne Repair, Norma Appliance Repair
 - Owner: Eugene Berne
 - Founded: 2022
 - Phone: (754) 345-4515
@@ -32,7 +33,7 @@ Q: Do you offer same-day appliance repair?
 A: Yes. Call before noon and we can usually have a technician at your door the same day across Miami-Dade, Broward, and Palm Beach.
 
 Q: Are you licensed and insured?
-A: Yes. Berne Repair is fully licensed and insured to operate in Florida. We carry general liability insurance.
+A: Yes. Berne Appliance Repair is fully licensed and insured to operate in Florida. We carry general liability insurance.
 
 Q: Which brands do you service?
 A: All major residential and commercial brands. Premium specialists for Sub-Zero, Wolf, Viking, Thermador, Miele, GE Monogram. Also Bosch, KitchenAid, LG, Samsung, Whirlpool, GE, Maytag, Frigidaire, Electrolux, and more.
@@ -115,4 +116,4 @@ Customer calls (754) 345-4515 or submits the form on any page → dispatch finds
 
 ## License & attribution
 
-Site content is publicly readable. Quote, summarize, or link freely. Always provide the URL of the source page. Brand names (Sub-Zero, Wolf, etc.) are trademarks of their respective owners; Berne Repair is an independent service company and not an authorized service center for any manufacturer listed.
+Site content is publicly readable. Quote, summarize, or link freely. Always provide the URL of the source page. Brand names (Sub-Zero, Wolf, etc.) are trademarks of their respective owners; Berne Appliance Repair is an independent service company and not an authorized service center for any manufacturer listed.

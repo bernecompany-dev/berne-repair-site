@@ -17,7 +17,7 @@ import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
 import { CITIES, CITY_BY_SLUG } from "@/data/cities";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS_ES, SERVICE_FAQS_ES } from "@/data/faqs";
-import { serviceCityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { serviceCityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { comboPersonalCopy } from "@/lib/personal-copy";
 
 function haversine(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "x-default": absoluteUrl(`/services/${service.slug}/${city.slug}`),
       },
     },
-    openGraph: { title, description, url: absoluteUrl(`/es/services/${service.slug}/${city.slug}`), type: "website", locale: "es_US" },
+    openGraph: { title, description, url: absoluteUrl(`/es/services/${service.slug}/${city.slug}`), type: "website", locale: "es_US", images: [DEFAULT_OG_IMAGE] },
   };
 }
 

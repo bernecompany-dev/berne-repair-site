@@ -120,7 +120,7 @@ export function WhatsAppFab() {
       href={href}
       target="_blank"
       rel="noopener"
-      aria-label="Chat with Berne Repair on WhatsApp"
+      aria-label="Chat with Berne Appliance Repair on WhatsApp"
       data-analytics="whatsapp-fab"
       onClick={handleClick}
       className="berne-whatsapp-fab fixed bottom-4 z-[9998] flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-transform duration-150 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 right-4 lg:right-4 max-lg:left-4 max-lg:right-auto motion-reduce:transition-none motion-reduce:hover:scale-100"
