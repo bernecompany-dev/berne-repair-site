@@ -20,9 +20,9 @@ import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Sobre Berne Appliance Repair — Reparación de electrodomésticos en el sur de Florida",
+  title: "Sobre Berne Appliance Repair — Servicio premium de electrodomésticos en el sur de Florida desde 2015",
   description:
-    "Berne Appliance Repair: 18 técnicos, más de 29,000 servicios, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach. Fundada en 2022 por Eugene Berne, con 11+ años de herencia en el sector.",
+    "Fundada en 2015 por Eugene Bernitsky. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach. El nivel premium del sur de Florida para Sub-Zero, Wolf, Viking, Thermador, Miele.",
   alternates: {
     canonical: "/es/about",
     languages: {
@@ -45,6 +45,8 @@ export default function AboutPageES() {
     name: "Sobre Berne Appliance Repair",
     url: absoluteUrl("/es/about"),
     inLanguage: "es-US",
+    description:
+      "Berne Appliance Repair: fundada en 2015 por Eugene Bernitsky. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas. El nivel premium del sur de Florida para Sub-Zero, Wolf, Viking, Thermador y Miele en Miami-Dade, Broward, Palm Beach y la Costa del Golfo.",
     mainEntity: { "@id": absoluteUrl("/#business") },
     breadcrumb: { "@id": absoluteUrl("/es/about#breadcrumb") },
   };
@@ -110,15 +112,20 @@ export default function AboutPageES() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Berne Appliance Repair se estableció en 2022 como la sucursal premium del sur
-            de Florida de una familia de operaciones de reparación de
-            electrodomésticos con{" "}
-            <span className="text-foreground">11+ años de herencia en el sector</span>.
-            Hoy: {COMPANY.socialProof.technicians} técnicos W-2,{" "}
+            Eugene Bernitsky fundó Berne Appliance Repair en 2015 con una sola
+            premisa: las casas de alto poder adquisitivo del sur de Florida
+            merecían una empresa de servicio que de verdad apareciera, que
+            arreglara el electrodoméstico bien a la primera, y a la que se le
+            pudiera confiar el interior de un refrigerador Sub-Zero de $20K o
+            una estufa Wolf de 48&quot;. Once años después —{" "}
+            {COMPANY.socialProof.technicians} técnicos W-2,{" "}
             {COMPANY.socialProof.repairsCompleted} servicios completados,{" "}
-            {REVIEW_AGGREGATE.ratingValue}/5 en {REVIEW_AGGREGATE.reviewCount}{" "}
-            reseñas verificadas — y una visita técnica de ${COMPANY.serviceCallPrice}
-            {" "}aplicada a la reparación si nos da luz verde.
+            <span className="text-foreground">
+              {REVIEW_AGGREGATE.ratingValue}/5 en {REVIEW_AGGREGATE.reviewCount}{" "}
+              reseñas verificadas
+            </span>
+            {" "}— esa premisa sigue siendo el sistema operativo de la
+            compañía.
           </p>
 
           <div className="mt-9">
@@ -155,33 +162,44 @@ export default function AboutPageES() {
 
           <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/90 sm:text-lg">
             <p>
-              Fundé Berne Appliance Repair en 2022 tras una década en el oficio de
-              reparación de electrodomésticos. El plan era simple: construir
-              una operación de flota en el sur de Florida donde cada técnico
-              en el camión sea un empleado de Berne — no el primo de un
-              despachador, no un subcontratista del día — y respaldar cada
-              reparación con una garantía real y un teléfono que yo mismo
-              contesto.
+              Arranqué Berne en 2015 porque las casas de alto poder
+              adquisitivo del sur de Florida me hacían siempre la misma
+              pregunta: a quién le confío un refrigerador de $20K. En ese
+              entonces la respuesta honesta era &ldquo;a nadie de forma
+              confiable&rdquo; — el mercado eran despachadores de franquicia,
+              operaciones de un solo camión, y una larga cola de técnicos
+              dispuestos a abrir un sistema sellado de Sub-Zero sin
+              entrenamiento formal. Construimos la alternativa.
             </p>
             <p>
-              Cuatro años después operamos {COMPANY.socialProof.technicians}{" "}
-              técnicos a tiempo completo en camiones surtidos para Sub-Zero,
-              Wolf, Viking, Thermador, Miele, Bosch y todas las marcas
-              principales. Hemos completado{" "}
+              Once años después, la operación son {COMPANY.socialProof.technicians}{" "}
+              técnicos W-2 en camiones surtidos específicamente para las
+              marcas premium que el sur de Florida tiene en sus cocinas:
+              Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch — más las
+              marcas de volumen (LG, Samsung, Whirlpool, GE, KitchenAid) que
+              también atendemos a diario porque cada casa tiene una mezcla.
+              Hemos completado{" "}
               <strong className="text-foreground">
                 {COMPANY.socialProof.repairsCompleted} servicios
               </strong>{" "}
-              en Miami-Dade, Broward y Palm Beach. La página de reseñas lo
-              demuestra — {REVIEW_AGGREGATE.ratingValue} sobre 5 en{" "}
-              {REVIEW_AGGREGATE.reviewCount} reseñas verificadas en Google,
-              Yelp y las plataformas que nuestros clientes realmente usan.
+              en Miami-Dade, Broward, Palm Beach y la Costa del Golfo — la
+              calificación de 4.79★ en {REVIEW_AGGREGATE.reviewCount} reseñas
+              es multi-fuente (Google, Yelp y las plataformas que nuestros
+              clientes realmente usan).
             </p>
             <p>
-              Somos una empresa joven. El oficio que la sostiene no lo es —
-              nuestros técnicos senior aportan de 7 a 10 años de banco cada
-              uno, y la familia Berne de operaciones de reparación lleva
-              atendiendo servicios en Florida desde 2015. La marca residencial
-              general opera como{" "}
+              Por qué importa el W-2: cuando el técnico en su entrada es un
+              empleado de Berne con un sueldo de por medio, el diagnóstico
+              es honesto, la reparación es la correcta, y el camión viene
+              surtido antes de salir de la oficina. Cuando es un
+              subcontratista del día, nada de eso es estructuralmente
+              cierto. Tomamos la decisión operativa cara desde temprano —
+              nómina, beneficios, presupuesto de capacitación, flota —
+              porque nada más le da la consistencia que el trabajo exige.
+            </p>
+            <p>
+              La familia Berne corre tres marcas coordinadas. La operación
+              residencial general es{" "}
               <a
                 href="https://bernerepair.com/"
                 rel="noopener"
@@ -189,7 +207,15 @@ export default function AboutPageES() {
               >
                 Berne Appliance Repair
               </a>
-              , y el trabajo comercial / restaurante / hotel se despacha vía{" "}
+              {" "}— el sitio de cara al consumidor donde aterriza la mayoría
+              de los servicios. Este sitio,{" "}
+              <span className="text-foreground">berne-repair.com</span>, es el
+              nivel premium — columnas Sub-Zero, Wolf dual-fuel, Miele
+              built-in, las casas de Sunny Isles / Bal Harbour / Fisher
+              Island donde el electrodoméstico se instaló como parte de un
+              build-out de cocina a medida. Cocinas comerciales, equipo de
+              restaurante, hoteles y edificios administrados se despachan
+              vía{" "}
               <a
                 href="https://www.berne-commercial.com/"
                 rel="noopener"
@@ -197,11 +223,12 @@ export default function AboutPageES() {
               >
                 Berne Commercial Repair
               </a>
-              . Si quiere la versión larga, la{" "}
+              . Mismo estándar de capacitación. Misma rendición de cuentas.
+              La{" "}
               <Link href="/es/family" className="text-brand hover:underline">
                 página de la familia
               </Link>{" "}
-              la tiene.
+              tiene la versión larga.
             </p>
             <p>
               Berne es miembro de{" "}
@@ -215,20 +242,21 @@ export default function AboutPageES() {
               </a>
               {" "}(Marcone Servicers Association), la principal asociación de
               la industria para contratistas de servicio de electrodomésticos.
-              Nuestros técnicos completan programas de capacitación continua
-              sobre tecnología emergente de electrodomésticos a través de
+              Nuestros técnicos completan capacitación continua a través de
               cursos de MSA World y actualizaciones de certificación OEM
               (Sub-Zero, Wolf, Miele, LG, Samsung, GE) &mdash; para que el
               camión que llega a su casa esté equipado para reparar el
-              electrodoméstico que realmente tiene, no el que se fabricó hace
-              cinco años.
+              electrodoméstico que realmente tiene, no una hoja de
+              especificaciones de hace cinco años.
             </p>
             <p>
-              Si nos llama hoy antes del mediodía, es muy probable que tenga
-              a un técnico en su puerta a la hora de la cena. Ese es el
-              estándar de operación. Eso es lo que{" "}
-              {COMPANY.socialProof.repairsCompleted} servicios nos enseñaron
-              a comprometer.
+              Hacia dónde vamos: otros seis a ocho técnicos sumándose a la
+              flota durante los próximos 18 meses. Una huella comercial más
+              amplia a través de la marca hermana. Y — la parte que no
+              cambia — cada llamada de escalación me llega a mí
+              personalmente. Ese es el estándar de operación. Eso es lo que
+              nos enseñaron {COMPANY.socialProof.repairsCompleted} servicios a
+              comprometer.
             </p>
           </div>
 
