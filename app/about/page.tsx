@@ -21,9 +21,9 @@ import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Berne Appliance Repair — South Florida Appliance Repair Since 2022",
+  title: "About Berne Appliance Repair — South Florida Premium Appliance Service Since 2015",
   description:
-    "Berne Appliance Repair: 18 technicians, 29,000+ jobs, 4.79/871 reviews across Miami-Dade, Broward & Palm Beach. Founded 2022 by Eugene Berne on 11+ years of industry heritage.",
+    "Founded 2015 by Eugene Bernitsky. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews across Miami-Dade, Broward, Palm Beach. The premium South Florida tier for Sub-Zero, Wolf, Viking, Thermador, Miele.",
   alternates: {
     canonical: "/about",
     languages: {
@@ -45,6 +45,8 @@ export default function AboutPage() {
     "@type": "AboutPage",
     name: "About Berne Appliance Repair",
     url: absoluteUrl("/about"),
+    description:
+      "Berne Appliance Repair: founded 2015 by Eugene Bernitsky. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews. The premium South Florida tier for Sub-Zero, Wolf, Viking, Thermador, Miele service across Miami-Dade, Broward, Palm Beach, and the Gulf Coast.",
     mainEntity: { "@id": absoluteUrl("/#business") },
     breadcrumb: { "@id": absoluteUrl("/about#breadcrumb") },
   };
@@ -95,14 +97,17 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Berne Appliance Repair was established in 2022 as the premium South Florida
-            branch of a family of appliance repair operations with{" "}
-            <span className="text-foreground">11+ years of industry heritage</span>.
-            Today: {COMPANY.socialProof.technicians} W-2 technicians,{" "}
-            {COMPANY.socialProof.repairsCompleted} jobs completed,{" "}
-            {REVIEW_AGGREGATE.ratingValue}/5 across {REVIEW_AGGREGATE.reviewCount}{" "}
-            verified reviews — and a $59 flat service call applied toward the
-            repair if you say go.
+            Eugene Bernitsky founded Berne Appliance Repair in 2015 on a single
+            premise: South Florida&apos;s premium households deserved a repair
+            company that actually showed up, fixed the appliance right the first
+            time, and could be trusted inside a $40K Sub-Zero column or a Wolf
+            48&quot; range. Eleven years later — {COMPANY.socialProof.technicians} W-2
+            technicians, {COMPANY.socialProof.repairsCompleted} services completed,{" "}
+            <span className="text-foreground">
+              {REVIEW_AGGREGATE.ratingValue}/5 across {REVIEW_AGGREGATE.reviewCount}{" "}
+              verified reviews
+            </span>{" "}
+            — that premise is the operating system of the entire company.
           </p>
 
           <div className="mt-9">
@@ -140,30 +145,41 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/90 sm:text-lg">
             <p>
-              I founded Berne Appliance Repair in 2022 after a decade in the appliance
-              repair trade. The plan was simple: build a fleet operation in
-              South Florida where every technician on the truck is a Berne
-              employee — not a dispatcher&apos;s cousin, not a same-day subcontractor
-              — and back every single repair with a real warranty and a phone
-              number that I personally answer.
+              I started Berne in 2015 because South Florida high-net-worth
+              households kept asking the same question: who do I trust inside
+              a $20K refrigerator? At the time the honest answer was &ldquo;nobody
+              reliably&rdquo; — the market was franchise dispatchers, one-truck
+              operations, and a long tail of guys who would happily attempt
+              a Sub-Zero sealed-system repair with no formal training. We
+              built the alternative.
             </p>
             <p>
-              Four years later we run {COMPANY.socialProof.technicians} full-time
-              techs out of trucks stocked for Sub-Zero, Wolf, Viking, Thermador,
-              Miele, Bosch and every major brand. We&apos;ve completed{" "}
+              Eleven years in, the operation is {COMPANY.socialProof.technicians}{" "}
+              W-2 technicians running out of trucks stocked specifically for
+              the premium brands South Florida has in its kitchens: Sub-Zero,
+              Wolf, Viking, Thermador, Miele, Bosch, plus the volume brands
+              (LG, Samsung, Whirlpool, GE, KitchenAid) we still service every
+              day because every household has a mix. We&apos;ve completed{" "}
               <strong className="text-foreground">
-                {COMPANY.socialProof.repairsCompleted} jobs
+                {COMPANY.socialProof.repairsCompleted} services
               </strong>{" "}
-              across Miami-Dade, Broward and Palm Beach counties. The reviews
-              page shows the work — {REVIEW_AGGREGATE.ratingValue} out of 5
-              across {REVIEW_AGGREGATE.reviewCount} verified reviews on Google,
-              Yelp and the platforms our customers actually use.
+              across Miami-Dade, Broward, Palm Beach, and the Gulf Coast — the
+              4.79★ across {REVIEW_AGGREGATE.reviewCount} reviews is multi-source
+              (Google, Yelp, and the platforms our customers actually use).
             </p>
             <p>
-              We&apos;re a young company. The craft behind it isn&apos;t — our senior
-              technicians bring 7-10 years of bench experience each, and the
-              broader Berne family of repair operations has been running calls
-              in Florida since 2015. The general residential brand operates as{" "}
+              Why W-2 only matters: when the technician on your driveway is a
+              Berne employee with a paycheck on the line, the diagnostic is
+              honest, the repair is the right repair, and the truck is stocked
+              before it leaves the office. When it&apos;s a same-day
+              subcontractor, none of that is structurally true. We made the
+              expensive operational call early — payroll, benefits, training
+              budget, fleet — because nothing else gets you the consistency
+              the work demands.
+            </p>
+            <p>
+              The Berne family runs three coordinated brands. The general
+              residential operation is{" "}
               <a
                 href="https://bernerepair.com/"
                 rel="noopener"
@@ -171,7 +187,14 @@ export default function AboutPage() {
               >
                 Berne Appliance Repair
               </a>
-              , and commercial / restaurant / hotel work is dispatched through{" "}
+              {" "}— the consumer-facing site where most service calls land.
+              This site,{" "}
+              <span className="text-foreground">berne-repair.com</span>, is the
+              premium tier — Sub-Zero columns, Wolf dual-fuel, Miele built-ins,
+              the high-end Sunny Isles / Bal Harbour / Fisher Island
+              households where the appliance install was a custom kitchen
+              build-out. Commercial kitchens, restaurant equipment, hotels,
+              and property-managed buildings dispatch through{" "}
               <a
                 href="https://www.berne-commercial.com/"
                 rel="noopener"
@@ -179,11 +202,11 @@ export default function AboutPage() {
               >
                 Berne Commercial Repair
               </a>
-              . If you want the long version, the{" "}
+              . Same training standard. Same accountability. The{" "}
               <Link href="/family" className="text-brand hover:underline">
                 family page
               </Link>{" "}
-              has it.
+              has the long version.
             </p>
             <p>
               Berne is a member of{" "}
@@ -197,16 +220,19 @@ export default function AboutPage() {
               </a>
               {" "}(Marcone Servicers Association), the leading industry
               association for appliance service contractors. Our technicians
-              complete continuous training programs on emerging appliance
-              technology through MSA World coursework and OEM (Sub-Zero, Wolf,
-              Miele, LG, Samsung, GE) certification updates &mdash; so the
-              truck arriving at your home is equipped to service the appliance
-              you actually own, not the one made five years ago.
+              complete continuous training through MSA World coursework and
+              OEM (Sub-Zero, Wolf, Miele, LG, Samsung, GE) certification
+              updates &mdash; so the truck arriving at your home is equipped
+              to service the appliance you actually own, not a five-year-old
+              spec sheet.
             </p>
             <p>
-              If you call us today before noon, odds are we&apos;ll have a
-              technician at your door by dinner. That&apos;s the operating
-              standard. That&apos;s what {COMPANY.socialProof.repairsCompleted} jobs has
+              Where we are going: another six to eight technicians joining the
+              fleet over the next 18 months. A widening commercial footprint
+              through the sister brand. And — the part that does not change —
+              every escalation call still routes to me personally. That is the
+              operating standard.
+              That is what {COMPANY.socialProof.repairsCompleted} services has
               taught us to commit to.
             </p>
           </div>
