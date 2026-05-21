@@ -107,6 +107,20 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        {/*
+          Core Web Vitals — open TCP+TLS to the third-party origins we contact
+          on every page render in parallel with HTML parsing. Saves ~100-300ms
+          on LCP/INP on mid-tier mobile networks vs waiting for the relevant
+          <Script> tag to be encountered before opening the connection.
+        */}
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
+        <link rel="dns-prefetch" href="//connect.facebook.net" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="" />
+        <link rel="dns-prefetch" href="//www.clarity.ms" />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <LangSync />
         <SiteHeader />
