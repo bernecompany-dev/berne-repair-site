@@ -4,6 +4,7 @@ import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
 import { publishedArticles } from "@/lib/blog/articles";
 import { RESIDENTIAL_BRAND_SLUGS } from "@/lib/data/residential-brand-profiles";
+import { BRAND_COMPARISON_SLUGS } from "@/lib/data/brand-comparisons";
 import { TEAM } from "@/data/team";
 import { BACK_OFFICE } from "@/data/team-bios";
 
@@ -88,6 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/team",
     "/about",
     "/contact",
+    "/careers",
     "/request-dispatch",
     "/family",
     "/privacy",
@@ -113,6 +115,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
+
+  // Premium brand comparison pages — long-form informational content
+  // ("Sub-Zero vs Viking", "Wolf vs Thermador vs Viking", etc.). English only.
+  const compareIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/compare`,
+      lastModified: LAST_MOD,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+  ];
+  const comparePages: MetadataRoute.Sitemap = BRAND_COMPARISON_SLUGS.map(
+    (slug) => ({
+      url: `${SITE_URL}/compare/${slug}`,
+      lastModified: LAST_MOD,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }),
+  );
 
   const blogIndex: MetadataRoute.Sitemap = [
     {
@@ -148,6 +169,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...statics,
     ...brandsIndex,
     ...brandPages,
+    ...compareIndex,
+    ...comparePages,
     ...blogIndex,
     ...blogPosts,
     ...teamBios,

@@ -24,6 +24,7 @@ import {
   getResidentialBrand,
   type ResidentialBrandProfile,
 } from "@/lib/data/residential-brand-profiles";
+import { getComparisonsForBrand } from "@/lib/data/brand-comparisons";
 import {
   absoluteUrl,
   breadcrumbJsonLd,
@@ -80,6 +81,7 @@ export default async function BrandPage({ params }: PageProps) {
   ];
 
   const related = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.slug !== brand.slug).slice(0, 4);
+  const comparisons = getComparisonsForBrand(brand.slug);
 
   // Service @id used by the page-level Service JSON-LD. Provider = global
   // LocalBusiness via @id reference (resolved by layout's localBusinessJsonLd).
@@ -395,6 +397,49 @@ export default async function BrandPage({ params }: PageProps) {
         faqs={brand.faqs}
         title={`${brand.name} repair — questions we get`}
       />
+
+      {/* Brand comparisons (long-form "X vs Y" decision content) */}
+      {comparisons.length ? (
+        <section className="container-prose py-16 sm:py-20">
+          <div className="max-w-3xl">
+            <span className="eyebrow">Compare {brand.name}</span>
+            <h2 className="heading-section mt-3">
+              {brand.name} vs the alternatives — honest comparisons.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Long-form decision content for buyers weighing {brand.name}{" "}
+              against the brands it actually competes with. Built from real
+              field tickets, not marketing copy.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+            {comparisons.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/compare/${c.slug}`}
+                  className="group flex h-full flex-col gap-3 rounded-2xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <div className="text-base font-semibold tracking-tight text-foreground group-hover:text-brand">
+                    {c.h1.replace(/ — .*/, "")}
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {c.teaser.length > 160
+                      ? `${c.teaser.slice(0, 157)}...`
+                      : c.teaser}
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-brand">
+                    Read the comparison
+                    <ArrowRight
+                      className="size-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden
+                    />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {/* Related brands */}
       {related.length ? (
