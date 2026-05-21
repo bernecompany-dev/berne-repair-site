@@ -14,6 +14,7 @@ import { CTARow } from "@/components/site/cta-row";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
+import { BrandSpecialistsBlock } from "@/components/sections/brand-specialists";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { CITIES } from "@/data/cities";
@@ -327,6 +328,9 @@ export default async function BrandPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Specialists for this brand */}
+      <BrandSpecialistsBlock brandSlug={brand.slug} brandName={brand.name} />
 
       {/* Related services */}
       {brand.relatedServices.length ? (
