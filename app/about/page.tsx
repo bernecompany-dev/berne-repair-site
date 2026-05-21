@@ -119,11 +119,13 @@ export default function AboutPage() {
           />
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_30px_80px_-30px_oklch(0.67_0.21_252/0.35)]">
             {/* TODO(eugene): replace owner photo with team-on-truck or workshop hero for /about if available */}
+            {/* LCP candidate on /about — render eagerly with high fetch priority. */}
             <Image
               src="/images/team/evgenii-knyazev.webp"
               alt="Eugene Berne, founder of Berne Appliance Repair, photographed in the Berne Appliance Repair workshop"
               width={800}
               height={1000}
+              priority
               sizes="(min-width: 1024px) 35vw, 100vw"
               className="h-auto w-full object-cover"
             />

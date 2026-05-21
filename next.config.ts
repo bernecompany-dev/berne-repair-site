@@ -15,6 +15,15 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Core Web Vitals — instruct next/image to prefer modern formats. AVIF
+  // first (best compression), WebP fallback. ~30-50% bandwidth savings vs
+  // JPEG/PNG on the team headshots and hero artwork. Browser negotiates
+  // via Accept header; non-supporting clients still get original.
+  images: {
+    formats: ["image/avif", "image/webp"],
+    // Long-cache the optimized variants behind the immutable URL.
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

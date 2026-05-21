@@ -134,11 +134,13 @@ export default function AboutPageES() {
             className="pointer-events-none absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-brand/30 via-transparent to-transparent blur-2xl"
           />
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-[0_30px_80px_-30px_oklch(0.67_0.21_252/0.35)]">
+            {/* LCP candidate on /es/about — render eagerly with high fetch priority. */}
             <Image
               src="/images/team/evgenii-knyazev.webp"
               alt="Eugene Berne, fundador de Berne Appliance Repair, fotografiado en el taller de Berne Appliance Repair"
               width={800}
               height={1000}
+              priority
               sizes="(min-width: 1024px) 35vw, 100vw"
               className="h-auto w-full object-cover"
             />
