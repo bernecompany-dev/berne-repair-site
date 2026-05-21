@@ -22,7 +22,7 @@ export function SiteFooter() {
     : `All ${CITIES.length} cities →`;
 
   return (
-    <footer className="mt-24 border-t border-border/60 bg-background">
+    <footer aria-label={locale === "es" ? "Pie de página" : "Footer"} className="mt-24 border-t border-border/60 bg-background">
       <div className="container-prose grid gap-12 py-16 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
         <div className="space-y-5">
           <Logo href={localePath(locale, "/")} />

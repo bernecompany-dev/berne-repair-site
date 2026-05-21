@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { SkipToContent } from "@/components/site/skip-to-content";
 import { StickyCTA } from "@/components/site/sticky-cta";
 import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import { LangSync } from "@/components/site/lang-sync";
@@ -123,8 +124,9 @@ export default async function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <LangSync />
+        <SkipToContent />
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
         <SiteFooter />
         <StickyCTA />
         <WhatsAppFab />
