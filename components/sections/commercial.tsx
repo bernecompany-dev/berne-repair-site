@@ -41,7 +41,7 @@ export function Commercial() {
               key={s.label}
               className="flex flex-col items-start gap-4 rounded-2xl border border-border bg-card/60 p-6"
             >
-              <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-white/[0.04] text-brand">
+              <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-tint/[0.04] text-brand">
                 <s.icon className="size-5" aria-hidden />
               </span>
               <div className="text-base font-semibold tracking-tight">{s.label}</div>

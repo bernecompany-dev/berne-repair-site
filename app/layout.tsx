@@ -79,10 +79,19 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0f1a",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f8fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0f1a" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
+
+// Runs before first paint to apply the persisted/visitor theme and avoid a
+// flash of the wrong scheme (FOUC). DEFAULT is LIGHT: we only switch to dark
+// when the visitor explicitly stored that choice. `prefers-color-scheme` is
+// intentionally NOT auto-applied so first-time visitors always see light.
+const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.classList.add("dark");}else{document.documentElement.classList.remove("dark");}}catch(e){}})();`;
 
 export default async function RootLayout({
   children,
@@ -109,6 +118,13 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/*
+          No-FOUC theme bootstrap. Must run before the browser paints, so it
+          lives as an inline script in <head> ahead of the stylesheet-driven
+          first paint. Default is light; only an explicit stored "dark" flips
+          the <html> class. See viewport.themeColor + components/site/theme-toggle.
+        */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         {/*
           Core Web Vitals — open TCP+TLS to the third-party origins we contact
           on every page render in parallel with HTML parsing. Saves ~100-300ms

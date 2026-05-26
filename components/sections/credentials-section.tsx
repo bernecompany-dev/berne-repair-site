@@ -193,7 +193,7 @@ export function CredentialsSection({ locale = "en" }: { locale?: Locale }) {
               key={c.title}
               className="flex flex-col gap-3 rounded-2xl border border-border bg-background/40 p-6"
             >
-              <span className="inline-flex size-10 items-center justify-center rounded-lg border border-border bg-white/[0.04] text-brand">
+              <span className="inline-flex size-10 items-center justify-center rounded-lg border border-border bg-tint/[0.04] text-brand">
                 <c.icon className="size-5" aria-hidden />
               </span>
               <div className="text-sm font-semibold text-foreground">

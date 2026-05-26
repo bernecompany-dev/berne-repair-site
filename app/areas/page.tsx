@@ -61,7 +61,7 @@ export default function AreasIndex() {
               <BadgeDollarSign className="size-3.5" aria-hidden />
               ${COMPANY.serviceCallPrice} service call
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
               Same-day across South Florida
             </span>

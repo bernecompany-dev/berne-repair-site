@@ -66,7 +66,7 @@ export function OwnerIntro({ locale = "en" }: { locale?: Locale }) {
             </a>
             <Link
               href="#team-grid"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-tint/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
             >
               <ShieldCheck className="size-4 text-brand" aria-hidden />
               {d.ctaTeam}

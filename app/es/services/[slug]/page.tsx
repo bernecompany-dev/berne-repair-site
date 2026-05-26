@@ -91,11 +91,11 @@ export default async function ServicePageES({ params }: Props) {
                   <BadgeDollarSign className="size-3.5" aria-hidden />
                   Visita técnica ${COMPANY.serviceCallPrice}
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                   <Clock3 className="size-3.5 text-brand" aria-hidden />
                   Disponible el mismo día
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                   <ShieldCheck className="size-3.5 text-brand" aria-hidden />
                   Garantía 90 días
                 </span>
@@ -140,7 +140,7 @@ export default async function ServicePageES({ params }: Props) {
             <div className="mt-6">
               <a
                 href={`tel:${COMPANY.phone.tel}`}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-tint/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
               >
                 <Phone className="size-4 text-brand" aria-hidden />
                 Llamar {COMPANY.phone.display}

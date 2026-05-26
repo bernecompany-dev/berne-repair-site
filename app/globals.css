@@ -43,6 +43,14 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-glow: var(--brand-glow);
+  /*
+    Adaptive "tint" color. Used by the subtle surface/hover treatments that
+    used to be hardcoded `bg-white/[0.04]`. It resolves to a near-white in
+    dark mode (lifts a panel off the dark background) and to a near-black in
+    light mode (sinks a panel into the light background). Always used with an
+    opacity modifier, e.g. `bg-tint/[0.04]`.
+  */
+  --color-tint: var(--tint);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -53,11 +61,77 @@
 }
 
 /*
-  Berne Appliance Repair — dark, premium, Tesla-service.
-  Default scheme is dark (no .dark class needed). Light scheme intentionally
-  unused for Phase 1 but tokens kept compatible with shadcn.
+  Berne Appliance Repair — themeable.
+
+  DEFAULT is the LIGHT scheme (defined on :root). The DARK scheme is opt-in
+  via `.dark` on <html>, toggled at runtime by the header theme switch
+  (see components/site/theme-toggle.tsx + the inline no-FOUC script in the
+  root layout). Visitor choice persists in localStorage("theme"); the very
+  first visit defaults to LIGHT regardless of prefers-color-scheme.
+
+  Neutrals are intentionally tinted cool (hue ~250) rather than pure
+  black/white, and the Berne brand accent (electric blue, hue 252) is shared
+  across both schemes.
 */
+
+/* LIGHT — default */
 :root {
+  color-scheme: light;
+
+  /* Surfaces — soft cool off-white, not pure #fff */
+  --background: oklch(0.985 0.003 250);
+  --foreground: oklch(0.21 0.018 256);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.018 256);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.018 256);
+
+  /* Brand — electric blue (slightly deeper for AA contrast on light bg) */
+  --brand: oklch(0.55 0.22 252);
+  --brand-foreground: oklch(0.99 0 0);
+  --brand-glow: oklch(0.55 0.22 252 / 0.30);
+
+  /* Primary follows brand so shadcn defaults look correct out of the box */
+  --primary: oklch(0.55 0.22 252);
+  --primary-foreground: oklch(0.99 0 0);
+
+  --secondary: oklch(0.96 0.004 250);
+  --secondary-foreground: oklch(0.21 0.018 256);
+  --muted: oklch(0.965 0.004 250);
+  --muted-foreground: oklch(0.5 0.016 256);
+  --accent: oklch(0.55 0.22 252);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.58 0.22 22);
+  --success: oklch(0.6 0.16 155);
+  --border: oklch(0.21 0.018 256 / 0.12);
+  --input: oklch(0.21 0.018 256 / 0.14);
+  --ring: oklch(0.55 0.22 252 / 0.5);
+
+  --tint: oklch(0.21 0.018 256);
+  --grid-line: oklch(0.21 0.018 256 / 0.05);
+
+  --chart-1: oklch(0.55 0.22 252);
+  --chart-2: oklch(0.6 0.16 155);
+  --chart-3: oklch(0.7 0.16 70);
+  --chart-4: oklch(0.58 0.22 22);
+  --chart-5: oklch(0.45 0 0);
+
+  --radius: 0.875rem;
+
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.21 0.018 256);
+  --sidebar-primary: oklch(0.55 0.22 252);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.96 0.004 250);
+  --sidebar-accent-foreground: oklch(0.21 0.018 256);
+  --sidebar-border: oklch(0.21 0.018 256 / 0.12);
+  --sidebar-ring: oklch(0.55 0.22 252 / 0.5);
+}
+
+/* DARK — opt-in via `.dark` on <html> */
+.dark {
+  color-scheme: dark;
+
   /* Surfaces — near-black, slightly cool */
   --background: oklch(0.13 0.013 250);
   --foreground: oklch(0.985 0.003 250);
@@ -66,12 +140,11 @@
   --popover: oklch(0.165 0.012 250);
   --popover-foreground: oklch(0.985 0.003 250);
 
-  /* Brand — electric blue */
+  /* Brand — electric blue (brighter for dark surfaces) */
   --brand: oklch(0.67 0.21 252);
   --brand-foreground: oklch(0.99 0 0);
   --brand-glow: oklch(0.67 0.21 252 / 0.45);
 
-  /* Primary follows brand so shadcn defaults look correct out of the box */
   --primary: oklch(0.67 0.21 252);
   --primary-foreground: oklch(0.99 0 0);
 
@@ -87,13 +160,14 @@
   --input: oklch(1 0 0 / 0.1);
   --ring: oklch(0.67 0.21 252 / 0.6);
 
+  --tint: oklch(1 0 0);
+  --grid-line: oklch(1 0 0 / 0.05);
+
   --chart-1: oklch(0.67 0.21 252);
   --chart-2: oklch(0.72 0.17 155);
   --chart-3: oklch(0.75 0.16 70);
   --chart-4: oklch(0.66 0.21 22);
   --chart-5: oklch(0.85 0 0);
-
-  --radius: 0.875rem;
 
   --sidebar: oklch(0.16 0.012 250);
   --sidebar-foreground: oklch(0.985 0.003 250);
@@ -105,44 +179,28 @@
   --sidebar-ring: oklch(0.67 0.21 252 / 0.6);
 }
 
-/*
-  Light scheme is kept for shadcn primitive compatibility but the site
-  renders dark-only in Phase 1. Activating .light on <html> would swap.
-*/
-.light {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.013 250);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.013 250);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.013 250);
-  --primary: oklch(0.55 0.22 252);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.13 0.013 250);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.45 0.012 250);
-  --accent: oklch(0.55 0.22 252);
-  --accent-foreground: oklch(0.99 0 0);
-  --border: oklch(0.13 0 0 / 0.1);
-  --input: oklch(0.13 0 0 / 0.1);
-  --ring: oklch(0.55 0.22 252 / 0.5);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   html {
     @apply font-sans;
-    color-scheme: dark;
   }
   body {
     @apply bg-background text-foreground antialiased;
     background-image:
-      radial-gradient(1200px 600px at 80% -10%, oklch(0.67 0.21 252 / 0.10), transparent 60%),
-      radial-gradient(900px 500px at -10% 30%, oklch(0.67 0.21 252 / 0.06), transparent 60%);
+      radial-gradient(1200px 600px at 80% -10%, var(--brand-glow), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, var(--brand-glow), transparent 70%);
     background-attachment: fixed;
+  }
+  /*
+    Tone down the ambient brand wash in light mode so the page reads as a
+    crisp, near-white canvas rather than a blue tint.
+  */
+  :root body {
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, oklch(0.55 0.22 252 / 0.05), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, oklch(0.55 0.22 252 / 0.035), transparent 70%);
   }
   h1, h2, h3, h4 {
     @apply font-heading tracking-tight;
@@ -177,6 +235,6 @@
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-base font-semibold text-brand-foreground shadow-[0_0_0_1px_oklch(1_0_0/0.08),0_10px_30px_-10px_var(--brand-glow)] transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-px hover:brightness-110 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.03] px-6 py-3 text-base font-semibold text-foreground transition-colors hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-border bg-tint/[0.03] px-6 py-3 text-base font-semibold text-foreground transition-colors hover:bg-tint/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
   }
 }

@@ -60,10 +60,10 @@ export default function TeamPageES() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <Users className="size-3.5" aria-hidden /> {COMPANY.socialProof.technicians} técnicos a tiempo completo
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden /> Con licencia y asegurados
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden /> Visita técnica ${COMPANY.serviceCallPrice}
             </span>
           </div>

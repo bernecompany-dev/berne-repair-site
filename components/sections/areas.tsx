@@ -20,7 +20,7 @@ export function Areas() {
             {COUNTIES.map((c) => (
               <span
                 key={c}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80"
               >
                 <MapPin className="size-3.5 text-brand" aria-hidden />
                 {c} County
@@ -76,7 +76,7 @@ function MapMock() {
         className="absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "linear-gradient(to right, oklch(1 0 0 / 0.06) 1px, transparent 1px), linear-gradient(to bottom, oklch(1 0 0 / 0.06) 1px, transparent 1px)",
+            "linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />

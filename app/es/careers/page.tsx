@@ -163,11 +163,11 @@ export default function CareersPageEs() {
               <Briefcase className="size-3.5" aria-hidden />
               Aceptando solicitudes ahora
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
               Empleo W-2 · no 1099
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <GraduationCap className="size-3.5 text-brand" aria-hidden />
               Capacitación OEM con MSA
             </span>
@@ -362,7 +362,7 @@ export default function CareersPageEs() {
                     </a>
                     <a
                       href={`tel:${COMPANY.phone.tel}`}
-                      className="inline-flex items-center gap-2 rounded-lg border border-border bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-brand/40"
+                      className="inline-flex items-center gap-2 rounded-lg border border-border bg-tint/[0.04] px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-brand/40"
                     >
                       <Phone className="size-4 text-brand" aria-hidden />
                       Llamar al reclutador

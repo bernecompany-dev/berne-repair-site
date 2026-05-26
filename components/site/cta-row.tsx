@@ -46,7 +46,7 @@ export function CTARow({
         href={bookHref}
         data-analytics="cta-book"
         className={cn(
-          "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] font-semibold text-foreground transition-colors hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+          "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-tint/[0.04] font-semibold text-foreground transition-colors hover:bg-tint/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
           sizes[size],
         )}
       >
@@ -57,7 +57,7 @@ export function CTARow({
         href={`sms:${COMPANY.phone.sms}?&body=${smsBody}`}
         data-analytics="cta-text"
         className={cn(
-          "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] font-semibold text-foreground transition-colors hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+          "inline-flex items-center justify-center gap-2 rounded-full border border-border bg-tint/[0.04] font-semibold text-foreground transition-colors hover:bg-tint/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
           sizes[size],
         )}
       >

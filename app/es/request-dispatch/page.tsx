@@ -78,11 +78,11 @@ export default function RequestDispatchPageES() {
               <Wrench className="size-3.5" aria-hidden />
               Despacho el mismo día
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden />
               Visita técnica ${COMPANY.serviceCallPrice}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
               Con licencia y asegurados
             </span>
@@ -111,7 +111,7 @@ export default function RequestDispatchPageES() {
                 className={
                   i === 0
                     ? "inline-flex h-12 items-center gap-2 rounded-full bg-brand px-5 text-[15px] font-semibold text-brand-foreground shadow-[0_0_0_1px_oklch(1_0_0/0.08),0_10px_30px_-10px_var(--brand-glow)] hover:-translate-y-px hover:brightness-110"
-                    : "inline-flex h-12 items-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 text-[15px] font-semibold text-foreground hover:bg-white/[0.07]"
+                    : "inline-flex h-12 items-center gap-2 rounded-full border border-border bg-tint/[0.04] px-5 text-[15px] font-semibold text-foreground hover:bg-tint/[0.07]"
                 }
               >
                 <Phone className="size-4" aria-hidden />

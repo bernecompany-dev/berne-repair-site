@@ -47,7 +47,7 @@ const brands = [
     detail:
       "Mainstream residential brands — Whirlpool, GE, Samsung, LG, Maytag, Frigidaire. Same dispatch desk, same warranty, optimized for fast everyday work across South Florida.",
     accent:
-      "bg-gradient-to-br from-white/[0.04] to-transparent border-border",
+      "bg-gradient-to-br from-tint/[0.04] to-transparent border-border",
   },
   {
     icon: ChefHat,
@@ -59,7 +59,7 @@ const brands = [
     detail:
       "Commercial kitchens, refrigeration walk-ins, ice machines, commercial laundry, multi-location accounts with COI. Vendor-ready dispatch for restaurants and property managers.",
     accent:
-      "bg-gradient-to-br from-white/[0.04] to-transparent border-border",
+      "bg-gradient-to-br from-tint/[0.04] to-transparent border-border",
   },
 ];
 

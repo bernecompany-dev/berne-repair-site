@@ -19,11 +19,11 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
                 <BadgeDollarSign className="size-3.5" aria-hidden />
                 {d.badgePrice}
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                 <ShieldCheck className="size-3.5 text-brand" aria-hidden />
                 {d.badgeLicensed}
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                 <Star className="size-3.5 text-brand" aria-hidden />
                 {d.badgeRepairs}
               </span>
@@ -111,7 +111,7 @@ function BackgroundGrid() {
         className="absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, oklch(1 0 0 / 0.05) 1px, transparent 1px), linear-gradient(to bottom, oklch(1 0 0 / 0.05) 1px, transparent 1px)",
+            "linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px)",
           backgroundSize: "56px 56px",
         }}
       />

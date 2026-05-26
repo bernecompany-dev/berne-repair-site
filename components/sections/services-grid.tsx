@@ -57,7 +57,7 @@ function ServiceCard({ service }: { service: Service }) {
       className="group relative flex flex-col gap-4 rounded-2xl border border-border bg-card/60 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/40 hover:bg-card/80"
     >
       <div className="flex items-center justify-between">
-        <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-white/[0.04] text-brand transition-colors group-hover:border-brand/40 group-hover:bg-brand/10">
+        <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-tint/[0.04] text-brand transition-colors group-hover:border-brand/40 group-hover:bg-brand/10">
           <Icon className="size-5" aria-hidden />
         </span>
         <ArrowUpRight className="size-4 text-muted-foreground transition-colors group-hover:text-brand" aria-hidden />

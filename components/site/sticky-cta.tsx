@@ -75,7 +75,7 @@ export function StickyCTA() {
         <a
           href={locale === "es" ? "/es#lead-form" : "/#lead-form"}
           data-analytics="sticky-book"
-          className="flex flex-col items-center justify-center gap-0.5 rounded-xl bg-white/[0.04] px-3 py-3 text-xs font-semibold text-foreground"
+          className="flex flex-col items-center justify-center gap-0.5 rounded-xl bg-tint/[0.04] px-3 py-3 text-xs font-semibold text-foreground"
         >
           <CalendarCheck className="size-4 text-brand" aria-hidden />
           {d.book}
@@ -83,7 +83,7 @@ export function StickyCTA() {
         <a
           href={`sms:${COMPANY.phone.sms}?&body=${smsBody}`}
           data-analytics="sticky-text"
-          className="flex flex-col items-center justify-center gap-0.5 rounded-xl bg-white/[0.04] px-3 py-3 text-xs font-semibold text-foreground"
+          className="flex flex-col items-center justify-center gap-0.5 rounded-xl bg-tint/[0.04] px-3 py-3 text-xs font-semibold text-foreground"
         >
           <MessageSquare className="size-4 text-brand" aria-hidden />
           {d.text}

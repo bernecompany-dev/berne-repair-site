@@ -20,7 +20,7 @@ export function ProcessSteps({ locale = "en" }: { locale?: Locale }) {
         {STEPS.map((s, i) => (
           <li key={s.n} className="group relative flex flex-col gap-3 rounded-2xl border border-border bg-card/50 p-6">
             <div className="flex items-start justify-between">
-              <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-white/[0.04] text-brand">
+              <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-tint/[0.04] text-brand">
                 <s.icon className="size-5" aria-hidden />
               </span>
               <span className="rounded-full bg-brand/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-brand">{s.tag}</span>

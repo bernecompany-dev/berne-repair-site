@@ -184,10 +184,10 @@ export default async function BrandPage({ params }: PageProps) {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <BadgeDollarSign className="size-3.5" aria-hidden />${COMPANY.serviceCallPrice} service call
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden /> Same-day available
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden /> {TIER_BADGE[brand.tier]}
             </span>
           </div>
@@ -382,7 +382,7 @@ export default async function BrandPage({ params }: PageProps) {
               <div className="mt-6">
                 <Link
                   href="/areas"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-tint/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
                 >
                   See all South Florida service areas
                   <ArrowRight className="size-4" aria-hidden />
@@ -470,7 +470,7 @@ export default async function BrandPage({ params }: PageProps) {
           <div className="mt-8">
             <Link
               href="/brands"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-tint/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
             >
               See all brands we service
               <ArrowRight className="size-4" aria-hidden />

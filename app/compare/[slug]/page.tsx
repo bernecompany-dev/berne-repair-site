@@ -161,11 +161,11 @@ export default async function ComparisonPage({ params }: PageProps) {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <Scale className="size-3.5" aria-hidden /> Brand comparison
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden /> $
               {COMPANY.serviceCallPrice} service call
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden /> We
               service both brands
             </span>
@@ -249,7 +249,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                 </h3>
                 <div className="flex flex-wrap gap-2 text-xs">
                   {b.hq ? (
-                    <span className="rounded-full border border-border bg-white/[0.04] px-3 py-1 text-muted-foreground">
+                    <span className="rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-muted-foreground">
                       HQ · {b.hq}
                     </span>
                   ) : null}
@@ -314,7 +314,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl border border-border/60 bg-white/[0.03] p-4">
+              <div className="mt-6 rounded-xl border border-border/60 bg-tint/[0.03] p-4">
                 <div className="text-xs font-semibold uppercase tracking-wider text-brand">
                   Parts &amp; service economics
                 </div>

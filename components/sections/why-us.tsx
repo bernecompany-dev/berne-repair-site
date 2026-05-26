@@ -25,7 +25,7 @@ export function WhyUs({ locale = "en" }: { locale?: Locale }) {
               key={r.title}
               className="flex gap-4 rounded-2xl border border-border bg-background/40 p-6"
             >
-              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-white/[0.04] text-brand">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-tint/[0.04] text-brand">
                 <r.icon className="size-5" aria-hidden />
               </span>
               <div>

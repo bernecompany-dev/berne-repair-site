@@ -120,10 +120,10 @@ export default async function ServiceCityPageES({ params }: Props) {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <MapPin className="size-3.5" aria-hidden /> {city.name}, condado de {city.county}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden /> Visita técnica ${COMPANY.serviceCallPrice}
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden /> El mismo día en {city.name}
             </span>
           </div>
@@ -157,7 +157,7 @@ export default async function ServiceCityPageES({ params }: Props) {
             </p>
             <div className="mt-6">
               <a href={`tel:${COMPANY.phone.tel}`}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-tint/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
               >
                 <Phone className="size-4 text-brand" aria-hidden />
                 Llamar {COMPANY.phone.display}

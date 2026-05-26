@@ -77,10 +77,10 @@ export default function BrandsIndex() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <BadgeDollarSign className="size-3.5" aria-hidden />${COMPANY.serviceCallPrice} service call
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden /> Same-day available
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden /> Licensed · EPA-608
             </span>
           </div>
@@ -156,7 +156,7 @@ function BrandSection({
                 <h3 className="text-lg font-semibold tracking-tight text-foreground group-hover:text-brand">
                   {b.name}
                 </h3>
-                <span className="rounded-full border border-border bg-white/[0.04] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                <span className="rounded-full border border-border bg-tint/[0.04] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
                   {TIER_LABEL[b.tier]}
                 </span>
               </div>

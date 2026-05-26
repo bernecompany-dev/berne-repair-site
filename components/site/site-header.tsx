@@ -7,6 +7,7 @@ import { Menu, X, BadgeDollarSign } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { PhoneCTA } from "@/components/site/phone-cta";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionary";
@@ -41,7 +42,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-white/[0.05] hover:text-foreground"
+              className="rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-tint/[0.05] hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -50,6 +51,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <LanguageSwitcher className="hidden md:inline-flex" />
+          <ThemeToggle />
           <PhoneCTA size="sm" variant="solid" className="hidden sm:inline-flex" />
           <PhoneCTA size="sm" variant="solid" withLabel={false} className="sm:hidden" />
           <button
@@ -58,7 +60,7 @@ export function SiteHeader() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex size-10 items-center justify-center rounded-full border border-border bg-white/[0.03] text-foreground transition-colors hover:bg-white/[0.06] lg:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-full border border-border bg-tint/[0.03] text-foreground transition-colors hover:bg-tint/[0.06] lg:hidden"
           >
             {open ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
           </button>
@@ -78,7 +80,7 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="rounded-xl px-3 py-3 text-base font-medium text-foreground/90 transition-colors hover:bg-white/[0.05]"
+              className="rounded-xl px-3 py-3 text-base font-medium text-foreground/90 transition-colors hover:bg-tint/[0.05]"
             >
               {item.label}
             </Link>

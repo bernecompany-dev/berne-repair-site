@@ -94,11 +94,11 @@ export default function AboutPageES() {
               <Users className="size-3.5" aria-hidden />
               {COMPANY.socialProof.technicians} técnicos a tiempo completo
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
               Con licencia y asegurados
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Star className="size-3.5 text-brand" aria-hidden />
               {REVIEW_AGGREGATE.ratingValue} / {REVIEW_AGGREGATE.reviewCount} reseñas
             </span>
@@ -270,7 +270,7 @@ export default function AboutPageES() {
             </a>
             <Link
               href="/es/team"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-tint/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
             >
               <Users className="size-4 text-brand" aria-hidden />
               Conozca a los {COMPANY.socialProof.technicians} técnicos
@@ -357,14 +357,14 @@ export default function AboutPageES() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/es/areas"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-tint/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
               >
                 <MapPin className="size-4 text-brand" aria-hidden />
                 Ver todas las ciudades
               </Link>
               <Link
                 href="/es/services"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-white/[0.07]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-tint/[0.04] px-5 py-3 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
               >
                 <Wrench className="size-4 text-brand" aria-hidden />
                 Qué reparamos

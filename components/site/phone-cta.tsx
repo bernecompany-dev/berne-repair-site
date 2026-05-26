@@ -24,7 +24,7 @@ export function PhoneCTA({
     solid:
       "bg-brand text-brand-foreground shadow-[0_0_0_1px_oklch(1_0_0/0.08),0_10px_30px_-10px_var(--brand-glow)] hover:brightness-110 hover:-translate-y-px",
     ghost:
-      "border border-border bg-white/[0.03] text-foreground hover:bg-white/[0.06]",
+      "border border-border bg-tint/[0.03] text-foreground hover:bg-tint/[0.06]",
     minimal:
       "text-foreground hover:text-brand",
   };

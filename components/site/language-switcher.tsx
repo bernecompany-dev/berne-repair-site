@@ -45,7 +45,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       role="group"
       aria-label="Language"
       className={cn(
-        "inline-flex items-center gap-0.5 rounded-full border border-border bg-white/[0.04] p-0.5",
+        "inline-flex items-center gap-0.5 rounded-full border border-border bg-tint/[0.04] p-0.5",
         className,
       )}
     >
@@ -63,7 +63,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
               "rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
               isActive
                 ? "bg-brand text-brand-foreground"
-                : "text-foreground/80 hover:bg-white/[0.06]",
+                : "text-foreground/80 hover:bg-tint/[0.06]",
             )}
           >
             {LOCALE_SHORT[loc]}
