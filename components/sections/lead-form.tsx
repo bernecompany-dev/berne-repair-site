@@ -13,6 +13,12 @@ import { cn } from "@/lib/utils";
 import { getDictionary } from "@/lib/dictionary";
 import type { Locale } from "@/lib/i18n";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export function LeadForm({
   defaultCity,
   defaultAppliance,
@@ -30,6 +36,22 @@ export function LeadForm({
   useEffect(() => {
     setRenderedAt(String(Date.now()));
   }, []);
+
+  // Fire GA4 `generate_lead` once, only after the server action resolves with
+  // a delivered lead (status === "success"). Uses the same window.gtag transport
+  // as the rest of the site (loaded via <GoogleAnalytics> in app/layout.tsx).
+  useEffect(() => {
+    if (state.status !== "success") return;
+    if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+    try {
+      window.gtag("event", "generate_lead", {
+        form: "lead_form",
+        locale,
+      });
+    } catch {
+      /* swallow analytics errors */
+    }
+  }, [state.status, locale]);
 
   const errors = state.status === "error" ? state.errors : {};
   const values = state.status === "error" ? state.values : {};

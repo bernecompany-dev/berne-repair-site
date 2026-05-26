@@ -11,6 +11,7 @@ import { LangSync } from "@/components/site/lang-sync";
 import { JsonLd } from "@/components/site/json-ld";
 import { MetaPixel } from "@/components/site/meta-pixel";
 import { Clarity } from "@/components/site/clarity";
+import { AnalyticsEvents } from "@/components/site/analytics-events";
 import { localBusinessJsonLd, websiteJsonLd, organizationJsonLd } from "@/lib/seo";
 import { COMPANY } from "@/data/company";
 import "./globals.css";
@@ -151,6 +152,7 @@ export default async function RootLayout({
         <WhatsAppFab />
         <JsonLd data={[organizationJsonLd(), localBusinessJsonLd(), websiteJsonLd()]} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
+        <AnalyticsEvents />
         <MetaPixel />
         <Clarity />
       </body>
