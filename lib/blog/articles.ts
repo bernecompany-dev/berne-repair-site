@@ -116,7 +116,7 @@ Berne Appliance Repair specializes in high-end built-ins like Sub-Zero, Wolf, Vi
     title: "Wolf Range Burner Won't Light? Diagnosis from a Certified Tech",
     description:
       "Wolf range ignition troubleshooting — sealed burner caps, spark module faults, gas valve issues, and what owners can check before scheduling service. Real model numbers and part references.",
-    publishedAt: new Date("2026-05-29T13:00:00Z"),
+    publishedAt: new Date("2026-05-28T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "wolf",
@@ -197,7 +197,7 @@ We focus on premium kitchens — Wolf, Sub-Zero, Viking, Thermador, Miele, Bosch
     title: "Viking vs Thermador for South Florida Coastal Homes",
     description:
       "Buying a new luxury range for a Miami Beach, Naples, or Palm Beach home? A working tech's side-by-side on salt-air durability, parts availability, condo elevator constraints, and repair economics.",
-    publishedAt: new Date("2026-06-05T13:00:00Z"),
+    publishedAt: new Date("2026-06-04T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "viking-thermador",
@@ -282,7 +282,7 @@ We focus on the premium category. For mid-tier and entry-level ranges, our siste
     title: "Miele Dishwasher Error Codes Explained — F11, F14, F32, F70",
     description:
       "A practical decoder for the most common Miele dishwasher fault codes (F11, F14, F32, F70), with what each really means, what you can reset yourself, and when to call a tech.",
-    publishedAt: new Date("2026-06-12T13:00:00Z"),
+    publishedAt: new Date("2026-06-11T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "miele",
@@ -371,7 +371,7 @@ We focus on European premium brands. For standard-brand dishwashers (Whirlpool, 
     title: "What to Do When Your Sub-Zero or Wolf Warranty Expires",
     description:
       "Your factory warranty just ended. Here's the practical playbook on finding factory-authorized service, deciding between dealer and independent repair, and when an extended plan actually pays off.",
-    publishedAt: new Date("2026-06-19T13:00:00Z"),
+    publishedAt: new Date("2026-06-18T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "warranty",
@@ -548,7 +548,7 @@ Berne Appliance Repair focuses on premium built-ins like Sub-Zero, Wolf, Viking,
     title: "Wolf Dual-Fuel vs All-Gas Range for South Florida Outdoor Kitchens",
     description:
       "Choosing between a Wolf dual-fuel and all-gas range for a covered lanai or summer kitchen? A tech's view on humidity, salt corrosion, electronics protection, and 10-year service economics.",
-    publishedAt: new Date("2026-05-29T14:00:00Z"),
+    publishedAt: new Date("2026-06-01T14:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "wolf",
@@ -633,7 +633,7 @@ For mid-tier outdoor ranges (Weber Genesis built-ins, Coyote, Blaze), our sister
     title: "Thermador Star Burner Maintenance — Cleaning Without Damaging Coatings",
     description:
       "Thermador's signature Star Burner has a porcelain coating that wears badly under aggressive cleaning. Here's the technique our techs use, plus the products that don't strip the finish.",
-    publishedAt: new Date("2026-06-05T14:00:00Z"),
+    publishedAt: new Date("2026-06-08T14:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "thermador",
@@ -724,7 +724,7 @@ For standard-brand cooktops (GE Profile, KitchenAid), our sister site [bernerepa
     title: "Miele Built-In Coffee System — Descaling + Brewing Unit Service",
     description:
       "Miele's plumbed-in CVA and CM coffee systems need brewing unit maintenance every 18 months in hard-water markets like Miami. Here's the practical service interval and the parts that wear.",
-    publishedAt: new Date("2026-06-12T14:00:00Z"),
+    publishedAt: new Date("2026-06-15T14:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "miele",
@@ -818,7 +818,7 @@ For standard-brand coffee systems (Jura, Breville plumbed-in), our sister site [
     title: "Sub-Zero Wine Storage — Compressor Lifespan in High-Humidity Florida",
     description:
       "Sub-Zero wine storage units in South Florida age their compressors faster than the same units inland. Here's what humidity does to a refrigeration system designed for 50% RH, and how to extend service life.",
-    publishedAt: new Date("2026-06-19T14:00:00Z"),
+    publishedAt: new Date("2026-06-22T14:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "sub-zero",
@@ -910,7 +910,7 @@ For non-Sub-Zero wine storage (EuroCave, U-Line, Marvel), our sister site [berne
     title: "Wolf Convection Steam Oven — Why the Water Reservoir Matters",
     description:
       "Wolf's convection steam ovens depend on water quality more than owners realize. Here's what mineral content does to the steam generator and how to extend the life of an expensive component.",
-    publishedAt: new Date("2026-06-23T14:00:00Z"),
+    publishedAt: new Date("2026-06-25T14:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "wolf",
@@ -997,7 +997,7 @@ For standard-brand steam ovens (Cuisinart, Anova), our sister site [bernerepair.
     title: "Viking Refrigerator Door Cam Replacement After 8 Years",
     description:
       "Viking's door cam mechanism wears at year eight on most built-in refrigerators. Owners notice doors that don't self-close. Here's what the repair involves and what's at risk if you wait.",
-    publishedAt: new Date("2026-06-26T14:00:00Z"),
+    publishedAt: new Date("2026-06-29T14:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "viking",
@@ -1086,7 +1086,7 @@ For non-Viking built-ins (GE Monogram, KitchenAid), our sister site [bernerepair
     title: "Bosch Benchmark Dishwasher CrystalDry Heater Element Diagnosis",
     description:
       "Bosch Benchmark's CrystalDry system fails in specific ways that look like other faults. Here's how to tell whether your dishwasher's poor drying is the heater, the zeolite, or the cycle program.",
-    publishedAt: new Date("2026-06-30T14:00:00Z"),
+    publishedAt: new Date("2026-07-02T14:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "bosch",
@@ -1177,7 +1177,7 @@ For commercial dishwashers in office and retail spaces, our sister operation at 
     title: "La Cornue Range Service in Miami — Finding Factory-Trained Techs",
     description:
       "La Cornue's hand-built French ranges have no domestic factory service network in South Florida. Here's what owners actually face for repairs, parts, and the few qualified techs who can work on them.",
-    publishedAt: new Date("2026-07-03T13:00:00Z"),
+    publishedAt: new Date("2026-07-06T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "la-cornue",
@@ -1263,7 +1263,7 @@ For domestic luxury ranges (Wolf, Viking, Thermador), our standard service appli
     title: "Sub-Zero Pro 48 vs Pro 36 — Sizing Service for Custom Kitchens",
     description:
       "Choosing between the Sub-Zero Pro 48 and Pro 36 for a custom kitchen build? A working tech's view on service access, parts costs, capacity tradeoffs, and what actually breaks differently on each.",
-    publishedAt: new Date("2026-07-07T13:00:00Z"),
+    publishedAt: new Date("2026-07-09T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "sub-zero",
@@ -1352,7 +1352,7 @@ For mid-tier built-in refrigerators (Thermador Freedom, JennAir Pro), our sister
     title: "Gaggenau Vario Cooktops — Replacement Parts and Service Timeline",
     description:
       "Gaggenau Vario modular cooktops have a different parts pipeline than any other premium brand. Here's what owners face for service in South Florida and which modules are most service-prone.",
-    publishedAt: new Date("2026-07-10T13:00:00Z"),
+    publishedAt: new Date("2026-07-13T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "gaggenau",
@@ -1443,7 +1443,7 @@ For Bosch and Thermador cooktops, the parts pipeline is faster and we handle tho
     title: "Thermador Freedom Induction Burner Sensor Faults",
     description:
       "Thermador Freedom Induction cooktops use a unique sensor array under the glass surface. When sensors drift, the cooktop misbehaves in specific ways. Here's how to recognize and address them.",
-    publishedAt: new Date("2026-07-14T13:00:00Z"),
+    publishedAt: new Date("2026-07-16T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "thermador",
@@ -1537,7 +1537,7 @@ For standard induction cooktops (GE Profile, KitchenAid), our sister site [berne
     title: "Miele Dishwasher Salt Reservoir Light On — Hard Water Cycle Tips",
     description:
       "Miele dishwashers have a built-in water softener that needs salt. In Miami's hard water market, that reservoir runs through salt faster than the manual suggests. Here's the right cadence.",
-    publishedAt: new Date("2026-07-17T13:00:00Z"),
+    publishedAt: new Date("2026-07-20T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "miele",
@@ -1647,7 +1647,7 @@ For standard-brand dishwashers (Bosch standard, KitchenAid, GE Profile), our sis
     title: "Sub-Zero Built-In vs Integrated — Service Access Differences",
     description:
       "Sub-Zero's Built-In and Integrated lines look similar but service differently. Here's what panel-ready installations cost owners in repair access and how to plan a kitchen for serviceability.",
-    publishedAt: new Date("2026-07-21T13:00:00Z"),
+    publishedAt: new Date("2026-07-23T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "sub-zero",
@@ -1752,7 +1752,7 @@ For standard-brand built-in refrigerators (GE Monogram, JennAir Pro), our sister
     title: "Wolf 48-Inch Range Griddle Maintenance for Salt-Air Homes",
     description:
       "The integrated griddle on Wolf 48-inch ranges develops surface issues in coastal South Florida that don't show inland. Here's the care routine that keeps it functional past year ten.",
-    publishedAt: new Date("2026-07-24T13:00:00Z"),
+    publishedAt: new Date("2026-07-27T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "wolf",
@@ -1865,7 +1865,7 @@ For standard-brand griddle ranges (GE Cafe, KitchenAid), our sister site [berner
     title: "Viking Professional Hood Fan Motor Burnout — Replacement Cost in Boca",
     description:
       "Viking Professional ventilation hoods burn out fan motors at predictable intervals. Here's the lifespan in Boca and Delray homes, the replacement cost, and how to extend motor life.",
-    publishedAt: new Date("2026-07-28T13:00:00Z"),
+    publishedAt: new Date("2026-07-30T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "viking",
@@ -1981,7 +1981,7 @@ For non-Viking range hoods (Vent-A-Hood, Best, Broan), our sister site [bernerep
     title: "Bosch + Sub-Zero Combo Refrigerator+Wine — Servicing the Hybrid",
     description:
       "Custom kitchens often pair a Sub-Zero refrigerator with an adjacent Bosch Benchmark wine column. Servicing the combination requires understanding both systems' quirks. Here's how it works in practice.",
-    publishedAt: new Date("2026-07-31T13:00:00Z"),
+    publishedAt: new Date("2026-08-03T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "bosch",
@@ -2082,7 +2082,7 @@ For commercial refrigeration combinations in restaurant or retail kitchens, our 
     title: "Sub-Zero Refrigerator Custom Panel Damage — Repair vs Replace Decisions",
     description:
       "Custom panels on Sub-Zero Integrated units take damage over time. Here's the framework for deciding when to repair, refinish, or replace, and what it costs in coastal Miami homes.",
-    publishedAt: new Date("2026-08-04T13:00:00Z"),
+    publishedAt: new Date("2026-08-06T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "sub-zero",
@@ -2207,7 +2207,7 @@ For non-Integrated built-in refrigerators (Thermador Freedom, JennAir Rise), our
     title: "Thermador Professional Range Igniters — Coastal Salt Pitting Symptoms",
     description:
       "Thermador Professional range igniters fail differently in coastal homes than in inland kitchens. Salt pitting on the ceramic is a specific failure pattern with a specific repair.",
-    publishedAt: new Date("2026-08-11T13:00:00Z"),
+    publishedAt: new Date("2026-08-10T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 6,
     topic: "thermador",
@@ -2332,7 +2332,7 @@ For non-Thermador ranges (Wolf, Viking, Sub-Zero/Wolf combinations), we service 
     title: "Sub-Zero 648PRO Compressor Failures After Firmware Updates",
     description:
       "Owners of Sub-Zero 648PRO units who accept a dealer firmware update sometimes see compressor short-cycling weeks later. What we see in coastal South Florida, why the symptom hides for so long, and the diagnostic sequence that catches it before a $2,400 compressor swap.",
-    publishedAt: new Date("2026-08-14T13:00:00Z"),
+    publishedAt: new Date("2026-08-13T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "sub-zero",
@@ -2411,7 +2411,7 @@ If your refrigerator is a standard-brand built-in (GE Monogram, KitchenAid, Bosc
     title: "When to Replace a 12-Year-Old Sub-Zero vs Full Restoration",
     description:
       "At year 12, a Sub-Zero built-in faces a fork: full restoration at $4,800 to $6,500 buys another 10 to 12 years, or replacement at $14,000+ resets the clock. A working tech's framework for which call is right for your unit and your kitchen.",
-    publishedAt: new Date("2026-08-18T13:00:00Z"),
+    publishedAt: new Date("2026-08-17T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 10,
     topic: "sub-zero",
@@ -2500,7 +2500,7 @@ For year-12 decisions on standard-brand refrigeration (LG, Samsung, Whirlpool, G
     title: "Sub-Zero Integrated Panel-Ready Models — Gasket and Door Alignment",
     description:
       "Integrated Sub-Zero installations look seamless, but the panel mass and the hinge geometry create unique gasket and alignment problems years three through seven. A working tech's deep dive on the patterns we see across IT, IC, and BI integrated units in South Florida.",
-    publishedAt: new Date("2026-08-21T13:00:00Z"),
+    publishedAt: new Date("2026-08-20T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "sub-zero",
@@ -2581,7 +2581,7 @@ For panel-ready built-ins outside the Sub-Zero ecosystem (Fisher & Paykel integr
     title: "Sub-Zero Wine Column Compressor Lifespan in Miami Climate",
     description:
       "Sub-Zero wine columns run cooler and longer than refrigeration columns, but Miami climate cuts compressor service life in measurable ways. Field data on 424, 427, 430, and 7012 wine columns across 50+ South Florida installations and what to expect at years 8, 12, and 16.",
-    publishedAt: new Date("2026-08-25T13:00:00Z"),
+    publishedAt: new Date("2026-08-24T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "sub-zero",
@@ -2680,7 +2680,7 @@ For commercial wine storage in restaurant cellars or hotel banquet refrigeration
     title: "Sub-Zero Ice Maker Module Replacement — Why Dealer Parts Only",
     description:
       "Aftermarket Sub-Zero ice maker modules look identical to OEM and cost a third as much. Three reasons every Berne tech refuses them, with photos from the failure modes we keep seeing on coastal South Florida installations.",
-    publishedAt: new Date("2026-08-28T13:00:00Z"),
+    publishedAt: new Date("2026-08-27T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "sub-zero",
@@ -2769,7 +2769,7 @@ For commercial ice production (Hoshizaki, Manitowoc, Scotsman head units) in res
     title: "Wolf Range Igniter vs Spark Module — Which Fails When",
     description:
       "Wolf range ignition problems break down into two distinct failure populations: the igniter (cheap, owner-detectable, single-burner) and the spark module (expensive, tech work, multi-burner). The diagnostic that tells them apart in two minutes.",
-    publishedAt: new Date("2026-09-01T13:00:00Z"),
+    publishedAt: new Date("2026-08-31T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "wolf",
@@ -2866,7 +2866,7 @@ For standard-brand range ignition diagnostics (GE Profile, Samsung, KitchenAid),
     title: "Wolf Dual-Fuel Range Thermostat Calibration Drift",
     description:
       "Wolf dual-fuel oven thermostats drift 8 to 18°F across the first decade in service. The calibration check, when to recalibrate vs replace, and what dial offset to expect on DF304, DF366, and DF484 platforms at years 5, 8, and 12.",
-    publishedAt: new Date("2026-09-04T13:00:00Z"),
+    publishedAt: new Date("2026-09-03T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "wolf",
@@ -2966,7 +2966,7 @@ For commercial gas ranges in restaurant kitchens (Vulcan, Garland, Southbend), [
     title: "Wolf Double Oven Convection Blower Wheel Imbalance",
     description:
       "Wolf double ovens develop convection blower wheel imbalance in year 6-9, audible as a low-frequency hum or rumble during convection cycles. Why it happens, why owners ignore it too long, and what the failure mode does to the convection element.",
-    publishedAt: new Date("2026-09-08T13:00:00Z"),
+    publishedAt: new Date("2026-09-07T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "wolf",
@@ -3059,7 +3059,7 @@ For standard-brand double ovens (GE Profile, KitchenAid, Maytag), our [sister si
     title: "Wolf Gas Top Burner Cleaning Ritual — What Kills Igniters",
     description:
       "Wolf gas top burners die one ignition cycle at a time, and the leading cause is the same boil-over residue that owners think they cleaned thoroughly. A field-tested cleaning ritual that doubles igniter service life on coastal South Florida installations.",
-    publishedAt: new Date("2026-09-11T13:00:00Z"),
+    publishedAt: new Date("2026-09-10T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "wolf",
@@ -3160,7 +3160,7 @@ For mass-market gas cooktops (GE, Samsung, LG), our [sister operation at bernere
     title: "Viking VGR548 Range Battery and Igniter Combo Failures",
     description:
       "Viking VGR548 ranges from the 2008-2014 production years carry a specific combined failure mode where the spark battery and one or more igniters fail together. The diagnostic, the part-bundle that fixes it correctly, and why a single-part repair often calls back within a year.",
-    publishedAt: new Date("2026-09-15T13:00:00Z"),
+    publishedAt: new Date("2026-09-14T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "viking",
@@ -3261,7 +3261,7 @@ For standard-brand gas ranges (GE Profile, KitchenAid), our [sister operation at
     title: "Viking Professional Double Oven Door Hinge Replacement Reality",
     description:
       "Viking Professional double oven doors weigh 38 to 52 pounds and the spring-loaded hinges fail predictably at year 8-12. What replacement actually involves, why owners shouldn't attempt it, and the cabinet damage that compounds when hinges are run to failure.",
-    publishedAt: new Date("2026-09-18T13:00:00Z"),
+    publishedAt: new Date("2026-09-17T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "viking",
@@ -3376,7 +3376,7 @@ For mass-market oven door hardware (Samsung, LG, Whirlpool), our [sister site be
     title: "Viking vs Wolf vs Thermador — Service Ecosystem in South Florida",
     description:
       "Three premium range brands look interchangeable in the showroom. Their service ecosystems in South Florida are not. Parts availability, factory training, repair speed, and ten-year cost-of-ownership comparison from a working tech who repairs all three weekly.",
-    publishedAt: new Date("2026-09-22T13:00:00Z"),
+    publishedAt: new Date("2026-09-21T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "viking-thermador",
@@ -3493,7 +3493,7 @@ For mass-market range service ecosystems (LG, Samsung, GE, Whirlpool), our [sist
     title: "Thermador Star Burner Cleaning and the Flame-Spread Issue",
     description:
       "The Thermador Star Burner design distributes flame through five radial channels for even pan heating. When one channel clogs, flame spread becomes asymmetric and cooking suffers. The cleaning routine, the geometry to preserve, and what burner-port damage looks like.",
-    publishedAt: new Date("2026-09-25T13:00:00Z"),
+    publishedAt: new Date("2026-09-24T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "thermador",
@@ -3606,7 +3606,7 @@ For commercial open-burner range work (Vulcan, Garland, Wolf commercial), [Berne
     title: "Thermador Combi-Oven Steam Generator Descaling Cycle",
     description:
       "Thermador combination steam ovens require descaling every 18 to 50 cycles depending on water hardness. South Florida tap water sits at 12-18 grains per gallon, putting most installs at the aggressive end. The descaling routine, what skipping it costs, and the city-by-city water hardness across our service area.",
-    publishedAt: new Date("2026-09-29T13:00:00Z"),
+    publishedAt: new Date("2026-09-28T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "thermador",
@@ -3723,7 +3723,7 @@ For commercial combi-ovens in restaurant and hotel kitchens (Rational, Alto-Shaa
     title: "Thermador Freedom Induction Cooktop Common Failure Modes",
     description:
       "The Thermador Freedom Induction cooktop is the most complex induction surface in the residential market — full-surface coil array, intelligent pan detection, dozens of independent zones. The failure modes are correspondingly distinctive. Field data on CIT304, CIT365, and CIT367 platforms.",
-    publishedAt: new Date("2026-10-02T13:00:00Z"),
+    publishedAt: new Date("2026-10-01T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "thermador",
@@ -3842,7 +3842,7 @@ For standard-brand induction cooktops (GE Profile, Samsung, LG), our [sister sit
     title: "Miele Dishwasher G 7000 Series Water Inlet Diagnostics",
     description:
       "Miele G 7000 series dishwashers throw inlet-related faults differently than the previous G 6000 generation. The new water-management board reads pressure and flow simultaneously, which catches failures earlier but produces different error codes. Decoding what F11, F13, and F70 actually mean.",
-    publishedAt: new Date("2026-10-06T13:00:00Z"),
+    publishedAt: new Date("2026-10-05T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "miele",
@@ -3943,7 +3943,7 @@ For commercial dishwashers in restaurant kitchens (Hobart, Jackson, CMA), [Berne
     title: "Miele W1 Washer Bearing Assembly Replacement Reality",
     description:
       "Miele W1 washing machines develop drum bearing wear at year 8-12, usually announcing itself as a low rumble during spin. The replacement is one of the most labor-intensive jobs in residential appliance service. What it actually costs, why some W1 owners replace the machine instead, and the wear progression to watch.",
-    publishedAt: new Date("2026-10-09T13:00:00Z"),
+    publishedAt: new Date("2026-10-08T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "miele",
@@ -4070,7 +4070,7 @@ For multi-family or laundromat washer service (Speed Queen, Wascomat, Huebsch), 
     title: "Miele Generation 6000 Oven Door Spring and Soft-Close Hinge",
     description:
       "Miele Generation 6000 ovens use a hydraulic soft-close hinge that ages differently than mechanical hinges. The wear is subtler, the symptoms appear later, but the failure mode is more sudden. What to listen for, what replacement costs, and the difference between hinge and spring replacement.",
-    publishedAt: new Date("2026-10-13T13:00:00Z"),
+    publishedAt: new Date("2026-10-12T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "miele",
@@ -4185,7 +4185,7 @@ For standard-brand wall oven hardware (GE Profile, KitchenAid, Bosch standard), 
     title: "Bertazzoni Heritage Range Thermostat and Igniter Diagnostics",
     description:
       "Bertazzoni Heritage series ranges combine Italian design with American utility infrastructure, which creates specific diagnostic patterns. The thermostat behavior differs from Wolf and Viking; the igniter system has its own quirks. A working tech's diagnostic field guide.",
-    publishedAt: new Date("2026-10-16T13:00:00Z"),
+    publishedAt: new Date("2026-10-15T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "bertazzoni",
@@ -4314,7 +4314,7 @@ For standard-brand European-style ranges (Bosch, Bertazzoni Master series, Kitch
     title: "Bluestar Performance Range Burner Head and Venturi Adjustments",
     description:
       "Bluestar's open-burner architecture delivers more raw BTU than sealed-burner designs but demands precise venturi adjustment that most service techs don't perform correctly. How to tell whether your Bluestar is burning correctly, what venturi adjustment actually does, and the salt-air corrosion timeline.",
-    publishedAt: new Date("2026-10-20T13:00:00Z"),
+    publishedAt: new Date("2026-10-19T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "bluestar",
@@ -4441,7 +4441,7 @@ For commercial open-burner ranges in restaurant kitchens (Vulcan, Garland, Wolf 
     title: "Why Sub-Zero and Wolf Service Requires OEM Parts Only — The Counterfeit Risk",
     description:
       "Sub-Zero and Wolf parts have spawned a counterfeit market that ships through online resellers with convincing packaging. The technical differences that matter, the warranty implications, and how authorized service contractors verify part authenticity in 2026.",
-    publishedAt: new Date("2026-10-23T13:00:00Z"),
+    publishedAt: new Date("2026-10-22T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "premium-service",
@@ -4564,7 +4564,7 @@ For mass-market parts authenticity questions (Samsung, LG, GE OEM verification),
     title: "Service Window Expectations for High-Net-Worth Households",
     description:
       "Premium households have specific service window expectations that differ materially from standard residential service. NDAs, restricted access, security protocols, staff coordination, and the operational expectations that come with premium service. A working tech's perspective.",
-    publishedAt: new Date("2026-10-27T13:00:00Z"),
+    publishedAt: new Date("2026-10-26T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "premium-service",
@@ -4711,7 +4711,7 @@ Related reading:
     title: "Pre-Purchase Appliance Inspection — What to Check Before Buying a $40k Kitchen",
     description:
       "A $40k+ premium kitchen is a serious capital investment in a real estate purchase. The appliance inspection that should accompany the home inspection — what trained eyes check, what reveals at year 8 vs year 12, and what the inspection costs vs what it can save.",
-    publishedAt: new Date("2026-10-30T13:00:00Z"),
+    publishedAt: new Date("2026-10-29T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "premium-service",
@@ -4872,7 +4872,7 @@ For pre-purchase inspections on standard-brand kitchens (GE, Samsung, LG, Whirlp
     title: "Vintage Premium Appliance Restoration — When the Math Says No",
     description:
       "Pre-2000 Sub-Zero, Wolf, and Viking appliances can be beautifully restored but often shouldn't be. The economic and practical thresholds where restoration of vintage premium appliances stops making sense, with examples from estate kitchens across South Florida.",
-    publishedAt: new Date("2026-11-03T13:00:00Z"),
+    publishedAt: new Date("2026-11-02T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "premium-service",
@@ -5003,7 +5003,7 @@ For vintage standard-brand restoration (older GE Monogram, KitchenAid Architect,
     title: "Built-In vs Freestanding Refrigerator — Service Cost and Parts Differences",
     description:
       "A built-in refrigerator and a freestanding refrigerator at the same brand can have dramatically different 10-year service costs. Why parts availability, labor access, and service-life expectations diverge between the two architectures, with specific examples from Sub-Zero, Miele, and Thermador.",
-    publishedAt: new Date("2026-11-06T13:00:00Z"),
+    publishedAt: new Date("2026-11-05T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "premium-service",
@@ -5152,7 +5152,7 @@ For mass-market freestanding refrigeration (LG, Samsung, Whirlpool, GE), our [si
     title: "Premium Dishwasher Integration — Panel-Ready Alignment Tutorial",
     description:
       "A panel-ready dishwasher integrates seamlessly into kitchen cabinetry when installed correctly and looks visibly wrong when installation tolerances slip. The alignment factors that matter, the adjustment mechanisms available on Miele, Bosch, and Thermador, and what owners can verify themselves.",
-    publishedAt: new Date("2026-11-10T13:00:00Z"),
+    publishedAt: new Date("2026-11-09T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "premium-service",
@@ -5319,7 +5319,7 @@ For standard-brand integrated dishwashers (Bosch standard, KitchenAid, Samsung S
     title: "Wine Cellar Climate Control — Sub-Zero Wine Columns and EuroCave Maintenance",
     description:
       "Serious wine storage in South Florida requires more than the wine column itself. Cellar room HVAC, humidity management, sealed-room construction, and the maintenance routines that protect a five- or six-figure collection. A working tech's view from inside the cellars of Coral Gables and Pinecrest.",
-    publishedAt: new Date("2026-11-13T13:00:00Z"),
+    publishedAt: new Date("2026-11-12T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "premium-service",
@@ -5472,7 +5472,7 @@ For commercial wine storage in restaurant cellars or hotel cellars, [Berne's com
     title: "Coastal Salt-Air Protection for Premium Stainless Steel — Pro-Grade Approach",
     description:
       "Stainless steel finishes on premium appliances pit, rust, and discolor in coastal South Florida environments. The cleaning regimen that actually protects finish, the products that work vs the ones that don't, and the corrosion patterns we see across Sub-Zero, Wolf, Viking, and Thermador.",
-    publishedAt: new Date("2026-11-17T13:00:00Z"),
+    publishedAt: new Date("2026-11-16T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "coastal",
@@ -5639,7 +5639,7 @@ For mass-market stainless care across LG/Samsung/GE Profile freestanding applian
     title: "Service Contract Economics for Premium Appliances — What Actually Pencils Out",
     description:
       "Manufacturer service contracts, third-party home warranties, and contractor-direct maintenance contracts each have different economics for premium appliance owners. The math behind which makes sense for which households, with specific numbers from South Florida service.",
-    publishedAt: new Date("2026-11-20T13:00:00Z"),
+    publishedAt: new Date("2026-11-19T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "premium-service",
@@ -5806,7 +5806,7 @@ For service-contract structure on standard-brand kitchens (LG/Samsung/GE/Whirlpo
     title: "Diagnostic-Fee Structure and Premium Service Transparency",
     description:
       "How premium appliance service contractors structure diagnostic fees, what owners should expect from a diagnostic visit, and the transparent pricing model we use at Berne Appliance Repair. The questions to ask before scheduling.",
-    publishedAt: new Date("2026-11-24T13:00:00Z"),
+    publishedAt: new Date("2026-11-23T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 7,
     topic: "premium-service",
@@ -5999,7 +5999,7 @@ Our [sister site bernerepair.com](https://bernerepair.com) uses the same transpa
     title: "Aventura Condo Refrigeration Maintenance — High-Rise Dispatch Realities",
     description:
       "Servicing premium refrigeration in Aventura high-rises requires building coordination, freight elevator scheduling, and tight time-window discipline. What owners and household managers should know about the operational realities of high-rise premium appliance service.",
-    publishedAt: new Date("2026-11-27T13:00:00Z"),
+    publishedAt: new Date("2026-11-26T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "hyperlocal",
@@ -6164,7 +6164,7 @@ For mass-market condo refrigeration (LG, Samsung, GE freestanding builds), our [
     title: "Brickell Skyrise Kitchen Renovation — Service Planning for Premium Installs",
     description:
       "Brickell high-rise kitchen renovations involve building approval, freight elevator scheduling, water-and-gas shutoff coordination, and tight access windows. A working tech's view of how premium kitchen installations actually happen in Brickell skyrise buildings and how to plan service for the next decade.",
-    publishedAt: new Date("2026-12-01T13:00:00Z"),
+    publishedAt: new Date("2026-11-30T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "hyperlocal",
@@ -6329,7 +6329,7 @@ For standard-brand kitchen renovations in Brickell rentals or smaller condos (GE
     title: "Pinecrest Historic Estate — Vintage Sub-Zero Restoration Projects",
     description:
       "Pinecrest estate homes often include vintage Sub-Zero installations from the 1980s and early 1990s. Restoration vs replacement decisions on these units differ from typical condo or new-home contexts. Field examples from estate restorations and the maintenance plans that protect the work.",
-    publishedAt: new Date("2026-12-04T13:00:00Z"),
+    publishedAt: new Date("2026-12-03T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "hyperlocal",
@@ -6504,7 +6504,7 @@ For vintage standard-brand appliances in estate properties (older GE Monogram, K
     title: "Bal Harbour Beachfront Premium Appliance Corrosion Timeline",
     description:
       "Beachfront Bal Harbour installations face the most aggressive salt-air environment in South Florida. The specific corrosion patterns we see at year 3, year 6, and year 10, and the maintenance protocols that meaningfully extend service life on premium appliances in oceanfront condos.",
-    publishedAt: new Date("2026-12-08T13:00:00Z"),
+    publishedAt: new Date("2026-12-07T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "hyperlocal",
@@ -6677,7 +6677,7 @@ For mass-market refrigeration in oceanfront condos (LG/Samsung built-ins), our [
     title: "Coral Gables Mediterranean Revival Kitchens — Viking and Wolf Restoration",
     description:
       "Coral Gables Mediterranean Revival estate kitchens often feature distinctive Viking or Wolf installations from the 1990s-2000s that the current owners want to preserve. Restoration approaches that maintain the kitchen's architectural character while modernizing functional reliability.",
-    publishedAt: new Date("2026-12-11T13:00:00Z"),
+    publishedAt: new Date("2026-12-10T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "hyperlocal",
@@ -6856,7 +6856,7 @@ For mass-market kitchen restoration in Coral Gables historic homes (GE, KitchenA
     title: "Repair vs Replace — $20k Sub-Zero Column at Year 12",
     description:
       "A decision framework specifically for the year-12 Sub-Zero column refrigerator with a $20,000 replacement cost: the diagnostic measurements that determine which call is right, the typical service expenditure to extend service life vs annual ownership cost of replacement.",
-    publishedAt: new Date("2026-12-15T13:00:00Z"),
+    publishedAt: new Date("2026-12-14T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "decision-framework",
@@ -7007,7 +7007,7 @@ For year-12 repair-vs-replace decisions on standard-brand refrigeration (LG, Sam
     title: "When to Call OEM Service vs Independent — Per Premium Brand",
     description:
       "Each premium appliance brand has a different relationship between manufacturer service and authorized independent contractors. The brand-by-brand analysis of when OEM service makes sense, when independent is the better choice, and what to ask before scheduling.",
-    publishedAt: new Date("2026-12-18T13:00:00Z"),
+    publishedAt: new Date("2026-12-17T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 9,
     topic: "decision-framework",
@@ -7228,7 +7228,7 @@ On standard-brand OEM-vs-independent decisions (LG, Samsung, GE, Whirlpool, Kitc
     title: "Insurance Claim Guide for Premium Appliance Damage",
     description:
       "Premium appliance damage from water events, electrical surges, fires, or storm impact often triggers homeowners insurance claims with significant five-figure values. The documentation, the claim process, and the contractor relationships that support successful claims.",
-    publishedAt: new Date("2026-12-22T13:00:00Z"),
+    publishedAt: new Date("2026-12-21T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "decision-framework",
@@ -7439,7 +7439,7 @@ For insurance claims on standard-brand appliance damage (LG, Samsung, GE, Whirlp
     title: "Pre-Listing Appliance Audit — Selling a South Florida Home With a $30k Kitchen",
     description:
       "A premium kitchen is a feature in a home sale, but only if the appliances are demonstrably in good condition. The pre-listing appliance audit that supports sale price, the service work worth doing before listing, and what to skip.",
-    publishedAt: new Date("2026-12-25T13:00:00Z"),
+    publishedAt: new Date("2026-12-24T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "decision-framework",
@@ -7624,7 +7624,7 @@ For pre-listing audits on standard-brand kitchens (GE, Samsung, LG, Whirlpool bu
     title: "Estate Planning and Appliance Warranties — What Transfers",
     description:
       "Premium appliance warranties, service contracts, and maintenance plans don't all transfer the same way through estate and ownership changes. The framework for understanding what coverage continues, what's lost, and how to preserve value during transitions.",
-    publishedAt: new Date("2026-12-29T13:00:00Z"),
+    publishedAt: new Date("2026-12-28T13:00:00Z"),
     author: AUTHOR,
     readingMinutes: 8,
     topic: "decision-framework",
