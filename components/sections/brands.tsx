@@ -1,36 +1,42 @@
-import Image from "next/image";
 import { BRANDS, PREMIUM_BRANDS } from "@/data/brands";
 
-const LOGOS: Record<string, string> = {
-  Samsung: "/brands/samsung.svg",
-  LG: "/brands/lg.svg",
-  Bosch: "/brands/bosch.svg",
-  GE: "/brands/ge.svg",
-  "GE Monogram": "/brands/ge.svg",
-  Maytag: "/brands/maytag.svg",
-};
-
 /**
- * Typographic wordmarks for brands without licensed logo assets.
- * We use brand-appropriate typography + accent colors so each mark
- * reads as a distinct, considered piece of branding — not a generic
- * text list — while staying clear of trademarked logo art.
+ * Typographic wordmarks for every brand in the grid.
+ *
+ * We render all brands as considered typographic marks — brand-appropriate
+ * typography + accent colors — rather than logo image files. This keeps the
+ * grid perfectly uniform (no mix of logos and fallback text), avoids shipping
+ * trademarked logo art, and removes the `next/image` SVG-optimization path
+ * that was returning HTTP 400 on `/_next/image` (SVG is rejected unless
+ * `dangerouslyAllowSVG` is enabled) and surfacing raw alt text for Bosch, LG,
+ * Samsung, GE, GE Monogram and Maytag.
  */
+// Neutral marks use the theme `foreground` token (via `text-foreground/85`) so they
+// stay legible in BOTH the light and dark themes — a hardcoded light hex was washing
+// out on the default light background. Brands with a distinctive, theme-agnostic accent
+// keep their brand color via inline `style`.
+const NEUTRAL = "text-foreground/85";
 const WORDMARK: Record<string, { text: string; cls: string; style?: React.CSSProperties }> = {
-  "Sub-Zero":  { text: "SUB·ZERO",    cls: "font-serif font-medium tracking-[0.24em]", style: { color: "#dfe6f2" } },
-  Wolf:        { text: "WOLF",        cls: "font-serif font-bold tracking-[0.18em]",   style: { color: "#e44a3b" } },
-  Viking:      { text: "VIKING",      cls: "font-serif font-bold tracking-[0.30em]",   style: { color: "#dfe6f2" } },
-  Thermador:   { text: "Thermador",   cls: "font-serif italic font-medium tracking-tight", style: { color: "#c98a4a" } },
+  "Sub-Zero":  { text: "SUB·ZERO",    cls: `font-serif font-medium tracking-[0.24em] ${NEUTRAL}` },
+  Wolf:        { text: "WOLF",        cls: "font-serif font-bold tracking-[0.18em]",   style: { color: "#c0392b" } },
+  Viking:      { text: "VIKING",      cls: `font-serif font-bold tracking-[0.30em] ${NEUTRAL}` },
+  Thermador:   { text: "Thermador",   cls: "font-serif italic font-medium tracking-tight", style: { color: "#b06a2c" } },
   Miele:       { text: "MIELE",       cls: "font-sans font-bold tracking-[0.20em]",    style: { color: "#9b0e10" } },
+  Bosch:       { text: "BOSCH",       cls: "font-bold tracking-[0.16em]",              style: { color: "#d0021b" } },
   KitchenAid:  { text: "KitchenAid",  cls: "italic font-bold tracking-tight",          style: { color: "#cf2127" } },
-  Whirlpool:   { text: "whirlpool",   cls: "lowercase font-bold tracking-tight",       style: { color: "#dfe6f2" } },
-  Frigidaire:  { text: "FRIGIDAIRE",  cls: "font-bold tracking-[0.18em]",              style: { color: "#dfe6f2" } },
-  Electrolux:  { text: "Electrolux",  cls: "font-light tracking-[0.04em]",             style: { color: "#dfe6f2" } },
-  "Jenn-Air":  { text: "JENN-AIR",    cls: "font-bold tracking-[0.14em]",              style: { color: "#dfe6f2" } },
-  "Speed Queen": { text: "SPEED QUEEN", cls: "font-bold tracking-[0.10em]",            style: { color: "#dfe6f2" } },
-  Scotsman:    { text: "Scotsman",    cls: "font-serif font-medium tracking-tight",    style: { color: "#dfe6f2" } },
-  "U-Line":    { text: "U-LINE",      cls: "font-bold tracking-[0.18em]",              style: { color: "#dfe6f2" } },
-  Marvel:      { text: "MARVEL",      cls: "font-bold tracking-tight",                 style: { color: "#dfe6f2" } },
+  LG:          { text: "LG",          cls: "font-bold tracking-[0.30em]",              style: { color: "#a50034" } },
+  Samsung:     { text: "SAMSUNG",     cls: `font-bold tracking-[0.18em] ${NEUTRAL}` },
+  Whirlpool:   { text: "whirlpool",   cls: `lowercase font-bold tracking-tight ${NEUTRAL}` },
+  GE:          { text: "GE",          cls: `font-serif font-bold tracking-[0.10em] ${NEUTRAL}` },
+  "GE Monogram": { text: "MONOGRAM",  cls: "font-serif italic font-medium tracking-[0.06em]", style: { color: "#b06a2c" } },
+  Maytag:      { text: "MAYTAG",      cls: `font-bold tracking-[0.16em] ${NEUTRAL}` },
+  Frigidaire:  { text: "FRIGIDAIRE",  cls: `font-bold tracking-[0.18em] ${NEUTRAL}` },
+  Electrolux:  { text: "Electrolux",  cls: `font-light tracking-[0.04em] ${NEUTRAL}` },
+  "Jenn-Air":  { text: "JENN-AIR",    cls: `font-bold tracking-[0.14em] ${NEUTRAL}` },
+  "Speed Queen": { text: "SPEED QUEEN", cls: `font-bold tracking-[0.10em] ${NEUTRAL}` },
+  Scotsman:    { text: "Scotsman",    cls: `font-serif font-medium tracking-tight ${NEUTRAL}` },
+  "U-Line":    { text: "U-LINE",      cls: `font-bold tracking-[0.18em] ${NEUTRAL}` },
+  Marvel:      { text: "MARVEL",      cls: `font-bold tracking-tight ${NEUTRAL}` },
 };
 
 export function Brands() {
@@ -53,16 +59,7 @@ export function Brands() {
               className="flex h-16 items-center justify-center rounded-xl border border-border bg-card/40 px-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
               title={`Berne Appliance Repair services ${brand}`}
             >
-              {LOGOS[brand] ? (
-                <Image
-                  src={LOGOS[brand]}
-                  alt={`${brand} — Berne Appliance Repair services ${brand} appliances`}
-                  width={84}
-                  height={36}
-                  loading="lazy"
-                  className="h-7 w-auto opacity-85"
-                />
-              ) : WORDMARK[brand] ? (
+              {WORDMARK[brand] ? (
                 <span
                   className={`text-base ${WORDMARK[brand].cls}`}
                   style={WORDMARK[brand].style}
