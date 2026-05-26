@@ -145,9 +145,12 @@ function BrandSection({
         <span className="eyebrow">{eyebrow}</span>
         <h2 className="heading-section mt-3">{title}</h2>
       </div>
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-8 flex flex-wrap justify-center gap-4">
         {brands.map((b) => (
-          <li key={b.slug}>
+          <li
+            key={b.slug}
+            className="w-full sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
+          >
             <Link
               href={`/brands/${b.slug}`}
               className="group flex h-full flex-col gap-3 rounded-2xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
