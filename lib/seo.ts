@@ -15,8 +15,12 @@ import { SERVICE_IMAGE_PATHS } from "@/lib/service-images";
  * `www.` prefix; the literal default below is the safe fallback if the env
  * var is missing in production.
  */
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.berne-repair.com";
+// Pinned to the production www origin. A misconfigured Vercel
+// NEXT_PUBLIC_SITE_URL (set to the non-www host) was overriding the default
+// and making every canonical point at a URL that 308-redirects to www — the
+// exact failure the comment above warns against. Hardcoding keeps canonicals
+// self-referential regardless of the env var.
+export const SITE_URL = "https://www.berne-repair.com";
 
 export function absoluteUrl(path = "/") {
   return new URL(path, SITE_URL).toString();

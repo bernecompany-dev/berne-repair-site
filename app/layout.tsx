@@ -27,7 +27,10 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+// Pinned to production www origin (see lib/seo.ts) so metadataBase — and thus
+// every relative canonical/og:url — resolves to the self-referential www host,
+// not the misconfigured non-www NEXT_PUBLIC_SITE_URL env value.
+const SITE_URL = "https://www.berne-repair.com";
 
 // Default OG image — points at Next's dynamic /opengraph-image route so
 // every page that does NOT explicitly set `openGraph.images` still emits a
