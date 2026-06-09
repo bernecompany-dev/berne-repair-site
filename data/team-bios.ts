@@ -321,40 +321,72 @@ export const TECH_BIOS: Record<string, ExtendedBio> = {
 };
 
 /**
- * Back-office scaffold. Names + photos to be filled by Eugene in coming days.
+ * Office / dispatch & operations team. Real names + photos supplied by Eugene
+ * 2026-06 (source: C:/Users/golds/Team). Photos optimized to webp, max 800px,
+ * EXIF stripped — see scripts/optimize-office-photos.mjs.
  *
- * TODO(eugene): provide real names, photos, and any role corrections. Once
- * supplied, edit each entry below and remove the `placeholder: true` flag.
+ * Voice rules match TECH_BIOS: role-truthful only — nothing invented about
+ * individuals beyond what their role actually entails.
  */
 export type BackOfficeMember = {
   slug: string;
   name: string;
   role: string;
+  /** Spanish role title for /es/team. */
+  roleEs: string;
   photo: string;
+  /** One-line, role-truthful fact shown on the /team card. */
+  fact: string;
+  /** Spanish card fact for /es/team. */
+  factEs: string;
   bio: ExtendedBio;
-  placeholder: boolean;
 };
-
-const PLACEHOLDER_PHOTO = "/images/team/placeholder-back-office.svg";
 
 export const BACK_OFFICE: BackOfficeMember[] = [
   {
-    slug: "back-office-1",
-    name: "Berne Operations Team Member",
-    role: "Dispatch Manager",
-    photo: PLACEHOLDER_PHOTO,
-    placeholder: true,
+    slug: "bogdan",
+    name: "Bogdan",
+    role: "Operational Director",
+    roleEs: "Director de Operaciones",
+    photo: "/images/team/bogdan.webp",
+    fact: "Runs the day-to-day operation — every route, escalation, and warranty call crosses his desk.",
+    factEs: "Dirige la operación diaria — cada ruta, escalación y garantía pasa por su escritorio.",
     bio: {
       lede:
-        "Dispatch manager — the person who decides which tech goes where, in what order, and with which parts already loaded on the truck.",
+        "I'm Bogdan — Operational Director at Berne Appliance Repair. If a job involves more than one truck, one parts order, or one unhappy customer, it ends up on my desk.",
       background:
-        "Dispatch is the difference between a same-day fix and a return visit. The role covers technician routing, parts pre-load, ETA windows, and the day-of customer communication that keeps a homeowner calm when a fridge fails at 6 a.m.",
+        "Directing operations at a fleet shop means owning everything between the phone ringing and the invoice closing: dispatch policy, technician load, the parts pipeline, warranty escalations. The role exists so the owner can stay close to the trucks and the techs can stay on the tools.",
       workOn:
-        "Live routing across Miami-Dade, Broward, and Palm Beach. Triage of incoming dispatch tickets, technician load balancing, parts-on-truck verification, and same-day reschedule logistics when a job runs long.",
+        "The daily dispatch board across Miami-Dade, Broward, and Palm Beach. Escalations that need a decision, not a script. Scheduling for both the field roster and the office team, and the review of every callback so the same mistake doesn't happen twice.",
       whyBerne:
-        "Berne dispatch runs on real software and real notes from real techs — not whiteboards and guesses.",
+        "Berne runs on real software, real technician notes, and real accountability. That's rare in this trade — and it's what makes the director job possible.",
       serviceArea:
-        "Coordinates the full fleet across Miami-Dade, Broward, and Palm Beach.",
+        "Oversees the full operation across Miami-Dade, Broward, and Palm Beach.",
+      related: [
+        { href: "/request-dispatch", label: "Request service" },
+        { href: "/about", label: "About Berne Appliance Repair" },
+      ],
+    },
+  },
+  {
+    slug: "artem",
+    name: "Artem",
+    role: "Operational Manager & IT",
+    roleEs: "Gerente de Operaciones e IT",
+    photo: "/images/team/artem.webp",
+    fact: "Keeps the dispatch software, phones, and parts systems online.",
+    factEs: "Mantiene en línea el software de despacho, los teléfonos y los sistemas de repuestos.",
+    bio: {
+      lede:
+        "I'm Artem — Operational Manager and the IT side of Berne. The dispatch software, the phone system, the parts lookups, the website forms: if it has a screen, it's mine.",
+      background:
+        "A fleet of technicians generates a lot of moving data — tickets, routes, parts orders, invoices, photos from the field. My job is keeping the systems that carry that data fast and boring. The good kind of boring.",
+      workOn:
+        "Service-management software administration, phone and messaging systems, parts-supplier tooling, and the operational reporting the dispatch desk runs on. Plus the everyday manager work: schedules, handoffs, process fixes.",
+      whyBerne:
+        "Most repair shops treat software as an afterthought. Berne treats it as infrastructure.",
+      serviceArea:
+        "Systems and operations support for the full Berne service area.",
       related: [
         { href: "/request-dispatch", label: "Request service" },
         { href: "/services", label: "Service catalog" },
@@ -362,22 +394,74 @@ export const BACK_OFFICE: BackOfficeMember[] = [
     },
   },
   {
-    slug: "back-office-2",
-    name: "Berne Operations Team Member",
-    role: "Customer Service Lead",
-    photo: PLACEHOLDER_PHOTO,
-    placeholder: true,
+    slug: "gabe",
+    name: "Gabe",
+    role: "Operational Manager",
+    roleEs: "Gerente de Operaciones",
+    photo: "/images/team/gabe.webp",
+    fact: "Coordinates technicians, parts, and schedules so jobs close on the first visit.",
+    factEs: "Coordina técnicos, repuestos y horarios para cerrar el trabajo en la primera visita.",
     bio: {
       lede:
-        "Customer service lead — first voice on the phone when a customer calls Berne, and the person who follows up after the tech leaves.",
+        "I'm Gabe — Operational Manager. My job is simple to say and hard to do: the right tech, with the right part, at the right address, on time.",
       background:
-        "This role owns the customer experience from first call through invoice and warranty follow-up. Every escalation lands here first — before it becomes a problem for the owner.",
+        "Operations management at Berne covers the seam between dispatch and the field — making sure what the customer was promised on the phone is what actually happens at the door.",
       workOn:
-        "Inbound call qualification, customer onboarding, post-service follow-up calls, warranty claim coordination, and the kind of small-print communication that prevents disputes before they happen.",
+        "Technician scheduling and load balancing, parts-on-truck verification before the morning rollout, same-day reschedules when a job runs long, and quality follow-up on completed work.",
       whyBerne:
-        "Berne backs the work in writing. That makes the customer-service job possible to do honestly.",
+        "The technicians here are genuinely good, which means operations can promise things and keep them.",
       serviceArea:
-        "Phone and email coverage during business hours across all Berne service areas.",
+        "Coordinates routes across Miami-Dade, Broward, and Palm Beach.",
+      related: [
+        { href: "/services", label: "Service catalog" },
+        { href: "/team", label: "Meet the technicians" },
+      ],
+    },
+  },
+  {
+    slug: "keith",
+    name: "Keith",
+    role: "Dispatch Lead Operator",
+    roleEs: "Operador Líder de Despacho",
+    photo: "/images/team/keith.webp",
+    fact: "Leads the dispatch desk routing 18 technicians across three counties.",
+    factEs: "Lidera la mesa de despacho que dirige a 18 técnicos en tres condados.",
+    bio: {
+      lede:
+        "I'm Keith — lead operator on the dispatch desk. When you call Berne, my desk decides which technician shows up and how fast.",
+      background:
+        "Dispatch is the difference between a same-day fix and a return visit. The lead role owns the desk: call triage, routing decisions, and coaching the operators who keep the line answered.",
+      workOn:
+        "Live routing across three counties, urgent-call triage, ETA windows customers can actually plan around, and the end-of-day handoff notes that make tomorrow's board work.",
+      whyBerne:
+        "Dispatch here runs on real technician notes, not guesses. That lets me put the right person on the right job.",
+      serviceArea:
+        "Dispatch coverage across Miami-Dade, Broward, and Palm Beach.",
+      related: [
+        { href: "/request-dispatch", label: "Request service" },
+        { href: "/areas", label: "Service areas" },
+      ],
+    },
+  },
+  {
+    slug: "jayla",
+    name: "Jayla",
+    role: "Dispatch Operator",
+    roleEs: "Operadora de Despacho",
+    photo: "/images/team/jayla.webp",
+    fact: "Answers your call 7 days a week and books the soonest window.",
+    factEs: "Atiende su llamada los 7 días de la semana y reserva la ventana más cercana.",
+    bio: {
+      lede:
+        "I'm Jayla — dispatch operator. Mine is often the first voice you hear when you call Berne.",
+      background:
+        "A dispatch operator's job is to turn a stressful morning — broken fridge, flooded laundry room — into a booked time window and a tech on the way.",
+      workOn:
+        "Inbound calls seven days a week, appointment booking, brand-and-model intake so the technician arrives prepared, and status updates while your job is open.",
+      whyBerne:
+        "I get to actually fix the caller's day. Most phone jobs can't say that.",
+      serviceArea:
+        "Phone coverage for all Berne service areas.",
       related: [
         { href: "/contact", label: "Contact Berne Appliance Repair" },
         { href: "/request-dispatch", label: "Request service" },
@@ -385,71 +469,52 @@ export const BACK_OFFICE: BackOfficeMember[] = [
     },
   },
   {
-    slug: "back-office-3",
-    name: "Berne Operations Team Member",
-    role: "Operations Coordinator",
-    photo: PLACEHOLDER_PHOTO,
-    placeholder: true,
+    slug: "lina",
+    name: "Lina",
+    role: "Dispatch Operator",
+    roleEs: "Operadora de Despacho",
+    photo: "/images/team/lina.webp",
+    fact: "Tracks every ticket from first call to finished repair.",
+    factEs: "Sigue cada ticket desde la primera llamada hasta la reparación terminada.",
     bio: {
       lede:
-        "Operations coordinator — the role that keeps trucks stocked, schedules synced, and technician credentials current.",
+        "I'm Lina — dispatch operator. I track every open ticket from first call to finished repair.",
       background:
-        "Operations covers the work that doesn't happen on a truck but makes the work on the truck possible: fleet maintenance, EPA 608 renewal tracking, Florida license renewals, and continuous-training enrollment with MSA World.",
+        "Once a job is booked, somebody has to make sure it doesn't fall through the cracks — the part arrives, the tech is briefed, the customer knows the window. That's the operator's craft.",
       workOn:
-        "Vendor compliance documentation, COI renewals, EPA and Florida license tracking for the technician roster, MSA World training enrollment, and the back-end credentialing work that the customer never sees.",
+        "Appointment confirmations, parts-arrival follow-ups, rescheduling logistics, and the post-repair check-in that closes the loop on every job.",
       whyBerne:
-        "Berne treats compliance as a feature, not a checkbox. That makes this role meaningful rather than performative.",
+        "The notes culture. Every technician writes down what happened, so I never have to tell a customer \"I don't know.\"",
       serviceArea:
-        "Operations support for the full Berne service area.",
+        "Phone and scheduling coverage for the full Berne service area.",
       related: [
-        { href: "/credentials", label: "Berne credentials" },
-        { href: "/about", label: "About Berne Appliance Repair" },
-      ],
-    },
-  },
-  {
-    slug: "back-office-4",
-    name: "Berne Operations Team Member",
-    role: "Parts Procurement Specialist",
-    photo: PLACEHOLDER_PHOTO,
-    placeholder: true,
-    bio: {
-      lede:
-        "Parts procurement — the person who keeps the right Sub-Zero compressor, LG control board, and Whirlpool drum belt on the right truck the night before.",
-      background:
-        "Parts is where appliance service either works or fails. Berne procurement maintains relationships with Marcone, Reliable Parts, and OEM distributors (Sub-Zero, Wolf, LG, Samsung) so that next-day part availability stops being a customer-facing problem.",
-      workOn:
-        "Daily parts pull for the next day's dispatch board, OEM distributor coordination, MSA World parts-program management, urgent overnight sourcing for premium-brand emergencies, and the warranty-parts paperwork that keeps OEM coverage in play.",
-      whyBerne:
-        "Berne actually invests in parts-on-truck inventory. Most shops don't, and customers feel the difference.",
-      serviceArea:
-        "Procurement support for the full Berne fleet.",
-      related: [
-        { href: "/brands", label: "Brands serviced" },
+        { href: "/request-dispatch", label: "Request service" },
         { href: "/services", label: "Service catalog" },
       ],
     },
   },
   {
-    slug: "back-office-5",
-    name: "Berne Operations Team Member",
-    role: "Admin / Billing Lead",
-    photo: PLACEHOLDER_PHOTO,
-    placeholder: true,
+    slug: "stacey",
+    name: "Stacey",
+    role: "Dispatch Operator",
+    roleEs: "Operadora de Despacho",
+    photo: "/images/team/stacey.webp",
+    fact: "Confirms appointments and keeps your ETA window honest.",
+    factEs: "Confirma las citas y mantiene honesta su ventana de llegada.",
     bio: {
       lede:
-        "Admin and billing — invoicing, vendor payment terms, COI compliance, and the financial back end of an appliance service operation.",
+        "I'm Stacey — dispatch operator. Appointment confirmations and ETA updates are my lane: you should never have to wonder where your technician is.",
       background:
-        "Billing for a multi-DBA service operation is a different animal from a single-shop. Vendor portals, COIs by location, sales-tax-exempt certificates, and dispute resolution all live in this role.",
+        "Service visits fail when communication fails. The operator role exists to keep customers ahead of the schedule, not chasing it.",
       workOn:
-        "Customer invoicing through QuickBooks Online and Service Fusion, Marcone Servicers Association vendor program billing, vendor-portal compliance for property management groups, and reconciliation of warranty-parts credits.",
+        "Confirmation calls, day-of ETA updates, rebooking when life happens on the customer's side, and keeping the dispatch board honest about what's actually achievable today.",
       whyBerne:
-        "Berne keeps the books clean. That makes this work possible to do correctly.",
+        "Berne gives operators real schedules and real notes to share — so the updates I give are true.",
       serviceArea:
-        "Billing and admin support for the full Berne service area.",
+        "Phone coverage across Miami-Dade, Broward, and Palm Beach.",
       related: [
         { href: "/contact", label: "Contact Berne Appliance Repair" },
-        { href: "/about", label: "About Berne Appliance Repair" },
+        { href: "/areas", label: "Service areas" },
       ],
     },
   },

@@ -171,14 +171,14 @@ export default function TeamPage() {
 
       <section id="back-office" className="container-prose pb-16 sm:pb-20 scroll-mt-20">
         <div className="mb-8 max-w-2xl">
-          <span className="eyebrow">Back office</span>
+          <span className="eyebrow">Dispatch & operations</span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            The dispatch and operations team
+            The team behind your repair
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            The technicians on the trucks are the front line. These five roles
-            are the back-end that keeps Berne dispatchable. Photos and names
-            being finalized — role descriptions are live now.
+            The technicians on the trucks are the front line. These seven
+            people are the office behind them — answering the phone, routing
+            the fleet, and making sure the right part is on the right truck.
           </p>
         </div>
 
@@ -192,22 +192,25 @@ export default function TeamPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
                 <Image
                   src={m.photo}
-                  alt={`${m.role} at Berne Appliance Repair`}
+                  alt={`${m.name}, ${m.role} at Berne Appliance Repair`}
                   fill
                   sizes="(min-width: 1024px) 30vw, 100vw"
-                  className="object-cover"
+                  quality={78}
+                  loading="lazy"
+                  className="object-cover transition-transform group-hover:scale-[1.02]"
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="text-lg font-semibold tracking-tight group-hover:text-brand">
-                  {m.role}
+                <h3 className="text-xl font-semibold tracking-tight group-hover:text-brand">
+                  {m.name}
                 </h3>
                 <p className="text-xs uppercase tracking-[0.18em] text-brand">
-                  Operations team
+                  {m.role}
                 </p>
+                <p className="text-sm text-muted-foreground">{m.fact}</p>
               </div>
-              <div className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-brand">
-                Read role <ArrowRight className="size-3.5" aria-hidden />
+              <div className="mt-auto inline-flex items-center gap-1.5 border-t border-border/60 pt-3 text-sm font-medium text-brand">
+                Read bio <ArrowRight className="size-3.5" aria-hidden />
               </div>
             </Link>
           ))}

@@ -59,8 +59,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
   if (back) {
     return {
-      title: `${back.role} — Berne Appliance Repair Operations`,
-      description: `${back.role} role at ${COMPANY.legalName}. Part of the dispatch and operations team behind the technician fleet.`,
+      title: `${back.name} — ${back.role} | Berne Appliance Repair`,
+      description: `${back.name}, ${back.role} at ${COMPANY.legalName}. Part of the dispatch and operations team behind the technician fleet.`,
       alternates: {
         canonical: `/team/${slug}`,
       },
@@ -131,7 +131,7 @@ export default async function TeamMemberPage({ params }: Params) {
   const crumbs = [
     { name: "Home", href: "/" },
     { name: "Team", href: "/team" },
-    { name: isBackOffice ? role : name, href: `/team/${slug}` },
+    { name, href: `/team/${slug}` },
   ];
 
   return (
@@ -150,9 +150,7 @@ export default async function TeamMemberPage({ params }: Params) {
               Team
             </Link>
             <span aria-hidden>/</span>
-            <span className="text-foreground/80">
-              {isBackOffice ? role : name}
-            </span>
+            <span className="text-foreground/80">{name}</span>
           </nav>
 
           <div className="grid gap-10 lg:grid-cols-12">
@@ -173,14 +171,10 @@ export default async function TeamMemberPage({ params }: Params) {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand">
                 {isBackOffice ? "Operations" : "Technician"}
               </p>
-              <h1 className="heading-hero mt-3">
-                {isBackOffice ? role : name}
-              </h1>
-              {!isBackOffice ? (
-                <p className="mt-2 text-base font-medium text-muted-foreground">
-                  {role}
-                </p>
-              ) : null}
+              <h1 className="heading-hero mt-3">{name}</h1>
+              <p className="mt-2 text-base font-medium text-muted-foreground">
+                {role}
+              </p>
 
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 {bio.lede}

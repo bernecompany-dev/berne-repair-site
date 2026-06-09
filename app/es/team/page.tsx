@@ -8,6 +8,7 @@ import { CTABand } from "@/components/sections/cta-band";
 import { OwnerIntro } from "@/components/sections/owner-intro";
 import { JsonLd } from "@/components/site/json-ld";
 import { TEAM } from "@/data/team";
+import { BACK_OFFICE } from "@/data/team-bios";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
@@ -106,6 +107,36 @@ export default function TeamPageES() {
               {m.bio ? <p className="text-sm leading-relaxed text-foreground/85">{m.bio}</p> : null}
               <div className="mt-auto flex items-center gap-2 border-t border-border/60 pt-3 text-xs text-muted-foreground">
                 <Wrench className="size-3.5" aria-hidden /> {m.years} años con Berne
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="back-office" className="container-prose pb-16 sm:pb-20 scroll-mt-20">
+        <div className="mb-8 max-w-2xl">
+          <span className="eyebrow">Despacho y operaciones</span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            El equipo detrás de su reparación
+          </h2>
+          <p className="mt-3 text-base text-muted-foreground">
+            Los técnicos en los camiones son la primera línea. Estas siete
+            personas son la oficina detrás de ellos — contestan el teléfono,
+            dirigen la flota y se aseguran de que el repuesto correcto vaya en
+            el camión correcto.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {BACK_OFFICE.map((m) => (
+            <article key={m.slug} className="flex flex-col gap-4 rounded-3xl border border-border bg-card/30 p-6 transition-colors hover:border-brand/40">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
+                <Image src={m.photo} alt={`${m.name}, ${m.roleEs} en Berne Appliance Repair`} fill sizes="(min-width: 1024px) 30vw, 100vw" quality={78} loading="lazy" className="object-cover" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-xl font-semibold tracking-tight">{m.name}</h3>
+                <p className="text-xs uppercase tracking-[0.18em] text-brand">{m.roleEs}</p>
+                <p className="text-sm text-muted-foreground">{m.factEs}</p>
               </div>
             </article>
           ))}
