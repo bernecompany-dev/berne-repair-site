@@ -15,7 +15,9 @@ const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID ?? "";
  *                          next/script with strategy="afterInteractive".
  */
 export function Clarity() {
-  if (!CLARITY_ID) return null;
+  // Production-only: keep dev/localhost sessions out of recordings, matching
+  // the GA4/Meta Pixel gating.
+  if (process.env.NODE_ENV !== "production" || !CLARITY_ID) return null;
 
   if (CLARITY_ID === "BERNE_PLACEHOLDER") {
     // Render a verifiable, no-side-effect marker so `curl | grep clarity` succeeds

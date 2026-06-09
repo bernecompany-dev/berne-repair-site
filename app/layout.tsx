@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@/components/site/google-analytics";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SkipToContent } from "@/components/site/skip-to-content";
@@ -97,27 +96,31 @@ export const viewport: Viewport = {
 // intentionally NOT auto-applied so first-time visitors always see light.
 const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.classList.add("dark");}else{document.documentElement.classList.remove("dark");}}catch(e){}})();`;
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Server-render the correct `<html lang>` for the current path. We rely on
-  // `x-pathname` (Vercel) or a custom header injected by `next.config.ts` to
-  // know whether we're on /es. Falls back to `en-US` when the header is
-  // absent (e.g. local dev without the rewrite). `LangSync` keeps the lang
-  // attribute in sync on client navigation between locales.
-  const h = await headers();
-  const pathname =
-    h.get("x-pathname") ??
-    h.get("x-invoke-path") ??
-    h.get("next-url") ??
-    "/";
-  const lang = pathname.startsWith("/es") ? "es-US" : "en-US";
-
+  // STATIC-GENERATION CONTRACT — do NOT read headers()/cookies() here.
+  //
+  // Any per-request API (headers, cookies, connection, …) in the ROOT layout
+  // opts EVERY route on the site out of static prerendering: Vercel then
+  // serves all pages with `Cache-Control: private, no-cache, no-store` and
+  // cold TTFB jumps from ~120ms (prerendered) to ~2.4s (lambda). This
+  // happened once already (an `await headers()` call to sniff /es for
+  // `<html lang>`) — do not reintroduce it.
+  //
+  // `<html lang>` strategy instead:
+  //   - statically prerendered as `lang="en-US"` (this file),
+  //   - `app/es/layout.tsx` flips it to `es-US` via a tiny inline script that
+  //     runs during HTML parsing, before first paint, on every /es page,
+  //   - `LangSync` keeps the attribute correct on client-side navigation
+  //     between locales.
+  // SEO is carried by per-page hreflang alternates (lib/seo.ts), which do not
+  // depend on the html attribute.
   return (
     <html
-      lang={lang}
+      lang="en-US"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
@@ -151,8 +154,17 @@ export default async function RootLayout({
         <StickyCTA />
         <WhatsAppFab />
         <JsonLd data={[organizationJsonLd(), localBusinessJsonLd(), websiteJsonLd()]} />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
+        {/*
+          AnalyticsEvents stays mounted in every environment: it only wires
+          delegated click listeners onto window.gtag (a no-op when GA is
+          absent) and exposes the __aeMounted hydration flag the e2e specs
+          wait on. The actual third-party loaders (GA4, Meta Pixel, Clarity)
+          are production-gated inside their own components so `next dev`
+          localhost traffic never pollutes the GA4 property (it was ~27% of
+          "users" before gating).
+        */}
         <AnalyticsEvents />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
         <MetaPixel />
         <Clarity />
       </body>

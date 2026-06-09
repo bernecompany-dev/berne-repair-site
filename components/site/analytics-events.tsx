@@ -5,8 +5,8 @@ import { useEffect } from "react";
 /**
  * Global GA4 conversion-event wiring.
  *
- * The site loads GA4 via `<GoogleAnalytics>` (@next/third-parties), which
- * exposes `window.gtag`. Lead-form success fires `generate_lead` from inside
+ * The site loads GA4 via `<GoogleAnalytics>` (components/site/google-analytics,
+ * production-only), which exposes `window.gtag`. Lead-form success fires `generate_lead` from inside
  * the form component (it's React state, not a DOM click). The two click-based
  * conversions are wired here with a single delegated listener so we don't have
  * to thread `onClick` handlers through ~25 server-rendered pages that all
