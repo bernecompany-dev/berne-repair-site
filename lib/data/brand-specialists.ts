@@ -9,10 +9,12 @@
  *
  * Mapping rules:
  *   - Brand with explicit specialty match in technicians.json → direct match
- *     (Sub-Zero, Wolf, Thermador, Viking → Eugene/Mike/Nikita Shirshov).
+ *     (Sub-Zero, Wolf, Thermador, Viking → Mike/Nikita Shirshov).
  *   - Brand without explicit specialty → mapped by category:
  *     - Premium cooking → Nikita Shirshov, Maksim Shiryagin
- *     - Premium refrigeration → Eugene, Mike, Viktor Kamenschikov, Andrei Lavrov
+ *     - Premium refrigeration → Mike, Viktor Kamenschikov, Andrei Lavrov
+ *   - Eugene (owner) is never listed — he must not appear as staff
+ *     (owner request 2026-06).
  *     - Mass-market laundry → Dzmitrii Kitou, Akhmed Osmanov
  *     - LG/Samsung electronics → Refat Bekirov (premium-brand diagnostic)
  *     - Multi-category mass-market → Denis Novitskii, Boris
@@ -33,11 +35,11 @@ export type BrandSpecialistMatch = {
 /** Brand slug → ordered list of tech slugs (priority order, max 3 used). */
 export const BRAND_SPECIALISTS: Record<string, string[]> = {
   // Premium refrigeration
-  "sub-zero": ["evgenii-knyazev", "mike", "viktor-kamenschikov"],
+  "sub-zero": ["mike", "viktor-kamenschikov", "andrei-lavrov"],
   // Premium cooking + refrigeration
-  wolf: ["evgenii-knyazev", "nikita-shirshov", "mike"],
+  wolf: ["nikita-shirshov", "mike", "maksim-shiryagin"],
   viking: ["nikita-shirshov", "maksim-shiryagin"],
-  thermador: ["evgenii-knyazev", "andrei-lavrov", "nikita-shirshov"],
+  thermador: ["andrei-lavrov", "nikita-shirshov", "viktor-kamenschikov"],
   // Premium European multi-category
   miele: ["valerii-basov", "refat-bekirov"],
   // Mid-premium

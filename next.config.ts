@@ -27,6 +27,18 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async redirects() {
+    return [
+      // Eugene (owner) removed from the staff roster (owner request 2026-06).
+      // His old bio URL was in the sitemap and may be indexed — send it to
+      // the owner story on /about instead of a 404.
+      {
+        source: "/team/evgenii-knyazev",
+        destination: "/about",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

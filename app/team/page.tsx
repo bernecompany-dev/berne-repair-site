@@ -13,8 +13,9 @@ import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, personJsonLd, SITE_URL } from "@/lib/seo";
 
 // Canonical headcount per the brand's NAP — 18 W-2 field technicians.
-// `TEAM` (data/team.ts) lists the 16 published bios; the remaining roles
-// are dispatched but not yet bio-ready. See data/company.ts → socialProof.
+// `TEAM` (data/team.ts) lists the 15 published bios; the remaining roles
+// are dispatched but not yet bio-ready. Eugene (owner) is intentionally
+// not in the roster. See data/company.ts → socialProof.
 const TECH_COUNT = COMPANY.socialProof.technicians;
 
 export const metadata: Metadata = {

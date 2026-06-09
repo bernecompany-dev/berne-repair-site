@@ -26,29 +26,11 @@ export type ExtendedBio = {
 };
 
 /**
- * Keyed by data/team.ts slug. Eugene Berne (owner) is also keyed by his
- * data/team.ts slug "evgenii-knyazev" (legacy — predates the rename to
- * eugene-bernitsky on other sites). Bio reflects the owner voice.
+ * Keyed by data/team.ts slug. Eugene (owner) intentionally has no entry —
+ * he must not appear as staff (owner request 2026-06). His owner presence
+ * lives in OwnerIntro, /about, and the founder schema in lib/seo.ts.
  */
 export const TECH_BIOS: Record<string, ExtendedBio> = {
-  "evgenii-knyazev": {
-    lede:
-      "I'm Eugene — founder of Berne Appliance Repair. 18 years in appliance service, 4 of them building this company here in South Florida. I still take service calls. I still back every repair personally.",
-    background:
-      "Trained as an engineer before moving into appliance service. Picked up refrigeration first because it's the category that punishes shortcuts — refrigerant, compressors, sealed systems, and electronics all have to line up before the job is real. Built Berne Appliance Repair so I'd want to work here: W-2 only, paid training, real trucks, real parts.",
-    workOn:
-      "Still on the schedule for commercial dispatch, Sub-Zero 648PRO and 700-series diagnostics, Wolf range work, and any control-board call a tech in the field needs a second pair of eyes on. About a third of my week is on the trucks. Two thirds is dispatch, training, and customer escalations that need an owner's signature.",
-    whyBerne:
-      "I built it. The version of this company I wanted to work at didn't exist, so I made it. Same reason most of the team stays — Berne treats the work seriously.",
-    serviceArea:
-      "Personal dispatch across South Florida — Miami-Dade, Broward, Palm Beach. English, Russian, conversational Spanish.",
-    related: [
-      { href: "/brands/sub-zero", label: "Sub-Zero repair" },
-      { href: "/brands/wolf", label: "Wolf range service" },
-      { href: "/services/refrigerator-repair", label: "Refrigerator repair" },
-    ],
-  },
-
   "refat-bekirov": {
     lede:
       "Senior multi-category technician. Refrigeration, premium brands, diagnostics. Reviewers ask for me by name on Google.",

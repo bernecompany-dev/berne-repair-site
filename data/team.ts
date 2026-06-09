@@ -31,29 +31,18 @@ const EPA: TeamCredential = { name: "EPA Section 608 Universal", category: "cert
 const FL_LIC: TeamCredential = { name: "Florida Technician License", category: "license" };
 
 /**
- * 16 real Berne Appliance Repair team members. Names sourced from photo filenames
+ * 15 real Berne Appliance Repair technicians. Names sourced from photo filenames
  * provided by the operations team. Roles and specialties are best-fit
  * defaults — edit as the team confirms exact assignments.
+ *
+ * Eugene (owner) is deliberately NOT in this roster — owner request 2026-06:
+ * he must not appear as staff. He surfaces only as the owner (hero, OwnerIntro,
+ * /about, founder Person schema in lib/seo.ts).
  *
  * Person-schema fields (credentials / languages / sameAs) added 2026-05-20
  * for E-E-A-T schema emission. See lib/seo.ts → personJsonLd().
  */
 export const TEAM: TeamMember[] = [
-  {
-    slug: "evgenii-knyazev",
-    name: "Eugene Berne",
-    role: "Owner",
-    specialty: "Founder · Commercial accounts · Personal guarantee on every job",
-    years: 4,
-    photo: "/images/team/evgenii-knyazev.webp",
-    bio: "Founded Berne Appliance Repair after moving to the US in 2022. Still picks up the phone, still goes out on commercial calls, still backs every single repair personally. 29,000+ jobs and counting.",
-    featured: true,
-    givenName: "Eugene",
-    familyName: "Bernitsky",
-    credentials: [EPA, FL_LIC],
-    languages: ["English", "Russian", "Spanish"],
-    sameAs: ["https://www.linkedin.com/in/eugene-bernitsky-b52763364/"],
-  },
   {
     slug: "refat-bekirov",
     name: "Refat Bekirov",
@@ -131,6 +120,7 @@ export const TEAM: TeamMember[] = [
     years: 5,
     photo: "/images/team/nikita-maslakov.webp",
     bio: "Quick, polite, knowledgeable — exactly what reviewers say about Nikita's house calls.",
+    featured: true,
     givenName: "Nikita",
     familyName: "Maslakov",
     credentials: [EPA],

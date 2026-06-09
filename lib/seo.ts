@@ -368,7 +368,9 @@ export function localBusinessJsonLd() {
     ],
     slogan: COMPANY.tagline,
     foundingDate: FOUNDING_YEAR,
-    numberOfEmployees: TEAM.length,
+    // Canonical headcount (18 field technicians) — not TEAM.length, which is
+    // the published-bio subset and excludes the owner by design.
+    numberOfEmployees: COMPANY.socialProof.technicians,
     address: {
       "@type": "PostalAddress",
       addressRegion: COMPANY.address.region,
