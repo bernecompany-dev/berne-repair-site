@@ -34,8 +34,9 @@ type Props = { params: Promise<{ slug: string }> };
  * Appliance Repair" layout template) to stay under ~60 chars — the templated
  * default truncates at ~78 in SERPs. Descriptions lead with the symptom the
  * searcher typed, then the $59 / same-day / 90-day-warranty hooks, <155
- * chars. Long-tail hubs (microwave, ice maker, …) intentionally keep the
- * programmatic template — do not mass-edit.
+ * chars. Other long-tail hubs (microwave, garbage disposal, …) intentionally
+ * keep the programmatic template — do not mass-edit. Ice maker added
+ * 2026-06-10: the templated default ran 77 chars.
  */
 const META_OVERRIDES: Record<string, { title: string; description: string }> = {
   "refrigerator-repair": {
@@ -62,6 +63,11 @@ const META_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Oven & Range Repair South Florida — Same-Day · $59 Call",
     description:
       "Oven not heating evenly or a dead burner? Same-day oven & range repair in South Florida. $59 service call, 90-day warranty. Wolf, Viking, Thermador & more.",
+  },
+  "ice-maker-repair": {
+    title: "Ice Maker Repair South Florida — Same-Day · $59 Call",
+    description:
+      "Ice maker not making ice or hollow cubes? Same-day ice maker repair across South Florida. $59 service call, 90-day warranty. Sub-Zero, Scotsman & U-Line.",
   },
 };
 

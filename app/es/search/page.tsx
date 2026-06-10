@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: { absolute: "Buscar — Berne Appliance Repair" },
   description:
     "Buscar Berne Appliance Repair — servicios, marcas, áreas de servicio y guías técnicas en todo el sur de Florida.",
+  alternates: { canonical: "/es/search" },
   robots: { index: false, follow: true },
 };
 

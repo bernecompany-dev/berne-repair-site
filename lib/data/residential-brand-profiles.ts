@@ -214,7 +214,7 @@ const subZero: ResidentialBrandProfile = {
   es: {
     teaser:
       "La refrigeración built-in es lo que hacemos con más frecuencia. Columnas Sub-Zero, side-by-sides clásicas y built-ins BI — diagnosticados y reparados por técnicos que han reconstruido estas unidades suficiente tiempo para conocer los hábitos de la plataforma.",
-    metaTitle: "Reparación Sub-Zero · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación Sub-Zero · Sur de Florida",
     metaDescription:
       "Reparación Sub-Zero el mismo día en Miami-Dade, Broward y Palm Beach. Built-ins, columnas, BI-36, 648PRO. Licenciados, EPA-608, garantía de 90 días.",
     about:

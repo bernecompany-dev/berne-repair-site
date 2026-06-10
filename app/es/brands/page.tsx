@@ -12,7 +12,7 @@ import {
 } from "@/lib/data/residential-brand-profiles";
 import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-const PAGE_TITLE = "Marcas premium de electrodomésticos que reparamos";
+const PAGE_TITLE = "Marcas premium de electrodomésticos";
 const PAGE_DESC = `Sub-Zero, Wolf, Viking, Thermador, Miele, KitchenAid, GE, Whirlpool, LG, Samsung — servicio el mismo día en el Sur de Florida. $${COMPANY.serviceCallPrice} service call.`;
 
 export const metadata: Metadata = {

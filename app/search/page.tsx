@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: { absolute: "Search — Berne Appliance Repair" },
   description:
     "Search Berne Appliance Repair — services, brands, service areas, and field-notes articles across South Florida.",
+  alternates: { canonical: "/search" },
   robots: { index: false, follow: true },
 };
 
