@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Children } from "react";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, Clock, ShieldCheck } from "lucide-react";
+import { Phone, Mail, Clock, MapPin, ShieldCheck } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { SocialIcons } from "@/components/site/social-icons";
 import { COMPANY } from "@/data/company";
@@ -51,6 +51,14 @@ export function SiteFooter() {
             <div className="flex items-center gap-2.5 text-muted-foreground">
               <Clock className="size-4 text-brand" aria-hidden />
               <time dateTime="Mo-Su 08:00-21:00">{COMPANY.hours.label}</time>
+            </div>
+            {/* Visible NAP street address — GEO/local trust signal (HQ). */}
+            <div className="flex items-center gap-2.5 text-muted-foreground">
+              <MapPin className="size-4 text-brand" aria-hidden />
+              <span>
+                {COMPANY.address.hq.street}, {COMPANY.address.hq.city},{" "}
+                {COMPANY.address.hq.region}
+              </span>
             </div>
             <Link
               href={localePath(locale, "/credentials")}

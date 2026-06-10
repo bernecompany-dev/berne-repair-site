@@ -114,7 +114,7 @@ export function LeadForm({
             aria-invalid={!!errors.phone}
             aria-describedby={errId("phone")}
             className={inputCls(errors.phone)}
-            placeholder="(305) 555-0123"
+            placeholder="(754) 000-0000"
           />
         </Field>
         <Field id={`${formId}-email`} label={d.fields.emailOptional} error={errors.email} errId={errId("email")}>
