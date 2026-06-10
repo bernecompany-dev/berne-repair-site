@@ -9,7 +9,7 @@
  * Voice: Eugene Berne, owner — direct, slightly informal, no AI fluff.
  */
 
-import type { Service } from "@/data/services";
+import { localizedService, type Service } from "@/data/services";
 import type { City } from "@/data/cities";
 import type { Locale } from "@/lib/i18n";
 
@@ -182,10 +182,14 @@ export function comboPersonalCopy(service: Service, city: City, locale: Locale =
   const opens = locale === "es" ? COMBO_OPENERS_ES : COMBO_OPENERS;
   const bodies = locale === "es" ? COMBO_BODIES_ES : COMBO_BODIES;
   const closers = locale === "es" ? COMBO_CLOSERS_ES : COMBO_CLOSERS;
+  // Spanish templates must compose with Spanish nouns — passing the EN
+  // service object produced "llamadas de refrigerator" Spanglish (techseo
+  // audit 2026-06-10 §1). localizedService shadows name/shortName/seoNoun.
+  const s = localizedService(service, locale);
   return {
-    opener: pick(opens, seed)(service, city),
-    body: pick(bodies, seed, 7)(service, city),
-    closer: pick(closers, seed, 13)(service, city),
+    opener: pick(opens, seed)(s, city),
+    body: pick(bodies, seed, 7)(s, city),
+    closer: pick(closers, seed, 13)(s, city),
   };
 }
 
@@ -231,10 +235,11 @@ export function servicePersonalCopy(service: Service, locale: Locale = "en") {
   const opens = locale === "es" ? SERVICE_OPENERS_ES : SERVICE_OPENERS;
   const bodies = locale === "es" ? SERVICE_BODIES_ES : SERVICE_BODIES;
   const closers = locale === "es" ? SERVICE_CLOSERS_ES : SERVICE_CLOSERS;
+  const s = localizedService(service, locale);
   return {
-    opener: pick(opens, seed)(service),
-    body: pick(bodies, seed, 3)(service),
-    closer: pick(closers, seed, 5)(service),
+    opener: pick(opens, seed)(s),
+    body: pick(bodies, seed, 3)(s),
+    closer: pick(closers, seed, 5)(s),
   };
 }
 

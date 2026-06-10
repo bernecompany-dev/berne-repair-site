@@ -152,7 +152,7 @@ export default async function CityPageES({ params }: Props) {
               className="group flex flex-col gap-3 rounded-2xl border border-border bg-card/50 p-5 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:bg-card/70"
             >
               <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">{city.name}</div>
-              <h3 className="text-base font-semibold tracking-tight">{service.name}</h3>
+              <h3 className="text-base font-semibold tracking-tight">{service.es.name}</h3>
               <div className="mt-auto inline-flex items-center gap-1.5 text-xs text-brand">
                 Disponible el mismo día
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />

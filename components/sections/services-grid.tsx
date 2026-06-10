@@ -11,7 +11,8 @@ import {
   ArrowUpRight,
   type LucideIcon,
 } from "lucide-react";
-import { SERVICES, type Service } from "@/data/services";
+import { SERVICES, localizedService, type Service } from "@/data/services";
+import { localePath, type Locale } from "@/lib/i18n";
 
 const ICONS: Record<string, LucideIcon> = {
   "refrigerator-repair": Refrigerator,
@@ -24,36 +25,49 @@ const ICONS: Record<string, LucideIcon> = {
   "wine-cooler-repair": Wine,
 };
 
-export function ServicesGrid() {
+const COPY = {
+  en: {
+    eyebrow: "What we repair",
+    heading: "Every major appliance. Every major brand.",
+    sub: "From Sub-Zero columns to a Whirlpool washer — our trucks are stocked for the brands and models we see every day in South Florida homes and businesses.",
+  },
+  es: {
+    eyebrow: "Qué reparamos",
+    heading: "Todos los electrodomésticos. Todas las marcas principales.",
+    sub: "Desde columnas Sub-Zero hasta una lavadora Whirlpool — nuestros camiones llevan piezas para las marcas y modelos que vemos todos los días en los hogares y negocios del sur de Florida.",
+  },
+} as const;
+
+export function ServicesGrid({ locale = "en" }: { locale?: Locale }) {
+  const t = COPY[locale];
   return (
     <section id="services" className="container-prose py-20 sm:py-28">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <div className="max-w-2xl">
-          <span className="eyebrow">What we repair</span>
-          <h2 className="heading-section mt-3">
-            Every major appliance. Every major brand.
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            From Sub-Zero columns to a Whirlpool washer — our trucks are stocked for the brands and
-            models we see every day in South Florida homes and businesses.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="heading-section mt-3">{t.heading}</h2>
+          <p className="mt-4 text-lg text-muted-foreground">{t.sub}</p>
         </div>
       </div>
 
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {SERVICES.map((service) => (
-          <ServiceCard key={service.slug} service={service} />
+          <ServiceCard key={service.slug} service={service} locale={locale} />
         ))}
       </div>
     </section>
   );
 }
 
-function ServiceCard({ service }: { service: Service }) {
+function ServiceCard({ service, locale }: { service: Service; locale: Locale }) {
   const Icon = ICONS[service.slug] ?? Sparkles;
+  // Spanish home previously rendered the EN card text ("What we repair"
+  // section flagged 100% English in the 2026-06-10 techseo audit) and linked
+  // to the EN routes. localizedService + localePath fix both.
+  const sv = localizedService(service, locale);
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={localePath(locale, `/services/${service.slug}`)}
       className="group relative flex flex-col gap-4 rounded-2xl border border-border bg-card/60 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/40 hover:bg-card/80"
     >
       <div className="flex items-center justify-between">
@@ -64,10 +78,10 @@ function ServiceCard({ service }: { service: Service }) {
       </div>
       <div className="space-y-1.5">
         <h3 className="text-base font-semibold tracking-tight text-foreground">
-          {service.name}
+          {sv.name}
         </h3>
         <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-          {service.description}
+          {sv.description}
         </p>
       </div>
       <div

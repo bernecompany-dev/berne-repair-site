@@ -457,19 +457,23 @@ function serviceImageNodes(slug: string) {
 
 export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
   const imageNodes = serviceImageNodes(service.slug);
+  // Spanish pages emit Spanish schema text — inLanguage and visible-text
+  // language must agree (techseo audit 2026-06-10 §3c).
+  const name = locale === "es" ? service.es.name : service.name;
+  const description = locale === "es" ? service.es.longDescription : service.longDescription;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": absoluteUrl(`/services/${service.slug}#service`),
-    name: service.name,
-    serviceType: service.name,
+    name,
+    serviceType: name,
     provider: { "@id": BUSINESS_ID },
     areaServed: CITIES.map((c) => ({
       "@type": "City",
       name: c.name,
       address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: "FL", addressCountry: "US" },
     })),
-    description: service.longDescription,
+    description,
     url: absoluteUrl(
       locale === "es" ? `/es/services/${service.slug}` : `/services/${service.slug}`,
     ),
@@ -576,14 +580,20 @@ export function serviceCityJsonLd(service: Service, city: City, locale: "en" | "
     ? `/es/services/${service.slug}/${city.slug}`
     : `/services/${service.slug}/${city.slug}`;
   const imageNodes = serviceImageNodes(service.slug);
+  const name = locale === "es"
+    ? `${service.es.name} en ${city.name}`
+    : `${service.name} in ${city.name}`;
+  const description = locale === "es"
+    ? `${service.es.longDescription} Servicio en ${city.name} y el condado de ${city.county}.`
+    : `${service.longDescription} Serving ${city.name} and surrounding ${city.county} County.`;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `${service.name} in ${city.name}`,
-    serviceType: service.name,
+    name,
+    serviceType: locale === "es" ? service.es.name : service.name,
     provider: { "@id": BUSINESS_ID },
     areaServed: { "@type": "City", name: city.name },
-    description: `${service.longDescription} Serving ${city.name} and surrounding ${city.county} County.`,
+    description,
     url: absoluteUrl(path),
     inLanguage: locale === "es" ? "es-US" : "en-US",
     ...(imageNodes.length > 0 ? { image: imageNodes } : {}),

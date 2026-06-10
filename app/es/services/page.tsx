@@ -85,11 +85,11 @@ export default function ServicesIndexES() {
                 <div className="flex items-center gap-2">
                   <Wrench className="size-5 text-brand" aria-hidden />
                   <h2 className="text-lg font-semibold tracking-tight text-foreground group-hover:text-brand">
-                    {s.name}
+                    {s.es.name}
                   </h2>
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {s.description}
+                  {s.es.description}
                 </p>
                 <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-brand">
                   Ver detalles

@@ -9,6 +9,26 @@ export type FailureMode = {
   fix: string;
 };
 
+/** Spanish localization for a service. Real Spanish — never interpolate the
+ *  English noun into Spanish sentence templates (the "Spanglish" failure mode
+ *  flagged in the 2026-06-10 techseo audit). */
+export type ServiceEs = {
+  /** Full Spanish display name — "Reparación de Refrigeradores" */
+  name: string;
+  /** Singular short noun with article-free casing — "Refrigerador" */
+  shortName: string;
+  /** Lowercase singular noun for inline prose — "refrigerador" */
+  seoNoun: string;
+  /** Grammatical gender of seoNoun, for article agreement in templates */
+  gender: "m" | "f";
+  /** Short card/meta description in Spanish */
+  description: string;
+  /** Hero paragraph in Spanish */
+  longDescription: string;
+  /** Symptom list translated — same order/meaning as EN commonIssues */
+  commonIssues: string[];
+};
+
 export type Service = {
   slug: string;
   name: string;
@@ -23,7 +43,24 @@ export type Service = {
   brands: string[];
   /** Used for service×city combo SEO meta */
   seoNoun: string;
+  /** Spanish content layer — used by every /es template */
+  es: ServiceEs;
 };
+
+/** Returns a Service whose display fields are swapped for the Spanish layer.
+ *  Lets shared templates (personal copy, link labels) stay locale-agnostic. */
+export function localizedService(service: Service, locale: "en" | "es"): Service {
+  if (locale !== "es") return service;
+  return {
+    ...service,
+    name: service.es.name,
+    shortName: service.es.shortName,
+    seoNoun: service.es.seoNoun,
+    description: service.es.description,
+    longDescription: service.es.longDescription,
+    commonIssues: service.es.commonIssues,
+  };
+}
 
 export const SERVICES: Service[] = [
   {
@@ -97,6 +134,25 @@ export const SERVICES: Service[] = [
       },
     ],
     brands: ["Sub-Zero", "Viking", "Thermador", "LG", "Samsung", "Whirlpool", "GE", "KitchenAid", "Bosch", "Frigidaire", "Maytag", "Miele"],
+    es: {
+      name: "Reparación de Refrigeradores",
+      shortName: "Refrigerador",
+      seoNoun: "refrigerador",
+      gender: "m",
+      description:
+        "Reparación de refrigeradores el mismo día, todas las marcas. Visita técnica de $59. Con licencia y seguro.",
+      longDescription:
+        "Desde un refrigerador que no enfría hasta un congelador lleno de escarcha — nuestros técnicos diagnostican y reparan refrigeradores residenciales y comerciales en la primera visita siempre que las piezas lo permitan. Trabajamos con unidades French door, side-by-side, empotradas y de columna, incluyendo Sub-Zero, Viking y Thermador.",
+      commonIssues: [
+        "No enfría o el compartimento está tibio",
+        "Exceso de hielo o escarcha en el congelador",
+        "Fuga de agua al piso",
+        "La máquina de hielo no produce hielo",
+        "Zumbidos, clics o ruidos fuertes",
+        "El compresor no arranca",
+        "Empaque de la puerta dañado y condensación",
+      ],
+    },
   },
   {
     slug: "washer-repair",
@@ -168,6 +224,24 @@ export const SERVICES: Service[] = [
       },
     ],
     brands: ["LG", "Samsung", "Whirlpool", "Maytag", "GE", "Bosch", "Miele", "Speed Queen", "Electrolux"],
+    es: {
+      name: "Reparación de Lavadoras",
+      shortName: "Lavadora",
+      seoNoun: "lavadora",
+      gender: "f",
+      description:
+        "¿Su lavadora no drena, no centrifuga o no llena? Reparación el mismo día. Visita técnica de $59.",
+      longDescription:
+        "Reparamos lavadoras de carga frontal, carga superior y apilables — fugas, problemas de tambor, tarjetas de control, bombas de drenaje, desbalanceo y códigos de error. Todas las marcas residenciales y comerciales principales.",
+      commonIssues: [
+        "La lavadora no drena ni centrifuga",
+        "No se llena de agua",
+        "Fuga por la base o la puerta",
+        "Golpes fuertes durante el centrifugado",
+        "Códigos de error en la pantalla",
+        "La puerta o tapa no cierra con seguro",
+      ],
+    },
   },
   {
     slug: "dryer-repair",
@@ -239,6 +313,24 @@ export const SERVICES: Service[] = [
       },
     ],
     brands: ["LG", "Samsung", "Whirlpool", "Maytag", "GE", "Bosch", "Miele", "Speed Queen", "Electrolux"],
+    es: {
+      name: "Reparación de Secadoras",
+      shortName: "Secadora",
+      seoNoun: "secadora",
+      gender: "f",
+      description:
+        "¿La secadora no calienta o tarda demasiado en secar? Reparación el mismo día. Visita técnica de $59.",
+      longDescription:
+        "Reparación de secadoras a gas y eléctricas — resistencias, encendedores, fusibles térmicos, ductos, bandas, tambores y tarjetas de control. También limpiamos ductos de ventilación obstruidos que alargan los ciclos y son riesgo de incendio.",
+      commonIssues: [
+        "La secadora gira pero no calienta",
+        "La ropa necesita 2+ ciclos para secarse",
+        "Chirridos o golpeteos fuertes",
+        "No arranca o se detiene a mitad de ciclo",
+        "Olor a quemado",
+        "El tambor no gira",
+      ],
+    },
   },
   {
     slug: "dishwasher-repair",
@@ -310,6 +402,24 @@ export const SERVICES: Service[] = [
       },
     ],
     brands: ["Bosch", "Miele", "KitchenAid", "Whirlpool", "GE", "Samsung", "LG", "Frigidaire", "Maytag"],
+    es: {
+      name: "Reparación de Lavavajillas",
+      shortName: "Lavavajillas",
+      seoNoun: "lavavajillas",
+      gender: "m",
+      description:
+        "¿Lavavajillas con fugas, que no drena o deja los platos sucios? Reparación el mismo día. Visita de $59.",
+      longDescription:
+        "Reparamos lavavajillas de todas las marcas principales — bombas y motores, fugas, paneles de control, seguros de puerta, aspersores y drenaje. Unidades empotradas, de gaveta y portátiles.",
+      commonIssues: [
+        "No drena o queda agua estancada en la tina",
+        "Fuga por la puerta o debajo de la unidad",
+        "Los platos no quedan limpios",
+        "No arranca o los botones no responden",
+        "Zumbido o ruido fuerte de molienda",
+        "El dispensador de jabón no abre",
+      ],
+    },
   },
   {
     slug: "oven-repair",
@@ -381,6 +491,24 @@ export const SERVICES: Service[] = [
       },
     ],
     brands: ["Wolf", "Viking", "Thermador", "Bosch", "KitchenAid", "GE", "Whirlpool", "LG", "Samsung", "Frigidaire"],
+    es: {
+      name: "Reparación de Hornos y Estufas",
+      shortName: "Horno",
+      seoNoun: "horno",
+      gender: "m",
+      description:
+        "¿Horno que no calienta, temperatura dispareja o encendedor dañado? Reparación el mismo día. Visita de $59.",
+      longDescription:
+        "Reparación de hornos, estufas y cocinas a gas y eléctricas — resistencias de horneado, encendedores, tarjetas de control, bisagras de puerta y termostatos. Incluyendo equipos de alta gama Wolf, Viking y Thermador.",
+      commonIssues: [
+        "El horno no calienta o tarda en calentar",
+        "Horneado disparejo o temperatura incorrecta",
+        "Resistencia del asador quemada",
+        "Autolimpieza trabada o puerta bloqueada",
+        "El encendedor de gas hace clic pero no prende",
+        "Código de error en la pantalla",
+      ],
+    },
   },
   {
     slug: "microwave-repair",
@@ -400,6 +528,24 @@ export const SERVICES: Service[] = [
       "Turntable not spinning",
     ],
     brands: ["GE", "Whirlpool", "Samsung", "LG", "KitchenAid", "Bosch", "Sharp", "Panasonic"],
+    es: {
+      name: "Reparación de Microondas",
+      shortName: "Microondas",
+      seoNoun: "microondas",
+      gender: "m",
+      description:
+        "¿Microondas empotrado o sobre la estufa que no calienta? Reparación el mismo día. Visita de $59.",
+      longDescription:
+        "Reparación de microondas empotrados, sobre la estufa y de gaveta — magnetrones, tarjetas de control, interruptores de puerta, motores de plato giratorio y ventiladores.",
+      commonIssues: [
+        "El microondas enciende pero no calienta",
+        "Chispas o arcos eléctricos adentro",
+        "Los botones no responden",
+        "Zumbido fuerte",
+        "La puerta no abre o no cierra",
+        "El plato giratorio no gira",
+      ],
+    },
   },
   {
     slug: "ice-maker-repair",
@@ -419,6 +565,24 @@ export const SERVICES: Service[] = [
       "Error codes",
     ],
     brands: ["Sub-Zero", "Scotsman", "U-Line", "Manitowoc", "Hoshizaki", "KitchenAid", "Whirlpool", "GE"],
+    es: {
+      name: "Reparación de Máquinas de Hielo",
+      shortName: "Máquina de Hielo",
+      seoNoun: "máquina de hielo",
+      gender: "f",
+      description:
+        "¿Su máquina de hielo empotrada no produce hielo? Reparación el mismo día. Visita técnica de $59.",
+      longDescription:
+        "Reparación de máquinas de hielo independientes y empotradas — válvulas de entrada de agua, moldes, ensambles de cosecha y tarjetas de control. Sub-Zero, Scotsman, U-Line y otras unidades premium.",
+      commonIssues: [
+        "No produce hielo",
+        "Producción de hielo lenta",
+        "Hielo turbio o con mal sabor",
+        "Fuga de agua de la máquina",
+        "No completa el ciclo de cosecha",
+        "Códigos de error",
+      ],
+    },
   },
   {
     slug: "air-duct-cleaning",
@@ -439,6 +603,25 @@ export const SERVICES: Service[] = [
       "New construction debris in ducts",
     ],
     brands: ["Carrier", "Trane", "Lennox", "Rheem", "Goodman", "American Standard", "Bryant", "York"],
+    es: {
+      name: "Limpieza de Ductos de Aire",
+      shortName: "Ductos de Aire",
+      seoNoun: "limpieza de ductos",
+      gender: "f",
+      description:
+        "Limpieza profesional de ductos de aire y ventilación de secadora en el sur de Florida. Visita de $59.",
+      longDescription:
+        "Limpieza de ductos de aire acondicionado, ventilación de secadora y servicio de manejadoras para propiedades residenciales y comerciales. Usamos equipo de presión negativa con filtración HEPA para extraer años de polvo, esporas de moho, caspa de mascotas y pelusa — mejorando la calidad del aire interior y reduciendo el riesgo de incendio. Fotos de antes y después en cada trabajo.",
+      commonIssues: [
+        "El polvo se asienta en los muebles en un día",
+        "La secadora necesita 2+ ciclos o el ducto está caliente",
+        "Moho visible cerca de las rejillas u olor a humedad",
+        "Alergias o asma que empeoran adentro",
+        "El ventilador del A/C corre pero el flujo es débil",
+        "Nunca se han limpiado en 5+ años",
+        "Escombros de construcción nueva en los ductos",
+      ],
+    },
   },
   {
     slug: "garbage-disposal-repair",
@@ -459,6 +642,25 @@ export const SERVICES: Service[] = [
       "Smelly disposal that won't clear",
     ],
     brands: ["InSinkErator", "Waste King", "Moen", "KitchenAid", "GE", "Whirlpool", "Frigidaire", "Kohler"],
+    es: {
+      name: "Reparación de Trituradores de Basura",
+      shortName: "Triturador",
+      seoNoun: "triturador de basura",
+      gender: "m",
+      description:
+        "¿Triturador trabado, zumbando o con fugas? Reparación o reemplazo el mismo día. Visita de $59.",
+      longDescription:
+        "Reparamos y reemplazamos trituradores de basura de todas las marcas principales — InSinkErator, Waste King, Moen, KitchenAid, GE, Whirlpool. Atascos, fallas de motor, fugas en la brida, conexiones de drenaje del lavavajillas — el mismo día en la mayoría de los casos. Si el reemplazo conviene más que la reparación, se lo decimos de frente y cotizamos una instalación justa.",
+      commonIssues: [
+        "El triturador zumba pero no gira",
+        "No enciende en absoluto",
+        "Fuga debajo del fregadero",
+        "Ruido extraño de molienda o traqueteo",
+        "Drenaje lento o tapado",
+        "El botón de reinicio se dispara constantemente",
+        "Mal olor que no se quita",
+      ],
+    },
   },
   {
     slug: "range-hood-repair",
@@ -479,6 +681,25 @@ export const SERVICES: Service[] = [
       "Burnt-out LED strip or halogen bulbs",
     ],
     brands: ["Wolf", "Viking", "Thermador", "Vent-A-Hood", "Zephyr", "Broan", "Best", "Faber", "Bosch", "KitchenAid", "GE", "Samsung"],
+    es: {
+      name: "Reparación de Campanas de Cocina",
+      shortName: "Campana",
+      seoNoun: "campana de cocina",
+      gender: "f",
+      description:
+        "¿Campana con extractor, luz o controles muertos? Reparación el mismo día. Visita técnica de $59.",
+      longDescription:
+        "Reparación de campanas de pared, de isla, bajo gabinete y de extracción descendente. Extractores dañados, LEDs quemados, paneles táctiles muertos, compuertas rotas, baleros ruidosos, ductos saturados de grasa — lo manejamos todo. Las campanas premium (Wolf, Viking, Thermador, Vent-A-Hood, Zephyr) van con técnicos senior que conocen las tarjetas de control propietarias.",
+      commonIssues: [
+        "El extractor no enciende en ninguna velocidad",
+        "Las luces funcionan pero el extractor no",
+        "Traqueteo o ruido fuerte del motor",
+        "Panel táctil que no responde o parpadea",
+        "Compuerta trabada abierta o que no cierra",
+        "Succión débil o acumulación de grasa",
+        "Tira LED o focos halógenos quemados",
+      ],
+    },
   },
   {
     slug: "wine-cooler-repair",
@@ -497,6 +718,23 @@ export const SERVICES: Service[] = [
       "Door not sealing",
     ],
     brands: ["Sub-Zero", "Viking", "Thermador", "Wine Enthusiast", "EuroCave", "Marvel", "U-Line"],
+    es: {
+      name: "Reparación de Cavas de Vino",
+      shortName: "Cava de Vino",
+      seoNoun: "cava de vino",
+      gender: "f",
+      description:
+        "¿Cava de vino que no enfría o trabaja tibia? Reparación el mismo día. Visita técnica de $59.",
+      longDescription:
+        "Reparación de cavas de vino de una y dos zonas — compresores, unidades termoeléctricas, ventiladores, tarjetas de control y empaques de puerta. Sub-Zero, Wine Enthusiast, EuroCave y más.",
+      commonIssues: [
+        "No enfría a la temperatura programada",
+        "Exceso de condensación adentro",
+        "Ruido fuerte del ventilador o compresor",
+        "La pantalla no funciona",
+        "La puerta no sella",
+      ],
+    },
   },
 ];
 

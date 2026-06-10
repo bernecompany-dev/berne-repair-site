@@ -43,7 +43,7 @@ export default function HomeES() {
     <>
       <Hero locale="es" />
       <StatsStrip locale="es" />
-      <ServicesGrid />
+      <ServicesGrid locale="es" />
       <ProcessSteps locale="es" />
       <WhyUs locale="es" />
       <Areas />

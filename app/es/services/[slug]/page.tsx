@@ -11,7 +11,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
-import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
+import { SERVICES, SERVICE_BY_SLUG, localizedService } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS_ES, SERVICE_FAQS_ES } from "@/data/faqs";
@@ -29,10 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICE_BY_SLUG[slug];
   if (!service) return {};
-  const title = `${service.name} en el sur de Florida · Visita técnica $${COMPANY.serviceCallPrice}`;
+  const title = `${service.es.name} en el sur de Florida · $${COMPANY.serviceCallPrice}`;
   return {
     title,
-    description: service.description,
+    description: service.es.description,
     alternates: {
       canonical: `/es/services/${service.slug}`,
       languages: {
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       title,
-      description: service.description,
+      description: service.es.description,
       url: absoluteUrl(`/es/services/${service.slug}`),
       type: "website",
       locale: "es_US",
@@ -57,13 +57,15 @@ export default async function ServicePageES({ params }: Props) {
   const service = SERVICE_BY_SLUG[slug];
   if (!service) notFound();
 
+  // Spanish display view — name/shortName/seoNoun/commonIssues translated.
+  const sv = localizedService(service, "es");
   const faqs = [...(SERVICE_FAQS_ES[service.slug] ?? []), ...GENERAL_FAQS_ES.slice(0, 5)];
   const heroImages = SERVICE_HERO_IMAGES[service.slug];
   const personal = servicePersonalCopy(service, "es");
   const crumbs = [
     { name: "Inicio", href: "/es" },
     { name: "Servicios", href: "/es#services" },
-    { name: service.name, href: `/es/services/${service.slug}` },
+    { name: sv.name, href: `/es/services/${service.slug}` },
   ];
 
   return (
@@ -80,7 +82,7 @@ export default async function ServicePageES({ params }: Props) {
             <span aria-hidden>/</span>
             <Link href="/es#services" className="hover:text-foreground">Servicios</Link>
             <span aria-hidden>/</span>
-            <span className="text-foreground/80">{service.name}</span>
+            <span className="text-foreground/80">{sv.name}</span>
           </nav>
 
           <div className={heroImages ? "grid items-start gap-12 lg:grid-cols-[1.3fr_1fr]" : ""}>
@@ -101,14 +103,14 @@ export default async function ServicePageES({ params }: Props) {
               </div>
 
               <h1 className="heading-hero mt-6 max-w-3xl">
-                {service.name}
+                {sv.name}
                 <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
                   en el sur de Florida.
                 </span>
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                {service.longDescription}
+                {sv.longDescription}
               </p>
 
               <div className="mt-9">
@@ -147,7 +149,7 @@ export default async function ServicePageES({ params }: Props) {
             </div>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">
-            {service.commonIssues.map((issue) => (
+            {sv.commonIssues.map((issue) => (
               <li key={issue} className="flex items-start gap-3 rounded-xl border border-border bg-card/40 p-4">
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden />
                 <span className="text-sm leading-relaxed text-foreground/90">{issue}</span>
@@ -162,7 +164,7 @@ export default async function ServicePageES({ params }: Props) {
       <section className="border-y border-border/60 bg-background/40">
         <div className="container-prose py-14">
           <div className="flex flex-col items-center gap-2 text-center">
-            <span className="eyebrow">Marcas de {service.shortName.toLowerCase()} que reparamos</span>
+            <span className="eyebrow">Marcas de {sv.seoNoun} que reparamos</span>
             <p className="max-w-2xl text-sm text-muted-foreground">
               Camiones equipados con piezas comunes para terminar en la primera visita.
             </p>
@@ -180,9 +182,9 @@ export default async function ServicePageES({ params }: Props) {
       <section className="container-prose py-20 sm:py-24">
         <div className="max-w-2xl">
           <span className="eyebrow">Ciudades que cubrimos</span>
-          <h2 className="heading-section mt-3">{service.name} en su ciudad.</h2>
+          <h2 className="heading-section mt-3">{sv.name} en su ciudad.</h2>
           <p className="mt-4 text-muted-foreground">
-            {service.seoNoun} el mismo día en toda nuestra área.
+            Servicio el mismo día en toda nuestra área de cobertura.
           </p>
         </div>
 
@@ -194,7 +196,7 @@ export default async function ServicePageES({ params }: Props) {
               className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
             >
               <div>
-                <div className="text-sm font-semibold">{service.shortName} en {city.name}</div>
+                <div className="text-sm font-semibold">{sv.shortName} en {city.name}</div>
                 <div className="text-xs text-muted-foreground">Condado de {city.county}</div>
               </div>
               <ArrowRight className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand" aria-hidden />
@@ -203,11 +205,11 @@ export default async function ServicePageES({ params }: Props) {
         </div>
       </section>
 
-      <FAQSection faqs={faqs} title={`${service.name} — preguntas frecuentes`} />
+      <FAQSection faqs={faqs} title={`${sv.name} — preguntas frecuentes`} />
       <Contact defaultAppliance={service.slug} locale="es" />
       <CTABand locale="es" />
 
-      <JsonLd data={[serviceJsonLd(service), faqJsonLd(faqs), breadcrumbJsonLd(crumbs)]} />
+      <JsonLd data={[serviceJsonLd(service, "es"), faqJsonLd(faqs, "es"), breadcrumbJsonLd(crumbs)]} />
     </>
   );
 }
