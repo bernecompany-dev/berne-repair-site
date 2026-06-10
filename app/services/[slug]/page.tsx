@@ -9,7 +9,6 @@ import { servicePersonalCopy } from "@/lib/personal-copy";
 import { CTARow } from "@/components/site/cta-row";
 import { StatsStrip } from "@/components/sections/stats-strip";
 import { ProcessSteps } from "@/components/sections/process-steps";
-import { Brands } from "@/components/sections/brands";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
@@ -26,14 +25,54 @@ export function generateStaticParams() {
 
 type Props = { params: Promise<{ slug: string }> };
 
+/**
+ * Hand-tuned SERP snippets for the 5 highest-traffic service hubs ONLY
+ * (CTR pass 2026-06-09). Titles are `absolute` (bypass the " · Berne
+ * Appliance Repair" layout template) to stay under ~60 chars — the templated
+ * default truncates at ~78 in SERPs. Descriptions lead with the symptom the
+ * searcher typed, then the $59 / same-day / 90-day-warranty hooks, <155
+ * chars. Long-tail hubs (microwave, ice maker, …) intentionally keep the
+ * programmatic template — do not mass-edit.
+ */
+const META_OVERRIDES: Record<string, { title: string; description: string }> = {
+  "refrigerator-repair": {
+    title: "Refrigerator Repair South Florida — Same-Day · $59 Call",
+    description:
+      "Fridge not cooling? Same-day refrigerator repair across Miami-Dade, Broward & Palm Beach. $59 service call, 90-day warranty. Sub-Zero, Viking & all brands.",
+  },
+  "washer-repair": {
+    title: "Washer Repair South Florida — Same-Day Service · $59 Call",
+    description:
+      "Washer leaking, shaking or won't spin? Same-day washer repair across South Florida. $59 service call, 18 licensed techs, 90-day parts & labor warranty.",
+  },
+  "dryer-repair": {
+    title: "Dryer Repair South Florida — Same-Day Service · $59 Call",
+    description:
+      "Dryer not heating or taking two cycles? Same-day dryer repair across South Florida. $59 service call, 90-day warranty. LG, Samsung, Whirlpool & every brand.",
+  },
+  "dishwasher-repair": {
+    title: "Dishwasher Repair South Florida — Same-Day · $59 Call",
+    description:
+      "Dishwasher not draining or leaving dishes dirty? Same-day dishwasher repair in South Florida. $59 service call, 90-day warranty. Bosch, Miele & more.",
+  },
+  "oven-repair": {
+    title: "Oven & Range Repair South Florida — Same-Day · $59 Call",
+    description:
+      "Oven not heating evenly or a dead burner? Same-day oven & range repair in South Florida. $59 service call, 90-day warranty. Wolf, Viking, Thermador & more.",
+  },
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICE_BY_SLUG[slug];
   if (!service) return {};
-  const title = `${service.name} in South Florida · $${COMPANY.serviceCallPrice} Service Call`;
+  const override = META_OVERRIDES[slug];
+  const title =
+    override?.title ?? `${service.name} in South Florida · $${COMPANY.serviceCallPrice} Service Call`;
+  const description = override?.description ?? service.description;
   return {
-    title,
-    description: service.description,
+    title: override ? { absolute: title } : title,
+    description,
     alternates: {
       canonical: `/services/${service.slug}`,
       languages: {
@@ -44,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       title,
-      description: service.description,
+      description,
       url: absoluteUrl(`/services/${service.slug}`),
       type: "website",
       images: [DEFAULT_OG_IMAGE],

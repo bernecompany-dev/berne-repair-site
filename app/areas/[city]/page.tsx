@@ -44,14 +44,31 @@ export function generateStaticParams() {
 
 type Props = { params: Promise<{ city: string }> };
 
+/**
+ * Hand-tuned SERP snippet for the single highest-value city hub (CTR pass
+ * 2026-06-09). Title is `absolute` (skips the " · Berne Appliance Repair"
+ * template) to fit ~60 chars. Every other city keeps the programmatic
+ * template — do not mass-edit.
+ */
+const CITY_META_OVERRIDES: Record<string, { title: string; description: string }> = {
+  miami: {
+    title: "Appliance Repair Miami, FL — Same-Day Service · $59 Call",
+    description:
+      "Same-day appliance repair anywhere in Miami — Brickell to Little Havana. $59 service call, 18 licensed techs, 90-day warranty. Call by noon, fixed today.",
+  },
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: slug } = await params;
   const city = CITY_BY_SLUG[slug];
   if (!city) return {};
-  const title = `Appliance Repair in ${city.name} · $${COMPANY.serviceCallPrice} Service Call`;
-  const description = `Same-day appliance repair in ${city.name}, ${city.county} County. $${COMPANY.serviceCallPrice} service call. ${COMPANY.socialProof.technicians} licensed technicians. Sub-Zero, Wolf, Viking, Bosch and every major brand.`;
+  const override = CITY_META_OVERRIDES[slug];
+  const title = override?.title ?? `Appliance Repair in ${city.name} · $${COMPANY.serviceCallPrice} Service Call`;
+  const description =
+    override?.description ??
+    `Same-day appliance repair in ${city.name}, ${city.county} County. $${COMPANY.serviceCallPrice} service call. ${COMPANY.socialProof.technicians} licensed technicians. Sub-Zero, Wolf, Viking, Bosch and every major brand.`;
   return {
-    title,
+    title: override ? { absolute: title } : title,
     description,
     alternates: {
       canonical: `/areas/${city.slug}`,

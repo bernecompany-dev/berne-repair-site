@@ -133,16 +133,17 @@ export default function RootLayout({
         */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         {/*
-          Core Web Vitals — open TCP+TLS to the third-party origins we contact
-          on every page render in parallel with HTML parsing. Saves ~100-300ms
-          on LCP/INP on mid-tier mobile networks vs waiting for the relevant
-          <Script> tag to be encountered before opening the connection.
+          Core Web Vitals — dns-prefetch ONLY (no preconnect) for analytics
+          origins. All three loaders (GA4 lib, Meta Pixel, Clarity) are
+          strategy="lazyOnload", i.e. they fetch at browser idle, seconds
+          after LCP. A full preconnect would open 3 TCP+TLS handshakes during
+          the critical first-paint window and compete with the LCP resources
+          (fonts, hero image) for mobile bandwidth/CPU — for connections that
+          sit unused until idle. DNS resolution alone is nearly free and
+          still shaves the lookup when the lazy scripts eventually load.
         */}
-        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
-        <link rel="dns-prefetch" href="//connect.facebook.net" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="" />
+        <link rel="dns-prefetch" href="//connect.facebook.net" />
         <link rel="dns-prefetch" href="//www.clarity.ms" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">

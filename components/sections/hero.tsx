@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { BadgeDollarSign, Star, ShieldCheck, Clock3 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { COMPANY } from "@/data/company";
@@ -68,23 +68,52 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
   );
 }
 
+// 1×1 transparent GIF — served to <1024px viewports via <source media> so
+// phones download ZERO image bytes for the desktop-only hero portrait.
+const BLANK_PIXEL =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 function HeroImage({ label, suffix }: { label: string; suffix: string }) {
+  // MOBILE LCP CONTRACT — this portrait is rendered only at lg+ (the wrapper
+  // is `hidden lg:block`), but a plain <Image priority> would still cost
+  // mobile users twice: (a) browsers fetch <img> inside display:none parents
+  // anyway, and (b) `priority` emits an unconditional <link rel=preload>
+  // that, with a `100vw` sizes fallback, preloads a ~full-width variant
+  // during the critical first-paint window. On mobile the LCP element is the
+  // hero <h1>, so that preload directly competed with fonts/CSS for
+  // bandwidth. Fix (per next/image "Art Direction" docs): getImageProps +
+  // <picture> with a data-URI source below 1024px (zero bytes on phones),
+  // plus a media-gated preload so desktop keeps the early LCP image fetch.
+  const { props: imgProps } = getImageProps({
+    src: "/images/team/evgenii-knyazev.webp",
+    alt: "Eugene Berne — Owner of Berne Appliance Repair, South Florida appliance repair",
+    width: 800,
+    height: 1100,
+    priority: true,
+    sizes: "40vw",
+  });
+
   return (
     <div className="relative hidden lg:block">
+      {/* React 19 hoists <link> to <head>. media-gated so ONLY desktop preloads. */}
+      <link
+        rel="preload"
+        as="image"
+        imageSrcSet={imgProps.srcSet}
+        imageSizes={imgProps.sizes}
+        media="(min-width: 1024px)"
+        fetchPriority="high"
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-br from-brand/30 via-transparent to-transparent blur-2xl"
       />
       <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-[0_30px_80px_-30px_oklch(0.67_0.21_252/0.35)]">
-        <Image
-          src="/images/team/evgenii-knyazev.webp"
-          alt="Eugene Berne — Owner of Berne Appliance Repair, South Florida appliance repair"
-          width={800}
-          height={1100}
-          priority
-          sizes="(min-width: 1024px) 40vw, 100vw"
-          className="h-auto w-full object-cover"
-        />
+        <picture>
+          <source media="(max-width: 1023px)" srcSet={BLANK_PIXEL} />
+          {/* eslint-disable-next-line jsx-a11y/alt-text -- raw <img> is required inside <picture> for art direction; alt/srcSet come from getImageProps */}
+          <img {...imgProps} fetchPriority="high" className="h-auto w-full object-cover" />
+        </picture>
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
 
         <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-border bg-card/85 p-4 backdrop-blur-md">
