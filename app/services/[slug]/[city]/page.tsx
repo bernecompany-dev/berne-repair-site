@@ -16,6 +16,7 @@ import { PersonalNote } from "@/components/site/personal-note";
 import { StatsStrip } from "@/components/sections/stats-strip";
 import { ProcessSteps } from "@/components/sections/process-steps";
 import { comboPersonalCopy } from "@/lib/personal-copy";
+import { getComboUnique } from "@/lib/data/combo-unique";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
@@ -168,7 +169,12 @@ export default async function ServiceCityPage({ params }: Props) {
     ? pickK(service.failureModes, 1, comboSeed)
     : [];
 
+  // Hand-written page-specific content for the top-20 combos (combo dedup
+  // program, wave 2026-06-10 — sister-city pages measured 72% identical).
+  const unique = getComboUnique(service.slug, city.slug);
+
   const comboFaqs = [
+    ...(unique?.faqs ?? []),
     {
       question: `How fast can you get to ${city.name} for a ${service.seoNoun}?`,
       answer: `Most ${city.name} jobs are scheduled within an hour. Call before noon and we can usually have a technician at your door in ${city.name} the same day. We cover ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding neighborhoods.`,
@@ -238,7 +244,9 @@ export default async function ServiceCityPage({ params }: Props) {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Same-day {service.seoNoun} repair in {city.name} — serving {city.neighborhoods.slice(0, 3).join(", ")} and every neighborhood in {city.county} County. {COMPANY.socialProof.technicians} licensed technicians, trucks stocked for {service.brands.slice(0, 3).join(", ")} and every major brand.
+            {unique?.heroIntro ?? (
+              <>Same-day {service.seoNoun} repair in {city.name} — serving {city.neighborhoods.slice(0, 3).join(", ")} and every neighborhood in {city.county} County. {COMPANY.socialProof.technicians} licensed technicians, trucks stocked for {service.brands.slice(0, 3).join(", ")} and every major brand.</>
+            )}
           </p>
 
           <div className="mt-9">
@@ -283,6 +291,42 @@ export default async function ServiceCityPage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      {/* Hand-written local deep-dive — only the top-20 combos have this.
+          This is the page-unique content block that breaks the 72% sister-city
+          duplication: real housing-stock detail, city-specific failure
+          patterns, and local service logistics. */}
+      {unique ? (
+        <section className="border-y border-border/60 bg-background/40">
+          <div className="container-prose py-16 sm:py-20">
+            <div className="max-w-3xl">
+              <span className="eyebrow">{unique.local.eyebrow}</span>
+              <h2 className="heading-section mt-3">{unique.local.heading}</h2>
+            </div>
+            <div className="mt-8 max-w-3xl space-y-5">
+              {unique.local.paragraphs.map((p, i) => (
+                <p key={i} className="text-base leading-relaxed text-muted-foreground">
+                  {p}
+                </p>
+              ))}
+            </div>
+            {unique.nuances?.length ? (
+              <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {unique.nuances.map((n) => (
+                  <div key={n.title} className="rounded-2xl border border-border bg-card/40 p-5">
+                    <div className="text-sm font-semibold tracking-tight text-foreground">
+                      {n.title}
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {n.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       {/* Failure-mode mini-callout — one technician-voice entry picked per
           (service, city) seed. The full 10-mode bank is kept in
