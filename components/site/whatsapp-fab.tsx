@@ -1,13 +1,15 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 /**
  * Floating WhatsApp click-to-chat button.
  *
  * - Fixed bottom-right (16px), z-index 9998 (below cookie banner at 9999).
- * - On mobile we shift to bottom-left so we don't collide with the sticky
- *   phone CTA bar which fills the bottom on small screens.
+ * - On mobile we shift to bottom-left AND, once the user scrolls past the
+ *   first viewport (the same threshold the StickyCTA bar uses), we lift the
+ *   FAB above the bar so it never covers the Call button or a form submit.
  * - Pre-fills a context-aware greeting derived from the current pathname.
  * - Tracks clicks via gtag (`whatsapp_click`) + fbq (`Contact` custom event)
  *   when those globals are present.
@@ -100,6 +102,26 @@ export function WhatsAppFab() {
   const message = pickGreeting(pathname);
   const href = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
 
+  // Mirrors StickyCTA's show threshold: once the mobile bottom bar slides in
+  // (scrollY > min(60vh, 400px)) the FAB lifts above it (~92px bar height
+  // incl. margin) so the Call button and any bottom-of-page submit stay
+  // tappable. Desktop (lg+) has no bar, so the offset only applies <lg.
+  const [raised, setRaised] = useState(false);
+  useEffect(() => {
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setRaised(window.scrollY > Math.min(window.innerHeight * 0.6, 400));
+        ticking = false;
+      });
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   function handleClick() {
     try {
       window.gtag?.("event", "whatsapp_click", {
@@ -123,7 +145,9 @@ export function WhatsAppFab() {
       aria-label="Chat with Berne Appliance Repair on WhatsApp"
       data-analytics="whatsapp-fab"
       onClick={handleClick}
-      className="berne-whatsapp-fab fixed bottom-4 z-[9998] flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-transform duration-150 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 right-4 lg:right-4 max-lg:left-4 max-lg:right-auto motion-reduce:transition-none motion-reduce:hover:scale-100"
+      className={`berne-whatsapp-fab fixed bottom-4 z-[9998] flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-[bottom,transform] duration-300 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 right-4 lg:right-4 max-lg:left-4 max-lg:right-auto max-lg:h-12 max-lg:w-12 motion-reduce:transition-none motion-reduce:hover:scale-100 ${
+        raised ? "max-lg:bottom-[92px]" : "max-lg:bottom-4"
+      }`}
       style={{ backgroundColor: "#25D366" }}
       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1ebe57")}
       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#25D366")}
@@ -132,7 +156,7 @@ export function WhatsAppFab() {
         viewBox="0 0 32 32"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
-        className="h-[30px] w-[30px] fill-white"
+        className="h-[30px] w-[30px] fill-white max-lg:h-[26px] max-lg:w-[26px]"
       >
         <path d="M19.11 17.62c-.27-.13-1.58-.78-1.83-.87-.25-.09-.42-.13-.6.14-.18.27-.69.87-.84 1.05-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.15-1.33-.79-.71-1.33-1.58-1.48-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.83-1.99-.22-.52-.44-.45-.6-.46-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26 0 1.33.97 2.62 1.11 2.8.13.18 1.91 2.91 4.62 4.08.65.28 1.15.44 1.55.57.65.21 1.24.18 1.71.11.52-.08 1.58-.65 1.81-1.27.22-.62.22-1.16.16-1.27-.07-.11-.25-.18-.52-.31zM16.05 26.13h-.01c-1.83 0-3.62-.49-5.18-1.42l-.37-.22-3.86 1.01 1.03-3.76-.24-.39a10.05 10.05 0 0 1-1.55-5.35c0-5.55 4.52-10.07 10.18-10.07 2.72 0 5.27 1.06 7.19 2.98a10.07 10.07 0 0 1 2.98 7.18c0 5.55-4.52 10.04-10.17 10.04zm8.66-18.7A12.04 12.04 0 0 0 16.05 4C9.36 4 3.92 9.44 3.92 16.13c0 2.14.56 4.22 1.63 6.06L3.8 28l5.99-1.57a12.07 12.07 0 0 0 5.78 1.47h.01c6.69 0 12.13-5.44 12.13-12.13 0-3.24-1.26-6.29-3.55-8.58z" />
       </svg>

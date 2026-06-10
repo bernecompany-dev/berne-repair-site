@@ -7,7 +7,6 @@ import { Carousel } from "@/components/site/carousel";
 import { PersonalNote } from "@/components/site/personal-note";
 import { StatsStrip } from "@/components/sections/stats-strip";
 import { ProcessSteps } from "@/components/sections/process-steps";
-import { Brands } from "@/components/sections/brands";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";

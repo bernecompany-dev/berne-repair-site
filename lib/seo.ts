@@ -245,7 +245,9 @@ export function organizationJsonLd() {
     sameAs: SAME_AS,
     founder: { "@id": FOUNDER_ID },
     foundingDate: FOUNDING_YEAR,
-    aggregateRating: AGGREGATE,
+    // NOTE: aggregateRating intentionally lives ONLY on the LocalBusiness
+    // node (localBusinessJsonLd) — duplicating it here doubled the review
+    // markup on every page.
     hasCredential: HAS_CREDENTIAL,
     parentOrganization: {
       "@type": "Organization",
@@ -554,7 +556,9 @@ export function localBusinessForCityJsonLd(city: City, locale: "en" | "es" = "en
         name: `${city.county} County, Florida`,
       },
     },
-    aggregateRating: AGGREGATE,
+    // aggregateRating deliberately omitted — the layout's canonical
+    // LocalBusiness node already carries it on every page; repeating it on
+    // this city-scoped node doubled the review markup on area pages.
     openingHoursSpecification: COMPANY.hours.structured.map((h) => ({
       "@type": "OpeningHoursSpecification",
       dayOfWeek: h.days,
@@ -764,7 +768,7 @@ export function breadcrumbJsonLd(crumbs: Crumb[]) {
 }
 
 /** Helper for pages to build hreflang alternates symmetrically. */
-export function buildAlternates(canonicalPath: string, locale: "en" | "es") {
+export function buildAlternates(canonicalPath: string) {
   const enPath = canonicalPath.replace(/^\/es/, "") || "/";
   const esPath = canonicalPath.startsWith("/es") ? canonicalPath : `/es${canonicalPath === "/" ? "" : canonicalPath}`;
   return {

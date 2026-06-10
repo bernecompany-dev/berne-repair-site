@@ -124,7 +124,7 @@ const COMBO_CLOSERS_ES: Array<(s: Service, c: City) => string> = [
   () => `El camino más fácil: el botón de llamar. Suena en despacho. — E.B.`,
   () => `Hablamos pronto — y gracias por considerarnos. — Eugene Berne`,
   () => `Leo cada formulario que llega. Mientras más rápido lo manda, más rápido lo veo. — Eugene`,
-  () => `Si ${"{service}"} en ${"{city}"} es lo que necesita hoy, está a un toque. — E.B.`,
+  (s, c) => `Si ${s.shortName} en ${c.name} es lo que necesita hoy, está a un toque. — E.B.`,
 ];
 
 // ---- Spanish service templates ----

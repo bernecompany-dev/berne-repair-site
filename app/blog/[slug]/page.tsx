@@ -36,7 +36,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article || !isPublished(article)) return {};
   const url = absoluteUrl(`/blog/${article.slug}`);
   return {
-    title: `${article.title} · Berne Appliance Repair`,
+    // Layout template appends " · Berne Appliance Repair" — don't add it
+    // here too, or the suffix doubles in the SERP title.
+    title: article.title,
     description: article.description,
     alternates: {
       canonical: `/blog/${article.slug}`,

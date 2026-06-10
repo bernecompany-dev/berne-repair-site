@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  Phone, MapPin, ShieldCheck, Clock3, BadgeDollarSign, CheckCircle2, ArrowRight,
+  Phone, MapPin, Clock3, BadgeDollarSign, CheckCircle2, ArrowRight,
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { CityMap } from "@/components/site/city-map";

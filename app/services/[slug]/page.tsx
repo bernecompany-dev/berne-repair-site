@@ -18,6 +18,7 @@ import { CITIES } from "@/data/cities";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS, SERVICE_FAQS } from "@/data/faqs";
 import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import { getBrandComparison } from "@/lib/data/brand-comparisons";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -62,6 +63,21 @@ const META_OVERRIDES: Record<string, { title: string; description: string }> = {
   },
 };
 
+/**
+ * Brand comparison guides relevant to a service hub. Internal-link rescue for
+ * the /compare cluster (previously orphaned) — only the three hubs whose
+ * appliance category matches a written comparison get a block.
+ */
+const COMPARE_GUIDES: Record<string, string[]> = {
+  "refrigerator-repair": [
+    "sub-zero-vs-viking",
+    "sub-zero-vs-thermador",
+    "sub-zero-bi-36-vs-bi-48",
+  ],
+  "oven-repair": ["wolf-vs-thermador-vs-viking", "wolf-vs-blue-star"],
+  "dishwasher-repair": ["miele-vs-bosch"],
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICE_BY_SLUG[slug];
@@ -99,6 +115,9 @@ export default async function ServicePage({ params }: Props) {
   const faqs = [...(SERVICE_FAQS[service.slug] ?? []), ...GENERAL_FAQS.slice(0, 5)];
   const heroImages = SERVICE_HERO_IMAGES[service.slug];
   const personal = servicePersonalCopy(service);
+  const compareGuides = (COMPARE_GUIDES[service.slug] ?? [])
+    .map((s) => getBrandComparison(s))
+    .filter((c): c is NonNullable<typeof c> => Boolean(c));
   const crumbs = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
@@ -248,6 +267,44 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Brand comparison guides (refrigeration / ranges / dishwashers only) */}
+      {compareGuides.length > 0 ? (
+        <section className="container-prose py-16 sm:py-20">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Choosing between brands?</span>
+            <h2 className="heading-section mt-3">
+              Comparison guides from our service desk.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Written from real repair tickets — no affiliate links, we don&apos;t
+              sell appliances.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {compareGuides.map((g) => (
+              <Link
+                key={g.slug}
+                href={`/compare/${g.slug}`}
+                className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card/40 p-4 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+              >
+                <span className="text-sm font-semibold leading-snug text-foreground/90">
+                  {g.h1}
+                </span>
+                <ArrowRight
+                  className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                  aria-hidden
+                />
+              </Link>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground">
+            <Link href="/compare" className="text-brand hover:underline">
+              All brand comparison guides →
+            </Link>
+          </p>
+        </section>
+      ) : null}
 
       {/* Areas served for this service */}
       <section className="container-prose py-20 sm:py-24">

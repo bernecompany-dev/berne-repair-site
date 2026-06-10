@@ -57,7 +57,7 @@ export function Carousel({
       goto((index + 1) % total);
     }, autoplayMs);
     return () => window.clearInterval(id);
-  }, [autoplayMs, paused, index, total]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [autoplayMs, paused, index, total]);  
 
   function goto(i: number) {
     const root = scrollRef.current;

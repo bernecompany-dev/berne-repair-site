@@ -91,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/careers",
     "/request-dispatch",
+    "/credentials",
     "/family",
     "/privacy",
     "/terms",

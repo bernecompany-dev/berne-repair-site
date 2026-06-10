@@ -14,7 +14,9 @@ const PAGE_DESCRIPTION =
   "Field-tested guidance from working technicians on Sub-Zero, Wolf, Viking, Thermador, and Miele appliance service across South Florida.";
 
 export const metadata: Metadata = {
-  title: PAGE_TITLE,
+  // PAGE_TITLE already leads with the brand — `absolute` skips the layout
+  // template so "Berne Appliance Repair" doesn't appear twice.
+  title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/blog",

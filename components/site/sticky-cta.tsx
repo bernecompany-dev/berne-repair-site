@@ -20,6 +20,11 @@ const SMS_BODIES: Record<Locale, string> = {
 export function StickyCTA() {
   const [show, setShow] = useState(false);
   const [formInView, setFormInView] = useState(false);
+  // Anchor of the lead form on the CURRENT page (e.g. "#lead-form"). Null
+  // when the page has no form — then "Book" routes to /request-dispatch
+  // instead of dumping the visitor back on the homepage and discarding the
+  // service/city context they were on.
+  const [formAnchor, setFormAnchor] = useState<string | null>(null);
   const pathname = usePathname() ?? "/";
   const locale: Locale = pathname.startsWith("/es") ? "es" : "en";
   const d = getDictionary(locale).stickyCta;
@@ -44,13 +49,22 @@ export function StickyCTA() {
   useEffect(() => {
     const target =
       document.getElementById("lead-form") ?? document.getElementById("contact");
-    if (!target) return;
+    // Deferred a frame: synchronous setState in an effect body triggers
+    // cascading renders (react-hooks/set-state-in-effect).
+    const raf = requestAnimationFrame(() => {
+      setFormAnchor(target ? `#${target.id}` : null);
+      setFormInView(false);
+    });
+    if (!target) return () => cancelAnimationFrame(raf);
     const io = new IntersectionObserver(
       ([entry]) => setFormInView(entry.isIntersecting),
       { rootMargin: "-10% 0px -10% 0px", threshold: 0.05 },
     );
     io.observe(target);
-    return () => io.disconnect();
+    return () => {
+      cancelAnimationFrame(raf);
+      io.disconnect();
+    };
   }, [pathname]);
 
   const visible = show && !formInView;
@@ -73,7 +87,10 @@ export function StickyCTA() {
           {d.call}
         </a>
         <a
-          href={locale === "es" ? "/es#lead-form" : "/#lead-form"}
+          href={
+            formAnchor ??
+            (locale === "es" ? "/es/request-dispatch" : "/request-dispatch")
+          }
           data-analytics="sticky-book"
           className="flex flex-col items-center justify-center gap-0.5 rounded-xl bg-tint/[0.04] px-3 py-3 text-xs font-semibold text-foreground"
         >

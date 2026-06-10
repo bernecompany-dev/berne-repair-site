@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { CTARow } from "@/components/site/cta-row";
+import { StatsStrip } from "@/components/sections/stats-strip";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
@@ -219,6 +220,9 @@ export default async function BrandPageES({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Prueba social — mismo patrón que las plantillas de servicio/área */}
+      <StatsStrip locale="es" />
 
       {/* About */}
       <section className="container-prose py-16 sm:py-20">

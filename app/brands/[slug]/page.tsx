@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { CTARow } from "@/components/site/cta-row";
+import { StatsStrip } from "@/components/sections/stats-strip";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
@@ -208,6 +209,9 @@ export default async function BrandPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Social proof — same position pattern as the service/area templates */}
+      <StatsStrip />
 
       {/* About */}
       <section className="container-prose py-16 sm:py-20">

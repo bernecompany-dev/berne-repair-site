@@ -151,6 +151,13 @@ export function SiteFooter() {
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/request-dispatch")} className="hover:text-foreground">Request dispatch</Link>
               <span aria-hidden>·</span>
+              {/* Blog + comparison guides are English-only content — link the EN paths from both locales */}
+              <Link href="/blog" className="hover:text-foreground">Blog</Link>
+              <span aria-hidden>·</span>
+              <Link href="/compare" className="hover:text-foreground">
+                {locale === "es" ? "Guías y comparativas" : "Guides & comparisons"}
+              </Link>
+              <span aria-hidden>·</span>
               <Link href={localePath(locale, "/credentials")} className="hover:text-foreground">Credentials</Link>
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/family")} className="hover:text-foreground">The family</Link>

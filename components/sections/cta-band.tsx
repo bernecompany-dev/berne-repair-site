@@ -1,5 +1,4 @@
 import { CTARow } from "@/components/site/cta-row";
-import { COMPANY } from "@/data/company";
 import { getDictionary } from "@/lib/dictionary";
 import type { Locale } from "@/lib/i18n";
 

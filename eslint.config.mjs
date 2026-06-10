@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Frozen point-in-time copies kept for diffing — not shipped code.
+    "_snapshots/**",
   ]),
 ]);
 
