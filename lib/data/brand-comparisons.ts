@@ -256,7 +256,7 @@ const SUB_ZERO_VS_VIKING: ComparisonProfile = {
 const WOLF_VS_THERMADOR_VS_VIKING: ComparisonProfile = {
   slug: "wolf-vs-thermador-vs-viking",
   h1: "Wolf vs Thermador vs Viking — Which Pro Range Is Best?",
-  metaTitle: "Wolf vs Thermador vs Viking — Pro Ranges | Berne",
+  metaTitle: "Wolf vs Thermador vs Viking — Honest Tech Verdict · Berne",
   metaDescription:
     "Three pro-style residential ranges compared by South Florida technicians who repair all three. Burner output, oven design, reliability, real-world trade-offs.",
   teaser:

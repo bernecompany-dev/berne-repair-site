@@ -21,7 +21,9 @@ import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Berne Appliance Repair — South Florida Premium Appliance Service Since 2015",
+  // Absolute — the layout template would append " · Berne Appliance Repair"
+  // a second time on top of the brand already in the string.
+  title: { absolute: "About Berne Appliance Repair — Premium Service Since 2015" },
   description:
     "Founded 2015 by Eugene Bernitsky. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews across Miami-Dade, Broward, Palm Beach. The premium South Florida tier for Sub-Zero, Wolf, Viking, Thermador, Miele.",
   alternates: {

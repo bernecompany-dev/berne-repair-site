@@ -7,7 +7,8 @@ import { kindLabelEs, search, toEsUrl } from "@/lib/search-index";
 // EN URLs to /es/* for routes that exist in both locales. Blog stays EN-only
 // (no /es/blog tree today). Noindex like the EN version.
 export const metadata: Metadata = {
-  title: "Buscar — Berne Appliance Repair",
+  // Absolute — brand already in the string; layout template would double it.
+  title: { absolute: "Buscar — Berne Appliance Repair" },
   description:
     "Buscar Berne Appliance Repair — servicios, marcas, áreas de servicio y guías técnicas en todo el sur de Florida.",
   robots: { index: false, follow: true },

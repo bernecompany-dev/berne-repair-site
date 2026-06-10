@@ -6,7 +6,8 @@ import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Credenciales — Licenciados, asegurados y EPA certificados · Berne Appliance Repair",
+  // Absolute — brand already in the string; layout template would double it.
+  title: { absolute: "Licencia y Seguro — COI, EPA 608 · Berne Appliance Repair" },
   description:
     "Documentación verificable de Berne Appliance Repair: licencia FL DBPR, EPA Section 608 (16-8019803514-2), COI, DBA, exención Workers' Comp FL, certificado de reventa FL, asignación EIN del IRS (CP 575) y W-9 — todos descargables.",
   alternates: {

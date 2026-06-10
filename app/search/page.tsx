@@ -7,7 +7,8 @@ import { kindLabel, search } from "@/lib/search-index";
 // site owners not to index internal search result URLs. We still emit a
 // canonical to the same URL so any backlinks resolve cleanly.
 export const metadata: Metadata = {
-  title: "Search — Berne Appliance Repair",
+  // Absolute — brand already in the string; layout template would double it.
+  title: { absolute: "Search — Berne Appliance Repair" },
   description:
     "Search Berne Appliance Repair — services, brands, service areas, and field-notes articles across South Florida.",
   robots: { index: false, follow: true },

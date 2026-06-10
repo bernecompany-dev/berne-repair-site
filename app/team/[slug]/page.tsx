@@ -46,7 +46,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     const title = `${tech.name} — ${tech.role} | Berne Appliance Repair`;
     const description = `${tech.name}, ${tech.role} at ${COMPANY.legalName}. ${tech.years} years on the team. ${tech.specialty}. Serving Miami-Dade, Broward, Palm Beach.`;
     return {
-      title,
+      // Absolute — brand already in the string; layout template would double it.
+      title: { absolute: title },
       description,
       alternates: {
         canonical: `/team/${slug}`,
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
   if (back) {
     return {
-      title: `${back.name} — ${back.role} | Berne Appliance Repair`,
+      title: { absolute: `${back.name} — ${back.role} | Berne Appliance Repair` },
       description: `${back.name}, ${back.role} at ${COMPANY.legalName}. Part of the dispatch and operations team behind the technician fleet.`,
       alternates: {
         canonical: `/team/${slug}`,
@@ -67,7 +68,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     };
   }
   return {
-    title: "Team — Berne Appliance Repair",
+    title: { absolute: "Team — Berne Appliance Repair" },
     description: "Berne Appliance Repair team member.",
     robots: { index: false, follow: false },
   };

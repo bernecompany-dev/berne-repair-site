@@ -20,7 +20,9 @@ import { CAREERS, POSTING_DATE, VALID_THROUGH } from "@/data/careers";
 import { breadcrumbJsonLd, absoluteUrl, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Careers at Berne Appliance Repair — South Florida Appliance Technician Jobs",
+  // Absolute — the layout template would append " · Berne Appliance Repair"
+  // a second time, pushing the title to 84+ chars in the SERP.
+  title: { absolute: "Appliance Technician Jobs — South Florida · Berne" },
   description: `Join Berne Appliance Repair — ${COMPANY.socialProof.industryExperienceYears}+ years in business, ${COMPANY.socialProof.technicians} W-2 technicians. Now hiring senior + junior appliance technicians, customer service, and dispatch in Hallandale Beach and Boca Raton.`,
   alternates: {
     canonical: "/careers",

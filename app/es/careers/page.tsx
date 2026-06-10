@@ -20,7 +20,8 @@ import { CAREERS, POSTING_DATE, VALID_THROUGH } from "@/data/careers";
 import { breadcrumbJsonLd, absoluteUrl, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Carreras en Berne Appliance Repair — Empleos de técnico en el sur de Florida",
+  // Absolute — brand already in the string; layout template would double it.
+  title: { absolute: "Empleos de Técnico de Electrodomésticos — Sur de Florida · Berne" },
   description: `Únete a Berne Appliance Repair — ${COMPANY.socialProof.industryExperienceYears}+ años de experiencia, ${COMPANY.socialProof.technicians} técnicos W-2. Estamos contratando técnicos senior y junior, servicio al cliente y despacho en Hallandale Beach y Boca Raton.`,
   alternates: {
     canonical: "/es/careers",

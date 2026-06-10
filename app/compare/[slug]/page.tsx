@@ -44,7 +44,9 @@ export async function generateMetadata({
   const comparison = getBrandComparison(slug);
   if (!comparison) return {};
   return {
-    title: comparison.metaTitle,
+    // Absolute — metaTitle already carries "· Berne"; the layout template
+    // would append " · Berne Appliance Repair" a second time.
+    title: { absolute: comparison.metaTitle },
     description: comparison.metaDescription,
     alternates: {
       canonical: `/compare/${comparison.slug}`,

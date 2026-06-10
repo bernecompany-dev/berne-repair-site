@@ -19,7 +19,9 @@ import { breadcrumbJsonLd, absoluteUrl, personJsonLd, SITE_URL } from "@/lib/seo
 const TECH_COUNT = COMPANY.socialProof.technicians;
 
 export const metadata: Metadata = {
-  title: `The Berne Appliance Repair Team — ${TECH_COUNT} South Florida Technicians`,
+  // Absolute — the layout template would append " · Berne Appliance Repair"
+  // a second time on top of the brand already in the string.
+  title: { absolute: `The Berne Appliance Repair Team — ${TECH_COUNT} South Florida Technicians` },
   description: `Meet the ${COMPANY.socialProof.technicians} licensed technicians and dispatch team at ${COMPANY.legalName}. Real names, real specialties — the same people customers ask for by name on Google reviews.`,
   alternates: {
     canonical: "/team",

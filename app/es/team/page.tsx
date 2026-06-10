@@ -15,7 +15,8 @@ import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 const TECH_COUNT = COMPANY.socialProof.technicians;
 
 export const metadata: Metadata = {
-  title: `El equipo de Berne Appliance Repair — ${COMPANY.socialProof.technicians} técnicos en el sur de Florida`,
+  // Absolute — brand already in the string; layout template would double it.
+  title: { absolute: `El equipo de Berne Appliance Repair — ${COMPANY.socialProof.technicians} técnicos en el sur de Florida` },
   description: `Conozca a los ${COMPANY.socialProof.technicians} técnicos con licencia y al equipo de despacho de ${COMPANY.legalName}. Nombres reales, especialidades reales.`,
   alternates: {
     canonical: "/es/team",

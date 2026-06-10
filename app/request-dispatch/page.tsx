@@ -7,7 +7,9 @@ import { COMPANY } from "@/data/company";
 import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Request Dispatch — Berne Appliance Repair · Same-Day Service",
+  // Absolute — the layout template would append " · Berne Appliance Repair"
+  // a second time on top of the brand already in the string.
+  title: { absolute: "Request Dispatch — Berne Appliance Repair · Same-Day Service" },
   description: `Request same-day appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} service call. ${COMPANY.socialProof.technicians} licensed technicians. Sub-Zero, Wolf, Viking, Bosch and every major brand.`,
   alternates: {
     canonical: "/request-dispatch",

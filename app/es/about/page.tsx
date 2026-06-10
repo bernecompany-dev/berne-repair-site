@@ -20,7 +20,8 @@ import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Sobre Berne Appliance Repair — Servicio premium de electrodomésticos en el sur de Florida desde 2015",
+  // Absolute — brand already in the string; layout template would double it.
+  title: { absolute: "Sobre Berne Appliance Repair — Servicio premium desde 2015" },
   description:
     "Fundada en 2015 por Eugene Bernitsky. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach. El nivel premium del sur de Florida para Sub-Zero, Wolf, Viking, Thermador, Miele.",
   alternates: {
