@@ -149,8 +149,9 @@ export function SiteFooter() {
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/contact")} className="hover:text-foreground">{t.contactLink}</Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/request-dispatch")} className="hover:text-foreground">Request dispatch</Link>
-              <span aria-hidden>·</span>
+              {/* /request-dispatch deliberately not linked from nav/footer —
+                  it serves as an ads/SEO landing page only (wave-2 CRO,
+                  2026-06-10). The page itself stays live. */}
               {/* Blog + comparison guides are English-only content — link the EN paths from both locales */}
               <Link href="/blog" className="hover:text-foreground">Blog</Link>
               <span aria-hidden>·</span>

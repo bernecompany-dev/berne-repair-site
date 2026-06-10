@@ -169,7 +169,15 @@ export default async function ServicePage({ params }: Props) {
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+              {/* CTA above the teaser — on 844px mobile viewports the long
+                  hub teaser pushed the call CTA below the fold (CRO audit
+                  2026-06-10 F3). Call affordance now lands directly under
+                  the H1. */}
+              <div className="mt-7">
+                <CTARow size="lg" />
+              </div>
+
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
                 {service.longDescription}
               </p>
 
@@ -188,10 +196,6 @@ export default async function ServicePage({ params }: Props) {
                   property management across South Florida.
                 </p>
               ) : null}
-
-              <div className="mt-9">
-                <CTARow size="lg" />
-              </div>
             </div>
 
             {heroImages ? (

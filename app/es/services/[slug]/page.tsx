@@ -109,13 +109,14 @@ export default async function ServicePageES({ params }: Props) {
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                {sv.longDescription}
-              </p>
-
-              <div className="mt-9">
+              {/* CTA above the teaser — same F3 fold fix as the EN hub */}
+              <div className="mt-7">
                 <CTARow size="lg" locale="es" />
               </div>
+
+              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+                {sv.longDescription}
+              </p>
             </div>
 
             {heroImages ? (
