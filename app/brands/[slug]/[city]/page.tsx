@@ -25,6 +25,11 @@ import {
   getCitiesForBrand,
 } from "@/lib/data/brand-city-content";
 import {
+  BRAND_SERVICE_SLUGS,
+  getBrandServiceContent,
+} from "@/lib/data/brand-service-content";
+import { BrandServiceLanding } from "@/components/sections/brand-service-landing";
+import {
   absoluteUrl,
   breadcrumbJsonLd,
   faqJsonLd,
@@ -34,19 +39,50 @@ import {
 /**
  * Brand × city landing pages — 15 hand-curated combinations only
  * ({Sub-Zero, Wolf, Viking, Thermador, Miele} × {Miami, Fort Lauderdale,
- * Boca Raton}). dynamicParams=false keeps every other brand/city pair a 404
- * instead of spawning a phantom programmatic layer (site is fully static).
+ * Boca Raton}) — PLUS the brand × service layer (2026-06-11):
+ * /brands/sub-zero/ice-maker-repair, /brands/miele/washer-repair,
+ * /brands/wolf/range-repair. The second segment is checked against the
+ * brand-service registry first, then the city registry. dynamicParams=false
+ * keeps every other pair a 404 instead of spawning a phantom programmatic
+ * layer (site is fully static).
  */
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return BRAND_CITY_SLUGS.map(({ brand, city }) => ({ slug: brand, city }));
+  return [
+    ...BRAND_CITY_SLUGS.map(({ brand, city }) => ({ slug: brand, city })),
+    ...BRAND_SERVICE_SLUGS.map(({ brand, service }) => ({ slug: brand, city: service })),
+  ];
 }
 
 type Props = { params: Promise<{ slug: string; city: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, city: citySlug } = await params;
+  const svc = getBrandServiceContent(slug, citySlug);
+  if (svc) {
+    const path = `/brands/${slug}/${svc.service}`;
+    return {
+      // Absolute — hand-budgeted ≤60 chars including brand; the layout
+      // template suffix would push them past SERP truncation.
+      title: { absolute: svc.metaTitle },
+      description: svc.metaDescription,
+      alternates: {
+        canonical: path,
+        languages: {
+          "en-US": absoluteUrl(path),
+          "x-default": absoluteUrl(path),
+        },
+      },
+      openGraph: {
+        title: svc.metaTitle,
+        description: svc.metaDescription,
+        url: absoluteUrl(path),
+        type: "website",
+        images: [DEFAULT_OG_IMAGE],
+      },
+    };
+  }
   const content = getBrandCityContent(slug, citySlug);
   if (!content) return {};
   return {
@@ -86,8 +122,16 @@ function cityFailureSlice<T>(modes: T[], citySlug: string, count = 4): T[] {
 
 export default async function BrandCityPage({ params }: Props) {
   const { slug, city: citySlug } = await params;
-  const content = getBrandCityContent(slug, citySlug);
   const brand = getResidentialBrand(slug);
+
+  // Brand × service landing (ice-maker-repair / washer-repair / range-repair)
+  // — same route machinery, dedicated template + content bank.
+  const svc = brand ? getBrandServiceContent(slug, citySlug) : undefined;
+  if (brand && svc) {
+    return <BrandServiceLanding brand={brand} content={svc} />;
+  }
+
+  const content = getBrandCityContent(slug, citySlug);
   const city = CITY_BY_SLUG[citySlug];
   if (!content || !brand || !city) notFound();
 

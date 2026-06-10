@@ -19,6 +19,8 @@ import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS, SERVICE_FAQS } from "@/data/faqs";
 import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { getBrandComparison } from "@/lib/data/brand-comparisons";
+import { BRAND_SERVICE_PAGES } from "@/lib/data/brand-service-content";
+import { getResidentialBrand } from "@/lib/data/residential-brand-profiles";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -118,6 +120,11 @@ export default async function ServicePage({ params }: Props) {
   const compareGuides = (COMPARE_GUIDES[service.slug] ?? [])
     .map((s) => getBrandComparison(s))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
+  // Brand × service deep dives that belong under this hub
+  // (e.g. /brands/sub-zero/ice-maker-repair under /services/ice-maker-repair).
+  const brandServicePages = BRAND_SERVICE_PAGES.filter(
+    (p) => p.serviceHubSlug === service.slug,
+  ).map((p) => ({ ...p, brandName: getResidentialBrand(p.brand)?.name ?? p.brand }));
   const crumbs = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
@@ -307,6 +314,46 @@ export default async function ServicePage({ params }: Props) {
               All brand comparison guides →
             </Link>
           </p>
+        </section>
+      ) : null}
+
+      {/* Brand-specific deep dives under this hub (2026-06-11 layer) */}
+      {brandServicePages.length > 0 ? (
+        <section className="border-y border-border/60 bg-background/40">
+          <div className="container-prose py-16 sm:py-20">
+            <div className="max-w-2xl">
+              <span className="eyebrow">Brand specialists</span>
+              <h2 className="heading-section mt-3">
+                {service.shortName} — brand-specific guides.
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Premium platforms get dedicated pages: failure banks from real
+                tickets, honest cost ranges, and how we diagnose.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {brandServicePages.map((p) => (
+                <Link
+                  key={`${p.brand}/${p.service}`}
+                  href={`/brands/${p.brand}/${p.service}`}
+                  className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card/40 p-4 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <div>
+                    <div className="text-sm font-semibold leading-snug text-foreground/90 group-hover:text-brand">
+                      {p.brandName} {p.serviceLabel.toLowerCase()} — the platform guide
+                    </div>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {p.metaDescription}
+                    </p>
+                  </div>
+                  <ArrowRight
+                    className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                    aria-hidden
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
       ) : null}
 

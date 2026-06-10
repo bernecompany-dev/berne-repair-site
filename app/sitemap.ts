@@ -3,9 +3,10 @@ import { SERVICES } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
 import { publishedArticles } from "@/lib/blog/articles";
-import { RESIDENTIAL_BRAND_SLUGS } from "@/lib/data/residential-brand-profiles";
+import { RESIDENTIAL_BRAND_PROFILES } from "@/lib/data/residential-brand-profiles";
 import { getComboUnique } from "@/lib/data/combo-unique";
 import { BRAND_CITY_SLUGS } from "@/lib/data/brand-city-content";
+import { BRAND_SERVICE_SLUGS } from "@/lib/data/brand-service-content";
 import { BRAND_COMPARISON_SLUGS } from "@/lib/data/brand-comparisons";
 import { TEAM } from "@/data/team";
 import { BACK_OFFICE } from "@/data/team-bios";
@@ -30,6 +31,13 @@ const LAST_MOD = new Date("2026-05-18");
  * content + meta descriptions) and the whole /es tree (real Spanish rewrite).
  */
 const REWORKED_MOD = new Date("2026-06-10");
+
+/**
+ * Content wave 2026-06-11: 6 new brand hubs (Liebherr, Dacor, Fisher &
+ * Paykel, Gaggenau, Bertazzoni, Monogram), 3 brand×service pages, and the
+ * Thermador customer-service guide. All EN-only.
+ */
+const CONTENT_WAVE_MOD = new Date("2026-06-11");
 
 function bothLocales(path: string) {
   return {
@@ -139,8 +147,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: esCounterpart("/brands") },
     },
   ];
-  const brandPages: MetadataRoute.Sitemap = RESIDENTIAL_BRAND_SLUGS.flatMap((slug) => {
-    const p = `/brands/${slug}`;
+  const brandPages: MetadataRoute.Sitemap = RESIDENTIAL_BRAND_PROFILES.flatMap((b) => {
+    const p = `/brands/${b.slug}`;
+    // EN-only brands (2026-06-11 wave, no `es` localization): no /es URL,
+    // en+x-default alternates only, fresher lastmod.
+    if (!b.es) {
+      return [
+        {
+          url: `${SITE_URL}${p}`,
+          lastModified: CONTENT_WAVE_MOD,
+          changeFrequency: "monthly" as const,
+          priority: 0.8,
+          alternates: {
+            languages: {
+              "en-US": `${SITE_URL}${p}`,
+              "x-default": `${SITE_URL}${p}`,
+            },
+          },
+        },
+      ];
+    }
     return [
       { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: esCounterpart(p) } },
       { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.75, alternates: { languages: esCounterpart(p) } },
@@ -152,6 +178,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const brandCityPages: MetadataRoute.Sitemap = BRAND_CITY_SLUGS.map(({ brand, city }) => ({
     url: `${SITE_URL}/brands/${brand}/${city}`,
     lastModified: new Date("2026-06-10"),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  // Brand × service landing pages + the Thermador customer-service guide —
+  // 2026-06-11 content wave. EN-only.
+  const brandServicePages: MetadataRoute.Sitemap = [
+    ...BRAND_SERVICE_SLUGS.map(({ brand, service }) => `/brands/${brand}/${service}`),
+    "/brands/thermador/service-guide",
+  ].map((p) => ({
+    url: `${SITE_URL}${p}`,
+    lastModified: CONTENT_WAVE_MOD,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -210,6 +248,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brandsIndex,
     ...brandPages,
     ...brandCityPages,
+    ...brandServicePages,
     ...compareIndex,
     ...comparePages,
     ...blogIndex,

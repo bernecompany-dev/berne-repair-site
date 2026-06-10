@@ -21,7 +21,6 @@ import { SERVICE_BY_SLUG } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import {
   RESIDENTIAL_BRAND_PROFILES,
-  RESIDENTIAL_BRAND_SLUGS,
   getResidentialBrand,
   type ResidentialBrandProfile,
 } from "@/lib/data/residential-brand-profiles";
@@ -39,8 +38,12 @@ const TIER_BADGE: Record<ResidentialBrandProfile["tier"], string> = {
   mass: "Mass-market",
 };
 
+// Only brands with a real Spanish localization get an /es page — the
+// 2026-06-11 EN-only brand hubs (Liebherr, Dacor, Fisher & Paykel, Gaggenau,
+// Bertazzoni, Monogram) are excluded so the /es lane never serves English
+// fallback content under an es-US hreflang.
 export function generateStaticParams() {
-  return RESIDENTIAL_BRAND_SLUGS.map((slug) => ({ slug }));
+  return RESIDENTIAL_BRAND_PROFILES.filter((b) => b.es).map((b) => ({ slug: b.slug }));
 }
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -48,7 +51,7 @@ type PageProps = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const brand = getResidentialBrand(slug);
-  if (!brand) return {};
+  if (!brand || !brand.es) return {};
   const es = brand.es;
   return {
     title: es?.metaTitle ?? brand.metaTitle,
@@ -75,7 +78,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function BrandPageES({ params }: PageProps) {
   const { slug } = await params;
   const brand = getResidentialBrand(slug);
-  if (!brand) notFound();
+  // EN-only brands have no /es page (see generateStaticParams note).
+  if (!brand || !brand.es) notFound();
 
   // Filter out service slugs without /services routes (stove/cooktop) —
   // prevents 404 internal links.
@@ -100,7 +104,10 @@ export default async function BrandPageES({ params }: PageProps) {
     { name: brand.name, href: `/es/brands/${brand.slug}` },
   ];
 
-  const related = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.slug !== brand.slug).slice(0, 4);
+  // Only link sibling brands that themselves have an /es page.
+  const related = RESIDENTIAL_BRAND_PROFILES.filter(
+    (b) => b.slug !== brand.slug && b.es,
+  ).slice(0, 4);
 
   const serviceId = absoluteUrl(`/es/brands/${brand.slug}#service-${brand.slug}`);
   const businessId = absoluteUrl("/#business");

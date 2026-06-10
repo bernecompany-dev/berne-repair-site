@@ -48,9 +48,12 @@ export default function BrandsIndexES() {
     { name: "Marcas", href: "/es/brands" },
   ];
 
-  const premium = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.tier === "premium");
-  const midPremium = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.tier === "mid-premium");
-  const mass = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.tier === "mass");
+  // Only brands with a real Spanish localization — EN-only hubs (2026-06-11
+  // wave) have no /es page and must not be linked from here.
+  const localized = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.es);
+  const premium = localized.filter((b) => b.tier === "premium");
+  const midPremium = localized.filter((b) => b.tier === "mid-premium");
+  const mass = localized.filter((b) => b.tier === "mass");
 
   return (
     <>

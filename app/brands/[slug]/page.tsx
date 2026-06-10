@@ -29,6 +29,10 @@ import {
 import { getComparisonsForBrand } from "@/lib/data/brand-comparisons";
 import { getCitiesForBrand } from "@/lib/data/brand-city-content";
 import {
+  getServicePagesForBrand,
+  BRAND_GUIDE_LINKS,
+} from "@/lib/data/brand-service-content";
+import {
   absoluteUrl,
   breadcrumbJsonLd,
   faqJsonLd,
@@ -62,7 +66,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `/brands/${brand.slug}`,
       languages: {
         "en-US": absoluteUrl(`/brands/${brand.slug}`),
-        "es-US": absoluteUrl(`/es/brands/${brand.slug}`),
+        // EN-only brands (2026-06-11 wave, no `es` localization) must not
+        // claim an es-US alternate — the /es page is excluded for them.
+        ...(brand.es
+          ? { "es-US": absoluteUrl(`/es/brands/${brand.slug}`) }
+          : {}),
         "x-default": absoluteUrl(`/brands/${brand.slug}`),
       },
     },
@@ -87,9 +95,19 @@ export default async function BrandPage({ params }: PageProps) {
     { name: brand.name, href: `/brands/${brand.slug}` },
   ];
 
-  const related = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.slug !== brand.slug).slice(0, 4);
+  // Circular "next 4" rotation instead of a fixed head-slice — every brand
+  // hub receives inbound links from exactly four sibling hubs, so the brands
+  // appended later (2026-06-11 wave) aren't orphaned from the older hubs.
+  const brandIdx = RESIDENTIAL_BRAND_PROFILES.findIndex((b) => b.slug === brand.slug);
+  const related = Array.from(
+    { length: Math.min(4, RESIDENTIAL_BRAND_PROFILES.length - 1) },
+    (_, i) =>
+      RESIDENTIAL_BRAND_PROFILES[(brandIdx + 1 + i) % RESIDENTIAL_BRAND_PROFILES.length],
+  );
   const comparisons = getComparisonsForBrand(brand.slug);
   const cityPages = getCitiesForBrand(brand.slug);
+  const servicePages = getServicePagesForBrand(brand.slug);
+  const guideLinks = BRAND_GUIDE_LINKS[brand.slug] ?? [];
   // Some profiles list service slugs that have no /services route
   // (stove-repair, cooktop-repair) — filter so we never render 404 links.
   const relatedServices = brand.relatedServices.filter((s) => SERVICE_BY_SLUG[s.slug]);
@@ -376,6 +394,64 @@ export default async function BrandPage({ params }: PageProps) {
               </li>
             ))}
           </ul>
+        </section>
+      ) : null}
+
+      {/* Brand × service deep dives + editorial guides (2026-06-11 layer) */}
+      {servicePages.length || guideLinks.length ? (
+        <section className="border-y border-border/60 bg-background/40">
+          <div className="container-prose py-16 sm:py-20">
+            <div className="max-w-3xl">
+              <span className="eyebrow">{brand.name} deep dives</span>
+              <h2 className="heading-section mt-3">
+                {brand.name} — dedicated service guides.
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Full-depth pages on the {brand.name} repairs we run most —
+                failure banks, honest cost ranges, and how we diagnose.
+              </p>
+            </div>
+            <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+              {servicePages.map((p) => (
+                <li key={p.service}>
+                  <Link
+                    href={`/brands/${brand.slug}/${p.service}`}
+                    className="group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                  >
+                    <div className="text-base font-semibold text-foreground group-hover:text-brand">
+                      {brand.name} {p.serviceLabel.toLowerCase()}
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {p.metaDescription}
+                    </p>
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-brand">
+                      Read the guide
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+              {guideLinks.map((g) => (
+                <li key={g.href}>
+                  <Link
+                    href={g.href}
+                    className="group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                  >
+                    <div className="text-base font-semibold text-foreground group-hover:text-brand">
+                      {g.title}
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {g.teaser}
+                    </p>
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-brand">
+                      Read the guide
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
       ) : null}
 

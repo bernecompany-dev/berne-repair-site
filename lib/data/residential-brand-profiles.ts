@@ -1877,6 +1877,825 @@ const samsung: ResidentialBrandProfile = {
 };
 
 // ---------------------------------------------------------------------------
+// Liebherr — added 2026-06-11 (content wave: premium-segment gap close).
+// EN-only: no `es` block by design — these slugs are excluded from the /es
+// lane and carry en+x-default hreflang only.
+// ---------------------------------------------------------------------------
+
+const liebherr: ResidentialBrandProfile = {
+  slug: "liebherr",
+  name: "Liebherr",
+  manufacturer: "Liebherr-Hausgeräte GmbH",
+  hq: "Bulle, Switzerland",
+  tier: "premium",
+  teaser:
+    "German-engineered refrigeration with a dedicated platform: BioFresh drawers, DuoCooling circuits, Monolith columns, and R-600a sealed systems — serviced by techs who carry the gauges and the EPA-608 card the isobutane work requires.",
+  metaTitle: "Liebherr Refrigerator Repair South Florida · $59 · Berne",
+  metaDescription:
+    "Liebherr refrigerator repair across Miami-Dade, Broward & Palm Beach. Monolith columns, BioFresh, wine cabinets, F-code faults. EPA-608, 90-day warranty.",
+  about:
+    "Liebherr builds refrigeration and only refrigeration, and it shows in the engineering: dual independent cooling circuits (DuoCooling), BioFresh compartments holding just above freezing at controlled humidity, and variable-speed compressors running on R-600a isobutane. It also shows in the service work — this is not a platform you diagnose with generic-fridge instincts. The display throws F-series fault codes (F0 through F5 on most electronic models) that point at specific sensors and fan circuits, the sealed system is hydrocarbon-charged and legally requires EPA-608 certification to open, and the integrated HC and Monolith columns are built into cabinetry that has to be protected while panels come off. South Florida's install base skews to the 24-inch integrated HC series in condo kitchens, freestanding CS/CBS units, the 30- and 36-inch Monolith columns in newer luxury builds, and a steady population of WS-series wine cabinets protecting collections from Brickell to Boca. Our techs work the platform regularly: humidity-stressed door gaskets, ice maker fill valves, evap fan failures behind BioFresh drawers, and the control-electronics faults that read as mystery warm-ups until you pull the actual fault log.",
+  equipment: [
+    {
+      series: "Monolith columns (MRB/MF 24-36\")",
+      description:
+        "Liebherr's flagship built-in refrigerator and freezer columns. Flush-inset installs in newer Miami and Fort Lauderdale luxury builds — door alignment after cabinetry settle, ice maker faults, and display electronics are the working list.",
+    },
+    {
+      series: "Integrated HC series (HC 1000 / HC 1550 / HCB)",
+      description:
+        "24-inch fully integrated units, heavily represented in condo kitchens. Evap fan motors, defrost faults, and gasket replacements on panel-ready doors are the standard tickets.",
+    },
+    {
+      series: "Freestanding CS / CBS series",
+      description:
+        "Counter-depth freestanding French door and bottom-freezer units. BioFresh drawer temperature drift, fill-valve failures on ice maker models, and door hinge wear are what we see.",
+    },
+    {
+      series: "BioFresh / BioFresh-Plus compartments",
+      description:
+        "Near-0°C high-humidity produce drawers controlled by their own sensor and damper circuit. When BioFresh runs warm or freezes produce, it's usually the damper actuator or the compartment sensor — both diagnosable from the fault log.",
+    },
+    {
+      series: "Wine cabinets (WS / WSbs / Vinidor, WU undercounter)",
+      description:
+        "Single- and multi-zone wine units, freestanding and undercounter. Zone temperature drift, fan motor failures, charcoal filter and humidity complaints, and UV-door seal wear on cabinets holding serious collections.",
+    },
+    {
+      series: "SBS combinations (side-by-side paired columns)",
+      description:
+        "CS/SGN pairs running as a side-by-side install. The linkage is electronic, not mechanical — one side failing usually has its own independent circuit, which makes honest diagnosis straightforward.",
+    },
+  ],
+  failureModes: [
+    {
+      title: "F1 / F2 fault codes — air and evaporator sensor failures",
+      detail:
+        "Liebherr's electronic models log sensor faults as F-codes on the display. F1 is typically the air sensor, F2 the evaporator sensor — a failed sensor makes the unit run long, over-freeze, or drift warm depending on where it fails in range. We read the fault log, verify the sensor resistance against spec, and replace the failed probe rather than guessing at the compressor.",
+    },
+    {
+      title: "Ice maker fill valve and supply faults on Monolith and CS units",
+      detail:
+        "The IceMaker option adds a fill valve, supply line, and level sensing that all live in our humidity. No ice or hollow cubes usually traces to a failing fill valve or a clogged inlet screen; an overflowing tray points at the valve not seating. We carry the valve and rebuild the water path in one visit on most calls.",
+    },
+    {
+      title: "BioFresh compartment running warm or freezing produce",
+      detail:
+        "BioFresh holds produce just above 0°C, and its damper actuator and dedicated sensor are the two failure points. Symptom: lettuce freezing in the drawer while the main compartment reads normal, or BioFresh drifting to fridge temperature. Both log faults the display can surface — the fix is the actuator or sensor, not a refrigerant story.",
+    },
+    {
+      title: "Evap fan failure behind the rear panel — warm unit, quiet box",
+      detail:
+        "A stalled evaporator fan on HC and CS units presents as a gradually warming compartment with the compressor still running. On integrated units the access is through the rear interior panel with the BioFresh drawers out. We verify fan voltage before condemning the motor — sometimes it's the control board's fan driver, and replacing the motor alone would be a comeback.",
+    },
+    {
+      title: "Door gasket and hinge wear on integrated panel-ready doors",
+      detail:
+        "South Florida humidity finds every weak gasket. On panel-ready HC and Monolith doors the cabinetry panel adds weight the hinges were specced for — but only when aligned. After a kitchen settles, the door drops a few millimeters, the gasket seal breaks at a corner, and the unit sweats or frosts. Re-shim, re-align, replace the gasket if it's taken a set.",
+    },
+    {
+      title: "Wine cabinet zone drift on Vinidor multi-zone units",
+      detail:
+        "Multi-zone wine cabinets run separate sensors and heaters per zone. When one zone drifts while the others hold, it's the zone sensor or its damper — not the compressor, which serves all zones. We log actual zone temps against setpoint before touching parts, because a 2-3°F sensor offset is a calibration-level fix, not a teardown.",
+    },
+    {
+      title: "Condensation and sweating cabinets in high-humidity installs",
+      detail:
+        "Garage installs, covered patios, and beach-adjacent kitchens push ambient humidity past what the anti-condensation system was tuned for. Sweating between door and frame usually means the gasket or the frame heater circuit; sweating inside means door openings or a drainage path clogged with the algae South Florida grows in every drain line. We clear the drain path and test the heater loop with a meter.",
+    },
+    {
+      title: "Control electronics failures after power events",
+      detail:
+        "Summer storm season is hard on electronic refrigeration. After a surge or brownout we see Liebherr displays dead, units stuck in demo/showroom mode, or compressors locked out by corrupted electronics. Some of it is a reset procedure; some needs the power board. We test before replacing — and we recommend a dedicated surge protector on every electronic built-in we service.",
+    },
+  ],
+  whyBerne:
+    "Liebherr is a refrigeration-only platform, and we service it with refrigeration-first techs — the same senior rotation that handles Sub-Zero and Thermador built-ins. That matters for three reasons. First, the sealed system: Liebherr runs R-600a isobutane, and our techs carry EPA-608 Universal certification plus the hydrocarbon-rated gauges and recovery equipment the refrigerant legally requires. Second, the diagnosis: we read the platform's fault log and test sensors against spec instead of selling compressors. Third, the install context: integrated HC and Monolith columns live inside custom cabinetry, and we treat the millwork as part of the job — floor protection, panel handling, hinge re-shimming after removal. Parts come through Liebherr's US distribution; common sensors, fans, valves, and gaskets typically land in 2-3 business days when they're not already on the truck.",
+  relatedServices: [
+    { slug: "refrigerator-repair", label: "Refrigerator Repair" },
+    { slug: "wine-cooler-repair", label: "Wine Cooler Repair" },
+    { slug: "ice-maker-repair", label: "Ice Maker Repair" },
+  ],
+  serviceArea:
+    "Liebherr installs cluster where European kitchens cluster — Brickell, Edgewater, Miami Beach, Sunny Isles, Aventura, Hallandale, Las Olas and the Fort Lauderdale beach corridor, Boca Raton, Delray, and the Palm Beach island. We dispatch across all of Miami-Dade, Broward, and Palm Beach counties, and Liebherr calls route to the refrigeration-senior techs in your zip.",
+  faqs: [
+    {
+      question: "My Liebherr is showing an F1 (or F2-F5) error. What does it mean?",
+      answer:
+        "F-codes on Liebherr electronic models are sensor and circuit faults — F1 is typically the air sensor, F2 the evaporator sensor, and the higher codes map to fans and secondary circuits depending on model. The unit usually keeps running in a fallback mode, but temperatures drift. We read the fault log on arrival, test the flagged sensor against resistance spec, and replace just the failed part. Most F-code repairs are a single visit.",
+    },
+    {
+      question: "Is it worth repairing a Liebherr refrigerator?",
+      answer:
+        "Almost always. A Monolith column runs $9K-$13K installed and the HC integrated units $4K-$7K — while the repairs we actually do on this platform (sensors, fans, valves, gaskets, control boards) fall well under a tenth of replacement cost. Liebherr engineers for a 15+ year service life. The rare exception is a sealed-system failure on an older freestanding unit, and we'll tell you honestly when that's the case.",
+    },
+    {
+      question: "Can you do sealed-system work on Liebherr's R-600a units?",
+      answer:
+        "Yes. Liebherr charges its modern platform with R-600a isobutane, which is flammable and legally requires EPA-608 certification plus hydrocarbon-rated equipment to open. Our techs carry both. Many shops decline this work entirely — it's one of the most common reasons Liebherr owners end up calling us second.",
+    },
+    {
+      question: "Why is my BioFresh drawer freezing my vegetables?",
+      answer:
+        "BioFresh holds produce just above freezing, so there isn't much margin — a damper actuator sticking open or a compartment sensor reading a few degrees high will push the drawer below 0°C and freeze produce. Both faults are diagnosable from the unit's own log and fixable in one visit. It's not a refrigerant problem, despite what a generic-fridge diagnosis might claim.",
+    },
+    {
+      question: "Do you repair Liebherr wine cabinets?",
+      answer:
+        "Yes — freestanding WS and Vinidor multi-zone cabinets, undercounter WU units, and the wine sections of combination units. Zone temperature drift, fan motors, door seal and UV-glass issues, and humidity complaints are the regular work. For serious collections we prioritize scheduling the same way we do a fridge full of food.",
+    },
+    {
+      question: "How fast can you get Liebherr parts in South Florida?",
+      answer:
+        "Common service parts — sensors, evap and condenser fans, fill valves, gaskets in the standard sizes — are either on the truck or 2-3 business days through Liebherr's US parts distribution. Less common electronics for older or low-volume models can take longer, and we tell you the realistic timeline at diagnosis, not after.",
+    },
+    {
+      question: "Do you service built-in Monolith columns in condo towers?",
+      answer:
+        "Yes, and it's a core scenario for us — flush-inset columns can't be wheeled out, so they're diagnosed and repaired in place, with cabinetry panels handled carefully and the building's COI and service-elevator requirements arranged before the visit. The $59 service call applies toward the repair as on every job.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Dacor
+// ---------------------------------------------------------------------------
+
+const dacor: ResidentialBrandProfile = {
+  slug: "dacor",
+  name: "Dacor",
+  manufacturer: "Dacor, Inc. (Samsung)",
+  hq: "City of Industry, California",
+  tier: "premium",
+  teaser:
+    "California-built luxury cooking with three distinct generations in the field — Epicure and Renaissance legacies, Heritage, and the Samsung-era Contemporary line. We service all of them, igniters to relay boards.",
+  metaTitle: "Dacor Repair Miami & South Florida · $59 Call · Berne",
+  metaDescription:
+    "Dacor range, oven & column refrigeration repair in South Florida. Igniters, relay boards, legacy Epicure & Renaissance units. $59 call, 90-day warranty.",
+  about:
+    "Dacor occupies an unusual spot in the premium kitchen: an American luxury brand with three distinct hardware generations in the field. The legacy Epicure and Renaissance lines (roughly mid-90s through mid-2010s) still anchor thousands of South Florida kitchens — wall ovens and ranges with relay boards and membrane control panels that have known aging patterns. The Heritage line carried the pro-style range torch through the 2010s. And since Samsung acquired the brand in 2016, the Contemporary and Transitional collections have brought touch-screen controls, column refrigeration, and Samsung-era electronics into the platform. Each generation fails differently, and we service all three. The classic calls are cooking calls: gas oven igniters that glow but never fire the burner, spark modules that click continuously after a boil-over, dual-fuel ovens dead on one element because a relay board let go, and Renaissance control panels that stop responding on humid mornings. On the newer side it's column refrigeration diagnostics and induction cooktop modules. Parts strategy matters with Dacor — Samsung-era parts flow well through distribution, while some legacy Epicure and Renaissance boards are scarce and worth repairing rather than replacing, which is a call we help owners make honestly.",
+  equipment: [
+    {
+      series: "Heritage ranges (HGPR / HGER 30-48\")",
+      description:
+        "Pro-style gas and dual-fuel ranges. Burner igniters, oven glow-bars, convection fans, and door hinge wear are the standard tickets — plus the griddle and grill options on the 48-inch units.",
+    },
+    {
+      series: "Contemporary / Transitional ranges and wall ovens (Samsung era)",
+      description:
+        "Touch-control ranges, steam-assist wall ovens, and the four-part purge of legacy electronics. Control boards, door locks, and convection motors, with parts flowing through Samsung-Dacor distribution.",
+    },
+    {
+      series: "Renaissance wall ovens (RNO / DOB generations)",
+      description:
+        "The biggest legacy population in South Florida. Relay boards, ERC control panels, door hinges, and thermal limits — we know which failures are repair-worthy and which boards can be rebuilt when new stock is gone.",
+    },
+    {
+      series: "Epicure ranges and rangetops (ERSD / ERD legacy)",
+      description:
+        "The classic late-90s/2000s pro-style line. Spark modules, valve re-greasing, oven thermostats, and the door hinge and spring assemblies that wear after two decades of service.",
+    },
+    {
+      series: "Column refrigeration (DRR / DRZ / DRW wine)",
+      description:
+        "Samsung-era refrigerator, freezer, and wine columns. Evap fans, defrost faults, ice maker assemblies, and display electronics — panel-ready installs serviced in place.",
+    },
+    {
+      series: "Cooktops and ventilation (gas, induction, hoods)",
+      description:
+        "Gas cooktop spark systems, induction generator modules on the newer collections, and hood blower and control failures. Re-ignition sensors on sealed burners are a Dacor-specific regular.",
+    },
+  ],
+  failureModes: [
+    {
+      title: "Gas oven igniter weak — oven slow to heat or won't fire",
+      detail:
+        "The classic Dacor gas-range call. The hot-surface igniter glows but ages below the amperage the safety valve needs, so the oven heats slowly, cycles erratically, or never lights. We measure igniter current draw against spec instead of guessing — a 15-minute diagnosis — and carry compatible igniters for the common Epicure and Heritage ovens on the truck.",
+    },
+    {
+      title: "Spark module clicking continuously after boil-overs",
+      detail:
+        "When a surface burner keeps clicking after it's lit (or clicks with all knobs off), moisture or grease has tracked into a spark switch or the module is failing. South Florida humidity makes this a year-round ticket. Sometimes it dries out; usually a switch in the harness or the module itself needs replacing. We isolate which burner circuit leaks before replacing anything.",
+    },
+    {
+      title: "Renaissance / Epicure relay board failure — dual-fuel oven dead or stuck heating",
+      detail:
+        "The relay boards driving bake and broil elements on legacy Dacor wall ovens are a known aging failure: an element that never energizes, or worse, a relay welded closed that keeps heating past setpoint. New-old-stock boards are scarce for some models — we'll tell you when a board-level repair (re-soldered relays) is the smarter path than hunting a discontinued part.",
+    },
+    {
+      title: "ERC / membrane control panel unresponsive on legacy wall ovens",
+      detail:
+        "Renaissance-era electronic range controls develop dead keys and phantom faults, often humidity-correlated — working fine by afternoon, dead on a muggy morning. The membrane and the ERC behind it both age. We test which layer failed before quoting, because the membrane alone is a much smaller job than the control.",
+    },
+    {
+      title: "Oven door hinges and springs sagging on 20-year-old Epicures",
+      detail:
+        "A Dacor oven door that won't sit flush bleeds heat, runs long bakes, and trips thermal limits. Hinge and spring kits are still obtainable for most legacy models, and a re-hinged door with a fresh gasket restores temperature behavior owners assumed needed a new thermostat.",
+    },
+    {
+      title: "Dual-stacked burner re-ignition sensor faults",
+      detail:
+        "Dacor's sealed burners use flame-sensing re-ignition — when the sensor fouls or drifts, the burner clicks intermittently while lit or drops flame at simmer. Cleaning electrode and sensor geometry fixes some; failed sensors and harness corrosion (common near salt air) need parts. Either way it's diagnosable in one visit.",
+    },
+    {
+      title: "Column refrigeration warm-up — evap fan and defrost faults (DRR/DRZ)",
+      detail:
+        "Samsung-era Dacor columns follow modern column logic: a compartment drifting warm with the compressor running points to the evaporator fan or an incomplete defrost cycle, both of which log faults. We pull the fault history and test the actual circuit. Sealed-system work, when truly needed, is done by our EPA-608 certified techs.",
+    },
+    {
+      title: "Induction cooktop generator module failures (Contemporary line)",
+      detail:
+        "A zone that stops detecting cookware or a cooktop throwing flashing error codes usually means a generator board or its temperature sensing. We run the manufacturer diagnostic sequence to isolate the module before ordering — induction boards are too expensive to swap on a hunch.",
+    },
+  ],
+  whyBerne:
+    "Dacor rewards a shop that knows all three generations. Our techs carry the legacy knowledge — which Renaissance relay boards can be rebuilt, which Epicure igniters cross-reference to available parts, what a humidity-faulted membrane looks like versus a dead ERC — alongside current Samsung-era diagnostic procedures for the Contemporary collections and column refrigeration. We're licensed for the gas work, EPA-608 Universal certified for the refrigeration side, and honest about the economics: on a 20-year-old wall oven we'll lay out repair-versus-replace with real numbers before any part goes in. The $59 service call is credited toward the repair, most cooking-side jobs close in one visit from truck stock, and everything we install carries the 90-day labor and parts warranty.",
+  relatedServices: [
+    { slug: "oven-repair", label: "Oven Repair" },
+    { slug: "refrigerator-repair", label: "Refrigerator Repair" },
+    { slug: "range-hood-repair", label: "Range Hood Repair" },
+  ],
+  serviceArea:
+    "We service Dacor kitchens across Miami-Dade, Broward, and Palm Beach — heavy legacy populations in Coral Gables, Pinecrest, Plantation, Weston, and Boca Raton, with the newer Samsung-era collections showing up in remodels from Aventura to Delray Beach. Same-day dispatch when scheduling allows.",
+  faqs: [
+    {
+      question: "My Dacor oven takes forever to heat — is it dying?",
+      answer:
+        "Probably not. On gas Dacor ovens the most common cause is a weak hot-surface igniter — it still glows, but below the current the safety valve needs, so the oven fires late and cycles slowly. It's a measurable diagnosis and a same-visit fix in most cases. On dual-fuel models the equivalent culprit is a relay board underfeeding an element.",
+    },
+    {
+      question: "Can you still get parts for older Dacor (Epicure / Renaissance) units?",
+      answer:
+        "Mostly, yes — igniters, hinges, gaskets, spark modules, and many controls are still obtainable or cross-reference cleanly. Some legacy relay boards and ERCs are discontinued; for those we evaluate board-level repair, which keeps a structurally excellent 20-year-old oven in service. We tell you the realistic parts picture at diagnosis.",
+    },
+    {
+      question: "My Dacor burner keeps clicking after it lights. What's wrong?",
+      answer:
+        "Continuous clicking means a spark circuit thinks a burner still needs ignition — either moisture or grease in a spark switch (very common after boil-overs and in our humidity), a fouled re-ignition sensor, or a failing spark module. We isolate the leaking circuit rather than replacing the whole system. Until it's fixed, the clicking is annoying but not dangerous on a lit burner.",
+    },
+    {
+      question: "Is a 15-year-old Dacor wall oven worth repairing?",
+      answer:
+        "Usually. The legacy Dacor chassis — the box, insulation, racks, door glass — is built to a standard that survives decades; what ages is the electronics and igniters. A relay board or control repair at a few hundred dollars against a $4K-$8K replacement wall oven (plus cabinetry modification, since cutout sizes changed) is the math most owners land on. We'll give you both numbers straight.",
+    },
+    {
+      question: "Do you service Samsung-era Dacor — column fridges and the Contemporary line?",
+      answer:
+        "Yes. The post-2016 collections run modern electronics with proper diagnostic modes, and parts flow well through Samsung-Dacor distribution, typically 1-3 business days. Column refrigeration, steam-assist wall ovens, induction cooktops, and the touch-control ranges are all in scope, with EPA-608 certified techs on the refrigeration work.",
+    },
+    {
+      question: "Do you work on Dacor range hoods and ventilation?",
+      answer:
+        "Yes — blower motors, control boards, and lighting on Dacor hoods and downdrafts. A hood that stopped moving air over a pro-style range is a kitchen-stopper in a South Florida summer, and it's usually a motor or switch-level repair, not a replacement.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Fisher & Paykel
+// ---------------------------------------------------------------------------
+
+const fisherPaykel: ResidentialBrandProfile = {
+  slug: "fisher-paykel",
+  name: "Fisher & Paykel",
+  manufacturer: "Fisher & Paykel Appliances (Haier)",
+  hq: "Auckland, New Zealand",
+  tier: "premium",
+  teaser:
+    "The DishDrawer is the most distinctive dishwasher on the market — and the most misdiagnosed. We service the full Fisher & Paykel platform: DishDrawers, ActiveSmart refrigeration, CoolDrawer, and SmartDrive laundry.",
+  metaTitle: "Fisher & Paykel Repair South Florida · $59 · Berne",
+  metaDescription:
+    "Fisher & Paykel repair in Miami-Dade, Broward & Palm Beach. DishDrawer F1, lid actuators, ActiveSmart fridges, SmartDrive washers. $59, 90-day warranty.",
+  about:
+    "Fisher & Paykel engineers differently than anyone else in the premium kitchen, and the DishDrawer is the proof: a dishwasher built as one or two independent drawers, each with its own motor, pump, lid mechanism, and flood sensor. It's brilliant when it runs and notorious when a shop that's never opened one starts guessing. The platform's famous F1 fault — flood switch triggered — sends more South Florida owners to Google than any other single F&P symptom, and nine times out of ten it traces to a lid seal, a drain path, or a perished hose rather than a dead machine. Beyond the DishDrawer, the brand runs deep: ActiveSmart refrigeration (counter-depth French doors and the integrated series), the CoolDrawer multi-temperature drawer that converts from freezer to pantry, SmartDrive direct-drive washers with their diverter-valve quirks, heat-pump dryers, and the pro-style ranges that came out of the DCS lineage. We service the full platform. Fisher & Paykel's diagnostic culture helps — the machines log faults thoroughly and the service data is good — but the field experience is what separates a correct lid-actuator diagnosis from an unnecessary control-board swap, and our techs have years of both drawers and the rest of the line under their belts.",
+  equipment: [
+    {
+      series: "DishDrawer (DD24 double / single, Series 7-11)",
+      description:
+        "The signature product — independent drawer dishwashers. Lid actuators and seals, F1 flood faults, drain pumps, and rotor-position errors are the working list. Both drawers are independent: one failing never means both are gone.",
+    },
+    {
+      series: "ActiveSmart refrigeration (RF series French door, counter-depth)",
+      description:
+        "Sensor-driven refrigeration with adaptive defrost. Evap fan faults, defrost element failures, ice maker assemblies, and door hinge cartridges are the standard tickets.",
+    },
+    {
+      series: "Integrated and column refrigeration (RS series)",
+      description:
+        "Panel-ready integrated units serviced in place inside cabinetry. Display electronics, fan motors, and gasket work, with the same careful-millwork protocol as our other built-in brands.",
+    },
+    {
+      series: "CoolDrawer (RB36 multi-temperature drawer)",
+      description:
+        "A drawer that runs as freezer, fridge, chill, or pantry on command. Mode-switching faults, sensor drift, and seal wear — a niche product we see in high-end Miami and Boca kitchens, and one very few shops will touch.",
+    },
+    {
+      series: "SmartDrive washers and heat-pump dryers",
+      description:
+        "Direct-drive top loaders and the newer front-load platform. Diverter valve faults, drain pumps, rotor position sensors, and the heat-pump dryer lint-path cleaning that prevents half its failures.",
+    },
+    {
+      series: "Ranges and cooktops (DCS heritage / RGV3, CG series)",
+      description:
+        "Pro-style gas ranges from the DCS lineage and current F&P-badged cooking. Igniters, spark modules, and convection fans — serviced with the same gas-licensed techs as our Wolf and Dacor work.",
+    },
+  ],
+  failureModes: [
+    {
+      title: "DishDrawer F1 fault — flood switch triggered",
+      detail:
+        "F1 means water reached the flood sensor in the base pan. The drawer stops and runs its drain pump in self-protection. The real cause is usually a lid seal that's perished, a drain hose weep, or a blocked drain path — not a failed machine. We pull the drawer, find the actual leak, dry and reset the base, and replace the seal or hose that caused it. Owners who've been told the F1 means a new dishwasher call us for a second opinion weekly.",
+    },
+    {
+      title: "Lid actuator failure — drawer won't seal or won't release",
+      detail:
+        "Each DishDrawer lid is driven by actuators that clamp it tight during a cycle. When an actuator fails, the drawer either won't start (no seal) or won't open after the cycle. It's the platform's best-known mechanical wear item, the parts are available, and replacement is routine for a tech who's done it dozens of times — and fiddly for one who hasn't.",
+    },
+    {
+      title: "DishDrawer rotor-position / motor errors (ER codes)",
+      detail:
+        "The drawer's single motor handles wash and drain by reversing direction, sensed by rotor position. Debris in the pump chamber or a worn rotor throws motor errors mid-cycle. Clearing the chamber and inspecting the rotor solves most; genuine motor failures get a like-for-like replacement. The fault log tells the story before we open anything.",
+    },
+    {
+      title: "ActiveSmart fridge warm with fans running — adaptive defrost faults",
+      detail:
+        "ActiveSmart refrigeration uses sensor-driven adaptive defrost, and when a defrost element or sensor fails, frost slowly chokes the evaporator: temperatures drift up over days while everything sounds normal. We test the defrost circuit and sensors against spec — it's the platform's most common refrigeration repair and a one-visit fix with parts we stock.",
+    },
+    {
+      title: "CoolDrawer mode-switching and temperature drift",
+      detail:
+        "The CoolDrawer's party trick — freezer to pantry at a button press — relies on its damper, heater, and sensor array agreeing. When a mode change stalls or a setpoint drifts, the fault log identifies which leg failed. It's a rare product that most shops decline; we service it as part of the integrated-kitchen rotation.",
+    },
+    {
+      title: "SmartDrive washer diverter valve — fills then drains, or won't spin",
+      detail:
+        "F&P's direct-drive top loaders route water and motion through a diverter valve that's a known wear item. Classic symptoms: machine drains during agitation, or refuses spin with an out-of-balance complaint that isn't about balance. The valve is inexpensive relative to the washer and the swap is routine for techs who know the platform.",
+    },
+    {
+      title: "Ice maker and water path faults on RF French-door units",
+      detail:
+        "No ice, hollow ice, or a dispenser drip on the RF series usually lands on the fill valve, the filter housing, or the ice maker assembly itself. South Florida water quality accelerates scale in the fill path. We rebuild the water path end-to-end rather than swapping one part and hoping.",
+    },
+    {
+      title: "Heat-pump dryer long cycles — lint-choked exchanger",
+      detail:
+        "F&P heat-pump dryers recirculate air through a heat exchanger that South Florida lint and humidity will eventually mat over. Symptom: ever-longer cycles and damp loads, no fault code. Deep-cleaning the exchanger and airflow path restores performance; we also check the condensate pump while we're in there, because it fails quietly around the same age.",
+    },
+  ],
+  whyBerne:
+    "Fisher & Paykel punishes guesswork — a DishDrawer F1 diagnosed by someone who's never pulled a drawer becomes a 'replace the dishwasher' quote, and an adaptive-defrost fault read with generic-fridge instincts becomes an unnecessary compressor story. Our techs work the platform on its own terms: we read the fault logs, we've done the lid actuators and diverter valves enough times to quote them confidently, and we stock the high-frequency parts — lid seals and actuators, drain pumps, defrost components, diverter valves — so most repairs close in one visit. Parts beyond truck stock flow through Fisher & Paykel's US distribution in 2-4 business days. Gas-licensed for the range work, EPA-608 certified for sealed-system refrigeration, 90-day labor and parts warranty on everything, and the $59 service call credits toward the repair.",
+  relatedServices: [
+    { slug: "dishwasher-repair", label: "Dishwasher Repair" },
+    { slug: "refrigerator-repair", label: "Refrigerator Repair" },
+    { slug: "washer-repair", label: "Washer Repair" },
+    { slug: "dryer-repair", label: "Dryer Repair" },
+  ],
+  serviceArea:
+    "DishDrawers and ActiveSmart kitchens are spread across the whole tri-county map — Miami Beach and Aventura condos, Coral Gables and Pinecrest remodels, Fort Lauderdale, Weston, Boca Raton, Delray, and up the Palm Beach coast. We dispatch same-day across Miami-Dade, Broward, and Palm Beach when scheduling allows.",
+  faqs: [
+    {
+      question: "My DishDrawer shows F1 and beeps. Is it dead?",
+      answer:
+        "No — F1 is the flood sensor doing its job. Water reached the base pan, almost always from a lid seal, a hose weep, or a blocked drain path, and the machine stopped to protect your kitchen. The fix is finding and repairing the actual leak, drying the base, and resetting. It's one of the most common calls we run on the platform, and it almost never means a new dishwasher.",
+    },
+    {
+      question: "One drawer of my double DishDrawer died. Do I need to replace both?",
+      answer:
+        "No. Each drawer is a complete independent machine — its own motor, pump, control, and lid system. One drawer failing says nothing about the other. We repair the failed drawer; the working one keeps washing dishes the whole time.",
+    },
+    {
+      question: "Can you actually get Fisher & Paykel parts in Florida?",
+      answer:
+        "Yes. We stock the high-frequency DishDrawer parts (lid seals, actuators, drain pumps) and common refrigeration components on the truck, and Fisher & Paykel's US parts distribution covers the rest in typically 2-4 business days. Parts supply on this brand is better than its niche reputation suggests.",
+    },
+    {
+      question: "Why is my ActiveSmart fridge slowly getting warm?",
+      answer:
+        "Gradual warming over days — with fans audible and the compressor running — is the signature of a failing defrost circuit: frost builds on the evaporator until air can't move through it. It's the most common ActiveSmart repair and a straightforward fix once the failed element or sensor is identified. A sudden warm-up points elsewhere, which is exactly why we test rather than assume.",
+    },
+    {
+      question: "Is the DishDrawer worth keeping versus replacing with a regular dishwasher?",
+      answer:
+        "If you like the format, yes — the platform is mechanically sound and every common failure (seals, actuators, pumps) is a repairable wear item far below replacement cost. Swapping to a conventional dishwasher also means cabinetry modification, since the DishDrawer cutout doesn't match standard 24-inch boxes. We'll give you honest numbers for both paths.",
+    },
+    {
+      question: "Do you service Fisher & Paykel washers and heat-pump dryers?",
+      answer:
+        "Yes — SmartDrive top loaders (diverter valves, pumps, rotor sensors are the regulars), the front-load platform, and the heat-pump dryers, where a lint-matted heat exchanger causes most of the 'takes three cycles to dry' complaints. All carry the same $59 diagnostic and 90-day warranty.",
+    },
+    {
+      question: "Do you work on the CoolDrawer?",
+      answer:
+        "Yes. The multi-temperature CoolDrawer is rare enough that many shops decline it, but it's part of our integrated-kitchen rotation — mode-switching faults, sensor drift, and seal wear are all serviceable, and the fault log makes honest diagnosis possible on the first visit.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Gaggenau
+// ---------------------------------------------------------------------------
+
+const gaggenau: ResidentialBrandProfile = {
+  slug: "gaggenau",
+  name: "Gaggenau",
+  manufacturer: "Gaggenau Hausgeräte (BSH Home Appliances)",
+  hq: "Munich, Germany",
+  tier: "premium",
+  teaser:
+    "The 400 and 200 series are the most architectural appliances in any South Florida kitchen — and they're serviceable, by techs who know the BSH platform underneath and respect the millwork around it.",
+  metaTitle: "Gaggenau Repair Miami & South Florida · $59 · Berne",
+  metaDescription:
+    "Gaggenau repair in Miami, Fort Lauderdale & Palm Beach. 400/200 series ovens, combi-steam, Vario cooktops, wine climate cabinets. EPA-608, 90-day warranty.",
+  about:
+    "Gaggenau sits at the top of the premium kitchen — the 400 series ovens with their solid-stainless doors, the EB 333 90-centimeter icon, combi-steam ovens plumbed into the wall, Vario cooktop modules set flush into stone, and climate cabinets protecting wine collections worth more than the kitchen. Under the architecture, though, is BSH engineering — the same parent company as Bosch and Thermador — which means structured diagnostics, error codes that mean something, and a parts pipeline we already work every week. That combination is exactly what Gaggenau service in South Florida needs. The machines are rational to diagnose; the installs are not casual. A 400-series oven door is a two-person lift, a Vario induction module comes out of a stone countertop that must not be chipped, and a combi-steam oven's fault often traces to the water it's been fed rather than the machine itself — South Florida's hard water scales steam generators on an accelerated schedule. Our techs service Gaggenau as part of the same senior rotation that handles Thermador and Bosch benchmark products, with the patience the hardware deserves and the BSH diagnostic procedures the platform is built around.",
+  equipment: [
+    {
+      series: "400 series ovens (BO 480/481, EB 333)",
+      description:
+        "The flagship line — solid stainless doors, rotary-knob controls, and the 90cm EB 333. Door hinge and gasket work, heating elements, and control module faults, all serviced with two techs when the door mass requires it.",
+    },
+    {
+      series: "Combi-steam ovens (BS 470/471/484, 200 series BSP)",
+      description:
+        "Plumbed and tank-fed steam ovens. Steam generator scaling, descale-cycle faults, door seals, and water-path valves — the most South-Florida-sensitive product in the line because of our water hardness.",
+    },
+    {
+      series: "Vario cooktops 400/200 (VI induction, VG gas, VR grill, VP Teppan)",
+      description:
+        "Modular cooktop elements set flush into countertops. Induction generator modules, gas re-ignition, downdraft pairing, and the careful stone-side extraction the format demands.",
+    },
+    {
+      series: "Vario cooling 400/200 (RC / RF / RB columns)",
+      description:
+        "Fully integrated refrigeration columns. Evap fans, defrost and sensor faults, door alignment in flush installs, and gasket work — EPA-608 certified techs on anything sealed-system.",
+    },
+    {
+      series: "Wine climate cabinets (RW 404/414/466)",
+      description:
+        "Multi-zone wine columns with humidity control. Zone sensor drift, fan motors, door seal and UV-glass issues, and the humidity complaints that usually trace to seals rather than refrigeration.",
+    },
+    {
+      series: "Dishwashers (DF 480/481 series)",
+      description:
+        "Panel-ready dishwashers on the BSH platform. Heat pump and circulation faults, E-code diagnostics, drain pumps, and door balance on heavy custom panels.",
+    },
+  ],
+  failureModes: [
+    {
+      title: "Combi-steam scale faults — descale loop the unit can't complete",
+      detail:
+        "South Florida water is hard, and Gaggenau steam generators know it. Scale builds in the generator and valves until the unit demands descaling, then faults mid-descale because the buildup is past what the cycle can dissolve. We do a manual descale and water-path service, and we'll talk honestly about feed-water treatment — the only thing that changes the repeat interval.",
+    },
+    {
+      title: "400-series oven door hinge wear — a two-person, by-the-book job",
+      detail:
+        "The solid stainless 400-series door is magnificent and heavy, and its hinges wear in a way lighter doors don't. Symptoms: a door that drops at the last centimeter, won't sit flush, or bleeds heat at the top. Hinge replacement on this line is a careful two-tech procedure — done right, the door closes like new for another decade.",
+    },
+    {
+      title: "Control module and rotary-encoder faults on 400/200 ovens",
+      detail:
+        "Gaggenau's rotary controls feed encoders that occasionally fail or drift — an oven that changes modes on its own or ignores a knob has an encoder or control module fault, and the BSH error-code structure identifies which. We replace the failed module, not the whole control architecture.",
+    },
+    {
+      title: "Vario induction module failure — one zone dead or cookware not detected",
+      detail:
+        "Each Vario induction element runs on generator boards that fail independently. A dead zone with the others working is a module-level diagnosis, confirmed through the BSH service test before anything is ordered. Extraction from a flush stone install is half the job, and we treat the countertop as the most expensive part in the room.",
+    },
+    {
+      title: "Wine climate cabinet zone drift and humidity complaints",
+      detail:
+        "On RW cabinets, one zone drifting while others hold points at a zone sensor or damper, not the compressor. Humidity complaints usually trace to door seals or the charcoal filter rather than the climate system. We measure before we touch — collections in these cabinets justify the discipline.",
+    },
+    {
+      title: "Integrated column warm-up — evap fan and defrost on RC/RF units",
+      detail:
+        "Gaggenau columns follow BSH refrigeration logic: gradual warming with the compressor running is airflow or defrost, sudden warming is electrical or sealed-system. The fault memory plus sensor checks sort it on the first visit. Flush installs are serviced in place with panels handled by the book.",
+    },
+    {
+      title: "Dishwasher E-codes on the DF series — circulation and heat-pump faults",
+      detail:
+        "The DF dishwashers share BSH internals, so their E-codes map to known circuits — circulation pump, heat pump, flow sensor. A drawer of error history tells us more than an hour of guessing. Drain pumps and circulation units are stocked or 2-3 days through BSH parts.",
+    },
+    {
+      title: "Gas Vario re-ignition faults near salt air",
+      detail:
+        "VG gas modules use flame-sensing re-ignition, and coastal installs corrode electrode harnesses faster than anywhere inland. Intermittent clicking or a burner dropping flame at simmer is electrode geometry, sensor fouling, or harness corrosion — diagnosable in one visit, and worth fixing before the spark module gets blamed.",
+    },
+  ],
+  whyBerne:
+    "Gaggenau owners in South Florida have two realistic options: factory-adjacent service with long scheduling horizons, or an independent shop that actually knows the BSH platform. We're the second — the same senior techs who handle our Thermador and Bosch benchmark work service Gaggenau with the BSH diagnostic procedures, error-code structure, and parts pipeline they already use weekly. We respect what the hardware costs: two techs on 400-series doors, stone-safe extraction on Vario modules, panel protocol on integrated columns, and measurements before parts on anything refrigerated. EPA-608 Universal certification covers the sealed-system work, the gas license covers the VG modules, and the 90-day parts and labor warranty covers everything we install. The $59 service call credits toward the repair.",
+  relatedServices: [
+    { slug: "oven-repair", label: "Oven Repair" },
+    { slug: "refrigerator-repair", label: "Refrigerator Repair" },
+    { slug: "dishwasher-repair", label: "Dishwasher Repair" },
+    { slug: "wine-cooler-repair", label: "Wine Cooler Repair" },
+  ],
+  serviceArea:
+    "Gaggenau installs concentrate exactly where you'd expect — Fisher Island, Miami Beach, Brickell and Edgewater towers, Coral Gables, Bal Harbour, Golden Beach, Las Olas Isles, Boca Raton, and the Palm Beach island. We dispatch across the full tri-county footprint, and Gaggenau calls route to the senior premium-kitchen rotation.",
+  faqs: [
+    {
+      question: "Does anyone in South Florida actually service Gaggenau?",
+      answer:
+        "Yes — we do, regularly. Gaggenau is built by BSH, the same group as Bosch and Thermador, so the diagnostic procedures and parts pipeline are ones we work every week. The difference from generic service is knowing the line's specifics: the 400-series door mass, the combi-steam water sensitivity, the Vario extraction protocol. That's exactly the work our senior rotation handles.",
+    },
+    {
+      question: "My combi-steam oven keeps demanding descaling. Is something broken?",
+      answer:
+        "Probably scale, not a defect. South Florida water hardness loads steam generators far faster than the European water the descale intervals were designed around. A manual descale and water-path service clears the fault; treating the feed water is what actually extends the interval. We'll give you the honest version of both.",
+    },
+    {
+      question: "Can you repair the EB 333 / 90cm Gaggenau oven?",
+      answer:
+        "Yes. The EB 333 is the line's icon and we treat it accordingly — heating elements, hinges, gaskets, and control modules are all serviceable, and the door work is done two-handed by procedure. Parts route through BSH distribution, typically 2-4 business days for anything not stocked.",
+    },
+    {
+      question: "One zone of my Vario induction cooktop is dead. Whole cooktop gone?",
+      answer:
+        "Almost certainly not. Vario induction elements run independent generator modules — one dead zone with others working is a single-module diagnosis, confirmed through the BSH service test before we order anything. The careful part is extraction from your countertop, which we treat as the most expensive object in the kitchen.",
+    },
+    {
+      question: "How expensive is Gaggenau repair compared to replacement?",
+      answer:
+        "The ratio is the friendliest in the industry: a 400-series oven runs $10K-$17K to replace, while the repairs we actually perform — hinges, elements, modules, seals, descaling — sit in the hundreds. Gaggenau engineers for decades of service. Unless a unit has catastrophic sealed-system or structural damage, repair wins the math, and we'll show you the numbers before any work starts.",
+    },
+    {
+      question: "Do you service Gaggenau wine climate cabinets?",
+      answer:
+        "Yes — RW multi-zone cabinets included. Zone drift, fan motors, seals, and humidity issues are the regular work, and we measure actual zone temperatures against setpoint before replacing anything. For serious collections we prioritize scheduling the way we would a failing refrigerator.",
+    },
+    {
+      question: "Are you an authorized Gaggenau service center?",
+      answer:
+        "No — Berne is an independent service company, not affiliated with or endorsed by Gaggenau or BSH. What we offer is BSH-platform fluency, senior techs, faster scheduling than the factory channel typically manages in South Florida, and a 90-day warranty on our work. For in-warranty units, factory service protects your coverage; out of warranty, independence is usually faster and less expensive.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Bertazzoni
+// ---------------------------------------------------------------------------
+
+const bertazzoni: ResidentialBrandProfile = {
+  slug: "bertazzoni",
+  name: "Bertazzoni",
+  manufacturer: "Bertazzoni S.p.A.",
+  hq: "Guastalla, Italy",
+  tier: "premium",
+  teaser:
+    "Italian ranges with mechanical souls — Master, Professional, and Heritage series serviced by techs who understand that a Bertazzoni oven is tuned, not just repaired.",
+  metaTitle: "Bertazzoni Range Repair South Florida · $59 · Berne",
+  metaDescription:
+    "Bertazzoni range & oven repair in Miami, Fort Lauderdale & Boca Raton. Igniters, thermostat calibration, convection fans. $59 call, 90-day warranty.",
+  about:
+    "Bertazzoni has built cooking equipment in Guastalla since 1882, and the ranges South Florida buys today — Master, Professional, and Heritage series in 24 to 48 inches — keep a deliberately mechanical character: brass burners, physical thermostats on the gas ovens, and far less electronics than the German and American competition. That design philosophy changes how the brand is serviced. A Bertazzoni gas oven that bakes hot or cold isn't throwing an error code; it has a thermostat that needs testing and often calibration, which is a skill, not a part swap. The burners light through spark modules and switch harnesses that South Florida humidity tests year-round. Oven doors run on hinge and spring assemblies that wear visibly by year five of heavy use. And because dealers cluster in the Miami Design District and the brand prices below Wolf while looking the part, the install base here is large, young, and growing — a lot of 30- and 36-inch Master series ranges in remodels from Coconut Grove to Delray. We service the platform on its own terms: mechanical diagnosis, honest calibration work, igniters and hinge kits on the truck, and the patience to align six brass burner caps so they all light on the first click.",
+  equipment: [
+    {
+      series: "Master Series ranges (MAST 24-36\", gas / induction / dual-fuel)",
+      description:
+        "The volume seller in South Florida remodels. Spark modules and igniter switches, oven thermostat calibration, door hinge kits, and convection fan motors on the electric-oven versions.",
+    },
+    {
+      series: "Professional Series ranges (PROF 24-48\")",
+      description:
+        "The flagship look — metal knobs, brass burners, available in the full width run. Same mechanical platform underneath: ignition, thermostats, hinges, plus griddle and double-oven options on the 48-inch.",
+    },
+    {
+      series: "Heritage Series ranges (HERT 30-48\")",
+      description:
+        "The vintage-styled line. Mechanically close to Professional — we service ignition systems, oven calibration, and the trim-heavy doors with the care the finish deserves.",
+    },
+    {
+      series: "Wall ovens and speed ovens (MAST/PROF 30\" electric)",
+      description:
+        "Electric wall ovens with more conventional controls. Heating elements, convection motors, door locks, and control faults — closer to standard European-oven service.",
+    },
+    {
+      series: "Cooktops and rangetops (gas and induction)",
+      description:
+        "Gas cooktops share the range's burner and ignition hardware; induction models run generator modules diagnosed per-zone. Re-ignition faults near the coast are a recurring ticket.",
+    },
+    {
+      series: "Ventilation and dishwashers (KU hoods, DW24 panel-ready)",
+      description:
+        "Hood blower motors and controls, and the panel-ready dishwashers Bertazzoni pairs with its kitchens — drain pumps, circulation faults, and door balance on custom panels.",
+    },
+  ],
+  failureModes: [
+    {
+      title: "Gas oven baking hot or cold — thermostat calibration drift",
+      detail:
+        "Bertazzoni gas ovens run mechanical thermostats, and they drift — a unit baking 25-50°F off setpoint is the brand's signature complaint. The fix is testing the thermostat against a calibrated probe and either adjusting it (there's a calibration procedure most shops never learned) or replacing it when it's past adjustment. We do the measurement first; half the 'broken oven' calls are recoverable by calibration.",
+    },
+    {
+      title: "Burner igniters clicking continuously or not sparking",
+      detail:
+        "The spark system — module, switch harness, electrodes — is the most common Bertazzoni service call in our climate. Boil-overs and humidity track moisture into igniter switches, causing phantom clicking; corroded electrodes stop sparking entirely. We isolate the leaking switch or dead electrode circuit rather than shotgunning parts, and we re-seat burner caps whose misalignment causes half the 'won't light' complaints.",
+    },
+    {
+      title: "Oven door dropping or not closing flush — hinge and spring wear",
+      detail:
+        "Bertazzoni doors run on hinge-and-spring assemblies that wear by year four to six of heavy use. A door that drops open the last inch or won't sit flush bleeds heat, stretches preheat times, and cooks unevenly — owners often blame the thermostat. Hinge kits are available and the replacement is routine; we check door seal compression while we're in there.",
+    },
+    {
+      title: "Convection fan failure on dual-fuel and electric ovens",
+      detail:
+        "The convection motor on dual-fuel Masters and Professionals develops bearing noise before it dies — a scraping or droning behind the oven's back wall. Caught early it's a clean motor swap; ignored, it can take the fan blade into the element. Parts come through Bertazzoni's US distribution, typically 3-5 business days, so calling at the first noise saves an oven-less week.",
+    },
+    {
+      title: "Dual-fuel oven dead on one function — element or selector faults",
+      detail:
+        "On dual-fuel models, bake working while broil is dead (or convection-only failures) traces to the individual element or the selector switch feeding it. Element resistance testing sorts it in minutes. The electric ovens are conventional under the Italian skin — these are honest, predictable repairs.",
+    },
+    {
+      title: "Flame dropping at simmer on brass burners",
+      detail:
+        "The dual-ring brass burners simmer beautifully when the flame-sense and air mixture are right, and frustrate when they're not — a burner that dies at low flame has a fouled sensing circuit, a misaligned cap, or an air-shutter issue from the factory setting. It's tuning work, and it's why a Bertazzoni tech needs mechanical patience more than a parts catalog.",
+    },
+    {
+      title: "Induction zone faults on Master induction ranges",
+      detail:
+        "The induction Masters run per-zone generator boards. A zone that stops detecting cookware or throws a flashing fault is diagnosed through the service test to module level before ordering. Less common in the field than the gas issues, but fully serviceable.",
+    },
+  ],
+  whyBerne:
+    "Bertazzoni rewards mechanical service culture, and that's what our cooking-side techs bring — the same crew that handles Wolf and Dacor ranges. We test gas oven thermostats against calibrated probes instead of declaring them dead, we carry igniter switches, spark modules, and hinge kits for the common Master and Professional configurations, and we know the brand-specific quirks: the calibration procedure, the burner-cap geometry, the air-shutter tuning that makes the simmer behave. Licensed for gas, insured, 18 technicians across the tri-county map, 29,000+ completed repairs, and a 4.79-star average across 871 Google reviews. The $59 service call is credited toward the repair and everything we install carries the 90-day parts and labor warranty.",
+  relatedServices: [
+    { slug: "oven-repair", label: "Oven Repair" },
+    { slug: "range-hood-repair", label: "Range Hood Repair" },
+    { slug: "dishwasher-repair", label: "Dishwasher Repair" },
+  ],
+  serviceArea:
+    "Bertazzoni's South Florida footprint follows the remodel map — Coconut Grove, Coral Gables, Miami Shores, Doral, Aventura, Hollywood, Fort Lauderdale, Coral Springs, Boca Raton, and Delray Beach, with dealers clustered around the Miami Design District feeding new installs every month. Same-day dispatch across Miami-Dade, Broward, and Palm Beach when scheduling allows.",
+  faqs: [
+    {
+      question: "My Bertazzoni oven runs hot (or cold). Can it be fixed without a new thermostat?",
+      answer:
+        "Often, yes. The gas ovens use mechanical thermostats with a factory calibration procedure — drift up to a few dozen degrees is frequently recoverable by adjustment against a calibrated probe. When the thermostat is past adjustment, replacement is straightforward. Either way the diagnosis is a measurement, not a guess, and it happens on the first visit.",
+    },
+    {
+      question: "Why do my Bertazzoni burners keep clicking?",
+      answer:
+        "Continuous clicking means a spark circuit believes a burner needs lighting — usually moisture or boil-over residue in an igniter switch, sometimes a failing spark module or a burner cap sitting a few millimeters off its seat. We isolate the specific circuit; replacing the whole ignition system is almost never necessary. In South Florida humidity this is the brand's most common call.",
+    },
+    {
+      question: "Are Bertazzoni parts hard to get in the US?",
+      answer:
+        "The common service parts — igniters, switches, spark modules, hinge kits, thermostats, fan motors — flow through Bertazzoni's US distribution in typically 3-5 business days, and we stock the highest-frequency items on the truck. Cosmetic and trim parts for the Heritage line can take longer. We give you the realistic timeline at diagnosis.",
+    },
+    {
+      question: "Is Bertazzoni worth repairing, or should I switch to another brand?",
+      answer:
+        "Repair, in almost every case. The platform is mechanically simple, parts are reasonable, and the common failures — ignition, thermostats, hinges, fans — are wear items, not design flaws. A typical repair lands in the $200-$450 range against $3K-$8K for a comparable replacement range. The mechanical simplicity that causes the quirks also makes the brand durable.",
+    },
+    {
+      question: "Do you service the 48-inch Professional with the double oven?",
+      answer:
+        "Yes — both ovens, the griddle, and the full burner set. The 48-inch units add a second thermostat and more ignition circuits, which means more things to tune and the same logic to tune them with. It's a configuration we see regularly in Gables and Boca kitchens.",
+    },
+    {
+      question: "My new Bertazzoni never baked accurately from day one. Defect or normal?",
+      answer:
+        "Common, and usually fixable. Factory thermostat settings plus South Florida installation variables (gas pressure, ventilation) mean some units need a calibration pass to bake true — a service visit, not a warranty war. If you're in warranty, Bertazzoni's channel should handle it; out of warranty or tired of waiting, we calibrate against a certified probe and show you the before/after numbers.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Monogram (GE's luxury line)
+// ---------------------------------------------------------------------------
+
+const monogram: ResidentialBrandProfile = {
+  slug: "monogram",
+  name: "Monogram",
+  manufacturer: "GE Appliances (Haier)",
+  hq: "Louisville, Kentucky",
+  tier: "premium",
+  teaser:
+    "GE's luxury line pairs premium hardware with the best parts logistics in the industry — built-in refrigeration, pro ranges, and Advantium speed ovens repaired fast because the parts actually show up.",
+  metaTitle: "Monogram Appliance Repair South Florida · $59 · Berne",
+  metaDescription:
+    "Monogram repair across Miami-Dade, Broward & Palm Beach — built-in fridges, pro ranges, Advantium ovens, ice machines. Same-day, $59 call, 90-day warranty.",
+  about:
+    "Monogram is GE's luxury division, and it occupies a sweet spot for South Florida owners: genuinely premium hardware — 42- and 48-inch built-in refrigeration, columns, pro-style dual-fuel ranges, the Advantium speed-oven family, nugget and gourmet ice machines — backed by GE's parts network, which is simply the best in the industry. That second half changes the ownership experience more than people expect. Where a European competitor's control board might take two weeks to land, the equivalent Monogram part is typically in our hands in one to three days, which is the difference between a weekend without a refrigerator and a month. The service work itself follows premium built-in logic: ZIS/ZISS 42- and 48-inch built-ins with sealed-system and evap-fan tickets, column refrigeration in newer installs, Advantium ovens whose speed-cook magic runs through halogen lamps and magnetrons that age, dual-fuel pro ranges with relay-board and igniter work, and the undercounter ice machines that South Florida garages punish. Our techs carry GE factory service-manual fluency across the line, the EPA-608 certification the sealed systems require, and enough Monogram tickets logged to know the platform's habits — including which version of a part GE has revised and superseded, which matters on a brand with 30 years of built-in history in local kitchens.",
+  equipment: [
+    {
+      series: "Built-in refrigeration (ZIS / ZISS 42\"-48\" side-by-side)",
+      description:
+        "The classic Monogram built-ins anchoring South Florida kitchens since the 90s. Evap and condenser fans, dispenser systems, control boards, and sealed-system work on the units worth saving.",
+    },
+    {
+      series: "Column refrigeration (ZIR / ZIF panel-ready)",
+      description:
+        "The current integrated column platform. Door alignment, ice maker faults, display electronics, and gasket work — serviced in place inside custom cabinetry.",
+    },
+    {
+      series: "Pro ranges and rangetops (ZHP / ZDP 30-48\" dual-fuel)",
+      description:
+        "Pro-style dual-fuel ranges. Igniters and spark systems, oven relay boards, convection motors, and the griddle options on 48-inch configurations.",
+    },
+    {
+      series: "Advantium speed ovens (ZSB / ZSC wall and over-range)",
+      description:
+        "The halogen-plus-microwave speed platform. Halogen lamp failures, magnetrons, door switches, and control faults — a Monogram-specific specialty most shops won't open.",
+    },
+    {
+      series: "Wall ovens (ZTS / ZET Statement & Minimalist)",
+      description:
+        "Electric convection wall ovens. Heating elements, door locks, hinge kits, and the control-panel faults GE's diagnostics isolate cleanly.",
+    },
+    {
+      series: "Ice machines and undercounter (ZDIS / UCC nugget and gourmet)",
+      description:
+        "Undercounter clear-ice and nugget machines. Scale management, pumps, bin sensors, and the condenser cleaning that South Florida installs need twice as often as the manual suggests.",
+    },
+  ],
+  failureModes: [
+    {
+      title: "ZIS/ZISS built-in warm on the fresh-food side — fan and defrost circuit",
+      detail:
+        "The classic 42/48 built-in complaint. With the compressor running, a warm fresh-food side traces to the evaporator fan, a frost-choked air path from an incomplete defrost, or a damper fault — far more often than the compressor itself. We test the actual circuit with the panels off and quote from measurements. Most of these close in one visit with truck-stock parts.",
+    },
+    {
+      title: "Advantium halogen lamp and magnetron aging",
+      detail:
+        "Advantium's speed-cook runs on high-output halogen lamps plus a microwave magnetron, and both age — symptoms range from 'speed-cook takes twice as long' to a dead cavity with the controls alive. Lamp and magnetron replacements are routine for us and mysterious to shops that treat it like a normal microwave. GE parts availability keeps these repairs fast and economical.",
+    },
+    {
+      title: "Dispenser system failures on built-ins — auger motors, chutes, solenoids",
+      detail:
+        "Through-the-door ice and water on the ZIS platform runs an auger motor, chute flap, and solenoid set that wears with use. No ice dispensing with ice in the bin is the auger circuit or a frozen chute; a dribbling water dispenser is the valve or a fatigued line. All of it is serviceable, and the parts are days away at worst.",
+    },
+    {
+      title: "Pro range oven relay board faults (ZDP dual-fuel)",
+      detail:
+        "Dual-fuel Monogram ranges drive their electric ovens through relay boards with a known aging pattern — an element that stops energizing, erratic preheat, or a convection mode that quietly disappeared. Board diagnosis is by-the-book GE procedure, replacements are available (often revised versions that outlast the originals), and the gas side keeps working throughout.",
+    },
+    {
+      title: "Ice machine scale and pump failures in garage installs",
+      detail:
+        "South Florida garages push undercounter ice machines hard — heat raises head pressure while hard water scales the evaporator plate and pump. Production drops, cubes go cloudy or thin, and eventually the pump or bin sensor quits. We descale, service the water path, clean the condenser, and replace what's actually worn. Twice-yearly cleaning roughly doubles machine life here.",
+    },
+    {
+      title: "Column ice maker faults on ZIR panel-ready units",
+      detail:
+        "The integrated columns' ice systems fault through fill valves, level sensing, and the occasional harness issue at the door. GE's diagnostic mode surfaces the failing leg directly, which keeps this an evidence-based repair rather than a parts cannon.",
+    },
+    {
+      title: "Wall oven door lock and hinge issues on self-clean units",
+      detail:
+        "Self-clean cycles are hard on door lock motors and hinges — the classic post-clean call is a door locked shut or a door that no longer sits flush. Lock motor replacement and hinge kits are standard work, and we'll tell you honestly: skip the self-clean cycle on an aging oven and the door hardware lasts years longer.",
+    },
+    {
+      title: "Control board failures after summer power events",
+      detail:
+        "Storm-season surges take out Monogram refrigeration and oven boards every year. Symptoms: dead displays, units stuck in fault states, compressors locked out. GE's board availability (and revision history) makes these unusually fast repairs for the premium segment — typically days, not weeks. Surge protection on built-ins is the cheapest insurance we recommend.",
+    },
+  ],
+  whyBerne:
+    "Monogram is where premium service should be easy, and we make it so. GE's parts network means we quote realistic timelines and hit them — common boards, fans, igniters, lamps, and valves either ride on the truck or land in 1-3 business days, the fastest in the premium segment. Our techs carry GE service-manual fluency across the Monogram line, EPA-608 Universal certification for the sealed-system work, and gas licensing for the pro ranges. We've logged enough tickets on the ZIS built-in platform alone to know its habits cold, and the Advantium family — which many shops decline — is standard work for us. The $59 service call applies toward the repair, every job carries the 90-day parts and labor warranty, and same-day dispatch covers the full tri-county footprint.",
+  relatedServices: [
+    { slug: "refrigerator-repair", label: "Refrigerator Repair" },
+    { slug: "oven-repair", label: "Oven Repair" },
+    { slug: "ice-maker-repair", label: "Ice Maker Repair" },
+    { slug: "dishwasher-repair", label: "Dishwasher Repair" },
+  ],
+  serviceArea:
+    "Monogram built-ins span thirty years of South Florida kitchens — from classic ZIS units in Pinecrest, Coral Gables, and Plantation to new column installs in Brickell, Aventura, Fort Lauderdale, Boca Raton, and Palm Beach Gardens. We dispatch across Miami-Dade, Broward, and Palm Beach counties, same-day when scheduling allows.",
+  faqs: [
+    {
+      question: "Is Monogram the same as GE? Who actually makes it?",
+      answer:
+        "Monogram is GE Appliances' luxury division — designed and built by GE (owned by Haier since 2016) as a separate premium line from GE Profile and Café. For service this is good news: the hardware is premium-grade, but parts flow through GE's distribution network, the strongest in the industry, which keeps Monogram repairs faster and more economical than European-brand equivalents.",
+    },
+    {
+      question: "My 42-inch Monogram built-in is warm on the fridge side. Compressor?",
+      answer:
+        "Statistically unlikely. On the ZIS/ZISS platform a warm fresh-food side with the unit running usually means the evaporator fan, a frost-blocked air path from a defrost fault, or a damper issue. The compressor is the last suspect, not the first. We test the actual circuits at the $59 diagnostic — which credits toward the repair — before any expensive word gets used.",
+    },
+    {
+      question: "Do you repair Advantium ovens?",
+      answer:
+        "Yes, and it's something of a specialty — the Advantium's halogen-lamp-plus-magnetron design confuses shops that treat it like a standard microwave. Lamp replacement, magnetrons, door switches, and control faults are all routine for us, and GE parts availability keeps the repairs quick. If speed-cook has gotten slow or the cavity went dead, it's almost always repairable.",
+    },
+    {
+      question: "How fast can you get Monogram parts?",
+      answer:
+        "Fastest in the premium segment. Common parts ride on the truck; nearly everything else lands in 1-3 business days through GE's distribution. Even control boards for 20-year-old ZIS built-ins are usually obtainable, often as revised versions that outlast the originals. It's the single biggest ownership advantage Monogram has over European competitors.",
+    },
+    {
+      question: "Is a 20-year-old Monogram built-in worth repairing?",
+      answer:
+        "Often yes. The ZIS-era cabinets and sealed systems were built for the long haul, replacement built-ins start around $10K installed, and GE's parts support for the old platform remains unusually good. The honest exceptions: a failed sealed system on a corroded coastal unit, or repeated board failures — and we'll tell you straight when replacement wins the math.",
+    },
+    {
+      question: "Do you service Monogram ice machines?",
+      answer:
+        "Yes — the undercounter clear-ice and nugget machines, including the garage installs South Florida loves and the machines hate. Descaling, water-path service, pumps, bin sensors, and condenser cleaning are the regular work. If production has dropped or the cubes have gone thin, call before the pump fails; the early version of that repair is much cheaper.",
+    },
+  ],
+};
+
+// ---------------------------------------------------------------------------
 // Registry
 // ---------------------------------------------------------------------------
 
@@ -1891,7 +2710,27 @@ export const RESIDENTIAL_BRAND_PROFILES: ResidentialBrandProfile[] = [
   whirlpool,
   lg,
   samsung,
+  liebherr,
+  dacor,
+  fisherPaykel,
+  gaggenau,
+  bertazzoni,
+  monogram,
 ];
+
+/**
+ * Brand hubs added in the 2026-06-11 content wave. EN-only (no `es` block):
+ * excluded from the /es lane and given en+x-default hreflang. Sitemap uses
+ * this to set the fresher lastmod.
+ */
+export const NEW_BRAND_SLUGS_2026_06_11 = [
+  "liebherr",
+  "dacor",
+  "fisher-paykel",
+  "gaggenau",
+  "bertazzoni",
+  "monogram",
+] as const;
 
 export const RESIDENTIAL_BRAND_SLUGS = RESIDENTIAL_BRAND_PROFILES.map((b) => b.slug);
 

@@ -13,7 +13,7 @@ import {
 import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const PAGE_TITLE = "Premium Appliance Brands We Repair";
-const PAGE_DESC = `Sub-Zero, Wolf, Viking, Thermador, Miele, KitchenAid, GE, Whirlpool, LG, Samsung — same-day service across South Florida. $${COMPANY.serviceCallPrice} service call.`;
+const PAGE_DESC = `Sub-Zero, Wolf, Thermador, Miele, Gaggenau, Liebherr, Fisher & Paykel, Dacor & more — same-day repair across South Florida. $${COMPANY.serviceCallPrice} service call.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -108,7 +108,7 @@ export default function BrandsIndex() {
 
       <BrandSection
         eyebrow="Premium tier"
-        title="Premium kitchens — built-ins, pro-style, German engineering"
+        title="Premium kitchens — built-ins, pro-style, European engineering"
         brands={premium}
       />
       <BrandSection
