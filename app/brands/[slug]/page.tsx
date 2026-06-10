@@ -62,6 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `/brands/${brand.slug}`,
       languages: {
         "en-US": absoluteUrl(`/brands/${brand.slug}`),
+        "es-US": absoluteUrl(`/es/brands/${brand.slug}`),
         "x-default": absoluteUrl(`/brands/${brand.slug}`),
       },
     },

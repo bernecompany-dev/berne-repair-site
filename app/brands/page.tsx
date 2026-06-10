@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     canonical: "/brands",
     languages: {
       "en-US": absoluteUrl("/brands"),
+      "es-US": absoluteUrl("/es/brands"),
       "x-default": absoluteUrl("/brands"),
     },
   },

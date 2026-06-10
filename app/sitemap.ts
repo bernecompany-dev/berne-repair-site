@@ -4,6 +4,7 @@ import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
 import { publishedArticles } from "@/lib/blog/articles";
 import { RESIDENTIAL_BRAND_SLUGS } from "@/lib/data/residential-brand-profiles";
+import { getComboUnique } from "@/lib/data/combo-unique";
 import { BRAND_CITY_SLUGS } from "@/lib/data/brand-city-content";
 import { BRAND_COMPARISON_SLUGS } from "@/lib/data/brand-comparisons";
 import { TEAM } from "@/data/team";
@@ -14,6 +15,12 @@ import { BACK_OFFICE } from "@/data/team-bios";
  * changes. Avoids every-build churn that Google treats as low-signal noise.
  */
 const LAST_MOD = new Date("2026-05-18");
+
+/**
+ * Reworked layers, wave 2026-06-10: top-20 uniquified combos (hand-written
+ * content + meta descriptions) and the whole /es tree (real Spanish rewrite).
+ */
+const REWORKED_MOD = new Date("2026-06-10");
 
 function bothLocales(path: string) {
   return {
@@ -41,7 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/es`,
-      lastModified: LAST_MOD,
+      lastModified: REWORKED_MOD,
       changeFrequency: "weekly",
       priority: 0.95,
       alternates: { languages: bothLocales("/") },
@@ -52,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const p = `/services/${s.slug}`;
     return [
       { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.9, alternates: { languages: esCounterpart(p) } },
-      { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
+      { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
     ];
   });
 
@@ -60,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const p = `/areas/${c.slug}`;
     return [
       { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.9, alternates: { languages: esCounterpart(p) } },
-      { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
+      { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
     ];
   });
 
@@ -70,14 +77,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const p = `/services/${s.slug}/${c.slug}`;
       combos.push({
         url: `${SITE_URL}${p}`,
-        lastModified: LAST_MOD,
+        // Top-20 uniquified combos got hand-written content + descriptions
+        // in the 2026-06-10 wave — their lastmod must reflect that.
+        lastModified: getComboUnique(s.slug, c.slug) ? REWORKED_MOD : LAST_MOD,
         changeFrequency: "monthly",
         priority: 0.8,
         alternates: { languages: esCounterpart(p) },
       });
       combos.push({
         url: `${SITE_URL}/es${p}`,
-        lastModified: LAST_MOD,
+        lastModified: REWORKED_MOD,
         changeFrequency: "monthly",
         priority: 0.75,
         alternates: { languages: esCounterpart(p) },
@@ -99,24 +108,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/cookies",
   ].flatMap((p) => [
     { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: esCounterpart(p) } },
-    { url: `${SITE_URL}/es${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },
+    { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },
   ]);
 
-  // Premium residential brand pages — English only for now.
+  // Premium residential brand pages — EN + ES hubs (the /es/brands lane is
+  // live and indexable; it was missing from the sitemap and the EN side
+  // lacked the reciprocal es-US hreflang until 2026-06-10).
   const brandsIndex: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/brands`,
       lastModified: LAST_MOD,
       changeFrequency: "monthly",
       priority: 0.85,
+      alternates: { languages: esCounterpart("/brands") },
+    },
+    {
+      url: `${SITE_URL}/es/brands`,
+      lastModified: REWORKED_MOD,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: { languages: esCounterpart("/brands") },
     },
   ];
-  const brandPages: MetadataRoute.Sitemap = RESIDENTIAL_BRAND_SLUGS.map((slug) => ({
-    url: `${SITE_URL}/brands/${slug}`,
-    lastModified: LAST_MOD,
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const brandPages: MetadataRoute.Sitemap = RESIDENTIAL_BRAND_SLUGS.flatMap((slug) => {
+    const p = `/brands/${slug}`;
+    return [
+      { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: esCounterpart(p) } },
+      { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.75, alternates: { languages: esCounterpart(p) } },
+    ];
+  });
 
   // Brand × city landing pages (premium lane: 5 brands × 3 cities) —
   // launched 2026-06-10, hence the fresher lastModified.
