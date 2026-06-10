@@ -26,6 +26,7 @@ import {
   type ResidentialBrandProfile,
 } from "@/lib/data/residential-brand-profiles";
 import { getComparisonsForBrand } from "@/lib/data/brand-comparisons";
+import { getCitiesForBrand } from "@/lib/data/brand-city-content";
 import {
   absoluteUrl,
   breadcrumbJsonLd,
@@ -51,7 +52,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const brand = getResidentialBrand(slug);
   if (!brand) return {};
   return {
-    title: brand.metaTitle,
+    // Absolute — metaTitles carry city context ("Sub-Zero Repair Miami &
+    // South FL") and are hand-budgeted ≤60 chars; the layout suffix would
+    // push them past SERP truncation.
+    title: { absolute: brand.metaTitle },
     description: brand.metaDescription,
     alternates: {
       canonical: `/brands/${brand.slug}`,
@@ -83,6 +87,7 @@ export default async function BrandPage({ params }: PageProps) {
 
   const related = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.slug !== brand.slug).slice(0, 4);
   const comparisons = getComparisonsForBrand(brand.slug);
+  const cityPages = getCitiesForBrand(brand.slug);
 
   // Service @id used by the page-level Service JSON-LD. Provider = global
   // LocalBusiness via @id reference (resolved by layout's localBusinessJsonLd).
@@ -334,6 +339,40 @@ export default async function BrandPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Brand × city landing pages — premium-lane local layer */}
+      {cityPages.length ? (
+        <section className="container-prose py-16 sm:py-20">
+          <div className="max-w-3xl">
+            <span className="eyebrow">{brand.name} by city</span>
+            <h2 className="heading-section mt-3">
+              {brand.name} repair where you live.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              City-specific {brand.name} service guides — local housing stock,
+              building logistics, and the failure patterns we see in your zip.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+            {cityPages.map((c) => (
+              <li key={c.city}>
+                <Link
+                  href={`/brands/${brand.slug}/${c.city}`}
+                  className="group flex h-full flex-col gap-2 rounded-2xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <div className="text-base font-semibold text-foreground group-hover:text-brand">
+                    {brand.name} repair in {c.h1City}
+                  </div>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-brand">
+                    Local guide
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {/* Specialists for this brand */}
       <BrandSpecialistsBlock brandSlug={brand.slug} brandName={brand.name} />

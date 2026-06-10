@@ -86,7 +86,7 @@ const subZero: ResidentialBrandProfile = {
   tier: "premium",
   teaser:
     "Built-in refrigeration is what we do most often. Sub-Zero columns, classic side-by-sides, and BI built-ins — diagnosed and repaired by techs who have rebuilt these units long enough to know the platform's habits.",
-  metaTitle: "Sub-Zero Repair · South Florida · $59 Service Call",
+  metaTitle: "Sub-Zero Repair Miami & South Florida · $59 · Berne",
   metaDescription:
     "Same-day Sub-Zero refrigerator repair across Miami-Dade, Broward & Palm Beach. Built-ins, columns, BI-36, 648PRO. Licensed, EPA-608, 90-day warranty.",
   about:
@@ -263,7 +263,7 @@ const wolf: ResidentialBrandProfile = {
   tier: "premium",
   teaser:
     "Wolf ranges, rangetops, and dual-fuel ovens are built for the long haul. Spark module failures, infrared broiler elements, dual-fuel control boards — we diagnose on the platform and carry the right OEM parts.",
-  metaTitle: "Wolf Range & Oven Repair · South Florida · $59 Service Call",
+  metaTitle: "Wolf Range & Oven Repair Miami–South FL · $59 · Berne",
   metaDescription:
     "Wolf range, rangetop, dual-fuel & convection oven repair across South Florida. Same-day. Real OEM parts. EPA-608 certified. 90-day warranty.",
   about:
@@ -430,7 +430,7 @@ const viking: ResidentialBrandProfile = {
   tier: "premium",
   teaser:
     "Viking pro-style ranges, built-in refrigerators, dishwashers, and rangetops. Older 5- and 7-series and the newer Tuscany platform — we know what fails on each generation.",
-  metaTitle: "Viking Range Repair · South Florida · $59 Service Call",
+  metaTitle: "Viking Repair Miami & South Florida · $59 · Berne",
   metaDescription:
     "Viking range, refrigerator, dishwasher & cooktop repair across Miami-Dade, Broward, Palm Beach. Pro-style 5-series, 7-series, Tuscany. EPA-608, 90-day warranty.",
   about:
@@ -610,7 +610,7 @@ const thermador: ResidentialBrandProfile = {
   tier: "premium",
   teaser:
     "Thermador Pro Grand, Pro Harmony, Star Burner cooktops, Freedom column refrigeration, and the Sapphire dishwasher. Common platform with Bosch and Gaggenau — we know the BSH service procedures.",
-  metaTitle: "Thermador Repair · South Florida · $59 Service Call",
+  metaTitle: "Thermador Repair Miami & South Florida · $59 · Berne",
   metaDescription:
     "Thermador Pro Grand, Pro Harmony, Star Burner cooktop, Freedom column & Sapphire dishwasher repair. South Florida same-day. EPA-608, 90-day warranty.",
   about:
@@ -790,7 +790,7 @@ const miele: ResidentialBrandProfile = {
   tier: "premium",
   teaser:
     "German engineering across kitchen and laundry. MasterCool refrigeration, G-series dishwashers, W1/T1 washer-dryer, Generation 7000 ovens. Miele service requires Miele tooling — we have it.",
-  metaTitle: "Miele Repair · South Florida · $59 Service Call",
+  metaTitle: "Miele Repair Miami & South Florida · $59 · Berne",
   metaDescription:
     "Miele dishwasher, washer/dryer, oven, refrigerator & coffee system repair across South Florida. Trained on G-series, W1/T1, MasterCool, Gen 7000. 90-day warranty.",
   about:
@@ -977,7 +977,7 @@ const kitchenAid: ResidentialBrandProfile = {
   tier: "mid-premium",
   teaser:
     "KitchenAid built-in refrigeration, ranges, cooktops, and the workhorse dishwasher line. Built on Whirlpool platforms — we know the shared parts and the KitchenAid-specific quirks.",
-  metaTitle: "KitchenAid Repair · South Florida · $59 Service Call",
+  metaTitle: "KitchenAid Repair Miami & South FL · $59 · Berne",
   metaDescription:
     "KitchenAid refrigerator, range, dishwasher & cooktop repair. Same-day across Miami-Dade, Broward, Palm Beach. $59 service call. 90-day warranty.",
   about:
@@ -1146,7 +1146,7 @@ const ge: ResidentialBrandProfile = {
   tier: "mid-premium",
   teaser:
     "GE, GE Profile, Cafe, and Monogram — same parent, four tiers. Monogram built-in refrigeration, Cafe induction, Profile dishwashers. We carry parts across the line.",
-  metaTitle: "GE / Monogram / Cafe / Profile Repair · South Florida · $59",
+  metaTitle: "GE Monogram & Cafe Repair Miami–South FL · $59 · Berne",
   metaDescription:
     "GE, GE Profile, Cafe & Monogram appliance repair. Same-day across South Florida. Built-ins, induction, ranges, dishwashers. $59 service call. 90-day warranty.",
   about:
@@ -1330,7 +1330,7 @@ const whirlpool: ResidentialBrandProfile = {
   tier: "mass",
   teaser:
     "Whirlpool is the mass-market workhorse — top-load and front-load washers, dryers, top-freezer and French door refrigerators, dishwashers, ranges. Parts available, jobs done first visit.",
-  metaTitle: "Whirlpool Repair · South Florida · $59 Service Call",
+  metaTitle: "Whirlpool Repair Miami & South FL · $59 · Berne",
   metaDescription:
     "Whirlpool washer, dryer, refrigerator, dishwasher & range repair. Same-day across South Florida. $59 service call. Parts on truck. 90-day warranty.",
   about:
@@ -1514,7 +1514,7 @@ const lg: ResidentialBrandProfile = {
   tier: "mid-premium",
   teaser:
     "LG inverter compressors, InstaView refrigerators, TwinWash laundry, and the WashTower stacked column. We work with LG's diagnostic procedures and the LinearCompressor platform.",
-  metaTitle: "LG Repair · South Florida · $59 Service Call",
+  metaTitle: "LG Appliance Repair Miami & South FL · $59 · Berne",
   metaDescription:
     "LG refrigerator, washer, dryer & range repair across South Florida. LinearCompressor, InstaView, TwinWash, WashTower. Same-day. EPA-608, 90-day warranty.",
   about:
@@ -1698,7 +1698,7 @@ const samsung: ResidentialBrandProfile = {
   tier: "mid-premium",
   teaser:
     "Samsung Family Hub refrigerators, FlexWash laundry, slide-in induction ranges, and the Bespoke modular line. We know the platform — and the known failure patterns.",
-  metaTitle: "Samsung Repair · South Florida · $59 Service Call",
+  metaTitle: "Samsung Appliance Repair Miami–South FL · $59 · Berne",
   metaDescription:
     "Samsung refrigerator, washer, dryer, range & dishwasher repair across South Florida. Family Hub, FlexWash, Bespoke. Same-day. $59 service call. 90-day warranty.",
   about:
