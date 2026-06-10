@@ -23,6 +23,12 @@
 export type ComboUniqueFaq = { question: string; answer: string };
 
 export type ComboUnique = {
+  /**
+   * Hand-written SERP meta description — symptom + geo + $59 + 90-day,
+   * ≤155 chars. Replaces the templated description variants in the combo
+   * route's generateMetadata.
+   */
+  metaDescription: string;
   /** Replaces the templated hero paragraph under the H1 */
   heroIntro: string;
   /** City-specific deep-dive section rendered after the issues grid */
@@ -42,6 +48,8 @@ const key = (service: string, city: string) => `${service}/${city}`;
 export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   // == FLAGSHIP =============================================================
   [key("refrigerator-repair", "miami")]: {
+    metaDescription:
+      "Warm fridge in Miami? Heat-doubled compressor cycles and salt-air coils — same-day repair, Brickell built-ins to Grove kitchens. $59 call, 90-day warranty.",
     heroIntro:
       "Miami is the hardest city in America to be a refrigerator. Compressors run near-continuously against 90°F ambient heat, condenser coils clog with humidity-bound dust, and anything within a mile of Biscayne Bay corrodes years ahead of schedule. We repair refrigerators here every working day — from Sub-Zero columns in Brickell towers to French-door units in Coconut Grove bungalows — with a flat $59 diagnostic and trucks stocked for same-day completion.",
     local: {
@@ -93,6 +101,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
 
   // == GSC-PROVEN EARNERS ===================================================
   [key("dryer-repair", "hallandale-beach")]: {
+    metaDescription:
+      "Dryer not heating in Hallandale Beach? Our HQ is on N Federal Hwy — the fastest dispatch we run. $59 diagnostic, vent airflow checked, 90-day warranty.",
     heroIntro:
       "Hallandale Beach is home turf — our headquarters sits on N Federal Highway, which makes a dryer call here the shortest dispatch we run. Condo laundry closets in Three Islands and Golden Isles, stacked units in the beach towers, gas dryers in the single-family pockets west of US-1: we see all of it, with a $59 diagnostic and most repairs closed the same visit.",
     local: {
@@ -133,6 +143,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("air-duct-cleaning", "greenacres")]: {
+    metaDescription:
+      "Dusty vents or musty AC in Greenacres? HEPA negative-pressure duct cleaning with before/after photos. $59 service call, 90-day warranty.",
     heroIntro:
       "Greenacres runs on central air — single-family homes and villas from the '80s and '90s where the original flex-duct is now decades old. That's exactly the duct generation that sheds, leaks, and grows musty in Palm Beach County humidity. We bring HEPA-filtered negative-pressure equipment, photograph everything before and after, and quote honestly when a duct run needs replacing instead of cleaning.",
     local: {
@@ -173,6 +185,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("microwave-repair", "hialeah")]: {
+    metaDescription:
+      "Microwave dead or sparking in Hialeah? OTR and built-in units fixed same day — en inglés o español. $59 diagnostic credited, 90-day warranty.",
     heroIntro:
       "Hialeah kitchens work harder than almost anywhere in Miami-Dade, and the over-the-range microwave takes the brunt of it — steam from the stovetop below, heavy daily use, and the door slamming that eventually kills every latch switch. We repair OTR, built-in, and drawer microwaves across Hialeah and West Hialeah with a $59 diagnostic, en inglés o en español.",
     local: {
@@ -213,6 +227,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("refrigerator-repair", "hialeah")]: {
+    metaDescription:
+      "Fridge warm or leaking in Hialeah? We keep 10-20-year-old units alive with OEM parts and honest math. $59 diagnostic, 90-day warranty. En español.",
     heroIntro:
       "Hialeah's refrigerators are survivors — many of the homes around West Hialeah and Palm Springs North still run units that are 10, 15, even 20 years old, and owners here want them fixed, not replaced. That's work we respect and know how to do: honest diagnostics at $59, OEM parts with the number printed on your invoice, and straight talk when a repair genuinely isn't worth it. En español si lo prefiere.",
     local: {
@@ -253,6 +269,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("garbage-disposal-repair", "key-biscayne")]: {
+    metaDescription:
+      "Disposal jammed or leaking on Key Biscayne? One trip — repair parts and a new unit ride the truck over the bridge. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Key Biscayne is one bridge from the mainland, and that bridge is exactly why disposal calls here get planned right: our techs arrive with both repair parts and a replacement unit on the truck, so a corroded InSinkErator in a Cape Florida kitchen gets resolved in one trip — repair or swap, your call after the $59 diagnostic.",
     local: {
@@ -293,6 +311,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("dishwasher-repair", "bal-harbour")]: {
+    metaDescription:
+      "Miele or Bosch dishwasher down in Bal Harbour? Senior techs service panel-ready units in place; building COI handled. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Bal Harbour kitchens are built around panel-ready, European dishwashers — Miele, Bosch, Thermador — integrated into custom cabinetry in the Village's oceanfront residences. Servicing them is precision work: senior techs, manufacturer service modes, cabinetry-safe removal when needed, and building COIs handled before we arrive. The diagnostic is the same flat $59 it is everywhere else.",
     local: {
@@ -333,6 +353,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("air-duct-cleaning", "bay-harbor-islands")]: {
+    metaDescription:
+      "Musty AC or damp vents in Bay Harbor Islands? HEPA duct cleaning for condo risers and shared closets, photo-documented. $59 call, 90-day warranty.",
     heroIntro:
       "Bay Harbor Islands packs mid-rise condo living onto two small islands, and its duct problems are condo problems: shared mechanical closets, decades-old risers in the East Island co-ops, and salt-humid air that keeps coils and ducts damp enough for microbial growth. We clean with HEPA negative-pressure equipment, document everything in photos, and coordinate with building management as needed.",
     local: {
@@ -373,6 +395,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("washer-repair", "kendall")]: {
+    metaDescription:
+      "Washer not draining or spinning in Kendall? Trucks stocked for LG, Samsung and Whirlpool — most jobs one visit. $59 diagnostic credited, 90-day warranty.",
     heroIntro:
       "Kendall is family-laundry country — high-capacity top-loaders and front-load pairs in Kendall Lakes and the Hammocks running loads daily, not weekly. Heavy duty cycles surface every weak point a washer has, and we've repaired all of them: $59 diagnostic, trucks stocked for the Whirlpool, LG, and Samsung platforms that dominate these neighborhoods, most jobs done in one visit.",
     local: {
@@ -413,6 +437,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("dryer-repair", "delray-beach")]: {
+    metaDescription:
+      "Dryer taking two cycles in Delray Beach? We check vent airflow on every call — the usual culprit here. $59 diagnostic credited, 90-day warranty.",
     heroIntro:
       "Delray Beach dryers split into two populations: condo and townhome units near Atlantic Avenue with long, lint-choked vent runs, and the laundry rooms of the Lake Ida and Tropic Isle single-family streets where machines run a decade past their warranty. Both get the same treatment — a $59 diagnostic that always includes an airflow check, because in Delray the vent is guilty until proven innocent.",
     local: {
@@ -453,6 +479,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("oven-repair", "lake-park")]: {
+    metaDescription:
+      "Oven not heating in Lake Park? Vintage Park Avenue District ranges and new townhome units alike — igniters on the truck. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Lake Park's housing runs older than its glossier Palm Beach County neighbors — mid-century homes around the Park Avenue District whose ovens have decades of service behind them, plus newer ranges in the townhomes near Kelsey Park. We repair both generations: $59 diagnostic, igniters and elements on the truck, and honest advice when a vintage range deserves a specialist part order instead of a guess.",
     local: {
@@ -494,6 +522,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
 
   // == TIER-1 VOLUME BETS ===================================================
   [key("washer-repair", "miami")]: {
+    metaDescription:
+      "Washer stuck mid-cycle in Miami? Condo stackables to full-size pairs — building logistics handled for you. $59 diagnostic credited, 90-day warranty.",
     heroIntro:
       "Washer repair in Miami spans two different worlds: stacked and ventless combos squeezed into Brickell and Edgewater condo closets, and full-size pairs in the Grove, Shenandoah, and Little Havana. We service both daily — $59 diagnostic, condo building logistics handled for you, and trucks stocked for the LG, Samsung, and Whirlpool platforms that dominate the city.",
     local: {
@@ -534,6 +564,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("dryer-repair", "miami")]: {
+    metaDescription:
+      "Dryer running hot or not drying in Miami? We measure vent airflow on every call — high-rise runs are the usual cause. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Miami dryers fight two enemies the brochure never mentions: humidity that makes every cycle work harder, and high-rise vent runs that nobody has cleaned since the building went up. From stacked units in Edgewater towers to gas dryers in Coconut Grove, we diagnose at a flat $59 — and we measure vent airflow on every single call, because in this city the duct is the disease and the dryer is usually just the symptom.",
     local: {
@@ -574,6 +606,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("refrigerator-repair", "fort-lauderdale")]: {
+    metaDescription:
+      "Fridge warm in Fort Lauderdale? Salt-canal corrosion is the local killer — Sub-Zero to Whirlpool, EPA-608 techs. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Fort Lauderdale refrigeration runs the full spectrum we service anywhere: Sub-Zero built-ins in Las Olas Isles and Rio Vista kitchens, premium French-door units in Coral Ridge, and hard-working freestanding fridges across Victoria Park and Flagler Village. Saltwater canals thread the whole city — and with them the corrosion that defines fridge repair here. $59 diagnostic, EPA-608 certified techs, same-day when you call before noon.",
     local: {
@@ -614,6 +648,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("refrigerator-repair", "kendall")]: {
+    metaDescription:
+      "Fridge or ice maker down in Kendall? French-door family workhorses fixed same day, parts on the truck. $59 diagnostic credited, 90-day warranty.",
     heroIntro:
       "Kendall fridges feed real households — French-door workhorses in Kendall Lakes and the Hammocks opened a hundred times a day, ice makers that never get a rest, and a second fridge in half the garages. We keep them running: $59 diagnostic, LG/Samsung/Whirlpool parts stocked on the truck, and most repairs finished the same visit they're diagnosed.",
     local: {
@@ -654,6 +690,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("washer-repair", "hialeah")]: {
+    metaDescription:
+      "Washer problems in Hialeah? Hard-working top-loaders repaired with OEM parts and honest pricing — en español. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Hialeah laundry rooms keep machines longer and work them harder than anywhere in Miami-Dade — top-loaders with a decade of daily cycles, repaired, passed along, and repaired again. That's our kind of work: $59 diagnostic, OEM part numbers printed on the invoice, honest math on every repair, y todo el servicio disponible en español.",
     local: {
@@ -694,6 +732,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("refrigerator-repair", "boca-raton")]: {
+    metaDescription:
+      "Sub-Zero or built-in fridge down in Boca Raton? Senior EPA-608 techs from our S Federal Hwy office. $59 diagnostic credited, 90-day warranty.",
     heroIntro:
       "Boca Raton's kitchens hold one of the densest premium-refrigeration populations in Palm Beach County — Sub-Zero columns in East Boca and Royal Palm estates, integrated panel-ready units in Boca West and Boca Pointe, wine storage everywhere. Our Boca Raton office on S Federal Highway anchors this part of our service map: senior techs, EPA-608 sealed-system credentials, $59 diagnostic.",
     local: {
@@ -734,6 +774,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("washer-repair", "hollywood")]: {
+    metaDescription:
+      "Washer leaking or not spinning in Hollywood? Same-day from our Hallandale HQ next door — beach towers to the Hills. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Hollywood washers split by geography: full-size pairs in the Hollywood Hills and Emerald Hills ranch homes, stacked units in the beach towers along A1A, and everything in between across Hollywood Lakes. We run this city daily from our Hallandale Beach headquarters next door — $59 diagnostic, same-day on most before-noon calls, 90-day warranty on everything we touch.",
     local: {
@@ -774,6 +816,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("dryer-repair", "pembroke-pines")]: {
+    metaDescription:
+      "Dryer squealing or not heating in Pembroke Pines? 90s-vintage units are our specialty — belts and rollers stocked. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "Pembroke Pines is planned-community territory — SilverLakes, Chapel Trail, Pembroke Falls — where '90s-vintage homes mean '90s-vintage laundry rooms and dryers that have quietly worked for years past their warranty. We keep them safe and running: $59 diagnostic, vent airflow checked on every call, belts and rollers on the truck for the platforms these neighborhoods run.",
     local: {
@@ -814,6 +858,8 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   },
 
   [key("refrigerator-repair", "west-palm-beach")]: {
+    metaDescription:
+      "Fridge failing in West Palm Beach? El Cid bungalows to Downtown towers — EPA-608 techs, dedicated 561 line. $59 diagnostic, 90-day warranty.",
     heroIntro:
       "West Palm Beach refrigeration spans historic El Cid bungalows, Flamingo Park's restored 1920s homes, Northwood cottages, and the new Downtown towers — four different fridge populations in one city. We service all of them from our Palm Beach County dispatch, with a dedicated 561 line, EPA-608 certified techs, and the same flat $59 diagnostic everywhere.",
     local: {

@@ -98,10 +98,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // so we budget the page-level title at ~35 chars to land the SERP title ≤60.
   // Drop "Repair" + "$" prefix for combos over the budget so we stay in range.
   // Short combos keep the full marker for click-through clarity.
+  // Air-duct demand is "cleaning", not "repair" (GSC: greenacres pos 5.5 with
+  // a mismatched "Air Duct Repair" title) — these get an absolute cleaning
+  // title so the layout suffix doesn't push the query match past 60 chars.
+  const isAirDuct = service.slug === "air-duct-cleaning";
   const naturalTitle = `${service.shortName} Repair in ${city.name} · $${COMPANY.serviceCallPrice}`;
-  const title = naturalTitle.length <= 45
-    ? naturalTitle
-    : `${service.shortName} in ${city.name} · $${COMPANY.serviceCallPrice}`;
+  const title = isAirDuct
+    ? `Air Duct Cleaning in ${city.name} — Same-Day · $${COMPANY.serviceCallPrice} Call`
+    : naturalTitle.length <= 45
+      ? naturalTitle
+      : `${service.shortName} in ${city.name} · $${COMPANY.serviceCallPrice}`;
   // Vary description openings by (slug, city) so 700+ combos aren't near-identical.
   // Each variant is hand-tuned to land ≤155 chars including the trailing CTA,
   // so SERP descriptions don't get truncated by Google.
@@ -120,9 +126,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `Trusted ${noun} in ${city.name}, ${city.county} County. $${COMPANY.serviceCallPrice} flat diagnostic. ${phone}.`,
     `Local ${noun} in ${city.name} — call before noon, technician same day. $${COMPANY.serviceCallPrice} diagnostic. ${phone}.`,
   ];
-  const description = variants[Math.abs(seed) % variants.length];
+  // Top-20 uniquified combos (lib/data/combo-unique.ts) carry a hand-written
+  // meta description — symptom + geo + $59 + 90-day — instead of the template.
+  const description =
+    getComboUnique(service.slug, city.slug)?.metaDescription ??
+    variants[Math.abs(seed) % variants.length];
   return {
-    title,
+    title: isAirDuct ? { absolute: title } : title,
     description,
     alternates: {
       canonical: `/services/${service.slug}/${city.slug}`,

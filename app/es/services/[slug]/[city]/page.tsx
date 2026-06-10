@@ -44,20 +44,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = CITY_BY_SLUG[citySlug];
   if (!service || !city) return {};
   // Real Spanish titles — "Refrigerator en Miami" Spanglish was flagged in the
-  // 2026-06-10 techseo audit. Budget mirrors the EN combo template (~45 chars
-  // before the layout suffix).
-  const naturalTitle = `Reparación de ${service.es.shortName} en ${city.name} · $${COMPANY.serviceCallPrice}`;
-  const title = naturalTitle.length <= 52
+  // 2026-06-10 techseo audit. Rendered ABSOLUTE (no layout suffix): with
+  // " · Berne Appliance Repair" appended the ES titles truncated at ~66 chars
+  // in the SERP (seo_skills audit P1-3). "Limpieza de Ductos" gets its own
+  // action noun — the demand is cleaning, not repair.
+  const esTitleBase = service.slug === "air-duct-cleaning"
+    ? `Limpieza de Ductos en ${city.name}`
+    : `Reparación de ${service.es.shortName} en ${city.name}`;
+  const naturalTitle = `${esTitleBase} — Hoy Mismo · $${COMPANY.serviceCallPrice}`;
+  const title = naturalTitle.length <= 60
     ? naturalTitle
-    : `${service.es.shortName} en ${city.name} · $${COMPANY.serviceCallPrice}`;
+    : `${esTitleBase} — Hoy · $${COMPANY.serviceCallPrice}`;
   // "limpieza de ductos" already carries its own action noun — don't prefix
   // "Reparación de" onto it.
   const esNounPhrase = service.es.seoNoun.includes("limpieza")
     ? service.es.seoNoun
     : `reparación de ${service.es.seoNoun}`;
-  const description = `${esNounPhrase.charAt(0).toUpperCase()}${esNounPhrase.slice(1)} el mismo día en ${city.name}, condado de ${city.county}. Visita técnica $${COMPANY.serviceCallPrice}. Con licencia y seguro. Llame al ${COMPANY.phone.display}.`;
+  // ≤155 chars: drop the licencia clause when the long form would truncate.
+  const descBase = `${esNounPhrase.charAt(0).toUpperCase()}${esNounPhrase.slice(1)} el mismo día en ${city.name}, condado de ${city.county}. Visita técnica $${COMPANY.serviceCallPrice}, garantía de 90 días.`;
+  const descTail = ` Llame al ${COMPANY.phone.display}.`;
+  const description = `${descBase} Con licencia y seguro.${descTail}`.length <= 155
+    ? `${descBase} Con licencia y seguro.${descTail}`
+    : `${descBase}${descTail}`;
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: {
       canonical: `/es/services/${service.slug}/${city.slug}`,
