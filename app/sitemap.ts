@@ -11,6 +11,15 @@ import { TEAM } from "@/data/team";
 import { BACK_OFFICE } from "@/data/team-bios";
 
 /**
+ * Hourly ISR — matches /blog and /blog/[slug]. The blog drip publishes
+ * future-dated posts via revalidation (publishedArticles(new Date()) is
+ * re-evaluated on each regeneration), so the sitemap must pick up newly
+ * published posts on the same cadence instead of staying frozen at the
+ * last deploy.
+ */
+export const revalidate = 3600;
+
+/**
  * Static last-modified date — bump intentionally when content meaningfully
  * changes. Avoids every-build churn that Google treats as low-signal noise.
  */
