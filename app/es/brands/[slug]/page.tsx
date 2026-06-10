@@ -17,6 +17,7 @@ import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
+import { SERVICE_BY_SLUG } from "@/data/services";
 import { CITIES } from "@/data/cities";
 import {
   RESIDENTIAL_BRAND_PROFILES,
@@ -75,6 +76,10 @@ export default async function BrandPageES({ params }: PageProps) {
   const { slug } = await params;
   const brand = getResidentialBrand(slug);
   if (!brand) notFound();
+
+  // Filter out service slugs without /services routes (stove/cooktop) —
+  // prevents 404 internal links.
+  const relatedServices = brand.relatedServices.filter((s) => SERVICE_BY_SLUG[s.slug]);
 
   // Fall back to EN content if ES not provided
   const v = brand.es ?? {
@@ -345,7 +350,7 @@ export default async function BrandPageES({ params }: PageProps) {
       </section>
 
       {/* Related services */}
-      {brand.relatedServices.length ? (
+      {relatedServices.length ? (
         <section className="container-prose py-16 sm:py-20">
           <div className="max-w-3xl">
             <span className="eyebrow">Servicios relacionados</span>
@@ -357,7 +362,7 @@ export default async function BrandPageES({ params }: PageProps) {
             </p>
           </div>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {brand.relatedServices.map((s) => (
+            {relatedServices.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/es/services/${s.slug}`}

@@ -19,6 +19,7 @@ import { BrandSpecialistsBlock } from "@/components/sections/brand-specialists";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { CITIES } from "@/data/cities";
+import { SERVICE_BY_SLUG } from "@/data/services";
 import {
   RESIDENTIAL_BRAND_PROFILES,
   RESIDENTIAL_BRAND_SLUGS,
@@ -88,6 +89,9 @@ export default async function BrandPage({ params }: PageProps) {
   const related = RESIDENTIAL_BRAND_PROFILES.filter((b) => b.slug !== brand.slug).slice(0, 4);
   const comparisons = getComparisonsForBrand(brand.slug);
   const cityPages = getCitiesForBrand(brand.slug);
+  // Some profiles list service slugs that have no /services route
+  // (stove-repair, cooktop-repair) — filter so we never render 404 links.
+  const relatedServices = brand.relatedServices.filter((s) => SERVICE_BY_SLUG[s.slug]);
 
   // Service @id used by the page-level Service JSON-LD. Provider = global
   // LocalBusiness via @id reference (resolved by layout's localBusinessJsonLd).
@@ -378,7 +382,7 @@ export default async function BrandPage({ params }: PageProps) {
       <BrandSpecialistsBlock brandSlug={brand.slug} brandName={brand.name} />
 
       {/* Related services */}
-      {brand.relatedServices.length ? (
+      {relatedServices.length ? (
         <section className="container-prose py-16 sm:py-20">
           <div className="max-w-3xl">
             <span className="eyebrow">Related services</span>
@@ -390,7 +394,7 @@ export default async function BrandPage({ params }: PageProps) {
             </p>
           </div>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {brand.relatedServices.map((s) => (
+            {relatedServices.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
