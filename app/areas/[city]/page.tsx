@@ -95,7 +95,7 @@ export default async function CityPage({ params }: Props) {
 
   const crumbs = [
     { name: "Home", href: "/" },
-    { name: "Areas", href: "/#areas" },
+    { name: "Areas", href: "/areas" },
     { name: city.name, href: `/areas/${city.slug}` },
   ];
   const personal = cityPersonalCopy(city);
@@ -146,7 +146,7 @@ export default async function CityPage({ params }: Props) {
           <nav className="mb-6 flex items-center gap-2 text-xs text-muted-foreground" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-foreground">Home</Link>
             <span aria-hidden>/</span>
-            <Link href="/#areas" className="hover:text-foreground">Areas</Link>
+            <Link href="/areas" className="hover:text-foreground">Areas</Link>
             <span aria-hidden>/</span>
             <span className="text-foreground/80">{city.name}</span>
           </nav>
@@ -168,7 +168,7 @@ export default async function CityPage({ params }: Props) {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             Appliance Repair in
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               {city.name}, FL.
             </span>
           </h1>

@@ -6,25 +6,37 @@ import { Languages } from "lucide-react";
 import { LOCALES, LOCALE_SHORT, type Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-/**
- * Set of paths that have a Spanish counterpart at /es/<same path>.
- * Add to this as more pages get translated. Pages not listed fall back to
- * the Spanish home (/es) instead of 404'ing on a missing mirror.
- */
-const HAS_ES_MIRROR = new Set<string>([
-  "/",
-]);
+// Brand hub slugs that have a real /es/brands/<slug> mirror — kept in sync
+// with the `es` localization flags in lib/data/residential-brand-profiles.ts
+// (importing that ~2.7k-line module into this client component would bloat
+// the bundle for a slug list). EN-only hubs (liebherr, dacor, fisher-paykel,
+// gaggenau, bertazzoni, monogram) are deliberately excluded.
+const ES_BRAND_SLUGS = [
+  "sub-zero",
+  "wolf",
+  "viking",
+  "thermador",
+  "miele",
+  "kitchenaid",
+  "ge",
+  "whirlpool",
+  "lg",
+  "samsung",
+];
 
-// Patterns we know have Spanish mirrors. If the path matches any, the
-// switcher links directly to the corresponding /es/... URL; otherwise it
-// falls back to the Spanish home.
+// Patterns we know have Spanish mirrors (mirrors the app/es/ route tree).
+// If the path matches any, the switcher links directly to the corresponding
+// /es/... URL; otherwise it falls back to the Spanish home.
 const ES_MIRROR_PATTERNS: RegExp[] = [
   /^\/$/,
-  /^\/team\/?$/,
+  /^\/(about|careers|cookies|credentials|privacy|request-dispatch|search|team|terms)\/?$/,
   /^\/areas\/?$/,
   /^\/areas\/[a-z0-9-]+\/?$/,
+  /^\/services\/?$/,
   /^\/services\/[a-z0-9-]+\/?$/,
   /^\/services\/[a-z0-9-]+\/[a-z0-9-]+\/?$/,
+  /^\/brands\/?$/,
+  new RegExp(`^/brands/(${ES_BRAND_SLUGS.join("|")})/?$`),
 ];
 
 function targetHref(currentLocale: Locale, pathname: string): string {
@@ -43,7 +55,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
   return (
     <div
       role="group"
-      aria-label="Language"
+      aria-label={currentLocale === "es" ? "Idioma" : "Language"}
       className={cn(
         "inline-flex items-center gap-0.5 rounded-full border border-border bg-tint/[0.04] p-0.5",
         className,
@@ -60,7 +72,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
             hrefLang={loc}
             aria-current={isActive ? "true" : undefined}
             className={cn(
-              "rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
+              "rounded-full px-3 py-2 text-xs font-semibold transition-colors",
               isActive
                 ? "bg-brand text-brand-foreground"
                 : "text-foreground/80 hover:bg-tint/[0.06]",

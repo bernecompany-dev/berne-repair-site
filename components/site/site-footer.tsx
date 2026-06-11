@@ -13,6 +13,25 @@ import { BRANDS } from "@/data/brands";
 import { getDictionary } from "@/lib/dictionary";
 import { localePath, type Locale } from "@/lib/i18n";
 
+// Brand names (data/brands.ts) that have a hub page at /brands/<slug>.
+// `es: true` means a Spanish mirror exists at /es/brands/<slug> — kept in
+// sync with the `es` localization flags in
+// lib/data/residential-brand-profiles.ts (importing that ~2.7k-line module
+// into this client component would bloat the bundle for a slug lookup).
+const BRAND_HUBS: Record<string, { slug: string; es: boolean }> = {
+  "Sub-Zero": { slug: "sub-zero", es: true },
+  Wolf: { slug: "wolf", es: true },
+  Viking: { slug: "viking", es: true },
+  Thermador: { slug: "thermador", es: true },
+  Miele: { slug: "miele", es: true },
+  KitchenAid: { slug: "kitchenaid", es: true },
+  LG: { slug: "lg", es: true },
+  Samsung: { slug: "samsung", es: true },
+  Whirlpool: { slug: "whirlpool", es: true },
+  GE: { slug: "ge", es: true },
+  "GE Monogram": { slug: "monogram", es: false },
+};
+
 export function SiteFooter() {
   const pathname = usePathname() ?? "/";
   const locale: Locale = pathname.startsWith("/es") ? "es" : "en";
@@ -33,7 +52,7 @@ export function SiteFooter() {
                 key={p.tel}
                 href={`tel:${p.tel}`}
                 data-analytics={i === 0 ? "footer-call-primary" : "footer-call-regional"}
-                className="flex items-center gap-2.5 text-foreground hover:text-brand"
+                className="flex items-center gap-2.5 py-2 text-foreground hover:text-brand"
               >
                 <Phone className="size-4 text-brand" aria-hidden />
                 <span className="font-medium" itemProp={i === 0 ? "telephone" : undefined}>
@@ -44,13 +63,13 @@ export function SiteFooter() {
                 </span>
               </a>
             ))}
-            <a href={`mailto:${COMPANY.email.public}`} className="flex items-center gap-2.5 text-foreground hover:text-brand">
+            <a href={`mailto:${COMPANY.email.public}`} className="flex items-center gap-2.5 py-2 text-foreground hover:text-brand">
               <Mail className="size-4 text-brand" aria-hidden />
               <span itemProp="email">{COMPANY.email.public}</span>
             </a>
             <div className="flex items-center gap-2.5 text-muted-foreground">
               <Clock className="size-4 text-brand" aria-hidden />
-              <time dateTime="Mo-Su 08:00-21:00">{COMPANY.hours.label}</time>
+              <time dateTime="Mo-Su 07:00-21:00">{COMPANY.hours.label}</time>
             </div>
             {/* Visible NAP street address — GEO/local trust signal (HQ). */}
             <div className="flex items-center gap-2.5 text-muted-foreground">
@@ -92,6 +111,11 @@ export function SiteFooter() {
               {s.name}
             </FooterLink>
           ))}
+          <FooterLink href={localePath(locale, "/services")}>
+            {locale === "es"
+              ? `Los ${SERVICES.length} servicios →`
+              : `All ${SERVICES.length} services →`}
+          </FooterLink>
         </FooterCol>
 
         <FooterCol title={t.serviceArea}>
@@ -104,7 +128,29 @@ export function SiteFooter() {
         </FooterCol>
 
         <FooterCol title={t.brandsCol}>
-          <p className="text-sm leading-6 text-muted-foreground">{BRANDS.slice(0, 14).join(" · ")}</p>
+          <p className="text-sm leading-6 text-muted-foreground">
+            {BRANDS.slice(0, 14).map((b, i) => {
+              const hub = BRAND_HUBS[b];
+              return (
+                <span key={b}>
+                  {i > 0 && " · "}
+                  {hub ? (
+                    <Link
+                      href={hub.es ? localePath(locale, `/brands/${hub.slug}`) : `/brands/${hub.slug}`}
+                      className="text-foreground/80 transition-colors hover:text-brand"
+                    >
+                      {b}
+                    </Link>
+                  ) : (
+                    b
+                  )}
+                </span>
+              );
+            })}
+          </p>
+          <FooterLink href={localePath(locale, "/brands")}>
+            {locale === "es" ? "Todas las marcas →" : "All brands →"}
+          </FooterLink>
           <p className="mt-3 text-xs text-muted-foreground/70">{t.brandsTail}</p>
         </FooterCol>
       </div>
@@ -144,40 +190,53 @@ export function SiteFooter() {
           </p>
           <div className="flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
             <p>© {new Date().getFullYear()} {COMPANY.legalEntity} · DBA: {COMPANY.dbaNames.join(", ")}</p>
-            <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <Link href={localePath(locale, "/")} className="hover:text-foreground">{t.home}</Link>
+            <p className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              <Link href={localePath(locale, "/")} className="inline-block py-1.5 hover:text-foreground">{t.home}</Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/about")} className="hover:text-foreground">About</Link>
+              <Link href={localePath(locale, "/about")} className="inline-block py-1.5 hover:text-foreground">
+                {locale === "es" ? "Sobre nosotros" : "About"}
+              </Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/team")} className="hover:text-foreground">Team</Link>
+              <Link href={localePath(locale, "/team")} className="inline-block py-1.5 hover:text-foreground">
+                {locale === "es" ? "Equipo" : "Team"}
+              </Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/careers")} className="hover:text-foreground">
+              <Link href={localePath(locale, "/careers")} className="inline-block py-1.5 hover:text-foreground">
                 {locale === "es" ? "Carreras" : "Careers"}
               </Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/contact")} className="hover:text-foreground">{t.contactLink}</Link>
+              {/* /contact and /family have no /es mirrors — link the EN paths from both locales */}
+              <Link href="/contact" className="inline-block py-1.5 hover:text-foreground">{t.contactLink}</Link>
               <span aria-hidden>·</span>
               {/* /request-dispatch deliberately not linked from nav/footer —
                   it serves as an ads/SEO landing page only (wave-2 CRO,
                   2026-06-10). The page itself stays live. */}
               {/* Blog + comparison guides are English-only content — link the EN paths from both locales */}
-              <Link href="/blog" className="hover:text-foreground">Blog</Link>
+              <Link href="/blog" className="inline-block py-1.5 hover:text-foreground">Blog</Link>
               <span aria-hidden>·</span>
-              <Link href="/compare" className="hover:text-foreground">
+              <Link href="/compare" className="inline-block py-1.5 hover:text-foreground">
                 {locale === "es" ? "Guías y comparativas" : "Guides & comparisons"}
               </Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/credentials")} className="hover:text-foreground">Credentials</Link>
+              <Link href={localePath(locale, "/credentials")} className="inline-block py-1.5 hover:text-foreground">
+                {locale === "es" ? "Credenciales" : "Credentials"}
+              </Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/family")} className="hover:text-foreground">The family</Link>
+              <Link href="/family" className="inline-block py-1.5 hover:text-foreground">
+                {locale === "es" ? "La familia" : "The family"}
+              </Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/privacy")} className="hover:text-foreground">{t.privacy}</Link>
+              <Link href={localePath(locale, "/search")} className="inline-block py-1.5 hover:text-foreground">
+                {locale === "es" ? "Buscar" : "Search"}
+              </Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/terms")} className="hover:text-foreground">{t.terms}</Link>
+              <Link href={localePath(locale, "/privacy")} className="inline-block py-1.5 hover:text-foreground">{t.privacy}</Link>
               <span aria-hidden>·</span>
-              <Link href={localePath(locale, "/cookies")} className="hover:text-foreground">{t.cookies}</Link>
+              <Link href={localePath(locale, "/terms")} className="inline-block py-1.5 hover:text-foreground">{t.terms}</Link>
               <span aria-hidden>·</span>
-              <Link href="/sitemap.xml" className="hover:text-foreground">{t.sitemap}</Link>
+              <Link href={localePath(locale, "/cookies")} className="inline-block py-1.5 hover:text-foreground">{t.cookies}</Link>
+              <span aria-hidden>·</span>
+              <Link href="/sitemap.xml" className="inline-block py-1.5 hover:text-foreground">{t.sitemap}</Link>
             </p>
           </div>
         </div>

@@ -21,9 +21,9 @@ import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   // Absolute — brand already in the string; layout template would double it.
-  title: { absolute: "Sobre Berne Appliance Repair — Servicio premium desde 2015" },
+  title: { absolute: "Sobre Berne Appliance Repair — Empresa familiar desde 2015" },
   description:
-    "Fundada en 2015 por Eugene Bernitsky. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach. El nivel premium del sur de Florida para Sub-Zero, Wolf, Viking, Thermador, Miele.",
+    "Parte de la familia de empresas Berne que sirve al sur de Florida desde 2015 — Eugene Berne lanzó esta división premium en 2022. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach.",
   alternates: {
     canonical: "/es/about",
     languages: {
@@ -47,7 +47,7 @@ export default function AboutPageES() {
     url: absoluteUrl("/es/about"),
     inLanguage: "es-US",
     description:
-      "Berne Appliance Repair: fundada en 2015 por Eugene Bernitsky. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas. El nivel premium del sur de Florida para Sub-Zero, Wolf, Viking, Thermador y Miele en Miami-Dade, Broward, Palm Beach y la Costa del Golfo.",
+      "Berne Appliance Repair: la división premium de la familia de empresas Berne, reparando electrodomésticos en el sur de Florida desde 2015 — lanzada por Eugene Berne en 2022. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas. Sub-Zero, Wolf, Viking, Thermador y Miele en Miami-Dade, Broward, Palm Beach y la Costa del Golfo.",
     mainEntity: { "@id": absoluteUrl("/#business") },
     breadcrumb: { "@id": absoluteUrl("/es/about#breadcrumb") },
   };
@@ -56,8 +56,8 @@ export default function AboutPageES() {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": absoluteUrl("/#founder"),
-    name: "Eugene Bernitsky",
-    alternateName: "Eugene Berne",
+    name: "Eugene Berne",
+    alternateName: "Eugene Bernitsky",
     jobTitle: "Fundador y CEO",
     worksFor: { "@id": absoluteUrl("/#organization") },
     sameAs: [
@@ -107,18 +107,20 @@ export default function AboutPageES() {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             El equipo premium de electrodomésticos del sur de Florida.{" "}
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               Construido en oficio, no en subcontratistas.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Eugene Bernitsky fundó Berne Appliance Repair en 2015 con una sola
-            premisa: las casas de alto poder adquisitivo del sur de Florida
-            merecían una empresa de servicio que de verdad apareciera, que
-            arreglara el electrodoméstico bien a la primera, y a la que se le
-            pudiera confiar el interior de un refrigerador Sub-Zero de $20K o
-            una estufa Wolf de 48&quot;. Once años después —{" "}
+            La familia de empresas Berne repara los electrodomésticos del sur
+            de Florida desde 2015 con una sola premisa: las casas de alto
+            poder adquisitivo merecían una empresa de servicio que de verdad
+            apareciera, que arreglara el electrodoméstico bien a la primera, y
+            a la que se le pudiera confiar el interior de un refrigerador
+            Sub-Zero de $20K o una estufa Wolf de 48&quot;. Eugene Berne lanzó
+            esta división premium en 2022 — mismo operador, mismos estándares,
+            enfoque más preciso en marcas de lujo. Hoy —{" "}
             {COMPANY.socialProof.technicians} técnicos W-2,{" "}
             {COMPANY.socialProof.repairsCompleted} servicios completados,{" "}
             <span className="text-foreground">
@@ -163,17 +165,21 @@ export default function AboutPageES() {
 
           <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/90 sm:text-lg">
             <p>
-              Arranqué Berne en 2015 porque las casas de alto poder
-              adquisitivo del sur de Florida me hacían siempre la misma
-              pregunta: a quién le confío un refrigerador de $20K. En ese
-              entonces la respuesta honesta era &ldquo;a nadie de forma
-              confiable&rdquo; — el mercado eran despachadores de franquicia,
-              operaciones de un solo camión, y una larga cola de técnicos
-              dispuestos a abrir un sistema sellado de Sub-Zero sin
-              entrenamiento formal. Construimos la alternativa.
+              La familia de empresas Berne repara electrodomésticos en el sur
+              de Florida desde 2015, porque las casas de alto poder
+              adquisitivo hacían siempre la misma pregunta: a quién le confío
+              un refrigerador de $20K. La respuesta honesta solía ser
+              &ldquo;a nadie de forma confiable&rdquo; — el mercado eran
+              despachadores de franquicia, operaciones de un solo camión, y
+              una larga cola de técnicos dispuestos a abrir un sistema sellado
+              de Sub-Zero sin entrenamiento formal. La familia construyó la
+              alternativa — y en 2022 lancé esta división premium: mismo
+              operador, mismos estándares, enfoque más preciso en marcas de
+              lujo.
             </p>
             <p>
-              Once años después, la operación son {COMPANY.socialProof.technicians}{" "}
+              Hoy, en toda la familia de empresas, la operación son{" "}
+              {COMPANY.socialProof.technicians}{" "}
               técnicos W-2 en camiones surtidos específicamente para las
               marcas premium que el sur de Florida tiene en sus cocinas:
               Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch — más las

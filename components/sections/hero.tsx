@@ -30,9 +30,9 @@ export function Hero({ locale = "en" }: { locale?: Locale }) {
             </div>
 
             <h1 className="heading-hero mt-7">
-              {d.title1}
+              {d.title1}{" "}
               <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-brand via-[oklch(0.78_0.18_252)] to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand via-[oklch(0.78_0.18_252)] to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
                 {d.title2}
               </span>
             </h1>
@@ -88,7 +88,7 @@ function HeroImage({ label, suffix }: { label: string; suffix: string }) {
     src: "/images/team/evgenii-knyazev.webp",
     alt: "Eugene Berne — Owner of Berne Appliance Repair, South Florida appliance repair",
     width: 800,
-    height: 1100,
+    height: 1000, // matches the real 800×1000 intrinsic size of evgenii-knyazev.webp (wrong ratio caused ~70px CLS)
     priority: true,
     sizes: "40vw",
   });

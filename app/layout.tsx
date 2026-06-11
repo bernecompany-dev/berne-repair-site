@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { GoogleAnalytics } from "@/components/site/google-analytics";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
@@ -24,6 +24,20 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Intentional serif for the brand wordmarks (components/sections/brands.tsx,
+// brand-specialists.tsx use `font-serif`). Without a loaded serif, Tailwind's
+// stack fell back to ui-serif/Times — jarring inside the Geist design.
+// Mapped to Tailwind's `font-serif` via --font-serif in app/globals.css.
+// Variable font: omitting `weight` loads the full 400–900 axis (one file per
+// style), covering the wordmarks' font-medium/font-bold + italic variants
+// without synthesized faux styles.
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -121,7 +135,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-US"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

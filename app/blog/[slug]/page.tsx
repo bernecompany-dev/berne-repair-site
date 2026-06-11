@@ -210,7 +210,7 @@ export default async function BlogArticlePage({ params }: Props) {
         </section>
       ) : null}
 
-      <CTABand />
+      <CTABand bookHref="/#lead-form" />
 
       <JsonLd data={jsonLdNodes} />
     </>

@@ -1,17 +1,16 @@
 import { Star, Quote } from "lucide-react";
 import { REVIEWS } from "@/data/reviews";
+import { getDictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 
-export function Reviews() {
+export function Reviews({ locale = "en" }: { locale?: Locale }) {
+  const t = getDictionary(locale).reviews;
   return (
     <section className="container-prose py-20 sm:py-28">
       <div className="max-w-2xl">
-        <span className="eyebrow">What customers say</span>
-        <h2 className="heading-section mt-3">
-          Built on first-visit fixes and repeat customers.
-        </h2>
-        <p className="mt-4 text-sm text-muted-foreground">
-          Verified reviews aggregated from Google. Live integration ships in Phase 4.
-        </p>
+        <span className="eyebrow">{t.eyebrow}</span>
+        <h2 className="heading-section mt-3">{t.title}</h2>
+        <p className="mt-4 text-sm text-muted-foreground">{t.body}</p>
       </div>
 
       <div className="mt-12 grid gap-4 lg:grid-cols-3">
@@ -22,7 +21,7 @@ export function Reviews() {
           >
             <Quote className="size-6 text-brand/70" aria-hidden />
             <blockquote className="text-base leading-relaxed text-foreground/90">
-              "{r.quote}"
+              &ldquo;{r.quote}&rdquo;
             </blockquote>
             <figcaption className="mt-auto flex items-center justify-between border-t border-border/60 pt-4">
               <div>
@@ -31,7 +30,12 @@ export function Reviews() {
                 </div>
                 <div className="text-xs text-muted-foreground">{r.location}</div>
               </div>
-              <div className="flex items-center gap-0.5" aria-label={`${r.rating} out of 5 stars`}>
+              <div
+                className="flex items-center gap-0.5"
+                aria-label={
+                  locale === "es" ? `${r.rating} de 5 estrellas` : `${r.rating} out of 5 stars`
+                }
+              >
                 {Array.from({ length: r.rating }).map((_, i) => (
                   <Star key={i} className="size-3.5 fill-brand text-brand" aria-hidden />
                 ))}

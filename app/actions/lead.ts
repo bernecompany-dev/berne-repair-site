@@ -21,33 +21,64 @@ const countDigits = (s: string) => (s.match(/\d/g)?.length ?? 0);
 const CITY_SLUGS = ["", ...CITIES.map((c) => c.slug)] as [string, ...string[]];
 const APPLIANCE_SLUGS = ["", "other", ...SERVICES.map((s) => s.slug)] as [string, ...string[]];
 
-const LeadSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(80)
-    .refine((v) => !HEADER_INJECTION_RE.test(v), "Invalid characters in name"),
-  phone: z.string().trim().min(7, "Please enter a valid phone number").max(30)
-    .regex(PHONE_FORMAT_RE, "Please enter a valid phone number")
-    .refine((v) => countDigits(v) >= 10, "Please enter a 10-digit US phone"),
-  email: z
-    .string()
-    .trim()
-    .email()
-    .refine((v) => !HEADER_INJECTION_RE.test(v), "Invalid email")
-    .optional()
-    .or(z.literal("")),
-  city: z.enum(CITY_SLUGS).optional().or(z.literal("")),
-  appliance: z.enum(APPLIANCE_SLUGS).optional().or(z.literal("")),
-  brand: z.string().trim().max(60).optional().or(z.literal("")),
-  description: z.string().trim().max(2000).optional().or(z.literal("")),
-  /** TCPA: explicit opt-in for calls/SMS. Required to submit. */
-  consent: z.literal("on", { message: "Please agree to be contacted about your request" }),
-  /** Honeypot — name chosen to look plausible to bots. Must stay empty. */
-  company_url: z.string().max(0).optional().or(z.literal("")),
-  /** Time-since-render check (bots fill forms in <2s). Soft validation. */
-  ts: z.string().optional().or(z.literal("")),
-  locale: z.enum(["en", "es"]).optional().or(z.literal("")),
-});
-
 type Lang = "en" | "es";
+
+// Field-level validation messages, localized to match the form-level `M` map
+// below (ES tone: usted, consistent with locales/es.ts).
+const FIELD_M = {
+  en: {
+    nameRequired: "Please enter your name",
+    nameInvalid: "Invalid characters in name",
+    phoneInvalid: "Please enter a valid phone number",
+    phoneDigits: "Please enter a 10-digit US phone",
+    emailInvalid: "Invalid email",
+    consent: "Please agree to be contacted about your request",
+  },
+  es: {
+    nameRequired: "Por favor ingrese su nombre",
+    nameInvalid: "Caracteres no válidos en el nombre",
+    phoneInvalid: "Ingrese un número de teléfono válido",
+    phoneDigits: "Ingrese un teléfono válido de 10 dígitos (EE. UU.)",
+    emailInvalid: "Correo electrónico no válido",
+    // Mirrors locales/es.ts leadForm.consentError.
+    consent: "Por favor acepte ser contactado sobre su solicitud",
+  },
+} as const;
+
+const makeLeadSchema = (lang: Lang) => {
+  const f = FIELD_M[lang];
+  return z.object({
+    name: z.string().trim().min(2, f.nameRequired).max(80)
+      .refine((v) => !HEADER_INJECTION_RE.test(v), f.nameInvalid),
+    phone: z.string().trim().min(7, f.phoneInvalid).max(30)
+      .regex(PHONE_FORMAT_RE, f.phoneInvalid)
+      .refine((v) => countDigits(v) >= 10, f.phoneDigits),
+    email: z
+      .string()
+      .trim()
+      .email(f.emailInvalid)
+      .refine((v) => !HEADER_INJECTION_RE.test(v), f.emailInvalid)
+      .optional()
+      .or(z.literal("")),
+    city: z.enum(CITY_SLUGS).optional().or(z.literal("")),
+    appliance: z.enum(APPLIANCE_SLUGS).optional().or(z.literal("")),
+    brand: z.string().trim().max(60).optional().or(z.literal("")),
+    description: z.string().trim().max(2000).optional().or(z.literal("")),
+    /** TCPA: explicit opt-in for calls/SMS. Required to submit. */
+    consent: z.literal("on", { message: f.consent }),
+    /** Honeypot — name chosen to look plausible to bots. Must stay empty. */
+    company_url: z.string().max(0).optional().or(z.literal("")),
+    /** Time-since-render check (bots fill forms in <2s). Soft validation. */
+    ts: z.string().optional().or(z.literal("")),
+    locale: z.enum(["en", "es"]).optional().or(z.literal("")),
+  });
+};
+
+// Built once per locale — schemas are static apart from message strings.
+const LEAD_SCHEMAS: Record<Lang, ReturnType<typeof makeLeadSchema>> = {
+  en: makeLeadSchema("en"),
+  es: makeLeadSchema("es"),
+};
 const M = {
   en: {
     successCallback: "Thanks — we'll call you shortly to confirm a time.",
@@ -97,12 +128,19 @@ export async function submitLead(
     return { status: "success", message: msg.successHoneypot };
   }
   // Soft bot check: form rendered in <1.5s means likely a script.
+  // Browser autofill users can legitimately be this fast, so log enough to
+  // recover the lead from Vercel logs (mirrors the missing-API-key path).
   const ts = parseInt(raw.ts || "0", 10);
   if (ts > 0 && Date.now() - ts < 1500) {
+    console.warn(
+      "[lead] anti-bot timer tripped (<1.5s after render) — lead NOT delivered. " +
+      "Recover from logs:",
+      raw.name || "(no name)", raw.phone || "(no phone)", raw.city || "(no city)",
+    );
     return { status: "success", message: msg.successHoneypot };
   }
 
-  const parsed = LeadSchema.safeParse(raw);
+  const parsed = LEAD_SCHEMAS[lang].safeParse(raw);
   if (!parsed.success) {
     const errors: Record<string, string> = {};
     for (const issue of parsed.error.issues) {

@@ -1,14 +1,16 @@
 import { Building2, Store, Utensils, Briefcase } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
+import { getDictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 
-const SEGMENTS = [
-  { icon: Store, label: "Retail" },
-  { icon: Utensils, label: "Restaurants" },
-  { icon: Building2, label: "Property management" },
-  { icon: Briefcase, label: "Volume contracts" },
-];
+const SEGMENT_ICONS = [Store, Utensils, Building2, Briefcase];
 
-export function Commercial() {
+export function Commercial({ locale = "en" }: { locale?: Locale }) {
+  const t = getDictionary(locale).commercial;
+  const segments = t.segments.map((label, i) => ({
+    icon: SEGMENT_ICONS[i] ?? Briefcase,
+    label,
+  }));
   return (
     <section className="relative overflow-hidden border-y border-border/60">
       <div
@@ -21,22 +23,17 @@ export function Commercial() {
       />
       <div className="container-prose grid gap-12 py-20 sm:py-28 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div>
-          <span className="eyebrow">Commercial</span>
-          <h2 className="heading-section mt-3">
-            On call for property managers, restaurants, retail.
-          </h2>
-          <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            We've maintained appliances for Target, Publix, Petco, and dozens of property management
-            companies across South Florida. Net terms, priority dispatch, single point of contact.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="heading-section mt-3">{t.title}</h2>
+          <p className="mt-4 max-w-xl text-lg text-muted-foreground">{t.body}</p>
 
           <div className="mt-8">
-            <CTARow size="md" />
+            <CTARow size="md" locale={locale} />
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          {SEGMENTS.map((s) => (
+          {segments.map((s) => (
             <div
               key={s.label}
               className="flex flex-col items-start gap-4 rounded-2xl border border-border bg-card/60 p-6"

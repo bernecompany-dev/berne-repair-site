@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { COMPANY } from "@/data/company";
 
 export const runtime = "nodejs";
-export const alt = "About Berne Appliance Repair — 11 years, 18 technicians, South Florida";
+export const alt = "About Berne Appliance Repair — Family-run since 2015, 18 technicians, South Florida";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -82,7 +82,7 @@ export default async function OG() {
               maxWidth: 1040,
             }}
           >
-            11 years. 18 W-2 technicians. One Berne.
+            Family-run since 2015. 18 W-2 technicians. One Berne.
           </div>
           <div
             style={{

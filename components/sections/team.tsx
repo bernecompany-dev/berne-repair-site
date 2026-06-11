@@ -2,26 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { Users, ArrowRight } from "lucide-react";
 import { FEATURED_TEAM } from "@/data/team";
+import { getDictionary } from "@/lib/dictionary";
+import { localePath, type Locale } from "@/lib/i18n";
 
-export function TeamSection() {
+export function TeamSection({ locale = "en" }: { locale?: Locale }) {
+  const t = getDictionary(locale).team;
   return (
     <section id="team" className="container-prose py-20 sm:py-28">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <div className="max-w-2xl">
-          <span className="eyebrow">The team</span>
-          <h2 className="heading-section mt-3">
-            Real technicians on every truck — not a callcenter.
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            18 full-time technicians dispatched from across South Florida. The same
-            people customers ask for by name on Google reviews.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="heading-section mt-3">{t.title}</h2>
+          <p className="mt-4 text-lg text-muted-foreground">{t.body}</p>
         </div>
         <Link
-          href="/team"
+          href={localePath(locale, "/team")}
           className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-4 py-2 text-sm font-semibold text-foreground hover:bg-tint/[0.07]"
         >
-          Meet the team
+          {t.cta}
           <ArrowRight className="size-4" aria-hidden />
         </Link>
       </div>
@@ -50,7 +48,7 @@ export function TeamSection() {
             </div>
             <div className="mt-auto flex items-center gap-1.5 text-xs text-muted-foreground">
               <Users className="size-3.5" aria-hidden />
-              {m.years} yrs with Berne
+              {m.years} {t.yearsSuffix}
             </div>
           </article>
         ))}

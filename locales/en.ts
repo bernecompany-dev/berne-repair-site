@@ -1,3 +1,5 @@
+import { CITIES } from "@/data/cities";
+
 export const en = {
   meta: {
     homeTitle: "Berne Appliance Repair — Same-Day Appliance Repair · South Florida",
@@ -10,19 +12,19 @@ export const en = {
     team: "Team",
     whyUs: "Why us",
     contact: "Contact",
-    seeAllCities: "See all 64 cities we cover",
-    allCitiesShort: "All 60+ cities →",
+    seeAllCities: `See all ${CITIES.length} cities we cover`,
+    allCitiesShort: `All ${CITIES.length} cities →`,
   },
   hero: {
     badgePrice: "$59 service call · same-day",
     badgeLicensed: "Licensed & insured",
-    badgeRepairs: "Thousands of repairs",
+    badgeRepairs: "29,000+ repairs",
     title1: "Premium appliance repair.",
     title2: "Same-day across South Florida.",
     body: "18 technicians. Trucks stocked for Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch and every major brand.",
     bodyHighlight: "$59 flat service call",
     bodySuffix: " — applied toward the repair if you say go.",
-    openToday: "Open today · 8 AM – 9 PM",
+    openToday: "Open 7 days · 7 AM – 9 PM",
     warranty: "90-day labor & parts warranty",
     technicians: "full-time technicians",
     priceCardLabel: "Service call",
@@ -51,23 +53,25 @@ export const en = {
   brands: {
     eyebrow: "Brands we service",
     body: "Premium specialists — including Sub-Zero, Wolf, Viking, Thermador — plus every major residential and commercial brand.",
+    footnote: "Plus {brands} and most residential and commercial brands.",
   },
   team: {
     eyebrow: "The team",
-    title: "Real technicians on every truck — not a callcenter.",
+    title: "Real technicians on every truck — not a call center.",
     body: "18 full-time technicians dispatched from across South Florida. The same people customers ask for by name on Google reviews.",
     cta: "Meet the team",
-    yearsSuffix: "yrs with Berne",
+    yearsSuffix: "yrs in the trade",
   },
   reviews: {
     eyebrow: "What customers say",
     title: "Built on first-visit fixes and repeat customers.",
-    body: "Verified Google reviews. Live integration ships in Phase 4.",
+    body: "Verified Google reviews, quoted as posted.",
   },
   commercial: {
     eyebrow: "Commercial",
     title: "On call for property managers, restaurants, retail.",
     body: "We've maintained appliances for Target, Publix, Petco, and dozens of property management companies across South Florida. Net terms, priority dispatch, single point of contact.",
+    segments: ["Retail", "Restaurants", "Property management", "Volume contracts"],
   },
   faq: {
     eyebrow: "FAQ",
@@ -90,7 +94,7 @@ export const en = {
     serviceAreaValue: "Miami-Dade · Broward · Palm Beach",
   },
   leadForm: {
-    title: "Get a free quote",
+    title: "Request same-day service",
     subtitle: "Fill in the basics — we'll call back within minutes during open hours.",
     fields: {
       name: "Your name",
@@ -105,6 +109,7 @@ export const en = {
       description: "What's going on? (optional)",
       descriptionPlaceholder: "Sub-Zero stopped cooling overnight. Freezer side still cold.",
       other: "Other / not sure",
+      detailsToggle: "Add brand / details (optional)",
     },
     submit: "Request a callback",
     sending: "Sending…",
@@ -148,7 +153,7 @@ export const en = {
   statsStrip: {
     techs: "Full-time technicians",
     techsSub: "Not subcontractors",
-    rating: "From {count}+ verified reviews",
+    rating: "From {count} verified reviews",
     ratingSub: "Google, Yelp & other platforms",
     price: "Flat service call",
     priceSub: "Applied toward repair",
@@ -156,7 +161,7 @@ export const en = {
     citiesSub: "Miami-Dade · Broward · Palm Beach",
     sameDay: "Same-day",
     sameDayLabel: "Most jobs scheduled <1 hour",
-    sameDaySub: "Open 7 days · 8 AM – 9 PM",
+    sameDaySub: "Open 7 days · 7 AM – 9 PM",
     warranty: "90-day",
     warrantyLabel: "Warranty on labor & parts",
     warrantySub: "Licensed & insured",
@@ -166,7 +171,7 @@ export const en = {
     title: 'From "broken" to "done" — in one visit.',
     step: "Step",
     s1Title: "Call or text",
-    s1Body: "One number, one minute. Dispatch finds you a same-day slot or the next morning.",
+    s1Body: "One number, one minute. We find you a same-day slot or the next morning.",
     s1Tag: "0 min",
     s2Title: "$59 diagnostic",
     s2Body: "Tech arrives, finds the root cause, quotes the repair. Applied toward the repair if you say go.",
@@ -196,7 +201,7 @@ export const en = {
     title: "Hey — I'm Eugene Berne.",
     p1: "I moved to the United States in 2022. Didn't speak the industry, didn't know a soul in it. I fell into appliance repair by accident — picked up a wrench because the rent wasn't going to pay itself, and I figured I could learn something useful while I did.",
     p2Pre: "Seven months later I launched Berne Appliance Repair. No investors, no playbook, just a couple of trucks and a phone that I answered myself. Three years on we've completed",
-    p2Bold: "over 30,000 service calls",
+    p2Bold: "over 29,000 service calls",
     p2Post: " across South Florida — Sub-Zero columns in Coral Gables, commercial laundromats in Hialeah, ovens in Boca Raton kitchens the night before a dinner party.",
     p3: "I don't run this from behind a desk. I personally hire every technician on this page, and I personally back every repair we do. If a job goes sideways — call me. The number on this site rings me.",
     quote: '"I\'d rather lose a job than send a guy I don\'t trust into your home. That\'s the whole standard."',

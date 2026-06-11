@@ -71,9 +71,9 @@ export function StickyCTA() {
 
   return (
     <div
-      aria-label="Quick actions"
+      aria-label={locale === "es" ? "Acciones rápidas" : "Quick actions"}
       role="region"
-      className={`pointer-events-none fixed inset-x-0 bottom-0 z-40 lg:hidden transition-[opacity,transform] duration-300 ${
+      className={`pointer-events-none fixed inset-x-0 bottom-0 z-40 pb-[env(safe-area-inset-bottom)] lg:hidden transition-[opacity,transform] duration-300 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
     >

@@ -23,9 +23,9 @@ import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   // Absolute — the layout template would append " · Berne Appliance Repair"
   // a second time on top of the brand already in the string.
-  title: { absolute: "About Berne Appliance Repair — Premium Service Since 2015" },
+  title: { absolute: "About Berne Appliance Repair — Family-Run Since 2015" },
   description:
-    "Founded 2015 by Eugene Bernitsky. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews across Miami-Dade, Broward, Palm Beach. The premium South Florida tier for Sub-Zero, Wolf, Viking, Thermador, Miele.",
+    "Part of the Berne family of companies serving South Florida since 2015 — Eugene Berne launched this premium division in 2022. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews across Miami-Dade, Broward, Palm Beach.",
   alternates: {
     canonical: "/about",
     languages: {
@@ -48,7 +48,7 @@ export default function AboutPage() {
     name: "About Berne Appliance Repair",
     url: absoluteUrl("/about"),
     description:
-      "Berne Appliance Repair: founded 2015 by Eugene Bernitsky. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews. The premium South Florida tier for Sub-Zero, Wolf, Viking, Thermador, Miele service across Miami-Dade, Broward, Palm Beach, and the Gulf Coast.",
+      "Berne Appliance Repair: the premium division of the Berne family of companies, repairing South Florida appliances since 2015 — launched by Eugene Berne in 2022. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews. Sub-Zero, Wolf, Viking, Thermador, Miele service across Miami-Dade, Broward, Palm Beach, and the Gulf Coast.",
     mainEntity: { "@id": absoluteUrl("/#business") },
     breadcrumb: { "@id": absoluteUrl("/about#breadcrumb") },
   };
@@ -93,17 +93,19 @@ export default function AboutPage() {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             South Florida&apos;s premium appliance team.{" "}
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               Built on craft, not on subcontractors.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Eugene Bernitsky founded Berne Appliance Repair in 2015 on a single
-            premise: South Florida&apos;s premium households deserved a repair
-            company that actually showed up, fixed the appliance right the first
-            time, and could be trusted inside a $40K Sub-Zero column or a Wolf
-            48&quot; range. Eleven years later — {COMPANY.socialProof.technicians} W-2
+            The Berne family of companies has been repairing South Florida
+            appliances since 2015 on a single premise: premium households
+            deserved a repair company that actually showed up, fixed the
+            appliance right the first time, and could be trusted inside a $40K
+            Sub-Zero column or a Wolf 48&quot; range. Eugene Berne launched this
+            premium division in 2022 — same operator, same standards, sharper
+            focus on luxury brands. Today — {COMPANY.socialProof.technicians} W-2
             technicians, {COMPANY.socialProof.repairsCompleted} services completed,{" "}
             <span className="text-foreground">
               {REVIEW_AGGREGATE.ratingValue}/5 across {REVIEW_AGGREGATE.reviewCount}{" "}
@@ -147,16 +149,20 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground/90 sm:text-lg">
             <p>
-              I started Berne in 2015 because South Florida high-net-worth
-              households kept asking the same question: who do I trust inside
-              a $20K refrigerator? At the time the honest answer was &ldquo;nobody
+              The Berne family of companies has been repairing South Florida
+              appliances since 2015, because high-net-worth households here
+              kept asking the same question: who do I trust inside a $20K
+              refrigerator? The honest answer used to be &ldquo;nobody
               reliably&rdquo; — the market was franchise dispatchers, one-truck
               operations, and a long tail of guys who would happily attempt
-              a Sub-Zero sealed-system repair with no formal training. We
-              built the alternative.
+              a Sub-Zero sealed-system repair with no formal training. The
+              family built the alternative — and in 2022 I launched this
+              premium division: same operator, same standards, sharper focus
+              on luxury brands.
             </p>
             <p>
-              Eleven years in, the operation is {COMPANY.socialProof.technicians}{" "}
+              Today, across the family of companies, the operation is{" "}
+              {COMPANY.socialProof.technicians}{" "}
               W-2 technicians running out of trucks stocked specifically for
               the premium brands South Florida has in its kitchens: Sub-Zero,
               Wolf, Viking, Thermador, Miele, Bosch, plus the volume brands

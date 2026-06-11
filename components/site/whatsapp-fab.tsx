@@ -122,6 +122,27 @@ export function WhatsAppFab() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Hide while the lead form is in view (same logic as StickyCTA) so the FAB
+  // never covers the form's required TCPA consent checkbox or submit button.
+  const [formInView, setFormInView] = useState(false);
+  useEffect(() => {
+    const target =
+      document.getElementById("lead-form") ?? document.getElementById("contact");
+    // Deferred a frame: synchronous setState in an effect body triggers
+    // cascading renders (react-hooks/set-state-in-effect).
+    const raf = requestAnimationFrame(() => setFormInView(false));
+    if (!target) return () => cancelAnimationFrame(raf);
+    const io = new IntersectionObserver(
+      ([entry]) => setFormInView(entry.isIntersecting),
+      { rootMargin: "-10% 0px -10% 0px", threshold: 0.05 },
+    );
+    io.observe(target);
+    return () => {
+      cancelAnimationFrame(raf);
+      io.disconnect();
+    };
+  }, [pathname]);
+
   function handleClick() {
     try {
       window.gtag?.("event", "whatsapp_click", {
@@ -145,9 +166,11 @@ export function WhatsAppFab() {
       aria-label="Chat with Berne Appliance Repair on WhatsApp"
       data-analytics="whatsapp-fab"
       onClick={handleClick}
-      className={`berne-whatsapp-fab fixed bottom-4 z-[9998] flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-[bottom,transform] duration-300 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 right-4 lg:right-4 max-lg:left-4 max-lg:right-auto max-lg:h-12 max-lg:w-12 motion-reduce:transition-none motion-reduce:hover:scale-100 ${
-        raised ? "max-lg:bottom-[92px]" : "max-lg:bottom-4"
-      }`}
+      className={`berne-whatsapp-fab fixed bottom-[max(1rem,env(safe-area-inset-bottom))] z-[9998] flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-[bottom,transform,opacity] duration-300 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 right-4 lg:right-4 max-lg:left-4 max-lg:right-auto max-lg:h-12 max-lg:w-12 motion-reduce:transition-none motion-reduce:hover:scale-100 ${
+        raised
+          ? "max-lg:bottom-[calc(env(safe-area-inset-bottom)+92px)]"
+          : "max-lg:bottom-[max(1rem,env(safe-area-inset-bottom))]"
+      } ${formInView ? "pointer-events-none opacity-0" : "opacity-100"}`}
       style={{ backgroundColor: "#25D366" }}
       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1ebe57")}
       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#25D366")}

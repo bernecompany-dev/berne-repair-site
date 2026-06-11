@@ -40,7 +40,7 @@ const contactPageSchema = {
     "email": COMPANY.email.public,
     "url": COMPANY.url,
     "areaServed": COMPANY.address.serviceArea,
-    "openingHours": "Mo-Su 08:00-21:00",
+    "openingHours": "Mo-Su 07:00-21:00",
   },
 };
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
 
           <h1 className="heading-hero mt-6 max-w-3xl">
             Contact{" "}
-            <span className="bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               Berne Appliance Repair.
             </span>
           </h1>

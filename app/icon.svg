@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Berne Repair mark — bolt in gradient tile, extracted from components/site/logo.tsx.
+       Gradient = brand electric blue (hex approximations of oklch(0.67 0.21 252) → oklch(0.55 0.22 252)). -->
+  <defs>
+    <linearGradient id="berne-tile" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4F87FF" />
+      <stop offset="1" stop-color="#2160EB" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#berne-tile)" />
+  <g transform="translate(8 8) scale(0.6667)">
+    <path
+      d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"
+      fill="none"
+      stroke="#fff"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+</svg>

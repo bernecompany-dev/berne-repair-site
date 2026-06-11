@@ -1,20 +1,20 @@
 import Link from "next/link";
 import { MapPin, ArrowRight } from "lucide-react";
-import { CITIES, PRIORITY_CITIES, COUNTIES } from "@/data/cities";
+import { PRIORITY_CITIES, COUNTIES } from "@/data/cities";
+import { getDictionary } from "@/lib/dictionary";
+import { localePath, type Locale } from "@/lib/i18n";
 
-export function Areas() {
+export function Areas({ locale = "en" }: { locale?: Locale }) {
+  const dict = getDictionary(locale);
+  const t = dict.areas;
+  const countyLabel = (c: string) => (locale === "es" ? `Condado de ${c}` : `${c} County`);
   return (
     <section id="areas" className="container-prose py-20 sm:py-28">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start">
         <div>
-          <span className="eyebrow">Areas we serve</span>
-          <h2 className="heading-section mt-3">
-            Across Miami-Dade, Broward & Palm Beach.
-          </h2>
-          <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            Twelve priority cities, every neighborhood in between, plus the full coastline from
-            Coral Gables to West Palm Beach.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="heading-section mt-3">{t.title}</h2>
+          <p className="mt-4 max-w-xl text-lg text-muted-foreground">{t.body}</p>
 
           <div className="mt-8 flex flex-wrap gap-2">
             {COUNTIES.map((c) => (
@@ -23,7 +23,7 @@ export function Areas() {
                 className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80"
               >
                 <MapPin className="size-3.5 text-brand" aria-hidden />
-                {c} County
+                {countyLabel(c)}
               </span>
             ))}
           </div>
@@ -35,7 +35,7 @@ export function Areas() {
           {PRIORITY_CITIES.map((city) => (
             <Link
               key={city.slug}
-              href={`/areas/${city.slug}`}
+              href={localePath(locale, `/areas/${city.slug}`)}
               className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
             >
               <div>
@@ -43,7 +43,7 @@ export function Areas() {
                   {city.name}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  {city.county} County · {city.neighborhoods.slice(0, 2).join(", ")}
+                  {countyLabel(city.county)} · {city.neighborhoods.slice(0, 2).join(", ")}
                 </div>
               </div>
               <ArrowRight
@@ -53,10 +53,10 @@ export function Areas() {
             </Link>
           ))}
           <Link
-            href="/areas"
+            href={localePath(locale, "/areas")}
             className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-xl border border-dashed border-brand/40 bg-brand/5 px-4 py-3 text-sm font-semibold text-brand hover:bg-brand/10"
           >
-            See all {CITIES.length} cities we cover
+            {dict.nav.seeAllCities}
             <ArrowRight className="size-4" aria-hidden />
           </Link>
         </div>

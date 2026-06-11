@@ -9,7 +9,7 @@ import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   // Absolute — the layout template would append " · Berne Appliance Repair"
   // a second time on top of the brand already in the string.
-  title: { absolute: "Request Dispatch — Berne Appliance Repair · Same-Day Service" },
+  title: { absolute: "Book a Repair Visit — Berne Appliance Repair · Same-Day Service" },
   description: `Request same-day appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} service call. ${COMPANY.socialProof.technicians} licensed technicians. Sub-Zero, Wolf, Viking, Bosch and every major brand.`,
   alternates: {
     canonical: "/request-dispatch",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Request Dispatch — Berne Appliance Repair · Same-Day Service",
+    title: "Book a Repair Visit — Berne Appliance Repair · Same-Day Service",
     description: `Request same-day appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`,
     url: absoluteUrl("/request-dispatch"),
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const requestDispatchSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Request Dispatch — Berne Appliance Repair",
+  "name": "Book a Repair Visit — Berne Appliance Repair",
   "url": absoluteUrl("/request-dispatch"),
   "mainEntity": {
     "@type": "LocalBusiness",
@@ -41,7 +41,7 @@ const requestDispatchSchema = {
     "email": COMPANY.email.public,
     "url": COMPANY.url,
     "areaServed": COMPANY.address.serviceArea,
-    "openingHours": "Mo-Su 08:00-21:00",
+    "openingHours": "Mo-Su 07:00-21:00",
     "potentialAction": {
       "@type": "ReserveAction",
       "name": "Request appliance repair dispatch",
@@ -86,9 +86,9 @@ export default function RequestDispatchPage() {
           </div>
 
           <h1 className="heading-hero mt-6 max-w-3xl">
-            Request{" "}
-            <span className="bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              service dispatch.
+            Book your{" "}
+            <span className="bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+              repair visit.
             </span>
           </h1>
 
@@ -118,7 +118,8 @@ export default function RequestDispatchPage() {
       {/* Form */}
       <section className="container-prose py-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
-          <div>
+          {/* Form first on mobile (ads landing page) — explainer follows. */}
+          <div className="order-2 lg:order-1">
             <h2 className="text-2xl font-semibold tracking-tight">
               How dispatch works
             </h2>
@@ -132,7 +133,7 @@ export default function RequestDispatchPage() {
                     You submit the form (or call)
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Three minutes, two required fields. SMS works too — text the
+                    Name and phone — that&apos;s it. SMS works too — text the
                     same number.
                   </p>
                 </div>
@@ -172,14 +173,14 @@ export default function RequestDispatchPage() {
                 Brand &amp; warranty
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                {COMPANY.socialProof.technicians} licensed technicians.{" "}
-                {COMPANY.socialProof.warranty} on parts and labor. Independent —
-                not an authorized service center for any manufacturer.
+                {COMPANY.socialProof.technicians} licensed technicians. 90-day
+                warranty on parts and labor. Independent — not an authorized
+                service center for any manufacturer.
               </p>
             </div>
           </div>
 
-          <div id="lead-form">
+          <div id="lead-form" className="order-1 lg:order-2">
             <LeadForm />
           </div>
         </div>

@@ -299,7 +299,7 @@ export function personJsonLd(m: TeamMember) {
 }
 
 /**
- * Standalone Person schema for Eugene Bernitsky, founder of the Berne
+ * Standalone Person schema for Eugene Berne, founder of the Berne
  * family of brands (Berne Appliance Repair, Berne Repair, Berne Commercial
  * Repair). Emit on the homepage only — Google stitches via @id from any
  * page that references "founder": { "@id": "...#founder" }.
@@ -309,7 +309,8 @@ export function founderJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": FOUNDER_ID,
-    name: "Eugene Bernitsky",
+    name: "Eugene Berne",
+    alternateName: "Eugene Bernitsky",
     jobTitle: "Founder & CEO",
     worksFor: { "@id": ORG_ID },
     sameAs: [
@@ -331,13 +332,12 @@ export function websiteJsonLd() {
     publisher: { "@id": BUSINESS_ID },
     inLanguage: ["en-US", "es-US"],
     // SearchAction qualifies the site for Google's sitelinks searchbox.
-    // The target URL template MUST resolve (200); `/` does. If we ever add
-    // a real /search route, swap the template here.
+    // Points at the real /search route (app/search/page.tsx reads ?q=).
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/?q={search_term_string}`,
+        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
     },

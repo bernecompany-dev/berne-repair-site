@@ -11,7 +11,7 @@ export function ProcessSteps({ locale = "en" }: { locale?: Locale }) {
     { n: 4, icon: CheckCircle2,    title: d.s4Title, body: d.s4Body, tag: d.s4Tag },
   ];
   return (
-    <section className="container-prose py-20 sm:py-24">
+    <section className="container-prose py-20 sm:py-28">
       <div className="max-w-2xl">
         <span className="eyebrow">{d.eyebrow}</span>
         <h2 className="heading-section mt-3">{d.title}</h2>

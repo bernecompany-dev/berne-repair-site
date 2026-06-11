@@ -2,7 +2,14 @@ import { CTARow } from "@/components/site/cta-row";
 import { getDictionary } from "@/lib/dictionary";
 import type { Locale } from "@/lib/i18n";
 
-export function CTABand({ locale = "en" }: { locale?: Locale }) {
+export function CTABand({
+  locale = "en",
+  bookHref,
+}: {
+  locale?: Locale;
+  /** Forwarded to CTARow — pass "/#lead-form" on pages without a lead form. */
+  bookHref?: string;
+}) {
   const d = getDictionary(locale).ctaBand;
   return (
     <section className="container-prose py-12 sm:py-20">
@@ -25,7 +32,7 @@ export function CTABand({ locale = "en" }: { locale?: Locale }) {
             </p>
           </div>
           <div className="lg:justify-self-end">
-            <CTARow size="lg" locale={locale} />
+            <CTARow size="lg" locale={locale} bookHref={bookHref} />
           </div>
         </div>
       </div>

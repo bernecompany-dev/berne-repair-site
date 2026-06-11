@@ -84,7 +84,7 @@ export default function FamilyPage() {
 
           <h1 className="heading-hero max-w-3xl">
             One operator. Three brands.{" "}
-            <span className="bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               One standard.
             </span>
           </h1>

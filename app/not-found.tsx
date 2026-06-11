@@ -20,11 +20,11 @@ export default function NotFound() {
         <CTARow size="md" />
       </div>
 
-      {/* Internal search — submits to home with ?q=. The URL pattern matches
+      {/* Internal search — submits to /search with ?q=. The URL pattern matches
           the WebSite SearchAction target, which is what Google reads when
           deciding whether to render a sitelinks searchbox in the SERP. */}
       <form
-        action="/"
+        action="/search"
         method="get"
         role="search"
         aria-label="Site search"

@@ -84,14 +84,14 @@ export function CredentialsSection({ locale = "en" }: { locale?: Locale }) {
           title: "Miembro de MSA World",
           body: "Miembro de Marcone Servicers Association (MSA), la principal asociación industrial de contratistas de servicio de electrodomésticos en Norteamérica.",
           file: "https://msaworld.com/",
-          fileLabel: "Visitar MSA World →",
+          fileLabel: "Visitar MSA World",
         },
         {
           icon: GraduationCap,
           title: "Capacitación continua del fabricante",
           body: "Nuestros técnicos completan capacitación continua sobre tecnología emergente de electrodomésticos a través de cursos de MSA World y actualizaciones OEM (Sub-Zero, Wolf, Miele, LG, Samsung, GE).",
           file: "https://msaworld.com/",
-          fileLabel: "Programa MSA →",
+          fileLabel: "Programa MSA",
         },
       ]
     : [
@@ -156,14 +156,14 @@ export function CredentialsSection({ locale = "en" }: { locale?: Locale }) {
           title: "MSA World Member",
           body: "Member of Marcone Servicers Association (MSA), the leading industry association for appliance service contractors in North America. Verifiable industry affiliation.",
           file: "https://msaworld.com/",
-          fileLabel: "Visit MSA World →",
+          fileLabel: "Visit MSA World",
         },
         {
           icon: GraduationCap,
           title: "Continuous Manufacturer Training",
           body: "Our technicians complete ongoing training on emerging appliance technology through MSA World coursework and OEM programs (Sub-Zero, Wolf, Miele, LG, Samsung, GE).",
           file: "https://msaworld.com/",
-          fileLabel: "MSA training program →",
+          fileLabel: "MSA training program",
         },
       ];
 
@@ -173,7 +173,7 @@ export function CredentialsSection({ locale = "en" }: { locale?: Locale }) {
       className="border-y border-border/60 bg-gradient-to-b from-transparent via-card/30 to-transparent"
       aria-labelledby="credentials-heading"
     >
-      <div className="container-prose py-20 sm:py-24">
+      <div className="container-prose py-20 sm:py-28">
         <div className="max-w-2xl">
           <span className="eyebrow">{eyebrow}</span>
           <h2

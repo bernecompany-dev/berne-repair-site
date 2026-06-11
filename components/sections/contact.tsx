@@ -7,10 +7,12 @@ import type { Locale } from "@/lib/i18n";
 export function Contact({
   defaultCity,
   defaultAppliance,
+  defaultBrand,
   locale = "en",
 }: {
   defaultCity?: string;
   defaultAppliance?: string;
+  defaultBrand?: string;
   locale?: Locale;
 }) {
   const d = getDictionary(locale).contact;
@@ -67,7 +69,7 @@ export function Contact({
         </div>
 
         <div id="lead-form">
-          <LeadForm defaultCity={defaultCity} defaultAppliance={defaultAppliance} locale={locale} />
+          <LeadForm defaultCity={defaultCity} defaultAppliance={defaultAppliance} defaultBrand={defaultBrand} locale={locale} />
         </div>
       </div>
     </section>

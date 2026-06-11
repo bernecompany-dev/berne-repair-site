@@ -69,7 +69,7 @@ export default function CredentialsPage() {
 
       <CredentialsSection />
 
-      <CTABand />
+      <CTABand bookHref="/#lead-form" />
 
       <JsonLd data={[breadcrumbJsonLd(crumbs)]} />
     </>

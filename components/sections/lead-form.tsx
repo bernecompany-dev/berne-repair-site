@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useId, useState, useEffect } from "react";
+import { useActionState, useId, useState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { Send, ShieldCheck, Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
 import { submitLead } from "@/app/actions/lead";
@@ -22,16 +22,21 @@ declare global {
 export function LeadForm({
   defaultCity,
   defaultAppliance,
+  defaultBrand,
   locale = "en",
 }: {
   defaultCity?: string;
   defaultAppliance?: string;
+  /** Prefills the free-text brand field (e.g. on /brands/[slug] pages). */
+  defaultBrand?: string;
   locale?: Locale;
 }) {
   const [state, action] = useActionState(submitLead, initialLeadState);
   const d = getDictionary(locale).leadForm;
   const formId = useId();
   const [renderedAt, setRenderedAt] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+  const successHeadingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     setRenderedAt(String(Date.now()));
@@ -53,16 +58,31 @@ export function LeadForm({
     }
   }, [state.status, locale]);
 
+  // Focus management: the form is noValidate, so server-side validation errors
+  // arrive after a round-trip with no native focus/scroll. Move focus to the
+  // first invalid field (focus() scrolls it into view on every browser).
+  useEffect(() => {
+    if (state.status !== "error") return;
+    formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus();
+  }, [state]);
+
+  // On success the whole form is swapped for a thank-you card; without this,
+  // focus drops to <body> and screen readers announce nothing.
+  useEffect(() => {
+    if (state.status !== "success") return;
+    successHeadingRef.current?.focus();
+  }, [state.status]);
+
   const errors = state.status === "error" ? state.errors : {};
   const values = state.status === "error" ? state.values : {};
 
   if (state.status === "success") {
     return (
-      <div className="surface-card flex flex-col items-start gap-4 p-8 sm:p-10">
+      <div role="status" className="surface-card flex flex-col items-start gap-4 p-8 sm:p-10">
         <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-brand/10 text-brand">
           <CheckCircle2 className="size-6" aria-hidden />
         </span>
-        <h3 className="text-2xl font-semibold tracking-tight">{d.success}</h3>
+        <h3 ref={successHeadingRef} tabIndex={-1} className="text-2xl font-semibold tracking-tight outline-none">{d.success}</h3>
         <p className="text-muted-foreground">{state.message}</p>
         <p className="text-sm text-muted-foreground">
           {d.needFaster}{" "}
@@ -78,7 +98,7 @@ export function LeadForm({
   const errId = (field: string) => (errors[field] ? `${formId}-${field}-err` : undefined);
 
   return (
-    <form action={action} className="surface-card p-6 sm:p-8" noValidate aria-labelledby={`${formId}-title`}>
+    <form ref={formRef} action={action} className="surface-card p-6 sm:p-8" noValidate aria-labelledby={`${formId}-title`}>
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="ts" value={renderedAt} />
 
@@ -103,7 +123,6 @@ export function LeadForm({
             aria-invalid={!!errors.name}
             aria-describedby={errId("name")}
             className={inputCls(errors.name)}
-            placeholder="Maria Reyes"
           />
         </Field>
         <Field id={`${formId}-phone`} label={d.fields.phone} error={errors.phone} errId={errId("phone")}>
@@ -161,9 +180,12 @@ export function LeadForm({
         </Field>
       </div>
 
-      <details className="group mt-4 rounded-xl border border-border bg-background/30 open:bg-background/50">
+      <details
+        open={defaultBrand ? true : undefined}
+        className="group mt-4 rounded-xl border border-border bg-background/30 open:bg-background/50"
+      >
         <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-medium text-foreground/90 hover:text-foreground">
-          <span>Add brand / details (optional)</span>
+          <span>{d.fields.detailsToggle}</span>
           <span className="text-xs text-muted-foreground transition-transform group-open:rotate-180" aria-hidden>▾</span>
         </summary>
         <div className="space-y-4 px-4 pb-4 pt-1">
@@ -171,7 +193,8 @@ export function LeadForm({
             <input
               id={`${formId}-brand`}
               type="text" name="brand" list={`${formId}-brands`}
-              defaultValue={values.brand}
+              autoComplete="off"
+              defaultValue={values.brand ?? defaultBrand}
               className={inputCls(errors.brand)}
               placeholder={d.fields.brandPlaceholder}
             />
@@ -199,6 +222,7 @@ export function LeadForm({
           type="checkbox"
           name="consent"
           required
+          defaultChecked={values.consent === "on"}
           aria-invalid={!!errors.consent}
           aria-describedby={errId("consent")}
           className="mt-0.5 size-4 rounded border-border accent-brand"

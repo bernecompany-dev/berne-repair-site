@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-const TITLE = "Solicitar despacho — Berne Appliance Repair · Servicio mismo día";
+const TITLE = "Reserve su visita de reparación — Berne Appliance Repair · Servicio mismo día";
 const DESC = `Solicite despacho de electrodomésticos el mismo día en el sur de Florida. Visita técnica de $${COMPANY.serviceCallPrice}. ${COMPANY.socialProof.technicians} técnicos con licencia. Sub-Zero, Wolf, Viking, Bosch y todas las marcas principales.`;
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const requestDispatchSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Solicitar despacho — Berne Appliance Repair",
+  "name": "Reserve su visita de reparación — Berne Appliance Repair",
   "url": absoluteUrl("/es/request-dispatch"),
   "inLanguage": "es-US",
   "mainEntity": {
@@ -44,7 +44,7 @@ const requestDispatchSchema = {
     "email": COMPANY.email.public,
     "url": COMPANY.url,
     "areaServed": COMPANY.address.serviceArea,
-    "openingHours": "Mo-Su 08:00-21:00",
+    "openingHours": "Mo-Su 07:00-21:00",
     "potentialAction": {
       "@type": "ReserveAction",
       "name": "Solicitar despacho de reparación de electrodomésticos",
@@ -89,9 +89,9 @@ export default function RequestDispatchPageES() {
           </div>
 
           <h1 className="heading-hero mt-6 max-w-3xl">
-            Solicitar{" "}
-            <span className="bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              despacho de servicio.
+            Reserve su{" "}
+            <span className="bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+              visita de reparación.
             </span>
           </h1>
 
@@ -130,7 +130,8 @@ export default function RequestDispatchPageES() {
       {/* Form */}
       <section className="container-prose py-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
-          <div>
+          {/* Formulario primero en móvil (landing de anuncios). */}
+          <div className="order-2 lg:order-1">
             <h2 className="text-2xl font-semibold tracking-tight">
               Cómo funciona el despacho
             </h2>
@@ -144,7 +145,7 @@ export default function RequestDispatchPageES() {
                     Usted envía el formulario (o llama)
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Tres minutos, dos campos requeridos. El SMS también funciona —
+                    Nombre y teléfono — nada más. El SMS también funciona —
                     envíe un texto al mismo número.
                   </p>
                 </div>
@@ -172,8 +173,8 @@ export default function RequestDispatchPageES() {
                     Llega el técnico, diagnóstico de ${COMPANY.serviceCallPrice}
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Aplicado a la reparación si nos da luz verde.{" "}
-                    {COMPANY.socialProof.warranty}.
+                    Aplicado a la reparación si nos da luz verde. Garantía de
+                    90 días en piezas y mano de obra.
                   </p>
                 </div>
               </li>
@@ -185,15 +186,14 @@ export default function RequestDispatchPageES() {
                 Marca y garantía
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                {COMPANY.socialProof.technicians} técnicos con licencia.{" "}
-                {COMPANY.socialProof.warranty} en piezas y mano de obra.
-                Independiente — no somos un centro de servicio autorizado de
-                ningún fabricante.
+                {COMPANY.socialProof.technicians} técnicos con licencia.
+                Garantía de 90 días en piezas y mano de obra. Independiente —
+                no somos un centro de servicio autorizado de ningún fabricante.
               </p>
             </div>
           </div>
 
-          <div id="lead-form">
+          <div id="lead-form" className="order-1 lg:order-2">
             <LeadForm locale="es" />
           </div>
         </div>

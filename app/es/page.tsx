@@ -46,12 +46,12 @@ export default function HomeES() {
       <ServicesGrid locale="es" />
       <ProcessSteps locale="es" />
       <WhyUs locale="es" />
-      <Areas />
-      <Brands />
-      <TeamSection />
-      <Reviews />
-      <Commercial />
-      <FAQSection faqs={GENERAL_FAQS_ES} />
+      <Areas locale="es" />
+      <Brands locale="es" />
+      <TeamSection locale="es" />
+      <Reviews locale="es" />
+      <Commercial locale="es" />
+      <FAQSection faqs={GENERAL_FAQS_ES} title={getDictionary("es").faq.homeTitle} />
       <Contact locale="es" />
       <CTABand locale="es" />
       <JsonLd data={[faqJsonLd(GENERAL_FAQS_ES, "es"), imageGalleryJsonLd(), founderJsonLd()]} />

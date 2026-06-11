@@ -218,7 +218,7 @@ export default async function BrandPageES({ params }: PageProps) {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             Reparación {brand.name}
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               en el sur de Florida.
             </span>
           </h1>
@@ -228,7 +228,7 @@ export default async function BrandPageES({ params }: PageProps) {
           </p>
 
           <div className="mt-9">
-            <CTARow size="lg" />
+            <CTARow size="lg" locale="es" />
           </div>
         </div>
       </section>

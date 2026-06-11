@@ -55,7 +55,7 @@ export default function AreasIndexES() {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             Las {CITIES.length} ciudades que cubrimos
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               en el sur de Florida.
             </span>
           </h1>

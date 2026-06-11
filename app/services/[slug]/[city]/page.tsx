@@ -203,7 +203,7 @@ export default async function ServiceCityPage({ params }: Props) {
 
   const crumbs = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/#services" },
+    { name: "Services", href: "/services" },
     { name: service.name, href: `/services/${service.slug}` },
     { name: city.name, href: `/services/${service.slug}/${city.slug}` },
   ];
@@ -224,7 +224,7 @@ export default async function ServiceCityPage({ params }: Props) {
           <nav className="mb-6 flex flex-wrap items-center gap-2 text-xs text-muted-foreground" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-foreground">Home</Link>
             <span aria-hidden>/</span>
-            <Link href="/#services" className="hover:text-foreground">Services</Link>
+            <Link href="/services" className="hover:text-foreground">Services</Link>
             <span aria-hidden>/</span>
             <Link href={`/services/${service.slug}`} className="hover:text-foreground">{service.name}</Link>
             <span aria-hidden>/</span>
@@ -248,7 +248,7 @@ export default async function ServiceCityPage({ params }: Props) {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             {service.name} in
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               {city.name}, FL.
             </span>
           </h1>

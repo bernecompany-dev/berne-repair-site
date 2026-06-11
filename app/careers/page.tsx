@@ -178,7 +178,7 @@ export default function CareersPage() {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             Build a career with{" "}
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               Berne Appliance Repair.
             </span>
           </h1>

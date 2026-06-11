@@ -82,7 +82,7 @@ export const GENERAL_FAQS_ES: FAQ[] = [
   {
     question: "¿El técnico tendrá la pieza en su camión?",
     answer:
-      "Para las piezas más comunes — sí. Con 17 técnicos y camiones equipados para las marcas que más servimos, resolvemos una gran parte de los trabajos en la primera visita. Si hay que pedir una pieza, normalmente la tenemos en 1-3 días hábiles.",
+      "Para las piezas más comunes — sí. Con 18 técnicos y camiones equipados para las marcas que más servimos, resolvemos una gran parte de los trabajos en la primera visita. Si hay que pedir una pieza, normalmente la tenemos en 1-3 días hábiles.",
   },
 ];
 

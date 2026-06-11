@@ -133,7 +133,7 @@ export default async function ServicePage({ params }: Props) {
   ).map((p) => ({ ...p, brandName: getResidentialBrand(p.brand)?.name ?? p.brand }));
   const crumbs = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/#services" },
+    { name: "Services", href: "/services" },
     { name: service.name, href: `/services/${service.slug}` },
   ];
 
@@ -153,7 +153,7 @@ export default async function ServicePage({ params }: Props) {
           <nav className="mb-6 flex items-center gap-2 text-xs text-muted-foreground" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-foreground">Home</Link>
             <span aria-hidden>/</span>
-            <Link href="/#services" className="hover:text-foreground">Services</Link>
+            <Link href="/services" className="hover:text-foreground">Services</Link>
             <span aria-hidden>/</span>
             <span className="text-foreground/80">{service.name}</span>
           </nav>
@@ -177,7 +177,7 @@ export default async function ServicePage({ params }: Props) {
 
               <h1 className="heading-hero mt-6 max-w-3xl">
                 {service.name}
-                <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
                   across South Florida.
                 </span>
               </h1>
@@ -375,7 +375,7 @@ export default async function ServicePage({ params }: Props) {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-2 gap-2 lg:grid-cols-3">
           {CITIES.map((city) => (
             <Link
               key={city.slug}
@@ -386,7 +386,7 @@ export default async function ServicePage({ params }: Props) {
                 <div className="text-sm font-semibold">
                   {service.shortName} in {city.name}
                 </div>
-                <div className="text-xs text-muted-foreground">{city.county} County</div>
+                <div className="hidden text-xs text-muted-foreground sm:block">{city.county} County</div>
               </div>
               <ArrowRight
                 className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"

@@ -1,6 +1,7 @@
 import { Phone } from "lucide-react";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
+import type { Locale } from "@/lib/i18n";
 
 type Variant = "solid" | "ghost" | "minimal";
 
@@ -8,15 +9,17 @@ export function PhoneCTA({
   variant = "solid",
   size = "md",
   withLabel = true,
+  locale = "en",
   className,
 }: {
   variant?: Variant;
   size?: "sm" | "md" | "lg";
   withLabel?: boolean;
+  locale?: Locale;
   className?: string;
 }) {
   const sizes: Record<string, string> = {
-    sm: "h-9 px-3.5 text-sm",
+    sm: "h-11 px-4 text-sm",
     md: "h-11 px-5 text-[15px]",
     lg: "h-12 px-6 text-base",
   };
@@ -32,7 +35,11 @@ export function PhoneCTA({
     <a
       href={`tel:${COMPANY.phone.tel}`}
       data-analytics="click-to-call"
-      aria-label={`Call Berne Appliance Repair at ${COMPANY.phone.display}`}
+      aria-label={
+        locale === "es"
+          ? `Llame a Berne Appliance Repair al ${COMPANY.phone.display}`
+          : `Call Berne Appliance Repair at ${COMPANY.phone.display}`
+      }
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-[transform,box-shadow,background-color,color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         sizes[size],
@@ -43,11 +50,11 @@ export function PhoneCTA({
       <Phone className="size-4" aria-hidden />
       {withLabel ? (
         <span className="whitespace-nowrap">
-          <span className="hidden sm:inline">Call </span>
+          <span className="hidden sm:inline">{locale === "es" ? "Llame al " : "Call "}</span>
           {COMPANY.phone.display}
         </span>
       ) : (
-        <span className="sr-only">Call us</span>
+        <span className="sr-only">{locale === "es" ? "Llámenos" : "Call us"}</span>
       )}
     </a>
   );

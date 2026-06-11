@@ -230,7 +230,7 @@ export default async function BrandCityPage({ params }: Props) {
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Star className="size-3.5 text-brand" aria-hidden />
-              4.79 · 871 Google reviews
+              4.79 · 871 verified reviews
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
@@ -240,7 +240,7 @@ export default async function BrandCityPage({ params }: Props) {
 
           <h1 className="heading-hero mt-6 max-w-4xl">
             {brand.name} repair in
-            <span className="block bg-gradient-to-r from-brand to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               {content.h1City}, FL.
             </span>
           </h1>
@@ -396,7 +396,7 @@ export default async function BrandCityPage({ params }: Props) {
         title={`${brand.name} repair in ${city.name} — questions we get`}
       />
 
-      <Contact defaultAppliance={brand.slug} defaultCity={city.slug} />
+      <Contact defaultBrand={brand.name} defaultCity={city.slug} />
       <CTABand />
 
       <JsonLd data={[serviceJsonLd, faqJsonLd(faqs), breadcrumbJsonLd(crumbs)]} />

@@ -132,7 +132,7 @@ export default function BlogIndexPage() {
         )}
       </section>
 
-      <CTABand />
+      <CTABand bookHref="/#lead-form" />
 
       <JsonLd data={[blogJsonLd, breadcrumbJsonLd(crumbs)]} />
     </>
