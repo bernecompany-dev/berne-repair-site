@@ -27,10 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city: slug } = await params;
   const city = CITY_BY_SLUG[slug];
   if (!city) return {};
-  const title = `Reparación de Electrodomésticos en ${city.name} · Visita técnica $${COMPANY.serviceCallPrice}`;
-  const description = `Reparación de electrodomésticos el mismo día en ${city.name}, condado de ${city.county}. Visita técnica $${COMPANY.serviceCallPrice}. ${COMPANY.socialProof.technicians} técnicos con licencia. Sub-Zero, Wolf, Viking, Bosch y todas las marcas principales.`;
+  // Absolute: the layout suffix (" · Berne Appliance Repair") on top of the
+  // long Spanish template produced 97–99ch titles for long city names —
+  // truncated in SERP. Same absolute pattern as the ES service hubs (round-2).
+  const title = `Reparación de Electrodomésticos en ${city.name} · $${COMPANY.serviceCallPrice}`;
+  const description = `Reparación de electrodomésticos el mismo día en ${city.name}, ${city.county}. Visita $${COMPANY.serviceCallPrice}, ${COMPANY.socialProof.technicians} técnicos con licencia, garantía de 90 días. Todas las marcas.`;
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: {
       canonical: `/es/areas/${city.slug}`,

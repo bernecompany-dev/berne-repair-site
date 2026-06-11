@@ -54,7 +54,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!brand || !brand.es) return {};
   const es = brand.es;
   return {
-    title: es?.metaTitle ?? brand.metaTitle,
+    // Absolute: the dictionary titles already run 55–60ch ("Reparación X ·
+    // Sur de Florida · $59 Service Call") — the layout suffix pushed them to
+    // 78–82ch. Same absolute pattern as the ES service hubs (round-2).
+    title: { absolute: es?.metaTitle ?? brand.metaTitle },
     description: es?.metaDescription ?? brand.metaDescription,
     alternates: {
       canonical: `/es/brands/${brand.slug}`,

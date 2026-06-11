@@ -6,11 +6,13 @@ import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-const TITLE = "Reserve su visita de reparación — Berne Appliance Repair · Servicio mismo día";
-const DESC = `Solicite despacho de electrodomésticos el mismo día en el sur de Florida. Visita técnica de $${COMPANY.serviceCallPrice}. ${COMPANY.socialProof.technicians} técnicos con licencia. Sub-Zero, Wolf, Viking, Bosch y todas las marcas principales.`;
+// Absolute title: the brand is already in the string — the layout template was
+// appending " · Berne Appliance Repair" a second time (102ch, double brand).
+const TITLE = "Reserve su visita — Berne Appliance Repair · Servicio mismo día";
+const DESC = `Solicite despacho el mismo día en el sur de Florida. Visita técnica $${COMPANY.serviceCallPrice}, ${COMPANY.socialProof.technicians} técnicos con licencia, garantía de 90 días. Todas las marcas principales.`;
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESC,
   alternates: {
     canonical: "/es/request-dispatch",
