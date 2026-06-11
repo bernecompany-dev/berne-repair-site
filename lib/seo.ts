@@ -373,10 +373,16 @@ export function localBusinessJsonLd() {
     // Canonical headcount (18 field technicians) — not TEAM.length, which is
     // the published-bio subset and excludes the owner by design.
     numberOfEmployees: COMPANY.socialProof.technicians,
+    // Full HQ address — matches the visible footer NAP ("1001 N Federal Hwy").
+    // Region-only PostalAddress contradicted the on-page address and weakens
+    // the LocalBusiness signal.
     address: {
       "@type": "PostalAddress",
-      addressRegion: COMPANY.address.region,
-      addressCountry: COMPANY.address.country,
+      streetAddress: COMPANY.address.hq.street,
+      addressLocality: COMPANY.address.hq.city,
+      addressRegion: COMPANY.address.hq.region,
+      postalCode: COMPANY.address.hq.postalCode,
+      addressCountry: COMPANY.address.hq.country,
     },
     geo: {
       "@type": "GeoCoordinates",

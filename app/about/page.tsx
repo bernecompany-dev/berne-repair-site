@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   // a second time on top of the brand already in the string.
   title: { absolute: "About Berne Appliance Repair — Family-Run Since 2015" },
   description:
-    "Part of the Berne family of companies serving South Florida since 2015 — Eugene Berne launched this premium division in 2022. 18 W-2 technicians, 29,000+ services completed, 4.79/871 reviews across Miami-Dade, Broward, Palm Beach.",
+    "Part of the Berne family of companies serving South Florida since 2015 — premium division since 2022. 18 W-2 technicians, 29,000+ services, 4.79/871 reviews.",
   alternates: {
     canonical: "/about",
     languages: {

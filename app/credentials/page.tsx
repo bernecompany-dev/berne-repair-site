@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   // a second time on top of the brand already in the string.
   title: { absolute: "Licensed & Insured — COI, EPA 608 · Berne Appliance Repair" },
   description:
-    "Berne Appliance Repair vendor paperwork: FL technician license, EPA Section 608 cert (16-8019803514-2), COI, DBA, FL Workers' Comp exemption, FL resale certificate, IRS EIN (CP 575), and W-9 — all downloadable.",
+    "Berne Appliance Repair vendor paperwork — FL technician license, EPA Section 608 cert, COI, DBA, Workers' Comp exemption, IRS EIN and W-9, all downloadable.",
   alternates: {
     canonical: "/credentials",
     languages: {

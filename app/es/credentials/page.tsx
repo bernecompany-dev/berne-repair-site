@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   // Absolute — brand already in the string; layout template would double it.
   title: { absolute: "Licencia y Seguro — COI, EPA 608 · Berne Appliance Repair" },
   description:
-    "Documentación verificable de Berne Appliance Repair: licencia FL DBPR, EPA Section 608 (16-8019803514-2), COI, DBA, exención Workers' Comp FL, certificado de reventa FL, asignación EIN del IRS (CP 575) y W-9 — todos descargables.",
+    "Documentación de Berne Appliance Repair — licencia FL DBPR, EPA Section 608, COI, DBA, exención Workers' Comp, EIN del IRS y W-9, todo descargable.",
   alternates: {
     canonical: "/es/credentials",
     languages: {
