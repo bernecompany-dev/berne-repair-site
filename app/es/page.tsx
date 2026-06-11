@@ -18,7 +18,8 @@ import { GENERAL_FAQS_ES } from "@/data/faqs";
 import { getDictionary } from "@/lib/dictionary";
 
 export const metadata: Metadata = {
-  title: getDictionary("es").meta.homeTitle,
+  // Absolute — brand already in the string; layout template would double it.
+  title: { absolute: getDictionary("es").meta.homeTitle },
   description: getDictionary("es").meta.homeDescription,
   alternates: {
     canonical: "/es",

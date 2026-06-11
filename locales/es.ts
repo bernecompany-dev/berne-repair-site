@@ -3,7 +3,10 @@ import type { Dictionary } from "./en";
 
 export const es: Dictionary = {
   meta: {
-    homeTitle: "Berne Appliance Repair — Reparación de electrodomésticos · Sur de Florida",
+    // ≤60ch and consumed as an *absolute* title in app/es/page.tsx — the brand
+    // is already in the string, so the layout "%s · Berne Appliance Repair"
+    // template must not be applied on top (it doubled the brand at 98ch).
+    homeTitle: "Berne Appliance Repair — Electrodomésticos · Sur de Florida",
     homeDescription:
       "Reparación el mismo día en Miami-Dade, Broward y Palm Beach. Visita $59. 18 técnicos, con licencia y asegurados. Sub-Zero, Wolf, Viking, Miele.",
   },

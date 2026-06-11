@@ -4,9 +4,10 @@ import { ArrowRight, Home, ChefHat, Crown } from "lucide-react";
 import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "The Berne Family of Companies — How Our 3 Brands Work Together",
+  // Absolute — with the layout suffix the long form ran to 87ch in SERPs.
+  title: { absolute: "The Berne Family of Companies — 3 Brands, One Standard" },
   description:
-    "berne-repair.com, bernerepair.com, and berne-commercial.com — three brands, one operator, one engineering-built service standard. Premium residential, standard residential, and commercial dispatch across South Florida.",
+    "berne-repair.com, bernerepair.com and berne-commercial.com — three brands, one operator, one engineering-built service standard across South Florida.",
   alternates: {
     canonical: "/family",
     languages: {

@@ -69,6 +69,31 @@ const META_OVERRIDES: Record<string, { title: string; description: string }> = {
     description:
       "Ice maker not making ice or hollow cubes? Same-day ice maker repair across South Florida. $59 service call, 90-day warranty. Sub-Zero, Scotsman & U-Line.",
   },
+  "microwave-repair": {
+    title: "Microwave Repair South Florida — Same-Day · $59 Call",
+    description:
+      "Microwave dead, sparking or not heating? Same-day microwave repair across South Florida. $59 service call, 90-day warranty. Built-in & drawer units.",
+  },
+  "air-duct-cleaning": {
+    title: "Air Duct & Dryer Vent Cleaning South Florida — $59 Call",
+    description:
+      "HVAC duct and dryer vent cleaning for South Florida homes. $59 service call, licensed techs, same-day slots. Better airflow, faster drying, less dust.",
+  },
+  "garbage-disposal-repair": {
+    title: "Garbage Disposal Repair South Florida — Same-Day · $59",
+    description:
+      "Disposal jammed, humming or leaking? Same-day garbage disposal repair across South Florida. $59 service call, 90-day warranty. Repair or replace in one trip.",
+  },
+  "range-hood-repair": {
+    title: "Range Hood Repair South Florida — Same-Day · $59 Call",
+    description:
+      "Range hood fan dead or rattling? Same-day range hood repair across South Florida. $59 service call, 90-day warranty. Zephyr, Broan, Wolf & every brand.",
+  },
+  "wine-cooler-repair": {
+    title: "Wine Cooler Repair South Florida — Same-Day · $59 Call",
+    description:
+      "Wine cooler warm or cycling loud? Same-day wine cooler repair across South Florida. $59 service call, 90-day warranty. Sub-Zero, U-Line, EuroCave & more.",
+  },
 };
 
 /**

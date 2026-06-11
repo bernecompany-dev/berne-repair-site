@@ -29,9 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICE_BY_SLUG[slug];
   if (!service) return {};
-  const title = `${service.es.name} en el sur de Florida · $${COMPANY.serviceCallPrice}`;
+  // Absolute — the layout "%s · Berne Appliance Repair" suffix pushed these
+  // hubs to 75-88ch ("Reparación de Trituradores de Basura en el sur de
+  // Florida · $59 · Berne…"). Keyword + geo + price stays ≤59ch on every slug.
+  const title = `${service.es.name} · Sur de Florida · $${COMPANY.serviceCallPrice}`;
   return {
-    title,
+    title: { absolute: title },
     description: service.es.description,
     alternates: {
       canonical: `/es/services/${service.slug}`,
