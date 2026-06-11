@@ -18,14 +18,16 @@ import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { TEAM } from "@/data/team";
 import { REVIEW_AGGREGATE } from "@/data/reviews";
-import { breadcrumbJsonLd, absoluteUrl, personJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, personJsonLd, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = "About Berne Appliance Repair — Family-Run Since 2015";
+const PAGE_DESCRIPTION = "Part of the Berne family of companies serving South Florida since 2015 — premium division since 2022. 18 W-2 technicians, 29,000+ services, 4.79/871 reviews.";
 
 export const metadata: Metadata = {
   // Absolute — the layout template would append " · Berne Appliance Repair"
   // a second time on top of the brand already in the string.
-  title: { absolute: "About Berne Appliance Repair — Family-Run Since 2015" },
-  description:
-    "Part of the Berne family of companies serving South Florida since 2015 — premium division since 2022. 18 W-2 technicians, 29,000+ services, 4.79/871 reviews.",
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/about",
     languages: {
@@ -34,6 +36,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/about"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/about" }),
 };
 
 export default function AboutPage() {

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { COMPANY } from "@/data/company";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = "Términos de Servicio";
+const PAGE_DESCRIPTION = `Alcance del servicio, reservas, precios, garantía, pago y resolución de disputas para clientes de ${COMPANY.legalName}.`;
 
 export const metadata: Metadata = {
-  title: "Términos de Servicio",
-  description: `Alcance del servicio, reservas, precios, garantía, pago y resolución de disputas para clientes de ${COMPANY.legalName}.`,
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/es/terms",
     languages: {
@@ -14,6 +17,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/terms"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/es/terms", locale: "es" }),
   robots: { index: true, follow: true },
 };
 

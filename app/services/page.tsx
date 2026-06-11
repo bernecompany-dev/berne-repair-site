@@ -7,11 +7,14 @@ import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { SERVICES } from "@/data/services";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = `All ${SERVICES.length} Appliance Repair Services`;
+const PAGE_DESCRIPTION = `Same-day repair on every major appliance — refrigerators, washers, dryers, ovens, dishwashers, and more. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`;
 
 export const metadata: Metadata = {
-  title: `All ${SERVICES.length} Appliance Repair Services`,
-  description: `Same-day repair on every major appliance — refrigerators, washers, dryers, ovens, dishwashers, and more. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`,
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/services",
     languages: {
@@ -20,6 +23,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/services"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/services" }),
 };
 
 export default function ServicesIndex() {

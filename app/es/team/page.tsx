@@ -10,14 +10,17 @@ import { JsonLd } from "@/components/site/json-ld";
 import { TEAM } from "@/data/team";
 import { BACK_OFFICE } from "@/data/team-bios";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const TECH_COUNT = COMPANY.socialProof.technicians;
 
+const PAGE_TITLE = `El equipo Berne — ${COMPANY.socialProof.technicians} técnicos en el sur de Florida`;
+const PAGE_DESCRIPTION = `Conozca a los ${COMPANY.socialProof.technicians} técnicos con licencia y al equipo de despacho de ${COMPANY.legalName}. Nombres reales, especialidades reales.`;
+
 export const metadata: Metadata = {
   // Absolute — brand already in the string; layout template would double it.
-  title: { absolute: `El equipo Berne — ${COMPANY.socialProof.technicians} técnicos en el sur de Florida` },
-  description: `Conozca a los ${COMPANY.socialProof.technicians} técnicos con licencia y al equipo de despacho de ${COMPANY.legalName}. Nombres reales, especialidades reales.`,
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/es/team",
     languages: {
@@ -26,6 +29,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/team"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/es/team", locale: "es" }),
 };
 
 export default function TeamPageES() {

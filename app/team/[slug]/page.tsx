@@ -24,6 +24,7 @@ import {
 import {
   absoluteUrl,
   breadcrumbJsonLd,
+  pageOpenGraph,
   personJsonLd,
   SITE_URL,
 } from "@/lib/seo";
@@ -56,15 +57,24 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
           "x-default": absoluteUrl(`/team/${slug}`),
         },
       },
+      openGraph: pageOpenGraph({ title, description, path: `/team/${slug}` }),
     };
   }
   if (back) {
+    const title = `${back.name} — ${back.role} | Berne Appliance Repair`;
+    const description = `${back.name}, ${back.role} at ${COMPANY.legalName}. Part of the dispatch and operations team behind the technician fleet.`;
     return {
-      title: { absolute: `${back.name} — ${back.role} | Berne Appliance Repair` },
-      description: `${back.name}, ${back.role} at ${COMPANY.legalName}. Part of the dispatch and operations team behind the technician fleet.`,
+      title: { absolute: title },
+      description,
       alternates: {
         canonical: `/team/${slug}`,
+        // EN-only self-pair — parity with the technician branch above.
+        languages: {
+          "en-US": absoluteUrl(`/team/${slug}`),
+          "x-default": absoluteUrl(`/team/${slug}`),
+        },
       },
+      openGraph: pageOpenGraph({ title, description, path: `/team/${slug}` }),
     };
   }
   return {

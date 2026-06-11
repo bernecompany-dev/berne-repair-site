@@ -17,13 +17,15 @@ import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { REVIEW_AGGREGATE } from "@/data/reviews";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = "Sobre Berne Appliance Repair — Empresa familiar desde 2015";
+const PAGE_DESCRIPTION = "Parte de la familia de empresas Berne que sirve al sur de Florida desde 2015 — división premium desde 2022. 18 técnicos W-2, 29,000+ servicios, 4.79/871 reseñas.";
 
 export const metadata: Metadata = {
   // Absolute — brand already in the string; layout template would double it.
-  title: { absolute: "Sobre Berne Appliance Repair — Empresa familiar desde 2015" },
-  description:
-    "Parte de la familia de empresas Berne que sirve al sur de Florida desde 2015 — división premium desde 2022. 18 técnicos W-2, 29,000+ servicios, 4.79/871 reseñas.",
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/es/about",
     languages: {
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/about"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/es/about", locale: "es" }),
 };
 
 export default function AboutPageES() {

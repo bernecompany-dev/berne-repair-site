@@ -37,6 +37,7 @@ export const metadata: Metadata = {
       "Contratando técnicos de electrodomésticos W-2, servicio al cliente y despacho en Miami-Dade, Broward y Palm Beach.",
     url: absoluteUrl("/es/careers"),
     type: "website",
+    locale: "es_US",
     images: [DEFAULT_OG_IMAGE],
   },
 };

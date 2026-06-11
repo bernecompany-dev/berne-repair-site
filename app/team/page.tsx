@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { TEAM } from "@/data/team";
 import { BACK_OFFICE } from "@/data/team-bios";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl, personJsonLd, SITE_URL } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, personJsonLd, SITE_URL, pageOpenGraph } from "@/lib/seo";
 
 // Canonical headcount per the brand's NAP — 18 W-2 field technicians.
 // `TEAM` (data/team.ts) lists the 15 published bios; the remaining roles
@@ -18,11 +18,14 @@ import { breadcrumbJsonLd, absoluteUrl, personJsonLd, SITE_URL } from "@/lib/seo
 // not in the roster. See data/company.ts → socialProof.
 const TECH_COUNT = COMPANY.socialProof.technicians;
 
+const PAGE_TITLE = `The Berne Appliance Repair Team — ${TECH_COUNT} South Florida Technicians`;
+const PAGE_DESCRIPTION = `Meet the ${COMPANY.socialProof.technicians} licensed technicians and dispatch team at ${COMPANY.legalName}. Real names, real specialties — the same people customers ask for by name on Google reviews.`;
+
 export const metadata: Metadata = {
   // Absolute — the layout template would append " · Berne Appliance Repair"
   // a second time on top of the brand already in the string.
-  title: { absolute: `The Berne Appliance Repair Team — ${TECH_COUNT} South Florida Technicians` },
-  description: `Meet the ${COMPANY.socialProof.technicians} licensed technicians and dispatch team at ${COMPANY.legalName}. Real names, real specialties — the same people customers ask for by name on Google reviews.`,
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/team",
     languages: {
@@ -31,6 +34,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/team"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/team" }),
 };
 
 export default function TeamPage() {

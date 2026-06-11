@@ -78,12 +78,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [DEFAULT_OG_IMAGE],
   },
+  // Card type ONLY — no title/description/images here. The `twitter` metadata
+  // key inherits to every page that doesn't override it, so a hardcoded title
+  // was emitting the generic home wording as twitter:title on all ~1800 pages
+  // (round-3 audit). With only `card` set, X/Twitter falls back to each page's
+  // own og:title / og:description / og:image while keeping the large-image
+  // card. Blog posts still define their full twitter block per post.
   twitter: {
     card: "summary_large_image",
-    title: "Berne Appliance Repair — Premium Service in South Florida",
-    description:
-      "Same-day appliance repair across South Florida. $59 service call.",
-    images: [DEFAULT_OG_IMAGE.url],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },

@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { COMPANY } from "@/data/company";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = "Política de Cookies";
+const PAGE_DESCRIPTION = `Qué cookies establece ${COMPANY.legalName}, para qué sirven y cómo desactivarlas.`;
 
 export const metadata: Metadata = {
-  title: "Política de Cookies",
-  description: `Qué cookies establece ${COMPANY.legalName}, para qué sirven y cómo desactivarlas.`,
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/es/cookies",
     languages: {
@@ -14,6 +17,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/cookies"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/es/cookies", locale: "es" }),
   robots: { index: true, follow: true },
 };
 

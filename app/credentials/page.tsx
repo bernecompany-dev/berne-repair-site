@@ -6,14 +6,16 @@ import { CTABand } from "@/components/sections/cta-band";
 import { InlineCta } from "@/components/sections/inline-cta";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = "Licensed & Insured — COI, EPA 608 · Berne Appliance Repair";
+const PAGE_DESCRIPTION = "Berne Appliance Repair vendor paperwork — FL technician license, EPA Section 608 cert, COI, DBA, Workers' Comp exemption, IRS EIN and W-9, all downloadable.";
 
 export const metadata: Metadata = {
   // Absolute — the layout template would append " · Berne Appliance Repair"
   // a second time on top of the brand already in the string.
-  title: { absolute: "Licensed & Insured — COI, EPA 608 · Berne Appliance Repair" },
-  description:
-    "Berne Appliance Repair vendor paperwork — FL technician license, EPA Section 608 cert, COI, DBA, Workers' Comp exemption, IRS EIN and W-9, all downloadable.",
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/credentials",
     languages: {
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/credentials"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/credentials" }),
 };
 
 export default function CredentialsPage() {

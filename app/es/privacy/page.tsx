@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { COMPANY } from "@/data/company";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = "Política de Privacidad";
+const PAGE_DESCRIPTION = `Cómo ${COMPANY.legalName} recopila, usa y protege la información de visitantes y clientes.`;
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad",
-  description: `Cómo ${COMPANY.legalName} recopila, usa y protege la información de visitantes y clientes.`,
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/es/privacy",
     languages: {
@@ -14,6 +17,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/privacy"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/es/privacy", locale: "es" }),
   robots: { index: true, follow: true },
 };
 

@@ -7,11 +7,14 @@ import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { CITIES, COUNTIES, type City } from "@/data/cities";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
+
+const PAGE_TITLE = `All ${CITIES.length} Cities We Serve`;
+const PAGE_DESCRIPTION = `Same-day appliance repair across ${CITIES.length} cities in Miami-Dade, Broward, and Palm Beach. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`;
 
 export const metadata: Metadata = {
-  title: `All ${CITIES.length} Cities We Serve`,
-  description: `Same-day appliance repair across ${CITIES.length} cities in Miami-Dade, Broward, and Palm Beach. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`,
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/areas",
     languages: {
@@ -20,6 +23,7 @@ export const metadata: Metadata = {
       "x-default": absoluteUrl("/areas"),
     },
   },
+  openGraph: pageOpenGraph({ title: PAGE_TITLE, description: PAGE_DESCRIPTION, path: "/areas" }),
 };
 
 export default function AreasIndex() {

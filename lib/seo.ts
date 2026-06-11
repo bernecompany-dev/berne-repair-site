@@ -783,6 +783,32 @@ export function breadcrumbJsonLd(crumbs: Crumb[]) {
   };
 }
 
+/**
+ * Per-page Open Graph block. Next.js REPLACES (not merges) the `openGraph`
+ * metadata key, so any page that omits it inherits the ROOT layout's block —
+ * including `og:url` pointing at the homepage and the generic home og:title
+ * (round-3 audit found 37 such pages). Every page that sets its own
+ * title/description should pass them through here so og:url stays
+ * self-referential and siteName/locale are never lost.
+ */
+export function pageOpenGraph(args: {
+  title: string;
+  description: string;
+  /** Canonical path of the page, e.g. "/about" or "/es/team". */
+  path: string;
+  locale?: "en" | "es";
+}) {
+  return {
+    title: args.title,
+    description: args.description,
+    url: absoluteUrl(args.path),
+    siteName: COMPANY.legalName,
+    type: "website" as const,
+    locale: args.locale === "es" ? "es_US" : "en_US",
+    images: [DEFAULT_OG_IMAGE],
+  };
+}
+
 /** Helper for pages to build hreflang alternates symmetrically. */
 export function buildAlternates(canonicalPath: string) {
   const enPath = canonicalPath.replace(/^\/es/, "") || "/";
