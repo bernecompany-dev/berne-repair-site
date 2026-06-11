@@ -559,7 +559,7 @@ const MIELE_VS_BOSCH: ComparisonProfile = {
     {
       name: "Bosch",
       hq: "Stuttgart, Germany (BSH Munich)",
-      brandSlug: "bosch",
+      // No brandSlug — /brands/bosch has no profile page; linking it would 404.
       about:
         "Bosch dishwashers are built by BSH (Bosch-Siemens-Hausgeräte) — the same consortium that builds Thermador and Gaggenau — with current models manufactured in New Bern, North Carolina (where the platform has been built since 1997). Bosch's 800 Series and Benchmark Series compete directly with Miele on wash quality and quietness at a meaningfully lower price point. The CrystalDry system (a hydroscopic zeolite mineral that absorbs moisture from the air at the end of the cycle and releases heat to dry the dishes) is genuinely effective and gives Bosch competitive drying performance against Miele's heat-exchanger system. The price advantage is real — a current 800 Series panel-ready dishwasher lands $1,400-$1,900 MSRP versus Miele's $2,800-$3,800.",
       strengths: [

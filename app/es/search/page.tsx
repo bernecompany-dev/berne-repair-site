@@ -33,7 +33,7 @@ const POPULAR_ES = [
   { href: "/es/brands", label: "Marcas" },
   { href: "/es/areas", label: "Áreas de servicio" },
   { href: "/blog", label: "Guías de reparación" },
-  { href: "/es/contact", label: "Despacho" },
+  { href: "/es/request-dispatch", label: "Despacho" },
 ];
 
 export default async function SearchPageEs({

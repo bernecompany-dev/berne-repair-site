@@ -64,7 +64,7 @@ export default function NotFound() {
             { href: "/blog", label: "Guías de reparación" },
             { href: "/es/team", label: "Nuestro equipo" },
             { href: "/es/about", label: "Sobre Berne" },
-            { href: "/es/contact", label: "Despacho" },
+            { href: "/es/request-dispatch", label: "Despacho" },
           ].map((item) => (
             <li key={item.href}>
               <Link

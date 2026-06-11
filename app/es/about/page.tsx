@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   // Absolute — brand already in the string; layout template would double it.
   title: { absolute: "Sobre Berne Appliance Repair — Empresa familiar desde 2015" },
   description:
-    "Parte de la familia de empresas Berne que sirve al sur de Florida desde 2015 — Eugene Berne lanzó esta división premium en 2022. 18 técnicos W-2, más de 29,000 servicios completados, 4.79/871 reseñas en Miami-Dade, Broward y Palm Beach.",
+    "Parte de la familia de empresas Berne que sirve al sur de Florida desde 2015 — división premium desde 2022. 18 técnicos W-2, 29,000+ servicios, 4.79/871 reseñas.",
   alternates: {
     canonical: "/es/about",
     languages: {
@@ -232,7 +232,8 @@ export default function AboutPageES() {
               </a>
               . Mismo estándar de capacitación. Misma rendición de cuentas.
               La{" "}
-              <Link href="/es/family" className="text-brand hover:underline">
+              {/* /family is EN-only (no /es/family route) — link the EN page, like /blog. */}
+              <Link href="/family" className="text-brand hover:underline">
                 página de la familia
               </Link>{" "}
               tiene la versión larga.
