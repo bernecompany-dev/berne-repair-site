@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CredentialsSection } from "@/components/sections/credentials-section";
+import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
+import { InlineCta } from "@/components/sections/inline-cta";
 import { JsonLd } from "@/components/site/json-ld";
+import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -69,7 +72,18 @@ export default function CredentialsPage() {
 
       <CredentialsSection />
 
-      <CTABand bookHref="/#lead-form" />
+      {/* Conversion exit for the PM/procurement audience — they download the
+          COI and leave; give them a vendor-shaped next step (lead review 06-11). */}
+      <section className="container-prose pt-12 sm:pt-16">
+        <InlineCta
+          title="Need a vendor with these credentials on file?"
+          body={`We attach the COI and EPA 608 cert to your booking confirmation — ready for your AP and onboarding workflow. Same-day dispatch, $${COMPANY.serviceCallPrice} service call credited toward the repair.`}
+        />
+      </section>
+
+      <Contact />
+
+      <CTABand />
 
       <JsonLd data={[breadcrumbJsonLd(crumbs)]} />
     </>

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CredentialsSection } from "@/components/sections/credentials-section";
+import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
+import { InlineCta } from "@/components/sections/inline-cta";
 import { JsonLd } from "@/components/site/json-ld";
+import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -60,7 +63,19 @@ export default function CredentialsPageES() {
 
       <CredentialsSection locale="es" />
 
-      <CTABand />
+      {/* Conversion exit for the PM/procurement audience — mirrors the EN
+          /credentials block (lead review 06-11). */}
+      <section className="container-prose pt-12 sm:pt-16">
+        <InlineCta
+          locale="es"
+          title="¿Necesita un vendor con estas credenciales en archivo?"
+          body={`Adjuntamos el COI y el certificado EPA 608 a su confirmación de servicio — listos para su equipo de cuentas por pagar y onboarding. Despacho el mismo día, visita de $${COMPANY.serviceCallPrice} acreditada a la reparación.`}
+        />
+      </section>
+
+      <Contact locale="es" />
+
+      <CTABand locale="es" />
 
       <JsonLd data={[breadcrumbJsonLd(crumbs)]} />
     </>

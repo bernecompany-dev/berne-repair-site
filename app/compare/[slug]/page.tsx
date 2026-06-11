@@ -14,6 +14,7 @@ import {
 
 import { CTARow } from "@/components/site/cta-row";
 import { FAQSection } from "@/components/sections/faq";
+import { InlineCta } from "@/components/sections/inline-cta";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
@@ -79,6 +80,13 @@ export default async function ComparisonPage({ params }: PageProps) {
   const otherComparisons = BRAND_COMPARISONS.filter(
     (other) => other.slug !== c.slug,
   ).slice(0, 4);
+
+  // "Wolf, Thermador and Viking" — for the early-CTA copy below the TL;DR.
+  const brandNames = c.brands.map((b) => b.name);
+  const brandList =
+    brandNames.length > 1
+      ? `${brandNames.slice(0, -1).join(", ")} and ${brandNames[brandNames.length - 1]}`
+      : brandNames[0];
 
   const pageUrl = absoluteUrl(`/compare/${c.slug}`);
   const businessId = absoluteUrl("/#business");
@@ -212,6 +220,14 @@ export default async function ComparisonPage({ params }: PageProps) {
             ))}
           </ul>
         </div>
+
+        {/* Early CTA — high-intent comparison readers shouldn't have to
+            scroll the full deep dive to reach a button (lead review 06-11). */}
+        <InlineCta
+          className="mt-10"
+          title={`Whichever you pick — we service ${brandList}.`}
+          body={`Factory-trained techs, same-day appointments across South Florida. $${COMPANY.serviceCallPrice} service call, credited toward the repair.`}
+        />
       </section>
 
       {/* Intro */}
