@@ -111,15 +111,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Static pages with a real /es mirror in the app/es route tree.
   const statics: MetadataRoute.Sitemap = [
     "/areas",
     "/team",
     "/about",
-    "/contact",
     "/careers",
     "/request-dispatch",
     "/credentials",
-    "/family",
     "/privacy",
     "/terms",
     "/cookies",
@@ -127,6 +126,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: esCounterpart(p) } },
     { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },
   ]);
+  // EN-only statics — /es/contact and /es/family do not exist (404). The old
+  // unconditional flatMap put both dead /es URLs into the sitemap with
+  // matching phantom es-US hreflang alternates.
+  const staticsEnOnly: MetadataRoute.Sitemap = ["/contact", "/family"].map((p) => ({
+    url: `${SITE_URL}${p}`,
+    lastModified: LAST_MOD,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+    alternates: {
+      languages: {
+        "en-US": `${SITE_URL}${p}`,
+        "x-default": `${SITE_URL}${p}`,
+      },
+    },
+  }));
 
   // Premium residential brand pages — EN + ES hubs (the /es/brands lane is
   // live and indexable; it was missing from the sitemap and the EN side
@@ -245,6 +259,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...areas,
     ...combos,
     ...statics,
+    ...staticsEnOnly,
     ...brandsIndex,
     ...brandPages,
     ...brandCityPages,
