@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { GoogleAnalytics } from "@/components/site/google-analytics";
+import { GoogleAdsTag } from "@/components/site/google-ads-tag";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SkipToContent } from "@/components/site/skip-to-content";
@@ -182,6 +183,13 @@ export default function RootLayout({
         */}
         <AnalyticsEvents />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
+        {/*
+          Google Ads conversion tracking (tag AW-18232464152, baked-in default
+          with NEXT_PUBLIC_GADS_* override). Includes the website call tracking
+          config — Google swaps the displayed phone number for ad-click
+          visitors; no tel: click listener needed.
+        */}
+        <GoogleAdsTag />
         <MetaPixel />
         <Clarity />
       </body>
