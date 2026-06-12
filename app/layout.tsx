@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { GoogleAnalytics } from "@/components/site/google-analytics";
 import { GoogleAdsTag } from "@/components/site/google-ads-tag";
+import { MicrosoftUetTag } from "@/components/site/microsoft-uet-tag";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SkipToContent } from "@/components/site/skip-to-content";
@@ -205,6 +206,12 @@ export default function RootLayout({
           visitors; no tel: click listener needed.
         */}
         <GoogleAdsTag />
+        {/*
+          Microsoft Advertising UET (tag 97251280) + phone_click event for
+          the "Phone click" conversion goal — Bing has no number-swap call
+          tracking, so tel: clicks are the call proxy.
+        */}
+        <MicrosoftUetTag />
         <MetaPixel />
         <Clarity />
       </body>
