@@ -1,4 +1,5 @@
 import { CITIES } from "@/data/cities";
+import { REPAIRS_COMPLETED, REPAIRS_COMPLETED_BARE } from "@/data/company";
 
 export const en = {
   meta: {
@@ -18,7 +19,7 @@ export const en = {
   hero: {
     badgePrice: "$59 service call · same-day",
     badgeLicensed: "Licensed & insured",
-    badgeRepairs: "29,000+ repairs",
+    badgeRepairs: `${REPAIRS_COMPLETED} repairs`,
     title1: "Premium appliance repair.",
     title2: "Same-day across South Florida.",
     body: "18 technicians. Trucks stocked for Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch and every major brand.",
@@ -201,7 +202,7 @@ export const en = {
     title: "Hey — I'm Eugene Berne.",
     p1: "I moved to the United States in 2022. Didn't speak the industry, didn't know a soul in it. I fell into appliance repair by accident — picked up a wrench because the rent wasn't going to pay itself, and I figured I could learn something useful while I did.",
     p2Pre: "Seven months later I launched Berne Appliance Repair. No investors, no playbook, just a couple of trucks and a phone that I answered myself. Three years on we've completed",
-    p2Bold: "over 29,000 service calls",
+    p2Bold: `over ${REPAIRS_COMPLETED_BARE} service calls`,
     p2Post: " across South Florida — Sub-Zero columns in Coral Gables, commercial laundromats in Hialeah, ovens in Boca Raton kitchens the night before a dinner party.",
     p3: "I don't run this from behind a desk. I personally hire every technician on this page, and I personally back every repair we do. If a job goes sideways — call me. The number on this site rings me.",
     quote: '"I\'d rather lose a job than send a guy I don\'t trust into your home. That\'s the whole standard."',

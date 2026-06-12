@@ -15,7 +15,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
-import { COMPANY } from "@/data/company";
+import { COMPANY, REPAIRS_COMPLETED } from "@/data/company";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 /**
@@ -311,7 +311,7 @@ export default function ThermadorServiceGuidePage() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 shrink-0 text-brand" aria-hidden />
-                18 techs · 29,000+ repairs · 4.79★ (871 reviews)
+                18 techs · {REPAIRS_COMPLETED} repairs · 4.79★ (871 reviews)
               </li>
             </ul>
             <div className="mt-5 grid gap-2">

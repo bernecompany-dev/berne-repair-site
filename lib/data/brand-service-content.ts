@@ -12,8 +12,9 @@
  * dynamicParams=false keeps every other brand/service pair a 404. EN-only:
  * hreflang en+x-default, matching the brand×city pattern.
  *
- * Facts stay canonical: $59 service call (free with repair), 18 techs, 29,000+
- * repairs, 4.79/871, 90-day warranty, Miami-Dade + Broward + Palm Beach.
+ * Facts stay canonical: $59 service call (free with repair), 18 techs, repairs
+ * count from data/company.ts (REPAIRS_COMPLETED — import it, don't hardcode),
+ * 4.79/871, 90-day warranty, Miami-Dade + Broward + Palm Beach.
  * Berne is an INDEPENDENT service company — no "authorized/factory" claims.
  */
 

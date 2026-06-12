@@ -10,7 +10,8 @@
  * and combo-specific FAQs.
  *
  * RULES for adding entries:
- *  - Facts only: $59 diagnostic, 18 techs, 29k+ completed repairs, 4.79/871
+ *  - Facts only: $59 diagnostic, 18 techs, completed-repairs count (lives in
+ *    data/company.ts REPAIRS_COMPLETED — import it, don't hardcode), 4.79/871
  *    Google rating, 90-day labor & parts warranty, EPA-608, HQ in Hallandale
  *    Beach + Boca Raton office. No invented per-city job counts.
  *  - City color must be true-by-construction (housing stock, salt air,

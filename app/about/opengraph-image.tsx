@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { COMPANY } from "@/data/company";
+import { COMPANY, REPAIRS_COMPLETED } from "@/data/company";
 
 export const runtime = "nodejs";
 export const alt = "About Berne Appliance Repair — Family-run since 2015, 18 technicians, South Florida";
@@ -92,7 +92,7 @@ export default async function OG() {
               lineHeight: 1.35,
             }}
           >
-            29,000+ South Florida service tickets — premium appliance repair done by a single in-house team.
+            {`${REPAIRS_COMPLETED} South Florida service tickets — premium appliance repair done by a single in-house team.`}
           </div>
         </div>
 

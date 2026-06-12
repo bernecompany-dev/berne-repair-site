@@ -1,3 +1,9 @@
+// Repair counter: BASE_PRE_HCP 16,200 + HCP completed jobs, floored to hundreds. Updated monthly by orchestrator (source: Miami ~/site_monitor/repair_counter.py log). Last update 2026-06-12.
+/** Display string with plus — "29,300+ repairs". Single source of truth for the repairs count. */
+export const REPAIRS_COMPLETED = "29,300+";
+/** Bare variant (no plus) for phrasings like "over 29,300 service calls". */
+export const REPAIRS_COMPLETED_BARE = "29,300";
+
 export const COMPANY = {
   // Canonical brand name — used in titles, schema `name`, body copy.
   // The historic short form "Berne Repair" remains in `legalEntity` for the
@@ -63,7 +69,7 @@ export const COMPANY = {
   },
   socialProof: {
     technicians: 18,
-    repairsCompleted: "29,000+",
+    repairsCompleted: REPAIRS_COMPLETED,
     // Brand established 2022 (see lib/seo.ts FOUNDING_YEAR); the 11+ years of
     // industry heritage belongs to the parent Berne Appliance Repair entity.
     // Use foundingDate in schema as the single source of truth; do not surface

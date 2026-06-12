@@ -1,4 +1,5 @@
 import { CITIES } from "@/data/cities";
+import { REPAIRS_COMPLETED, REPAIRS_COMPLETED_BARE } from "@/data/company";
 import type { Dictionary } from "./en";
 
 export const es: Dictionary = {
@@ -22,7 +23,7 @@ export const es: Dictionary = {
   hero: {
     badgePrice: "Visita técnica $59 · el mismo día",
     badgeLicensed: "Con licencia y asegurados",
-    badgeRepairs: "29,000+ reparaciones",
+    badgeRepairs: `${REPAIRS_COMPLETED} reparaciones`,
     title1: "Reparación premium de electrodomésticos.",
     title2: "El mismo día en todo el sur de Florida.",
     body: "18 técnicos. Camiones equipados para Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch y todas las marcas principales.",
@@ -205,7 +206,7 @@ export const es: Dictionary = {
     title: "Hola — soy Eugene Berne.",
     p1: "Me mudé a Estados Unidos en 2022. No conocía la industria, no conocía a nadie en ella. Caí en la reparación de electrodomésticos por accidente — agarré una llave porque la renta no se iba a pagar sola, y pensé que podría aprender algo útil en el proceso.",
     p2Pre: "Siete meses después lancé Berne Appliance Repair. Sin inversionistas, sin plan, solo un par de camiones y un teléfono que yo mismo contestaba. Tres años después hemos completado",
-    p2Bold: "más de 29,000 visitas",
+    p2Bold: `más de ${REPAIRS_COMPLETED_BARE} visitas`,
     p2Post: " en el sur de Florida — columnas Sub-Zero en Coral Gables, lavanderías comerciales en Hialeah, hornos en cocinas de Boca Raton la noche antes de una cena.",
     p3: "No dirijo esto desde un escritorio. Contrato personalmente a cada técnico de esta página, y respaldo personalmente cada reparación. Si un trabajo sale mal — llámeme. El número de este sitio suena en mi bolsillo.",
     quote: '"Prefiero perder un trabajo que mandar a alguien que no me inspire confianza a su casa. Ese es todo el estándar."',
