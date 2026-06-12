@@ -16,16 +16,25 @@ import { localBusinessJsonLd, websiteJsonLd, organizationJsonLd } from "@/lib/se
 import { COMPANY } from "@/data/company";
 import "./globals.css";
 
+// Geist Sans is the LCP-critical font: the hero <h1> (the mobile LCP element
+// on every page) renders in it, so it keeps the default preload.
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
+// preload: false — Geist Mono only renders tiny accent labels (hero tech
+// count, process-step numbers, search URLs), never the LCP element. Its
+// preloaded woff2 (~23KB, High priority) competed with the LCP-critical
+// CSS + Geist Sans for mobile bandwidth in the first-paint window (SEO
+// round-4 LCP fix). display:swap shows the size-adjusted fallback until it
+// arrives.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 // Intentional serif for the brand wordmarks (components/sections/brands.tsx,
@@ -35,11 +44,17 @@ const geistMono = Geist_Mono({
 // Variable font: omitting `weight` loads the full 400–900 axis (one file per
 // style), covering the wordmarks' font-medium/font-bold + italic variants
 // without synthesized faux styles.
+// preload: false — Playfair renders only the below-the-fold brand wordmarks,
+// but its two variable files (normal + italic, ~78KB combined) were preloaded
+// at High priority into the critical first-paint window on every page,
+// delaying the hero-H1 LCP resources on mobile (SEO round-4 LCP fix).
+// display:swap covers the late arrival; the wordmarks are never the LCP.
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   style: ["normal", "italic"],
   display: "swap",
+  preload: false,
 });
 
 // Pinned to production www origin (see lib/seo.ts) so metadataBase — and thus

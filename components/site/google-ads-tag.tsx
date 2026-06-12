@@ -27,6 +27,17 @@ import { COMPANY } from "@/data/company";
  *
  * "Lead form submit" (WEBPAGE) is fired as a gtag('event','conversion')
  * in components/sections/lead-form.tsx (success effect).
+ *
+ * MOBILE LCP CONTRACT — the gtag.js LIBRARY loads at `lazyOnload` (browser
+ * idle), same as the GA4/Meta/Clarity loaders. It briefly shipped as
+ * `afterInteractive` and that single tag dragged ~330KB of third-party JS
+ * into the pre-LCP window (gtag AW 139KB → linked GA4 config 164KB →
+ * doubleclick + wcm/loader + call-tracking_9.js), inflating simulated
+ * mobile LCP on every page to 7.5–9.9s (SEO round-4 block 6). The inline
+ * stub below stays `afterInteractive`: config commands queue in dataLayer
+ * and the library replays them at idle, so no conversion is dropped. The
+ * call-tracking number swap for ad-click visitors happens a second or two
+ * later — standard tradeoff, Google replays the swap on load.
  */
 const GADS_ID = process.env.NEXT_PUBLIC_GADS_ID ?? "AW-18232464152";
 const CALL_LABEL =
@@ -58,7 +69,7 @@ export function GoogleAdsTag() {
       <Script
         id="gads-lib"
         src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
     </>
   );
