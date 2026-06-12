@@ -5,7 +5,9 @@ export const COMPANY = {
   legalName: "Berne Appliance Repair",
   /** Historic legal-entity short form. Used only in copyright + LLC references. */
   legalEntity: "Berne Repair, Inc.",
-  dbaNames: ["Berne Appliance Repair", "Berne Repair", "Norma Appliance Repair"],
+  // "Norma Appliance Repair" removed 2026-06-12 (SEO round-4 block 7, variant A):
+  // Norma is run as a separate brand entity and is no longer listed as a DBA.
+  dbaNames: ["Berne Appliance Repair", "Berne Repair"],
   shortName: "Berne Appliance Repair",
   tagline: "Premium appliance repair across South Florida",
   serviceCallPrice: 59,

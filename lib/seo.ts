@@ -55,9 +55,11 @@ const FOUNDING_YEAR = "2022";
  * profile goes live. Empty strings are filtered out at serialization.
  */
 const SAME_AS: string[] = [
-  // Alternate canonical domains the business operates under
+  // Alternate canonical domains the business operates under.
+  // normarepair.com removed 2026-06-12 (round-4 block 7): Norma is a separate
+  // brand entity (own GBP, phone, GA4) — Eugene approved variant A
+  // ("раздельные бренды"), so Berne properties no longer claim it via sameAs.
   "https://bernerepair.com/",
-  "https://normarepair.com/",
   "https://berne-commercial.com",
   // Social
   "https://www.tiktok.com/@berne.repair",
@@ -68,8 +70,7 @@ const SAME_AS: string[] = [
   "https://www.yelp.com/biz/berne-appliance-repair-hallandale-beach-4",
   "https://www.yelp.com/biz/berne-repair-sarasota",
   "https://www.yelp.com/biz/berne-repair-fort-myers",
-  // Thumbtack
-  "https://www.thumbtack.com/fl/tampa/appliance-repair/norma-appliance-repair/service/485458498671689761",
+  // Thumbtack (the Norma profile was removed 2026-06-12 with the brand split)
   "https://www.thumbtack.com/fl/naples/appliance-repair/berne-appliance-repair-naples-fort-myers/service/566337571507380237",
   // BBB (A+ rating profile, verified 2026-05-20)
   "https://www.bbb.org/us/fl/hallandale-beach/profile/appliance-repair/berne-inc-0633-92031029",
