@@ -166,7 +166,7 @@ const CITY_BODIES_ES: Array<(c: City) => string> = [
   (c) =>
     `Lo típico aquí: edificios antiguos en la costa, casas individuales tierra adentro, además de bastante administración de propiedades. Cubrimos las tres. Refrigeradores empotrados en condos costeros, cocinas completas en residencias, lavanderías comerciales para edificios.`,
   (c) =>
-    `Cobertura abarca cada ZIP que listamos (${c.zips.slice(0, 5).join(", ")}, y los que se nos pasaron). Si está dentro del condado de ${c.county}, está dentro de nuestra área, punto.`,
+    `La cobertura es simple: cada ZIP que listamos (${c.zips.slice(0, 5).join(", ")}) y todo lo que los rodea. Si está dentro del condado de ${c.county}, está dentro de nuestra área, punto.`,
   (c) =>
     `Problemas comunes que veo en ${c.name}: el aire salino corroe las serpentinas más rápido que tierra adentro. La humedad estresa los ductos de secadora. El agua dura acorta la vida del lavavajillas. Conocemos los patrones de falla locales porque vivimos aquí también.`,
 ];
@@ -262,7 +262,7 @@ const CITY_BODIES: Array<(c: City) => string> = [
   (c) =>
     `What's typical here: older high-rises along the coast, single-family inland, plus a fair amount of property management. We do all three. Built-in fridges in coastal condos, full kitchens in residential, commercial laundry for apartment buildings.`,
   (c) =>
-    `Coverage covers every ZIP we list (${c.zips.slice(0, 5).join(", ")}, plus the ones we missed). If you're inside ${c.county} County, you're inside our service area, period.`,
+    `Coverage is simple: every ZIP we list (${c.zips.slice(0, 5).join(", ")}) plus everything around them. If you're inside ${c.county} County, you're inside our service area, period.`,
   (c) =>
     `Common appliance issues I see in ${c.name}: salt air corrodes refrigerator coils faster than inland. AC humidity stresses dryer vents. Hard water shortens dishwasher life. We know the local failure patterns because we live here too.`,
   (c) =>
