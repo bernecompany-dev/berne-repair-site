@@ -304,7 +304,7 @@ export default function AboutPage() {
               icon={<BadgeDollarSign className="size-5 text-brand" aria-hidden />}
               value={`$${COMPANY.serviceCallPrice}`}
               label="Flat service call"
-              sub="Applied toward the repair if you say go"
+              sub="Free if you say go ahead with the repair"
             />
             <Stat
               icon={<Clock3 className="size-5 text-brand" aria-hidden />}

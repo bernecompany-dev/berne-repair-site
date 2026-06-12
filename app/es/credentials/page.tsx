@@ -72,7 +72,7 @@ export default function CredentialsPageES() {
         <InlineCta
           locale="es"
           title="¿Necesita un vendor con estas credenciales en archivo?"
-          body={`Adjuntamos el COI y el certificado EPA 608 a su confirmación de servicio — listos para su equipo de cuentas por pagar y onboarding. Despacho el mismo día, visita de $${COMPANY.serviceCallPrice} acreditada a la reparación.`}
+          body={`Adjuntamos el COI y el certificado EPA 608 a su confirmación de servicio — listos para su equipo de cuentas por pagar y onboarding. Despacho el mismo día, visita de $${COMPANY.serviceCallPrice} gratuita si aprueba la reparación.`}
         />
       </section>
 

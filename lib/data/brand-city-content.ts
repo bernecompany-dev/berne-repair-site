@@ -44,7 +44,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       "Sub-Zero refrigerator repair in Miami — Brickell, Coconut Grove, Coral Gables. Built-ins, columns, wine units. EPA-608 senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Miami",
     heroIntro:
-      "Brickell columns, Coconut Grove built-ins, Coral Gables classics — Miami holds one of the densest Sub-Zero populations in Florida, and it's the platform our senior techs service most. Same-day dispatch across the city, EPA-608 sealed-system certification, and a flat $59 diagnostic applied toward the repair.",
+      "Brickell columns, Coconut Grove built-ins, Coral Gables classics — Miami holds one of the densest Sub-Zero populations in Florida, and it's the platform our senior techs service most. Same-day dispatch across the city, EPA-608 sealed-system certification, and a flat $59 diagnostic — free with repair.",
     local: {
       eyebrow: "Sub-Zero in Miami",
       heading: "High-rise built-ins, salt air, and a platform we know cold",
@@ -58,7 +58,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Do you repair Sub-Zero refrigerators in Brickell condo towers?",
         answer:
-          "Yes — built-in Sub-Zero work in managed towers is the core of our Miami brand service. Units are serviced in place by senior techs, and we arrange the COI, service elevator, and floor protection with your building before the visit. The $59 diagnostic applies toward the repair.",
+          "Yes — built-in Sub-Zero work in managed towers is the core of our Miami brand service. Units are serviced in place by senior techs, and we arrange the COI, service elevator, and floor protection with your building before the visit. The $59 diagnostic is free if you approve the repair.",
       },
       {
         question: "My Miami Sub-Zero's fresh-food side is warm — is the compressor gone?",
@@ -130,7 +130,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Do you service Sub-Zero in Boca West and the gated communities?",
         answer:
-          "Yes — the club communities are regular territory for our Boca office. Gate access is arranged when you book, the arrival window is honored, and Sub-Zero units go to senior techs with EPA-608 certification. The $59 diagnostic applies toward any repair.",
+          "Yes — the club communities are regular territory for our Boca office. Gate access is arranged when you book, the arrival window is honored, and Sub-Zero units go to senior techs with EPA-608 certification. The $59 diagnostic is free with any approved repair.",
       },
       {
         question: "Can you service a panel-ready integrated Sub-Zero without damaging the cabinetry?",
@@ -154,14 +154,14 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       "Wolf range, oven & cooktop repair in Miami — Brickell, Coconut Grove, Coral Gables. Igniters, modules, convection. Senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Miami",
     heroIntro:
-      "Wolf ranges anchor serious Miami kitchens — dual-fuel 48s in Coconut Grove, rangetops in Coral Gables, induction and module cooktops in Brickell builds. We service the platform daily: igniter and spark-module work from truck stock, senior techs on the control systems, $59 diagnostic applied to the repair.",
+      "Wolf ranges anchor serious Miami kitchens — dual-fuel 48s in Coconut Grove, rangetops in Coral Gables, induction and module cooktops in Brickell builds. We service the platform daily: igniter and spark-module work from truck stock, senior techs on the control systems, $59 diagnostic — free with repair.",
     local: {
       eyebrow: "Wolf in Miami",
       heading: "Hard-working ranges in a city that actually cooks",
       paragraphs: [
         "Miami's Wolf installs get used — these aren't showroom ranges, and the failure pattern shows it. The red-knob gas platforms (R-series ranges, rangetops, GR grills) fail by ignition first: spark electrodes fouled by real cooking, igniters weakening until a burner clicks without lighting, spark modules dropping single burners. All of it is standard truck-stock work for us. The dual-fuel and E-series electric ovens fail by element and control — and Miami's storm-season power quality adds the post-outage lockouts and error displays we get called for every summer.",
         "The city's housing stock adds two Wolf-specific wrinkles. In Brickell and Edgewater towers, ventilation rules favor induction and electric — newer condo kitchens run Wolf induction cooktops and M-series wall ovens whose diagnostics are entirely control-board territory, senior-tech work we don't hand to juniors. In the Grove, the Gables, and the single-family streets, big gas ranges rule, and the salt-side caveat applies: spark electrode insulators and burner components within a mile of the bay corrode measurably faster, which is why a burner that's begun clicking lazily deserves attention before it quits entirely.",
-        "Wolf owners in Miami should expect what we deliver everywhere: diagnosis by amp-draw and resistance measurement rather than parts-cannon guessing, OEM parts with the number on the invoice, and the honest call when a repair on an older unit should be weighed against Wolf's own rebuild economics. The $59 diagnostic applies toward whatever the right answer turns out to be.",
+        "Wolf owners in Miami should expect what we deliver everywhere: diagnosis by amp-draw and resistance measurement rather than parts-cannon guessing, OEM parts with the number on the invoice, and the honest call when a repair on an older unit should be weighed against Wolf's own rebuild economics. The $59 diagnostic is free if you go ahead with whatever the right answer turns out to be.",
       ],
     },
     faqs: [
@@ -214,7 +214,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Can one visit cover my Wolf range and Sub-Zero fridge?",
         answer:
-          "Usually yes — the same senior techs handle both platforms, and the brands share kitchens across Rio Vista and the Isles. Mention both units when you book and we'll schedule the time to diagnose each; each diagnostic applies toward its own repair.",
+          "Usually yes — the same senior techs handle both platforms, and the brands share kitchens across Rio Vista and the Isles. Mention both units when you book and we'll schedule the time to diagnose each; each diagnostic is free with its own approved repair.",
       },
     ],
   },
@@ -226,7 +226,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       "Wolf range & oven repair in Boca Raton from our local office — East Boca, Boca West, club communities. Senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Boca Raton",
     heroIntro:
-      "Boca Raton's kitchens run Wolf as the default serious range — 48-inch dual-fuels in East Boca, rangetops and wall ovens across the club communities. Serviced from our S Federal Hwy office: senior techs, gate access pre-arranged, $59 diagnostic applied to the repair.",
+      "Boca Raton's kitchens run Wolf as the default serious range — 48-inch dual-fuels in East Boca, rangetops and wall ovens across the club communities. Serviced from our S Federal Hwy office: senior techs, gate access pre-arranged, $59 diagnostic — free with repair.",
     local: {
       eyebrow: "Wolf in Boca Raton",
       heading: "Estate kitchens, entertainers' ranges, local dispatch",
@@ -240,7 +240,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Can you service Wolf ranges inside Boca Raton's gated club communities?",
         answer:
-          "Yes — Boca West, Boca Pointe, Broken Sound and their neighbors are core territory for our local office. Gate clearance is arranged when you book and the arrival window is honored. Wolf platform work goes to the senior rotation, with the $59 diagnostic applied toward the repair.",
+          "Yes — Boca West, Boca Pointe, Broken Sound and their neighbors are core territory for our local office. Gate clearance is arranged when you book and the arrival window is honored. Wolf platform work goes to the senior rotation, with the $59 diagnostic free when you approve the repair.",
       },
       {
         question: "My Wolf oven runs 25 degrees cool — can that be fixed without replacing the board?",
@@ -300,7 +300,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       "Viking range & appliance repair in Fort Lauderdale — Las Olas, Coral Ridge, Victoria Park. All generations serviced, $59 diagnostic, 90-day warranty.",
     h1City: "Fort Lauderdale",
     heroIntro:
-      "Victoria Park bungalow kitchens, Coral Ridge remodels, Las Olas waterfront builds — Fort Lauderdale's Viking fleet covers every era of the brand. Ignition and hinge work from truck stock, senior techs on the electronic generations, $59 diagnostic applied toward the repair.",
+      "Victoria Park bungalow kitchens, Coral Ridge remodels, Las Olas waterfront builds — Fort Lauderdale's Viking fleet covers every era of the brand. Ignition and hinge work from truck stock, senior techs on the electronic generations, $59 diagnostic free with repair.",
     local: {
       eyebrow: "Viking in Fort Lauderdale",
       heading: "A remodel city full of pro-style ranges",
@@ -460,7 +460,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Do you service complete Thermador kitchen packages in Boca Raton?",
         answer:
-          "Yes — packages are the Boca norm and one senior-tech visit usually triages the column, range, and dishwasher together. Each appliance gets its own measured diagnostic and written quote, with the $59 visit applied toward the repair.",
+          "Yes — packages are the Boca norm and one senior-tech visit usually triages the column, range, and dishwasher together. Each appliance gets its own measured diagnostic and written quote, with the $59 visit free when you approve the repair.",
       },
       {
         question: "We're seasonal residents — should the Thermador kitchen be checked before we return?",
@@ -491,7 +491,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       paragraphs: [
         "Miele's Miami footprint is concentrated where the city builds best: integrated G-series dishwashers in Brickell and Edgewater towers, compact W1 washers and T1 heat-pump dryers in condo laundry closets (Miele's ventless 240V-less compacts are practically the new-tower standard), and CM-series built-in coffee systems across the Gables and the Grove. Each line has its own service discipline — Miele diagnostics run through the machine's service mode and fault memory, not guesswork, and that's exactly how our techs work the brand.",
         "Two Miami-specific stresses dominate the failure patterns. First, water: South Florida's hard water scales Miele dishwasher heater circuits, clogs spray-arm jets, and works the coffee systems' brew units and flow meters hard — descaling discipline genuinely determines these machines' lifespans here, and we reset that baseline as part of any service. Second, condo logistics: integrated and stacked Miele units in tight tower closets need careful extraction and the building paperwork (COI, elevator) we arrange as standard Miami procedure.",
-        "Miele's heat-pump dryers and brushless pump systems are superb machines that fail in undramatic, diagnosable ways — a condensate path clogged with lint paste, a drifted sensor, a worn brew-unit seal — and they reward genuine platform knowledge with long second lives. The $59 diagnostic applies toward the repair, OEM part numbers go on the invoice, and everything we touch carries the 90-day warranty.",
+        "Miele's heat-pump dryers and brushless pump systems are superb machines that fail in undramatic, diagnosable ways — a condensate path clogged with lint paste, a drifted sensor, a worn brew-unit seal — and they reward genuine platform knowledge with long second lives. The $59 diagnostic is free if you approve the repair, OEM part numbers go on the invoice, and everything we touch carries the 90-day warranty.",
       ],
     },
     faqs: [
@@ -520,7 +520,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       "Miele repair in Fort Lauderdale — dishwashers, W1/T1 laundry, coffee systems. Las Olas, Coral Ridge, Victoria Park. Service-mode diagnostics, $59 call, 90-day warranty.",
     h1City: "Fort Lauderdale",
     heroIntro:
-      "From Las Olas estates to Victoria Park remodels, Fort Lauderdale's Miele machines get the platform discipline they were built for: service-mode diagnostics, OEM parts with numbers on the invoice, $59 visit applied to the repair, 90-day warranty on everything we touch.",
+      "From Las Olas estates to Victoria Park remodels, Fort Lauderdale's Miele machines get the platform discipline they were built for: service-mode diagnostics, OEM parts with numbers on the invoice, $59 visit free with repair, 90-day warranty on everything we touch.",
     local: {
       eyebrow: "Miele in Fort Lauderdale",
       heading: "Quiet machines, long lives, and the local water tax",
@@ -570,7 +570,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Do you service Miele dishwashers inside Boca's gated communities?",
         answer:
-          "Constantly — Miele is practically the club-community standard. Gate access is arranged when you book through our local S Federal Hwy office, the window is honored, and the $59 diagnostic applies toward the repair.",
+          "Constantly — Miele is practically the club-community standard. Gate access is arranged when you book through our local S Federal Hwy office, the window is honored, and the $59 diagnostic is free if you approve the repair.",
       },
       {
         question: "Our Miele coffee system sat unused all summer and now won't brew — ruined?",

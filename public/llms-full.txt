@@ -19,7 +19,7 @@ Premium appliance repair company in South Florida.
 
 ## Pricing
 
-- Service call: $59 flat (covers trip + diagnosis, applied to repair if customer approves)
+- Service call: $59 flat (covers trip + diagnosis; free if customer approves the repair — charged only if the repair is declined)
 - Typical part-replacement repair: $150 – $300
 - Sealed-system or control board: $400 – $800
 - Payment: Cash, all major credit cards, Apple Pay, Google Pay, Zelle
@@ -27,7 +27,7 @@ Premium appliance repair company in South Florida.
 ## FAQ
 
 Q: How much does a service call cost?
-A: $59 flat. Covers trip and diagnosis. If you go ahead with the repair, the $59 is applied to the total.
+A: $59 flat. Covers trip and diagnosis. It's free if you go ahead with the repair — you only pay the $59 if you decide not to proceed.
 
 Q: Do you offer same-day appliance repair?
 A: Yes. Call before noon and we can usually have a technician at your door the same day across Miami-Dade, Broward, and Palm Beach.

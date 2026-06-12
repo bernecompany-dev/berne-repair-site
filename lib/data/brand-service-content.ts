@@ -12,7 +12,7 @@
  * dynamicParams=false keeps every other brand/service pair a 404. EN-only:
  * hreflang en+x-default, matching the brand×city pattern.
  *
- * Facts stay canonical: $59 service call (credited), 18 techs, 29,000+
+ * Facts stay canonical: $59 service call (free with repair), 18 techs, 29,000+
  * repairs, 4.79/871, 90-day warranty, Miami-Dade + Broward + Palm Beach.
  * Berne is an INDEPENDENT service company — no "authorized/factory" claims.
  */
@@ -71,7 +71,7 @@ const subZeroIceMaker: BrandServiceContent = {
   h1Lead: "ice maker repair",
   h1Accent: "across South Florida.",
   heroIntro:
-    "UC-15 undercounter machines, the ice maker modules inside BI and Classic built-ins, PRO-series systems — Sub-Zero ice is its own discipline, and it's one our senior refrigeration techs work every week. $59 diagnostic applied toward the repair, same-day dispatch across Miami-Dade, Broward, and Palm Beach.",
+    "UC-15 undercounter machines, the ice maker modules inside BI and Classic built-ins, PRO-series systems — Sub-Zero ice is its own discipline, and it's one our senior refrigeration techs work every week. $59 diagnostic free with repair, same-day dispatch across Miami-Dade, Broward, and Palm Beach.",
   sections: [
     {
       eyebrow: "The platform",
@@ -86,7 +86,7 @@ const subZeroIceMaker: BrandServiceContent = {
       eyebrow: "How we work it",
       heading: "Diagnosis by measurement, repair from truck stock",
       paragraphs: [
-        "An ice maker visit runs like every Berne diagnostic: measurements before conclusions. On built-in modules we verify fill-valve actuation and volume, watch a harvest cycle, test the module motor and ejector travel, and check bin sensing — in that order, because the failure distribution follows that order. On UC-15s we read production rate against spec, inspect the evaporator plate for scale, test the pump, and check condenser airflow and ambient conditions. The $59 service call covers the full diagnosis and applies toward the repair.",
+        "An ice maker visit runs like every Berne diagnostic: measurements before conclusions. On built-in modules we verify fill-valve actuation and volume, watch a harvest cycle, test the module motor and ejector travel, and check bin sensing — in that order, because the failure distribution follows that order. On UC-15s we read production rate against spec, inspect the evaporator plate for scale, test the pump, and check condenser airflow and ambient conditions. The $59 service call covers the full diagnosis and is free if you approve the repair.",
         "Parts logistics favor speed: ice maker modules for the common BI and Classic generations, fill valves, 4204490 filters, and harness clips ride on the senior-rotation trucks, so most built-in module repairs close in a single visit. UC-15 components and less-common legacy parts come through Sub-Zero's distributor, typically 2-3 business days. Everything we install carries the 90-day parts and labor warranty, and the work is logged against your unit's service history — so the next tech who visits knows exactly what's been done.",
       ],
     },
@@ -134,7 +134,7 @@ const subZeroIceMaker: BrandServiceContent = {
     },
   ],
   costRows: [
-    { job: "Diagnostic visit", range: "$59", note: "Applied toward the repair" },
+    { job: "Diagnostic visit", range: "$59", note: "Free with repair" },
     { job: "Water filter replacement + flow test", range: "$80–$140", note: "Filter included; 15 minutes" },
     { job: "Fill valve replacement", range: "$180–$320", note: "Most common single fix" },
     { job: "OEM ice maker module (BI / Classic)", range: "$350–$600", note: "Genuine Sub-Zero assembly + harness" },
@@ -143,7 +143,7 @@ const subZeroIceMaker: BrandServiceContent = {
     { job: "Control board (ice circuit failure)", range: "$450–$700", note: "Only after measured confirmation" },
   ],
   costNote:
-    "Ranges reflect typical South Florida jobs, parts plus labor, before any access complications. You get an exact written quote after the $59 diagnostic — which is credited toward whichever repair you approve. 90-day parts and labor warranty on all of it.",
+    "Ranges reflect typical South Florida jobs, parts plus labor, before any access complications. You get an exact written quote after the $59 diagnostic — which is free with whichever repair you approve. 90-day parts and labor warranty on all of it.",
   serviceHubSlug: "ice-maker-repair",
   serviceHubLabel: "Ice Maker Repair",
   faqs: [
@@ -160,7 +160,7 @@ const subZeroIceMaker: BrandServiceContent = {
     {
       question: "How much does Sub-Zero ice maker repair cost?",
       answer:
-        "Most jobs land between $180 and $600 depending on the failure: fill valves in the $180-$320 range, OEM module replacements $350-$600, UC-15 descale and pump work $200-$500. The $59 diagnostic is applied toward the repair, you approve a written quote before any part goes in, and everything carries our 90-day warranty.",
+        "Most jobs land between $180 and $600 depending on the failure: fill valves in the $180-$320 range, OEM module replacements $350-$600, UC-15 descale and pump work $200-$500. The $59 diagnostic is waived with an approved repair, you approve a written quote before any part goes in, and everything carries our 90-day warranty.",
     },
     {
       question: "Do you service the UC-15 undercounter ice machine?",
@@ -190,7 +190,7 @@ const mieleWasher: BrandServiceContent = {
   h1Lead: "washing machine repair",
   h1Accent: "across South Florida.",
   heroIntro:
-    "W1 compacts, the legacy W30xx generation, TwinDos systems, honeycomb drums — Miele laundry is engineered for twenty years, and it deserves service that reads the F-codes instead of guessing. $59 diagnostic credited toward the repair, same-day dispatch across Miami-Dade, Broward, and Palm Beach.",
+    "W1 compacts, the legacy W30xx generation, TwinDos systems, honeycomb drums — Miele laundry is engineered for twenty years, and it deserves service that reads the F-codes instead of guessing. $59 diagnostic free with repair, same-day dispatch across Miami-Dade, Broward, and Palm Beach.",
   sections: [
     {
       eyebrow: "The platform",
@@ -205,7 +205,7 @@ const mieleWasher: BrandServiceContent = {
       eyebrow: "How we work it",
       heading: "F-codes first, then measurements, then a written quote",
       paragraphs: [
-        "Every Miele visit starts with the fault memory — the machine has usually already told the story before we open anything. Then measurements: drain path and pump impeller for F11s, heater resistance and relay for F20s, motor windings and tach signal for the F50/F53 family, and the WPS float and hose integrity when the water-protection codes appear. The $59 service call covers the full diagnosis and is credited toward the repair you approve.",
+        "Every Miele visit starts with the fault memory — the machine has usually already told the story before we open anything. Then measurements: drain path and pump impeller for F11s, heater resistance and relay for F20s, motor windings and tach signal for the F50/F53 family, and the WPS float and hose integrity when the water-protection codes appear. The $59 service call covers the full diagnosis and is free with the repair you approve.",
         "We stock the high-frequency W1 parts — drain pumps, door locks, inlet valves — on the trucks, so the most common repairs close in one visit. The deeper Miele catalog flows through the brand's US parts network in typically 2-4 business days, and on legacy W30xx units we'll tell you honestly which parts are still obtainable before you commit to a repair path. Every installed part carries the 90-day parts and labor warranty, and a Miele repaired properly goes back to being the most durable machine in the building.",
       ],
     },
@@ -253,7 +253,7 @@ const mieleWasher: BrandServiceContent = {
     },
   ],
   costRows: [
-    { job: "Diagnostic visit (F-code read + measurements)", range: "$59", note: "Applied toward the repair" },
+    { job: "Diagnostic visit (F-code read + measurements)", range: "$59", note: "Free with repair" },
     { job: "Drain pump clear / replacement (F11)", range: "$180–$350", note: "Most common Miele repair" },
     { job: "Heating element or heater relay (F20)", range: "$250–$450", note: "Includes descale check" },
     { job: "Door lock assembly", range: "$200–$350", note: "Truck-stock part on W1 models" },
@@ -262,7 +262,7 @@ const mieleWasher: BrandServiceContent = {
     { job: "Motor / electronics work (F50 family)", range: "$350–$700", note: "Only after measured confirmation" },
   ],
   costNote:
-    "Typical South Florida ranges, parts plus labor. Exact written quote after the $59 diagnostic — credited toward any repair you approve. 90-day parts and labor warranty on everything we install.",
+    "Typical South Florida ranges, parts plus labor. Exact written quote after the $59 diagnostic — free with any repair you approve. 90-day parts and labor warranty on everything we install.",
   serviceHubSlug: "washer-repair",
   serviceHubLabel: "Washer Repair",
   faqs: [
@@ -309,7 +309,7 @@ const wolfRange: BrandServiceContent = {
   h1Lead: "range repair",
   h1Accent: "across South Florida.",
   heroIntro:
-    "GR gas ranges, DF dual-fuel, rangetops with the infrared griddle — the red-knob platform has known habits, and our gas-licensed techs have repaired them across thousands of South Florida tickets. $59 diagnostic credited toward the repair, same-day dispatch across Miami-Dade, Broward, and Palm Beach.",
+    "GR gas ranges, DF dual-fuel, rangetops with the infrared griddle — the red-knob platform has known habits, and our gas-licensed techs have repaired them across thousands of South Florida tickets. $59 diagnostic free with repair, same-day dispatch across Miami-Dade, Broward, and Palm Beach.",
   sections: [
     {
       eyebrow: "The platform",
@@ -325,7 +325,7 @@ const wolfRange: BrandServiceContent = {
       heading: "Gas-licensed techs, measured diagnosis, one-visit bias",
       paragraphs: [
         "Range work is gas work, and we treat it that way: licensed techs, leak-checks after every connection we touch, and burner verification across the full top before we leave. The diagnostic itself is measurement-driven — igniter current draw against spec on GR ovens, element resistance and relay actuation on DF units, circuit isolation on clicking burner switches — so the quote you approve names the actual failed part, not a hypothesis.",
-        "We stock the high-frequency Wolf parts: glow-bar igniters for the common GR ovens, spark modules and switch harnesses, and door hardware. Less common parts — DF relay and control boards, griddle elements — come through distribution in typically 2-4 business days. The $59 service call applies toward the repair, every part we install carries the 90-day parts and labor warranty, and the repair history stays logged against your range for the next visit, whoever runs it.",
+        "We stock the high-frequency Wolf parts: glow-bar igniters for the common GR ovens, spark modules and switch harnesses, and door hardware. Less common parts — DF relay and control boards, griddle elements — come through distribution in typically 2-4 business days. The $59 service call is free when you approve the repair, every part we install carries the 90-day parts and labor warranty, and the repair history stays logged against your range for the next visit, whoever runs it.",
       ],
     },
   ],
@@ -372,7 +372,7 @@ const wolfRange: BrandServiceContent = {
     },
   ],
   costRows: [
-    { job: "Diagnostic visit", range: "$59", note: "Applied toward the repair" },
+    { job: "Diagnostic visit", range: "$59", note: "Free with repair" },
     { job: "Oven glow-bar igniter (GR series)", range: "$250–$400", note: "The most common Wolf repair; truck stock" },
     { job: "Spark igniter switch / circuit isolation", range: "$200–$380", note: "Fixes continuous clicking" },
     { job: "Spark module replacement", range: "$280–$450", note: "When the module itself has failed" },
@@ -382,7 +382,7 @@ const wolfRange: BrandServiceContent = {
     { job: "Convection fan motor (DF)", range: "$300–$500", note: "Cheaper at the first noise than after failure" },
   ],
   costNote:
-    "Typical parts-plus-labor ranges for South Florida jobs on 30-48\" Wolf ranges; 48-inch double-oven configurations can run higher on oven-side repairs. Written quote after the $59 diagnostic, which credits toward the repair. 90-day parts and labor warranty.",
+    "Typical parts-plus-labor ranges for South Florida jobs on 30-48\" Wolf ranges; 48-inch double-oven configurations can run higher on oven-side repairs. Written quote after the $59 diagnostic, which is free if you approve the repair. 90-day parts and labor warranty.",
   serviceHubSlug: "oven-repair",
   serviceHubLabel: "Oven & Range Repair",
   faqs: [

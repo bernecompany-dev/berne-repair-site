@@ -94,7 +94,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "How fast can you get to a refrigerator emergency in Miami?",
         answer:
-          "A refrigerator full of spoiling food is a priority dispatch. Call before noon and we can usually have a technician at your Miami address the same day — our techs criss-cross the urban core all day, so Wynwood, Brickell, the Grove, and Little Havana are quick to reach. The $59 diagnostic applies toward the repair.",
+          "A refrigerator full of spoiling food is a priority dispatch. Call before noon and we can usually have a technician at your Miami address the same day — our techs criss-cross the urban core all day, so Wynwood, Brickell, the Grove, and Little Havana are quick to reach. The $59 diagnostic is free if you approve the repair.",
       },
     ],
   },
@@ -111,7 +111,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       paragraphs: [
         "Berne Appliance Repair is headquartered at 1001 N Federal Hwy in Hallandale Beach, so 'how fast can you get here' has the best possible answer in this city: our techs start and end their routes nearby, and a morning call almost always converts to a same-day visit. There's no travel-time padding in the schedule for Hallandale — Three Islands, Golden Isles, and Hallandale Park are minutes from the office.",
         "The dryer work here is shaped by condo living. Most Hallandale dryers are stacked or closet-installed units venting through long shared duct runs — and a restricted vent is the root cause behind the two complaints we hear most: clothes needing two cycles, and thermal fuses that keep blowing. Replacing the fuse without clearing the duct just schedules the next failure, so our diagnostic always includes an airflow check at the vent. In the beach towers, lint-clogged common risers are a building-level issue we can document for your association.",
-        "For the premium segment — Miele and Bosch ventless heat-pump dryers are increasingly common in newer Hallandale condos — drainage faults and sensor failures get a senior tech, because ventless platforms diagnose very differently from a belt-and-fuse Whirlpool. Either way the math is the same: $59 to diagnose, applied to the repair, 90-day warranty on parts and labor.",
+        "For the premium segment — Miele and Bosch ventless heat-pump dryers are increasingly common in newer Hallandale condos — drainage faults and sensor failures get a senior tech, because ventless platforms diagnose very differently from a belt-and-fuse Whirlpool. Either way the math is the same: $59 to diagnose — free if you approve the repair — 90-day warranty on parts and labor.",
       ],
     },
     nuances: [
@@ -132,7 +132,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "How quickly can you get to a dryer repair in Hallandale Beach?",
         answer:
-          "Faster than anywhere else we serve — our headquarters is at 1001 N Federal Hwy in Hallandale Beach. Call before noon and a same-day visit is the norm, not the exception. The $59 diagnostic applies toward your repair.",
+          "Faster than anywhere else we serve — our headquarters is at 1001 N Federal Hwy in Hallandale Beach. Call before noon and a same-day visit is the norm, not the exception. The $59 diagnostic is free with your approved repair.",
       },
       {
         question: "My Hallandale condo dryer takes two cycles — is the dryer broken?",
@@ -186,7 +186,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
 
   [key("microwave-repair", "hialeah")]: {
     metaDescription:
-      "Microwave dead or sparking in Hialeah? OTR and built-in units fixed same day — en inglés o español. $59 diagnostic credited, 90-day warranty.",
+      "Microwave dead or sparking in Hialeah? OTR and built-in units fixed same day — en inglés o español. $59 diagnostic — free with repair, 90-day warranty.",
     heroIntro:
       "Hialeah kitchens work harder than almost anywhere in Miami-Dade, and the over-the-range microwave takes the brunt of it — steam from the stovetop below, heavy daily use, and the door slamming that eventually kills every latch switch. We repair OTR, built-in, and drawer microwaves across Hialeah and West Hialeah with a $59 diagnostic, en inglés o en español.",
     local: {
@@ -195,7 +195,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       paragraphs: [
         "The microwave failures we see in Hialeah are concentrated in over-the-range units — they're in most kitchens here, and they live directly above the steam and grease of stovetops that get real daily use. Steam migrates into the control panel and door-switch cavity; a few years of it and you get the classic Hialeah trio: buttons that stop responding, a unit that runs but doesn't heat (magnetron or its diode), and door switches that fail from tens of thousands of open-close cycles. All three are repairable, and door switches are a same-visit fix from truck stock.",
         "The honest-math conversation matters with microwaves more than any other appliance, and we have it up front. A countertop unit is usually not worth a service call — we'll tell you that on the phone. But OTR and built-in units are a different story: replacement means installation, trim kits, and sometimes cabinet work, so a $150-300 repair on a quality unit beats a $600+ replace-and-install. GE, Whirlpool, and Samsung OTR platforms — the bulk of Hialeah's installed base — have well-stocked, affordable parts channels, which keeps repairs on the sensible side of that line.",
-        "Our Hialeah customers often prefer service in Spanish — no problem. Llámenos y le atendemos en español, desde el diagnóstico hasta la factura. Same $59 diagnostic, applied to the repair, 90-day parts and labor warranty either way.",
+        "Our Hialeah customers often prefer service in Spanish — no problem. Llámenos y le atendemos en español, desde el diagnóstico hasta la factura. Same $59 diagnostic — free with repair — 90-day parts and labor warranty either way.",
       ],
     },
     nuances: [
@@ -221,7 +221,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "¿Ofrecen reparación de microondas en Hialeah en español?",
         answer:
-          "Sí. Puede llamar y hacer todo el proceso en español — el despacho, el diagnóstico del técnico y la factura. La visita técnica cuesta $59 y se aplica al total de la reparación, con garantía de 90 días en piezas y mano de obra.",
+          "Sí. Puede llamar y hacer todo el proceso en español — el despacho, el diagnóstico del técnico y la factura. La visita técnica cuesta $59 y es gratuita si aprueba la reparación, con garantía de 90 días en piezas y mano de obra.",
       },
     ],
   },
@@ -263,7 +263,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "Do you repair garage refrigerators in Hialeah?",
         answer:
-          "Constantly. Garage units in Hialeah heat work much harder than the kitchen fridge and burn through start relays, condenser fans, and door gaskets faster. Most garage-fridge failures are inexpensive component swaps we finish the same visit — the $59 diagnostic applies to the repair either way.",
+          "Constantly. Garage units in Hialeah heat work much harder than the kitchen fridge and burn through start relays, condenser fans, and door gaskets faster. Most garage-fridge failures are inexpensive component swaps we finish the same visit — the $59 diagnostic is free with the repair either way.",
       },
     ],
   },
@@ -342,7 +342,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "Do you service integrated Miele dishwashers in Bal Harbour condos?",
         answer:
-          "Yes — integrated European units are the majority of our Bal Harbour dishwasher work. Senior technicians handle panel-ready removal with the manufacturer's procedure, and we arrange your building's COI and service-elevator requirements in advance. The $59 diagnostic applies toward the repair.",
+          "Yes — integrated European units are the majority of our Bal Harbour dishwasher work. Senior technicians handle panel-ready removal with the manufacturer's procedure, and we arrange your building's COI and service-elevator requirements in advance. The $59 diagnostic is free if you approve the repair.",
       },
       {
         question: "My Bosch dishwasher shows E15 — can I just reset it?",
@@ -396,7 +396,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
 
   [key("washer-repair", "kendall")]: {
     metaDescription:
-      "Washer not draining or spinning in Kendall? Trucks stocked for LG, Samsung and Whirlpool — most jobs one visit. $59 diagnostic credited, 90-day warranty.",
+      "Washer not draining or spinning in Kendall? Trucks stocked for LG, Samsung and Whirlpool — most jobs one visit. $59 diagnostic — free with repair, 90-day warranty.",
     heroIntro:
       "Kendall is family-laundry country — high-capacity top-loaders and front-load pairs in Kendall Lakes and the Hammocks running loads daily, not weekly. Heavy duty cycles surface every weak point a washer has, and we've repaired all of them: $59 diagnostic, trucks stocked for the Whirlpool, LG, and Samsung platforms that dominate these neighborhoods, most jobs done in one visit.",
     local: {
@@ -405,7 +405,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       paragraphs: [
         "A Kendall household washer works at commercial cadence — kids' uniforms, towels, linens, every day — and that mileage pattern decides what we find. On the Whirlpool/Maytag vertical-modular top-loaders that fill so many Kendall Lakes laundry rooms, the shift actuator is the classic high-mileage failure: the machine fills, the display counts, but the tub never agitates or spins. It's the single most common one-part washer repair we do, the part rides on every truck, and it's a 45-60 minute fix. On front-loaders, daily use plus South Florida's hard water accelerates drain-pump clogs and door-boot wear — both first-visit repairs when caught early.",
         "The repair we talk people out of matters too: drum bearings on a 10+ year-old front-loader. Daily use gets a washer to that failure faster here than the brochure suggests, and a $400-600 bearing job on a tub that's often welded shut isn't honest money. We'll show you the bearing play, explain the math, and let you decide with real numbers — that's the same honesty that built our 4.79-star rating across 871 verified reviews.",
-        "Scheduling fits family logistics: call before noon and we can usually reach Kendall the same day, with an arrival window confirmed by phone so nobody burns a workday waiting. The $59 diagnostic applies toward the repair, and everything we touch carries the 90-day parts-and-labor warranty.",
+        "Scheduling fits family logistics: call before noon and we can usually reach Kendall the same day, with an arrival window confirmed by phone so nobody burns a workday waiting. The $59 diagnostic is free if you approve the repair, and everything we touch carries the 90-day parts-and-labor warranty.",
       ],
     },
     nuances: [
@@ -438,7 +438,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
 
   [key("dryer-repair", "delray-beach")]: {
     metaDescription:
-      "Dryer taking two cycles in Delray Beach? We check vent airflow on every call — the usual culprit here. $59 diagnostic credited, 90-day warranty.",
+      "Dryer taking two cycles in Delray Beach? We check vent airflow on every call — the usual culprit here. $59 diagnostic — free with repair, 90-day warranty.",
     heroIntro:
       "Delray Beach dryers split into two populations: condo and townhome units near Atlantic Avenue with long, lint-choked vent runs, and the laundry rooms of the Lake Ida and Tropic Isle single-family streets where machines run a decade past their warranty. Both get the same treatment — a $59 diagnostic that always includes an airflow check, because in Delray the vent is guilty until proven innocent.",
     local: {
@@ -523,7 +523,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
   // == TIER-1 VOLUME BETS ===================================================
   [key("washer-repair", "miami")]: {
     metaDescription:
-      "Washer stuck mid-cycle in Miami? Condo stackables to full-size pairs — building logistics handled for you. $59 diagnostic credited, 90-day warranty.",
+      "Washer stuck mid-cycle in Miami? Condo stackables to full-size pairs — building logistics handled for you. $59 diagnostic — free with repair, 90-day warranty.",
     heroIntro:
       "Washer repair in Miami spans two different worlds: stacked and ventless combos squeezed into Brickell and Edgewater condo closets, and full-size pairs in the Grove, Shenandoah, and Little Havana. We service both daily — $59 diagnostic, condo building logistics handled for you, and trucks stocked for the LG, Samsung, and Whirlpool platforms that dominate the city.",
     local: {
@@ -553,7 +553,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "Can you repair the stacked washer in my Brickell condo closet?",
         answer:
-          "Yes — tight-clearance stacked units are the bread and butter of our Miami condo work. Techs carry the slim tooling for closet extraction, and we handle your building's COI and service-elevator requirements before the visit. The $59 diagnostic applies toward the repair.",
+          "Yes — tight-clearance stacked units are the bread and butter of our Miami condo work. Techs carry the slim tooling for closet extraction, and we handle your building's COI and service-elevator requirements before the visit. The $59 diagnostic is free if you approve the repair.",
       },
       {
         question: "My Miami washer is leaking — what do I do right now?",
@@ -637,7 +637,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "Do you repair Sub-Zero refrigerators in Fort Lauderdale?",
         answer:
-          "Yes — Sub-Zero built-ins are a core specialty, and the Las Olas/Rio Vista/Coral Ridge corridor is one of the densest Sub-Zero areas we serve. Senior techs handle the platform, including dual-refrigeration diagnostics and EPA-608 sealed-system work. The diagnostic is the same flat $59, applied toward the repair.",
+          "Yes — Sub-Zero built-ins are a core specialty, and the Las Olas/Rio Vista/Coral Ridge corridor is one of the densest Sub-Zero areas we serve. Senior techs handle the platform, including dual-refrigeration diagnostics and EPA-608 sealed-system work. The diagnostic is the same flat $59 — free if you approve the repair.",
       },
       {
         question: "Why do refrigerators on Fort Lauderdale canals need more frequent service?",
@@ -649,7 +649,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
 
   [key("refrigerator-repair", "kendall")]: {
     metaDescription:
-      "Fridge or ice maker down in Kendall? French-door family workhorses fixed same day, parts on the truck. $59 diagnostic credited, 90-day warranty.",
+      "Fridge or ice maker down in Kendall? French-door family workhorses fixed same day, parts on the truck. $59 diagnostic — free with repair, 90-day warranty.",
     heroIntro:
       "Kendall fridges feed real households — French-door workhorses in Kendall Lakes and the Hammocks opened a hundred times a day, ice makers that never get a rest, and a second fridge in half the garages. We keep them running: $59 diagnostic, LG/Samsung/Whirlpool parts stocked on the truck, and most repairs finished the same visit they're diagnosed.",
     local: {
@@ -700,7 +700,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       paragraphs: [
         "Two Hialeah realities shape every washer call here. First, the machines are seasoned — Whirlpool and Maytag top-loaders dominate, many on their second decade, and their high-mileage failures are wonderfully fixable: shift actuators (fills but won't spin or agitate — the single most common repair we do on this platform), lid switches, drain pumps, suspension rods. Second, the water: older supply infrastructure in parts of Hialeah and West Hialeah carries sediment that packs inlet-valve screens until machines fill at a trickle. Cleaning the screens is a ten-minute fix that gets misdiagnosed as a valve or board by shops that don't look first; we look first.",
         "Front-loaders are growing in the newer households, and they bring the familiar pattern: drain-pump filters clogged with coins and bobby pins, door-boot tears at the bottom fold, and the UE/OE/dE code family on LG and Samsung that points to exactly which subsystem failed — codes our techs read with the tech sheets on the truck rather than guessing. Most front-loader calls in Hialeah close on the first visit.",
-        "We know many Hialeah machines are family workhorses that earn their keep, so the repair-or-replace talk comes with real numbers, not a sales pitch — and with the OEM part number on your invoice so you can verify exactly what was installed. Si prefiere hacer todo el proceso en español — el diagnóstico, la explicación y la factura — así lo hacemos. Visita de $59 aplicada a la reparación, garantía de 90 días.",
+        "We know many Hialeah machines are family workhorses that earn their keep, so the repair-or-replace talk comes with real numbers, not a sales pitch — and with the OEM part number on your invoice so you can verify exactly what was installed. Si prefiere hacer todo el proceso en español — el diagnóstico, la explicación y la factura — así lo hacemos. Visita de $59 gratuita con la reparación, garantía de 90 días.",
       ],
     },
     nuances: [
@@ -726,14 +726,14 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "¿Reparan lavadoras en Hialeah con servicio en español?",
         answer:
-          "Sí, completamente. Puede llamar, recibir el diagnóstico del técnico y la factura todo en español. La visita técnica cuesta $59, se aplica al total de la reparación, y todo el trabajo lleva garantía de 90 días en piezas y mano de obra.",
+          "Sí, completamente. Puede llamar, recibir el diagnóstico del técnico y la factura todo en español. La visita técnica cuesta $59, es gratuita si aprueba la reparación, y todo el trabajo lleva garantía de 90 días en piezas y mano de obra.",
       },
     ],
   },
 
   [key("refrigerator-repair", "boca-raton")]: {
     metaDescription:
-      "Sub-Zero or built-in fridge down in Boca Raton? Senior EPA-608 techs from our S Federal Hwy office. $59 diagnostic credited, 90-day warranty.",
+      "Sub-Zero or built-in fridge down in Boca Raton? Senior EPA-608 techs from our S Federal Hwy office. $59 diagnostic — free with repair, 90-day warranty.",
     heroIntro:
       "Boca Raton's kitchens hold one of the densest premium-refrigeration populations in Palm Beach County — Sub-Zero columns in East Boca and Royal Palm estates, integrated panel-ready units in Boca West and Boca Pointe, wine storage everywhere. Our Boca Raton office on S Federal Highway anchors this part of our service map: senior techs, EPA-608 sealed-system credentials, $59 diagnostic.",
     local: {
@@ -784,7 +784,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       paragraphs: [
         "Hollywood sits directly north of our Hallandale Beach headquarters, which makes it one of the fastest dispatches on our map — techs cross into Hollywood Lakes and the Hills all day, and a morning call here rarely waits past the afternoon. The housing tells us what we'll find before we arrive: the mid-century ranch homes of Hollywood Hills and Emerald Hills run full-size top-loaders and front-load pairs with real mileage, while the beach corridor's condo towers run stacked and compact units with the building-access choreography we handle as routine — COI, elevator, protective runners.",
         "On the single-family side, the failure list is the honest classics: Whirlpool/Maytag shift actuators (fills, counts, never spins), drain pumps fouled by coins and grit, suspension rods on aging top-loaders that let the drum bang through spin like a kettledrum. All truck-stock, all same-visit fixes in most cases. The beach-side towers add the salt variable — fasteners and valve bodies corrode faster within blocks of the Atlantic — and stacked units' tight closets mean leaks hide until they're the downstairs neighbor's ceiling, so anything weeping gets priority dispatch.",
-        "Hollywood Lakes' older plumbing deserves its own line: original galvanized supply lines in some of these streets shed scale that packs washer inlet screens, the trickle-fill complaint we clear in ten minutes. If your machine fills slowly and you're in an older Lakes home, mention it when you call — it's often the whole problem, and the $59 diagnostic applied to a ten-minute fix is the cheapest repair in the book.",
+        "Hollywood Lakes' older plumbing deserves its own line: original galvanized supply lines in some of these streets shed scale that packs washer inlet screens, the trickle-fill complaint we clear in ten minutes. If your machine fills slowly and you're in an older Lakes home, mention it when you call — it's often the whole problem, and a ten-minute fix with the $59 diagnostic waived is the cheapest repair in the book.",
       ],
     },
     nuances: [
@@ -805,7 +805,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       {
         question: "How fast can you reach a washer repair in Hollywood?",
         answer:
-          "Hollywood borders our Hallandale Beach headquarters, so it's one of our fastest dispatch zones — call before noon and a same-day visit is the norm. The $59 diagnostic applies toward the repair, with a 90-day parts-and-labor warranty on the work.",
+          "Hollywood borders our Hallandale Beach headquarters, so it's one of our fastest dispatch zones — call before noon and a same-day visit is the norm. The $59 diagnostic is free if you approve the repair, with a 90-day parts-and-labor warranty on the work.",
       },
       {
         question: "My washer in an older Hollywood Lakes home fills very slowly — big problem?",

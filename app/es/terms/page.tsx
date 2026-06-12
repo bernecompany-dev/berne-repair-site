@@ -61,7 +61,7 @@ export default function TermsPageES() {
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">3. Tarifa de diagnóstico y precios</h2>
         <ul className="list-disc pl-6 space-y-1">
-          <li>La tarifa residencial de llamada de servicio (diagnóstico) es de <strong>${COMPANY.serviceCallPrice}</strong>. Se aplica al costo de la reparación si autoriza el trabajo el mismo día.</li>
+          <li>La tarifa residencial de llamada de servicio (diagnóstico) es de <strong>${COMPANY.serviceCallPrice}</strong>. No se cobra si autoriza la reparación en la misma visita.</li>
           <li>Los precios por reparación son tarifa plana y se entregan por escrito antes de iniciar el trabajo.</li>
           <li>Los costos de partes se informan por adelantado. Las partes de pedido especial pueden requerir depósito no reembolsable.</li>
           <li>Usted autoriza las reparaciones por escrito (firma digital o estimado firmado) antes de pedir partes o comenzar el trabajo.</li>

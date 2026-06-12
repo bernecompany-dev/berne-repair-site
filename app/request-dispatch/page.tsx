@@ -161,7 +161,7 @@ export default function RequestDispatchPage() {
                     Technician arrives, ${COMPANY.serviceCallPrice} diagnostic
                   </div>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Applied toward the repair if you say go. {COMPANY.socialProof.warranty}.
+                    Free if you say go ahead with the repair. {COMPANY.socialProof.warranty}.
                   </p>
                 </div>
               </li>

@@ -226,7 +226,7 @@ export default async function ComparisonPage({ params }: PageProps) {
         <InlineCta
           className="mt-10"
           title={`Whichever you pick — we service ${brandList}.`}
-          body={`Factory-trained techs, same-day appointments across South Florida. $${COMPANY.serviceCallPrice} service call, credited toward the repair.`}
+          body={`Factory-trained techs, same-day appointments across South Florida. $${COMPANY.serviceCallPrice} service call — free with repair.`}
         />
       </section>
 

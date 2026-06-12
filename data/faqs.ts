@@ -4,7 +4,7 @@ export const GENERAL_FAQS: FAQ[] = [
   {
     question: "How much does a service call cost?",
     answer:
-      "$59. That covers the trip and a full diagnosis. If you go ahead with the repair, the service call fee is applied toward the total cost.",
+      "$59. That covers the trip and a full diagnosis — and it's free if you go ahead with the repair. You only pay the fee if you decide not to proceed.",
   },
   {
     question: "Do you offer same-day appliance repair?",
@@ -47,7 +47,7 @@ export const GENERAL_FAQS_ES: FAQ[] = [
   {
     question: "¿Cuánto cuesta una visita técnica?",
     answer:
-      "$59. Cubre el viaje y un diagnóstico completo. Si decide proceder con la reparación, esos $59 se aplican al costo total.",
+      "$59. Cubre el viaje y un diagnóstico completo — y es gratuita si decide proceder con la reparación. Solo se paga si decide no continuar.",
   },
   {
     question: "¿Ofrecen servicio el mismo día?",
@@ -126,7 +126,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "What's the difference between a service call and a diagnostic?",
       answer:
-        "Same thing in our shop — $59 flat. It covers travel, full diagnosis, and a written quote on the repair. Approve the work and the $59 is credited toward the total. Decline and you owe only the $59.",
+        "Same thing in our shop — $59 flat. It covers travel, full diagnosis, and a written quote on the repair. Approve the work and the visit is free — you don't pay the $59 at all. Decline and you owe only the $59.",
     },
     {
       question: "Why is my Sub-Zero ice maker not making ice anymore?",
@@ -193,7 +193,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does a washer drain pump replacement cost?",
       answer:
-        "Drain pump replacement on mainstream brands runs $240 to $340 all-in including the part, labor, and the $59 diagnostic credit. Bosch, Miele, and Asko pump jobs sit at $340 to $480 because of the parts cost. Most calls finish on the first visit when the pump is a stocked truck item — LG, Samsung, Whirlpool, and Maytag all are.",
+        "Drain pump replacement on mainstream brands runs $240 to $340 all-in for the part and labor — the $59 diagnostic is free once you approve the repair. Bosch, Miele, and Asko pump jobs sit at $340 to $480 because of the parts cost. Most calls finish on the first visit when the pump is a stocked truck item — LG, Samsung, Whirlpool, and Maytag all are.",
     },
     {
       question: "Why won't my washer fill with water?",
@@ -250,7 +250,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does dryer repair cost on average?",
       answer:
-        "Most repairs run $160 to $380 in parts and labor. Heating elements and thermal fuses are on the lower end; control boards and motor replacements sit at the upper end. Heat-pump dryer repairs (Miele, Bosch) run higher because of part cost. The $59 service call is credited toward any approved repair.",
+        "Most repairs run $160 to $380 in parts and labor. Heating elements and thermal fuses are on the lower end; control boards and motor replacements sit at the upper end. Heat-pump dryer repairs (Miele, Bosch) run higher because of part cost. The $59 service call is free if you approve the repair — you only pay it if you decline.",
     },
     {
       question: "Is it worth fixing a 12-year-old dryer?",
@@ -287,7 +287,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does a dishwasher heating element replacement cost?",
       answer:
-        "Heating element replacement on Whirlpool, KitchenAid, GE, and Maytag dishwashers runs $190 to $280 all-in including the part, labor, and the $59 diagnostic credit. Bosch and Miele use heat-pump drying with no traditional element — those repairs are different and we quote separately. The signature symptom is dishes still warm but the cycle never finishes.",
+        "Heating element replacement on Whirlpool, KitchenAid, GE, and Maytag dishwashers runs $190 to $280 all-in for the part and labor — the $59 diagnostic is free once you approve the repair. Bosch and Miele use heat-pump drying with no traditional element — those repairs are different and we quote separately. The signature symptom is dishes still warm but the cycle never finishes.",
     },
     {
       question: "Why does my dishwasher leak from the door?",
@@ -339,7 +339,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does Wolf or Viking oven repair cost?",
       answer:
-        "Premium oven repairs (Wolf, Viking, Thermador, Miele) typically run $320 to $720 in parts and labor. Igniters, sensors, door hinges, and bake elements are on the lower end; control boards, latch assemblies, and convection motors sit at the upper end. The $59 service call is credited toward the approved repair.",
+        "Premium oven repairs (Wolf, Viking, Thermador, Miele) typically run $320 to $720 in parts and labor. Igniters, sensors, door hinges, and bake elements are on the lower end; control boards, latch assemblies, and convection motors sit at the upper end. The $59 service call is free when you approve the repair — you only pay it if you decline.",
     },
     {
       question: "Is it worth repairing a 15-year-old Wolf or Viking oven?",
@@ -423,7 +423,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does ice maker module replacement cost?",
       answer:
-        "On refrigerator-mounted ice makers (Samsung, LG, Whirlpool, GE), module replacement runs $220 to $360 all-in including the part, labor, and the $59 diagnostic credit. Sub-Zero pivot kits are similar pricing. Stand-alone Scotsman and U-Line head replacements run $480 to $920 depending on harvest motor and control board condition.",
+        "On refrigerator-mounted ice makers (Samsung, LG, Whirlpool, GE), module replacement runs $220 to $360 all-in for the part and labor — the $59 diagnostic is free once you approve the repair. Sub-Zero pivot kits are similar pricing. Stand-alone Scotsman and U-Line head replacements run $480 to $920 depending on harvest motor and control board condition.",
     },
   ],
   "wine-cooler-repair": [
@@ -509,7 +509,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does range hood blower motor replacement cost?",
       answer:
-        "Blower motor replacement runs $260 to $480 all-in including the part, labor, and the $59 diagnostic credit. Wolf, Viking, Thermador, and Vent-A-Hood blower motors are at the upper end because of part cost; mainstream brands (Broan, Best, Faber, Zephyr) are lower. Most motors stock for next-business-day install.",
+        "Blower motor replacement runs $260 to $480 all-in for the part and labor — the $59 diagnostic is free once you approve the repair. Wolf, Viking, Thermador, and Vent-A-Hood blower motors are at the upper end because of part cost; mainstream brands (Broan, Best, Faber, Zephyr) are lower. Most motors stock for next-business-day install.",
     },
     {
       question: "Why is my range hood damper stuck open or rattling?",

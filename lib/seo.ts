@@ -490,7 +490,7 @@ export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
       priceCurrency: "USD",
-      description: `${COMPANY.serviceCallPrice} service call — applied toward the repair`,
+      description: `${COMPANY.serviceCallPrice} service call — free with repair`,
       availability: "https://schema.org/InStock",
       priceSpecification: {
         "@type": "PriceSpecification",
@@ -608,7 +608,7 @@ export function serviceCityJsonLd(service: Service, city: City, locale: "en" | "
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
       priceCurrency: "USD",
-      description: `${COMPANY.serviceCallPrice} service call — applied toward the repair`,
+      description: `${COMPANY.serviceCallPrice} service call — free with repair`,
       areaServed: { "@type": "City", name: city.name },
       priceSpecification: {
         "@type": "PriceSpecification",

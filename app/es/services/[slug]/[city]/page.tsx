@@ -107,7 +107,7 @@ export default async function ServiceCityPageES({ params }: Props) {
     },
     {
       question: `¿Cuánto cuesta la reparación de ${sv.seoNoun} en ${city.name}?`,
-      answer: `Nuestra visita técnica fija de $${COMPANY.serviceCallPrice} lleva al técnico a su dirección en ${city.name} e incluye un diagnóstico completo. Si aprueba la reparación, esos $${COMPANY.serviceCallPrice} se aplican al total. La mayoría de reparaciones de ${sv.seoNoun} cuestan entre $150 y $600 dependiendo de la pieza.`,
+      answer: `Nuestra visita técnica fija de $${COMPANY.serviceCallPrice} lleva al técnico a su dirección en ${city.name} e incluye un diagnóstico completo. Si aprueba la reparación, la visita es gratuita — solo paga los $${COMPANY.serviceCallPrice} si decide no continuar. La mayoría de reparaciones de ${sv.seoNoun} cuestan entre $150 y $600 dependiendo de la pieza.`,
     },
     {
       question: `¿Reparan mi marca de ${sv.seoNoun} en ${city.name}?`,

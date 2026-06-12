@@ -327,7 +327,7 @@ export default function AboutPageES() {
               icon={<BadgeDollarSign className="size-5 text-brand" aria-hidden />}
               value={`$${COMPANY.serviceCallPrice}`}
               label="Visita técnica plana"
-              sub="Aplicada a la reparación si nos da luz verde"
+              sub="Gratuita si nos da luz verde con la reparación"
             />
             <Stat
               icon={<Clock3 className="size-5 text-brand" aria-hidden />}

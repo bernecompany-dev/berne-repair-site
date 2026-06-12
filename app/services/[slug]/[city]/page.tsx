@@ -191,7 +191,7 @@ export default async function ServiceCityPage({ params }: Props) {
     },
     {
       question: `What's the cost for ${service.shortName.toLowerCase()} repair in ${city.name}?`,
-      answer: `Our flat $${COMPANY.serviceCallPrice} service call gets a technician to your ${city.name} address and includes a full diagnosis. If you approve the repair, that $${COMPANY.serviceCallPrice} is applied toward the total. Most ${service.shortName.toLowerCase()} repairs in ${city.name} fall between $150 and $600 depending on the part.`,
+      answer: `Our flat $${COMPANY.serviceCallPrice} service call gets a technician to your ${city.name} address and includes a full diagnosis. If you approve the repair, the visit is free — you only pay the $${COMPANY.serviceCallPrice} if you decide not to proceed. Most ${service.shortName.toLowerCase()} repairs in ${city.name} fall between $150 and $600 depending on the part.`,
     },
     {
       question: `Do you service my brand of ${service.seoNoun} in ${city.name}?`,

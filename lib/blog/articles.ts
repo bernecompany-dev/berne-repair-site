@@ -101,7 +101,7 @@ Before you book, here's what a Berne Appliance Repair tech does on a Sub-Zero di
 
 ## When to call us
 
-If you've cleaned the condenser, confirmed both fans spin, checked the gaskets, and the unit still drifts warm after two hours, the next step is diagnostic. We charge a $59 service call, applied toward any repair. Berne Appliance Repair runs factory-trained Sub-Zero technicians out of a Miami truck stocked with the common 600 and 700 series parts. Call (754) 345-4515 — most days we can have a tech at your door within three hours.
+If you've cleaned the condenser, confirmed both fans spin, checked the gaskets, and the unit still drifts warm after two hours, the next step is diagnostic. We charge a $59 service call — free if you approve the repair, paid only if you decline. Berne Appliance Repair runs factory-trained Sub-Zero technicians out of a Miami truck stocked with the common 600 and 700 series parts. Call (754) 345-4515 — most days we can have a tech at your door within three hours.
 
 A few related reads on our site:
 
@@ -182,7 +182,7 @@ Quick owner checklist before scheduling service:
 4. Confirm gas valve at the wall is fully open.
 5. Try a different burner — if one works and one doesn't, the issue is local.
 
-If you've done all five and it still clicks without lighting, we're a phone call away. Berne Appliance Repair runs Wolf-trained technicians on every truck. (754) 345-4515. The $59 service call applies toward the repair if you go ahead with us.
+If you've done all five and it still clicks without lighting, we're a phone call away. Berne Appliance Repair runs Wolf-trained technicians on every truck. (754) 345-4515. The $59 service call is free if you go ahead with the repair through us — you only pay it if you decline.
 
 Related service pages:
 
@@ -267,7 +267,7 @@ Both brands' control boards are sensitive to power-quality issues — brown-outs
 
 ## Calling us for either
 
-Berne Appliance Repair handles both Viking and Thermador in the field. (754) 345-4515. Same $59 diagnostic visit, applied to repair. If you're in the buying decision and you'd rather not guess, we'll do a paid one-hour kitchen consult and walk through your specific install context.
+Berne Appliance Repair handles both Viking and Thermador in the field. (754) 345-4515. Same $59 diagnostic visit — free with repair. If you're in the buying decision and you'd rather not guess, we'll do a paid one-hour kitchen consult and walk through your specific install context.
 
 Related reading on our site:
 
@@ -356,7 +356,7 @@ Salt regeneration is genuinely necessary in Miami. Municipal water in much of Mi
 
 ## When to book service
 
-If your Miele shows any of the above codes and an owner check doesn't clear it within thirty minutes, the diagnostic is faster than the trial-and-error. Berne Appliance Repair runs Miele-trained technicians on Miami-Dade routes daily. (754) 345-4515. Standard $59 service call applies toward repair.
+If your Miele shows any of the above codes and an owner check doesn't clear it within thirty minutes, the diagnostic is faster than the trial-and-error. Berne Appliance Repair runs Miele-trained technicians on Miami-Dade routes daily. (754) 345-4515. Standard $59 service call — free with repair.
 
 Related service pages:
 
@@ -457,7 +457,7 @@ Replacement makes financial sense when (a) the repair quote exceeds 40% of repla
 
 ## Our position
 
-Berne Appliance Repair handles post-warranty service on every premium brand we've named here, plus a few we haven't. (754) 345-4515. The $59 service call applies toward the repair. We won't sell you an extended plan because we don't offer them — but we'll tell you honestly whether the one in your mailbox is worth signing.
+Berne Appliance Repair handles post-warranty service on every premium brand we've named here, plus a few we haven't. (754) 345-4515. The $59 service call is free if you approve the repair. We won't sell you an extended plan because we don't offer them — but we'll tell you honestly whether the one in your mailbox is worth signing.
 
 Related service pages on our site:
 
@@ -533,7 +533,7 @@ Every quarter, wipe the drawer gasket with a damp microfiber and a drop of mild 
 
 ## Booking service
 
-We carry the common 700 series gaskets on our trucks. Most calls are same-week, often same-day for our regular Aventura, Sunny Isles, and Bal Harbour clients. (754) 345-4515. The $59 service call applies toward repair.
+We carry the common 700 series gaskets on our trucks. Most calls are same-week, often same-day for our regular Aventura, Sunny Isles, and Bal Harbour clients. (754) 345-4515. The $59 service call is free with repair.
 
 Related service pages:
 
@@ -614,7 +614,7 @@ If the budget runs to a 48-inch unit, the AG484 is the same all-gas architecture
 
 ## Booking service or pre-purchase consult
 
-If you're in the buying decision and want a non-dealer perspective on the outdoor install, we offer a one-hour paid consult that walks through your specific lanai geometry and prevailing-wind exposure. (754) 345-4515. For active service calls, same $59 diagnostic visit applies toward repair.
+If you're in the buying decision and want a non-dealer perspective on the outdoor install, we offer a one-hour paid consult that walks through your specific lanai geometry and prevailing-wind exposure. (754) 345-4515. For active service calls, same $59 diagnostic visit — free with repair.
 
 ## A regional note on permitting
 
@@ -709,7 +709,7 @@ If your Star Burner is lighting clean but burning yellow at the tips, owners oft
 
 ## Booking service
 
-If your Star Burners are past the point where home maintenance recovers them, we stock heads for current PRD, PRG, and PCG production on our trucks. (754) 345-4515. The $59 diagnostic visit applies toward repair.
+If your Star Burners are past the point where home maintenance recovers them, we stock heads for current PRD, PRG, and PCG production on our trucks. (754) 345-4515. The $59 diagnostic visit is free with repair.
 
 Related service pages:
 
@@ -803,7 +803,7 @@ In oceanfront penthouses where the unit pulls 8 to 14 shots a day for entertaini
 
 ## Booking service
 
-If your Miele coffee system is throwing F-codes, pulling weak shots, or just hasn't been serviced in over a year, we'll handle it. (754) 345-4515. The $59 service call applies toward the work. Brewing unit service is typically same-day.
+If your Miele coffee system is throwing F-codes, pulling weak shots, or just hasn't been serviced in over a year, we'll handle it. (754) 345-4515. The $59 service call is free if you approve the work. Brewing unit service is typically same-day.
 
 Related pages:
 
@@ -895,7 +895,7 @@ Current Sub-Zero wine storage uses R-600a (isobutane) refrigerant in new builds,
 
 ## Booking service
 
-We service Sub-Zero wine storage across South Florida and stock common parts for the 427, 424, 315, and 424FS lines on our trucks. (754) 345-4515. The $59 service call applies toward repair.
+We service Sub-Zero wine storage across South Florida and stock common parts for the 427, 424, 315, and 424FS lines on our trucks. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -982,7 +982,7 @@ If you've just had a new CSO30 installed and the first few cook cycles produce a
 
 ## Booking service
 
-If your CSO is throwing fault codes, preheating slow, or you suspect scale damage from prior water choices, we'll inspect and quote honest options. (754) 345-4515. The $59 service call applies toward the repair.
+If your CSO is throwing fault codes, preheating slow, or you suspect scale damage from prior water choices, we'll inspect and quote honest options. (754) 345-4515. The $59 service call is free if you approve the repair.
 
 Related pages:
 
@@ -1071,7 +1071,7 @@ After cam replacement, the door's self-close action will feel slightly different
 
 ## Booking service
 
-If your Viking is showing any of these symptoms, get the cam swapped before the cascade starts. (754) 345-4515. The $59 service call applies toward the repair. We carry cams for current Professional series and most VCBB/VCSB production on our trucks.
+If your Viking is showing any of these symptoms, get the cam swapped before the cascade starts. (754) 345-4515. The $59 service call is free if you approve the repair. We carry cams for current Professional series and most VCBB/VCSB production on our trucks.
 
 Related pages:
 
@@ -1162,7 +1162,7 @@ If your Benchmark is past ten years and the CrystalDry chamber has saturated, re
 
 ## Booking service
 
-If your Benchmark is drying poorly, we'll diagnose accurately the first visit. (754) 345-4515. The $59 service call applies toward repair.
+If your Benchmark is drying poorly, we'll diagnose accurately the first visit. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -1242,7 +1242,7 @@ The first three questions usually get vague answers. The fourth almost always ge
 
 ## When we can help
 
-Berne Appliance Repair works on La Cornue ranges across Miami-Dade, Broward, and Palm Beach. We're not factory-authorized — that path doesn't exist meaningfully in South Florida — but our techs have hands-on experience on most current and recent-historical La Cornue models. (754) 345-4515. The $59 service call applies toward repair.
+Berne Appliance Repair works on La Cornue ranges across Miami-Dade, Broward, and Palm Beach. We're not factory-authorized — that path doesn't exist meaningfully in South Florida — but our techs have hands-on experience on most current and recent-historical La Cornue models. (754) 345-4515. The $59 service call is free with repair.
 
 The honest reality on La Cornue service is that we'll often need to order parts and return in two to three weeks for the actual repair. That's the brand reality, not a Berne Appliance Repair limitation. Where we add value over the dealer-coordinated service path is response speed on the diagnostic visit, hands-on experience that beats most "we don't work on those" shops, and clear quotes before parts arrive.
 
@@ -1337,7 +1337,7 @@ For builders speccing for spec-home resale: Pro 48 in homes priced above $4M, Pr
 
 ## Service in either case
 
-We service both Pro 48 and Pro 36 across South Florida and stock common parts for both on our trucks. Whichever you buy, factory-trained service is available. (754) 345-4515. The $59 service call applies toward repair.
+We service both Pro 48 and Pro 36 across South Florida and stock common parts for both on our trucks. Whichever you buy, factory-trained service is available. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -1428,7 +1428,7 @@ Owners sometimes use "Vario" interchangeably with "modular" but BSH actually use
 
 ## Booking service
 
-We service Gaggenau Vario across South Florida and have established parts pipeline relationships with BSH for both common and special-order items. (754) 345-4515. The $59 service call applies toward repair.
+We service Gaggenau Vario across South Florida and have established parts pipeline relationships with BSH for both common and special-order items. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -1522,7 +1522,7 @@ Doral, Hialeah, and other inland Miami areas with newer electrical service gener
 
 ## Booking service
 
-We service Thermador Freedom Induction across South Florida. Sensor diagnostic is a same-day visit; sensor replacement typically requires a return visit two to three days later once parts are confirmed on the truck. (754) 345-4515. The $59 service call applies toward repair.
+We service Thermador Freedom Induction across South Florida. Sensor diagnostic is a same-day visit; sensor replacement typically requires a return visit two to three days later once parts are confirmed on the truck. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -1632,7 +1632,7 @@ Salt that spills onto the stainless tub floor during refill and isn't wiped up c
 
 ## Booking service
 
-If your Miele's been showing salt indicators or spotted glassware persistently, we can diagnose the underlying cause and verify hardness settings during a routine service visit. (754) 345-4515. The $59 service call applies toward repair.
+If your Miele's been showing salt indicators or spotted glassware persistently, we can diagnose the underlying cause and verify hardness settings during a routine service visit. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -1737,7 +1737,7 @@ Hardwood Integrated panels in coastal South Florida need ongoing care that build
 
 ## Booking service
 
-We service both Sub-Zero Built-In and Integrated across South Florida. Integrated service runs slightly longer per visit but our techs are familiar with the panel-removal sequence on every current Sub-Zero Integrated model. (754) 345-4515. The $59 service call applies toward repair.
+We service both Sub-Zero Built-In and Integrated across South Florida. Integrated service runs slightly longer per visit but our techs are familiar with the panel-removal sequence on every current Sub-Zero Integrated model. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -1850,7 +1850,7 @@ Don't use these on the griddle. The chrome plating doesn't survive abrasive clea
 
 ## Booking service
 
-If your Wolf griddle has visible pitting or rust developing, we can assess whether refinishing recovers it. (754) 345-4515. The $59 service call applies toward refinishing or replacement work.
+If your Wolf griddle has visible pitting or rust developing, we can assess whether refinishing recovers it. (754) 345-4515. The $59 service call is free if you approve refinishing or replacement work.
 
 Related pages:
 
@@ -1952,7 +1952,7 @@ Many Viking Professional hoods include integrated halogen or LED task lighting. 
 
 ## Booking service
 
-If your Viking hood is making bearing noise or showing thermal cutout symptoms, the motor needs replacement before complete failure. We stock common Viking Professional hood motors on our trucks for Boca, Delray, and surrounding markets. (754) 345-4515. The $59 service call applies toward repair.
+If your Viking hood is making bearing noise or showing thermal cutout symptoms, the motor needs replacement before complete failure. We stock common Viking Professional hood motors on our trucks for Boca, Delray, and surrounding markets. (754) 345-4515. The $59 service call is free with repair.
 
 Related pages:
 
@@ -2067,7 +2067,7 @@ Five-to-ten years into the install, the millwork around the two units often shif
 
 ## Booking service
 
-We service Sub-Zero and Bosch Benchmark combination installs across South Florida. (754) 345-4515. The $59 service call applies toward repair. We'll diagnose both units on the visit regardless of which one initiated the call.
+We service Sub-Zero and Bosch Benchmark combination installs across South Florida. (754) 345-4515. The $59 service call is free with repair. We'll diagnose both units on the visit regardless of which one initiated the call.
 
 Related pages:
 
@@ -2192,7 +2192,7 @@ If your Integrated Sub-Zero is past year 15 and the panel needs replacement, fac
 
 ## Booking service
 
-We work with several millworkers across South Florida who specialize in Sub-Zero Integrated panels. We can coordinate the diagnostic, panel fabrication, and installation as a single project. (754) 345-4515. The $59 service call applies toward the assessment.
+We work with several millworkers across South Florida who specialize in Sub-Zero Integrated panels. We can coordinate the diagnostic, panel fabrication, and installation as a single project. (754) 345-4515. The $59 service call is free if you proceed with the work.
 
 Related pages:
 
@@ -2317,7 +2317,7 @@ Older Thermador Professional ranges (pre-2013) used a different igniter family t
 
 ## Booking service
 
-If your Thermador Professional is showing slow ignition or burner-specific failures, we'll diagnose accurately and quote honestly. (754) 345-4515. The $59 service call applies toward the repair. We carry common igniters and spark modules for current Thermador Professional production on our trucks.
+If your Thermador Professional is showing slow ignition or burner-specific failures, we'll diagnose accurately and quote honestly. (754) 345-4515. The $59 service call is free if you approve the repair. We carry common igniters and spark modules for current Thermador Professional production on our trucks.
 
 Related pages:
 
@@ -5820,13 +5820,13 @@ This is why diagnostic-fee structure and transparent pricing matter for premium 
 
 Service contractors in South Florida structure diagnostic fees in three main ways:
 
-Flat diagnostic fee, applied toward repair if you proceed. This is the standard premium service approach. Typical range: $59-$129. If the customer authorizes the repair, the fee is credited against the repair cost. If not, the fee covers the diagnostic visit.
+Flat diagnostic fee, waived or credited if you proceed with the repair. This is the standard premium service approach. Typical range: $59-$129. If the customer authorizes the repair, the fee either disappears entirely (our model) or is credited against the repair cost. If not, the fee covers the diagnostic visit.
 
 No diagnostic fee, repair-only quotes. Some contractors come out for free and quote based on visual assessment. Less common in premium service because thorough diagnosis requires actual work.
 
 Diagnostic-and-repair flat pricing. Some contractors quote a fixed amount for "diagnostic and repair" without breaking out which is which. Common in volume-residential service, less common in premium.
 
-For premium appliance owners, the flat diagnostic fee with credit-to-repair is the most transparent structure. The owner knows what diagnosis costs and what credit applies; the contractor is paid for the diagnostic work regardless of whether repair proceeds.
+For premium appliance owners, the flat diagnostic fee that goes away when the repair is approved is the most transparent structure. The owner knows exactly what the worst case costs — the diagnostic fee, and only if they decline the work; the contractor is paid for the diagnostic work when no repair proceeds.
 
 ## What a diagnostic visit should include
 
@@ -5872,7 +5872,7 @@ If any of these patterns appear during your diagnostic visit, pause the work and
 
 Berne Appliance Repair's diagnostic-fee structure:
 
-$59 flat diagnostic fee for residential premium appliance service. Applied as credit toward authorized repair if the customer proceeds with us within 90 days.
+$59 flat diagnostic fee for residential premium appliance service. The fee is free — waived entirely — if you authorize the repair with us; you only pay the $59 if you decide not to proceed.
 
 The fee includes the full diagnostic process described above — measurement, internal inspection if needed, written quote, owner discussion.
 
@@ -5910,7 +5910,7 @@ The quote is in writing, on letterhead, signed by the tech. The customer can acc
 
 Before scheduling diagnostic with any service contractor:
 
-What's the diagnostic fee, and is it applied toward repair?
+What's the diagnostic fee, and is it waived if I approve the repair?
 
 Are you factory-authorized for [your appliance brand]?
 
@@ -5978,7 +5978,7 @@ We provide second-opinion diagnostics regularly. The customer pays the $59, we d
 
 ## What Berne does differently
 
-We publish our diagnostic-fee structure on our website and we honor it consistently. The fee is what we quote at scheduling. The credit application is clear. The written quotes are detailed.
+We publish our diagnostic-fee structure on our website and we honor it consistently. The fee is what we quote at scheduling. The free-with-repair terms are clear: approve the repair and the fee disappears. The written quotes are detailed.
 
 We have a "no surprise repairs" policy: we don't proceed with repair work beyond the diagnostic fee without written customer authorization. If we discover additional issues during the work, we stop, communicate, and get approval before continuing.
 
@@ -5992,7 +5992,7 @@ Related reading:
 - [Sub-Zero and Wolf OEM parts and counterfeit risk](/blog/sub-zero-wolf-oem-only-counterfeit-risk)
 - [Service across South Florida](/services/refrigerator-repair)
 
-Our [sister site bernerepair.com](https://bernerepair.com) uses the same transparent diagnostic-fee structure on standard-brand calls (GE, Samsung, LG, Whirlpool) — $59 applied to the repair, no upsell.`,
+Our [sister site bernerepair.com](https://bernerepair.com) uses the same transparent diagnostic-fee structure on standard-brand calls (GE, Samsung, LG, Whirlpool) — $59 diagnostic, free with repair, no upsell.`,
   },
   {
     slug: "aventura-condo-refrigeration-highrise-dispatch",

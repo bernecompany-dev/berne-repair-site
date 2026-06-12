@@ -239,7 +239,7 @@ const SUB_ZERO_VS_VIKING: ComparisonProfile = {
     {
       question: "What is the typical service-call cost for either brand?",
       answer:
-        "Berne charges $59 for the service call across both platforms, applied toward the repair if you proceed. Out-of-warranty sealed-system work lands $900-$1,800 on Sub-Zero and $1,200-$2,200 on current Viking. Non-sealed-system repairs (control boards, gaskets, fans) run $250-$700 on either platform.",
+        "Berne charges $59 for the service call across both platforms — free if you proceed with the repair, paid only if you decline. Out-of-warranty sealed-system work lands $900-$1,800 on Sub-Zero and $1,200-$2,200 on current Viking. Non-sealed-system repairs (control boards, gaskets, fans) run $250-$700 on either platform.",
     },
     {
       question: "Which brand handles South Florida humidity better?",

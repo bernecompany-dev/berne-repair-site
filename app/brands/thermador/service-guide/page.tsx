@@ -109,7 +109,7 @@ const FAQS = [
   {
     question: "What do you charge to look at a Thermador?",
     answer:
-      "A $59 service call, applied toward the repair if you approve the quote. Our techs service Thermador weekly — ranges, wall ovens, Freedom columns, steam ovens, dishwashers — with the BSH-platform diagnostics the brand is built on, a 90-day parts and labor warranty, and same-day dispatch across Miami-Dade, Broward, and Palm Beach when scheduling allows.",
+      "A $59 service call — free if you approve the quote, paid only if you decline. Our techs service Thermador weekly — ranges, wall ovens, Freedom columns, steam ovens, dishwashers — with the BSH-platform diagnostics the brand is built on, a 90-day parts and labor warranty, and same-day dispatch across Miami-Dade, Broward, and Palm Beach when scheduling allows.",
   },
 ];
 
@@ -275,7 +275,7 @@ export default function ThermadorServiceGuidePage() {
               <p>
                 An established independent shop covers the same repairs differently: same-day or
                 next-day dispatch because the techs are already crossing Miami-Dade, Broward, and
-                Palm Beach all day; a $59 diagnostic credited toward the repair; and parts from
+                Palm Beach all day; a $59 diagnostic that is free if you approve the repair; and parts from
                 the same BSH pipeline the factory channel uses. Thermador&apos;s engineering
                 actually favors independents who know the platform — the error-code structure and
                 service diagnostics are systematic, so a tech fluent in BSH products (we service
@@ -287,7 +287,7 @@ export default function ThermadorServiceGuidePage() {
                 warranty → Thermador; out of warranty → whoever you trust that can come
                 soonest.</strong> A range down for three weeks costs a family more than the
                 price difference between any two shops. If that&apos;s us, the diagnostic is
-                $59 and it credits toward the repair. If the factory queue is short that week —
+                $59 and it is free if you approve the repair. If the factory queue is short that week —
                 take it, genuinely.
               </p>
             </div>
@@ -299,7 +299,7 @@ export default function ThermadorServiceGuidePage() {
             <ul className="mt-5 grid gap-3 text-sm text-foreground/90">
               <li className="flex items-center gap-2">
                 <BadgeDollarSign className="size-4 shrink-0 text-brand" aria-hidden />
-                ${COMPANY.serviceCallPrice} service call — credited toward the repair
+                ${COMPANY.serviceCallPrice} service call — free with repair
               </li>
               <li className="flex items-center gap-2">
                 <Clock3 className="size-4 shrink-0 text-brand" aria-hidden />

@@ -154,7 +154,7 @@ export default async function BrandPage({ params }: PageProps) {
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
       priceCurrency: "USD",
-      description: `$${COMPANY.serviceCallPrice} service call — applied toward the repair`,
+      description: `$${COMPANY.serviceCallPrice} service call — free with repair`,
       availability: "https://schema.org/InStock",
       priceSpecification: {
         "@type": "PriceSpecification",

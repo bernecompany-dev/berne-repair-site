@@ -1129,7 +1129,7 @@ const kitchenAid: ResidentialBrandProfile = {
       { question: "Mi refri French door KitchenAid tiene el lado fresh-food tibio. ¿Cuál es la causa?", answer: "Usualmente una de tres cosas: (1) falla del defrost heater, evaporador del freezer engelado, sin airflow al fresh-food; (2) motor del evap fan trancado; (3) control board principal no comandando defrost. Testeamos los tres en la primera llamada." },
       { question: "¿Cargan partes KitchenAid en el camión?", answer: "Sí — partes de alta falla en el camión (motores diverter, igniters, módulos de ice maker, evap fans, cables de puerta, bombas de drenaje). Partes menos comunes vienen en 1-2 días vía distribuidor Whirlpool." },
       { question: "¿KitchenAid y Whirlpool usan las mismas partes?", answer: "En muchas plataformas, sí — lavavajillas, French door refrigeración, lavandería. Los controles y interiores son diferentes pero las partes mecánicas frecuentemente son las mismas. Atendemos ambas marcas con los mismos técnicos." },
-      { question: "¿Cuánto cuesta un service call KitchenAid?", answer: "$59 service call. La cuota cubre diagnóstico y se aplica a la reparación si autoriza el trabajo en la misma visita." },
+      { question: "¿Cuánto cuesta un service call KitchenAid?", answer: "$59 service call. La cuota cubre el diagnóstico y es gratuita si autoriza la reparación — solo se paga si decide no continuar." },
     ],
   },
 };
@@ -2012,7 +2012,7 @@ const liebherr: ResidentialBrandProfile = {
     {
       question: "Do you service built-in Monolith columns in condo towers?",
       answer:
-        "Yes, and it's a core scenario for us — flush-inset columns can't be wheeled out, so they're diagnosed and repaired in place, with cabinetry panels handled carefully and the building's COI and service-elevator requirements arranged before the visit. The $59 service call applies toward the repair as on every job.",
+        "Yes, and it's a core scenario for us — flush-inset columns can't be wheeled out, so they're diagnosed and repaired in place, with cabinetry panels handled carefully and the building's COI and service-elevator requirements arranged before the visit. The $59 service call is free with the approved repair, as on every job.",
     },
   ],
 };
@@ -2109,7 +2109,7 @@ const dacor: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Dacor rewards a shop that knows all three generations. Our techs carry the legacy knowledge — which Renaissance relay boards can be rebuilt, which Epicure igniters cross-reference to available parts, what a humidity-faulted membrane looks like versus a dead ERC — alongside current Samsung-era diagnostic procedures for the Contemporary collections and column refrigeration. We're licensed for the gas work, EPA-608 Universal certified for the refrigeration side, and honest about the economics: on a 20-year-old wall oven we'll lay out repair-versus-replace with real numbers before any part goes in. The $59 service call is credited toward the repair, most cooking-side jobs close in one visit from truck stock, and everything we install carries the 90-day labor and parts warranty.",
+    "Dacor rewards a shop that knows all three generations. Our techs carry the legacy knowledge — which Renaissance relay boards can be rebuilt, which Epicure igniters cross-reference to available parts, what a humidity-faulted membrane looks like versus a dead ERC — alongside current Samsung-era diagnostic procedures for the Contemporary collections and column refrigeration. We're licensed for the gas work, EPA-608 Universal certified for the refrigeration side, and honest about the economics: on a 20-year-old wall oven we'll lay out repair-versus-replace with real numbers before any part goes in. The $59 service call is free when you approve the repair, most cooking-side jobs close in one visit from truck stock, and everything we install carries the 90-day labor and parts warranty.",
   relatedServices: [
     { slug: "oven-repair", label: "Oven Repair" },
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
@@ -2243,7 +2243,7 @@ const fisherPaykel: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Fisher & Paykel punishes guesswork — a DishDrawer F1 diagnosed by someone who's never pulled a drawer becomes a 'replace the dishwasher' quote, and an adaptive-defrost fault read with generic-fridge instincts becomes an unnecessary compressor story. Our techs work the platform on its own terms: we read the fault logs, we've done the lid actuators and diverter valves enough times to quote them confidently, and we stock the high-frequency parts — lid seals and actuators, drain pumps, defrost components, diverter valves — so most repairs close in one visit. Parts beyond truck stock flow through Fisher & Paykel's US distribution in 2-4 business days. Gas-licensed for the range work, EPA-608 certified for sealed-system refrigeration, 90-day labor and parts warranty on everything, and the $59 service call credits toward the repair.",
+    "Fisher & Paykel punishes guesswork — a DishDrawer F1 diagnosed by someone who's never pulled a drawer becomes a 'replace the dishwasher' quote, and an adaptive-defrost fault read with generic-fridge instincts becomes an unnecessary compressor story. Our techs work the platform on its own terms: we read the fault logs, we've done the lid actuators and diverter valves enough times to quote them confidently, and we stock the high-frequency parts — lid seals and actuators, drain pumps, defrost components, diverter valves — so most repairs close in one visit. Parts beyond truck stock flow through Fisher & Paykel's US distribution in 2-4 business days. Gas-licensed for the range work, EPA-608 certified for sealed-system refrigeration, 90-day labor and parts warranty on everything, and the $59 service call is free when you approve the repair.",
   relatedServices: [
     { slug: "dishwasher-repair", label: "Dishwasher Repair" },
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
@@ -2383,7 +2383,7 @@ const gaggenau: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Gaggenau owners in South Florida have two realistic options: factory-adjacent service with long scheduling horizons, or an independent shop that actually knows the BSH platform. We're the second — the same senior techs who handle our Thermador and Bosch benchmark work service Gaggenau with the BSH diagnostic procedures, error-code structure, and parts pipeline they already use weekly. We respect what the hardware costs: two techs on 400-series doors, stone-safe extraction on Vario modules, panel protocol on integrated columns, and measurements before parts on anything refrigerated. EPA-608 Universal certification covers the sealed-system work, the gas license covers the VG modules, and the 90-day parts and labor warranty covers everything we install. The $59 service call credits toward the repair.",
+    "Gaggenau owners in South Florida have two realistic options: factory-adjacent service with long scheduling horizons, or an independent shop that actually knows the BSH platform. We're the second — the same senior techs who handle our Thermador and Bosch benchmark work service Gaggenau with the BSH diagnostic procedures, error-code structure, and parts pipeline they already use weekly. We respect what the hardware costs: two techs on 400-series doors, stone-safe extraction on Vario modules, panel protocol on integrated columns, and measurements before parts on anything refrigerated. EPA-608 Universal certification covers the sealed-system work, the gas license covers the VG modules, and the 90-day parts and labor warranty covers everything we install. The $59 service call is free when you approve the repair.",
   relatedServices: [
     { slug: "oven-repair", label: "Oven Repair" },
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
@@ -2518,7 +2518,7 @@ const bertazzoni: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Bertazzoni rewards mechanical service culture, and that's what our cooking-side techs bring — the same crew that handles Wolf and Dacor ranges. We test gas oven thermostats against calibrated probes instead of declaring them dead, we carry igniter switches, spark modules, and hinge kits for the common Master and Professional configurations, and we know the brand-specific quirks: the calibration procedure, the burner-cap geometry, the air-shutter tuning that makes the simmer behave. Licensed for gas, insured, 18 technicians across the tri-county map, 29,000+ completed repairs, and a 4.79-star average across 871 Google reviews. The $59 service call is credited toward the repair and everything we install carries the 90-day parts and labor warranty.",
+    "Bertazzoni rewards mechanical service culture, and that's what our cooking-side techs bring — the same crew that handles Wolf and Dacor ranges. We test gas oven thermostats against calibrated probes instead of declaring them dead, we carry igniter switches, spark modules, and hinge kits for the common Master and Professional configurations, and we know the brand-specific quirks: the calibration procedure, the burner-cap geometry, the air-shutter tuning that makes the simmer behave. Licensed for gas, insured, 18 technicians across the tri-county map, 29,000+ completed repairs, and a 4.79-star average across 871 Google reviews. The $59 service call is free with an approved repair and everything we install carries the 90-day parts and labor warranty.",
   relatedServices: [
     { slug: "oven-repair", label: "Oven Repair" },
     { slug: "range-hood-repair", label: "Range Hood Repair" },
@@ -2652,7 +2652,7 @@ const monogram: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Monogram is where premium service should be easy, and we make it so. GE's parts network means we quote realistic timelines and hit them — common boards, fans, igniters, lamps, and valves either ride on the truck or land in 1-3 business days, the fastest in the premium segment. Our techs carry GE service-manual fluency across the Monogram line, EPA-608 Universal certification for the sealed-system work, and gas licensing for the pro ranges. We've logged enough tickets on the ZIS built-in platform alone to know its habits cold, and the Advantium family — which many shops decline — is standard work for us. The $59 service call applies toward the repair, every job carries the 90-day parts and labor warranty, and same-day dispatch covers the full tri-county footprint.",
+    "Monogram is where premium service should be easy, and we make it so. GE's parts network means we quote realistic timelines and hit them — common boards, fans, igniters, lamps, and valves either ride on the truck or land in 1-3 business days, the fastest in the premium segment. Our techs carry GE service-manual fluency across the Monogram line, EPA-608 Universal certification for the sealed-system work, and gas licensing for the pro ranges. We've logged enough tickets on the ZIS built-in platform alone to know its habits cold, and the Advantium family — which many shops decline — is standard work for us. The $59 service call is free when you approve the repair, every job carries the 90-day parts and labor warranty, and same-day dispatch covers the full tri-county footprint.",
   relatedServices: [
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
     { slug: "oven-repair", label: "Oven Repair" },
@@ -2670,7 +2670,7 @@ const monogram: ResidentialBrandProfile = {
     {
       question: "My 42-inch Monogram built-in is warm on the fridge side. Compressor?",
       answer:
-        "Statistically unlikely. On the ZIS/ZISS platform a warm fresh-food side with the unit running usually means the evaporator fan, a frost-blocked air path from a defrost fault, or a damper issue. The compressor is the last suspect, not the first. We test the actual circuits at the $59 diagnostic — which credits toward the repair — before any expensive word gets used.",
+        "Statistically unlikely. On the ZIS/ZISS platform a warm fresh-food side with the unit running usually means the evaporator fan, a frost-blocked air path from a defrost fault, or a damper issue. The compressor is the last suspect, not the first. We test the actual circuits at the $59 diagnostic — which is free if you approve the repair — before any expensive word gets used.",
     },
     {
       question: "Do you repair Advantium ovens?",

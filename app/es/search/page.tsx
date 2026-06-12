@@ -96,7 +96,7 @@ export default async function SearchPageEs({
           <a href="tel:+17543454515" className="font-semibold text-brand hover:underline">
             (754) 345-4515
           </a>{" "}
-          — visita de $59, aplicada a la reparación.
+          — visita de $59, gratuita con la reparación.
         </p>
       </div>
 

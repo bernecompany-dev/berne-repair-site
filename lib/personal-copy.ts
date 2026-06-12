@@ -50,7 +50,7 @@ const COMBO_BODIES: Array<(s: Service, c: City) => string> = [
   (s, c) =>
     `We stock parts for ${s.brands.slice(0, 3).join(", ")} on the trucks because that's what's actually in ${c.name} kitchens — not whatever a parts catalog says is "popular." On a typical ${s.seoNoun} job we diagnose, quote, and finish in the same visit about 80% of the time.`,
   (s, c) =>
-    `What you get: a real ${COMPANY_SHORT} tech (one of ours, not a subcontractor), the flat $59 diagnostic, then a number for the repair before we touch a screwdriver. If you say no, you owe us $59 and we leave. If you say yes, the $59 comes off the total.`,
+    `What you get: a real ${COMPANY_SHORT} tech (one of ours, not a subcontractor), the flat $59 diagnostic, then a number for the repair before we touch a screwdriver. If you say no, you owe us $59 and we leave. If you say yes, the diagnostic is free — you don't pay it at all.`,
   (s, c) =>
     `Two things I always tell ${c.name} customers about ${s.seoNoun}: first, don't wait — the longer a sealed system leaks or a motor labors, the more expensive it gets. Second, ask for the OEM part number on the invoice. We always provide it.`,
   (s, c) =>
@@ -104,7 +104,7 @@ const COMBO_BODIES_ES: Array<(s: Service, c: City) => string> = [
   (s, c) =>
     `Llevamos piezas para ${s.brands.slice(0, 3).join(", ")} en los camiones porque eso es lo que realmente hay en las cocinas de ${c.name}. En un trabajo típico de ${s.seoNoun} diagnosticamos, cotizamos y terminamos en la misma visita en el 80% de los casos.`,
   (s, c) =>
-    `Lo que recibe: un técnico Berne (uno de los nuestros, no subcontratista), la visita técnica fija de $59, y un número antes de que toquemos un tornillo. Si dice que no, paga $59 y nos vamos. Si dice sí, esos $59 se aplican al total.`,
+    `Lo que recibe: un técnico Berne (uno de los nuestros, no subcontratista), la visita técnica fija de $59, y un número antes de que toquemos un tornillo. Si dice que no, paga $59 y nos vamos. Si dice sí, el diagnóstico es gratis — no lo paga.`,
   (s, c) =>
     `Dos cosas que siempre le digo a los clientes de ${c.name} sobre ${s.seoNoun}: primero, no espere — entre más espera, más caro sale. Segundo, pida el número de pieza OEM en la factura. Siempre lo damos.`,
   (s, c) =>
@@ -141,7 +141,7 @@ const SERVICE_BODIES_ES: Array<(s: Service) => string> = [
   (s) =>
     `Marcas para las que tenemos piezas el día uno: ${s.brands.slice(0, 6).join(", ")}. Otras marcas residenciales y comerciales: las servimos, posiblemente pedimos la pieza. El trabajo premium — Sub-Zero, Wolf, Viking, Thermador, Miele — va a técnicos senior que conocen las particularidades.`,
   (s) =>
-    `Rangos de precio reales: diagnóstico $59 fijo, aplicado a la reparación. Reemplazo simple de piezas: $150-$300. Trabajo de sistema sellado o tarjeta: $400-$800. Todo se cotiza por escrito antes de empezar.`,
+    `Rangos de precio reales: diagnóstico $59 fijo, gratis con la reparación. Reemplazo simple de piezas: $150-$300. Trabajo de sistema sellado o tarjeta: $400-$800. Todo se cotiza por escrito antes de empezar.`,
   (s) =>
     `Proceso: usted llama → despacho le encuentra un horario hoy o mañana temprano → técnico llega con camión equipado → diagnóstico, cotización, decisión, reparación. Tiempo promedio en sitio: 45-90 minutos.`,
 ];
@@ -214,7 +214,7 @@ const SERVICE_BODIES: Array<(s: Service) => string> = [
   (s) =>
     `Brands we have parts for on day one: ${s.brands.slice(0, 6).join(", ")}. Brands we service but might need to order parts for: pretty much everything else residential and commercial. We don't farm out high-end work — Sub-Zero, Wolf, Viking, Thermador, Miele all go to senior techs who've seen the quirks.`,
   (s) =>
-    `Realistic price ranges so you're not blind. Diagnostic: flat $59, credited to the repair. Simple part replacements: $150-$300. Sealed-system or main-board work: $400-$800. We won't surprise you — every quote comes before any work starts, in writing.`,
+    `Realistic price ranges so you're not blind. Diagnostic: flat $59, free if you approve the repair. Simple part replacements: $150-$300. Sealed-system or main-board work: $400-$800. We won't surprise you — every quote comes before any work starts, in writing.`,
   (s) =>
     `Process: you call → dispatch finds you a slot today or first thing tomorrow → tech arrives with a stocked truck → diagnostic, quote, decision, repair. Average on-site time is 45-90 minutes. You don't have to take the day off work.`,
   (s) =>
