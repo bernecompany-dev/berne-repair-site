@@ -83,6 +83,15 @@ const SAME_AS: string[] = [
   "https://share.google/VCXebzL4hfcPcu3P5",
   "https://share.google/gH0RfcApFEEwD6zpy",
   "https://share.google/c2j6LHKohujVnmXge",
+  // Citation directories — "Berne Repair" (premium) brand profiles only,
+  // added 2026-06-13 sameAs-pass. Entity-resolution signals; clean canonical
+  // URLs, no UTM. No Norma profiles (variant A entity split).
+  "https://www.provenexpert.com/berne-repair/",
+  "https://www.hotfrog.com/company/c323ccb578e34351e664254ddc21ebbf",
+  "https://www.manta.com/c/m1hh69l",
+  "https://www.callupcontact.com/b/businessprofile/Berne_Repair/10124996",
+  "https://www.n49.com/biz/7243497/berne-repair/",
+  "https://www.tupalo.co/hallandale-beach-florida/berne-repair",
 ];
 
 const AGGREGATE = {
