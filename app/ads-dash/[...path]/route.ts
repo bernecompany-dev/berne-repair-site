@@ -18,9 +18,16 @@ export const dynamic = "force-dynamic";
 
 async function proxy(req: NextRequest, path: string[]) {
   const target = UPSTREAM + path.map(encodeURIComponent).join("/");
+  // Review C1/H8: forward the X-Dash-Key control PIN so the upstream can
+  // authenticate control actions. The proxy itself stays dumb (upstream
+  // enforces), but without forwarding the header, control would 403.
+  const fwd: Record<string, string> = {};
+  const dashKey = req.headers.get("x-dash-key");
+  if (dashKey) fwd["X-Dash-Key"] = dashKey;
   const upstream = await fetch(target, {
     method: req.method,
     cache: "no-store",
+    headers: fwd,
     // body only matters for POST (killswitch) — it is empty there anyway
   });
   const body = await upstream.arrayBuffer();
