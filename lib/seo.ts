@@ -65,6 +65,10 @@ const SAME_AS: string[] = [
   "https://www.tiktok.com/@berne.repair",
   "https://www.instagram.com/bernerepair/",
   "https://www.facebook.com/bernerepair",
+  // LinkedIn Company Page — "Berne Appliance Repair" (created 2026-06-15).
+  // Entity-resolution signal on the Berne residence brand only (variant A
+  // entity split; Norma + Commercial get their own pages separately).
+  "https://www.linkedin.com/company/129694214",
   // Yelp listings (per DBA / market). The Hallandale Beach "-3" listing was
   // retired 2026-05-20 — "-4" (280 reviews) is the canonical Hallandale Yelp.
   "https://www.yelp.com/biz/berne-appliance-repair-hallandale-beach-4",
