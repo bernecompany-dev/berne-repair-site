@@ -69,6 +69,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: title },
     description,
+    // INDEX-BLOAT GUARD (2026-06-15): the entire ES combo layer is templated
+    // (city-substituted, no hand-written per-combo content) and earns 0 ES
+    // clicks on a 4-week-old domain — 872 such URLs doubled the index bloat.
+    // All ES combos are noindex,follow until the layer gets unique content.
+    // ES hubs (/es, /es/services/[slug], /es/areas/[city], /es/brands) stay
+    // indexable. `follow` keeps internal weight flowing to those ES hubs.
+    robots: { index: false, follow: true },
     alternates: {
       canonical: `/es/services/${service.slug}/${city.slug}`,
       languages: {

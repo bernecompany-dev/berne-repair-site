@@ -201,6 +201,11 @@ export function SiteFooter() {
                 {locale === "es" ? "Equipo" : "Team"}
               </Link>
               <span aria-hidden>·</span>
+              {/* /reviews is EN-only (no /es mirror) — link the EN path from both locales */}
+              <Link href="/reviews" className="inline-block py-1.5 hover:text-foreground">
+                {locale === "es" ? "Reseñas" : "Reviews"}
+              </Link>
+              <span aria-hidden>·</span>
               <Link href={localePath(locale, "/careers")} className="inline-block py-1.5 hover:text-foreground">
                 {locale === "es" ? "Carreras" : "Careers"}
               </Link>

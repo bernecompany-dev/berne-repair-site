@@ -70,9 +70,10 @@ export const COMPANY = {
   socialProof: {
     technicians: 18,
     repairsCompleted: REPAIRS_COMPLETED,
-    // Brand established 2022 (see lib/seo.ts FOUNDING_YEAR); the 11+ years of
-    // industry heritage belongs to the parent Berne Appliance Repair entity.
-    // Use foundingDate in schema as the single source of truth; do not surface
+    // Berne entity founded 2015 (see lib/seo.ts FOUNDING_YEAR — aligned across
+    // all Berne domains). The premium "Berne Repair" division launched in 2022;
+    // that's brand history in /about copy, not the schema foundingDate. Use
+    // foundingDate in schema as the single source of truth; do not surface
     // "11 years" on berne-repair.com without explicit parent attribution.
     industryExperienceYears: 11,
     licensed: true,

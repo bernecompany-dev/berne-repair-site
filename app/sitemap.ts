@@ -88,25 +88,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
+  // INDEX-BLOAT DE-BLOAT (2026-06-15): the sitemap previously listed all
+  // ~1540 combo URLs (770 EN + 770 ES). On a 4-week-old domain with no
+  // external authority, Google declined to crawl that templated tail and the
+  // dead weight dragged crawl trust on the core hubs. The combo route now
+  // serves noindex,follow on every templated combo (EN tail + the entire ES
+  // layer), so the sitemap must only advertise the URLs that are actually
+  // indexable: the ~20 hand-written EN combos (combo-unique.ts). Their ES
+  // counterparts stay out — the ES combo layer is templated and noindex.
+  // As more combos get uniquified, they re-enter the sitemap automatically
+  // via the same getComboUnique() lookup.
   const combos: MetadataRoute.Sitemap = [];
   for (const s of SERVICES) {
     for (const c of CITIES) {
+      if (!getComboUnique(s.slug, c.slug)) continue;
       const p = `/services/${s.slug}/${c.slug}`;
       combos.push({
         url: `${SITE_URL}${p}`,
-        // Top-20 uniquified combos got hand-written content + descriptions
-        // in the 2026-06-10 wave — their lastmod must reflect that.
-        lastModified: getComboUnique(s.slug, c.slug) ? REWORKED_MOD : LAST_MOD,
-        changeFrequency: "monthly",
-        priority: 0.8,
-        alternates: { languages: esCounterpart(p) },
-      });
-      combos.push({
-        url: `${SITE_URL}/es${p}`,
         lastModified: REWORKED_MOD,
         changeFrequency: "monthly",
-        priority: 0.75,
-        alternates: { languages: esCounterpart(p) },
+        priority: 0.8,
       });
     }
   }
@@ -129,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // EN-only statics — /es/contact and /es/family do not exist (404). The old
   // unconditional flatMap put both dead /es URLs into the sitemap with
   // matching phantom es-US hreflang alternates.
-  const staticsEnOnly: MetadataRoute.Sitemap = ["/contact", "/family"].map((p) => ({
+  const staticsEnOnly: MetadataRoute.Sitemap = ["/contact", "/family", "/reviews"].map((p) => ({
     url: `${SITE_URL}${p}`,
     lastModified: LAST_MOD,
     changeFrequency: "monthly" as const,

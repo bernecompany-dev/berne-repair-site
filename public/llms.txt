@@ -9,7 +9,7 @@
 - Service call: $59 flat (free if repair approved — charged only if customer declines the repair)
 - Hours: 7 days/week, 7 AM – 9 PM Eastern
 - Warranty: 90-day labor & parts
-- Founded: 2022 — premium division of the Berne family of companies, serving South Florida since 2015
+- Founded: 2015 — Berne family of companies serving South Florida; premium "Berne Repair" division launched 2022
 - Jobs completed: 29,300+ across the Berne family
 - Rating: 4.79★ average / 871 reviews (multi-source aggregate)
 - Owner: Eugene Berne
@@ -45,6 +45,7 @@ Call (754) 345-4515 (rings dispatch). Most jobs scheduled within an hour, comple
 - /services/{service}/{city} — combo pages for hyper-local lookup (e.g., /services/refrigerator-repair/miami)
 - /es/* — Spanish mirror of every page
 - /team — all 18 technicians with names, roles, photos
+- /reviews — customer reviews (4.79★ / 871 across the Berne network)
 - /privacy — privacy policy
 - /llms-full.txt — extended plain-text reference
 

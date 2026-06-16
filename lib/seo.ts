@@ -47,8 +47,15 @@ const FOUNDER_ID = absoluteUrl("/#founder");
 
 /** Primary service-area centroid, shifted slightly north to cover Jupiter. */
 const PRIMARY_GEO = { lat: 26.1, lng: -80.15 };
-/** Founding year — verifiable, doesn't drift each Jan 1. */
-const FOUNDING_YEAR = "2022";
+/**
+ * Founding year of the Berne business entity — 2015 (when the Berne family of
+ * companies began serving South Florida). Aligned across all Berne domains
+ * (bernerepair.com, berne-commercial.com) so the shared entity graph carries a
+ * single, consistent foundingDate in schema. The "premium division launched in
+ * 2022" narrative still lives in visible /about copy — that's brand history,
+ * not the LocalBusiness/Organization founding date Google reads from schema.
+ */
+const FOUNDING_YEAR = "2015";
 
 /**
  * External profiles for entity disambiguation. Fill these in as each

@@ -128,12 +128,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   ];
   // Top-20 uniquified combos (lib/data/combo-unique.ts) carry a hand-written
   // meta description — symptom + geo + $59 + 90-day — instead of the template.
-  const description =
-    getComboUnique(service.slug, city.slug)?.metaDescription ??
-    variants[Math.abs(seed) % variants.length];
+  // INDEX-BLOAT GUARD (2026-06-15): on a 4-week-old domain with zero external
+  // authority, Google declined to crawl the ~750 templated combo tail
+  // ("Discovered – currently not indexed") and the dead weight dragged crawl
+  // trust on the core hubs. Only the ~20 hand-written combos (combo-unique.ts)
+  // carry index,follow; every templated combo is noindex,follow until it gets
+  // genuinely page-specific content. `follow` preserves PageRank flow to the
+  // hubs. Uniquified combos return to the index automatically (lookup-driven).
+  const unique = getComboUnique(service.slug, city.slug);
+  const description = unique?.metaDescription ?? variants[Math.abs(seed) % variants.length];
   return {
     title: isAirDuct ? { absolute: title } : title,
     description,
+    robots: unique ? undefined : { index: false, follow: true },
     alternates: {
       canonical: `/services/${service.slug}/${city.slug}`,
       languages: {
@@ -464,7 +471,7 @@ export default async function ServiceCityPage({ params }: Props) {
               {otherCities.map((c) => (
                 <li key={c.slug}>
                   <Link
-                    href={`/services/${service.slug}/${c.slug}`}
+                    href={getComboUnique(service.slug, c.slug) ? `/services/${service.slug}/${c.slug}` : `/areas/${c.slug}`}
                     className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
                   >
                     <span className="text-sm font-semibold">
@@ -484,7 +491,7 @@ export default async function ServiceCityPage({ params }: Props) {
               {otherServices.map((s) => (
                 <li key={s.slug}>
                   <Link
-                    href={`/services/${s.slug}/${city.slug}`}
+                    href={getComboUnique(s.slug, city.slug) ? `/services/${s.slug}/${city.slug}` : `/services/${s.slug}`}
                     className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
                   >
                     <span className="text-sm font-semibold">

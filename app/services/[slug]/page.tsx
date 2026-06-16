@@ -21,6 +21,7 @@ import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMA
 import { getBrandComparison } from "@/lib/data/brand-comparisons";
 import { BRAND_SERVICE_PAGES } from "@/lib/data/brand-service-content";
 import { getResidentialBrand } from "@/lib/data/residential-brand-profiles";
+import { getComboUnique } from "@/lib/data/combo-unique";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -400,25 +401,39 @@ export default async function ServicePage({ params }: Props) {
           </p>
         </div>
 
+        {/* Crawl-budget discipline (2026-06-15): on a young domain we don't
+            spray ~64 links to templated, noindex combo pages from every
+            service hub — that dilutes PageRank across the duplicate tail
+            instead of concentrating it on indexable pages. A city links to its
+            combo URL only when that combo is uniquified (index,follow);
+            otherwise it links to the city's area hub (/areas/[city]), which is
+            indexable. Net effect: internal links point only at pages Google
+            will actually index. */}
         <div className="mt-10 grid grid-cols-2 gap-2 lg:grid-cols-3">
-          {CITIES.map((city) => (
-            <Link
-              key={city.slug}
-              href={`/services/${service.slug}/${city.slug}`}
-              className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
-            >
-              <div>
-                <div className="text-sm font-semibold">
-                  {service.shortName} in {city.name}
+          {CITIES.map((city) => {
+            const comboIndexable = Boolean(getComboUnique(service.slug, city.slug));
+            const href = comboIndexable
+              ? `/services/${service.slug}/${city.slug}`
+              : `/areas/${city.slug}`;
+            return (
+              <Link
+                key={city.slug}
+                href={href}
+                className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+              >
+                <div>
+                  <div className="text-sm font-semibold">
+                    {service.shortName} in {city.name}
+                  </div>
+                  <div className="hidden text-xs text-muted-foreground sm:block">{city.county} County</div>
                 </div>
-                <div className="hidden text-xs text-muted-foreground sm:block">{city.county} County</div>
-              </div>
-              <ArrowRight
-                className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
-                aria-hidden
-              />
-            </Link>
-          ))}
+                <ArrowRight
+                  className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                  aria-hidden
+                />
+              </Link>
+            );
+          })}
         </div>
       </section>
 

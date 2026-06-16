@@ -23,6 +23,7 @@ import { SERVICES } from "@/data/services";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS } from "@/data/faqs";
 import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import { getComboUnique } from "@/lib/data/combo-unique";
 
 // Same haversine pattern as /services/[slug]/[city]/. Used to rank
 // nearby city hubs by geo-distance (not array order from data/cities.ts)
@@ -194,25 +195,35 @@ export default async function CityPage({ params }: Props) {
           </h2>
         </div>
 
+        {/* Crawl-budget discipline (2026-06-15): link each service to its
+            combo URL only when that combo is uniquified (index,follow);
+            otherwise link to the service hub (/services/[slug]), which is
+            indexable. Keeps internal links off the noindex templated tail. */}
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}/${city.slug}`}
-              className="group flex flex-col gap-3 rounded-2xl border border-border bg-card/50 p-5 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:bg-card/70"
-            >
-              <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                {city.name}
-              </div>
-              <h3 className="text-base font-semibold tracking-tight">
-                {service.name}
-              </h3>
-              <div className="mt-auto inline-flex items-center gap-1.5 text-xs text-brand">
-                Same-day available
-                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
-              </div>
-            </Link>
-          ))}
+          {SERVICES.map((service) => {
+            const comboIndexable = Boolean(getComboUnique(service.slug, city.slug));
+            const href = comboIndexable
+              ? `/services/${service.slug}/${city.slug}`
+              : `/services/${service.slug}`;
+            return (
+              <Link
+                key={service.slug}
+                href={href}
+                className="group flex flex-col gap-3 rounded-2xl border border-border bg-card/50 p-5 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:bg-card/70"
+              >
+                <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                  {city.name}
+                </div>
+                <h3 className="text-base font-semibold tracking-tight">
+                  {service.name}
+                </h3>
+                <div className="mt-auto inline-flex items-center gap-1.5 text-xs text-brand">
+                  Same-day available
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
