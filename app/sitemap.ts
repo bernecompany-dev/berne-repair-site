@@ -130,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // EN-only statics — /es/contact and /es/family do not exist (404). The old
   // unconditional flatMap put both dead /es URLs into the sitemap with
   // matching phantom es-US hreflang alternates.
-  const staticsEnOnly: MetadataRoute.Sitemap = ["/contact", "/family", "/reviews"].map((p) => ({
+  const staticsEnOnly: MetadataRoute.Sitemap = ["/contact", "/family", "/reviews", "/service-map"].map((p) => ({
     url: `${SITE_URL}${p}`,
     lastModified: LAST_MOD,
     changeFrequency: "monthly" as const,

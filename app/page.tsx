@@ -5,6 +5,7 @@ import { ProcessSteps } from "@/components/sections/process-steps";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { WhyUs } from "@/components/sections/why-us";
 import { Areas } from "@/components/sections/areas";
+import { ServiceMapTeaser } from "@/components/sections/service-map-teaser";
 import { Brands } from "@/components/sections/brands";
 import { Reviews } from "@/components/sections/reviews";
 import { TeamSection } from "@/components/sections/team";
@@ -38,6 +39,7 @@ export default function Home() {
       <ProcessSteps />
       <WhyUs />
       <Areas />
+      <ServiceMapTeaser />
       <Brands />
       <TeamSection />
       <Reviews />

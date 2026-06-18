@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { CityMap } from "@/components/site/city-map";
+import { ServiceMapEmbed } from "@/components/sections/service-map-embed";
 import { PersonalNote } from "@/components/site/personal-note";
 import { StatsStrip } from "@/components/sections/stats-strip";
 import { cityPersonalCopy } from "@/lib/personal-copy";
@@ -302,6 +303,35 @@ export default async function CityPage({ params }: Props) {
       {/* Coverage map */}
       <section className="container-prose py-16">
         <CityMap cityName={city.name} lat={city.geo.lat} lng={city.geo.lng} />
+      </section>
+
+      {/* Real service-call footprint around this city — pin swarm of completed
+          jobs (neighborhood-level for privacy). Lazy-loaded (IntersectionObserver
+          + dynamic maplibre import) so it never touches LCP. Links to the full
+          interactive /service-map. */}
+      <section className="container-prose py-16">
+        <div className="max-w-2xl">
+          <span className="eyebrow">Real jobs near {city.name}</span>
+          <h2 className="heading-section mt-3">
+            Where we&apos;ve actually worked around {city.name}.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Each dot is a completed appliance repair, offset to the neighborhood
+            level for customer privacy — no exact addresses. Pan and zoom to see
+            the density of service calls across {city.name} and nearby{" "}
+            {city.county} County.
+          </p>
+        </div>
+        <div className="mt-8">
+          <ServiceMapEmbed center={[city.geo.lng, city.geo.lat]} zoom={11} />
+        </div>
+        <Link
+          href="/service-map"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline"
+        >
+          See the full South Florida service map
+          <ArrowRight className="size-4" aria-hidden />
+        </Link>
       </section>
 
       <StatsStrip />
