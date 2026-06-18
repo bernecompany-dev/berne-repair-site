@@ -10,7 +10,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
-import { CityMap } from "@/components/site/city-map";
 import { ServiceMapEmbed } from "@/components/sections/service-map-embed";
 import { PersonalNote } from "@/components/site/personal-note";
 import { StatsStrip } from "@/components/sections/stats-strip";
@@ -299,11 +298,6 @@ export default async function CityPage({ params }: Props) {
       ) : null}
 
       <PersonalNote {...personal} />
-
-      {/* Coverage map */}
-      <section className="container-prose py-16">
-        <CityMap cityName={city.name} lat={city.geo.lat} lng={city.geo.lng} />
-      </section>
 
       {/* Real service-call footprint around this city — pin swarm of completed
           jobs (neighborhood-level for privacy). Lazy-loaded (IntersectionObserver
