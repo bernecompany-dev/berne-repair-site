@@ -301,24 +301,6 @@ export const TECH_BIOS: Record<string, ExtendedBio> = {
     ],
   },
 
-  "evgenii-knyazev": {
-    lede:
-      "Refrigeration technician. Refrigerant systems, walk-ins, reach-ins — with a strong leak-detection workflow.",
-    background:
-      "EPA 608 Universal certified, with most of my hours on sealed-system and refrigerant work. Leak detection is the part of the job I take most seriously: find the leak, fix the leak, then recharge — not the other way around.",
-    workOn:
-      "Refrigerant systems, walk-in and reach-in refrigeration, sealed-system diagnostics. I keep recovery equipment and a leak detector on the truck for every refrigerant call.",
-    whyBerne:
-      "Real parts inventory and a dispatch desk that reads the notes I leave at end-of-day.",
-    serviceArea:
-      "Refrigeration calls across Miami-Dade and Broward. English and Russian.",
-    related: [
-      { href: "/services/refrigerator-repair", label: "Refrigerator repair" },
-      { href: "/brands/sub-zero", label: "Sub-Zero service" },
-      { href: "/services/ice-maker-repair", label: "Ice maker repair" },
-    ],
-  },
-
   "hasrat-yusifov": {
     lede:
       "Appliance repair technician focused on sealed-system and refrigeration work. Factory-trained.",
