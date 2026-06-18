@@ -300,6 +300,60 @@ export const TECH_BIOS: Record<string, ExtendedBio> = {
       { href: "/services/dishwasher-repair", label: "Dishwasher repair" },
     ],
   },
+
+  "evgenii-knyazev": {
+    lede:
+      "Refrigeration technician. Refrigerant systems, walk-ins, reach-ins — with a strong leak-detection workflow.",
+    background:
+      "EPA 608 Universal certified, with most of my hours on sealed-system and refrigerant work. Leak detection is the part of the job I take most seriously: find the leak, fix the leak, then recharge — not the other way around.",
+    workOn:
+      "Refrigerant systems, walk-in and reach-in refrigeration, sealed-system diagnostics. I keep recovery equipment and a leak detector on the truck for every refrigerant call.",
+    whyBerne:
+      "Real parts inventory and a dispatch desk that reads the notes I leave at end-of-day.",
+    serviceArea:
+      "Refrigeration calls across Miami-Dade and Broward. English and Russian.",
+    related: [
+      { href: "/services/refrigerator-repair", label: "Refrigerator repair" },
+      { href: "/brands/sub-zero", label: "Sub-Zero service" },
+      { href: "/services/ice-maker-repair", label: "Ice maker repair" },
+    ],
+  },
+
+  "hasrat-yusifov": {
+    lede:
+      "Appliance repair technician focused on sealed-system and refrigeration work. Factory-trained.",
+    background:
+      "Completed hands-on sealed-system service training at TMM Academy and pro-tech appliance training at Big City Appliance Repair School. I lean on that structured training every day — sealed systems punish guesswork.",
+    workOn:
+      "Sealed-system and refrigeration repair across residential refrigerators and built-ins. Component-level diagnostics on compressors, evaporators, and electronic temperature controls.",
+    whyBerne:
+      "A team that takes training seriously and a parts pipeline that keeps me from making return trips.",
+    serviceArea:
+      "Across Miami-Dade and Broward. English and Russian.",
+    related: [
+      { href: "/services/refrigerator-repair", label: "Refrigerator repair" },
+      { href: "/brands/sub-zero", label: "Sub-Zero service" },
+      { href: "/brands/lg", label: "LG service" },
+    ],
+  },
+
+  "vasyl-kruchkovskyi": {
+    lede:
+      "Service technician. Residential appliance diagnostics and repair across the full kitchen and laundry catalog.",
+    background:
+      "EPA 608 Universal certified, with broad multi-category experience. I prefer a full-route day where every call is a different brand and a different failure mode — it keeps the diagnostics sharp.",
+    workOn:
+      "Refrigerators, washers, dryers, ovens, and dishwashers. Component-level diagnostics rather than parts swapping — read the inputs, verify, then make a parts decision.",
+    whyBerne:
+      "Honest dispatch and honest billing. When I quote a job, it's the job that's actually needed.",
+    serviceArea:
+      "Across Miami-Dade and Broward. English, Russian, and Ukrainian.",
+    related: [
+      { href: "/services/refrigerator-repair", label: "Refrigerator repair" },
+      { href: "/services/washer-repair", label: "Washer repair" },
+      { href: "/services/dishwasher-repair", label: "Dishwasher repair" },
+    ],
+  },
 };
 
 /**
