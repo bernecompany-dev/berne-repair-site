@@ -178,6 +178,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="dns-prefetch" href="//connect.facebook.net" />
         <link rel="dns-prefetch" href="//www.clarity.ms" />
+        <link rel="dns-prefetch" href="//cdn.callrail.com" />
+        {/* CallRail dynamic number insertion (swap.js) — атрибуция звонков по источнику */}
+        <script async src="//cdn.callrail.com/companies/879510798/bcc465bc235b37a3282e/12/swap.js"></script>
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <LangSync />
