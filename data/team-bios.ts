@@ -323,7 +323,7 @@ export const TECH_BIOS: Record<string, ExtendedBio> = {
     lede:
       "Appliance repair technician focused on sealed-system and refrigeration work. Factory-trained.",
     background:
-      "Completed hands-on sealed-system service training at TMM Academy and pro-tech appliance training at Big City Appliance Repair School. I lean on that structured training every day — sealed systems punish guesswork.",
+      "Trained in hands-on sealed-system service and appliance diagnostics, I lean on that structured training every day — sealed systems punish guesswork.",
     workOn:
       "Sealed-system and refrigeration repair across residential refrigerators and built-ins. Component-level diagnostics on compressors, evaporators, and electronic temperature controls.",
     whyBerne:

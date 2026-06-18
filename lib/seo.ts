@@ -252,6 +252,36 @@ const HAS_CREDENTIAL = [
       url: "https://msaworld.com/",
     },
   },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "certification",
+    name: "EPA 608 — Technician Certificates",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "U.S. Environmental Protection Agency",
+    },
+    url: absoluteUrl("/credentials/techs-epa.pdf"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "training",
+    name: "Sealed-System Service Training",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "TMM Academy",
+    },
+    url: absoluteUrl("/credentials/sealed-system-service-certificate.jpg"),
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "training",
+    name: "Pro-Tech Appliance Training",
+    recognizedBy: {
+      "@type": "Organization",
+      name: "Big City Appliance Repair School",
+    },
+    url: absoluteUrl("/credentials/pro-tech-training-certificate.jpg"),
+  },
 ];
 
 export function organizationJsonLd() {
