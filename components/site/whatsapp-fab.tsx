@@ -160,6 +160,8 @@ export function WhatsAppFab() {
         source: "whatsapp_fab",
         page: pathname,
       });
+      // OpenAI/ChatGPT Ads conversion (registered event: lead_created).
+      window.oaiq?.("measure", "lead_created", { type: "customer_action" });
     } catch {
       /* swallow analytics errors */
     }

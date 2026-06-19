@@ -64,6 +64,8 @@ export function LeadForm({
       // Meta standard 'Lead' — form submit is a hard conversion; feeds Meta
       // lead-objective optimisation + the Events Manager custom conversion.
       window.fbq?.("track", "Lead", { content_category: "lead_form", source: "form_submit", locale });
+      // OpenAI/ChatGPT Ads conversion (registered event: lead_created).
+      window.oaiq?.("measure", "lead_created", { type: "customer_action" });
     } catch {
       /* swallow analytics errors */
     }

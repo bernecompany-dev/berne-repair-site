@@ -11,6 +11,7 @@ import { WhatsAppFab } from "@/components/site/whatsapp-fab";
 import { LangSync } from "@/components/site/lang-sync";
 import { JsonLd } from "@/components/site/json-ld";
 import { MetaPixel } from "@/components/site/meta-pixel";
+import { OpenAIPixel } from "@/components/site/openai-pixel";
 import { Clarity } from "@/components/site/clarity";
 import { AnalyticsEvents } from "@/components/site/analytics-events";
 import { localBusinessJsonLd, websiteJsonLd, organizationJsonLd } from "@/lib/seo";
@@ -224,6 +225,7 @@ export default function RootLayout({
         */}
         <MicrosoftUetTag />
         <MetaPixel />
+        <OpenAIPixel />
         <Clarity />
       </body>
     </html>
