@@ -27,6 +27,20 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  // Service-map data is regenerated weekly on Miami and published to
+  // bernerepair.com (single source). Proxy /service-map.json to it (beforeFiles
+  // → wins over the static file) so the map auto-refreshes without a redeploy.
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/service-map.json",
+          destination:
+            "https://bernerepair.com/wp-content/uploads/data/service-map.json",
+        },
+      ],
+    };
+  },
   async redirects() {
     return [
       // Eugene (owner) removed from the staff roster (owner request 2026-06).
