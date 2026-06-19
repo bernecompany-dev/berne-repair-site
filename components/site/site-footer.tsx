@@ -125,6 +125,10 @@ export function SiteFooter() {
             </FooterLink>
           ))}
           <FooterLink href={localePath(locale, "/areas")}>{cityLinkMore}</FooterLink>
+          {/* /service-map is EN-only (no /es mirror) — link the EN path from both locales */}
+          <FooterLink href="/service-map">
+            {locale === "es" ? "Mapa de servicio" : "Service map"}
+          </FooterLink>
         </FooterCol>
 
         <FooterCol title={t.brandsCol}>
