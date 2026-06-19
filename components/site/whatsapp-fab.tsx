@@ -153,6 +153,13 @@ export function WhatsAppFab() {
         method: "whatsapp",
         page: pathname,
       });
+      // Standard 'Lead' — WhatsApp is a real lead channel; feeds Meta
+      // lead-objective optimisation + the Events Manager custom conversion.
+      window.fbq?.("track", "Lead", {
+        content_category: "whatsapp",
+        source: "whatsapp_fab",
+        page: pathname,
+      });
     } catch {
       /* swallow analytics errors */
     }

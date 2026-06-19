@@ -166,6 +166,14 @@ export default function RootLayout({
         */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         {/*
+          OpenAI/ChatGPT Ads attribution: capture the `oppref` click ref from
+          the landing URL into a 90-day cookie so the server-side Conversions
+          API (bzr.openai.com) can tie a lead back to the ad click. Runs early
+          and ungated (independent of analytics consent — it's first-party
+          attribution, no third-party call). Harmless when the param is absent.
+        */}
+        <script dangerouslySetInnerHTML={{ __html: `try{var o=new URLSearchParams(location.search).get('oppref');if(o){document.cookie='_oppref='+encodeURIComponent(o)+';path=/;max-age=7776000;samesite=lax'}}catch(e){}` }} />
+        {/*
           Core Web Vitals — dns-prefetch ONLY (no preconnect) for analytics
           origins. All three loaders (GA4 lib, Meta Pixel, Clarity) are
           strategy="lazyOnload", i.e. they fetch at browser idle, seconds

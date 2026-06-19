@@ -16,6 +16,7 @@ import type { Locale } from "@/lib/i18n";
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -60,6 +61,9 @@ export function LeadForm({
         process.env.NEXT_PUBLIC_GADS_LEAD_LABEL ??
         "AW-18232464152/dCXNCM-JqL0cEJim9fVD";
       window.gtag("event", "conversion", { send_to: adsLeadLabel });
+      // Meta standard 'Lead' — form submit is a hard conversion; feeds Meta
+      // lead-objective optimisation + the Events Manager custom conversion.
+      window.fbq?.("track", "Lead", { content_category: "lead_form", source: "form_submit", locale });
     } catch {
       /* swallow analytics errors */
     }
