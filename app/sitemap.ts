@@ -188,11 +188,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
-  // Brand × city landing pages (premium lane: 5 brands × 3 cities) —
-  // launched 2026-06-10, hence the fresher lastModified.
+  // Brand × city landing pages (premium lane: original 5×3 metro grid +
+  // the 2026-06-25 luxury wave of brand × affluent-neighborhood pages).
+  // lastModified bumped to the luxury wave so the new pages don't advertise
+  // a stale lastmod and Google re-crawls the cluster.
   const brandCityPages: MetadataRoute.Sitemap = BRAND_CITY_SLUGS.map(({ brand, city }) => ({
     url: `${SITE_URL}/brands/${brand}/${city}`,
-    lastModified: new Date("2026-06-10"),
+    lastModified: new Date("2026-06-25"),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));

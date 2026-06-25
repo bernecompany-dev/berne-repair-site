@@ -114,7 +114,7 @@ export function Brands({ locale = "en" }: { locale?: Locale }) {
           })}
         </ul>
 
-        <p className="mt-6 text-center text-xs text-muted-foreground/70">
+        <p className="mt-6 text-center text-xs text-muted-foreground/90">
           {t.footnote.replace("{brands}", BRANDS.slice(14).join(", "))}
         </p>
       </div>

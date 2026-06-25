@@ -52,6 +52,7 @@ export default function ReviewsPage() {
 
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <div
+              role="img"
               className="flex items-center gap-1"
               aria-label={`${REVIEW_AGGREGATE.ratingValue} out of 5 stars`}
             >
@@ -103,6 +104,7 @@ export default function ReviewsPage() {
                   ) : null}
                 </div>
                 <div
+                  role="img"
                   className="flex items-center gap-0.5"
                   aria-label={`${r.rating} out of 5 stars`}
                 >

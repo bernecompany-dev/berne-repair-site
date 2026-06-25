@@ -24,6 +24,8 @@ import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS } from "@/data/faqs";
 import { cityJsonLd, faqJsonLd, breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { getComboUnique } from "@/lib/data/combo-unique";
+import { BRAND_CITY_CONTENT } from "@/lib/data/brand-city-content";
+import { getResidentialBrand } from "@/lib/data/residential-brand-profiles";
 
 // Same haversine pattern as /services/[slug]/[city]/. Used to rank
 // nearby city hubs by geo-distance (not array order from data/cities.ts)
@@ -118,6 +120,16 @@ export default async function CityPage({ params }: Props) {
     })
     .slice(0, 6)
     .map((x) => x.c);
+
+  // Premium brand × this-city landing pages that actually exist (luxury lane).
+  // Deepens the area → brand×neighborhood cluster: passes topical relevance
+  // from the city hub down to the high-end brand pages and gives them a second
+  // indexable inbound link beyond the brand hub.
+  const cityBrandPages = Object.values(BRAND_CITY_CONTENT)
+    .filter((bc) => bc.city === city.slug)
+    .map((bc) => ({ ...bc, profile: getResidentialBrand(bc.brand) }))
+    .filter((bc) => bc.profile)
+    .sort((a, b) => a.profile!.name.localeCompare(b.profile!.name));
 
   const cityFaqs = [
     {
@@ -254,6 +266,45 @@ export default async function CityPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Premium brands serviced in this city — luxury-lane brand×neighborhood
+          guides. Only rendered for cities that have hand-written brand pages
+          (Pinecrest, Coral Gables, Key Biscayne, Bal Harbour, Sunny Isles,
+          Palm Beach + the metro grid). Cross-links the area hub down into the
+          high-end cluster. */}
+      {cityBrandPages.length > 0 ? (
+        <section className="container-prose py-16">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Premium brands in {city.name}</span>
+            <h2 className="heading-section mt-3">
+              High-end appliance repair in {city.name}.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Dedicated platform guides for the luxury brands {city.name} homes
+              run — local housing stock, building logistics, and the failure
+              patterns we see in your zip.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {cityBrandPages.map((bc) => (
+              <li key={bc.brand}>
+                <Link
+                  href={`/brands/${bc.brand}/${city.slug}`}
+                  className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <span className="text-sm font-semibold">
+                    {bc.profile!.name} repair in {city.name}
+                  </span>
+                  <ArrowRight
+                    className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                    aria-hidden
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {/* Nearby cities we also serve — same-county neighbors first, then by
           distance. Cross-links between /areas/[city]/ hubs improve crawl

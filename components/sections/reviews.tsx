@@ -31,6 +31,7 @@ export function Reviews({ locale = "en" }: { locale?: Locale }) {
                 <div className="text-xs text-muted-foreground">{r.location}</div>
               </div>
               <div
+                role="img"
                 className="flex items-center gap-0.5"
                 aria-label={
                   locale === "es" ? `${r.rating} de 5 estrellas` : `${r.rating} out of 5 stars`

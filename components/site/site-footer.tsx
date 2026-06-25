@@ -95,7 +95,7 @@ export function SiteFooter() {
               <ShieldCheck className="size-4 text-brand" aria-hidden />
               <span>
                 {locale === "es" ? "Miembro de MSA World" : "MSA World Member"}
-                <span className="ml-1.5 text-muted-foreground/60">
+                <span className="ml-1.5 text-muted-foreground/90">
                   {locale === "es"
                     ? "· Capacitación continua"
                     : "· Continuous training"}
@@ -155,7 +155,7 @@ export function SiteFooter() {
           <FooterLink href={localePath(locale, "/brands")}>
             {locale === "es" ? "Todas las marcas →" : "All brands →"}
           </FooterLink>
-          <p className="mt-3 text-xs text-muted-foreground/70">{t.brandsTail}</p>
+          <p className="mt-3 text-xs text-muted-foreground/90">{t.brandsTail}</p>
         </FooterCol>
       </div>
 
@@ -189,7 +189,7 @@ export function SiteFooter() {
 
       <div className="border-t border-border/60">
         <div className="container-prose py-6 space-y-4">
-          <p className="text-[11px] leading-relaxed text-muted-foreground/80">
+          <p className="text-[11px] leading-relaxed text-muted-foreground/95">
             {t.trademarkDisclaimer}
           </p>
           <div className="flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
