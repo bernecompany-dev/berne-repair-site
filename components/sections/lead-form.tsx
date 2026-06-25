@@ -17,6 +17,7 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
+    uetq?: { push: (...args: unknown[]) => void };
   }
 }
 
@@ -66,6 +67,11 @@ export function LeadForm({
       window.fbq?.("track", "Lead", { content_category: "lead_form", source: "form_submit", locale });
       // OpenAI/ChatGPT Ads conversion (registered event: lead_created).
       window.oaiq?.("measure", "lead_created", { type: "customer_action" });
+      // Microsoft Bing UET — REAL lead conversion. Until now the only UET event
+      // was `phone_click` (tel: taps), which inflated Bing "conversions" far
+      // above real leads. Fire a dedicated submit_lead event so a Bing goal can
+      // count actual form leads (parity with Google/Meta above).
+      window.uetq?.push("event", "submit_lead", { event_category: "lead_form", event_label: locale });
     } catch {
       /* swallow analytics errors */
     }
