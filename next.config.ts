@@ -27,20 +27,12 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
-  // Service-map data is regenerated weekly on Miami and published to
-  // bernerepair.com (single source). Proxy /service-map.json to it (beforeFiles
-  // → wins over the static file) so the map auto-refreshes without a redeploy.
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/service-map.json",
-          destination:
-            "https://bernerepair.com/wp-content/uploads/data/service-map.json",
-        },
-      ],
-    };
-  },
+  // Service-map data (single source on bernerepair.com, regenerated weekly on
+  // Miami) is now served via an edge-cached Route Handler at
+  // app/service-map.json/route.ts instead of a bare rewrite proxy. The rewrite
+  // was NOT edge-cached, so the ~526KB file was re-pulled from origin on every
+  // map view — the dominant source of Vercel Fast Origin Transfer. The route
+  // revalidates daily, collapsing origin transfer to near zero.
   async redirects() {
     return [
       // Eugene (owner) removed from the staff roster (owner request 2026-06).

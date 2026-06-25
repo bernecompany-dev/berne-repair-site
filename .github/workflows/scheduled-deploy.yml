@@ -1,0 +1,34 @@
+# Scheduled blog-drip deploy.
+#
+# WHY: the blog registry (lib/blog/articles.ts) holds 66 future-dated posts;
+# `publishedArticles(new Date())` is evaluated AT BUILD TIME, so a post dated
+# Mon/Thu only goes live when something triggers a Vercel build. While commits
+# land daily this is invisible — but a quiet week would silently stall the
+# Mon+Thu publishing schedule.
+#
+# HOW: cron pushes an empty commit to main every Mon + Thu at 13:00 UTC
+# (08:00/09:00 Florida). Vercel's GitHub integration picks up the push and
+# rebuilds, which publishes any article whose date has passed. No Vercel
+# tokens or deploy hooks needed.
+name: Scheduled blog-drip deploy
+
+on:
+  schedule:
+    # Mon + Thu 13:00 UTC — matches the blog publishing calendar.
+    - cron: "0 13 * * 1,4"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Push empty commit to trigger Vercel build
+        run: |
+          git config user.name "berne-blog-drip[bot]"
+          git config user.email "noreply@berne-repair.com"
+          git commit --allow-empty -m "chore(blog): scheduled drip rebuild $(date -u +%F)"
+          git push origin main
