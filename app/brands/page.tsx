@@ -12,7 +12,7 @@ import {
 } from "@/lib/data/residential-brand-profiles";
 import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-const PAGE_TITLE = "Premium Appliance Brands We Repair";
+const PAGE_TITLE = "Luxury & High-End Appliance Brands We Repair";
 const PAGE_DESC = `Sub-Zero, Wolf, Thermador, Miele, Gaggenau, Liebherr, Fisher & Paykel, Dacor & more — same-day repair across South Florida. $${COMPANY.serviceCallPrice} service call.`;
 
 export const metadata: Metadata = {
@@ -87,9 +87,9 @@ export default function BrandsIndex() {
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            Brands we repair.{" "}
+            Luxury & high-end brands we repair.{" "}
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              From Sub-Zero to Samsung.
+              Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau.
             </span>
           </h1>
 

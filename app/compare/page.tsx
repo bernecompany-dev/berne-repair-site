@@ -10,7 +10,7 @@ import { COMPANY } from "@/data/company";
 import { BRAND_COMPARISONS } from "@/lib/data/brand-comparisons";
 import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
-const PAGE_TITLE = "Premium Appliance Brand Comparisons";
+const PAGE_TITLE = "Luxury Appliance Brand Comparisons";
 const PAGE_DESC =
   "Sub-Zero vs Viking, Wolf vs Thermador, Miele vs Bosch — premium appliance brand comparisons written by a South Florida service shop that fixes all of them.";
 
@@ -128,6 +128,48 @@ export default function CompareIndex() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Luxury cluster — link out to the premium brand hubs we compare */}
+      <section className="border-t border-border/60 bg-background/40">
+        <div className="container-prose py-16 sm:py-20">
+          <div className="max-w-3xl">
+            <span className="eyebrow">We service every brand we compare</span>
+            <h2 className="heading-section mt-3">
+              Premium brand repair hubs.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Deciding between two brands is one thing — keeping the one you own
+              running is what we do every day. Full platform guides for the
+              high-end brands South Florida homes run.
+            </p>
+          </div>
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { slug: "sub-zero", name: "Sub-Zero" },
+              { slug: "wolf", name: "Wolf" },
+              { slug: "viking", name: "Viking" },
+              { slug: "thermador", name: "Thermador" },
+              { slug: "miele", name: "Miele" },
+              { slug: "gaggenau", name: "Gaggenau" },
+            ].map((b) => (
+              <li key={b.slug}>
+                <Link
+                  href={`/brands/${b.slug}`}
+                  className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <span className="text-sm font-semibold text-foreground">
+                    {b.name} repair
+                  </span>
+                  <ArrowRight
+                    className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                    aria-hidden
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <Contact />

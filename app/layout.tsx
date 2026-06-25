@@ -80,18 +80,18 @@ const DEFAULT_OG_IMAGE = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Berne Appliance Repair — Same-Day Service · South Florida",
+    default: "Luxury & High-End Appliance Repair — Miami & South Florida",
     template: "%s · Berne Appliance Repair",
   },
   description:
-    "Same-day appliance repair across Miami-Dade, Broward & Palm Beach. $59 service call. 18 W-2 techs, licensed. Sub-Zero, Wolf, Viking, Miele.",
+    "Luxury & high-end appliance repair across Miami-Dade, Broward & Palm Beach. Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau specialists. EPA-608, $59 service call.",
   applicationName: COMPANY.legalName,
   openGraph: {
     type: "website",
     siteName: COMPANY.legalName,
-    title: "Berne Appliance Repair — Premium Service in South Florida",
+    title: "Luxury & High-End Appliance Repair — Miami & South Florida",
     description:
-      "Same-day appliance repair across South Florida. $59 service call. Licensed & insured.",
+      "Built-in & pro-style appliance specialists across South Florida. Sub-Zero, Wolf, Viking, Thermador, Miele. EPA-608, $59 service call.",
     url: SITE_URL,
     locale: "en_US",
     images: [DEFAULT_OG_IMAGE],

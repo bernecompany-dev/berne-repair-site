@@ -584,6 +584,532 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       },
     ],
   },
+
+  // ════════════════════════════════════════════════════════════════════════
+  // LUXURY LANE — premium brand × affluent neighborhood (2026-06-25 wave).
+  //
+  // Deliberately NOT the generic metro terms (Miami / Fort Lauderdale) that
+  // overlap the mainstream sister brand. These target the differentiated
+  // high-end keyword space: premium brand + affluent micro-market
+  // (Pinecrest, Coral Gables, Key Biscayne, Bal Harbour, Sunny Isles, Palm
+  // Beach island). Hand-written local copy per page — estate housing stock,
+  // tower/gate logistics, and the failure patterns specific to each market.
+  // Anti-bloat: premium tier only, only where genuine luxury demand exists.
+  // ════════════════════════════════════════════════════════════════════════
+
+  // ───────────────────────────── SUB-ZERO ─────────────────────────────
+  [k("sub-zero", "pinecrest")]: {
+    brand: "sub-zero",
+    city: "pinecrest",
+    metaTitle: "Sub-Zero Repair Pinecrest · $59 Call · Berne",
+    metaDescription:
+      "Sub-Zero repair in Pinecrest — built-in columns, BI-36/BI-48, wine units on the acre-lot estates. EPA-608 senior techs, $59 diagnostic, 90-day warranty.",
+    h1City: "Pinecrest",
+    heroIntro:
+      "Pinecrest's acre-lot estates run some of the deepest Sub-Zero kitchens in Miami-Dade — paired built-in columns, 48-inch French-door builds, and dedicated wine rooms. This is senior-tech work, and we service it in place. EPA-608 sealed-system certification, $59 diagnostic free with repair, same-day when you call before noon.",
+    local: {
+      eyebrow: "Sub-Zero in Pinecrest",
+      heading: "Estate kitchens, paired columns, and a platform we know cold",
+      paragraphs: [
+        "Pinecrest is built around the kitchen. The custom homes off Old Cutler and through Pinecrest North were specified by owners who chose Sub-Zero on purpose, and what we walk into here is rarely a single refrigerator — it's a paired IC-30 column set flanking a range, a BI-48 built into a millwork wall, and a 427 dual-zone wine unit in a butler's pantry that has to hold a collection to the half-degree. That depth is why every Pinecrest Sub-Zero call goes to the senior rotation: the work is done in place behind custom panels, and a tech who doesn't know the platform damages cabinetry getting to the compressor.",
+        "The maintenance reality out here is the inland-canopy version of Miami's climate. Pinecrest's tree cover keeps the worst salt off, but humidity is relentless and the big estate condensers pull a season of pollen and dust before owners notice the symptom chain — fresh-food side drifting warm, the unit running longer, fear of the compressor when the culprit is almost always a loaded coil, an evaporator fan, or a weak defrost terminator. We diagnose on the platform, not by fear, and we carry gauges for both R-134a and the R-600a isobutane systems in the Designer line.",
+        "Parts logistics match the install base: pivot kits, the 4204490 filters, control boards in the 715549 generation, and the common fan and ice-maker modules ride the Miami trucks, so most non-sealed-system repairs on a Pinecrest Sub-Zero close in one visit. When a job genuinely is sealed-system on an aging unit, you get the honest math at the diagnostic — these are rebuildable platforms, and a major repair is often the right money against a five-figure replacement.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service paired Sub-Zero column sets in Pinecrest estates?",
+        answer:
+          "Yes — paired IC-24/IC-30 column installs are routine estate work for us. Both units are diagnosed in place behind the custom panels by a senior tech, with cabinetry protected throughout. The $59 diagnostic is free if you approve the repair.",
+      },
+      {
+        question: "My Pinecrest Sub-Zero wine unit is drifting warm — is the collection at risk?",
+        answer:
+          "Catch it early and no. On 424/427/430 wine units a drifting zone usually traces to a fan motor, a control-board issue, or condenser fouling — all repairable. We prioritize warm-zone wine calls precisely because a collection is on the line.",
+      },
+      {
+        question: "How fast can you reach a Sub-Zero call in Pinecrest?",
+        answer:
+          "Call before noon and same-day is the norm — Pinecrest sits squarely on our south Miami-Dade routing. A built-in holding a full estate kitchen of food gets priority, and the trucks carry the common platform parts so most repairs finish the first visit.",
+      },
+    ],
+  },
+  [k("sub-zero", "coral-gables")]: {
+    brand: "sub-zero",
+    city: "coral-gables",
+    metaTitle: "Sub-Zero Repair Coral Gables · $59 · Berne",
+    metaDescription:
+      "Sub-Zero repair in Coral Gables — classic 600-series, BI built-ins & columns in Old Cutler and Granada estates. EPA-608 senior techs, $59 diagnostic, 90-day warranty.",
+    h1City: "Coral Gables",
+    heroIntro:
+      "Coral Gables holds one of the oldest and deepest Sub-Zero install bases in the county — classic 600-series side-by-sides still anchoring Granada and Old Cutler kitchens beside modern BI columns. Senior platform techs, EPA-608 certification, $59 diagnostic, same-day dispatch across the City Beautiful.",
+    local: {
+      eyebrow: "Sub-Zero in Coral Gables",
+      heading: "Where the classic 600-series still rules the kitchen",
+      paragraphs: [
+        "The Gables is a generational Sub-Zero market. The Mediterranean estates off Granada, Coral Way, and the Old Cutler corridor were equipped two and three decades ago, and a remarkable number of those 632, 642, and 685 side-by-sides are still running — because Sub-Zero, unlike mass-market refrigeration, was built to be rebuilt. We see the full timeline here in a single afternoon: a 12-year-old 632 needing a condenser fan motor in one house, a panel-ready BI-42 in a renovated kitchen two streets over, a dual-zone wine wall in a Riviera home. The senior rotation knows every generation's habits.",
+        "Coral Gables' canopy and inland position spare the worst of the salt, but humidity and decades-old units mean condenser service is the headline maintenance item. The classic-platform symptom chain is textbook — a high-pitched whine at the back, a hot front grille, then a warm food side — and on a 632 that's a bearing-worn condenser fan motor caught before it cascades. Our first move on any warm-unit Gables call is the condenser and the airflow path, not a compressor diagnosis on spec.",
+        "On the older platforms the value question comes up honestly, and we answer it with numbers at the $59 diagnostic: a sound 600-series unit is worth the fan motor, the defrost heater, the door cassette gasket, even sealed-system work, against a five-figure replacement of a built-in that's flush with bespoke cabinetry. We stock the classic-platform parts on the Miami trucks and quote the repair against the unit's real condition — never a default to replace.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Is my 20-year-old Sub-Zero in Coral Gables worth repairing?",
+        answer:
+          "Usually yes — that's the whole point of the platform. The classic 600-series is serviceable and parts remain available, so fan motors, heaters, gaskets, and even sealed-system work are sound money against a $10,000+ built-in replacement. We quote it honestly against the unit's condition at the $59 diagnostic.",
+      },
+      {
+        question: "Do you work on Sub-Zero built-ins behind custom Gables cabinetry?",
+        answer:
+          "Yes — flush, panel-ready built-ins and integrated columns are core work. They're serviced in place by a senior tech who works through the grille and panels without disturbing the millwork. That platform care is exactly why these calls don't go to a generalist.",
+      },
+      {
+        question: "How fast can you get to a Coral Gables Sub-Zero call?",
+        answer:
+          "Call before noon and same-day is typical — the Gables is central to our Miami routing. A built-in losing temperature gets priority dispatch, and the common classic and BI parts ride the trucks so most repairs close on the first visit.",
+      },
+    ],
+  },
+  [k("sub-zero", "key-biscayne")]: {
+    brand: "sub-zero",
+    city: "key-biscayne",
+    metaTitle: "Sub-Zero Repair Key Biscayne · $59 · Berne",
+    metaDescription:
+      "Sub-Zero repair on Key Biscayne — oceanfront condos & Cape Florida estates. Salt-air condenser specialists, EPA-608, $59 diagnostic, 90-day warranty.",
+    h1City: "Key Biscayne",
+    heroIntro:
+      "Key Biscayne is island living, and its Sub-Zeros pay the salt-air tax — oceanfront tower built-ins on Harbor Drive, Cape Florida estate columns, condenser corrosion on an accelerated clock. Senior techs, EPA-608 sealed-system certification, COI and elevator coordination handled before arrival, $59 diagnostic.",
+    local: {
+      eyebrow: "Sub-Zero on Key Biscayne",
+      heading: "Island salt rewrites the maintenance schedule",
+      paragraphs: [
+        "There's nowhere in Miami-Dade harder on a built-in refrigerator than a barrier island, and Key Biscayne proves it. The oceanfront towers along Harbor Drive and the Cape Florida estates breathe salt year-round, and a Sub-Zero condenser finds it within a season — coils corrode and load, the dual compressors run hot and long, and the result is the warm-compartment call we run most on the island. Our first move on any Key Biscayne Sub-Zero is the condenser, and our standing advice here is an annual coil service, which on this platform in this air is the difference between a component repair and a sealed-system job.",
+        "Tower service is its own discipline. A BI-42 on a high floor of a Key Colony or oceanfront building gets diagnosed and repaired in place — there's no wheeling it out — so the building choreography is handled before the appointment: certificate of insurance for the association, service-elevator booking, floor protection. In a managed island tower that logistics work is half the job, and we do it as a matter of course so the actual repair window stays tight.",
+        "The install base runs the full modern range — BI built-ins, Designer integrated columns on R-600a, undercounter drawers, and wine storage protecting collections in homes that take humidity seriously. We carry the common platform parts on the trucks and hold EPA-608 Universal certification for the sealed-system work salt-belt units eventually need. When a job is genuinely a leak or a failed compressor, you get the honest version with numbers — rebuild or replace — at the $59 diagnostic.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Why does my Key Biscayne Sub-Zero need service more often than friends inland?",
+        answer:
+          "Salt air. On a barrier island the condenser corrodes and loads far faster than inland, forcing the compressors to run hot and long. An annual coil cleaning resets that clock and is the single best maintenance dollar on an oceanfront built-in — it's the first thing we check on every warm-unit island call.",
+      },
+      {
+        question: "Do you handle the building COI and elevator booking for tower calls?",
+        answer:
+          "Yes — for Key Biscayne tower work we arrange the certificate of insurance for your association, book the service elevator, and bring floor protection, all before the appointment. In a managed building that coordination is half the job, and we treat it as standard.",
+      },
+      {
+        question: "Can a salt-corroded Sub-Zero on Key Biscayne be saved?",
+        answer:
+          "Often yes. Even when corrosion reaches the sealed system, Sub-Zero's platform is rebuildable in a way mass-market units aren't, and EPA-608 work can be sound money against a five-figure replacement. We show you the math — repair vs. replace — at the $59 diagnostic.",
+      },
+    ],
+  },
+  [k("sub-zero", "bal-harbour")]: {
+    brand: "sub-zero",
+    city: "bal-harbour",
+    metaTitle: "Sub-Zero Repair Bal Harbour · $59 · Berne",
+    metaDescription:
+      "Sub-Zero repair in Bal Harbour — oceanfront tower built-ins & integrated columns. Salt-air specialists, COI/elevator handled, EPA-608, $59 diagnostic.",
+    h1City: "Bal Harbour",
+    heroIntro:
+      "Bal Harbour is oceanfront tower living, and its Sub-Zeros are almost all built-in and integrated — diagnosed in place, behind custom panels, on high floors. Senior techs, EPA-608 certification, association COI and service-elevator coordination handled before arrival, $59 diagnostic free with repair.",
+    local: {
+      eyebrow: "Sub-Zero in Bal Harbour",
+      heading: "High-floor built-ins and the managed-tower routine",
+      paragraphs: [
+        "Bal Harbour Village is a vertical market — the residences are in the oceanfront towers along Collins, and the Sub-Zeros inside them are built-ins and Designer integrated columns specified to disappear into the cabinetry. That changes how the work is done: a BI-48 or an IC-30 on a high floor is serviced in place, through the front grille and behind the panels, by a senior tech who can do it without marking the millwork. Every Bal Harbour call goes to that rotation, never a generalist.",
+        "The building logistics are non-negotiable here, and we run them as routine: certificate of insurance filed with the association, service elevator booked, floor and corridor protection in place before the unit is ever touched. In a Bal Harbour tower the front desk and the management office are part of the appointment, and getting that right is why our arrival windows hold.",
+        "The salt exposure is total — these units sit a few hundred feet from the Atlantic — so condenser service is the headline maintenance item, and the symptom chain is the familiar one: longer run times, a warm fresh-food side, fear of the compressor when the real problem is a loaded coil or an evaporator fan. We carry the platform's common parts and the R-134a and R-600a gauges, hold EPA-608 Universal certification for the sealed-system work, and quote any major repair honestly against the unit's age at the $59 diagnostic.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service Sub-Zero built-ins in Bal Harbour oceanfront towers?",
+        answer:
+          "Yes — high-floor built-in and integrated-column work is the core of our Bal Harbour service. Units are repaired in place by senior techs, and we arrange the association COI, service elevator, and floor protection before the visit. The $59 diagnostic is free if you approve the repair.",
+      },
+      {
+        question: "My oceanfront Sub-Zero's food side is warm — is the compressor gone?",
+        answer:
+          "Usually not. A few hundred feet from the Atlantic the condenser loads with salt fast, and a warm side most often traces to that loaded coil, an evaporator fan, or a defrost terminator — not the compressor. We test the actual circuit at the $59 diagnostic before anyone uses the word compressor.",
+      },
+      {
+        question: "How do you handle access in a managed Bal Harbour building?",
+        answer:
+          "We coordinate with management and the front desk in advance — COI on file, service elevator reserved, protection laid down. That groundwork is standard for our tower work and keeps the repair window tight once we're on the floor.",
+      },
+    ],
+  },
+  [k("sub-zero", "palm-beach")]: {
+    brand: "sub-zero",
+    city: "palm-beach",
+    metaTitle: "Sub-Zero Repair Palm Beach Island · $59 · Berne",
+    metaDescription:
+      "Sub-Zero repair on Palm Beach island — estate built-ins & wine rooms from the North End to Worth Avenue. EPA-608 senior techs, $59 diagnostic, 90-day warranty.",
+    h1City: "Palm Beach",
+    heroIntro:
+      "Palm Beach island runs estate-grade Sub-Zero kitchens — paired columns, dedicated wine rooms, built-ins flush with bespoke millwork from the North End to the Worth Avenue blocks. Dispatched from our Boca Raton office, serviced by senior platform techs, EPA-608 certified, $59 diagnostic.",
+    local: {
+      eyebrow: "Sub-Zero on Palm Beach",
+      heading: "Estate-grade kitchens on a barrier island",
+      paragraphs: [
+        "Palm Beach is where estate refrigeration meets barrier-island salt, and both facts shape the work. The houses on the North End and Mid Island, and the landmark estates off the ocean, were built around serious kitchens — paired Sub-Zero columns, BI-48 French-door builds, undercounter drawers, and wine rooms holding collections that justify the appliance. These go to the senior rotation, serviced in place behind custom panels, with the platform care that flush built-ins demand.",
+        "The island's oceanfront exposure means the same salt-air condenser story we see across the barrier coast — coils load and corrode faster than inland, run times climb, and a warm food side follows. On Palm Beach our standing advice is an annual condenser service, and our first diagnostic move on any warm unit is the coil and airflow path, never a compressor call on spec. We carry gauges for both the R-134a and the R-600a Designer systems.",
+        "We anchor this work from our office at 131 S Federal Hwy in Boca Raton, which keeps arrival windows on the island tight, and we handle the estate and association logistics — gate clearance, staff coordination, COI where a building requires it — before the appointment. When a sealed-system job comes up on an older unit, you get the honest math at the $59 diagnostic: Sub-Zeros are rebuildable, and a major repair is frequently the right money against replacing a built-in integrated into the architecture.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service Sub-Zero estates on Palm Beach island?",
+        answer:
+          "Yes — estate built-ins, paired columns, and wine rooms are core work, dispatched from our Boca Raton office to keep island windows tight. Units are serviced in place by senior techs, with gate and staff coordination handled in advance. The $59 diagnostic is free with the repair.",
+      },
+      {
+        question: "Why does my Palm Beach Sub-Zero's condenser need service so often?",
+        answer:
+          "Barrier-island salt. Oceanfront air corrodes and loads the condenser far faster than inland, making the compressors run hot and long. An annual coil cleaning is the single best maintenance dollar here, and it's the first thing we check on every warm-unit island call.",
+      },
+      {
+        question: "Is a major Sub-Zero repair worth it versus replacing the unit?",
+        answer:
+          "On a built-in integrated into estate cabinetry, often yes. The platform is rebuildable and parts remain available, so even sealed-system work can be sound money against a five-figure replacement plus millwork rework. We show you the repair-vs-replace numbers at the $59 diagnostic.",
+      },
+    ],
+  },
+
+  // ───────────────────────────── WOLF ─────────────────────────────
+  [k("wolf", "pinecrest")]: {
+    brand: "wolf",
+    city: "pinecrest",
+    metaTitle: "Wolf Range Repair Pinecrest · $59 · Berne",
+    metaDescription:
+      "Wolf range, rangetop & oven repair in Pinecrest — dual-fuel, sealed burners, igniters on estate kitchens. Senior techs, $59 diagnostic, 90-day warranty.",
+    h1City: "Pinecrest",
+    heroIntro:
+      "Pinecrest estate kitchens are built around the range, and that range is usually a Wolf — dual-fuel 48s, sealed-burner rangetops, built-in M-Series ovens. Burner, igniter, and electronic-control work by senior techs who know the platform. $59 diagnostic free with repair, same-day when you call before noon.",
+    local: {
+      eyebrow: "Wolf in Pinecrest",
+      heading: "The centerpiece range, diagnosed on the platform",
+      paragraphs: [
+        "In Pinecrest the kitchen is the house, and the Wolf is the kitchen. We walk into 48-inch dual-fuel ranges, paired rangetop-and-wall-oven configurations, and built-in M-Series ovens specified by owners who cook seriously. That's the work we do: sealed-burner service, spark-igniter and electrode replacement, the dual-stacked-element bake/broil diagnostics on the electric-oven side of a dual-fuel, and the electronic-control faults that send owners to a generalist who replaces a board that didn't need replacing.",
+        "South Florida's grid and humidity are the quiet variables on a Wolf. Storm-season power events trip the control lockouts on the newer electronic ranges — most clear with the proper reset procedure, which we verify rather than selling boards on spec — and the spark electrodes and igniters that owners blame for a burner that won't light are frequently just dirty or out of gap, not failed. We diagnose the actual fault before quoting a part.",
+        "Parts logistics match the install base: igniters, spark modules, burner caps and heads, infrared broiler elements, and the common control components ride the Miami trucks, so most Pinecrest Wolf repairs close in one visit. The senior rotation has the dual-fuel platform knowledge that the brand rewards — a Wolf is a long-term appliance, and it deserves a tech who treats it like one.",
+      ],
+    },
+    faqs: [
+      {
+        question: "My Wolf burner won't light in my Pinecrest kitchen — does it need a new igniter?",
+        answer:
+          "Often not. A burner that won't light is usually a dirty or out-of-gap spark electrode, a clogged port, or a misaligned cap — not a failed igniter. We diagnose the actual fault at the $59 diagnostic before quoting any part.",
+      },
+      {
+        question: "Do you service Wolf dual-fuel ranges and built-in ovens in Pinecrest?",
+        answer:
+          "Yes — dual-fuel ranges, sealed-burner rangetops, and M-Series built-in ovens are all standard work for the senior rotation. We handle burner, igniter, and electronic-control diagnostics on the platform, not by swapping parts on spec.",
+      },
+      {
+        question: "My Wolf range locked out after a storm — is the board dead?",
+        answer:
+          "Usually not. Storm-season power events trip the control lockouts on newer electronic Wolf ranges, and most clear with the correct reset procedure. We verify that before ever quoting a control board — selling a board on spec is exactly what we don't do.",
+      },
+    ],
+  },
+  [k("wolf", "coral-gables")]: {
+    brand: "wolf",
+    city: "coral-gables",
+    metaTitle: "Wolf Range Repair Coral Gables · $59 · Berne",
+    metaDescription:
+      "Wolf range, rangetop & oven repair in Coral Gables — dual-fuel, sealed burners, igniters in Granada & Old Cutler kitchens. Senior techs, $59 diagnostic.",
+    h1City: "Coral Gables",
+    heroIntro:
+      "Coral Gables kitchens pair a Wolf range with a Sub-Zero more often than any other combination we see — dual-fuel 36s and 48s, sealed-burner rangetops, M-Series ovens in Granada and Old Cutler estates. Senior platform techs, $59 diagnostic, same-day dispatch across the City Beautiful.",
+    local: {
+      eyebrow: "Wolf in Coral Gables",
+      heading: "The pro-style range in a serious kitchen",
+      paragraphs: [
+        "The Gables cooks. The Mediterranean estates off Granada and through the Old Cutler corridor were equipped with pro-style ranges by owners who use them, and the Wolf install base reflects it — dual-fuel ranges paired with built-in wall ovens, sealed-burner rangetops over an under-counter oven, and a long tail of M-Series and L-Series ovens. We service the platform's real failure list: spark-igniter and electrode work, sealed-burner service, the bake and infrared-broil element diagnostics, and the electronic-control faults a generalist tends to misread.",
+        "On the electric-oven side of a dual-fuel, the common Gables call is uneven baking or a broiler that won't reach temperature — usually a failed bake element, a weak infrared broiler, or a temperature-sensor drift, all of which we test before quoting. On the gas side it's a burner that sparks but won't catch, which is far more often a dirty electrode or a clogged port than a dead igniter. We diagnose the actual fault, not the symptom.",
+        "Humidity and the occasional storm-season power event are the local variables, and the lockout-after-a-storm call clears with the correct reset more often than it needs a board. We carry igniters, spark modules, burner components, and broiler elements on the Miami trucks, so most Coral Gables Wolf repairs finish in one visit — and the senior rotation brings the platform knowledge a pro-style range deserves.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you repair Wolf dual-fuel ranges in Coral Gables?",
+        answer:
+          "Yes — dual-fuel ranges, sealed-burner rangetops, and M/L-Series built-in ovens are core work. We diagnose burner, igniter, element, and control faults on the platform at the $59 diagnostic, which is free if you approve the repair.",
+      },
+      {
+        question: "My Wolf oven bakes unevenly — what's the usual cause in a Gables kitchen?",
+        answer:
+          "Most often a failed bake element, a weak infrared broiler, or a temperature-sensor drift — all testable and repairable. We verify the actual fault before quoting a part rather than defaulting to a control board.",
+      },
+      {
+        question: "How fast can you reach a Wolf call in Coral Gables?",
+        answer:
+          "Call before noon and same-day is typical — the Gables is central to our Miami routing. The common igniter, burner, and element parts ride the trucks, so most repairs close on the first visit.",
+      },
+    ],
+  },
+  [k("wolf", "palm-beach")]: {
+    brand: "wolf",
+    city: "palm-beach",
+    metaTitle: "Wolf Range Repair Palm Beach Island · $59 · Berne",
+    metaDescription:
+      "Wolf range & oven repair on Palm Beach island — dual-fuel, sealed burners, M-Series ovens in estate kitchens. Dispatched from Boca, $59 diagnostic, 90-day warranty.",
+    h1City: "Palm Beach",
+    heroIntro:
+      "Palm Beach estate kitchens run pro-style Wolf ranges and built-in ovens — dual-fuel 48s, sealed-burner rangetops, M-Series wall ovens. Dispatched from our Boca Raton office to keep island windows tight, serviced by senior platform techs, $59 diagnostic.",
+    local: {
+      eyebrow: "Wolf on Palm Beach",
+      heading: "Pro-style ranges in barrier-island estates",
+      paragraphs: [
+        "Palm Beach kitchens are specified to perform, and the Wolf range is the centerpiece — dual-fuel ranges, sealed-burner rangetops paired with wall ovens, and the M-Series built-in ovens that anchor the estates on the North End and Mid Island. We service the platform's real list: sealed-burner and spark-electrode work, bake and infrared-broil element diagnostics, and the electronic-control faults that a generalist misreads as a dead board.",
+        "Barrier-island air and a storm-prone grid are the local variables. Salt finds the burner hardware and the igniter electrodes faster than inland, and a burner that sparks but won't catch is most often a corroded or out-of-gap electrode rather than a failed igniter. Storm-season power events trip the control lockouts on newer electronic ranges, and those clear with the correct reset far more often than they need a board — we verify before we ever quote one.",
+        "We run this work from our office at 131 S Federal Hwy in Boca Raton, which keeps arrival windows on the island tight, and we handle the estate and association logistics — gate clearance, staff coordination — before the appointment. Igniters, spark modules, burner components, and broiler elements ride the trucks, so most Palm Beach Wolf repairs close in one visit.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service Wolf ranges on Palm Beach island?",
+        answer:
+          "Yes — dual-fuel ranges, sealed-burner rangetops, and M-Series ovens are core work, dispatched from our Boca Raton office to keep island windows tight. Gate and staff coordination is handled in advance, and the $59 diagnostic is free with the repair.",
+      },
+      {
+        question: "My Wolf burner sparks but won't light — is it the igniter?",
+        answer:
+          "On the island, more often it's a salt-corroded or out-of-gap spark electrode or a clogged port than a failed igniter. We diagnose the actual fault at the $59 diagnostic before quoting any part.",
+      },
+      {
+        question: "My Wolf range locked out after a storm — does it need a new board?",
+        answer:
+          "Usually not. Storm-season power events trip the control lockouts on newer Wolf ranges, and most clear with the correct reset procedure. We verify that before quoting a board — never on spec.",
+      },
+    ],
+  },
+
+  // ───────────────────────────── VIKING ─────────────────────────────
+  [k("viking", "coral-gables")]: {
+    brand: "viking",
+    city: "coral-gables",
+    metaTitle: "Viking Range Repair Coral Gables · $59 · Berne",
+    metaDescription:
+      "Viking range, oven & built-in refrigeration repair in Coral Gables — Professional series igniters, ovens, columns. Senior techs, $59 diagnostic, 90-day warranty.",
+    h1City: "Coral Gables",
+    heroIntro:
+      "Coral Gables holds a deep Viking install base — Professional-series ranges, built-in wall ovens, and the French-door and column refrigeration in Granada and Old Cutler estates. Senior platform techs, $59 diagnostic free with repair, same-day dispatch across the Gables.",
+    local: {
+      eyebrow: "Viking in Coral Gables",
+      heading: "Professional-series cooking and built-in cold, on one platform",
+      paragraphs: [
+        "Viking in the Gables means the full kitchen — a Professional-series range or rangetop, a built-in wall oven, and increasingly the Viking refrigeration that owners spec to match: built-in columns and the professional French-door units. We service the cooking and the cold on the same platform knowledge, which matters because the brand's failure list spans both: spark electrodes and igniters on the gas side, bake and convection elements on the electric, and condenser and evaporator-fan work on the refrigeration.",
+        "The local variables are the Gables-standard ones — humidity, decades-old units in the older estates, and the occasional storm-season power event that trips an electronic control lockout. On the cooking side, a Viking burner that won't light is usually a dirty or out-of-gap electrode rather than a failed igniter, and we diagnose the actual fault before quoting. On the refrigeration side, a warm built-in is far more often a fouled condenser or a stalled evaporator fan than a compressor — and we check the airflow path first.",
+        "We carry the common Viking parts on the Miami trucks — igniters, spark modules, burner components, oven elements, and the refrigeration fan motors — so most Coral Gables Viking repairs close in one visit. The senior rotation brings the cross-category platform experience a Viking kitchen needs, rather than treating the range and the refrigerator as two unrelated jobs.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service both Viking ranges and Viking refrigeration in Coral Gables?",
+        answer:
+          "Yes — Professional-series ranges, rangetops, built-in ovens, and Viking built-in/French-door refrigeration are all core work for the senior rotation. We bring the cross-category platform knowledge a full Viking kitchen needs. The $59 diagnostic is free with the repair.",
+      },
+      {
+        question: "My Viking burner won't light — does it need an igniter?",
+        answer:
+          "Often not. A Viking burner that sparks but won't catch is usually a dirty or out-of-gap electrode or a clogged port, not a failed igniter. We diagnose the actual fault at the $59 diagnostic before quoting a part.",
+      },
+      {
+        question: "My Viking built-in fridge is warm — is the compressor gone?",
+        answer:
+          "Usually not. A warm Viking built-in most often traces to a fouled condenser or a stalled evaporator fan rather than the compressor. We check the airflow path and the actual circuit first, at the $59 diagnostic.",
+      },
+    ],
+  },
+  [k("viking", "key-biscayne")]: {
+    brand: "viking",
+    city: "key-biscayne",
+    metaTitle: "Viking Range Repair Key Biscayne · $59 · Berne",
+    metaDescription:
+      "Viking range, oven & refrigeration repair on Key Biscayne — Professional series in oceanfront kitchens. Salt-air specialists, $59 diagnostic, 90-day warranty.",
+    h1City: "Key Biscayne",
+    heroIntro:
+      "Key Biscayne's Viking kitchens face the barrier-island salt tax — Professional-series ranges and built-in refrigeration on Harbor Drive and in Cape Florida estates. Senior techs, COI and elevator coordination handled before arrival, $59 diagnostic.",
+    local: {
+      eyebrow: "Viking on Key Biscayne",
+      heading: "Pro-style kitchens against island salt",
+      paragraphs: [
+        "Island air is hard on a Viking. The Professional-series ranges and built-in refrigeration in the Harbor Drive towers and the Cape Florida estates take year-round salt, and it shows up on both sides of the platform: corroded spark electrodes and burner hardware on the cooking side, and condensers that load and corrode on an accelerated clock on the refrigeration side. A Viking burner that sparks but won't light here is more often a salt-pitted electrode than a failed igniter, and a warm built-in is more often a salt-loaded condenser than a compressor.",
+        "Tower work on Key Biscayne is its own discipline — a Viking range or built-in column on a high floor is serviced in place, with the building choreography handled first: association COI, service-elevator booking, floor protection. We run that coordination as a matter of course so the repair window stays tight once we're on the floor.",
+        "Our first diagnostic move on any warm Viking refrigerator here is the condenser and the airflow path, and our standing advice on the island is an annual coil service — the single best maintenance dollar in salt air. We carry the common Viking igniters, burner components, oven elements, and refrigeration fan motors on the trucks, so most Key Biscayne Viking repairs close on the first visit.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Why does my Key Biscayne Viking need service more than inland units?",
+        answer:
+          "Barrier-island salt. It corrodes burner electrodes on the cooking side and loads the condenser on the refrigeration side far faster than inland. An annual condenser cleaning is the best maintenance dollar here, and we check it first on every warm-unit island call.",
+      },
+      {
+        question: "Do you handle building access for Viking calls in Key Biscayne towers?",
+        answer:
+          "Yes — we arrange the association COI, book the service elevator, and bring floor protection before the appointment. In a managed island building that coordination is half the job, and we treat it as standard.",
+      },
+      {
+        question: "My Viking burner sparks but won't light — is it the igniter?",
+        answer:
+          "On the island it's usually a salt-pitted or out-of-gap electrode or a clogged port rather than a failed igniter. We diagnose the actual fault at the $59 diagnostic before quoting any part.",
+      },
+    ],
+  },
+
+  // ───────────────────────────── THERMADOR ─────────────────────────────
+  [k("thermador", "pinecrest")]: {
+    brand: "thermador",
+    city: "pinecrest",
+    metaTitle: "Thermador Repair Pinecrest · $59 · Berne",
+    metaDescription:
+      "Thermador repair in Pinecrest — Star burner ranges, steam & speed ovens, built-in refrigeration on estate kitchens. Senior techs, $59 diagnostic, 90-day warranty.",
+    h1City: "Pinecrest",
+    heroIntro:
+      "Pinecrest estate kitchens run deep Thermador suites — Star-burner ranges and rangetops, steam and speed ovens, built-in refrigeration columns. Senior platform techs who diagnose the electronics on the platform, not by swapping boards. $59 diagnostic free with repair.",
+    local: {
+      eyebrow: "Thermador in Pinecrest",
+      heading: "Full Thermador suites in estate kitchens",
+      paragraphs: [
+        "Thermador in Pinecrest tends to come as a suite — a Star-burner range or a Professional rangetop, a wall-oven tower that often includes a steam or speed oven, and Freedom-series built-in refrigeration columns. That's a lot of electronics under one roof, and the brand's modern faults are electronic as often as mechanical: control-lockout codes after power events, steam-oven water-system faults, and convection or sensor drift on the wall ovens. We diagnose those on the platform — reading the actual fault — rather than defaulting to a board swap.",
+        "On the cooking side, the Star burner's signature geometry needs its electrodes clean and gapped, and a burner that won't light here is usually exactly that rather than a failed igniter. On the steam ovens, the common Pinecrest call is a descale or water-system fault that owners read as a failure — addressable without replacing the steam generator nine times out of ten. We test before we quote.",
+        "The estate suites mean a Thermador call here can touch several appliances, and we carry the common range, oven, and refrigeration parts on the Miami trucks so most of it closes in one visit. The senior rotation knows the Thermador electronics platform — and knowing when a lockout code is a reset and when it's a board is exactly the experience that separates the work.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service full Thermador suites in Pinecrest estate kitchens?",
+        answer:
+          "Yes — Star-burner ranges and rangetops, steam and speed ovens, and Freedom-series built-in refrigeration are all core work for the senior rotation. A suite call can touch several appliances, and we carry the common parts to close most of it in one visit.",
+      },
+      {
+        question: "My Thermador steam oven shows a water fault — does it need a new generator?",
+        answer:
+          "Usually not. On the steam ovens a water-system fault is most often a descale or a clog in the water path, not a failed steam generator. We diagnose the actual fault at the $59 diagnostic before quoting any major part.",
+      },
+      {
+        question: "My Thermador range threw a lockout code — is the board dead?",
+        answer:
+          "Often not. Power events trip control-lockout codes on modern Thermador ranges, and most clear with the correct reset. We verify that before ever quoting a control board — that judgment is the whole point of a platform-experienced tech.",
+      },
+    ],
+  },
+  [k("thermador", "coral-gables")]: {
+    brand: "thermador",
+    city: "coral-gables",
+    metaTitle: "Thermador Repair Coral Gables · $59 · Berne",
+    metaDescription:
+      "Thermador repair in Coral Gables — Star burner ranges, steam ovens, built-in refrigeration in Granada & Old Cutler kitchens. Senior techs, $59 diagnostic.",
+    h1City: "Coral Gables",
+    heroIntro:
+      "Coral Gables kitchens run Thermador across the suite — Star-burner ranges, steam and speed ovens, Freedom-series refrigeration columns in Granada and Old Cutler estates. Senior platform techs, $59 diagnostic, same-day dispatch across the Gables.",
+    local: {
+      eyebrow: "Thermador in Coral Gables",
+      heading: "Star burners, steam ovens, and the electronics behind them",
+      paragraphs: [
+        "Thermador has deep roots in the Gables, and the install base runs the full modern range: Star-burner Professional ranges and rangetops, wall-oven towers with steam and speed ovens, and Freedom-series built-in refrigeration. The brand's failures here are as much electronic as mechanical — control-lockout codes after the area's storm-season power events, steam-oven water-system faults, and convection or temperature-sensor drift on the ovens — and the difference between a reset and a board replacement is experience, not guesswork.",
+        "On the cooking side, the Star burner is the signature, and a burner that won't light is usually a dirty or out-of-gap electrode rather than a failed igniter. On the refrigeration side, a warm Freedom column is far more often a fouled condenser or a stalled evaporator fan than a compressor — humidity and decades-old units in the older estates load the coils, and we check the airflow path first.",
+        "We carry the common Thermador range, oven, and refrigeration parts on the Miami trucks, so most Coral Gables calls close in one visit, and the senior rotation knows the platform's electronics well enough to read a lockout code rather than reflexively quote a board. A Thermador suite is a long-term investment, and it deserves a tech who diagnoses it that way.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service Thermador ranges, ovens, and refrigeration in Coral Gables?",
+        answer:
+          "Yes — Star-burner ranges and rangetops, steam and speed ovens, and Freedom-series built-in refrigeration are all core work. We diagnose the electronics on the platform at the $59 diagnostic, which is free if you approve the repair.",
+      },
+      {
+        question: "My Thermador range threw a lockout code after a storm — is the board dead?",
+        answer:
+          "Usually not. Power events trip Thermador control-lockout codes, and most clear with the correct reset procedure. We verify that before ever quoting a control board.",
+      },
+      {
+        question: "My Thermador Freedom column is warm — is it the compressor?",
+        answer:
+          "Usually not. A warm Freedom-series column most often traces to a fouled condenser or a stalled evaporator fan rather than the compressor. We check the airflow path and the actual circuit first, at the $59 diagnostic.",
+      },
+    ],
+  },
+
+  // ───────────────────────────── MIELE ─────────────────────────────
+  [k("miele", "coral-gables")]: {
+    brand: "miele",
+    city: "coral-gables",
+    metaTitle: "Miele Repair Coral Gables · $59 · Berne",
+    metaDescription:
+      "Miele repair in Coral Gables — dishwashers, built-in coffee, ovens & laundry in Granada and Old Cutler estates. Senior techs, $59 diagnostic, 90-day warranty.",
+    h1City: "Coral Gables",
+    heroIntro:
+      "Coral Gables runs the full Miele line — G-series dishwashers, built-in coffee systems, wall ovens, and the W1/T1 laundry pairs in Granada and Old Cutler homes. Senior platform techs who know the European electronics, $59 diagnostic free with repair.",
+    local: {
+      eyebrow: "Miele in Coral Gables",
+      heading: "European engineering in a serious kitchen and laundry",
+      paragraphs: [
+        "Miele owners in the Gables tend to own the whole ecosystem — the G-series dishwasher integrated flush with cabinetry, a built-in coffee system, a wall oven, and the W1/T1 laundry pair that runs on the brand's own logic and error-code language. Servicing Miele well means knowing that language: the F-codes that point to a drain or circulation fault rather than a control failure, the coffee-system brew-group and water-path issues that read as failures but resolve with the right service, and the laundry electronics that a generalist misreads.",
+        "The local variables are the Gables-standard humidity and the occasional power event, but Miele's failures are mostly platform-specific: drain pumps and check valves on the dishwashers, door-seal and hinge work on the integrated units, brew-unit service on the coffee systems, and the drain/door-lock faults on the laundry. We diagnose by the error code and the actual circuit, not by swapping the most expensive part.",
+        "We carry the common Miele parts on the Miami trucks — dishwasher drain pumps and seals, coffee-system service components, and the frequent laundry parts — so most Coral Gables Miele repairs close in one visit. The senior rotation has the European-electronics experience the brand demands, which is the difference between fixing the fault and replacing a board.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service the full Miele line in Coral Gables?",
+        answer:
+          "Yes — G-series dishwashers, built-in coffee systems, wall ovens, and W1/T1 laundry are all core work for the senior rotation. We diagnose by Miele's own error-code logic at the $59 diagnostic, which is free if you approve the repair.",
+      },
+      {
+        question: "My Miele dishwasher shows an F-code — what does it mean?",
+        answer:
+          "Miele F-codes are specific — most point to a drain, circulation, or water-inlet fault rather than a failed control. We read the actual code and test the circuit at the $59 diagnostic before quoting any part.",
+      },
+      {
+        question: "My Miele coffee system stopped brewing properly — is it done?",
+        answer:
+          "Usually not. Brew-group and water-path faults are the common coffee-system calls and are serviceable far more often than not. We diagnose the actual fault before suggesting any major component.",
+      },
+    ],
+  },
+  [k("miele", "sunny-isles-beach")]: {
+    brand: "miele",
+    city: "sunny-isles-beach",
+    metaTitle: "Miele Repair Sunny Isles Beach · $59 · Berne",
+    metaDescription:
+      "Miele repair in Sunny Isles Beach — dishwashers, coffee systems, ovens & laundry in oceanfront tower residences. COI/elevator handled, $59 diagnostic.",
+    h1City: "Sunny Isles Beach",
+    heroIntro:
+      "Sunny Isles Beach is oceanfront tower living, and its Miele appliances are almost all integrated — G-series dishwashers, built-in coffee systems, and stacked W1/T1 laundry in high-floor residences. Senior techs, association COI and elevator coordination handled before arrival, $59 diagnostic.",
+    local: {
+      eyebrow: "Miele in Sunny Isles Beach",
+      heading: "Integrated Miele in high-floor tower residences",
+      paragraphs: [
+        "Sunny Isles is a vertical, oceanfront market — the residences are in the Collins Avenue towers, and the Miele inside them is specified to integrate: a G-series dishwasher flush with the cabinetry, a built-in coffee system, a wall oven, and a stacked or side-by-side W1/T1 laundry pair tucked into a closet. That changes the service approach. The work is done in place on a high floor, and it's diagnosed by Miele's own error-code logic — the F-codes that point to a drain or circulation fault, the laundry door-lock and drain faults, the coffee brew-group service — rather than by guessing.",
+        "Tower logistics come first here, and we run them as routine: association COI on file, service elevator booked, corridor and floor protection in place before the appointment. In a Sunny Isles building the front desk and management office are part of the visit, and getting that coordination right is why our windows hold.",
+        "The oceanfront exposure matters most for any vented or water-connected appliance, but Miele's failures stay mostly platform-specific — drain pumps and check valves on the dishwashers, brew-unit service on the coffee systems, drain and door-lock faults on the laundry. We carry the common parts on the trucks, so most Sunny Isles Miele repairs close on the first visit, and the senior rotation brings the European-electronics experience the brand requires.",
+      ],
+    },
+    faqs: [
+      {
+        question: "Do you service Miele in Sunny Isles oceanfront towers?",
+        answer:
+          "Yes — integrated G-series dishwashers, built-in coffee systems, wall ovens, and stacked W1/T1 laundry are core work, serviced in place on high floors. We arrange the association COI, service elevator, and floor protection before the visit. The $59 diagnostic is free with the repair.",
+      },
+      {
+        question: "My Miele dishwasher shows an F-code in my Sunny Isles residence — what is it?",
+        answer:
+          "Miele F-codes are specific and most point to a drain, circulation, or inlet fault rather than a failed control. We read the code and test the actual circuit at the $59 diagnostic before quoting any part.",
+      },
+      {
+        question: "How do you handle access in a managed Sunny Isles building?",
+        answer:
+          "We coordinate with management and the front desk in advance — COI on file, service elevator reserved, protection laid down. That groundwork is standard for our tower work and keeps the repair window tight once we're on the floor.",
+      },
+    ],
+  },
 };
 
 export const BRAND_CITY_SLUGS: { brand: string; city: string }[] = Object.values(
