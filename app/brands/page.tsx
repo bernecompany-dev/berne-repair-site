@@ -13,7 +13,7 @@ import {
 import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const PAGE_TITLE = "Luxury & High-End Appliance Brands We Repair";
-const PAGE_DESC = `Sub-Zero, Wolf, Thermador, Miele, Gaggenau, Liebherr, Fisher & Paykel, Dacor & more — same-day repair across South Florida. $${COMPANY.serviceCallPrice} service call.`;
+const PAGE_DESC = `Sub-Zero, Wolf, Thermador, Miele, Gaggenau, Liebherr, Fisher & Paykel, Dacor & more — factory-trained, white-glove repair across South Florida. $${COMPANY.serviceCallPrice} diagnostic, credited to your repair.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -76,10 +76,10 @@ export default function BrandsIndex() {
 
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
-              <BadgeDollarSign className="size-3.5" aria-hidden />${COMPANY.serviceCallPrice} service call
+              <BadgeDollarSign className="size-3.5" aria-hidden />${COMPANY.serviceCallPrice} diagnostic · credited
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
-              <Clock3 className="size-3.5 text-brand" aria-hidden /> Same-day available
+              <Clock3 className="size-3.5 text-brand" aria-hidden /> Priority dispatch
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden /> Licensed · EPA-608

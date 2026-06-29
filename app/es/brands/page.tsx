@@ -13,7 +13,7 @@ import {
 import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const PAGE_TITLE = "Marcas premium de electrodomésticos";
-const PAGE_DESC = `Sub-Zero, Wolf, Viking, Thermador, Miele, KitchenAid, GE, Whirlpool, LG, Samsung — servicio el mismo día en el Sur de Florida. $${COMPANY.serviceCallPrice} service call.`;
+const PAGE_DESC = `Sub-Zero, Wolf, Thermador, Miele, Gaggenau, Liebherr, Fisher & Paykel, Dacor y más — reparación de guante blanco por técnicos formados de fábrica en el sur de Florida. Diagnóstico $${COMPANY.serviceCallPrice}, abonado a su reparación.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -80,10 +80,10 @@ export default function BrandsIndexES() {
 
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
-              <BadgeDollarSign className="size-3.5" aria-hidden />${COMPANY.serviceCallPrice} service call
+              <BadgeDollarSign className="size-3.5" aria-hidden />Diagnóstico ${COMPANY.serviceCallPrice} · abonado
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
-              <Clock3 className="size-3.5 text-brand" aria-hidden /> El mismo día
+              <Clock3 className="size-3.5 text-brand" aria-hidden /> Agenda prioritaria
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden /> Licenciados · EPA-608

@@ -8,8 +8,8 @@ import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 // Absolute title: the brand is already in the string — the layout template was
 // appending " · Berne Appliance Repair" a second time (102ch, double brand).
-const TITLE = "Reserve su visita — Berne Appliance Repair · Servicio mismo día";
-const DESC = `Solicite despacho el mismo día en el sur de Florida. Visita técnica $${COMPANY.serviceCallPrice}, ${COMPANY.socialProof.technicians} técnicos con licencia, garantía de 90 días. Todas las marcas principales.`;
+const TITLE = "Reserve su visita — Berne Appliance Repair · Servicio prioritario de guante blanco";
+const DESC = `Solicite despacho prioritario de guante blanco en el sur de Florida. Diagnóstico $${COMPANY.serviceCallPrice}, abonado a su reparación, ${COMPANY.socialProof.technicians} técnicos formados de fábrica, garantía de 90 días. Sub-Zero, Wolf, Viking, Thermador, Miele y Gaggenau.`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -78,11 +78,11 @@ export default function RequestDispatchPageES() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <Wrench className="size-3.5" aria-hidden />
-              Despacho el mismo día
+              Despacho prioritario
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden />
-              Visita técnica ${COMPANY.serviceCallPrice}
+              Diagnóstico ${COMPANY.serviceCallPrice} · abonado
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />

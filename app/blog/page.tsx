@@ -93,7 +93,7 @@ export default function BlogIndexPage() {
             Owner-focused guides on Sub-Zero, Wolf, Viking, Thermador, and Miele service. Written for South Florida — salt air, condo high-rises, hurricane season, and all.
           </p>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
-            $59 service call. Call {COMPANY.phone.display} for same-day diagnostic in Miami-Dade, Broward, and Palm Beach.
+            $59 diagnostic, credited to your repair. Call {COMPANY.phone.display} for priority service in Miami-Dade, Broward, and Palm Beach.
           </p>
         </div>
       </section>

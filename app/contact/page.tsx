@@ -9,7 +9,7 @@ import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   // Absolute — brand already in the string; layout template would double it.
   title: { absolute: "Contact Berne Appliance Repair — Premium Service" },
-  description: `Reach Berne Appliance Repair dispatch for premium appliance service across South Florida. ${COMPANY.phone.display} · ${COMPANY.hours.label}. Same-day service. Licensed & insured.`,
+  description: `Reach Berne Appliance Repair dispatch for premium appliance service across South Florida. ${COMPANY.phone.display} · ${COMPANY.hours.label}. Priority white-glove dispatch. Licensed & insured.`,
   alternates: {
     canonical: "/contact",
     languages: {

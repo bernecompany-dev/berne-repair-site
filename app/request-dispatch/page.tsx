@@ -9,8 +9,8 @@ import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   // Absolute — the layout template would append " · Berne Appliance Repair"
   // a second time on top of the brand already in the string.
-  title: { absolute: "Book a Repair Visit — Berne Appliance Repair · Same-Day Service" },
-  description: `Request same-day appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} service call. ${COMPANY.socialProof.technicians} licensed technicians. Sub-Zero, Wolf, Viking, Bosch and every major brand.`,
+  title: { absolute: "Book a Repair Visit — Berne Appliance Repair · Priority White-Glove Service" },
+  description: `Request priority white-glove appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} diagnostic, credited to your repair. ${COMPANY.socialProof.technicians} factory-trained technicians. Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau.`,
   alternates: {
     canonical: "/request-dispatch",
     languages: {
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Book a Repair Visit — Berne Appliance Repair · Same-Day Service",
-    description: `Request same-day appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`,
+    title: "Book a Repair Visit — Berne Appliance Repair · Priority White-Glove Service",
+    description: `Request priority white-glove appliance dispatch in South Florida. $${COMPANY.serviceCallPrice} diagnostic, credited to your repair. Licensed & insured.`,
     url: absoluteUrl("/request-dispatch"),
     type: "website",
     images: [DEFAULT_OG_IMAGE],
@@ -73,11 +73,11 @@ export default function RequestDispatchPage() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <Wrench className="size-3.5" aria-hidden />
-              Same-day dispatch
+              Priority dispatch
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              ${COMPANY.serviceCallPrice} diagnostic · credited
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
