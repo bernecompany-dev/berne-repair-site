@@ -12,6 +12,7 @@ import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { SERVICES, SERVICE_BY_SLUG, localizedService } from "@/data/services";
+import { HIGHEND_SERVICE_BY_SLUG } from "@/data/highend";
 import { CITIES } from "@/data/cities";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS_ES, SERVICE_FAQS_ES } from "@/data/faqs";
@@ -22,6 +23,13 @@ import { servicePersonalCopy } from "@/lib/personal-copy";
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
+
+/** Reciprocal ES links: standard hubs → high-end specialty pages (same map as EN). */
+const RELATED_HIGHEND: Record<string, string[]> = {
+  "oven-repair": ["warming-drawer-repair", "coffee-machine-repair"],
+  "wine-cooler-repair": ["coffee-machine-repair", "warming-drawer-repair"],
+  "refrigerator-repair": ["cold-plunge-repair"],
+};
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -65,6 +73,9 @@ export default async function ServicePageES({ params }: Props) {
   const faqs = [...(SERVICE_FAQS_ES[service.slug] ?? []), ...GENERAL_FAQS_ES.slice(0, 5)];
   const heroImages = SERVICE_HERO_IMAGES[service.slug];
   const personal = servicePersonalCopy(service, "es");
+  const relatedHighEnd = (RELATED_HIGHEND[service.slug] ?? [])
+    .map((s) => HIGHEND_SERVICE_BY_SLUG[s])
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
   const crumbs = [
     { name: "Inicio", href: "/es" },
     { name: "Servicios", href: "/es#services" },
@@ -208,6 +219,44 @@ export default async function ServicePageES({ params }: Props) {
           ))}
         </div>
       </section>
+
+      {/* Enlaces recíprocos a las páginas especializadas de alta gama */}
+      {relatedHighEnd.length > 0 ? (
+        <section className="container-prose py-16 sm:py-20">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Alta gama y especializados</span>
+            <h2 className="heading-section mt-3">
+              Equipo de lujo en esta categoría.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Los mismos técnicos senior, con páginas dedicadas para el equipo
+              especializado de las cocinas y hogares de lujo del sur de Florida.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {relatedHighEnd.map((h) => (
+              <Link
+                key={h.slug}
+                href={`/es/services/${h.slug}`}
+                className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card/40 p-4 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+              >
+                <div>
+                  <div className="text-sm font-semibold leading-snug text-foreground/90 group-hover:text-brand">
+                    {h.es.name}
+                  </div>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                    {h.es.metaDescription}
+                  </p>
+                </div>
+                <ArrowRight
+                  className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                  aria-hidden
+                />
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <FAQSection faqs={faqs} title={`${sv.name} — preguntas frecuentes`} />
       <Contact defaultAppliance={service.slug} locale="es" />

@@ -553,6 +553,55 @@ export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
   };
 }
 
+/**
+ * Service JSON-LD for the hand-authored high-end specialty pages
+ * (data/highend/*). These are NOT in the SERVICES array, so they can't use
+ * serviceJsonLd(Service). Same shape, same $59 offer + provider node, but
+ * driven by plain fields. No image array (photos pending — Google ignores a
+ * missing image key cleanly).
+ */
+export function highEndServiceJsonLd(args: {
+  slug: string;
+  name: string;
+  description: string;
+  brands: string[];
+  locale?: "en" | "es";
+}) {
+  const locale = args.locale ?? "en";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": absoluteUrl(`/services/${args.slug}#service`),
+    name: args.name,
+    serviceType: args.name,
+    provider: { "@id": BUSINESS_ID },
+    areaServed: CITIES.map((c) => ({
+      "@type": "City",
+      name: c.name,
+      address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: "FL", addressCountry: "US" },
+    })),
+    description: args.description,
+    url: absoluteUrl(
+      locale === "es" ? `/es/services/${args.slug}` : `/services/${args.slug}`,
+    ),
+    inLanguage: locale === "es" ? "es-US" : "en-US",
+    offers: {
+      "@type": "Offer",
+      price: COMPANY.serviceCallPrice,
+      priceCurrency: "USD",
+      description: `${COMPANY.serviceCallPrice} service call — free with repair`,
+      availability: "https://schema.org/InStock",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        minPrice: COMPANY.serviceCallPrice,
+        maxPrice: 800,
+        priceCurrency: "USD",
+      },
+    },
+    brand: args.brands.map((b) => ({ "@type": "Brand", name: b })),
+  };
+}
+
 export function cityJsonLd(city: City, locale: "en" | "es" = "en") {
   const cityPath = locale === "es" ? `/es/areas/${city.slug}` : `/areas/${city.slug}`;
   return {

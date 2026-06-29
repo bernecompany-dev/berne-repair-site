@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SERVICES } from "@/data/services";
+import { HIGHEND_SERVICES } from "@/data/highend";
 import { CITIES } from "@/data/cities";
 import { SITE_URL } from "@/lib/seo";
 import { publishedArticles } from "@/lib/blog/articles";
@@ -77,6 +78,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
       { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.9, alternates: { languages: esCounterpart(p) } },
       { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
+    ];
+  });
+
+  // High-end specialty service pages — hand-authored static routes (EN + ES),
+  // OUTSIDE the SERVICES array so they never spawn city combos. Both locales
+  // are real, indexable pages (full Spanish), so each advertises the reciprocal
+  // hreflang. lastmod = the launch wave so Google re-crawls the new cluster.
+  const HIGHEND_MOD = new Date("2026-06-29");
+  const highEndServices: MetadataRoute.Sitemap = HIGHEND_SERVICES.flatMap((s) => {
+    const p = `/services/${s.slug}`;
+    return [
+      { url: `${SITE_URL}${p}`, lastModified: HIGHEND_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
+      { url: `${SITE_URL}/es${p}`, lastModified: HIGHEND_MOD, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: esCounterpart(p) } },
     ];
   });
 

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Wrench, ArrowRight, BadgeDollarSign, Clock3 } from "lucide-react";
+import { Wrench, ArrowRight, BadgeDollarSign, Clock3, Gem } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { SERVICES } from "@/data/services";
+import { HIGHEND_SERVICES } from "@/data/highend";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
@@ -108,6 +109,54 @@ export default function ServicesIndex() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* High-end & specialty residential services — hand-authored static
+          pages that live outside the programmatic service set (no city combos). */}
+      <section className="border-t border-border/60 bg-background/40">
+        <div className="container-prose py-16 sm:py-20">
+          <div className="max-w-2xl">
+            <span className="eyebrow">
+              <Gem className="mr-1.5 inline size-3.5" aria-hidden />
+              High-end & specialty
+            </span>
+            <h2 className="heading-section mt-3">
+              Luxury home equipment, by name.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Beyond the kitchen and laundry, our senior techs service the
+              specialty equipment that fills high-end South Florida homes — from
+              sauna heaters to cold plunge chillers to built-in espresso.
+            </p>
+          </div>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {HIGHEND_SERVICES.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="group flex h-full flex-col gap-3 rounded-2xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <div className="flex items-center gap-2">
+                    <Gem className="size-5 text-brand" aria-hidden />
+                    <h3 className="text-lg font-semibold tracking-tight text-foreground group-hover:text-brand">
+                      {s.name}
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {s.cardDescription}
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-brand">
+                    See details
+                    <ArrowRight
+                      className="size-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden
+                    />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <Contact />

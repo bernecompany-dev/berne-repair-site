@@ -57,6 +57,41 @@ const SERVICE_ALT_CONTEXT: Record<string, string[]> = {
     "Under-cabinet range hood control panel diagnostic — Berne Appliance Repair",
     "Wall-mount range hood damper and duct inspection by a Berne technician",
   ],
+  // High-end specialty services (data/highend/*). Descriptive alt slots are
+  // registered now so that, once real photos are shot, enabling the carousel
+  // is a one-line add to SERVICE_HERO_IMAGES below — set("<slug>", N). Until
+  // then these services intentionally render with no carousel (same graceful
+  // path as ice-maker-repair / wine-cooler-repair, which have no photo set).
+  "electric-sauna-repair": [
+    "Berne technician servicing a home electric sauna heater in South Florida",
+    "Sauna control panel and high-limit thermostat diagnostic by Berne Appliance Repair",
+    "Infrared sauna cabin emitter inspection — Berne Appliance Repair, South Florida",
+  ],
+  "cold-plunge-repair": [
+    "Berne technician servicing a home cold plunge chiller in South Florida",
+    "Cold plunge water chiller and sealed-system inspection by Berne Appliance Repair",
+    "Cold plunge circulation pump and temperature control diagnostic — Berne Appliance Repair",
+  ],
+  "pool-heater-repair": [
+    "Berne technician repairing a residential pool heater in South Florida",
+    "Pool heat-pump and heat exchanger inspection by Berne Appliance Repair",
+    "Gas pool heater ignition and control diagnostic — Berne Appliance Repair, South Florida",
+  ],
+  "coffee-machine-repair": [
+    "Berne technician servicing a built-in coffee machine in South Florida",
+    "Premium coffee machine brew unit and descaling service by Berne Appliance Repair",
+    "Built-in espresso machine boiler and pump diagnostic — Berne Appliance Repair",
+  ],
+  "warming-drawer-repair": [
+    "Berne technician repairing a built-in warming drawer in South Florida",
+    "Warming drawer heating element and thermostat service by Berne Appliance Repair",
+    "Built-in warming drawer control panel diagnostic — Berne Appliance Repair",
+  ],
+  "recliner-repair": [
+    "Berne technician repairing a power recliner motor in South Florida",
+    "Power recliner actuator and transformer service by Berne Appliance Repair",
+    "Premium leather motion furniture mechanism inspection — Berne Appliance Repair",
+  ],
 };
 
 const set = (slug: string, count: number): CarouselImage[] => {

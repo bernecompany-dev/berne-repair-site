@@ -38,9 +38,11 @@ export type Article = {
   body: string;
 };
 
+import { HIGHEND_ARTICLES } from "@/data/highend";
+
 const AUTHOR = "Eugene Berne, Owner — Berne Appliance Repair";
 
-export const ARTICLES: Article[] = [
+const ARTICLES_BASE: Article[] = [
   {
     slug: "sub-zero-refrigerator-troubleshooting-miami",
     title: "Sub-Zero Refrigerator Won't Cool — Troubleshooting Before You Call",
@@ -9878,6 +9880,14 @@ The current generation is solid. Viking's bad reputation came from early-2000s o
 Yes. We repair Wolf and Viking ranges across Miami-Dade and Broward and carry the common parts for both.`,
   },
 ];
+
+/**
+ * Full registry = the inline base set + the high-end specialty articles paired
+ * 1:1 with the luxury service pages (data/highend/*). Kept in the service data
+ * files so each high-end page and its article ship together; merged here so the
+ * blog index, sitemap, and related-articles all see them automatically.
+ */
+export const ARTICLES: Article[] = [...ARTICLES_BASE, ...HIGHEND_ARTICLES];
 
 /**
  * Returns articles whose publishedAt is at or before `now`. Articles

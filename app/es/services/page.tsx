@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Wrench, ArrowRight, BadgeDollarSign, Clock3 } from "lucide-react";
+import { Wrench, ArrowRight, BadgeDollarSign, Clock3, Gem } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { SERVICES } from "@/data/services";
+import { HIGHEND_SERVICES } from "@/data/highend";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
@@ -106,6 +107,55 @@ export default function ServicesIndexES() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Servicios especializados de alta gama — páginas estáticas escritas a
+          mano, fuera del set programático (sin combinaciones por ciudad). */}
+      <section className="border-t border-border/60 bg-background/40">
+        <div className="container-prose py-16 sm:py-20">
+          <div className="max-w-2xl">
+            <span className="eyebrow">
+              <Gem className="mr-1.5 inline size-3.5" aria-hidden />
+              Alta gama y especializados
+            </span>
+            <h2 className="heading-section mt-3">
+              Equipo de lujo del hogar, por su nombre.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Más allá de la cocina y la lavandería, nuestros técnicos senior
+              reparan el equipo especializado de las casas de lujo del sur de
+              Florida — desde calefactores de sauna hasta chillers de inmersión
+              fría y cafeteras empotradas.
+            </p>
+          </div>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {HIGHEND_SERVICES.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/es/services/${s.slug}`}
+                  className="group flex h-full flex-col gap-3 rounded-2xl border border-border bg-card/40 p-5 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                >
+                  <div className="flex items-center gap-2">
+                    <Gem className="size-5 text-brand" aria-hidden />
+                    <h3 className="text-lg font-semibold tracking-tight text-foreground group-hover:text-brand">
+                      {s.es.name}
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {s.es.metaDescription}
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-brand">
+                    Ver detalles
+                    <ArrowRight
+                      className="size-4 transition-transform group-hover:translate-x-0.5"
+                      aria-hidden
+                    />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <Contact locale="es" />

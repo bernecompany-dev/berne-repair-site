@@ -14,6 +14,7 @@ import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
+import { HIGHEND_SERVICE_BY_SLUG } from "@/data/highend";
 import { CITIES } from "@/data/cities";
 import { COMPANY } from "@/data/company";
 import { GENERAL_FAQS, SERVICE_FAQS } from "@/data/faqs";
@@ -112,6 +113,19 @@ const COMPARE_GUIDES: Record<string, string[]> = {
   "dishwasher-repair": ["miele-vs-bosch"],
 };
 
+/**
+ * Reciprocal internal links: standard service hubs → the hand-authored
+ * high-end specialty pages (data/highend/*). Keyed by the standard hub slug,
+ * values are high-end slugs that share an appliance category, so the new
+ * luxury pages aren't only reachable from /services but also from the most
+ * relevant existing hubs.
+ */
+const RELATED_HIGHEND: Record<string, string[]> = {
+  "oven-repair": ["warming-drawer-repair", "coffee-machine-repair"],
+  "wine-cooler-repair": ["coffee-machine-repair", "warming-drawer-repair"],
+  "refrigerator-repair": ["cold-plunge-repair"],
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICE_BY_SLUG[slug];
@@ -157,6 +171,9 @@ export default async function ServicePage({ params }: Props) {
   const brandServicePages = BRAND_SERVICE_PAGES.filter(
     (p) => p.serviceHubSlug === service.slug,
   ).map((p) => ({ ...p, brandName: getResidentialBrand(p.brand)?.name ?? p.brand }));
+  const relatedHighEnd = (RELATED_HIGHEND[service.slug] ?? [])
+    .map((s) => HIGHEND_SERVICE_BY_SLUG[s])
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
   const crumbs = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
@@ -436,6 +453,44 @@ export default async function ServicePage({ params }: Props) {
           })}
         </div>
       </section>
+
+      {/* Reciprocal links to the high-end specialty pages in this category */}
+      {relatedHighEnd.length > 0 ? (
+        <section className="container-prose py-16 sm:py-20">
+          <div className="max-w-2xl">
+            <span className="eyebrow">High-end & specialty</span>
+            <h2 className="heading-section mt-3">
+              Luxury equipment in this category.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Same senior techs, dedicated pages for the specialty equipment in
+              high-end South Florida kitchens and homes.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {relatedHighEnd.map((h) => (
+              <Link
+                key={h.slug}
+                href={`/services/${h.slug}`}
+                className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card/40 p-4 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+              >
+                <div>
+                  <div className="text-sm font-semibold leading-snug text-foreground/90 group-hover:text-brand">
+                    {h.name}
+                  </div>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                    {h.cardDescription}
+                  </p>
+                </div>
+                <ArrowRight
+                  className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand"
+                  aria-hidden
+                />
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <FAQSection faqs={faqs} title={`${service.name} — questions we get`} />
       <Contact defaultAppliance={service.slug} />
