@@ -451,6 +451,18 @@ export function getServicePagesForBrand(brand: string): BrandServiceContent[] {
  * brand-service registry (one-off static routes). Listed here so brand hubs
  * can link them without hardcoding in the template.
  */
+/**
+ * Cross-link from premium brand hubs to the Luxury Appliance Repair Cost Guide
+ * data asset (cost ranges + repair-vs-replace calculator). Shared across the
+ * top luxury brands so the asset accrues internal authority.
+ */
+const COST_GUIDE_LINK = {
+  href: "/resources/luxury-appliance-repair-cost-guide",
+  title: "Luxury appliance repair cost guide + repair-or-replace calculator",
+  teaser:
+    "Real repair-cost ranges by failure, expected service life, and an interactive repair-vs-replace tool for Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau built-ins.",
+} as const;
+
 export const BRAND_GUIDE_LINKS: Record<
   string,
   { href: string; title: string; teaser: string }[]
@@ -462,5 +474,10 @@ export const BRAND_GUIDE_LINKS: Record<
       teaser:
         "Official Thermador support numbers and channels, what factory service does well, and when an independent South Florida tech is the faster, cheaper call.",
     },
+    COST_GUIDE_LINK,
   ],
+  "sub-zero": [COST_GUIDE_LINK],
+  wolf: [COST_GUIDE_LINK],
+  miele: [COST_GUIDE_LINK],
+  viking: [COST_GUIDE_LINK],
 };

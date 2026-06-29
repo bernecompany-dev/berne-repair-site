@@ -159,6 +159,30 @@ export default function ServicesIndex() {
         </div>
       </section>
 
+      {/* Link to the luxury cost-guide data asset */}
+      <section className="container-prose py-12">
+        <Link
+          href="/resources/luxury-appliance-repair-cost-guide"
+          className="group flex flex-col gap-2 rounded-3xl border border-brand/30 bg-brand/[0.06] p-6 transition-all hover:-translate-y-px hover:border-brand/50 sm:p-8"
+        >
+          <span className="eyebrow">
+            <Gem className="mr-1.5 inline size-3.5" aria-hidden />
+            Free reference
+          </span>
+          <h2 className="heading-section mt-2 group-hover:text-brand">
+            Luxury appliance repair cost guide + repair-or-replace calculator.
+          </h2>
+          <p className="mt-2 max-w-3xl text-muted-foreground">
+            Real repair-cost ranges by failure, expected service life, and an interactive
+            repair-vs-replace tool for Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau built-ins.
+          </p>
+          <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+            Open the cost guide
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+          </span>
+        </Link>
+      </section>
+
       <Contact />
       <CTABand />
 

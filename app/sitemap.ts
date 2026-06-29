@@ -94,6 +94,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
+  // Resources hub + the Luxury Appliance Repair Cost Guide data asset (EN + ES,
+  // reciprocal hreflang). New link-magnet cluster — launch-dated lastmod so
+  // Google re-crawls it.
+  const RESOURCES_MOD = new Date("2026-06-29");
+  const resources: MetadataRoute.Sitemap = [
+    "/resources",
+    "/resources/luxury-appliance-repair-cost-guide",
+  ].flatMap((p) => [
+    { url: `${SITE_URL}${p}`, lastModified: RESOURCES_MOD, changeFrequency: "monthly" as const, priority: 0.85, alternates: { languages: esCounterpart(p) } },
+    { url: `${SITE_URL}/es${p}`, lastModified: RESOURCES_MOD, changeFrequency: "monthly" as const, priority: 0.8, alternates: { languages: esCounterpart(p) } },
+  ]);
+
   const areas: MetadataRoute.Sitemap = CITIES.flatMap((c) => {
     const p = `/areas/${c.slug}`;
     return [
@@ -274,6 +286,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...home,
     ...services,
     ...highEndServices,
+    ...resources,
     ...areas,
     ...combos,
     ...statics,

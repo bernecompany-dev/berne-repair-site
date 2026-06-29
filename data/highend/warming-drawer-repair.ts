@@ -181,7 +181,7 @@ Wolf, Sub-Zero/Wolf, Thermador, and KitchenAid parts are widely stocked and many
 
 ## When to call us
 
-If your warming drawer is cold, scorching, or dark and the breaker is on, the next step is a diagnostic. We charge a flat **$59 diagnostic** — credited to your repair, paid only if you decline. You get a written quote with part numbers and labor before any work starts. Call **(754) 345-4515** and most days we can have a tech at your door within a few hours.`,
+If your warming drawer is cold, scorching, or dark and the breaker is on, the next step is a diagnostic. We charge a flat **$59 diagnostic** — credited to your repair, paid only if you decline. You get a written quote with part numbers and labor before any work starts. If you're weighing the repair against a new unit, our [luxury appliance repair cost guide](/resources/luxury-appliance-repair-cost-guide) lays out the cost ranges and a repair-or-replace calculator for built-in brands. Call **(754) 345-4515** and most days we can have a tech at your door within a few hours.`,
   },
   es: {
     name: "Reparación de Cajones Calentadores",

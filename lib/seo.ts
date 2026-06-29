@@ -850,6 +850,91 @@ export function howToJsonLd(args: {
   };
 }
 
+/**
+ * Article schema for editorial / reference assets that are NOT blog posts
+ * (e.g. the luxury cost guide). Distinct from blogPostingJsonLd so the asset
+ * reads as a standing reference work, not a dated post. AggregateRating is
+ * intentionally NOT included (it lives only on the LocalBusiness node).
+ */
+export function articleJsonLd(args: {
+  url: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+  authorName: string;
+  authorUrl?: string;
+  locale?: "en" | "es";
+  keywords?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${args.url}#article`,
+    headline: args.headline.slice(0, 110),
+    description: args.description,
+    image: absoluteUrl("/og.png"),
+    datePublished: args.datePublished,
+    dateModified: args.dateModified,
+    mainEntityOfPage: { "@type": "WebPage", "@id": args.url },
+    author: {
+      "@type": "Person",
+      name: args.authorName,
+      url: args.authorUrl ?? absoluteUrl("/about"),
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: COMPANY.legalName,
+      logo: { "@type": "ImageObject", url: absoluteUrl("/og.png") },
+    },
+    inLanguage: args.locale === "es" ? "es-US" : "en-US",
+    ...(args.keywords && args.keywords.length > 0
+      ? { keywords: args.keywords.join(", ") }
+      : {}),
+  };
+}
+
+/**
+ * Dataset schema — declares the cost guide's tables as a citable dataset, the
+ * structured signal that makes a data asset attractive to LLMs and search.
+ */
+export function datasetJsonLd(args: {
+  url: string;
+  name: string;
+  description: string;
+  dateModified: string;
+  locale?: "en" | "es";
+  keywords?: string[];
+  variables?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": `${args.url}#dataset`,
+    name: args.name,
+    description: args.description,
+    url: args.url,
+    dateModified: args.dateModified,
+    isAccessibleForFree: true,
+    inLanguage: args.locale === "es" ? "es-US" : "en-US",
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    creator: { "@id": ORG_ID, "@type": "Organization", name: COMPANY.legalName },
+    publisher: { "@id": ORG_ID },
+    ...(args.keywords && args.keywords.length > 0
+      ? { keywords: args.keywords }
+      : {}),
+    ...(args.variables && args.variables.length > 0
+      ? {
+          variableMeasured: args.variables.map((v) => ({
+            "@type": "PropertyValue",
+            name: v,
+          })),
+        }
+      : {}),
+  };
+}
+
 export function faqJsonLd(faqs: FAQ[], locale: "en" | "es" = "en") {
   return {
     "@context": "https://schema.org",

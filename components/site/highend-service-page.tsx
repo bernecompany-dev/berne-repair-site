@@ -46,6 +46,7 @@ const T = {
     relatedLede:
       "One call, one company for the high-end equipment in your home.",
     allServices: "All repair services",
+    costGuide: "Luxury repair cost guide & repair-or-replace calculator",
     articleEyebrow: "From our service desk",
     articleHeading: "Read before you call.",
     read: "Read the guide",
@@ -69,6 +70,7 @@ const T = {
     relatedLede:
       "Una llamada, una sola compañía para el equipo de alta gama de su hogar.",
     allServices: "Todos los servicios",
+    costGuide: "Guía de costos de reparación de lujo y calculadora reparar-o-reemplazar",
     articleEyebrow: "Desde nuestro taller",
     articleHeading: "Lea antes de llamar.",
     read: "Leer la guía",
@@ -324,9 +326,15 @@ export function HighEndServicePage({
               </Link>
             ))}
           </div>
-          <p className="mt-6 text-sm text-muted-foreground">
+          <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <Link href={servicesHref} className="text-brand hover:underline">
               {t.allServices} →
+            </Link>
+            <Link
+              href={localizeHref("/resources/luxury-appliance-repair-cost-guide")}
+              className="text-brand hover:underline"
+            >
+              {t.costGuide} →
             </Link>
           </p>
         </div>
