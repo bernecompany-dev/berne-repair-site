@@ -7,7 +7,7 @@ export const reclinerRepair: HighEndService = {
   seoNoun: "power recliner",
   metaTitle: "Power & Leather Recliner Repair | South Florida",
   metaDescription:
-    "We repair power recliners and premium leather motion furniture across South Florida — dead motors, failed transformers, hand controls, USB ports, and stuck mechanisms. $59 service call. (754) 345-4515.",
+    "We repair power recliners and premium leather motion furniture across South Florida — dead motors, failed transformers, hand controls, USB ports, and stuck mechanisms. $59 diagnostic, credited to repair. (754) 345-4515.",
   cardDescription:
     "Motor, transformer, and mechanism repair for power recliners, home-theater seating, and premium leather motion furniture.",
   heroLede: "for power & premium leather motion furniture.",
@@ -97,9 +97,9 @@ export const reclinerRepair: HighEndService = {
         "Usually, yes. On premium motion furniture the most common failures — a transformer, a hand control, a disconnected harness — are inexpensive parts and a short visit, while replacing a quality leather recliner or sectional runs into the thousands. We give you a straight diagnosis and a written quote so you can decide with real numbers, not a store's pressure to buy new.",
     },
     {
-      question: "How does the $59 service call work?",
+      question: "How does the $59 diagnostic work?",
       answer:
-        "The $59 service call covers a full in-home diagnosis. If you approve the repair, the $59 is waived and you only pay for the repair itself; if you decide not to proceed, you pay just the $59. No hidden diagnostic fee on top, and no charge to quote a part we have to order. Call (754) 345-4515 to schedule.",
+        "The $59 diagnostic covers a full in-home diagnosis. If you approve the repair, the $59 is credited to your repair and you only pay for the repair itself; if you decide not to proceed, you pay just the $59. No hidden diagnostic fee on top, and no charge to quote a part we have to order. Call (754) 345-4515 to schedule.",
     },
   ],
   brands: [
@@ -173,7 +173,7 @@ We fix the motors, transformers, controls, mechanisms, and wiring — the things
 
 If you've confirmed the cord is seated at both ends and the seat is still dead — or it's grinding, stuck open, or one section of a set won't move — that's a diagnostic call. We come to your South Florida home, walk the whole chain, and fix it on the first visit whenever the part is on the truck. You can read more about our full [recliner repair](/services/recliner-repair) service, and if you're outfitting a luxury home we also handle [cold plunge and ice bath repair](/services/cold-plunge-repair).
 
-The visit is a flat **$59 service call** — waived if you approve the repair, with no separate diagnostic fee piled on top. Call **(754) 345-4515** and most days we'll have a technician at your door within hours. Don't let a furniture store talk you into replacing thousands of dollars of good leather over a ninety-dollar transformer.`,
+The visit is a flat **$59 diagnostic** — credited to your repair when you approve it, with no separate fee piled on top. Call **(754) 345-4515** and most days we'll have a technician at your door within hours. Don't let a furniture store talk you into replacing thousands of dollars of good leather over a ninety-dollar transformer.`,
   },
   es: {
     name: "Reparación de Sillones Reclinables Eléctricos",
@@ -181,7 +181,7 @@ The visit is a flat **$59 service call** — waived if you approve the repair, w
     seoNoun: "sillón reclinable eléctrico",
     metaTitle: "Reparación de Sillones Reclinables Eléctricos FL",
     metaDescription:
-      "Reparamos sillones reclinables eléctricos y muebles de movimiento en cuero premium en el sur de Florida — motores muertos, transformadores, controles y mecanismos atascados. Visita técnica de $59. (754) 345-4515.",
+      "Reparamos sillones reclinables eléctricos y muebles de movimiento en cuero premium en el sur de Florida — motores muertos, transformadores, controles y mecanismos atascados. Diagnóstico de $59, abonado a la reparación. (754) 345-4515.",
     heroLede: "para muebles reclinables eléctricos y de cuero premium.",
     longDescription:
       "Cuando un sillón reclinable eléctrico deja de moverse, casi nunca es el cuero — es un motor, un transformador, un control de mano o una conexión de cableado que falló en silencio. Diagnosticamos y reparamos la parte eléctrica y mecánica de los muebles de movimiento premium en su hogar: Ekornes Stressless, Natuzzi, American Leather, Roche Bobois, Fjords, asientos de cine en casa y seccionales donde un solo asiento quedó muerto. Llevamos actuadores, transformadores y controles de las marcas comunes y aislamos la falla en la primera visita siempre que la pieza esté en el camión.",
@@ -269,9 +269,9 @@ The visit is a flat **$59 service call** — waived if you approve the repair, w
           "Por lo general, sí. En muebles de movimiento premium las fallas más comunes — un transformador, un control de mano, un arnés desconectado — son piezas económicas y una visita corta, mientras que reemplazar un sillón o seccional de cuero de calidad cuesta miles. Le damos un diagnóstico directo y un presupuesto por escrito para que decida con números reales, no con la presión de una tienda para comprar nuevo.",
       },
       {
-        question: "¿Cómo funciona la visita técnica de $59?",
+        question: "¿Cómo funciona el diagnóstico de $59?",
         answer:
-          "La visita técnica de $59 cubre un diagnóstico completo en su hogar. Si aprueba la reparación, se elimina el cargo de $59 y solo paga la reparación; si decide no continuar, paga únicamente los $59. Sin cargo de diagnóstico oculto adicional, y sin costo por cotizar una pieza que haya que pedir. Llame al (754) 345-4515 para agendar.",
+          "El diagnóstico de $59 cubre una revisión completa en su hogar. Si aprueba la reparación, los $59 se abonan a su reparación y solo paga el trabajo; si decide no continuar, paga únicamente los $59. Sin cargo de diagnóstico oculto adicional, y sin costo por cotizar una pieza que haya que pedir. Llame al (754) 345-4515 para agendar.",
       },
     ],
   },

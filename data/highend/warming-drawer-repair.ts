@@ -7,9 +7,9 @@ export const warmingDrawerRepair: HighEndService = {
   seoNoun: "warming drawer",
   metaTitle: "Warming Drawer Repair Miami | Wolf, Miele, Thermador",
   metaDescription:
-    "Built-in warming drawer repair for Wolf, Miele, Thermador, Gaggenau & more. No heat, runs too hot, dead display, stuck glides. $59 service call. Licensed & insured.",
+    "Built-in warming drawer repair for Wolf, Miele, Thermador, Gaggenau & more. No heat, runs too hot, dead display, stuck glides. $59 diagnostic, credited to repair. Licensed & insured.",
   cardDescription:
-    "Built-in warming drawer & warming oven repair for luxury kitchens — Wolf, Miele, Thermador, Gaggenau. $59 service call.",
+    "Built-in warming drawer & warming oven repair for luxury kitchens — Wolf, Miele, Thermador, Gaggenau. $59 diagnostic, credited to repair.",
   heroLede: "for luxury built-in kitchens.",
   longDescription:
     "A warming drawer is a small appliance with a big job: holding a plated dinner or a proofed dough at an exact temperature without drying it out. When it stops heating, runs too hot, or the panel goes dark, the whole rhythm of the kitchen breaks. We repair panel-ready and stainless built-in warming drawers and warming ovens — Wolf WWD, Miele ESW, Thermador WD/WDC, Gaggenau WS, Dacor, Bosch, KitchenAid, Monogram, and Viking — diagnosing on-site and finishing on the first visit whenever the part is on the truck. The cabinetry around these units is custom; we work clean and we protect the panel.",
@@ -97,9 +97,9 @@ export const warmingDrawerRepair: HighEndService = {
         "Yes. Wolf, Sub-Zero, Thermador, and KitchenAid parts are widely available and many are on our trucks. Miele ESW, Gaggenau WS, and Dacor parts are ordered direct from the distributor — usually a 2–4 business-day wait. We give you the exact part number and price up front so there are no surprises.",
     },
     {
-      question: "How much does a warming drawer service call cost?",
+      question: "How much does a warming drawer diagnostic cost?",
       answer:
-        "Our diagnostic visit is a flat $59 service call — and it's waived if you approve the repair, so you only pay it if you decide not to proceed. You get a firm written quote with parts and labor before any work begins. No diagnostic fee stacked on top, no upsell.",
+        "Our diagnostic visit is a flat $59 — credited to your repair, so you only pay it if you decide not to proceed. You get a firm written quote with parts and labor before any work begins. No diagnostic fee stacked on top, no upsell.",
     },
   ],
   brands: [
@@ -173,7 +173,7 @@ So we confirm 120V at the unit's junction box first, every time. Only if power i
 
 ## The drawer itself
 
-Two of the most common warming-drawer service calls aren't about heat at all. The telescopic glides bake their grease hard and the drawer drags or grinds — a clean and high-temp re-lube, or a slide set if a bearing is shot. And the humidity slide that lets you choose damp or dry seizes up, so bread proofs wrong or plates sweat. Both are usually a clean-and-adjust that finishes on the first visit.
+Two of the most common warming-drawer repairs aren't about heat at all. The telescopic glides bake their grease hard and the drawer drags or grinds — a clean and high-temp re-lube, or a slide set if a bearing is shot. And the humidity slide that lets you choose damp or dry seizes up, so bread proofs wrong or plates sweat. Both are usually a clean-and-adjust that finishes on the first visit.
 
 ## Parts and the panel-ready question
 
@@ -181,7 +181,7 @@ Wolf, Sub-Zero/Wolf, Thermador, and KitchenAid parts are widely stocked and many
 
 ## When to call us
 
-If your warming drawer is cold, scorching, or dark and the breaker is on, the next step is a diagnostic. We charge a flat **$59 service call** — waived if you approve the repair, paid only if you decline. You get a written quote with part numbers and labor before any work starts. Call **(754) 345-4515** and most days we can have a tech at your door within a few hours.`,
+If your warming drawer is cold, scorching, or dark and the breaker is on, the next step is a diagnostic. We charge a flat **$59 diagnostic** — credited to your repair, paid only if you decline. You get a written quote with part numbers and labor before any work starts. Call **(754) 345-4515** and most days we can have a tech at your door within a few hours.`,
   },
   es: {
     name: "Reparación de Cajones Calentadores",
@@ -189,7 +189,7 @@ If your warming drawer is cold, scorching, or dark and the breaker is on, the ne
     seoNoun: "cajón calentador",
     metaTitle: "Reparación de Cajón Calentador Miami | Wolf, Miele",
     metaDescription:
-      "Reparación de cajones calentadores empotrados: Wolf, Miele, Thermador, Gaggenau y más. No calienta, calienta de más, panel apagado, rieles trabados. Visita técnica de $59. Con licencia y seguro.",
+      "Reparación de cajones calentadores empotrados: Wolf, Miele, Thermador, Gaggenau y más. No calienta, calienta de más, panel apagado, rieles trabados. Diagnóstico de $59, abonado a la reparación. Con licencia y seguro.",
     heroLede: "para cocinas empotradas de lujo.",
     longDescription:
       "Un cajón calentador es un electrodoméstico pequeño con una tarea importante: mantener un plato servido o una masa fermentada a una temperatura exacta sin que se reseque. Cuando deja de calentar, calienta de más o el panel se apaga, se rompe todo el ritmo de la cocina. Reparamos cajones y hornos calentadores empotrados, con frente de acero o con frente personalizado (panel-ready) — Wolf WWD, Miele ESW, Thermador WD/WDC, Gaggenau WS, Dacor, Bosch, KitchenAid, Monogram y Viking — diagnosticando en sitio y terminando en la primera visita siempre que la pieza esté en el camión. La carpintería alrededor de estas unidades es a medida; trabajamos limpio y protegemos el frente.",
@@ -277,9 +277,9 @@ If your warming drawer is cold, scorching, or dark and the breaker is on, the ne
           "Sí. Las piezas Wolf, Sub-Zero, Thermador y KitchenAid están muy disponibles y muchas van en nuestros camiones. Las piezas Miele ESW, Gaggenau WS y Dacor se piden directo al distribuidor — normalmente de 2 a 4 días hábiles. Le damos el número de pieza exacto y el precio por adelantado, sin sorpresas.",
       },
       {
-        question: "¿Cuánto cuesta una visita técnica para el cajón calentador?",
+        question: "¿Cuánto cuesta el diagnóstico del cajón calentador?",
         answer:
-          "Nuestra visita de diagnóstico es una tarifa fija de $59 — y se descuenta si aprueba la reparación, así que solo la paga si decide no continuar. Recibe un presupuesto firme por escrito con piezas y mano de obra antes de comenzar. Sin tarifa de diagnóstico adicional, sin ventas forzadas.",
+          "Nuestra visita de diagnóstico es una tarifa fija de $59 — abonada a la reparación, así que solo la paga si decide no continuar. Recibe un presupuesto firme por escrito con piezas y mano de obra antes de comenzar. Sin tarifa de diagnóstico adicional, sin ventas forzadas.",
       },
     ],
   },

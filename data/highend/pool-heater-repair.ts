@@ -9,11 +9,11 @@ export const poolHeaterRepair: HighEndService = {
   name: "Pool Heater Repair",
   shortName: "Pool Heater",
   seoNoun: "pool heater",
-  metaTitle: "Pool Heater Repair Miami | Gas & Heat Pump | $59 Call",
+  metaTitle: "Pool Heater Repair Miami | Gas & Heat Pump | $59 Diagnostic",
   metaDescription:
-    "Same-day pool & spa heater repair across South Florida — gas and heat-pump. Pentair, Hayward, Raypak, Jandy, AquaCal. Salt-air corrosion specialists. $59 service call, EPA-608 certified.",
+    "Priority pool & spa heater repair across South Florida — gas and heat-pump. Pentair, Hayward, Raypak, Jandy, AquaCal. Salt-air corrosion specialists. $59 diagnostic, credited to repair. EPA-608 certified.",
   cardDescription:
-    "Gas and heat-pump pool & spa heater repair for South Florida's luxury homes. $59 service call.",
+    "Gas and heat-pump pool & spa heater repair for South Florida's luxury homes. $59 diagnostic, credited to repair.",
   heroLede: "for South Florida pools & spas.",
   longDescription:
     "When the spa won't fire or the heat pump runs all day without touching the water, we diagnose and fix it on the first visit whenever parts allow. We service both worlds — gas heaters (Pentair MasterTemp, Hayward Universal H-Series, Raypak Digital) for fast spa heat, and the heat pumps (Pentair UltraTemp, Hayward HeatPro, AquaCal, Gulfstream) that dominate South Florida pools. Cupronickel and titanium heat exchangers, ignition controls, pressure switches, defrost boards, and sealed-system work all under one truck.",
@@ -94,7 +94,7 @@ export const poolHeaterRepair: HighEndService = {
     {
       question: "How much does a pool heater diagnostic cost?",
       answer:
-        "A flat $59 service call. That covers the tech coming out and fully diagnosing the heater — and it's free if you approve the repair. No separate diagnostic fee, no surprise add-ons. You get a clear quote before any work starts.",
+        "A flat $59 diagnostic. That covers the tech coming out and fully diagnosing the heater — and it's credited to your repair if you approve it. No separate diagnostic fee, no surprise add-ons. You get a clear quote before any work starts.",
     },
     {
       question: "Why do pool heaters corrode so fast in coastal Florida?",
@@ -177,7 +177,7 @@ The defense is boring but it works: keep pH at 7.4-7.6 and alkalinity in range, 
 
 ## When to call us
 
-If you've checked flow, valves, and the filter and the heater still won't fire or won't warm the water, the next step is a diagnostic. We charge a flat **$59 service call — and it's free if you approve the repair**, with no separate diagnostic fee stacked on top. We service every major brand used in South Florida: Pentair, Hayward, Raypak, Jandy/Zodiac, AquaCal, and Gulfstream, gas and heat-pump alike.
+If you've checked flow, valves, and the filter and the heater still won't fire or won't warm the water, the next step is a diagnostic. We charge a flat **$59 diagnostic — credited to your repair when you approve it**, with no separate fee stacked on top. We service every major brand used in South Florida: Pentair, Hayward, Raypak, Jandy/Zodiac, AquaCal, and Gulfstream, gas and heat-pump alike.
 
 If your luxury wellness setup runs deeper than the pool, we also handle the rest of it — see our [cold plunge and ice bath repair](/services/cold-plunge-repair) for chiller and temperature-control work.
 
@@ -189,7 +189,7 @@ Call Berne Appliance Repair at **(754) 345-4515**. Most days we can have a tech 
     seoNoun: "calentador de piscina",
     metaTitle: "Reparación de Calentadores de Piscina | Gas y Bomba",
     metaDescription:
-      "Reparación el mismo día de calentadores de piscina y spa en el sur de Florida — gas y bomba de calor. Pentair, Hayward, Raypak, AquaCal. Especialistas en corrosión por salitre. Visita técnica de $59, certificación EPA-608.",
+      "Reparación prioritaria de calentadores de piscina y spa en el sur de Florida — gas y bomba de calor. Pentair, Hayward, Raypak, AquaCal. Especialistas en corrosión por salitre. Diagnóstico de $59, abonado a la reparación. Certificación EPA-608.",
     heroLede: "para piscinas y spas del sur de Florida.",
     longDescription:
       "Cuando el spa no enciende o la bomba de calor funciona todo el día sin calentar el agua, diagnosticamos y reparamos en la primera visita siempre que las piezas lo permitan. Trabajamos los dos mundos — calentadores a gas (Pentair MasterTemp, Hayward Universal H-Series, Raypak Digital) para calor rápido de spa, y las bombas de calor (Pentair UltraTemp, Hayward HeatPro, AquaCal, Gulfstream) que dominan las piscinas del sur de Florida. Intercambiadores de calor de cuproníquel y titanio, controles de encendido, presostatos, placas de descongelación y trabajo de sistema sellado, todo en un mismo camión.",
@@ -270,7 +270,7 @@ Call Berne Appliance Repair at **(754) 345-4515**. Most days we can have a tech 
       {
         question: "¿Cuánto cuesta el diagnóstico de un calentador de piscina?",
         answer:
-          "Una visita técnica de $59 fijos. Eso cubre que el técnico vaya y diagnostique el calentador por completo — y es gratis si usted aprueba la reparación. Sin cargo de diagnóstico aparte, sin sorpresas. Recibe una cotización clara antes de empezar cualquier trabajo.",
+          "Un diagnóstico de $59 fijos. Eso cubre que el técnico vaya y diagnostique el calentador por completo — y se abona a su reparación si usted la aprueba. Sin cargo de diagnóstico aparte, sin sorpresas. Recibe una cotización clara antes de empezar cualquier trabajo.",
       },
       {
         question: "¿Por qué se corroen tan rápido los calentadores de piscina en la Florida costera?",

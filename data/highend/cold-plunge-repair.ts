@@ -7,9 +7,9 @@ export const coldPlungeRepair: HighEndService = {
   seoNoun: "cold plunge",
   metaTitle: "Cold Plunge Repair Miami | Chiller & Sealed-System Pros",
   metaDescription:
-    "Cold plunge & ice-bath chiller not cooling? EPA 608-certified sealed-system repair for Plunge, Renu Therapy, Blue Cube & more across South Florida. $59 service call.",
+    "Cold plunge & ice-bath chiller not cooling? EPA 608-certified sealed-system repair for Plunge, Renu Therapy, Blue Cube & more across South Florida. $59 diagnostic, credited to repair.",
   cardDescription:
-    "Chiller, pump, and sealed-system repair for home cold plunges and ice baths. $59 service call.",
+    "Chiller, pump, and sealed-system repair for home cold plunges and ice baths. $59 diagnostic, credited to repair.",
   heroLede: "for South Florida's wellness rooms.",
   longDescription:
     "A cold plunge is precision refrigeration in a beautiful shell — a sealed compressor system pushing 37-50°F water against the Florida heat. When yours stops reaching setpoint, frosts over, trips its GFCI, or stops circulating, our EPA 608 Universal technicians diagnose the chiller the same way we diagnose a built-in Sub-Zero. We service Plunge, Renu Therapy, Blue Cube, Penguin Chillers, and standalone water chillers and heat-pumps across Miami-Dade, Broward, and Palm Beach.",
@@ -91,7 +91,7 @@ export const coldPlungeRepair: HighEndService = {
     {
       question: "How much does a cold plunge repair visit cost?",
       answer:
-        "Our diagnostic is a flat $59 service call — and it's free when you approve the repair, charged only if you decline. You get a written diagnosis with parts and labor before any work starts. No hidden diagnostic fee stacked on top.",
+        "Our diagnostic is a flat $59 — and it's free when you approve the repair, charged only if you decline. You get a written diagnosis with parts and labor before any work starts. No hidden diagnostic fee stacked on top.",
     },
     {
       question: "Are you certified to work on the refrigerant / sealed system?",
@@ -180,7 +180,7 @@ We'll always tell you straight. If a compressor has an internally shorted or gro
 
 ## Book a diagnosis
 
-If your cold plunge won't reach temperature, frosts over, or trips its breaker, get a real refrigeration diagnosis before you spend five figures replacing it. Our diagnostic is a flat **$59 service call** — free when you approve the repair, charged only if you decline — and you get a written quote with parts and labor before any work begins. Call **(754) 345-4515** and we'll have an EPA 608-certified tech at your South Florida door, most days within a few hours.`,
+If your cold plunge won't reach temperature, frosts over, or trips its breaker, get a real refrigeration diagnosis before you spend five figures replacing it. Our diagnostic is a flat **$59** — free when you approve the repair, charged only if you decline — and you get a written quote with parts and labor before any work begins. Call **(754) 345-4515** and we'll have an EPA 608-certified tech at your South Florida door, most days within a few hours.`,
   },
   es: {
     name: "Reparación de Baños de Inmersión Fría",
@@ -188,7 +188,7 @@ If your cold plunge won't reach temperature, frosts over, or trips its breaker, 
     seoNoun: "baño de inmersión fría",
     metaTitle: "Reparación de Tinas de Inmersión Fría y Chillers",
     metaDescription:
-      "¿El chiller de tu baño de hielo no enfría? Reparación del sistema sellado con certificación EPA 608 para Plunge, Renu Therapy, Blue Cube y más en el sur de Florida. Visita técnica de $59.",
+      "¿El chiller de tu baño de hielo no enfría? Reparación del sistema sellado con certificación EPA 608 para Plunge, Renu Therapy, Blue Cube y más en el sur de Florida. Diagnóstico de $59, abonado a la reparación.",
     heroLede: "para las salas de bienestar del sur de Florida.",
     longDescription:
       "Un baño de inmersión fría es refrigeración de precisión dentro de una carcasa elegante: un sistema sellado con compresor que mantiene el agua entre 37 y 50°F contra el calor de Florida. Cuando deja de alcanzar la temperatura, se llena de escarcha, dispara el GFCI o deja de circular, nuestros técnicos con certificación EPA 608 Universal lo diagnostican igual que un Sub-Zero empotrado. Damos servicio a Plunge, Renu Therapy, Blue Cube, Penguin Chillers y chillers de agua independientes en Miami-Dade, Broward y Palm Beach.",
@@ -270,7 +270,7 @@ If your cold plunge won't reach temperature, frosts over, or trips its breaker, 
       {
         question: "¿Cuánto cuesta una visita de reparación?",
         answer:
-          "Nuestro diagnóstico es una visita técnica de $59 — y es gratis cuando apruebas la reparación, se cobra solo si la rechazas. Recibes un diagnóstico por escrito con piezas y mano de obra antes de empezar cualquier trabajo. Sin cargos de diagnóstico ocultos encima.",
+          "Nuestro diagnóstico es una tarifa fija de $59 — y es gratis cuando apruebas la reparación, se cobra solo si la rechazas. Recibes un diagnóstico por escrito con piezas y mano de obra antes de empezar cualquier trabajo. Sin cargos de diagnóstico ocultos encima.",
       },
       {
         question: "¿Están certificados para trabajar el refrigerante / sistema sellado?",

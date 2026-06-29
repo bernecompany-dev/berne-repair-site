@@ -5,9 +5,9 @@ export const electricSaunaRepair: HighEndService = {
   name: "Electric Sauna Repair",
   shortName: "Sauna",
   seoNoun: "electric sauna",
-  metaTitle: "Electric Sauna Repair, South Florida | $59 Call",
+  metaTitle: "Electric Sauna Repair, South Florida | $59 Diagnostic",
   metaDescription:
-    "Home electric and infrared sauna repair across Miami-Dade, Broward, and Palm Beach. Tylo, Harvia, Finnleo, Klafs heaters, controls, and elements. $59 service call, free with repair.",
+    "Home electric and infrared sauna repair across Miami-Dade, Broward, and Palm Beach. Tylo, Harvia, Finnleo, Klafs heaters, controls, and elements. $59 diagnostic, credited to repair.",
   cardDescription:
     "Heater, element, and control repair for electric and infrared home saunas. Tylo, Harvia, Finnleo, Klafs.",
   heroLede: "for South Florida luxury homes.",
@@ -17,9 +17,9 @@ export const electricSaunaRepair: HighEndService = {
     opener:
       "A home sauna is a small thing that lives inside an expensive room, and most repair guys treat it like a water heater. We do not.",
     body:
-      "I have had techs walk into a Klafs cabin in a Fisher Island master suite where the cedar alone cost more than the heater, the control, and the labor combined. So we drop cloths first, pull the heater guard without scratching the bench, and ohm-test the element before we touch anything else. Nine times out of ten an electric sauna that will not heat is one failed heater element or a contactor that stopped pulling in, and we carry the common Tylo and Harvia parts to make that a one-visit fix. The honest part: Klafs, Sauna360, and some older Finnleo controls are slow to source in the US, so when a board is genuinely dead we tell you it is a two-to-five-day order, not a same-day miracle.",
+      "I have had techs walk into a Klafs cabin in a Fisher Island master suite where the cedar alone cost more than the heater, the control, and the labor combined. So we drop cloths first, pull the heater guard without scratching the bench, and ohm-test the element before we touch anything else. Nine times out of ten an electric sauna that will not heat is one failed heater element or a contactor that stopped pulling in, and we carry the common Tylo and Harvia parts to make that a one-visit fix. The honest part: Klafs, Sauna360, and some older Finnleo controls are slow to source in the US, so when a board is genuinely dead we tell you it is a two-to-five-day order, not an overnight miracle.",
     closer:
-      "You get a tech who respects the room, a real diagnosis, and a straight answer on repair versus replace — the same $59 service call, free with the repair, that the rest of the company runs on.",
+      "You get a tech who respects the room, a real diagnosis, and a straight answer on repair versus replace — the same $59 diagnostic, credited to the repair, that the rest of the company runs on.",
   },
   diagnosisTitle: "How we diagnose & fix electric saunas",
   diagnosisIntro:
@@ -89,9 +89,9 @@ export const electricSaunaRepair: HighEndService = {
         "Tylo (Tylo), Harvia, Finnleo, Klafs, Sauna360, Amerec, Helo, and Saunatec, plus the common infrared cabin lines. We stock the fast-moving Tylo and Harvia elements, contactors, and sensors. Klafs, Sauna360, Helo, and older Finnleo controls are genuine niche parts and can take a few business days to source — we tell you the timeline before you commit.",
     },
     {
-      question: "How does the $59 service call work?",
+      question: "How does the $59 diagnostic work?",
       answer:
-        "A flat $59 brings a real technician to your home to diagnose the sauna with a meter — not a guess. If you approve the repair, the $59 is free, folded into the job. If you decline, you pay only the $59 and keep a written quote with part numbers. Repairs carry our 90-day warranty, and same-day service is often available across Miami-Dade, Broward, and Palm Beach.",
+        "A flat $59 brings a real technician to your home to diagnose the sauna with a meter — not a guess. If you approve the repair, the $59 is credited into the job. If you decline, you pay only the $59 and keep a written quote with part numbers. Repairs carry our 90-day warranty, and white-glove priority service is often available across Miami-Dade, Broward, and Palm Beach.",
     },
     {
       question: "My sauna keeps tripping the breaker or GFCI — is that dangerous?",
@@ -165,7 +165,7 @@ Do not keep resetting the breaker, and never let anyone "solve" it by defeating 
 
 On Tylo and Harvia systems, a dead or frozen panel is usually not the panel — it is the temperature sensor or its wiring reading out of range, which forces the control into a protective lockout. A failed sensor is a cheap, fast swap. After our summer storm season we also see boards killed by surges; a whole-home surge protector at the panel is cheap insurance for any premium sauna or spa.
 
-Here is the honest part about parts. Tylo and Harvia boards we can source quickly. Klafs, Sauna360, Helo, and some older Finnleo controls are genuine niche items and can take two to five business days to land in the US. When a board is truly dead, we tell you the real timeline rather than promise a same-day fix we can't keep.
+Here is the honest part about parts. Tylo and Harvia boards we can source quickly. Klafs, Sauna360, Helo, and some older Finnleo controls are genuine niche items and can take two to five business days to land in the US. When a board is truly dead, we tell you the real timeline rather than promise an overnight fix we can't keep.
 
 ## Infrared cabins are a different animal
 
@@ -179,15 +179,15 @@ If you live near the water in Bal Harbour, Fisher Island, Sunny Isles, or Key Bi
 
 You can safely confirm the breaker is on, look for a fault code on the panel, and check that the stones are loose, not jammed against the elements. Anything past that means opening a high-current heater, and on a sauna that lives inside finished cedar, that is our job.
 
-If your sauna won't heat, trips the breaker, or locks out, a real diagnosis is one phone call. We charge a flat $59 service call — a technician comes out, tests the heater with a meter, and gives you a straight answer. Approve the repair and the $59 is free, folded into the job; decline and you owe only the $59 and keep a written quote. Repairs carry a 90-day warranty, and same-day service is often available across Miami-Dade, Broward, and Palm Beach. Call (754) 345-4515.`,
+If your sauna won't heat, trips the breaker, or locks out, a real diagnosis is one phone call. We charge a flat $59 diagnostic — a technician comes out, tests the heater with a meter, and gives you a straight answer. Approve the repair and the $59 is credited into the job; decline and you owe only the $59 and keep a written quote. Repairs carry a 90-day warranty, and white-glove priority service is often available across Miami-Dade, Broward, and Palm Beach. Call (754) 345-4515.`,
   },
   es: {
     name: "Reparación de Saunas Eléctricas",
     shortName: "Sauna",
     seoNoun: "sauna eléctrica",
-    metaTitle: "Reparación de Saunas Eléctricas | Visita $59",
+    metaTitle: "Reparación de Saunas Eléctricas | Diagnóstico $59",
     metaDescription:
-      "Reparación de saunas eléctricas e infrarrojas en Miami-Dade, Broward y Palm Beach. Calentadores, resistencias y controles Tylo, Harvia, Finnleo y Klafs. Visita técnica de $59, gratis con la reparación.",
+      "Reparación de saunas eléctricas e infrarrojas en Miami-Dade, Broward y Palm Beach. Calentadores, resistencias y controles Tylo, Harvia, Finnleo y Klafs. Diagnóstico de $59, abonado a la reparación.",
     heroLede: "en hogares de lujo del sur de Florida.",
     longDescription:
       "Cuando una sauna seca se enfría o una cabina infrarroja dispara el breaker, el problema casi siempre es la resistencia del calentador, un contactor o la placa de control — no la cabina en sí. Reparamos calentadores de sauna eléctricos, emisores infrarrojos de carbono y cerámica, paneles de control y circuitos de seguridad de alto límite para Tylo, Harvia, Finnleo, Klafs y las demás marcas especializadas que se encuentran en las casas de Bal Harbour, Coral Gables y Boca. Trabajo cuidadoso y limpio dentro de habitaciones acabadas en cedro y hemlock, teniendo en cuenta desde la primera visita la corrosión por aire salino de la vida costera.",
@@ -195,9 +195,9 @@ If your sauna won't heat, trips the breaker, or locks out, a real diagnosis is o
       opener:
         "Una sauna en casa es algo pequeño que vive dentro de una habitación cara, y la mayoría de los técnicos la tratan como un calentador de agua. Nosotros no.",
       body:
-        "He tenido técnicos que entran a una cabina Klafs en una suite principal de Fisher Island donde solo el cedro costó más que el calentador, el control y la mano de obra juntos. Por eso ponemos cobertores primero, retiramos la rejilla del calentador sin rayar la banca y medimos la resistencia con el multímetro antes de tocar nada más. Nueve de cada diez veces, una sauna eléctrica que no calienta es una sola resistencia dañada o un contactor que dejó de activarse, y llevamos las piezas comunes de Tylo y Harvia para resolverlo en una sola visita. La parte honesta: los controles de Klafs, Sauna360 y algunos Finnleo antiguos tardan en conseguirse en EE. UU., así que cuando una placa está realmente muerta le decimos que es un pedido de dos a cinco días, no un milagro el mismo día.",
+        "He tenido técnicos que entran a una cabina Klafs en una suite principal de Fisher Island donde solo el cedro costó más que el calentador, el control y la mano de obra juntos. Por eso ponemos cobertores primero, retiramos la rejilla del calentador sin rayar la banca y medimos la resistencia con el multímetro antes de tocar nada más. Nueve de cada diez veces, una sauna eléctrica que no calienta es una sola resistencia dañada o un contactor que dejó de activarse, y llevamos las piezas comunes de Tylo y Harvia para resolverlo en una sola visita. La parte honesta: los controles de Klafs, Sauna360 y algunos Finnleo antiguos tardan en conseguirse en EE. UU., así que cuando una placa está realmente muerta le decimos que es un pedido de dos a cinco días, no un milagro de la noche a la mañana.",
       closer:
-        "Recibe un técnico que respeta la habitación, un diagnóstico real y una respuesta directa sobre reparar o reemplazar — con la misma visita técnica de $59, gratis con la reparación, que rige en toda la empresa.",
+        "Recibe un técnico que respeta la habitación, un diagnóstico real y una respuesta directa sobre reparar o reemplazar — con el mismo diagnóstico de $59, abonado a la reparación, que rige en toda la empresa.",
     },
     diagnosisTitle: "Cómo diagnosticamos y reparamos saunas",
     diagnosisIntro:
@@ -267,9 +267,9 @@ If your sauna won't heat, trips the breaker, or locks out, a real diagnosis is o
           "Tylo, Harvia, Finnleo, Klafs, Sauna360, Amerec, Helo y Saunatec, además de las líneas comunes de cabinas infrarrojas. Tenemos en existencia las resistencias, contactores y sensores de Tylo y Harvia de mayor rotación. Los controles Klafs, Sauna360, Helo y Finnleo antiguos son piezas especializadas y pueden tardar varios días hábiles — le indicamos el plazo antes de comprometerse.",
       },
       {
-        question: "¿Cómo funciona la visita técnica de $59?",
+        question: "¿Cómo funciona el diagnóstico de $59?",
         answer:
-          "Una tarifa fija de $59 lleva a un técnico real a su casa para diagnosticar la sauna con un multímetro — no a la adivinanza. Si aprueba la reparación, los $59 son gratis, incluidos en el trabajo. Si la rechaza, paga solo los $59 y se queda con un presupuesto por escrito con números de pieza. Las reparaciones tienen garantía de 90 días, y a menudo hay servicio el mismo día en Miami-Dade, Broward y Palm Beach.",
+          "Una tarifa fija de $59 lleva a un técnico real a su casa para diagnosticar la sauna con un multímetro — no a la adivinanza. Si aprueba la reparación, los $59 se abonan a la reparación, incluidos en el trabajo. Si la rechaza, paga solo los $59 y se queda con un presupuesto por escrito con números de pieza. Las reparaciones tienen garantía de 90 días, y a menudo hay servicio prioritario en Miami-Dade, Broward y Palm Beach.",
       },
       {
         question: "Mi sauna sigue disparando el breaker o el GFCI — ¿es peligroso?",

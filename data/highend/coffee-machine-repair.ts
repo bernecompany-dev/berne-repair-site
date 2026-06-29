@@ -14,7 +14,7 @@ export const coffeeMachineRepair: HighEndService = {
   seoNoun: "coffee machine",
   metaTitle: "Coffee Machine Repair — Built-In & Premium | Berne",
   metaDescription:
-    "Built-in & premium coffee machine repair across South Florida — Miele CVA, Gaggenau, Jura, La Marzocco, Wolf, Thermador. Descaling, brew units, pumps. $59 service call.",
+    "Built-in & premium coffee machine repair across South Florida — Miele CVA, Gaggenau, Jura, La Marzocco, Wolf, Thermador. Descaling, brew units, pumps. $59 diagnostic, credited to repair.",
   cardDescription:
     "Built-in & prosumer espresso machine repair — Miele, Gaggenau, Jura, La Marzocco. Hard-water descaling specialists.",
   heroLede: "for built-in & premium machines.",
@@ -101,12 +101,12 @@ export const coffeeMachineRepair: HighEndService = {
     {
       question: "Which coffee machine brands do you service?",
       answer:
-        "Miele, Gaggenau, Jura, La Marzocco, Wolf, Thermador, Nespresso (Momento and built-in), and prosumer Breville/Sage Dual Boiler and Oracle. We focus on premium and built-in machines — we don't service basic drip coffee makers, because those aren't worth a service call.",
+        "Miele, Gaggenau, Jura, La Marzocco, Wolf, Thermador, Nespresso (Momento and built-in), and prosumer Breville/Sage Dual Boiler and Oracle. We focus on premium and built-in machines — we don't service basic drip coffee makers, because those aren't worth a diagnostic visit.",
     },
     {
-      question: "How much does a service call cost?",
+      question: "How much does the diagnostic cost?",
       answer:
-        "$59 for the diagnostic visit — and it's free when you approve the repair. You only pay the $59 if you decline the work. We give you a written quote with parts and labor up front, no surprise fees on top of the call. Phone (754) 345-4515.",
+        "$59 for the diagnostic visit — credited to your repair when you approve it. You only pay the $59 if you decline the work. We give you a written quote with parts and labor up front, no surprise fees on top. Phone (754) 345-4515.",
     },
   ],
   brands: [
@@ -181,7 +181,7 @@ You can't change the aquifer, but you can buy your machine years. Use filtered o
 
 If your built-in machine keeps asking to descale, pours thin and cool, leaks under the cabinet, or has simply quit, it's almost certainly worth saving — these machines are built to be rebuilt. We do [premium coffee machine repair](/services/coffee-machine-repair) on built-in and plumbed Miele, Gaggenau, Jura, La Marzocco, Wolf, Thermador, and prosumer Breville/Sage machines across South Florida.
 
-The service call is $59 — and it's free when you approve the repair. You get a written quote with parts and labor up front, no surprise fees. Call (754) 345-4515 and most days we can have a tech at your door within a few hours.`,
+The diagnostic is $59 — credited to your repair when you approve it. You get a written quote with parts and labor up front, no surprise fees. Call (754) 345-4515 and most days we can have a tech at your door within a few hours.`,
   },
   es: {
     name: "Reparación de Cafeteras",
@@ -189,7 +189,7 @@ The service call is $59 — and it's free when you approve the repair. You get a
     seoNoun: "cafetera",
     metaTitle: "Reparación de Cafeteras Empotradas y Premium",
     metaDescription:
-      "Reparación de cafeteras empotradas y premium en el sur de Florida — Miele CVA, Gaggenau, Jura, La Marzocco, Wolf, Thermador. Descalcificación, grupos de café, bombas. Visita técnica de $59.",
+      "Reparación de cafeteras empotradas y premium en el sur de Florida — Miele CVA, Gaggenau, Jura, La Marzocco, Wolf, Thermador. Descalcificación, grupos de café, bombas. Diagnóstico de $59, abonado a la reparación.",
     heroLede: "para cafeteras empotradas y premium.",
     longDescription:
       "Reparamos las máquinas que cuestan tanto como un auto pequeño — cafeteras empotradas y conectadas a la red de agua como las Miele CVA y Gaggenau serie 200/400, las superautomáticas Jura Giga y línea Z, La Marzocco Linea Mini y GS3, los sistemas de café Wolf y Thermador, y las máquinas de gama profesional Breville/Sage Dual Boiler y Oracle. El agua dura del sur de Florida es lo que más daña estas máquinas: la cal obstruye la caldera, traba el grupo de café y tapa la electroválvula de 3 vías. Descalcificamos, reconstruimos, resellamos y recalibramos en sitio para que una máquina de $5,000 siga preparando café en lugar de acabar en la basura.",
@@ -274,12 +274,12 @@ The service call is $59 — and it's free when you approve the repair. You get a
       {
         question: "¿Qué marcas de cafeteras reparan?",
         answer:
-          "Miele, Gaggenau, Jura, La Marzocco, Wolf, Thermador, Nespresso (Momento y empotradas) y las profesionales Breville/Sage Dual Boiler y Oracle. Nos enfocamos en máquinas premium y empotradas — no reparamos cafeteras de goteo básicas, porque esas no justifican una visita técnica.",
+          "Miele, Gaggenau, Jura, La Marzocco, Wolf, Thermador, Nespresso (Momento y empotradas) y las profesionales Breville/Sage Dual Boiler y Oracle. Nos enfocamos en máquinas premium y empotradas — no reparamos cafeteras de goteo básicas, porque esas no justifican una visita de diagnóstico.",
       },
       {
-        question: "¿Cuánto cuesta la visita técnica?",
+        question: "¿Cuánto cuesta el diagnóstico?",
         answer:
-          "$59 por la visita de diagnóstico — y es gratis cuando aprueba la reparación. Solo paga los $59 si decide no hacer el trabajo. Le damos un presupuesto por escrito con piezas y mano de obra por adelantado, sin cargos sorpresa. Teléfono (754) 345-4515.",
+          "$59 por la visita de diagnóstico — abonado a su reparación cuando la aprueba. Solo paga los $59 si decide no hacer el trabajo. Le damos un presupuesto por escrito con piezas y mano de obra por adelantado, sin cargos sorpresa. Teléfono (754) 345-4515.",
       },
     ],
   },

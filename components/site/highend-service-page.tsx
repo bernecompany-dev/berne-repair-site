@@ -30,9 +30,8 @@ type Locale = "en" | "es";
 
 const T = {
   en: {
-    sameDay: "Same-day available",
+    sameDay: "White-glove priority",
     warranty: "90-day warranty",
-    serviceCall: "service call",
     home: "Home",
     services: "Services",
     issuesEyebrow: "What we see most",
@@ -53,9 +52,8 @@ const T = {
     faqSuffix: "— questions we get",
   },
   es: {
-    sameDay: "Disponible el mismo día",
+    sameDay: "Servicio prioritario",
     warranty: "Garantía 90 días",
-    serviceCall: "Visita técnica",
     home: "Inicio",
     services: "Servicios",
     issuesEyebrow: "Lo que más vemos",
@@ -156,8 +154,8 @@ export function HighEndServicePage({
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <BadgeDollarSign className="size-3.5" aria-hidden />
               {locale === "es"
-                ? `${t.serviceCall} $${COMPANY.serviceCallPrice}`
-                : `$${COMPANY.serviceCallPrice} ${t.serviceCall}`}
+                ? `Diagnóstico $${COMPANY.serviceCallPrice}, abonado a la reparación`
+                : `$${COMPANY.serviceCallPrice} diagnostic, credited to repair`}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
