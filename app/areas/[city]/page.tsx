@@ -55,9 +55,9 @@ type Props = { params: Promise<{ city: string }> };
  */
 const CITY_META_OVERRIDES: Record<string, { title: string; description: string }> = {
   miami: {
-    title: "Appliance Repair Miami, FL — Same-Day Service · $59 Call",
+    title: "Luxury Appliance Repair Miami, FL — White-Glove Service",
     description:
-      "Same-day appliance repair anywhere in Miami — Brickell to Little Havana. $59 service call, 18 licensed techs, 90-day warranty. Call by noon, fixed today.",
+      "Factory-trained, white-glove appliance repair across Miami — Brickell towers to Coral Gables estates. Sub-Zero, Wolf, Miele & Thermador specialists. 90-day warranty.",
   },
 };
 
@@ -66,10 +66,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = CITY_BY_SLUG[slug];
   if (!city) return {};
   const override = CITY_META_OVERRIDES[slug];
-  const title = override?.title ?? `Appliance Repair in ${city.name} · $${COMPANY.serviceCallPrice} Service Call`;
+  const title = override?.title ?? `Luxury Appliance Repair in ${city.name} · White-Glove Service`;
   const description =
     override?.description ??
-    `Same-day appliance repair in ${city.name}, ${city.county} County. $${COMPANY.serviceCallPrice} service call. ${COMPANY.socialProof.technicians} licensed technicians. Sub-Zero, Wolf, Viking, Bosch and every major brand.`;
+    `Factory-trained, white-glove appliance repair in ${city.name}, ${city.county} County. ${COMPANY.socialProof.technicians} specialists in Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau. 90-day warranty.`;
   return {
     title: override ? { absolute: title } : title,
     description,
@@ -137,8 +137,8 @@ export default async function CityPage({ params }: Props) {
       answer: `Yes — including ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding neighborhoods, ZIP codes ${city.zips.slice(0, 4).join(", ")}${city.zips.length > 4 ? ", and more" : ""}.`,
     },
     {
-      question: `What's the soonest you can get someone to ${city.name}?`,
-      answer: `Most ${city.name} jobs are scheduled within an hour of your call. Call before noon and we can usually be at your door the same day.`,
+      question: `How soon can you schedule a visit in ${city.name}?`,
+      answer: `We hold priority windows for ${city.name} and confirm an arrival time by phone, so a factory-trained specialist arrives when it suits your home — no open-ended waiting.`,
     },
     ...GENERAL_FAQS.slice(0, 6),
   ];
@@ -171,25 +171,25 @@ export default async function CityPage({ params }: Props) {
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              ${COMPANY.serviceCallPrice} diagnostic · credited
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
-              Same-day in {city.name}
+              Factory-trained · white-glove
             </span>
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            Appliance Repair in
+            Luxury Appliance Repair in
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               {city.name}, FL.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            {COMPANY.socialProof.technicians} licensed technicians serving {city.name} every day —
-            from {city.neighborhoods.slice(0, 2).join(" and ")} to every block in between. Trucks
-            stocked for Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch and every major brand.
+            {COMPANY.socialProof.technicians} factory-trained technicians serving {city.name}'s finest homes —
+            from {city.neighborhoods.slice(0, 2).join(" and ")} to every block in between. Specialists in
+            Sub-Zero, Wolf, Viking, Thermador, Miele, Gaggenau and the premium platforms behind luxury kitchens.
           </p>
 
           <div className="mt-9">
@@ -203,7 +203,7 @@ export default async function CityPage({ params }: Props) {
         <div className="max-w-2xl">
           <span className="eyebrow">Services in {city.name}</span>
           <h2 className="heading-section mt-3">
-            Every major appliance, repaired in {city.name}.
+            Every high-end appliance, repaired in {city.name}.
           </h2>
         </div>
 
@@ -230,7 +230,7 @@ export default async function CityPage({ params }: Props) {
                   {service.name}
                 </h3>
                 <div className="mt-auto inline-flex items-center gap-1.5 text-xs text-brand">
-                  Same-day available
+                  White-glove service
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
                 </div>
               </Link>
@@ -317,8 +317,8 @@ export default async function CityPage({ params }: Props) {
               {city.county} County coverage around {city.name}.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Same-day appliance repair across the cities closest to{" "}
-              {city.name}. Trucks dispatched from the same routes serve all
+              White-glove appliance repair across the cities closest to{" "}
+              {city.name}. Factory-trained specialists from the same routes serve all
               of {city.county} County.
             </p>
           </div>
@@ -385,7 +385,7 @@ export default async function CityPage({ params }: Props) {
       <section className="container-prose py-16">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: Clock3, label: "Same-day in " + city.name, body: "Most jobs scheduled within an hour." },
+            { icon: Clock3, label: "Priority windows in " + city.name, body: "Confirmed arrival times — no open-ended waits." },
             { icon: ShieldCheck, label: "Licensed & insured", body: COMPANY.socialProof.warranty + "." },
             { icon: Phone, label: "Local dispatch", body: "Real human answers — no call centers." },
           ].map((t) => (

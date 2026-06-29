@@ -11,7 +11,7 @@ import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = `All ${SERVICES.length} Appliance Repair Services`;
-const PAGE_DESCRIPTION = `Same-day repair on every major appliance — refrigerators, washers, dryers, ovens, dishwashers, and more. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`;
+const PAGE_DESCRIPTION = `Factory-trained, white-glove repair of high-end refrigerators, ranges, dishwashers, wine columns, and more — Sub-Zero, Wolf, Miele, Thermador & Viking. Licensed & insured.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -54,25 +54,25 @@ export default function ServicesIndex() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <BadgeDollarSign className="size-3.5" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              ${COMPANY.serviceCallPrice} diagnostic · credited
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
-              Same-day across South Florida
+              Factory-trained · white-glove
             </span>
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            Every major appliance.{" "}
+            Every high-end appliance.{" "}
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              Every major brand.
+              Every premium brand.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            From Sub-Zero columns to Whirlpool washers — {COMPANY.socialProof.technicians} licensed
-            technicians dispatch with trucks stocked for the brands and models we see every day in
-            South Florida homes and businesses.
+            From Sub-Zero columns to Wolf ranges — {COMPANY.socialProof.technicians} factory-trained
+            technicians serve South Florida's finest homes with the care a luxury kitchen deserves,
+            trucks equipped for the premium platforms we specialize in.
           </p>
 
           <div className="mt-9">

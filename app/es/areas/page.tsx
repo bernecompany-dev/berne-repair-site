@@ -10,7 +10,7 @@ import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = `Las ${CITIES.length} ciudades que cubrimos`;
-const PAGE_DESCRIPTION = `Reparación de electrodomésticos el mismo día en ${CITIES.length} ciudades de Miami-Dade, Broward y Palm Beach. Visita técnica $${COMPANY.serviceCallPrice}.`;
+const PAGE_DESCRIPTION = `Reparación premium y de guante blanco de electrodomésticos de alta gama en ${CITIES.length} ciudades de Miami-Dade, Broward y Palm Beach. Especialistas Sub-Zero, Wolf, Miele y Thermador.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -50,10 +50,10 @@ export default function AreasIndexES() {
 
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
-              <BadgeDollarSign className="size-3.5" aria-hidden /> Visita técnica ${COMPANY.serviceCallPrice}
+              <BadgeDollarSign className="size-3.5" aria-hidden /> Diagnóstico ${COMPANY.serviceCallPrice} · abonado
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
-              <Clock3 className="size-3.5 text-brand" aria-hidden /> El mismo día en todo el sur de Florida
+              <Clock3 className="size-3.5 text-brand" aria-hidden /> Formados de fábrica · guante blanco
             </span>
           </div>
 
@@ -65,7 +65,7 @@ export default function AreasIndexES() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Desde Homestead hasta Jupiter, cada cuadra intermedia. {COMPANY.socialProof.technicians} técnicos con licencia despachados desde todo el sur de Florida — la mayoría de trabajos en menos de una hora.
+            Desde Coral Gables hasta Palm Beach, cada enclave exclusivo intermedio. {COMPANY.socialProof.technicians} técnicos formados de fábrica al servicio de Miami-Dade, Broward y Palm Beach — con ventanas prioritarias y horas de llegada confirmadas.
           </p>
 
           <div className="mt-9"><CTARow size="lg" locale="es" /></div>
@@ -80,7 +80,7 @@ export default function AreasIndexES() {
                 <MapPin className="size-5 text-brand" aria-hidden />
                 <h2 className="text-2xl font-semibold tracking-tight">Condado de {county}</h2>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">{byCounty[county].length} ciudades · el mismo día</p>
+              <p className="mt-2 text-sm text-muted-foreground">{byCounty[county].length} ciudades · servicio de guante blanco</p>
               <ul className="mt-6 space-y-2">
                 {byCounty[county].map((c) => (
                   <li key={c.slug}>

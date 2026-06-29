@@ -2,87 +2,87 @@ export type FAQ = { question: string; answer: string };
 
 export const GENERAL_FAQS: FAQ[] = [
   {
-    question: "How much does a service call cost?",
+    question: "What is your diagnostic fee on a high-end appliance?",
     answer:
-      "$59. That covers the trip and a full diagnosis — and it's free if you go ahead with the repair. You only pay the fee if you decide not to proceed.",
+      "A flat $59 covers the visit and a full factory-level diagnosis — and it is credited back in full the moment you approve the repair. You pay it only if you choose not to proceed. There is no premium surcharge for Sub-Zero, Wolf, Miele, or Thermador work; the diagnosis is the same disciplined process on every unit.",
   },
   {
-    question: "Do you offer same-day appliance repair?",
+    question: "How quickly can a technician reach my home?",
     answer:
-      "Yes. Call us before noon and in most cases we can have a technician at your door the same day across Miami-Dade, Broward, and Palm Beach.",
+      "We hold priority dispatch windows for luxury kitchens across Miami-Dade, Broward, and Palm Beach. Call early and we can usually schedule a white-glove visit the same day; for built-in and integrated units we match you with the senior technician trained on your platform rather than simply sending the next available van.",
   },
   {
-    question: "Are you licensed and insured?",
+    question: "Are you licensed and insured to work in luxury homes?",
     answer:
-      "Yes. Berne Appliance Repair is fully licensed and insured to operate in the state of Florida. We carry general liability so your home and equipment are protected.",
+      "Yes. Berne Appliance Repair is fully licensed and insured in the state of Florida, and we carry the general liability coverage that gated communities, condo associations, and high-rise buildings require. We provide a certificate of insurance to your management company on request, before the visit.",
   },
   {
-    question: "Which brands do you service?",
+    question: "Which luxury brands do you specialize in?",
     answer:
-      "All major residential and commercial brands — including premium lines like Sub-Zero, Wolf, Viking, Thermador, Miele, and GE Monogram, plus everyday brands like LG, Samsung, Whirlpool, KitchenAid, and Bosch.",
+      "Our work centers on the high-end and built-in market — Sub-Zero, Wolf, Miele, Thermador, Viking, Gaggenau, La Cornue, JennAir Luxury, Bosch Benchmark, GE Monogram, Liebherr, and EuroCave. Our technicians are factory-trained on these platforms, and we also service everyday brands such as LG, Samsung, and KitchenAid when they share a luxury kitchen.",
   },
   {
-    question: "What kind of warranty do you offer?",
+    question: "What warranty backs your repairs?",
     answer:
-      "90-day warranty on labor and parts we install. If the same issue reappears within 90 days, we return at no charge.",
+      "A 90-day warranty on labor and on every part we install. If the same fault returns within 90 days, we come back at no charge. On premium platforms we source OEM parts through the factory channel, and the part number goes on your invoice so the repair is fully documented.",
   },
   {
-    question: "Do you repair commercial appliances?",
+    question: "Do you handle estate, property-management, and commercial accounts?",
     answer:
-      "Yes. We service restaurants, property management companies, and retail — including past work with Target, Publix, and Petco. Ask about volume contracts.",
+      "Yes. We maintain appliances for restaurants, property managers, and retail — including past work with Target, Publix, and Petco — and we look after estate and luxury-residence portfolios on a single point of contact. Ask about scheduled maintenance and volume agreements.",
   },
   {
     question: "What payment methods do you accept?",
     answer:
-      "Cash, all major credit cards, Apple Pay, Google Pay, and Zelle. We email a receipt after every job.",
+      "Cash, all major credit cards, Apple Pay, Google Pay, and Zelle. A detailed receipt — itemizing labor and the OEM parts installed — is emailed after every visit.",
   },
   {
-    question: "Will the technician have the part in their truck?",
+    question: "Will the technician carry the right part for my unit?",
     answer:
-      "For the most common parts — yes. With 18 technicians and trucks stocked for the brands we service most, we resolve a large share of jobs on the first visit. If a part needs ordering we typically get it in 1–3 business days.",
+      "For common premium failures, yes — our senior trucks stock the parts that fail most on Sub-Zero, Wolf, Miele, and Thermador, so many built-in calls finish on the first visit. When a component has to come from the factory channel we order it directly and typically have it in 1–3 business days, then return at a scheduled time.",
   },
 ];
 
 export const GENERAL_FAQS_ES: FAQ[] = [
   {
-    question: "¿Cuánto cuesta una visita técnica?",
+    question: "¿Cuál es el costo del diagnóstico en un electrodoméstico de alta gama?",
     answer:
-      "$59. Cubre el viaje y un diagnóstico completo — y es gratuita si decide proceder con la reparación. Solo se paga si decide no continuar.",
+      "Una tarifa fija de $59 cubre la visita y un diagnóstico de nivel de fábrica — y se acredita por completo en cuanto usted aprueba la reparación. Solo se paga si decide no continuar. No hay recargo adicional por trabajar un Sub-Zero, Wolf, Miele o Thermador; el diagnóstico sigue el mismo proceso riguroso en cada unidad.",
   },
   {
-    question: "¿Ofrecen servicio el mismo día?",
+    question: "¿Qué tan rápido puede llegar un técnico a mi casa?",
     answer:
-      "Sí. Llame antes del mediodía y en la mayoría de los casos tenemos un técnico en su puerta el mismo día — en Miami-Dade, Broward y Palm Beach.",
+      "Reservamos horarios de despacho prioritario para cocinas de lujo en Miami-Dade, Broward y Palm Beach. Si llama temprano, normalmente podemos programar una visita white-glove ese mismo día; para unidades empotradas e integradas le asignamos al técnico senior capacitado en su plataforma, no simplemente la próxima camioneta disponible.",
   },
   {
-    question: "¿Tienen licencia y seguro?",
+    question: "¿Tienen licencia y seguro para trabajar en residencias de lujo?",
     answer:
-      "Sí. Berne Appliance Repair tiene licencia completa y seguro para operar en el estado de Florida. Tenemos seguro de responsabilidad general que protege su hogar y equipo.",
+      "Sí. Berne Appliance Repair cuenta con licencia y seguro completos en el estado de Florida, y mantenemos la cobertura de responsabilidad general que exigen las comunidades cerradas, las asociaciones de condominios y los edificios de gran altura. Entregamos el certificado de seguro a su administración cuando lo solicite, antes de la visita.",
   },
   {
-    question: "¿Qué marcas reparan?",
+    question: "¿En qué marcas de lujo se especializan?",
     answer:
-      "Todas las marcas residenciales y comerciales principales — incluyendo líneas premium como Sub-Zero, Wolf, Viking, Thermador, Miele y GE Monogram, además de marcas comunes como LG, Samsung, Whirlpool, KitchenAid y Bosch.",
+      "Nuestro trabajo se centra en el mercado de alta gama y empotrado — Sub-Zero, Wolf, Miele, Thermador, Viking, Gaggenau, La Cornue, JennAir Luxury, Bosch Benchmark, GE Monogram, Liebherr y EuroCave. Nuestros técnicos están capacitados de fábrica en estas plataformas, y también atendemos marcas comunes como LG, Samsung y KitchenAid cuando comparten una cocina de lujo.",
   },
   {
-    question: "¿Qué tipo de garantía ofrecen?",
+    question: "¿Qué garantía respalda sus reparaciones?",
     answer:
-      "Garantía de 90 días en mano de obra y piezas que instalamos. Si el mismo problema vuelve dentro de 90 días, regresamos sin costo.",
+      "Garantía de 90 días en mano de obra y en cada pieza que instalamos. Si la misma falla regresa dentro de 90 días, volvemos sin costo. En plataformas premium usamos piezas OEM del canal de fábrica, y el número de pieza queda en su factura para que la reparación esté documentada por completo.",
   },
   {
-    question: "¿Reparan electrodomésticos comerciales?",
+    question: "¿Atienden cuentas de fincas, administración de propiedades y comercios?",
     answer:
-      "Sí. Servimos restaurantes, administradores de propiedades y retail — incluyendo trabajo previo con Target, Publix y Petco. Pregunte por contratos de volumen.",
+      "Sí. Mantenemos electrodomésticos para restaurantes, administradores de propiedades y retail — incluyendo trabajo previo con Target, Publix y Petco — y atendemos portafolios de fincas y residencias de lujo con un solo punto de contacto. Pregunte por mantenimiento programado y acuerdos de volumen.",
   },
   {
     question: "¿Qué métodos de pago aceptan?",
     answer:
-      "Efectivo, todas las tarjetas de crédito principales, Apple Pay, Google Pay y Zelle. Enviamos recibo por correo después de cada trabajo.",
+      "Efectivo, todas las tarjetas de crédito principales, Apple Pay, Google Pay y Zelle. Después de cada visita enviamos por correo un recibo detallado que desglosa la mano de obra y las piezas OEM instaladas.",
   },
   {
-    question: "¿El técnico tendrá la pieza en su camión?",
+    question: "¿El técnico llevará la pieza correcta para mi unidad?",
     answer:
-      "Para las piezas más comunes — sí. Con 18 técnicos y camiones equipados para las marcas que más servimos, resolvemos una gran parte de los trabajos en la primera visita. Si hay que pedir una pieza, normalmente la tenemos en 1-3 días hábiles.",
+      "Para las fallas premium más comunes, sí — nuestros camiones senior llevan las piezas que más fallan en Sub-Zero, Wolf, Miele y Thermador, por lo que muchas llamadas de unidades empotradas terminan en la primera visita. Cuando un componente debe venir del canal de fábrica lo pedimos directamente y normalmente lo tenemos en 1-3 días hábiles, y regresamos a una hora programada.",
   },
 ];
 
@@ -91,7 +91,7 @@ export const SERVICE_FAQS_ES: Record<string, FAQ[]> = {
     {
       question: "Mi refrigerador está caliente pero el congelador está frío. ¿Qué pasa?",
       answer:
-        "Lo más común es un ventilador del evaporador fallado, flujo de aire bloqueado, o problema con el sistema de descongelado. Nuestro técnico diagnosticará en sitio y cotizará antes de empezar.",
+        "En unidades empotradas Sub-Zero, Thermador y Viking lo más común es un ventilador del evaporador fallado, un conducto de aire bloqueado por escarcha o una falla del sistema de descongelado — rara vez el compresor que muchos temen. Un técnico senior lo diagnostica en sitio, protege su gabinetería de lujo y cotiza por escrito antes de empezar.",
     },
     {
       question: "¿Vale la pena reparar un Sub-Zero o debería reemplazarlo?",
@@ -126,7 +126,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "What's the difference between a service call and a diagnostic?",
       answer:
-        "Same thing in our shop — $59 flat. It covers travel, full diagnosis, and a written quote on the repair. Approve the work and the visit is free — you don't pay the $59 at all. Decline and you owe only the $59.",
+        "On a high-end unit they are the same thing — a flat $59 diagnostic. It covers the visit, a full factory-level diagnosis, and a written quote on the repair. Approve the work and the fee is credited back in full. Decline and the $59 is all you owe — there is no premium surcharge for built-in or integrated platforms.",
     },
     {
       question: "Why is my Sub-Zero ice maker not making ice anymore?",
@@ -198,7 +198,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "Why won't my washer fill with water?",
       answer:
-        "Three common causes: inlet valve screens are clogged with sediment (very common in older South Florida buildings with iron supply pipes), the inlet valve solenoid is burned out and not opening on a fill command, or the pressure switch hose is kinked and the machine thinks the tub is already full. We test all three on a $59 service call.",
+        "Three common causes: inlet valve screens are clogged with sediment (very common in older South Florida buildings with iron supply pipes), the inlet valve solenoid is burned out and not opening on a fill command, or the pressure switch hose is kinked and the machine thinks the tub is already full. We test all three at the $59 diagnostic before condemning any part.",
     },
     {
       question: "Are stacked washer-dryer units harder to service?",
@@ -230,7 +230,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "Should I worry if my dryer smells like something is burning?",
       answer:
-        "Yes — stop using it immediately and unplug the unit. The most likely cause is lint buildup in the cabinet around the heating element or motor, which is the number-one cause of dryer fires. Less commonly a failing drum bearing creates metal-on-metal contact. Call us same-day at (754) 345-4515 for safety.",
+        "Yes — stop using it immediately and unplug the unit. The most likely cause is lint buildup in the cabinet around the heating element or motor, which is the number-one cause of dryer fires. Less commonly a failing drum bearing creates metal-on-metal contact. This is a priority dispatch — call us at (754) 345-4515 and we will get a technician out promptly.",
     },
     {
       question: "What is the loud squealing sound when my dryer runs?",
@@ -250,7 +250,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does dryer repair cost on average?",
       answer:
-        "Most repairs run $160 to $380 in parts and labor. Heating elements and thermal fuses are on the lower end; control boards and motor replacements sit at the upper end. Heat-pump dryer repairs (Miele, Bosch) run higher because of part cost. The $59 service call is free if you approve the repair — you only pay it if you decline.",
+        "Most repairs run $160 to $380 in parts and labor. Heating elements and thermal fuses are on the lower end; control boards and motor replacements sit at the upper end. Heat-pump dryer repairs (Miele, Bosch) run higher because of part cost. The $59 diagnostic is credited back in full once you approve the repair — you pay it only if you decline.",
     },
     {
       question: "Is it worth fixing a 12-year-old dryer?",
@@ -339,7 +339,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does Wolf or Viking oven repair cost?",
       answer:
-        "Premium oven repairs (Wolf, Viking, Thermador, Miele) typically run $320 to $720 in parts and labor. Igniters, sensors, door hinges, and bake elements are on the lower end; control boards, latch assemblies, and convection motors sit at the upper end. The $59 service call is free when you approve the repair — you only pay it if you decline.",
+        "Premium oven repairs (Wolf, Viking, Thermador, Miele) typically run $320 to $720 in parts and labor. Igniters, sensors, door hinges, and bake elements are on the lower end; control boards, latch assemblies, and convection motors sit at the upper end. The $59 diagnostic is credited back in full when you approve the repair — you pay it only if you decline.",
     },
     {
       question: "Is it worth repairing a 15-year-old Wolf or Viking oven?",
@@ -356,7 +356,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "Why is my microwave running but not heating food?",
       answer:
-        "The magnetron has failed — it is the part that generates the microwave energy and it is a wear item with a 7 to 10 year typical life. Symptoms are exactly what you described: turntable spins, lights work, fan runs, but food stays cold. Magnetron replacement is $250 to $420 depending on brand. On a unit older than 10 years we will tell you straight whether replacement makes more sense.",
+        "The magnetron has failed — it is the part that generates the microwave energy and it is a wear item with a 7 to 10 year typical life. Symptoms are exactly what you described: turntable spins, lights work, fan runs, but food stays cold. Magnetron replacement is $250 to $420 depending on brand. On a built-in or drawer unit (Wolf, Thermador, Miele) replacement almost always wins because the install and trim work behind a new one is significant; on a countertop unit we will tell you straight when it does not.",
     },
     {
       question: "Do you service Wolf and Sharp microwave drawers?",
@@ -366,7 +366,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "My microwave is sparking inside — is that dangerous?",
       answer:
-        "Yes — stop using it immediately. Internal sparking is almost always a damaged waveguide cover (the small mica or plastic panel inside, easily replaced) or a failing magnetron arcing to ground. Less commonly it is metal contamination on the cavity walls. Continued use damages the magnetron permanently. Call us same-day for a $59 diagnostic.",
+        "Yes — stop using it immediately. Internal sparking is almost always a damaged waveguide cover (the small mica or plastic panel inside, easily replaced) or a failing magnetron arcing to ground. Less commonly it is metal contamination on the cavity walls. Continued use damages the magnetron permanently — this is a priority $59 diagnostic.",
     },
     {
       question: "How much does over-the-range microwave install cost?",
@@ -472,7 +472,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "How much does a garbage disposal replacement cost?",
       answer:
-        "Replacement runs $285 to $545 all-in including the new disposal (InSinkErator Badger 5 or Evolution Compact at the budget and mid-range, Evolution Excel at the premium tier), labor, and removal of the old unit. We carry the common InSinkErator and Waste King models on the truck for same-day install. Premium quiet-mount models order in 1 to 2 days.",
+        "Replacement runs $285 to $545 all-in including the new disposal (InSinkErator Badger 5 or Evolution Compact at the budget and mid-range, Evolution Excel at the premium tier), labor, and removal of the old unit. We carry the common InSinkErator and Waste King models on the truck for a scheduled install. Premium quiet-mount models order in 1 to 2 days.",
     },
     {
       question: "Why is my disposal leaking under the sink?",
@@ -494,7 +494,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "Why is my range hood fan not working at any speed?",
       answer:
-        "Three common causes: the speed control switch on the front of the hood has failed (most common, especially on touch-panel models 5-plus years old), the blower motor has burned out, or the wiring between the switch and motor has come loose at one of the harness connectors. We test all three on a $59 service call. Touch-panel swaps stock for the major brands.",
+        "Three common causes: the speed control switch on the front of the hood has failed (most common, especially on touch-panel models 5-plus years old), the blower motor has burned out, or the wiring between the switch and motor has come loose at one of the harness connectors. We test all three at the $59 diagnostic. Touch-panel swaps stock for the premium brands.",
     },
     {
       question: "Do you fix Wolf, Viking, and Thermador range hoods?",
@@ -536,7 +536,7 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "Do you also clean the dryer vent during a duct cleaning?",
       answer:
-        "Yes if requested — dryer vent cleaning adds $89 to $129 to a same-day HVAC cleaning because the truck and equipment are already on-site. Standalone dryer vent cleaning runs $129 to $189. We power-vacuum the full duct path with HEPA equipment regardless of which scope you book.",
+        "Yes if requested — dryer vent cleaning adds $89 to $129 when bundled into the same HVAC cleaning visit because the truck and equipment are already on-site. Standalone dryer vent cleaning runs $129 to $189. We power-vacuum the full duct path with HEPA equipment regardless of which scope you book.",
     },
     {
       question: "What equipment do you use for duct cleaning?",

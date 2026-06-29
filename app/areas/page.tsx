@@ -10,7 +10,7 @@ import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = `All ${CITIES.length} Cities We Serve`;
-const PAGE_DESCRIPTION = `Same-day appliance repair across ${CITIES.length} cities in Miami-Dade, Broward, and Palm Beach. $${COMPANY.serviceCallPrice} service call. Licensed & insured.`;
+const PAGE_DESCRIPTION = `Factory-trained, white-glove appliance repair across ${CITIES.length} cities in Miami-Dade, Broward, and Palm Beach. Sub-Zero, Wolf, Miele & Thermador specialists. Licensed & insured.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -63,11 +63,11 @@ export default function AreasIndex() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <BadgeDollarSign className="size-3.5" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              ${COMPANY.serviceCallPrice} diagnostic · credited
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
-              Same-day across South Florida
+              Factory-trained · white-glove
             </span>
           </div>
 
@@ -79,9 +79,9 @@ export default function AreasIndex() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            From Homestead to Jupiter, every block in between. {COMPANY.socialProof.technicians} licensed
-            technicians dispatch from across Miami-Dade, Broward, and Palm Beach — most jobs scheduled
-            within an hour.
+            From Coral Gables to Palm Beach, every affluent enclave in between. {COMPANY.socialProof.technicians} factory-trained
+            technicians serve Miami-Dade, Broward, and Palm Beach — with priority windows and confirmed
+            arrival times.
           </p>
 
           <div className="mt-9">
@@ -99,7 +99,7 @@ export default function AreasIndex() {
                 <h2 className="text-2xl font-semibold tracking-tight">{county} County</h2>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                {byCounty[county].length} cities · same-day available
+                {byCounty[county].length} cities · white-glove service
               </p>
               <ul className="mt-6 space-y-2">
                 {byCounty[county].map((c) => (

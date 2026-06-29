@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? service.es.seoNoun
     : `reparación de ${service.es.seoNoun}`;
   // ≤155 chars: drop the licencia clause when the long form would truncate.
-  const descBase = `${esNounPhrase.charAt(0).toUpperCase()}${esNounPhrase.slice(1)} el mismo día en ${city.name}, condado de ${city.county}. Visita técnica $${COMPANY.serviceCallPrice}, garantía de 90 días.`;
+  const descBase = `${esNounPhrase.charAt(0).toUpperCase()}${esNounPhrase.slice(1)} de guante blanco en ${city.name}, condado de ${city.county}. Técnicos formados de fábrica, garantía de 90 días.`;
   const descTail = ` Llame al ${COMPANY.phone.display}.`;
   const description = `${descBase} Con licencia y seguro.${descTail}`.length <= 155
     ? `${descBase} Con licencia y seguro.${descTail}`
@@ -109,16 +109,16 @@ export default async function ServiceCityPageES({ params }: Props) {
 
   const comboFaqs = [
     {
-      question: `¿Qué tan rápido pueden llegar a ${city.name} para reparar ${articleNoun}?`,
-      answer: `La mayoría de los trabajos en ${city.name} se programan en menos de una hora. Llame antes del mediodía y normalmente tenemos un técnico en su puerta el mismo día. Cubrimos ${city.neighborhoods.slice(0, 3).join(", ")} y barrios cercanos.`,
+      question: `¿Qué tan pronto pueden agendar una visita en ${city.name} para ${articleNoun}?`,
+      answer: `Reservamos ventanas prioritarias para ${city.name} y confirmamos la hora de llegada por teléfono, para que un especialista formado de fábrica llegue cuando le convenga — sin esperas abiertas. Cubrimos ${city.neighborhoods.slice(0, 3).join(", ")} y barrios cercanos.`,
     },
     {
-      question: `¿Cuánto cuesta la reparación de ${sv.seoNoun} en ${city.name}?`,
-      answer: `Nuestra visita técnica fija de $${COMPANY.serviceCallPrice} lleva al técnico a su dirección en ${city.name} e incluye un diagnóstico completo. Si aprueba la reparación, la visita es gratuita — solo paga los $${COMPANY.serviceCallPrice} si decide no continuar. La mayoría de reparaciones de ${sv.seoNoun} cuestan entre $150 y $600 dependiendo de la pieza.`,
+      question: `¿Cuánto cuesta el servicio de ${sv.seoNoun} en ${city.name}?`,
+      answer: `Un diagnóstico fijo de $${COMPANY.serviceCallPrice} lleva a un especialista formado de fábrica a su hogar en ${city.name} para una evaluación completa, y ese cargo se abona a la reparación cuando aprueba el trabajo. La mayoría de las reparaciones de ${sv.seoNoun} cuestan entre $150 y $600 según la pieza — cotizado por escrito antes de empezar.`,
     },
     {
       question: `¿Reparan mi marca de ${sv.seoNoun} en ${city.name}?`,
-      answer: `Casi seguro que sí. Nuestros técnicos en ${city.name} están entrenados en ${service.brands.slice(0, 4).join(", ")} y todas las marcas principales. Llevamos piezas comunes en el camión para terminar en la primera visita.`,
+      answer: `Casi con seguridad. Nuestros especialistas en ${city.name} están formados de fábrica en ${service.brands.slice(0, 4).join(", ")} y el resto de plataformas premium — los técnicos senior atienden unidades empotradas y panel-ready, con piezas comunes en el camión para terminar en la primera visita.`,
     },
     ...(SERVICE_FAQS_ES[service.slug] ?? []),
     ...GENERAL_FAQS_ES.slice(0, 4),
@@ -154,10 +154,10 @@ export default async function ServiceCityPageES({ params }: Props) {
               <MapPin className="size-3.5" aria-hidden /> {city.name}, condado de {city.county}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
-              <BadgeDollarSign className="size-3.5 text-brand" aria-hidden /> Visita técnica ${COMPANY.serviceCallPrice}
+              <BadgeDollarSign className="size-3.5 text-brand" aria-hidden /> Diagnóstico ${COMPANY.serviceCallPrice} · abonado
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
-              <Clock3 className="size-3.5 text-brand" aria-hidden /> El mismo día en {city.name}
+              <Clock3 className="size-3.5 text-brand" aria-hidden /> Formados de fábrica · guante blanco
             </span>
           </div>
 
@@ -169,7 +169,7 @@ export default async function ServiceCityPageES({ params }: Props) {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            {sv.name} el mismo día en {city.name} — sirviendo a {city.neighborhoods.slice(0, 3).join(", ")} y cada barrio del condado de {city.county}. {COMPANY.socialProof.technicians} técnicos con licencia, camiones equipados para {service.brands.slice(0, 3).join(", ")} y todas las marcas principales.
+            {sv.name} de guante blanco en {city.name} — al servicio de {city.neighborhoods.slice(0, 3).join(", ")} y los barrios cercanos del condado de {city.county}. {COMPANY.socialProof.technicians} técnicos formados de fábrica, especialistas en {service.brands.slice(0, 3).join(", ")} y las plataformas premium detrás de las mejores cocinas de la zona.
           </p>
 
           <div className="mt-9"><CTARow size="lg" locale="es" /></div>

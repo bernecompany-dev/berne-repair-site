@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Absolute — the layout "%s · Berne Appliance Repair" suffix pushed these
   // hubs to 75-88ch ("Reparación de Trituradores de Basura en el sur de
   // Florida · $59 · Berne…"). Keyword + geo + price stays ≤59ch on every slug.
-  const title = `${service.es.name} · Sur de Florida · $${COMPANY.serviceCallPrice}`;
+  const title = `${service.es.name} · Sur de Florida`;
   return {
     title: { absolute: title },
     description: service.es.description,
@@ -104,11 +104,11 @@ export default async function ServicePageES({ params }: Props) {
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
                   <BadgeDollarSign className="size-3.5" aria-hidden />
-                  Visita técnica ${COMPANY.serviceCallPrice}
+                  Diagnóstico ${COMPANY.serviceCallPrice} · abonado
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                   <Clock3 className="size-3.5 text-brand" aria-hidden />
-                  Disponible el mismo día
+                  Formados de fábrica · guante blanco
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                   <ShieldCheck className="size-3.5 text-brand" aria-hidden />
@@ -199,7 +199,7 @@ export default async function ServicePageES({ params }: Props) {
           <span className="eyebrow">Ciudades que cubrimos</span>
           <h2 className="heading-section mt-3">{sv.name} en su ciudad.</h2>
           <p className="mt-4 text-muted-foreground">
-            Servicio el mismo día en toda nuestra área de cobertura.
+            Servicio de guante blanco en los barrios más exclusivos del sur de Florida.
           </p>
         </div>
 

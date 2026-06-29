@@ -84,14 +84,14 @@ export const metadata: Metadata = {
     template: "%s · Berne Appliance Repair",
   },
   description:
-    "Luxury & high-end appliance repair across Miami-Dade, Broward & Palm Beach. Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau specialists. EPA-608, $59 service call.",
+    "Luxury & high-end appliance repair across Miami-Dade, Broward & Palm Beach. Factory-trained Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau specialists. EPA-608, white-glove service.",
   applicationName: COMPANY.legalName,
   openGraph: {
     type: "website",
     siteName: COMPANY.legalName,
     title: "Luxury & High-End Appliance Repair — Miami & South Florida",
     description:
-      "Built-in & pro-style appliance specialists across South Florida. Sub-Zero, Wolf, Viking, Thermador, Miele. EPA-608, $59 service call.",
+      "Built-in & pro-style appliance specialists across South Florida. Sub-Zero, Wolf, Viking, Thermador, Miele. EPA-608, factory-trained, white-glove service.",
     url: SITE_URL,
     locale: "en_US",
     images: [DEFAULT_OG_IMAGE],

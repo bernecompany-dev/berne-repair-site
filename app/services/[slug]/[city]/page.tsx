@@ -121,10 +121,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isPhraseNoun = service.seoNoun.includes(" ");
   const noun = isPhraseNoun ? service.seoNoun : `${service.seoNoun} repair`;
   const variants = [
-    `Same-day ${noun} in ${city.name}, FL. $${COMPANY.serviceCallPrice} diagnostic, licensed techs. Call ${phone}.`,
-    `${service.shortName} service for ${city.name} homes — same-day, 18 techs, $${COMPANY.serviceCallPrice} call. ${phone}.`,
-    `Trusted ${noun} in ${city.name}, ${city.county} County. $${COMPANY.serviceCallPrice} flat diagnostic. ${phone}.`,
-    `Local ${noun} in ${city.name} — call before noon, technician same day. $${COMPANY.serviceCallPrice} diagnostic. ${phone}.`,
+    `White-glove ${noun} in ${city.name}, FL. Factory-trained techs, $${COMPANY.serviceCallPrice} diagnostic credited. Call ${phone}.`,
+    `Premium ${service.shortName.toLowerCase()} ${isPhraseNoun ? "" : "repair "}for ${city.name} homes — Sub-Zero, Wolf & Miele specialists. ${phone}.`,
+    `Trusted ${noun} in ${city.name}, ${city.county} County. Factory-trained, EPA-608, 90-day warranty. ${phone}.`,
+    `Luxury ${noun} in ${city.name} — meticulous, panel-ready expertise. $${COMPANY.serviceCallPrice} diagnostic credited. ${phone}.`,
   ];
   // Top-20 uniquified combos (lib/data/combo-unique.ts) carry a hand-written
   // meta description — symptom + geo + $59 + 90-day — instead of the template.
@@ -193,16 +193,16 @@ export default async function ServiceCityPage({ params }: Props) {
   const comboFaqs = [
     ...(unique?.faqs ?? []),
     {
-      question: `How fast can you get to ${city.name} for a ${service.seoNoun}?`,
-      answer: `Most ${city.name} jobs are scheduled within an hour. Call before noon and we can usually have a technician at your door in ${city.name} the same day. We cover ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding neighborhoods.`,
+      question: `How soon can you schedule a ${service.seoNoun} visit in ${city.name}?`,
+      answer: `We hold priority windows for ${city.name} and confirm an arrival time by phone so nobody waits open-ended. A factory-trained specialist comes to your ${city.name} home, and we cover ${city.neighborhoods.slice(0, 3).join(", ")} and the surrounding neighborhoods.`,
     },
     {
-      question: `What's the cost for ${service.shortName.toLowerCase()} repair in ${city.name}?`,
-      answer: `Our flat $${COMPANY.serviceCallPrice} service call gets a technician to your ${city.name} address and includes a full diagnosis. If you approve the repair, the visit is free — you only pay the $${COMPANY.serviceCallPrice} if you decide not to proceed. Most ${service.shortName.toLowerCase()} repairs in ${city.name} fall between $150 and $600 depending on the part.`,
+      question: `What's the cost for ${service.shortName.toLowerCase()} service in ${city.name}?`,
+      answer: `A flat $${COMPANY.serviceCallPrice} diagnostic brings a factory-trained specialist to your ${city.name} home for a full assessment, and that fee is credited toward the repair when you approve the work. Most ${service.shortName.toLowerCase()} repairs in ${city.name} fall between $150 and $600 depending on the part — quoted in writing before anything starts.`,
     },
     {
       question: `Do you service my brand of ${service.seoNoun} in ${city.name}?`,
-      answer: `Almost certainly yes. Our ${city.name} technicians are trained on ${service.brands.slice(0, 4).join(", ")} and every other major brand. Trucks are stocked with common ${service.seoNoun} parts for these brands so most repairs finish on the first visit.`,
+      answer: `Almost certainly. Our ${city.name} specialists are factory-trained on ${service.brands.slice(0, 4).join(", ")} and the rest of the premium platforms — senior techs handle built-in and panel-ready units, with common parts on the truck so most repairs finish on the first visit.`,
     },
     ...(SERVICE_FAQS[service.slug] ?? []),
     ...GENERAL_FAQS.slice(0, 4),
@@ -245,11 +245,11 @@ export default async function ServiceCityPage({ params }: Props) {
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              ${COMPANY.serviceCallPrice} diagnostic · credited
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
-              Same-day in {city.name}
+              Factory-trained · white-glove
             </span>
           </div>
 
@@ -262,7 +262,7 @@ export default async function ServiceCityPage({ params }: Props) {
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             {unique?.heroIntro ?? (
-              <>Same-day {service.seoNoun} repair in {city.name} — serving {city.neighborhoods.slice(0, 3).join(", ")} and every neighborhood in {city.county} County. {COMPANY.socialProof.technicians} licensed technicians, trucks stocked for {service.brands.slice(0, 3).join(", ")} and every major brand.</>
+              <>White-glove {service.seoNoun} repair in {city.name} — serving {city.neighborhoods.slice(0, 3).join(", ")} and the surrounding {city.county} County neighborhoods. {COMPANY.socialProof.technicians} factory-trained technicians, specialists in {service.brands.slice(0, 3).join(", ")} and the premium platforms behind the area's finest kitchens.</>
             )}
           </p>
 
@@ -443,7 +443,7 @@ export default async function ServiceCityPage({ params }: Props) {
       <section className="container-prose pb-16">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: Clock3, label: `Same-day in ${city.name}`, body: "Most jobs scheduled within an hour." },
+            { icon: Clock3, label: `Priority windows in ${city.name}`, body: "Confirmed arrival times — no open-ended waits." },
             { icon: ShieldCheck, label: "Licensed & insured", body: `${COMPANY.socialProof.warranty}.` },
             { icon: Phone, label: "Local dispatch", body: "Real human answers — no call centers." },
           ].map((t) => (

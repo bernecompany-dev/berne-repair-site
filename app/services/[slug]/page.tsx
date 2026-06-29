@@ -42,59 +42,59 @@ type Props = { params: Promise<{ slug: string }> };
  */
 const META_OVERRIDES: Record<string, { title: string; description: string }> = {
   "refrigerator-repair": {
-    title: "Refrigerator Repair South Florida — Same-Day · $59 Call",
+    title: "Sub-Zero & Built-In Refrigerator Repair · South Florida",
     description:
-      "Fridge not cooling? Same-day refrigerator repair across Miami-Dade, Broward & Palm Beach. $59 service call, 90-day warranty. Sub-Zero, Viking & all brands.",
+      "White-glove repair of Sub-Zero, Viking & Thermador built-in refrigerators in Miami's finest homes. EPA-608 specialists, 90-day warranty, $59 diagnostic credited.",
   },
   "washer-repair": {
-    title: "Washer Repair South Florida — Same-Day Service · $59 Call",
+    title: "Luxury Washer Repair — Miele & Bosch · South Florida",
     description:
-      "Washer leaking, shaking or won't spin? Same-day washer repair across South Florida. $59 service call, 18 licensed techs, 90-day parts & labor warranty.",
+      "Factory-trained repair of Miele, Bosch & Speed Queen washers across Miami's affluent homes. Precision diagnostics, 90-day warranty, $59 diagnostic credited to repair.",
   },
   "dryer-repair": {
-    title: "Dryer Repair South Florida — Same-Day Service · $59 Call",
+    title: "High-End Dryer Repair — Miele & Bosch · South Florida",
     description:
-      "Dryer not heating or taking two cycles? Same-day dryer repair across South Florida. $59 service call, 90-day warranty. LG, Samsung, Whirlpool & every brand.",
+      "Specialist repair of Miele & Bosch heat-pump and premium vented dryers in South Florida's luxury homes. White-glove service, 90-day warranty, $59 diagnostic credited.",
   },
   "dishwasher-repair": {
-    title: "Dishwasher Repair South Florida — Same-Day · $59 Call",
+    title: "Miele & Bosch Dishwasher Repair · South Florida",
     description:
-      "Dishwasher not draining or leaving dishes dirty? Same-day dishwasher repair in South Florida. $59 service call, 90-day warranty. Bosch, Miele & more.",
+      "Senior-tech repair of Miele, Bosch & Thermador panel-ready dishwashers in Miami's finest kitchens. Cabinetry-safe service, 90-day warranty, $59 diagnostic credited.",
   },
   "oven-repair": {
-    title: "Oven & Range Repair South Florida — Same-Day · $59 Call",
+    title: "Wolf, Viking & Thermador Oven Repair · South Florida",
     description:
-      "Oven not heating evenly or a dead burner? Same-day oven & range repair in South Florida. $59 service call, 90-day warranty. Wolf, Viking, Thermador & more.",
+      "Factory-trained repair of Wolf, Viking, Thermador & La Cornue ranges and ovens in South Florida's luxury kitchens. White-glove care, 90-day warranty, $59 diagnostic.",
   },
   "ice-maker-repair": {
-    title: "Ice Maker Repair South Florida — Same-Day · $59 Call",
+    title: "Sub-Zero & Scotsman Ice Maker Repair · South Florida",
     description:
-      "Ice maker not making ice or hollow cubes? Same-day ice maker repair across South Florida. $59 service call, 90-day warranty. Sub-Zero, Scotsman & U-Line.",
+      "Specialist repair of Sub-Zero, Scotsman & U-Line built-in ice makers in Miami's premium homes. EPA-608 sealed-system work, 90-day warranty, $59 diagnostic credited.",
   },
   "microwave-repair": {
-    title: "Microwave Repair South Florida — Same-Day · $59 Call",
+    title: "Built-In & Drawer Microwave Repair · South Florida",
     description:
-      "Microwave dead, sparking or not heating? Same-day microwave repair across South Florida. $59 service call, 90-day warranty. Built-in & drawer units.",
+      "Senior-tech repair of Wolf, Sharp & Thermador built-in and drawer microwaves in South Florida's luxury kitchens. White-glove service, 90-day warranty, $59 diagnostic.",
   },
   "air-duct-cleaning": {
-    title: "Air Duct & Dryer Vent Cleaning South Florida — $59 Call",
+    title: "Air Duct & Dryer Vent Cleaning · South Florida",
     description:
-      "HVAC duct and dryer vent cleaning for South Florida homes. $59 service call, licensed techs, same-day slots. Better airflow, faster drying, less dust.",
+      "HEPA negative-pressure duct and dryer-vent cleaning for South Florida's finest homes. Photo-documented, licensed techs, $59 diagnostic credited. Cleaner air, less risk.",
   },
   "garbage-disposal-repair": {
-    title: "Garbage Disposal Repair South Florida — Same-Day · $59",
+    title: "InSinkErator Garbage Disposal Repair · South Florida",
     description:
-      "Disposal jammed, humming or leaking? Same-day garbage disposal repair across South Florida. $59 service call, 90-day warranty. Repair or replace in one trip.",
+      "Repair and quiet-mount replacement of InSinkErator & Waste King disposals in Miami's luxury kitchens. Cabinetry-safe, 90-day warranty, $59 diagnostic credited to repair.",
   },
   "range-hood-repair": {
-    title: "Range Hood Repair South Florida — Same-Day · $59 Call",
+    title: "Wolf & Vent-A-Hood Range Hood Repair · South Florida",
     description:
-      "Range hood fan dead or rattling? Same-day range hood repair across South Florida. $59 service call, 90-day warranty. Zephyr, Broan, Wolf & every brand.",
+      "Senior-tech repair of Wolf, Viking, Thermador & Vent-A-Hood range hoods in South Florida's luxury kitchens. Proprietary boards handled, 90-day warranty, $59 diagnostic.",
   },
   "wine-cooler-repair": {
-    title: "Wine Cooler Repair South Florida — Same-Day · $59 Call",
+    title: "Sub-Zero & EuroCave Wine Cooler Repair · South Florida",
     description:
-      "Wine cooler warm or cycling loud? Same-day wine cooler repair across South Florida. $59 service call, 90-day warranty. Sub-Zero, U-Line, EuroCave & more.",
+      "Specialist repair of Sub-Zero, EuroCave & Marvel wine columns protecting Miami's finest collections. EPA-608 sealed-system work, 90-day warranty, $59 diagnostic credited.",
   },
 };
 
@@ -132,7 +132,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
   const override = META_OVERRIDES[slug];
   const title =
-    override?.title ?? `${service.name} in South Florida · $${COMPANY.serviceCallPrice} Service Call`;
+    override?.title ?? `${service.name} — White-Glove Service · South Florida`;
   const description = override?.description ?? service.description;
   return {
     title: override ? { absolute: title } : title,
@@ -206,11 +206,11 @@ export default async function ServicePage({ params }: Props) {
               <div className="flex flex-wrap items-center gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
                   <BadgeDollarSign className="size-3.5" aria-hidden />
-                  ${COMPANY.serviceCallPrice} service call
+                  ${COMPANY.serviceCallPrice} diagnostic · credited
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                   <Clock3 className="size-3.5 text-brand" aria-hidden />
-                  Same-day available
+                  Factory-trained · white-glove
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                   <ShieldCheck className="size-3.5 text-brand" aria-hidden />
@@ -414,7 +414,7 @@ export default async function ServicePage({ params }: Props) {
             {service.name} in your city.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Same-day {service.seoNoun} service across our full coverage area.
+            White-glove {service.seoNoun} service across South Florida's most affluent neighborhoods.
           </p>
         </div>
 

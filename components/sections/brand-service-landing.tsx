@@ -76,7 +76,7 @@ export function BrandServiceLanding({
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
       priceCurrency: "USD",
-      description: `$${COMPANY.serviceCallPrice} service call — free with repair`,
+      description: `$${COMPANY.serviceCallPrice} diagnostic — credited toward your repair`,
       availability: "https://schema.org/InStock",
       priceSpecification: {
         "@type": "PriceSpecification",
@@ -118,7 +118,7 @@ export function BrandServiceLanding({
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <BadgeDollarSign className="size-3.5" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              ${COMPANY.serviceCallPrice} diagnostic · credited
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Star className="size-3.5 text-brand" aria-hidden />
@@ -126,7 +126,7 @@ export function BrandServiceLanding({
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
-              Same-day available
+              Factory-trained · white-glove
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
@@ -274,7 +274,7 @@ export function BrandServiceLanding({
                   className="group flex items-center justify-between rounded-xl border border-border bg-card/40 px-4 py-3 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
                 >
                   <span className="text-sm font-semibold">
-                    {content.serviceHubLabel} — all brands, South Florida
+                    {content.serviceHubLabel} — premium brands, South Florida
                   </span>
                   <ArrowRight className="size-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-brand" aria-hidden />
                 </Link>

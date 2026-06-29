@@ -11,7 +11,7 @@ import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = `Todos los ${SERVICES.length} servicios de reparación`;
-const PAGE_DESCRIPTION = `Reparación el mismo día en todos los electrodomésticos principales. Visita técnica $${COMPANY.serviceCallPrice}. Con licencia y asegurados.`;
+const PAGE_DESCRIPTION = `Reparación premium y de guante blanco de electrodomésticos de alta gama — Sub-Zero, Wolf, Miele, Thermador y Viking. Técnicos formados de fábrica. Con licencia y asegurados.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -54,25 +54,25 @@ export default function ServicesIndexES() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <BadgeDollarSign className="size-3.5" aria-hidden />
-              Visita técnica ${COMPANY.serviceCallPrice}
+              Diagnóstico ${COMPANY.serviceCallPrice} · abonado
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Clock3 className="size-3.5 text-brand" aria-hidden />
-              El mismo día en todo el sur de Florida
+              Formados de fábrica · guante blanco
             </span>
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            Todos los electrodomésticos.
+            Todo electrodoméstico de alta gama.
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              Todas las marcas principales.
+              Toda marca premium.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Desde columnas Sub-Zero hasta lavadoras Whirlpool — {COMPANY.socialProof.technicians} técnicos
-            con licencia despachan con camiones equipados para las marcas y modelos que vemos a diario
-            en el sur de Florida.
+            Desde columnas Sub-Zero hasta cocinas Wolf — {COMPANY.socialProof.technicians} técnicos
+            formados de fábrica atienden las mejores casas del sur de Florida con el cuidado que merece
+            una cocina de lujo, con camiones equipados para las plataformas premium en que nos especializamos.
           </p>
 
           <div className="mt-9"><CTARow size="lg" locale="es" /></div>

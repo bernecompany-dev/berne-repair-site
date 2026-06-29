@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Absolute: the layout suffix (" · Berne Appliance Repair") on top of the
   // long Spanish template produced 97–99ch titles for long city names —
   // truncated in SERP. Same absolute pattern as the ES service hubs (round-2).
-  const title = `Reparación de Electrodomésticos en ${city.name} · $${COMPANY.serviceCallPrice}`;
-  const description = `Reparación de electrodomésticos el mismo día en ${city.name}, ${city.county}. Visita $${COMPANY.serviceCallPrice}, ${COMPANY.socialProof.technicians} técnicos con licencia, garantía de 90 días. Todas las marcas.`;
+  const title = `Reparación de Electrodomésticos de Lujo en ${city.name}`;
+  const description = `Reparación de guante blanco de electrodomésticos de alta gama en ${city.name}, ${city.county}. ${COMPANY.socialProof.technicians} especialistas Sub-Zero, Wolf, Miele y Thermador. Garantía de 90 días.`;
   return {
     title: { absolute: title },
     description,
@@ -65,8 +65,8 @@ export default async function CityPageES({ params }: Props) {
       answer: `Sí — incluyendo ${city.neighborhoods.slice(0, 3).join(", ")} y barrios cercanos, ZIPs ${city.zips.slice(0, 4).join(", ")}${city.zips.length > 4 ? ", y más" : ""}.`,
     },
     {
-      question: `¿Qué tan rápido pueden llegar a ${city.name}?`,
-      answer: `La mayoría de los trabajos en ${city.name} se programan en menos de una hora. Llame antes del mediodía y normalmente tenemos un técnico en su puerta el mismo día.`,
+      question: `¿Qué tan pronto pueden agendar una visita en ${city.name}?`,
+      answer: `Reservamos ventanas prioritarias para ${city.name} y confirmamos la hora de llegada por teléfono, para que un especialista formado de fábrica llegue cuando le convenga — sin esperas abiertas.`,
     },
     ...GENERAL_FAQS_ES.slice(0, 6),
   ];
@@ -91,22 +91,22 @@ export default async function CityPageES({ params }: Props) {
               <MapPin className="size-3.5" aria-hidden /> {city.name}, condado de {city.county}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
-              <BadgeDollarSign className="size-3.5 text-brand" aria-hidden /> Visita técnica ${COMPANY.serviceCallPrice}
+              <BadgeDollarSign className="size-3.5 text-brand" aria-hidden /> Diagnóstico ${COMPANY.serviceCallPrice} · abonado
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
-              <Clock3 className="size-3.5 text-brand" aria-hidden /> El mismo día en {city.name}
+              <Clock3 className="size-3.5 text-brand" aria-hidden /> Formados de fábrica · guante blanco
             </span>
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            Reparación de Electrodomésticos en
+            Reparación de Electrodomésticos de Lujo en
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               {city.name}, FL.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            {COMPANY.socialProof.technicians} técnicos con licencia atendiendo {city.name} todos los días — desde {city.neighborhoods.slice(0, 2).join(" y ")} hasta cada cuadra intermedia. Camiones equipados para Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch y todas las marcas principales.
+            {COMPANY.socialProof.technicians} técnicos formados de fábrica al servicio de las mejores casas de {city.name} — desde {city.neighborhoods.slice(0, 2).join(" y ")} hasta cada cuadra intermedia. Especialistas en Sub-Zero, Wolf, Viking, Thermador, Miele, Gaggenau y las plataformas premium detrás de las cocinas de lujo.
           </p>
 
           <div className="mt-9"><CTARow size="lg" locale="es" /></div>
@@ -124,7 +124,7 @@ export default async function CityPageES({ params }: Props) {
       <section className="container-prose py-16">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { icon: Clock3, label: `El mismo día en ${city.name}`, body: "La mayoría de los trabajos en menos de una hora." },
+            { icon: Clock3, label: `Ventanas prioritarias en ${city.name}`, body: "Horas de llegada confirmadas — sin esperas abiertas." },
             { icon: ShieldCheck, label: "Con licencia y asegurados", body: COMPANY.socialProof.warranty + "." },
             { icon: Phone, label: "Despacho local", body: "Una persona real contesta — no centros de llamadas." },
           ].map((t) => (
@@ -157,7 +157,7 @@ export default async function CityPageES({ params }: Props) {
               <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">{city.name}</div>
               <h3 className="text-base font-semibold tracking-tight">{service.es.name}</h3>
               <div className="mt-auto inline-flex items-center gap-1.5 text-xs text-brand">
-                Disponible el mismo día
+                Servicio de guante blanco
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
               </div>
             </Link>
