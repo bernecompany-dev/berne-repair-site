@@ -36,6 +36,12 @@ export function generateStaticParams() {
   return BRAND_COMPARISON_SLUGS.map((slug) => ({ slug }));
 }
 
+// Authored/refresh dates for the luxury comparison cluster. Static constants —
+// the comparison data carries no per-item date; these feed Article schema
+// (datePublished is required for rich-result eligibility).
+const COMPARE_PUBLISHED = "2026-06-11";
+const COMPARE_MODIFIED = "2026-06-29";
+
 type PageProps = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({
@@ -89,7 +95,7 @@ export default async function ComparisonPage({ params }: PageProps) {
       : brandNames[0];
 
   const pageUrl = absoluteUrl(`/compare/${c.slug}`);
-  const businessId = absoluteUrl("/#business");
+  const orgId = absoluteUrl("/#organization");
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -99,19 +105,28 @@ export default async function ComparisonPage({ params }: PageProps) {
     alternativeHeadline: c.metaTitle,
     description: c.metaDescription,
     image: `${SITE_URL}/opengraph-image`,
+    // Article rich-result eligibility requires datePublished; dateModified
+    // signals freshness. The comparison set has no per-item date, so use the
+    // cluster's authored/refresh dates as static constants.
+    datePublished: COMPARE_PUBLISHED,
+    dateModified: COMPARE_MODIFIED,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": pageUrl,
     },
     inLanguage: "en-US",
+    // author/publisher point at the Organization node (/#organization, emitted
+    // in layout.tsx). Do NOT reuse /#business here — that @id is typed
+    // [HomeAndConstructionBusiness, ProfessionalService] in the layout, so
+    // re-declaring it as "Organization" creates a conflicting @type on one @id.
     author: {
       "@type": "Organization",
-      "@id": businessId,
+      "@id": orgId,
       name: COMPANY.legalName,
     },
     publisher: {
       "@type": "Organization",
-      "@id": businessId,
+      "@id": orgId,
       name: COMPANY.legalName,
       url: SITE_URL,
       logo: {

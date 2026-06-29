@@ -364,7 +364,13 @@ export function founderJsonLd() {
     alternateName: "Eugene Bernitsky",
     jobTitle: "Founder & CEO",
     worksFor: { "@id": ORG_ID },
+    // Owner personal-brand site — "Eugene Bernitsky, Founder of Berne
+    // Appliance Repair Network". Disambiguates the founder Person entity for
+    // Google's Knowledge Graph and AI answer engines (GEO), tying the
+    // berne-repair.com author byline to a single real-world expert.
+    url: "https://eugenebernitsky.com/",
     sameAs: [
+      "https://eugenebernitsky.com/",
       "https://bernerepair.com/",
       "https://berne-commercial.com/",
       "https://www.linkedin.com/in/eugene-bernitsky-b52763364/",

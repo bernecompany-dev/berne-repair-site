@@ -66,12 +66,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = CITY_BY_SLUG[slug];
   if (!city) return {};
   const override = CITY_META_OVERRIDES[slug];
-  const title = override?.title ?? `Luxury Appliance Repair in ${city.name} · White-Glove Service`;
+  // Keep the rendered <title> under ~60 chars so it doesn't truncate in SERPs
+  // (CTR). The previous default ("...· White-Glove Service") plus the layout's
+  // " · Berne Appliance Repair" template ran 81–93 chars on long city names.
+  // Emit an absolute title with a compact brand suffix instead.
+  const title =
+    override?.title ?? `Luxury Appliance Repair in ${city.name}, FL · Berne`;
   const description =
     override?.description ??
     `Factory-trained, white-glove appliance repair in ${city.name}, ${city.county} County. ${COMPANY.socialProof.technicians} specialists in Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau. 90-day warranty.`;
   return {
-    title: override ? { absolute: title } : title,
+    title: { absolute: title },
     description,
     alternates: {
       canonical: `/areas/${city.slug}`,

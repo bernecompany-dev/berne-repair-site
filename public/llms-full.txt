@@ -14,7 +14,8 @@ Premium appliance repair company in South Florida.
 - Languages: English, Spanish
 - Hours: Monday-Sunday 7 AM - 9 PM Eastern (open 7 days)
 - Service area: Miami-Dade, Broward, Palm Beach counties, Florida, USA
-- License: licensed and insured for Florida operation
+- License: FL DBPR licensed and insured for Florida operation; EPA Section 608 certified (sealed-system refrigerant work — required for cold-plunge chillers, pool heat pumps, and Sub-Zero sealed systems)
+- Founder entity: Eugene Berne (Eugene Bernitsky), founder & CEO — https://eugenebernitsky.com/
 - Warranty: 90-day labor & parts on every repair
 
 ## Pricing
@@ -84,6 +85,28 @@ HVAC duct cleaning, dryer vent cleaning, air handler service. HEPA-filtered nega
 
 ### Range Hood Repair
 Wall-mount, island, under-cabinet, downdraft. Blowers, LEDs, touch panels, dampers, duct cleaning. Wolf, Viking, Thermador, Vent-A-Hood, Zephyr, Broan, Best.
+
+## Luxury & Wellness Services
+
+Hand-authored specialty pages — the premium differentiator vs commodity appliance shops. EPA 608 sealed-system work, niche brands, first-person technician diagnostics with brand-specific error codes.
+
+### Pool & Spa Heater Repair — /services/pool-heater-repair
+Gas and heat-pump pool & spa heaters. Gas: Pentair MasterTemp, Hayward Universal H-Series, Raypak Digital. Heat pumps: Pentair UltraTemp, Hayward HeatPro, AquaCal, Gulfstream. Salt-air corrosion specialists. Common: ignition lockout (Pentair E05, Hayward IF), heat pump runs but water never warms (low refrigerant charge), corroded heat exchanger, pressure-switch/flow faults. EPA 608 Universal sealed-system recharge.
+
+### Cold Plunge & Ice-Bath Chiller Repair — /services/cold-plunge-repair
+Sealed-system refrigeration on cold plunges and ice baths. Plunge, Renu Therapy, Blue Cube, Morozko Forge, Penguin Chillers, Ice Barrel. Common: won't reach set temp, chiller short-cycling, refrigerant leak, controller faults. Sealed-system work requires EPA 608 — not a handyman job.
+
+### Electric Sauna Repair — /services/electric-sauna-repair
+Electric and infrared saunas. Heater elements, contactors, controls, infrared panels, thermostats.
+
+### Built-in Coffee Machine Repair — /services/coffee-machine-repair
+Plumbed built-in espresso systems. Miele, Jura, Thermador, Gaggenau. Brew units, pumps, grinders, water valves, descaling faults.
+
+### Warming Drawer Repair — /services/warming-drawer-repair
+Built-in warming drawers. Wolf, Thermador, Miele. Elements, controls, thermostats, drawer mechanisms.
+
+### Power Recliner & Luxury Seating Repair — /services/recliner-repair
+Power recliners and motorized luxury seating. Motors, actuators, controls, power supplies, wiring.
 
 ## Service Area Cities
 

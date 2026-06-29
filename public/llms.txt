@@ -12,11 +12,12 @@
 - Founded: 2015 — Berne family of companies serving South Florida; premium "Berne Repair" division launched 2022
 - Jobs completed: 29,300+ across the Berne family
 - Rating: 4.79★ average / 871 reviews (multi-source aggregate)
-- Owner: Eugene Berne
-- Service area: Miami-Dade County, Broward County, Palm Beach County (65 cities listed in /sitemap.xml)
+- Owner: Eugene Berne (Eugene Bernitsky) — founder & CEO, https://eugenebernitsky.com/
+- Credentials: FL DBPR licensed & insured; EPA Section 608 certified (sealed-system refrigerant work — the legal requirement for cold-plunge chillers, pool heat pumps, and Sub-Zero sealed systems)
+- Service area: Miami-Dade County, Broward County, Palm Beach County (71 cities listed in /sitemap.xml)
 - Languages: English, Spanish
 
-## Services (12)
+## Core appliance services (11)
 
 - Refrigerator Repair — /services/refrigerator-repair
 - Washer Repair — /services/washer-repair
@@ -30,6 +31,17 @@
 - Air Duct Cleaning — /services/air-duct-cleaning
 - Range Hood Repair — /services/range-hood-repair
 
+## Luxury & wellness services (6)
+
+Hand-authored specialty pages — the premium differentiator. EPA 608 sealed-system work, niche brands, technician-voice diagnostics.
+
+- Pool & Spa Heater Repair — /services/pool-heater-repair — gas and heat-pump; Pentair, Hayward, Raypak, Jandy, AquaCal; salt-air corrosion specialists
+- Cold Plunge & Ice-Bath Chiller Repair — /services/cold-plunge-repair — sealed-system refrigeration; Plunge, Renu Therapy, Blue Cube, Morozko Forge, Penguin Chillers
+- Electric Sauna Repair — /services/electric-sauna-repair — heater elements, controls, infrared panels
+- Built-in Coffee Machine Repair — /services/coffee-machine-repair — Miele, Jura, Thermador, Gaggenau plumbed espresso systems
+- Warming Drawer Repair — /services/warming-drawer-repair — Wolf, Thermador, Miele built-in warming drawers
+- Power Recliner & Luxury Seating Repair — /services/recliner-repair — motors, controls, power mechanisms
+
 ## Brands serviced
 
 Premium: Sub-Zero, Wolf, Viking, Thermador, Miele, GE Monogram.
@@ -41,11 +53,13 @@ Call (754) 345-4515 (rings dispatch). Most jobs scheduled within an hour, comple
 
 ## Site structure
 
-- /sitemap.xml — full URL list (~1700 pages including service×city combos and Spanish mirror)
+- /sitemap.xml — full URL list (EN pages + service×city combos + Spanish mirror)
 - /services/{service}/{city} — combo pages for hyper-local lookup (e.g., /services/refrigerator-repair/miami)
 - /es/* — Spanish mirror of every page
+- /credentials — FL license, EPA 608 cert, COI, DBA, Workers' Comp exemption (downloadable vendor paperwork)
 - /team — all 18 technicians with names, roles, photos
 - /reviews — customer reviews (4.79★ / 871 across the Berne network)
+- /compare/* — luxury brand comparisons (Sub-Zero vs Thermador, Wolf vs Thermador vs Viking, Miele vs Bosch, etc.)
 - /privacy — privacy policy
 - /llms-full.txt — extended plain-text reference
 
