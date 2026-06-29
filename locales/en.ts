@@ -3,7 +3,7 @@ import { REPAIRS_COMPLETED, REPAIRS_COMPLETED_BARE } from "@/data/company";
 
 export const en = {
   meta: {
-    homeTitle: "Berne Appliance Repair — Luxury & High-End Appliance Repair · South Florida",
+    homeTitle: "Berne Appliance Repair — Luxury & High-End · South Florida",
     homeDescription:
       "Factory-trained, white-glove repair of Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau across Miami's finest homes. EPA-608, licensed & insured, 90-day warranty.",
   },

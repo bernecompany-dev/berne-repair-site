@@ -273,6 +273,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...home,
     ...services,
+    ...highEndServices,
     ...areas,
     ...combos,
     ...statics,
