@@ -103,6 +103,8 @@ const SAME_AS: string[] = [
   "https://www.callupcontact.com/b/businessprofile/Berne_Repair/10124996",
   "https://www.n49.com/biz/7243497/berne-repair/",
   "https://www.tupalo.co/hallandale-beach-florida/berne-repair",
+  // Wikidata entity for the business (Berne Repair) — Knowledge Graph anchor.
+  "https://www.wikidata.org/wiki/Q140388059",
 ];
 
 const AGGREGATE = {
@@ -374,6 +376,7 @@ export function founderJsonLd() {
       "https://bernerepair.com/",
       "https://berne-commercial.com/",
       "https://www.linkedin.com/in/eugene-bernitsky-b52763364/",
+      "https://www.wikidata.org/wiki/Q140388057",
     ],
   };
 }
