@@ -105,6 +105,8 @@ const SAME_AS: string[] = [
   "https://www.tupalo.co/hallandale-beach-florida/berne-repair",
   // Wikidata entity for the business (Berne Repair) — Knowledge Graph anchor.
   "https://www.wikidata.org/wiki/Q140388059",
+  // LinkedIn company page.
+  "https://www.linkedin.com/company/129744399",
 ];
 
 const AGGREGATE = {
