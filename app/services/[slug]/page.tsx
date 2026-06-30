@@ -13,6 +13,8 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { QuickAnswer } from "@/components/site/quick-answer";
+import { QUICK_ANSWERS } from "@/data/quick-answers";
 import { SERVICES, SERVICE_BY_SLUG } from "@/data/services";
 import { HIGHEND_SERVICE_BY_SLUG } from "@/data/highend";
 import { CITIES } from "@/data/cities";
@@ -161,6 +163,7 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   const faqs = [...(SERVICE_FAQS[service.slug] ?? []), ...GENERAL_FAQS.slice(0, 5)];
+  const quick = QUICK_ANSWERS[service.slug]?.en ?? null;
   const heroImages = SERVICE_HERO_IMAGES[service.slug];
   const personal = servicePersonalCopy(service);
   const compareGuides = (COMPARE_GUIDES[service.slug] ?? [])
@@ -262,6 +265,8 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {quick ? <QuickAnswer data={quick} /> : null}
 
       <StatsStrip />
 
@@ -497,7 +502,11 @@ export default async function ServicePage({ params }: Props) {
       <CTABand />
 
       <JsonLd
-        data={[serviceJsonLd(service), faqJsonLd(faqs), breadcrumbJsonLd(crumbs)]}
+        data={[
+          serviceJsonLd(service),
+          faqJsonLd(quick ? [...quick.qa, ...faqs] : faqs),
+          breadcrumbJsonLd(crumbs),
+        ]}
       />
     </>
   );

@@ -18,6 +18,8 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { QuickAnswer } from "@/components/site/quick-answer";
+import { QUICK_ANSWERS } from "@/data/quick-answers";
 import { COMPANY } from "@/data/company";
 import {
   highEndServiceJsonLd,
@@ -113,6 +115,7 @@ export function HighEndServicePage({
           faqs: service.faqs,
         };
 
+  const quick = QUICK_ANSWERS[service.slug]?.[locale] ?? null;
   const base = locale === "es" ? "/es" : "";
   const servicesHref = locale === "es" ? "/es/services" : "/services";
   const localizeHref = (href: string) =>
@@ -185,6 +188,8 @@ export function HighEndServicePage({
           </p>
         </div>
       </section>
+
+      {quick ? <QuickAnswer data={quick} locale={locale} /> : null}
 
       <StatsStrip locale={locale} />
 
@@ -382,7 +387,7 @@ export function HighEndServicePage({
             brands: service.brands,
             locale,
           }),
-          faqJsonLd(v.faqs, locale),
+          faqJsonLd(quick ? [...quick.qa, ...v.faqs] : v.faqs, locale),
           breadcrumbJsonLd(crumbs),
         ]}
       />

@@ -5,10 +5,12 @@ import { CTARow } from "@/components/site/cta-row";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { QuickAnswer } from "@/components/site/quick-answer";
 import { SERVICES } from "@/data/services";
 import { HIGHEND_SERVICES } from "@/data/highend";
+import { QUICK_ANSWERS } from "@/data/quick-answers";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = `All ${SERVICES.length} Appliance Repair Services`;
 const PAGE_DESCRIPTION = `Factory-trained, white-glove repair of high-end refrigerators, ranges, dishwashers, wine columns, and more — Sub-Zero, Wolf, Miele, Thermador & Viking. Licensed & insured.`;
@@ -32,6 +34,7 @@ export default function ServicesIndex() {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
   ];
+  const quick = QUICK_ANSWERS.services.en;
 
   return (
     <>
@@ -80,6 +83,8 @@ export default function ServicesIndex() {
           </div>
         </div>
       </section>
+
+      <QuickAnswer data={quick} />
 
       <section className="container-prose py-16 sm:py-20">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -186,7 +191,7 @@ export default function ServicesIndex() {
       <Contact />
       <CTABand />
 
-      <JsonLd data={breadcrumbJsonLd(crumbs)} />
+      <JsonLd data={[breadcrumbJsonLd(crumbs), faqJsonLd(quick.qa)]} />
     </>
   );
 }

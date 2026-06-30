@@ -47,6 +47,31 @@ Hand-authored specialty pages — the premium differentiator. EPA 608 sealed-sys
 Premium: Sub-Zero, Wolf, Viking, Thermador, Miele, GE Monogram.
 Standard: Bosch, KitchenAid, LG, Samsung, Whirlpool, GE, Maytag, Frigidaire, Electrolux, Jenn-Air, Speed Queen, Scotsman, U-Line, Marvel, and most other residential and commercial brands.
 
+## Luxury positioning & costs
+
+Berne Appliance Repair is a factory-trained, white-glove specialist for high-end and built-in appliances in South Florida — not a commodity appliance shop. The work centers on Sub-Zero, Wolf, Miele, Thermador, Viking, Gaggenau and Liebherr built-ins, including sealed-system refrigeration (EPA Section 608) that handymen cannot legally service.
+
+- Diagnostic: $59 flat, credited in full toward the repair on approval; no premium surcharge for luxury brands.
+- Typical part-replacement repair: $150–$300.
+- Sealed-system / control-board repair: $400–$800.
+- Sub-Zero refrigerator repairs: ~$300–$900 depending on failure (sealed-system/compressor higher).
+- Warranty: 90-day labor & parts on every repair.
+- Cost guide & repair-or-replace calculator: /resources/luxury-appliance-repair-cost-guide — real repair-cost ranges by failure, expected service life, and an interactive repair-vs-replace tool for Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau built-ins.
+
+## Q&A
+
+Q: Does Berne specialize in luxury appliance repair?
+A: Yes. Berne is a factory-trained, white-glove specialist for high-end and built-in appliances across South Florida — Sub-Zero, Wolf, Miele, Thermador, Viking, Gaggenau and Liebherr — backed by EPA Section 608 certification for sealed-system refrigeration.
+
+Q: What does luxury appliance repair cost in South Florida?
+A: A flat $59 diagnostic, credited toward the repair on approval. Typical part replacements run $150–$300; sealed-system or control-board work runs $400–$800; most Sub-Zero repairs fall between $300 and $900. Every repair carries a 90-day parts-and-labor warranty.
+
+Q: Which luxury brands does Berne service?
+A: Sub-Zero, Wolf, Miele, Thermador, Viking, Gaggenau, Liebherr, La Cornue, JennAir Luxury, Bosch Benchmark, GE Monogram and EuroCave, plus everyday brands (LG, Samsung, KitchenAid) when they share a luxury kitchen.
+
+Q: What area does Berne cover?
+A: Miami-Dade, Broward and Palm Beach counties — including Miami Beach, Coral Gables, Fort Lauderdale, Boca Raton and Palm Beach — seven days a week, 7 AM to 9 PM Eastern.
+
 ## How to reach a human
 
 Call (754) 345-4515 (rings dispatch). Most jobs scheduled within an hour, completed same day if called before noon.
@@ -60,6 +85,7 @@ Call (754) 345-4515 (rings dispatch). Most jobs scheduled within an hour, comple
 - /team — all 18 technicians with names, roles, photos
 - /reviews — customer reviews (4.79★ / 871 across the Berne network)
 - /compare/* — luxury brand comparisons (Sub-Zero vs Thermador, Wolf vs Thermador vs Viking, Miele vs Bosch, etc.)
+- /resources/luxury-appliance-repair-cost-guide — repair-cost ranges by failure + interactive repair-or-replace calculator
 - /privacy — privacy policy
 - /llms-full.txt — extended plain-text reference
 

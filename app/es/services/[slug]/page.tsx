@@ -11,6 +11,8 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { QuickAnswer } from "@/components/site/quick-answer";
+import { QUICK_ANSWERS } from "@/data/quick-answers";
 import { SERVICES, SERVICE_BY_SLUG, localizedService } from "@/data/services";
 import { HIGHEND_SERVICE_BY_SLUG } from "@/data/highend";
 import { CITIES } from "@/data/cities";
@@ -71,6 +73,7 @@ export default async function ServicePageES({ params }: Props) {
   // Spanish display view — name/shortName/seoNoun/commonIssues translated.
   const sv = localizedService(service, "es");
   const faqs = [...(SERVICE_FAQS_ES[service.slug] ?? []), ...GENERAL_FAQS_ES.slice(0, 5)];
+  const quick = QUICK_ANSWERS[service.slug]?.es ?? null;
   const heroImages = SERVICE_HERO_IMAGES[service.slug];
   const personal = servicePersonalCopy(service, "es");
   const relatedHighEnd = (RELATED_HIGHEND[service.slug] ?? [])
@@ -141,6 +144,8 @@ export default async function ServicePageES({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {quick ? <QuickAnswer data={quick} locale="es" /> : null}
 
       <StatsStrip locale="es" />
       <PersonalNote {...personal} />
@@ -262,7 +267,7 @@ export default async function ServicePageES({ params }: Props) {
       <Contact defaultAppliance={service.slug} locale="es" />
       <CTABand locale="es" />
 
-      <JsonLd data={[serviceJsonLd(service, "es"), faqJsonLd(faqs, "es"), breadcrumbJsonLd(crumbs)]} />
+      <JsonLd data={[serviceJsonLd(service, "es"), faqJsonLd(quick ? [...quick.qa, ...faqs] : faqs, "es"), breadcrumbJsonLd(crumbs)]} />
     </>
   );
 }

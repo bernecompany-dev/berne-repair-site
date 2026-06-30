@@ -5,10 +5,12 @@ import { CTARow } from "@/components/site/cta-row";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { QuickAnswer } from "@/components/site/quick-answer";
 import { SERVICES } from "@/data/services";
 import { HIGHEND_SERVICES } from "@/data/highend";
+import { QUICK_ANSWERS } from "@/data/quick-answers";
 import { COMPANY } from "@/data/company";
-import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = `Todos los ${SERVICES.length} servicios de reparación`;
 const PAGE_DESCRIPTION = `Reparación premium y de guante blanco de electrodomésticos de alta gama — Sub-Zero, Wolf, Miele, Thermador y Viking. Técnicos formados de fábrica. Con licencia y asegurados.`;
@@ -32,6 +34,7 @@ export default function ServicesIndexES() {
     { name: "Inicio", href: "/es" },
     { name: "Servicios", href: "/es/services" },
   ];
+  const quick = QUICK_ANSWERS.services.es;
 
   return (
     <>
@@ -78,6 +81,8 @@ export default function ServicesIndexES() {
           <div className="mt-9"><CTARow size="lg" locale="es" /></div>
         </div>
       </section>
+
+      <QuickAnswer data={quick} locale="es" />
 
       <section className="container-prose py-16 sm:py-20">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -161,7 +166,7 @@ export default function ServicesIndexES() {
       <Contact locale="es" />
       <CTABand locale="es" />
 
-      <JsonLd data={breadcrumbJsonLd(crumbs)} />
+      <JsonLd data={[breadcrumbJsonLd(crumbs), faqJsonLd(quick.qa, "es")]} />
     </>
   );
 }
