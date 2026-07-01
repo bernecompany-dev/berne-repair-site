@@ -42,23 +42,23 @@ const CONTENT_WAVE_MOD = new Date("2026-06-11");
 
 function bothLocales(path: string) {
   return {
-    "en-US": `${SITE_URL}${path}`,
+    "en-US": `${SITE_URL}${path === "/" ? "" : path}`,
     "es-US": `${SITE_URL}/es${path === "/" ? "" : path}`,
-    "x-default": `${SITE_URL}${path}`,
+    "x-default": `${SITE_URL}${path === "/" ? "" : path}`,
   };
 }
 function esCounterpart(path: string) {
   return {
-    "en-US": `${SITE_URL}${path}`,
+    "en-US": `${SITE_URL}${path === "/" ? "" : path}`,
     "es-US": `${SITE_URL}/es${path === "/" ? "" : path}`,
-    "x-default": `${SITE_URL}${path}`,
+    "x-default": `${SITE_URL}${path === "/" ? "" : path}`,
   };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap = [
     {
-      url: `${SITE_URL}/`,
+      url: SITE_URL,
       lastModified: LAST_MOD,
       changeFrequency: "weekly",
       priority: 1,

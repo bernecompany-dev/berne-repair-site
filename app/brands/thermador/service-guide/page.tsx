@@ -109,7 +109,7 @@ const FAQS = [
   {
     question: "What do you charge to look at a Thermador?",
     answer:
-      "A $59 service call — free if you approve the quote, paid only if you decline. Our techs service Thermador weekly — ranges, wall ovens, Freedom columns, steam ovens, dishwashers — with the BSH-platform diagnostics the brand is built on, a 90-day parts and labor warranty, and same-day dispatch across Miami-Dade, Broward, and Palm Beach when scheduling allows.",
+      "A $59 diagnostic — credited to the repair when you approve the quote, paid only if you decline. Our techs service Thermador weekly — ranges, wall ovens, Freedom columns, steam ovens, dishwashers — with the BSH-platform diagnostics the brand is built on, a 90-day parts and labor warranty, and priority dispatch across Miami-Dade, Broward, and Palm Beach when scheduling allows.",
   },
 ];
 
@@ -299,7 +299,7 @@ export default function ThermadorServiceGuidePage() {
             <ul className="mt-5 grid gap-3 text-sm text-foreground/90">
               <li className="flex items-center gap-2">
                 <BadgeDollarSign className="size-4 shrink-0 text-brand" aria-hidden />
-                ${COMPANY.serviceCallPrice} service call — free with repair
+                ${COMPANY.serviceCallPrice} diagnostic — credited to repair
               </li>
               <li className="flex items-center gap-2">
                 <Clock3 className="size-4 shrink-0 text-brand" aria-hidden />

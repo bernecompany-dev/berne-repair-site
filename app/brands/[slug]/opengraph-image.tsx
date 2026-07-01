@@ -156,7 +156,7 @@ export default async function OG({
           }}
         >
           <span>{COMPANY.phone.display}</span>
-          <span>{`$${COMPANY.serviceCallPrice} service call · same-day`}</span>
+          <span>{`$${COMPANY.serviceCallPrice} diagnostic · white-glove`}</span>
         </div>
       </div>
     ),

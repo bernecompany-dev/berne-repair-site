@@ -99,7 +99,7 @@ const STATIC_PAGES: SearchEntry[] = [
     kind: "page",
     title: "Contact Dispatch",
     slug: "/contact",
-    text: "Call dispatch, request service, or book online — $59 service call — free with repair.",
+    text: "Call dispatch, request service, or book online — $59 diagnostic, credited to repair.",
     url: "/contact",
     tags: ["contact", "phone", "dispatch"],
   },

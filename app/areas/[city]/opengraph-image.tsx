@@ -71,7 +71,7 @@ export default async function OG({ params }: { params: Promise<{ city: string }>
               letterSpacing: 1,
             }}
           >
-            {`$${COMPANY.serviceCallPrice} SERVICE CALL · SAME-DAY`}
+            {`$${COMPANY.serviceCallPrice} DIAGNOSTIC · WHITE-GLOVE`}
           </div>
           <div
             style={{

@@ -180,7 +180,7 @@ export default async function BrandCityPage({ params }: Props) {
       "@type": "Offer",
       price: COMPANY.serviceCallPrice,
       priceCurrency: "USD",
-      description: `$${COMPANY.serviceCallPrice} service call — free with repair`,
+      description: `$${COMPANY.serviceCallPrice} diagnostic — credited to repair`,
       availability: "https://schema.org/InStock",
       priceSpecification: {
         "@type": "PriceSpecification",
@@ -226,7 +226,7 @@ export default async function BrandCityPage({ params }: Props) {
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <BadgeDollarSign className="size-3.5 text-brand" aria-hidden />
-              ${COMPANY.serviceCallPrice} service call
+              ${COMPANY.serviceCallPrice} diagnostic — credited to repair
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <Star className="size-3.5 text-brand" aria-hidden />

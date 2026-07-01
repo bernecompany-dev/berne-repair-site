@@ -28,13 +28,13 @@ const ICONS: Record<string, LucideIcon> = {
 const COPY = {
   en: {
     eyebrow: "What we repair",
-    heading: "Every major appliance. Every major brand.",
-    sub: "From Sub-Zero columns to a Whirlpool washer — our trucks are stocked for the brands and models we see every day in South Florida homes and businesses.",
+    heading: "Every luxury appliance. Every premium platform.",
+    sub: "From Sub-Zero columns to Miele laundry — our trucks are stocked for the brands and models we see every day in South Florida's finest homes.",
   },
   es: {
     eyebrow: "Qué reparamos",
-    heading: "Todos los electrodomésticos. Todas las marcas principales.",
-    sub: "Desde columnas Sub-Zero hasta una lavadora Whirlpool — nuestros camiones llevan piezas para las marcas y modelos que vemos todos los días en los hogares y negocios del sur de Florida.",
+    heading: "Todos los electrodomésticos de lujo. Todas las plataformas premium.",
+    sub: "Desde columnas Sub-Zero hasta lavandería Miele — nuestros camiones llevan piezas para las marcas y modelos que vemos a diario en los mejores hogares del sur de Florida.",
   },
 } as const;
 

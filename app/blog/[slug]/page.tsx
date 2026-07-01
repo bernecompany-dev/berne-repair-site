@@ -164,7 +164,7 @@ export default async function BlogArticlePage({ params }: Props) {
               Need a tech on this today?
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              ${COMPANY.serviceCallPrice} service call. Factory-trained technicians for Sub-Zero, Wolf, Viking, Thermador, and Miele across Miami-Dade, Broward, and Palm Beach.
+              ${COMPANY.serviceCallPrice} diagnostic, credited to repair. Factory-trained technicians for Sub-Zero, Wolf, Viking, Thermador, and Miele across Miami-Dade, Broward, and Palm Beach.
             </p>
             <a
               href={`tel:${COMPANY.phone.tel}`}

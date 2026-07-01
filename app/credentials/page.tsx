@@ -80,7 +80,7 @@ export default function CredentialsPage() {
       <section className="container-prose pt-12 sm:pt-16">
         <InlineCta
           title="Need a vendor with these credentials on file?"
-          body={`We attach the COI and EPA 608 cert to your booking confirmation — ready for your AP and onboarding workflow. Same-day dispatch, $${COMPANY.serviceCallPrice} service call free if you approve the repair.`}
+          body={`We attach the COI and EPA 608 cert to your booking confirmation — ready for your AP and onboarding workflow. Priority dispatch, $${COMPANY.serviceCallPrice} diagnostic credited when you approve the repair.`}
         />
       </section>
 

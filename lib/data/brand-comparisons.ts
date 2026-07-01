@@ -207,7 +207,7 @@ const SUB_ZERO_VS_VIKING: ComparisonProfile = {
     },
   ],
   ownershipNotes:
-    "Both platforms qualify for the same Berne $59 service-call fee. Both Sub-Zero and Viking parts move through the Marcone distribution network, but Sub-Zero parts orders consistently clear in 24-48 hours from Atlanta or Madison and Viking parts beyond the 2018 catalog can stretch to 7-14 days. On a 15-year ownership horizon, Sub-Zero will typically need 1-2 sealed-system interventions versus Viking's 2-3; the Viking purchase price savings get partly absorbed by that delta unless you do scheduled maintenance every 24-36 months.",
+    "Both platforms qualify for the same Berne $59 diagnostic fee. Both Sub-Zero and Viking parts move through the Marcone distribution network, but Sub-Zero parts orders consistently clear in 24-48 hours from Atlanta or Madison and Viking parts beyond the 2018 catalog can stretch to 7-14 days. On a 15-year ownership horizon, Sub-Zero will typically need 1-2 sealed-system interventions versus Viking's 2-3; the Viking purchase price savings get partly absorbed by that delta unless you do scheduled maintenance every 24-36 months.",
   bernePerspective:
     "We service both lines, our techs hold the Sub-Zero factory training and the Viking field-service certification, and our trucks stock the common parts for both. If a client asks us pre-purchase, we usually ask three questions: (1) is this your forever house, (2) is the rest of the kitchen pro-style, (3) how many hours per week is the kitchen actually in use. Forever house + general transitional kitchen = Sub-Zero. Pro-style suite + heavy-use cooking household = Viking. Forever house with pro-style suite is the only profile that genuinely needs Sub-Zero's Designer column line at $20K+ — most buyers do not.",
   faqs: [
@@ -239,7 +239,7 @@ const SUB_ZERO_VS_VIKING: ComparisonProfile = {
     {
       question: "What is the typical service-call cost for either brand?",
       answer:
-        "Berne charges $59 for the service call across both platforms — free if you proceed with the repair, paid only if you decline. Out-of-warranty sealed-system work lands $900-$1,800 on Sub-Zero and $1,200-$2,200 on current Viking. Non-sealed-system repairs (control boards, gaskets, fans) run $250-$700 on either platform.",
+        "Berne charges a $59 diagnostic across both platforms — free if you proceed with the repair, paid only if you decline. Out-of-warranty sealed-system work lands $900-$1,800 on Sub-Zero and $1,200-$2,200 on current Viking. Non-sealed-system repairs (control boards, gaskets, fans) run $250-$700 on either platform.",
     },
     {
       question: "Which brand handles South Florida humidity better?",
@@ -444,7 +444,7 @@ const WOLF_VS_THERMADOR_VS_VIKING: ComparisonProfile = {
     },
   ],
   ownershipNotes:
-    "All three brands qualify for the same Berne $59 service-call fee and the same $89 commercial dispatch if the range is in a commercial kitchen. Wolf service tickets are the cheapest in total ownership cost because they happen the least often. Thermador and Viking are comparable on per-ticket cost but ticket frequency on Viking pre-2018 platform was meaningfully higher (we no longer see that delta on current production). Total 15-year ownership cost ranks: Wolf cheapest, Thermador middle, Viking slightly higher (driven by legacy platform tickets we still see in the field).",
+    "All three brands qualify for the same Berne $59 diagnostic fee and the same $89 commercial dispatch if the range is in a commercial kitchen. Wolf service tickets are the cheapest in total ownership cost because they happen the least often. Thermador and Viking are comparable on per-ticket cost but ticket frequency on Viking pre-2018 platform was meaningfully higher (we no longer see that delta on current production). Total 15-year ownership cost ranks: Wolf cheapest, Thermador middle, Viking slightly higher (driven by legacy platform tickets we still see in the field).",
   bernePerspective:
     "For the median South Florida buyer at this price tier, we recommend Wolf when the question is open-ended. When the buyer has a specific cooking style (heavy baking, steak-forward, suite aesthetic), the answer shifts. We see all three platforms succeed and all three platforms fail in the field; the differences are real but small enough that buyer preference should drive the decision more than a service-shop opinion. The one configuration we steer away from is the Thermador Pro Grand 48\" steam-combi — the steam-combi cavity is the single most fragile thing across all three brands. If that feature is important, plan for one major service event inside the warranty period.",
   faqs: [
@@ -481,7 +481,7 @@ const WOLF_VS_THERMADOR_VS_VIKING: ComparisonProfile = {
     {
       question: "Can Berne service all three in South Florida?",
       answer:
-        "Yes. Our technicians carry factory training across Sub-Zero / Wolf, BSH (Thermador), and Viking. Same-day dispatch is typical for the $89 commercial or $59 residential service call across all three brands.",
+        "Yes. Our technicians carry factory training across Sub-Zero / Wolf, BSH (Thermador), and Viking. Same-day dispatch is typical for the $89 commercial or $59 residential diagnostic across all three brands.",
     },
   ],
 };
@@ -633,7 +633,7 @@ const MIELE_VS_BOSCH: ComparisonProfile = {
     },
   ],
   ownershipNotes:
-    "Both platforms qualify for the same Berne $59 service-call fee in South Florida. Miele service tickets are less frequent (annual rate roughly 0.5x Bosch on 10-year-old units), but per-ticket cost is comparable. Total 20-year ownership cost favors Miele only if you actually keep the appliance 20 years; for ownership horizons under 12 years, Bosch is the cleaner economic choice. Both brands' parts move through reliable national networks; we do not see brand-specific parts delays in South Florida.",
+    "Both platforms qualify for the same Berne $59 diagnostic fee in South Florida. Miele service tickets are less frequent (annual rate roughly 0.5x Bosch on 10-year-old units), but per-ticket cost is comparable. Total 20-year ownership cost favors Miele only if you actually keep the appliance 20 years; for ownership horizons under 12 years, Bosch is the cleaner economic choice. Both brands' parts move through reliable national networks; we do not see brand-specific parts delays in South Florida.",
   bernePerspective:
     "For most South Florida buyers, the honest answer is Bosch 800 Series — the price delta to Miele does not earn out on typical ownership horizons of 8-12 years, and the wash quality is genuinely close. We recommend Miele to clients who are building for permanence (forever home, multi-generational house, ultra-premium kitchen suite). We recommend Bosch when the buyer asks for our honest opinion and the kitchen is otherwise mid-premium. For households running 3+ loads per day, the AutoDos convenience on Miele G7000 is the single feature that tips the math toward Miele regardless of ownership horizon.",
   faqs: [
@@ -822,7 +822,7 @@ const SUB_ZERO_VS_THERMADOR: ComparisonProfile = {
     },
   ],
   ownershipNotes:
-    "Both platforms qualify for the $59 Berne service call. Sub-Zero Designer total cost of ownership over 15 years lands slightly higher (higher purchase price) but the per-year ownership cost flattens past 15 years — Designer outlives Freedom. Per-ticket repair cost is comparable; ticket frequency favors Sub-Zero by roughly 0.6-0.7x. For a 3-column kitchen, total 15-year ownership including purchase is roughly equivalent; the decision is mostly about feature preference and aesthetic.",
+    "Both platforms qualify for the $59 Berne diagnostic. Sub-Zero Designer total cost of ownership over 15 years lands slightly higher (higher purchase price) but the per-year ownership cost flattens past 15 years — Designer outlives Freedom. Per-ticket repair cost is comparable; ticket frequency favors Sub-Zero by roughly 0.6-0.7x. For a 3-column kitchen, total 15-year ownership including purchase is roughly equivalent; the decision is mostly about feature preference and aesthetic.",
   bernePerspective:
     "We see both succeed and both fail in the field. Sub-Zero Designer is what we install in our own home if we install column refrigeration; Thermador Freedom is what we recommend to clients who are price-conscious and don't have a 20-year ownership horizon. The Diamond Ice Maker on Thermador is the single feature most buyers don't realize they care about until they have it; for home bar / cocktail-focused kitchens, that one feature can tip the decision. For everything else, the call is between Sub-Zero's quieter, more reliable, more expensive platform and Thermador's stronger feature set at the lower price.",
   faqs: [
@@ -1204,7 +1204,7 @@ const SUB_ZERO_BI_36_VS_BI_48: ComparisonProfile = {
     },
   ],
   ownershipNotes:
-    "Both qualify for the $59 Berne service call. BI-48 service ticket rate is roughly 1.3x BI-36 over 10 years — primarily from the additional doors, alignment, and SID-configuration components. Total 15-year ownership cost: BI-36 $13,500 acquisition + $1,800 service (typical); BI-48 $16,500 acquisition + $2,400 service (typical). The capacity delta is the only reason to take the higher cost. For households that genuinely need 30 cu ft, the math is right. For households that don't, BI-36 is the cleaner economic choice.",
+    "Both qualify for the $59 Berne diagnostic. BI-48 service ticket rate is roughly 1.3x BI-36 over 10 years — primarily from the additional doors, alignment, and SID-configuration components. Total 15-year ownership cost: BI-36 $13,500 acquisition + $1,800 service (typical); BI-48 $16,500 acquisition + $2,400 service (typical). The capacity delta is the only reason to take the higher cost. For households that genuinely need 30 cu ft, the math is right. For households that don't, BI-36 is the cleaner economic choice.",
   bernePerspective:
     "We see most clients overbuy on capacity. A family of four does not need 30 cu ft of refrigeration — the BI-36 is sufficient and the extra $2,500-$3,000 on the BI-48 funds upgrades elsewhere in the kitchen. The clients who should buy BI-48 are the ones who actually host weekly, batch-cook seriously, or run a household of 5+. The BI-48SID is the right answer for cocktail-forward households; the BI-48SD is the right answer for hosting households; the standard BI-48S is the right answer when freezer-side capacity is the dominant need. For everything else, BI-36.",
   faqs: [
@@ -1231,7 +1231,7 @@ const SUB_ZERO_BI_36_VS_BI_48: ComparisonProfile = {
     {
       question: "What's the typical service-call cost for either model?",
       answer:
-        "$59 Berne service call for both. Out-of-warranty repair averages $250-$580 on BI-36 and $260-$620 on BI-48 — effectively tied per-ticket.",
+        "$59 Berne diagnostic for both. Out-of-warranty repair averages $250-$580 on BI-36 and $260-$620 on BI-48 — effectively tied per-ticket.",
     },
     {
       question: "Which has better resale value?",

@@ -90,7 +90,7 @@ const subZero: ResidentialBrandProfile = {
     "Built-in refrigeration is what we do most often. Sub-Zero columns, classic side-by-sides, and BI built-ins — diagnosed and repaired by techs who have rebuilt these units long enough to know the platform's habits.",
   metaTitle: "Sub-Zero Repair Miami & South Florida · $59 · Berne",
   metaDescription:
-    "Same-day Sub-Zero refrigerator repair across Miami-Dade, Broward & Palm Beach. Built-ins, columns, BI-36, 648PRO. Licensed, EPA-608, 90-day warranty.",
+    "White-glove Sub-Zero refrigerator repair across Miami-Dade, Broward & Palm Beach. Built-ins, columns, BI-36, 648PRO. Licensed, EPA-608, 90-day warranty.",
   about:
     "Sub-Zero is the brand we touch more than any other in the built-in segment. The classic side-by-sides (632, 642, 685), the BI built-in line (BI-30, BI-36, BI-42, BI-48), the integrated column series (IC-30, IC-24, IC-27), and the older 600-series PRO units are all standard tickets for our team. South Florida's climate is hard on these compressors — humidity loads the dual-refrigeration system, condenser coils foul fast in salt air, and homeowners who let dust packs build up on the front grille usually call us first about a warm fresh-food side. We diagnose on the platform, not by guessing: dual-evap systems mean a warm side doesn't always mean a compressor — half the time it's the evap fan motor on the affected side, a defrost terminator, or a control-board relay that's stopped switching the secondary loop. We carry the right gauges (R-134a and R-600a both, since the modern Designer Series moved to isobutane), and our techs are EPA-608 certified for the sealed-system work that a lot of shops can't legally touch on these units.",
   equipment: [
@@ -218,7 +218,7 @@ const subZero: ResidentialBrandProfile = {
       "La refrigeración built-in es lo que hacemos con más frecuencia. Columnas Sub-Zero, side-by-sides clásicas y built-ins BI — diagnosticados y reparados por técnicos que han reconstruido estas unidades suficiente tiempo para conocer los hábitos de la plataforma.",
     metaTitle: "Reparación Sub-Zero · Sur de Florida",
     metaDescription:
-      "Reparación Sub-Zero el mismo día en Miami-Dade, Broward y Palm Beach. Built-ins, columnas, BI-36, 648PRO. Licenciados, EPA-608, garantía de 90 días.",
+      "Reparación Sub-Zero de guante blanco en Miami-Dade, Broward y Palm Beach. Built-ins, columnas, BI-36, 648PRO. Licenciados, EPA-608, garantía de 90 días.",
     about:
       "Sub-Zero es la marca que tocamos más que cualquier otra en el segmento built-in. Las side-by-sides clásicas (632, 642, 685), la línea BI built-in (BI-30, BI-36, BI-42, BI-48), la serie de columnas integradas (IC-30, IC-24, IC-27) y las unidades viejas PRO 600-series son tickets estándar para nuestro equipo. El clima del Sur de Florida es duro con estos compresores — la humedad carga el sistema dual-refrigeration, los coils del condensador se ensucian rápido en aire salino, y los homeowners que dejan acumular polvo en el grille frontal usualmente nos llaman primero por el lado fresh-food tibio. Diagnosticamos en la plataforma, no por adivinar: sistemas dual-evap significan que un lado tibio no siempre es compresor — la mitad del tiempo es el motor del evap fan en el compartimento afectado, un defrost terminator, o un relé de control board que dejó de switchear el loop secundario. Cargamos los gauges correctos (R-134a y R-600a, porque la Designer Series moderna se movió a isobutano), y nuestros técnicos están EPA-608 certified para el trabajo de sealed-system que muchos talleres no pueden tocar legalmente.",
     equipment: [
@@ -267,7 +267,7 @@ const wolf: ResidentialBrandProfile = {
     "Wolf ranges, rangetops, and dual-fuel ovens are built for the long haul. Spark module failures, infrared broiler elements, dual-fuel control boards — we diagnose on the platform and carry the right OEM parts.",
   metaTitle: "Wolf Range & Oven Repair Miami–South FL · $59 · Berne",
   metaDescription:
-    "Wolf range, rangetop, dual-fuel & convection oven repair across South Florida. Same-day. Real OEM parts. EPA-608 certified. 90-day warranty.",
+    "Wolf range, rangetop, dual-fuel & convection oven repair across South Florida. Priority service. Real OEM parts. EPA-608 certified. 90-day warranty.",
   about:
     "Wolf is Sub-Zero's sister brand — same parent, same quality bar, same long-relationship pattern with the homeowner. We see Wolf gas ranges (DF series dual-fuel, AG all-gas, GR all-gas residential), the M Series wall ovens (the newer MDO and SO platforms), Wolf rangetops, and the contour-handle classic SRT rangetops in plenty of South Florida kitchens. The biggest jobs are spark module replacements on the rangetops (the standalone module is a known wear part around year 8-10), infrared broiler element replacements in the dual-fuel ovens, dual-fuel control board failures, and convection fan motor swaps. We're also one of the few shops in Miami-Dade and Broward that will work on the Wolf convection steam ovens (CSO) — they have a separate steam generator with descaling and water-level sensor issues that require a specific service approach. Wolf parts are not always next-day; we keep the most common spark modules, igniters, infrared elements, control boards, and dual-fuel sensors on the truck, and the rest we source through Sub-Zero's distributor network with typical 2-3 day turnaround.",
   equipment: [
@@ -385,7 +385,7 @@ const wolf: ResidentialBrandProfile = {
       "Las estufas Wolf, rangetops y hornos dual-fuel están construidos para el largo plazo. Fallas de spark module, elementos de infrarrojo del broiler, control boards de dual-fuel — diagnosticamos en la plataforma y cargamos las partes OEM correctas.",
     metaTitle: "Reparación Wolf Estufas y Hornos · Sur de Florida · $59",
     metaDescription:
-      "Reparación de estufas Wolf, rangetops, hornos dual-fuel y convección en el Sur de Florida. El mismo día. Partes OEM. EPA-608. Garantía de 90 días.",
+      "Reparación de estufas Wolf, rangetops, hornos dual-fuel y convección en el Sur de Florida. Servicio prioritario. Partes OEM. EPA-608. Garantía de 90 días.",
     about:
       "Wolf es la marca hermana de Sub-Zero — mismo parent, misma barra de calidad, mismo patrón de relación larga con el homeowner. Vemos estufas Wolf de gas (series DF dual-fuel, AG all-gas, GR all-gas residencial), los hornos de pared M Series (las plataformas MDO y SO más nuevas), rangetops Wolf, y los rangetops SRT clásicos contour-handle en muchas cocinas del Sur de Florida. Los trabajos más grandes son reemplazos de spark module en los rangetops (el módulo standalone es una parte conocida de desgaste alrededor del año 8-10), reemplazos del elemento infrarrojo del broiler en los hornos dual-fuel, fallas de control board dual-fuel, y swaps de motor del convection fan. También somos uno de los pocos talleres en Miami-Dade y Broward que trabajará en los hornos de vapor de convección Wolf (CSO) — tienen un generador de vapor separado con problemas de descalcificación y sensor de nivel de agua que requieren un approach específico. Las partes Wolf no siempre son next-day; mantenemos los spark modules, ignitors, elementos infrarrojos, control boards y sensores dual-fuel más comunes en el camión, y el resto lo sourceamos por la red de distribuidor Sub-Zero con típicamente 2-3 días.",
     equipment: [
@@ -561,7 +561,7 @@ const viking: ResidentialBrandProfile = {
   es: {
     teaser:
       "Estufas Viking pro-style, refrigeradores built-in, lavavajillas y rangetops. 5-series y 7-series más viejas y la plataforma Tuscany más nueva — sabemos qué falla en cada generación.",
-    metaTitle: "Reparación Viking · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación Viking · Sur de Florida · Diagnóstico $59",
     metaDescription:
       "Reparación de estufa Viking, refrigerador, lavavajillas y cooktop en Miami-Dade, Broward, Palm Beach. Pro-style 5-series, 7-series, Tuscany. EPA-608.",
     about:
@@ -614,7 +614,7 @@ const thermador: ResidentialBrandProfile = {
     "Thermador Pro Grand, Pro Harmony, Star Burner cooktops, Freedom column refrigeration, and the Sapphire dishwasher. Common platform with Bosch and Gaggenau — we know the BSH service procedures.",
   metaTitle: "Thermador Repair Miami & South Florida · $59 · Berne",
   metaDescription:
-    "Thermador Pro Grand, Pro Harmony, Star Burner cooktop, Freedom column & Sapphire dishwasher repair. South Florida same-day. EPA-608, 90-day warranty.",
+    "Thermador Pro Grand, Pro Harmony, Star Burner cooktop, Freedom column & Sapphire dishwasher repair. South Florida priority service. EPA-608, 90-day warranty.",
   about:
     "Thermador is part of the BSH family (along with Bosch and Gaggenau), which means service procedures, diagnostic tools, and many parts overlap. We see the full Thermador line in South Florida: Pro Grand and Pro Harmony pro-style ranges, Star Burner gas cooktops, the induction cooktops, Masterpiece and Professional wall ovens, the Freedom column refrigeration line, Freedom undercounter, and the Sapphire dishwasher. Thermador's Star Burner — the proprietary five-point star pattern — has specific cleaning and igniter alignment requirements that a generic appliance tech often gets wrong. The Freedom column line shares a platform with Gaggenau, and the Sapphire dishwasher shares circulation pump and control board generations with Bosch. Our techs carry BSH diagnostic tools (the connector for service-mode access), and we're trained on the BSH platform across all three brand lines. Thermador parts come through BSH's distributor network — typically 2-3 business days on anything we don't already stock.",
   equipment: [
@@ -741,9 +741,9 @@ const thermador: ResidentialBrandProfile = {
   es: {
     teaser:
       "Thermador Pro Grand, Pro Harmony, cooktops Star Burner, refrigeración de columna Freedom y lavavajillas Sapphire. Plataforma común con Bosch y Gaggenau — conocemos los procedimientos de servicio BSH.",
-    metaTitle: "Reparación Thermador · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación Thermador · Sur de Florida · Diagnóstico $59",
     metaDescription:
-      "Reparación Thermador Pro Grand, Pro Harmony, cooktop Star Burner, columna Freedom y lavavajillas Sapphire. Sur de Florida el mismo día. EPA-608.",
+      "Reparación Thermador Pro Grand, Pro Harmony, cooktop Star Burner, columna Freedom y lavavajillas Sapphire. Sur de Florida, servicio prioritario. EPA-608.",
     about:
       "Thermador es parte de la familia BSH (junto con Bosch y Gaggenau), lo que significa que procedimientos de servicio, herramientas de diagnóstico y muchas partes se solapan. Vemos la línea Thermador completa en el Sur de Florida: estufas pro-style Pro Grand y Pro Harmony, cooktops de gas Star Burner, los cooktops de inducción, hornos de pared Masterpiece y Professional, la línea de refrigeración de columna Freedom, undercounter Freedom y el lavavajillas Sapphire. El Star Burner de Thermador — el patrón propietario de cinco puntas — tiene requerimientos específicos de cleaning y alineación del igniter que un técnico genérico frecuentemente obtiene mal. La línea Freedom column comparte plataforma con Gaggenau, y el lavavajillas Sapphire comparte generaciones de bomba de circulación y control board con Bosch. Nuestros técnicos cargan herramientas de diagnóstico BSH (el conector para acceso a service-mode), y estamos entrenados en la plataforma BSH a través de las tres líneas de marca. Las partes Thermador vienen por la red de distribuidor BSH — típicamente 2-3 días en cualquier cosa que no tengamos en stock.",
     equipment: [
@@ -901,7 +901,7 @@ const miele: ResidentialBrandProfile = {
     {
       question: "How often should I descale my Miele steam oven?",
       answer:
-        "Miele recommends descaling every 200 hours of steam use, which works out to about every 3-4 months for typical home use. Skipping descales is the #1 cause of steam oven sensor failures and water-level errors. If you've gone a year without descaling, we can do it as part of a service call.",
+        "Miele recommends descaling every 200 hours of steam use, which works out to about every 3-4 months for typical home use. Skipping descales is the #1 cause of steam oven sensor failures and water-level errors. If you've gone a year without descaling, we can do it as part of a service visit.",
     },
     {
       question: "Do you service Miele coffee systems (CM/CVA)?",
@@ -927,7 +927,7 @@ const miele: ResidentialBrandProfile = {
   es: {
     teaser:
       "La ingeniería alemana de Miele es engaño en costo: las máquinas duran 20+ años cuando se atienden correctamente. Lavavajillas G-series, lavadoras y secadoras W1/T1, MasterCool refrigeración, hornos H 7000 — la plataforma completa, con el Miele Service Tool.",
-    metaTitle: "Reparación Miele · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación Miele · Sur de Florida · Diagnóstico $59",
     metaDescription:
       "Reparación Miele lavavajillas, W1 lavadora, T1 secadora, MasterCool refrigeración, hornos H 7000 y de vapor. Service Tool, partes OEM, EPA-608.",
     about:
@@ -958,7 +958,7 @@ const miele: ResidentialBrandProfile = {
     faqs: [
       { question: "¿Tienen el Miele Service Tool?", answer: "Sí. El Miele Service Tool es requerido para fault-code reads, ajustes de parámetro y firmware flashes en la plataforma Miele actual — lavavajillas G-series, lavandería W1/T1, refrigeración MasterCool, hornos de pared H 7000, hornos de vapor. Tenemos el tool y nuestros técnicos están entrenados." },
       { question: "Mi secadora T1 heat-pump está tomando 2+ horas por load. ¿Qué pasa?", answer: "Casi siempre el coil del evaporador tapado con lint fino. Incluso con el filtro de lint limpiado cada load, lint microscópico llega al evaporador del heat-pump y corta eficiencia. Sacamos el evap, lo limpiamos a fondo, verificamos la bomba de drenaje y el path de condensado." },
-      { question: "¿Qué tan frecuente debo descalcificar mi horno de vapor Miele?", answer: "Miele recomienda descalcificar cada 200 horas de uso de vapor, que sale a cada 3-4 meses para uso típico de hogar. Brincar descales es la causa #1 de fallas de sensor de horno de vapor y errores de nivel de agua. Si ha pasado un año sin descalcificar, podemos hacerlo como parte de un service call." },
+      { question: "¿Qué tan frecuente debo descalcificar mi horno de vapor Miele?", answer: "Miele recomienda descalcificar cada 200 horas de uso de vapor, que sale a cada 3-4 meses para uso típico de hogar. Brincar descales es la causa #1 de fallas de sensor de horno de vapor y errores de nivel de agua. Si ha pasado un año sin descalcificar, podemos hacerlo como parte de una visita de servicio." },
       { question: "¿Atienden sistemas de café Miele (CM/CVA)?", answer: "Sí. Calibración del grinder, reemplazo de brew unit, descalcificación, cleaning del sistema de leche, y diagnósticos del panel. CM 7750 y las máquinas built-in CVA más viejas ambas soportadas." },
       { question: "¿Hay partes Miele disponibles en US?", answer: "Sí. Miele USA mantiene red de distribuidor — partes comunes vienen en 2-4 días, y cargamos consumibles de alta falla en el camión (actuadores G 7000, kits de bomba de circulación, bombas de drenaje). Solo Miele genuino; no aftermarket — no lo recomendamos." },
       { question: "¿Miele vale la pena el costo de reparar?", answer: "Sí para la mayoría de trabajos. Miele diseña sus appliances para 20 años de vida útil — mucho más que cualquier competidor americano — y el costo de reemplazo es alto (un par MasterCool nuevo es $15K-$20K; un lavavajillas G 7000 es $2.5K-$3.5K). La mayoría de reparaciones caen muy por debajo del costo de reemplazo." },
@@ -981,7 +981,7 @@ const kitchenAid: ResidentialBrandProfile = {
     "KitchenAid built-in refrigeration, ranges, cooktops, and the workhorse dishwasher line. Built on Whirlpool platforms — we know the shared parts and the KitchenAid-specific quirks.",
   metaTitle: "KitchenAid Repair Miami & South FL · $59 · Berne",
   metaDescription:
-    "KitchenAid refrigerator, range, dishwasher & cooktop repair. Same-day across Miami-Dade, Broward, Palm Beach. $59 service call. 90-day warranty.",
+    "KitchenAid refrigerator, range, dishwasher & cooktop repair. Priority service across Miami-Dade, Broward, Palm Beach. $59 diagnostic, credited to repair. 90-day warranty.",
   about:
     "KitchenAid sits in the mid-premium tier of the Whirlpool family — the brand picks up where Whirlpool tops out and sits below the Jenn-Air and Whirlpool-built KitchenAid Pro lines. We see the full KitchenAid mix across South Florida: French door and side-by-side refrigerators (KRFC, KRSC, KBSD built-in), the slide-in range line (KSGB, KSGG, KSGT), the dishwasher line (KDFE, KDTE, KDTM with the proprietary ProDry / ProWash variants), KitchenAid wall ovens (KOSE, KODE, KFGC), and the cooktop and downdraft platforms. Because KitchenAid shares major components with Whirlpool — same control boards on some platforms, same evaporator fans, same dishwasher tubs in many cases — we can often diagnose and source parts faster than for a unique-platform brand. The differences that matter are the KitchenAid-specific control panels, the ProDry hot-air dishwasher option, the Architect Series wall-oven controls, and the KBSD built-in refrigerator's evap and defrost system. We carry common KitchenAid parts (icemakers, evap fans, drain pumps, control boards in two generations) on the truck.",
   equipment: [
@@ -1098,9 +1098,9 @@ const kitchenAid: ResidentialBrandProfile = {
   es: {
     teaser:
       "Refrigeración KitchenAid built-in, estufas, cooktops y la línea workhorse de lavavajillas. Construido en plataformas Whirlpool — conocemos las partes compartidas y los quirks específicos de KitchenAid.",
-    metaTitle: "Reparación KitchenAid · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación KitchenAid · Sur de Florida · Diagnóstico $59",
     metaDescription:
-      "Reparación KitchenAid refrigerador, estufa, lavavajillas y cooktop. El mismo día en Miami-Dade, Broward, Palm Beach. $59 service call. Garantía de 90 días.",
+      "Reparación KitchenAid refrigerador, estufa, lavavajillas y cooktop. Servicio prioritario en Miami-Dade, Broward, Palm Beach. Diagnóstico de $59, abonado. Garantía de 90 días.",
     about:
       "KitchenAid es la marca premium de Whirlpool — comparte plataformas Whirlpool en lavavajillas, refrigeración y lavandería pero con interiores y controles upgrade. Vemos el rango completo en cocinas del Sur de Florida: refrigeradores French door y side-by-side (KRFC, KBSD, KBSN series), built-ins KSC y la línea KitchenAid columns, lavavajillas KDFE/KDTE/KDPE de stainless interior, estufas slide-in y freestanding KSEG/KSGB/KSGG, hornos de pared single y double KOSE/KODE, y la línea cooktop con quemadores Even-Heat. KitchenAid comparte modos de falla con Whirlpool en muchos casos — diverter motors de lavavajillas, evap fan motors, módulos de ice maker — entonces atendemos ambas marcas con las mismas partes y procedimientos. Donde KitchenAid es distinto es en los controles touch (más sofisticados que Whirlpool stock) y los hornos con sistemas True Convection.",
     equipment: [
@@ -1131,7 +1131,7 @@ const kitchenAid: ResidentialBrandProfile = {
       { question: "Mi refri French door KitchenAid tiene el lado fresh-food tibio. ¿Cuál es la causa?", answer: "Usualmente una de tres cosas: (1) falla del defrost heater, evaporador del freezer engelado, sin airflow al fresh-food; (2) motor del evap fan trancado; (3) control board principal no comandando defrost. Testeamos los tres en la primera llamada." },
       { question: "¿Cargan partes KitchenAid en el camión?", answer: "Sí — partes de alta falla en el camión (motores diverter, igniters, módulos de ice maker, evap fans, cables de puerta, bombas de drenaje). Partes menos comunes vienen en 1-2 días vía distribuidor Whirlpool." },
       { question: "¿KitchenAid y Whirlpool usan las mismas partes?", answer: "En muchas plataformas, sí — lavavajillas, French door refrigeración, lavandería. Los controles y interiores son diferentes pero las partes mecánicas frecuentemente son las mismas. Atendemos ambas marcas con los mismos técnicos." },
-      { question: "¿Cuánto cuesta un service call KitchenAid?", answer: "$59 service call. La cuota cubre el diagnóstico y es gratuita si autoriza la reparación — solo se paga si decide no continuar." },
+      { question: "¿Cuánto cuesta el diagnóstico KitchenAid?", answer: "Diagnóstico de $59. La cuota cubre el diagnóstico y es gratuita si autoriza la reparación — solo se paga si decide no continuar." },
     ],
   },
 };
@@ -1150,7 +1150,7 @@ const ge: ResidentialBrandProfile = {
     "GE, GE Profile, Cafe, and Monogram — same parent, four tiers. Monogram built-in refrigeration, Cafe induction, Profile dishwashers. We carry parts across the line.",
   metaTitle: "GE Monogram & Cafe Repair Miami–South FL · $59 · Berne",
   metaDescription:
-    "GE, GE Profile, Cafe & Monogram appliance repair. Same-day across South Florida. Built-ins, induction, ranges, dishwashers. $59 service call. 90-day warranty.",
+    "GE, GE Profile, Cafe & Monogram appliance repair. Priority service across South Florida. Built-ins, induction, ranges, dishwashers. $59 diagnostic. 90-day warranty.",
   about:
     "GE Appliances covers four distinct tiers under one parent: standard GE (mass-market white goods), GE Profile (mid-tier), Cafe (mid-premium with custom hardware and matte black/stainless finishes), and Monogram (premium built-in line that competes with Sub-Zero and Thermador). We service across all four. The Monogram built-in refrigerators (ZIP, ZIK, ZICS, ZIRP) are real built-ins with column variants, dual-refrigeration on the larger models, and a sealed system that requires EPA-608 work. Cafe French door refrigerators (CYE, CWE) and the Cafe induction ranges (CHS) share much of the GE Profile platform but with the custom hardware finishes. Profile dishwashers (PDT) and Cafe dishwashers (CDT) share circulation pump and control board generations. Standard GE refrigeration (GSE, GFE), GE ranges (JGB, JB), and GE dishwashers (GDF, GDT) are workhorse units we see broadly across South Florida. GE's parts distribution is solid — most common parts available in 1-2 business days through their distributor, and we carry the high-failure items on the truck across the four sub-brands.",
   equipment: [
@@ -1285,7 +1285,7 @@ const ge: ResidentialBrandProfile = {
       "GE Appliances cubre cuatro líneas — GE estándar, Profile, Cafe y Monogram premium built-in. Atendemos las cuatro con los mismos técnicos y partes compartidas a través de tiers.",
     metaTitle: "Reparación GE / Profile / Cafe / Monogram · Sur de FL",
     metaDescription:
-      "Reparación de refrigeradores, estufas, lavavajillas y hornos GE, Profile, Cafe y Monogram en el Sur de Florida. El mismo día, $59 service call.",
+      "Reparación de refrigeradores, estufas, lavavajillas y hornos GE, Profile, Cafe y Monogram en el Sur de Florida. Servicio prioritario, diagnóstico de $59.",
     about:
       "GE Appliances (ahora una compañía Haier) cubre cuatro sub-marcas que vemos a diario en el Sur de Florida: GE estándar (mass-market), Profile (mid-tier con más features), Cafe (mid-premium con hardware custom) y Monogram (línea premium built-in que compite con Sub-Zero y Thermador). Las plataformas comparten significativamente — Profile y Cafe en particular tienen plataforma overlap pesado — así que nuestro truck stock cubre fallas de alta frecuencia a través de las cuatro marcas al mismo tiempo. La línea Monogram built-in incluye refrigeradores ZIC/ZIS column, French door ZWE/ZWS, y los slide-in y pro-style ranges ZGP/ZDP. Las estufas Cafe incluyen la línea induction CHS9 y las gas pro-style con burners high-output. Hornos Advantium speed-cook (ZSC, PSB) son una plataforma específica con magnetrons high-voltage que necesitan procedimiento de safety apropiado.",
     equipment: [
@@ -1334,7 +1334,7 @@ const whirlpool: ResidentialBrandProfile = {
     "Whirlpool is the mass-market workhorse — top-load and front-load washers, dryers, top-freezer and French door refrigerators, dishwashers, ranges. Parts available, jobs done first visit.",
   metaTitle: "Whirlpool Repair Miami & South FL · $59 · Berne",
   metaDescription:
-    "Whirlpool washer, dryer, refrigerator, dishwasher & range repair. Same-day across South Florida. $59 service call. Parts on truck. 90-day warranty.",
+    "Whirlpool washer, dryer, refrigerator, dishwasher & range repair. Priority service across South Florida. $59 diagnostic. Parts on truck. 90-day warranty.",
   about:
     "Whirlpool is the volume brand we touch most often in the mass-market segment. The Whirlpool family (which includes KitchenAid, Maytag, JennAir, and Amana) shares heavy platform overlap, which means parts are widely available and our trucks are stocked for the common jobs. We see the full Whirlpool residential lineup across South Florida: top-load washers (WTW), front-load washers (WFW), gas and electric dryers (WED, WGD), French door (WRF, WRX) and top-freezer (WRT) refrigerators, side-by-side (WRS) refrigerators, slide-in and freestanding ranges (WFG, WFE), dishwashers (WDT), and the over-the-range microwave line (WMH). Whirlpool builds for a 10-12 year service life on most products — they're not premium long-life appliances, but they're serviceable and parts are easy to source. Most repairs we do on Whirlpool are first-visit complete: drain pumps, dryer heating elements, lid switches, water valves, ice makers, and oven igniters are all common, all on the truck. Whirlpool parts come through their distributor in 1-2 business days for anything we don't stock.",
   equipment: [
@@ -1467,9 +1467,9 @@ const whirlpool: ResidentialBrandProfile = {
   es: {
     teaser:
       "Whirlpool es el workhorse mass-market — la marca que está en la mayoría de single-family homes, condos y rentals del Sur de Florida. Plataforma confiable, partes en stock, reparaciones de una visita.",
-    metaTitle: "Reparación Whirlpool · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación Whirlpool · Sur de Florida · Diagnóstico $59",
     metaDescription:
-      "Reparación Whirlpool lavadora, secadora, refrigerador, lavavajillas y estufa en Miami-Dade, Broward, Palm Beach. El mismo día, $59 service call.",
+      "Reparación Whirlpool lavadora, secadora, refrigerador, lavavajillas y estufa en Miami-Dade, Broward, Palm Beach. Servicio prioritario, diagnóstico de $59.",
     about:
       "Whirlpool es la marca americana mass-market más instalada en el Sur de Florida — la opción default para builders, property management y homeowners que valoran confiabilidad y partes disponibles sobre features premium. La plataforma Whirlpool es predecible: motores direct-drive en lavadoras top-load WTW Cabrio, plataforma compartida en lavavajillas con KitchenAid (motor diverter, control board), refrigeradores French door WRF/WRX, secadoras eléctricas WED y de gas WGD. Las partes son fáciles de sourcer — Whirlpool tiene una de las redes de distribución más fuertes en la industria, partes comunes en 1-2 días, y nosotros cargamos las partes de alta falla en el camión para completar en una visita.",
     equipment: [
@@ -1518,7 +1518,7 @@ const lg: ResidentialBrandProfile = {
     "LG inverter compressors, InstaView refrigerators, TwinWash laundry, and the WashTower stacked column. We work with LG's diagnostic procedures and the LinearCompressor platform.",
   metaTitle: "LG Appliance Repair Miami & South FL · $59 · Berne",
   metaDescription:
-    "LG refrigerator, washer, dryer & range repair across South Florida. LinearCompressor, InstaView, TwinWash, WashTower. Same-day. EPA-608, 90-day warranty.",
+    "LG refrigerator, washer, dryer & range repair across South Florida. LinearCompressor, InstaView, TwinWash, WashTower. Priority service. EPA-608, 90-day warranty.",
   about:
     "LG has become one of the highest-volume premium brands we service. The LG Linear Inverter Compressor — used across the French door (LFXS, LRFXS), counter-depth, and InstaView refrigerator lines — has been a major service driver since the platform launched in 2014. LG and Kenmore Elite (LG-built) compressor failures around the 4-6 year mark were widespread enough to trigger a class-action settlement, and we still see those compressor jobs regularly. On the laundry side, the TwinWash pedestal washer, the standard front-load washers (WM, WF), the heat-pump dryer (DLHC), and the WashTower stacked column are all common service tickets. LG ranges (LRE, LRG, LSEL induction) and the InstaView Microwave Door Drawer line round out the residential mix. LG service requires specific diagnostic procedures — the LG SmartDiagnosis audio tone is sometimes useful for first-pass identification, and the LG service manual is detailed enough that techs trained on the platform can isolate faults quickly. We carry LG common parts on the truck (drain pumps, water valves, ice maker modules, control boards) and source through LG's distributor for anything else, typically 1-3 business days.",
   equipment: [
@@ -1635,7 +1635,7 @@ const lg: ResidentialBrandProfile = {
     {
       question: "Are LG heat-pump dryers (DLHC) worth repairing?",
       answer:
-        "Yes — the heat-pump dryer is energy-efficient and well-built. Most common service issue is the evaporator clogged with fine lint, which we clean as part of the service call. Cycle times return to normal afterward.",
+        "Yes — the heat-pump dryer is energy-efficient and well-built. Most common service issue is the evaporator clogged with fine lint, which we clean as part of the service visit. Cycle times return to normal afterward.",
     },
     {
       question: "How long do LG appliances last?",
@@ -1651,7 +1651,7 @@ const lg: ResidentialBrandProfile = {
   es: {
     teaser:
       "Refrigeradores French door LG, lavadoras WashTower y TwinWash, secadoras heat-pump, estufas de inducción. La plataforma Linear Inverter y los patrones de falla documentados — sabemos qué está cubierto bajo class-action.",
-    metaTitle: "Reparación LG · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación LG · Sur de Florida · Diagnóstico $59",
     metaDescription:
       "Reparación LG French door, WashTower, TwinWash, secadora heat-pump y estufa de inducción en el Sur de Florida. EPA-608, $59, garantía de 90 días.",
     about:
@@ -1681,7 +1681,7 @@ const lg: ResidentialBrandProfile = {
       { question: "¿Cómo sé si mi compresor LG está cubierto bajo el class-action?", answer: "Verificamos onsite contra el número serial y los rangos seriales documentados del settlement. Si su unidad está cubierta, la parte del compresor es sin costo; el labor puede o no estar — explicaremos los specifics antes de cualquier trabajo." },
       { question: "¿Reparan LG WashTower?", answer: "Sí — cobertura completa en la columna stacked WashTower. Drain pump de la lavadora, problemas de motor, elemento de la secadora y bloqueos del lint-duct. Sacamos el front panel para servicio." },
       { question: "Mi pedestal TwinWash no drena. ¿Qué pasa?", answer: "Casi siempre la drain pump del pedestal atrapando un item pequeño — moneda, hair clip o calcetín. Sacamos la pump, la limpiamos y verificamos rotación en la misma visita." },
-      { question: "¿Las secadoras heat-pump LG (DLHC) valen la pena reparar?", answer: "Sí — la secadora heat-pump es energy-efficient y bien construida. El service issue más común es el evap tapado con lint fino, que limpiamos como parte del service call. Los tiempos de ciclo regresan a normal después." },
+      { question: "¿Las secadoras heat-pump LG (DLHC) valen la pena reparar?", answer: "Sí — la secadora heat-pump es energy-efficient y bien construida. El service issue más común es el evap tapado con lint fino, que limpiamos como parte de la visita de servicio. Los tiempos de ciclo regresan a normal después." },
       { question: "¿Cuánto duran los appliances LG?", answer: "LG construye para 10-15 años de servicio en la mayoría de productos. El Linear Inverter Compressor específicamente ha tenido temas de confiabilidad en ciertos rangos de build, pero unidades más nuevas han mejorado." },
       { question: "¿Atienden estufas de inducción LG (LSEL)?", answer: "Sí. Las estufas LSEL de inducción tienen generator boards y surface coils individuales — el trabajo más común es una surface unit no detectando cookware, que diagnosticamos con el procedimiento de LG." },
     ],
@@ -1702,7 +1702,7 @@ const samsung: ResidentialBrandProfile = {
     "Samsung Family Hub refrigerators, FlexWash laundry, slide-in induction ranges, and the Bespoke modular line. We know the platform — and the known failure patterns.",
   metaTitle: "Samsung Appliance Repair Miami–South FL · $59 · Berne",
   metaDescription:
-    "Samsung refrigerator, washer, dryer, range & dishwasher repair across South Florida. Family Hub, FlexWash, Bespoke. Same-day. $59 service call. 90-day warranty.",
+    "Samsung refrigerator, washer, dryer, range & dishwasher repair across South Florida. Family Hub, FlexWash, Bespoke. Priority service. $59 diagnostic. 90-day warranty.",
   about:
     "Samsung's residential lineup has expanded heavily in the last decade — from the Family Hub French door refrigerators (RF) with the touch screen door panel, to the Bespoke modular refrigerator system that lets homeowners swap door panels, to the FlexWash washer that has a separate top-load mini-washer above a front-load main washer. We see all of it across South Florida. Samsung's reliability has been mixed compared to LG or Whirlpool — the ice maker on the French door line (RF28, RF22, RF23) has been a frequent service ticket, the FlexWash sealing system at the top mini-washer has been a known issue, and the slide-in ranges (NE63, NE58) have had control board failures on certain build years. That said, parts availability is good through Samsung's distributor (1-2 business days for most), the diagnostic codes are detailed, and most repairs are first-visit complete with the right parts on the truck. We service Samsung refrigerators including the Family Hub variants, FlexWash and standard front-load and top-load washers, electric and gas dryers, slide-in and freestanding ranges including the induction line, and Samsung dishwashers (DW).",
   equipment: [
@@ -1840,9 +1840,9 @@ const samsung: ResidentialBrandProfile = {
   es: {
     teaser:
       "Refrigeradores Samsung Family Hub, lavandería FlexWash, estufas de inducción slide-in y la línea modular Bespoke. Conocemos la plataforma — y los patrones de falla documentados.",
-    metaTitle: "Reparación Samsung · Sur de Florida · $59 Service Call",
+    metaTitle: "Reparación Samsung · Sur de Florida · Diagnóstico $59",
     metaDescription:
-      "Reparación Samsung refrigerador, lavadora, secadora, estufa y lavavajillas en el Sur de Florida. Family Hub, FlexWash, Bespoke. El mismo día, $59.",
+      "Reparación Samsung refrigerador, lavadora, secadora, estufa y lavavajillas en el Sur de Florida. Family Hub, FlexWash, Bespoke. Servicio prioritario, $59.",
     about:
       "La línea residencial Samsung se ha expandido pesado en la última década — de los refrigeradores French door Family Hub (RF) con touch screen en la puerta, al sistema modular Bespoke que deja a los homeowners cambiar door panels, a la lavadora FlexWash que tiene un mini-washer top-load separado encima de una lavadora principal front-load. Vemos todo en el Sur de Florida. La confiabilidad Samsung ha sido mixta comparada con LG o Whirlpool — el ice maker en la línea French door (RF28, RF22, RF23) ha sido service ticket frecuente, el sistema de sello del FlexWash en el mini-washer superior ha sido tema conocido, y las estufas slide-in (NE63, NE58) han tenido fallas de control board en ciertos años de build. Dicho eso, disponibilidad de partes es buena vía distribuidor Samsung (1-2 días para la mayoría), los códigos de diagnóstico son detallados, y la mayoría de reparaciones son first-visit complete.",
     equipment: [
@@ -2014,7 +2014,7 @@ const liebherr: ResidentialBrandProfile = {
     {
       question: "Do you service built-in Monolith columns in condo towers?",
       answer:
-        "Yes, and it's a core scenario for us — flush-inset columns can't be wheeled out, so they're diagnosed and repaired in place, with cabinetry panels handled carefully and the building's COI and service-elevator requirements arranged before the visit. The $59 service call is free with the approved repair, as on every job.",
+        "Yes, and it's a core scenario for us — flush-inset columns can't be wheeled out, so they're diagnosed and repaired in place, with cabinetry panels handled carefully and the building's COI and service-elevator requirements arranged before the visit. The $59 diagnostic is free with the approved repair, as on every job.",
     },
   ],
 };
@@ -2031,9 +2031,9 @@ const dacor: ResidentialBrandProfile = {
   tier: "premium",
   teaser:
     "California-built luxury cooking with three distinct generations in the field — Epicure and Renaissance legacies, Heritage, and the Samsung-era Contemporary line. We service all of them, igniters to relay boards.",
-  metaTitle: "Dacor Repair Miami & South Florida · $59 Call · Berne",
+  metaTitle: "Dacor Repair Miami & South Florida · $59 · Berne",
   metaDescription:
-    "Dacor range, oven & column refrigeration repair in South Florida. Igniters, relay boards, legacy Epicure & Renaissance units. $59 call, 90-day warranty.",
+    "Dacor range, oven & column refrigeration repair in South Florida. Igniters, relay boards, legacy Epicure & Renaissance units. $59 diagnostic, 90-day warranty.",
   about:
     "Dacor occupies an unusual spot in the premium kitchen: an American luxury brand with three distinct hardware generations in the field. The legacy Epicure and Renaissance lines (roughly mid-90s through mid-2010s) still anchor thousands of South Florida kitchens — wall ovens and ranges with relay boards and membrane control panels that have known aging patterns. The Heritage line carried the pro-style range torch through the 2010s. And since Samsung acquired the brand in 2016, the Contemporary and Transitional collections have brought touch-screen controls, column refrigeration, and Samsung-era electronics into the platform. Each generation fails differently, and we service all three. The classic calls are cooking calls: gas oven igniters that glow but never fire the burner, spark modules that click continuously after a boil-over, dual-fuel ovens dead on one element because a relay board let go, and Renaissance control panels that stop responding on humid mornings. On the newer side it's column refrigeration diagnostics and induction cooktop modules. Parts strategy matters with Dacor — Samsung-era parts flow well through distribution, while some legacy Epicure and Renaissance boards are scarce and worth repairing rather than replacing, which is a call we help owners make honestly.",
   equipment: [
@@ -2111,7 +2111,7 @@ const dacor: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Dacor rewards a shop that knows all three generations. Our techs carry the legacy knowledge — which Renaissance relay boards can be rebuilt, which Epicure igniters cross-reference to available parts, what a humidity-faulted membrane looks like versus a dead ERC — alongside current Samsung-era diagnostic procedures for the Contemporary collections and column refrigeration. We're licensed for the gas work, EPA-608 Universal certified for the refrigeration side, and honest about the economics: on a 20-year-old wall oven we'll lay out repair-versus-replace with real numbers before any part goes in. The $59 service call is free when you approve the repair, most cooking-side jobs close in one visit from truck stock, and everything we install carries the 90-day labor and parts warranty.",
+    "Dacor rewards a shop that knows all three generations. Our techs carry the legacy knowledge — which Renaissance relay boards can be rebuilt, which Epicure igniters cross-reference to available parts, what a humidity-faulted membrane looks like versus a dead ERC — alongside current Samsung-era diagnostic procedures for the Contemporary collections and column refrigeration. We're licensed for the gas work, EPA-608 Universal certified for the refrigeration side, and honest about the economics: on a 20-year-old wall oven we'll lay out repair-versus-replace with real numbers before any part goes in. The $59 diagnostic is free when you approve the repair, most cooking-side jobs close in one visit from truck stock, and everything we install carries the 90-day labor and parts warranty.",
   relatedServices: [
     { slug: "oven-repair", label: "Oven Repair" },
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
@@ -2245,7 +2245,7 @@ const fisherPaykel: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Fisher & Paykel punishes guesswork — a DishDrawer F1 diagnosed by someone who's never pulled a drawer becomes a 'replace the dishwasher' quote, and an adaptive-defrost fault read with generic-fridge instincts becomes an unnecessary compressor story. Our techs work the platform on its own terms: we read the fault logs, we've done the lid actuators and diverter valves enough times to quote them confidently, and we stock the high-frequency parts — lid seals and actuators, drain pumps, defrost components, diverter valves — so most repairs close in one visit. Parts beyond truck stock flow through Fisher & Paykel's US distribution in 2-4 business days. Gas-licensed for the range work, EPA-608 certified for sealed-system refrigeration, 90-day labor and parts warranty on everything, and the $59 service call is free when you approve the repair.",
+    "Fisher & Paykel punishes guesswork — a DishDrawer F1 diagnosed by someone who's never pulled a drawer becomes a 'replace the dishwasher' quote, and an adaptive-defrost fault read with generic-fridge instincts becomes an unnecessary compressor story. Our techs work the platform on its own terms: we read the fault logs, we've done the lid actuators and diverter valves enough times to quote them confidently, and we stock the high-frequency parts — lid seals and actuators, drain pumps, defrost components, diverter valves — so most repairs close in one visit. Parts beyond truck stock flow through Fisher & Paykel's US distribution in 2-4 business days. Gas-licensed for the range work, EPA-608 certified for sealed-system refrigeration, 90-day labor and parts warranty on everything, and the $59 diagnostic is free when you approve the repair.",
   relatedServices: [
     { slug: "dishwasher-repair", label: "Dishwasher Repair" },
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
@@ -2385,7 +2385,7 @@ const gaggenau: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Gaggenau owners in South Florida have two realistic options: factory-adjacent service with long scheduling horizons, or an independent shop that actually knows the BSH platform. We're the second — the same senior techs who handle our Thermador and Bosch benchmark work service Gaggenau with the BSH diagnostic procedures, error-code structure, and parts pipeline they already use weekly. We respect what the hardware costs: two techs on 400-series doors, stone-safe extraction on Vario modules, panel protocol on integrated columns, and measurements before parts on anything refrigerated. EPA-608 Universal certification covers the sealed-system work, the gas license covers the VG modules, and the 90-day parts and labor warranty covers everything we install. The $59 service call is free when you approve the repair.",
+    "Gaggenau owners in South Florida have two realistic options: factory-adjacent service with long scheduling horizons, or an independent shop that actually knows the BSH platform. We're the second — the same senior techs who handle our Thermador and Bosch benchmark work service Gaggenau with the BSH diagnostic procedures, error-code structure, and parts pipeline they already use weekly. We respect what the hardware costs: two techs on 400-series doors, stone-safe extraction on Vario modules, panel protocol on integrated columns, and measurements before parts on anything refrigerated. EPA-608 Universal certification covers the sealed-system work, the gas license covers the VG modules, and the 90-day parts and labor warranty covers everything we install. The $59 diagnostic is free when you approve the repair.",
   relatedServices: [
     { slug: "oven-repair", label: "Oven Repair" },
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
@@ -2447,7 +2447,7 @@ const bertazzoni: ResidentialBrandProfile = {
     "Italian ranges with mechanical souls — Master, Professional, and Heritage series serviced by techs who understand that a Bertazzoni oven is tuned, not just repaired.",
   metaTitle: "Bertazzoni Range Repair South Florida · $59 · Berne",
   metaDescription:
-    "Bertazzoni range & oven repair in Miami, Fort Lauderdale & Boca Raton. Igniters, thermostat calibration, convection fans. $59 call, 90-day warranty.",
+    "Bertazzoni range & oven repair in Miami, Fort Lauderdale & Boca Raton. Igniters, thermostat calibration, convection fans. $59 diagnostic, 90-day warranty.",
   about:
     "Bertazzoni has built cooking equipment in Guastalla since 1882, and the ranges South Florida buys today — Master, Professional, and Heritage series in 24 to 48 inches — keep a deliberately mechanical character: brass burners, physical thermostats on the gas ovens, and far less electronics than the German and American competition. That design philosophy changes how the brand is serviced. A Bertazzoni gas oven that bakes hot or cold isn't throwing an error code; it has a thermostat that needs testing and often calibration, which is a skill, not a part swap. The burners light through spark modules and switch harnesses that South Florida humidity tests year-round. Oven doors run on hinge and spring assemblies that wear visibly by year five of heavy use. And because dealers cluster in the Miami Design District and the brand prices below Wolf while looking the part, the install base here is large, young, and growing — a lot of 30- and 36-inch Master series ranges in remodels from Coconut Grove to Delray. We service the platform on its own terms: mechanical diagnosis, honest calibration work, igniters and hinge kits on the truck, and the patience to align six brass burner caps so they all light on the first click.",
   equipment: [
@@ -2520,7 +2520,7 @@ const bertazzoni: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    `Bertazzoni rewards mechanical service culture, and that's what our cooking-side techs bring — the same crew that handles Wolf and Dacor ranges. We test gas oven thermostats against calibrated probes instead of declaring them dead, we carry igniter switches, spark modules, and hinge kits for the common Master and Professional configurations, and we know the brand-specific quirks: the calibration procedure, the burner-cap geometry, the air-shutter tuning that makes the simmer behave. Licensed for gas, insured, 18 technicians across the tri-county map, ${REPAIRS_COMPLETED} completed repairs, and a 4.79-star average across 871 Google reviews. The $59 service call is free with an approved repair and everything we install carries the 90-day parts and labor warranty.`,
+    `Bertazzoni rewards mechanical service culture, and that's what our cooking-side techs bring — the same crew that handles Wolf and Dacor ranges. We test gas oven thermostats against calibrated probes instead of declaring them dead, we carry igniter switches, spark modules, and hinge kits for the common Master and Professional configurations, and we know the brand-specific quirks: the calibration procedure, the burner-cap geometry, the air-shutter tuning that makes the simmer behave. Licensed for gas, insured, 18 technicians across the tri-county map, ${REPAIRS_COMPLETED} completed repairs, and a 4.79-star average across 871 Google reviews. The $59 diagnostic is free with an approved repair and everything we install carries the 90-day parts and labor warranty.`,
   relatedServices: [
     { slug: "oven-repair", label: "Oven Repair" },
     { slug: "range-hood-repair", label: "Range Hood Repair" },
@@ -2576,7 +2576,7 @@ const monogram: ResidentialBrandProfile = {
     "GE's luxury line pairs premium hardware with the best parts logistics in the industry — built-in refrigeration, pro ranges, and Advantium speed ovens repaired fast because the parts actually show up.",
   metaTitle: "Monogram Appliance Repair South Florida · $59 · Berne",
   metaDescription:
-    "Monogram repair across Miami-Dade, Broward & Palm Beach — built-in fridges, pro ranges, Advantium ovens, ice machines. Same-day, $59 call, 90-day warranty.",
+    "Monogram repair across Miami-Dade, Broward & Palm Beach — built-in fridges, pro ranges, Advantium ovens, ice machines. Priority service, $59 diagnostic, 90-day warranty.",
   about:
     "Monogram is GE's luxury division, and it occupies a sweet spot for South Florida owners: genuinely premium hardware — 42- and 48-inch built-in refrigeration, columns, pro-style dual-fuel ranges, the Advantium speed-oven family, nugget and gourmet ice machines — backed by GE's parts network, which is simply the best in the industry. That second half changes the ownership experience more than people expect. Where a European competitor's control board might take two weeks to land, the equivalent Monogram part is typically in our hands in one to three days, which is the difference between a weekend without a refrigerator and a month. The service work itself follows premium built-in logic: ZIS/ZISS 42- and 48-inch built-ins with sealed-system and evap-fan tickets, column refrigeration in newer installs, Advantium ovens whose speed-cook magic runs through halogen lamps and magnetrons that age, dual-fuel pro ranges with relay-board and igniter work, and the undercounter ice machines that South Florida garages punish. Our techs carry GE factory service-manual fluency across the line, the EPA-608 certification the sealed systems require, and enough Monogram tickets logged to know the platform's habits — including which version of a part GE has revised and superseded, which matters on a brand with 30 years of built-in history in local kitchens.",
   equipment: [
@@ -2654,7 +2654,7 @@ const monogram: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Monogram is where premium service should be easy, and we make it so. GE's parts network means we quote realistic timelines and hit them — common boards, fans, igniters, lamps, and valves either ride on the truck or land in 1-3 business days, the fastest in the premium segment. Our techs carry GE service-manual fluency across the Monogram line, EPA-608 Universal certification for the sealed-system work, and gas licensing for the pro ranges. We've logged enough tickets on the ZIS built-in platform alone to know its habits cold, and the Advantium family — which many shops decline — is standard work for us. The $59 service call is free when you approve the repair, every job carries the 90-day parts and labor warranty, and same-day dispatch covers the full tri-county footprint.",
+    "Monogram is where premium service should be easy, and we make it so. GE's parts network means we quote realistic timelines and hit them — common boards, fans, igniters, lamps, and valves either ride on the truck or land in 1-3 business days, the fastest in the premium segment. Our techs carry GE service-manual fluency across the Monogram line, EPA-608 Universal certification for the sealed-system work, and gas licensing for the pro ranges. We've logged enough tickets on the ZIS built-in platform alone to know its habits cold, and the Advantium family — which many shops decline — is standard work for us. The $59 diagnostic is free when you approve the repair, every job carries the 90-day parts and labor warranty, and same-day dispatch covers the full tri-county footprint.",
   relatedServices: [
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
     { slug: "oven-repair", label: "Oven Repair" },

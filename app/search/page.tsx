@@ -98,7 +98,7 @@ export default async function SearchPage({
           <a href="tel:+17543454515" className="font-semibold text-brand hover:underline">
             (754) 345-4515
           </a>{" "}
-          — $59 service call, free with repair.
+          — $59 diagnostic, credited to repair.
         </p>
       </div>
 

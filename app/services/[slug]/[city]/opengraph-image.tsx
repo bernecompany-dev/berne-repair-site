@@ -83,7 +83,7 @@ export default async function OG({
               letterSpacing: 1,
             }}
           >
-            {`$${COMPANY.serviceCallPrice} SERVICE CALL · SAME-DAY IN ${city.name.toUpperCase()}`}
+            {`$${COMPANY.serviceCallPrice} DIAGNOSTIC · WHITE-GLOVE IN ${city.name.toUpperCase()}`}
           </div>
           <div
             style={{

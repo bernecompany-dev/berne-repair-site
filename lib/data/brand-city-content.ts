@@ -39,7 +39,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("sub-zero", "miami")]: {
     brand: "sub-zero",
     city: "miami",
-    metaTitle: "Sub-Zero Repair Miami — Same-Day · $59 Call · Berne",
+    metaTitle: "Sub-Zero Repair Miami — White-Glove · $59 · Berne",
     metaDescription:
       "Sub-Zero refrigerator repair in Miami — Brickell, Coconut Grove, Coral Gables. Built-ins, columns, wine units. EPA-608 senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Miami",
@@ -75,7 +75,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("sub-zero", "fort-lauderdale")]: {
     brand: "sub-zero",
     city: "fort-lauderdale",
-    metaTitle: "Sub-Zero Repair Fort Lauderdale · $59 Call · Berne",
+    metaTitle: "Sub-Zero Repair Fort Lauderdale · $59 Diagnostic · Berne",
     metaDescription:
       "Sub-Zero repair in Fort Lauderdale — Las Olas Isles, Rio Vista, Coral Ridge. Canal-front corrosion specialists, EPA-608 certified, $59 diagnostic, 90-day warranty.",
     h1City: "Fort Lauderdale",
@@ -111,7 +111,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("sub-zero", "boca-raton")]: {
     brand: "sub-zero",
     city: "boca-raton",
-    metaTitle: "Sub-Zero Repair Boca Raton — Same-Day · $59 · Berne",
+    metaTitle: "Sub-Zero Repair Boca Raton — White-Glove · $59 · Berne",
     metaDescription:
       "Sub-Zero repair in Boca Raton from our local S Federal Hwy office — East Boca, Boca West, Mizner Park. Senior techs, EPA-608, $59 diagnostic, 90-day warranty.",
     h1City: "Boca Raton",
@@ -149,7 +149,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("wolf", "miami")]: {
     brand: "wolf",
     city: "miami",
-    metaTitle: "Wolf Range Repair Miami — Same-Day · $59 · Berne",
+    metaTitle: "Wolf Range Repair Miami — White-Glove · $59 · Berne",
     metaDescription:
       "Wolf range, oven & cooktop repair in Miami — Brickell, Coconut Grove, Coral Gables. Igniters, modules, convection. Senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Miami",
@@ -221,7 +221,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("wolf", "boca-raton")]: {
     brand: "wolf",
     city: "boca-raton",
-    metaTitle: "Wolf Range Repair Boca Raton — Same-Day · $59 · Berne",
+    metaTitle: "Wolf Range Repair Boca Raton — White-Glove · $59 · Berne",
     metaDescription:
       "Wolf range & oven repair in Boca Raton from our local office — East Boca, Boca West, club communities. Senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Boca Raton",
@@ -295,7 +295,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("viking", "fort-lauderdale")]: {
     brand: "viking",
     city: "fort-lauderdale",
-    metaTitle: "Viking Repair Fort Lauderdale — Same-Day · $59 · Berne",
+    metaTitle: "Viking Repair Fort Lauderdale — White-Glove · $59 · Berne",
     metaDescription:
       "Viking range & appliance repair in Fort Lauderdale — Las Olas, Coral Ridge, Victoria Park. All generations serviced, $59 diagnostic, 90-day warranty.",
     h1City: "Fort Lauderdale",
@@ -369,7 +369,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("thermador", "miami")]: {
     brand: "thermador",
     city: "miami",
-    metaTitle: "Thermador Repair Miami — Same-Day · $59 · Berne",
+    metaTitle: "Thermador Repair Miami — White-Glove · $59 · Berne",
     metaDescription:
       "Thermador repair in Miami — Freedom columns, Pro ranges, Star burners. Brickell, Coral Gables, Coconut Grove. Senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Miami",
@@ -441,7 +441,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("thermador", "boca-raton")]: {
     brand: "thermador",
     city: "boca-raton",
-    metaTitle: "Thermador Repair Boca Raton — Same-Day · $59 · Berne",
+    metaTitle: "Thermador Repair Boca Raton — White-Glove · $59 · Berne",
     metaDescription:
       "Thermador repair in Boca Raton from our local office — Freedom columns, Pro ranges, dishwashers. East Boca, Boca West. $59 diagnostic, 90-day warranty.",
     h1City: "Boca Raton",
@@ -479,9 +479,9 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("miele", "miami")]: {
     brand: "miele",
     city: "miami",
-    metaTitle: "Miele Repair Miami — Same-Day Service · $59 · Berne",
+    metaTitle: "Miele Repair Miami — White-Glove Service · $59 · Berne",
     metaDescription:
-      "Miele repair in Miami — dishwashers, washers, dryers, coffee systems. Brickell, Coral Gables, Coconut Grove. Factory-trained diagnostics, $59 call, 90-day warranty.",
+      "Miele repair in Miami — dishwashers, washers, dryers, coffee systems. Brickell, Coral Gables, Coconut Grove. Factory-trained diagnostics, $59 diagnostic, 90-day warranty.",
     h1City: "Miami",
     heroIntro:
       "Miele runs quietly through Miami's best kitchens and laundry rooms — G-series dishwashers behind Brickell millwork, W1/T1 laundry pairs in Edgewater towers, built-in coffee systems in the Gables. We service the platform with its own discipline: service-mode diagnostics, $59 visit, 90-day warranty.",
@@ -515,9 +515,9 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("miele", "fort-lauderdale")]: {
     brand: "miele",
     city: "fort-lauderdale",
-    metaTitle: "Miele Repair Fort Lauderdale — Same-Day · $59 · Berne",
+    metaTitle: "Miele Repair Fort Lauderdale — White-Glove · $59 · Berne",
     metaDescription:
-      "Miele repair in Fort Lauderdale — dishwashers, W1/T1 laundry, coffee systems. Las Olas, Coral Ridge, Victoria Park. Service-mode diagnostics, $59 call, 90-day warranty.",
+      "Miele repair in Fort Lauderdale — dishwashers, W1/T1 laundry, coffee systems. Las Olas, Coral Ridge, Victoria Park. Service-mode diagnostics, $59 diagnostic, 90-day warranty.",
     h1City: "Fort Lauderdale",
     heroIntro:
       "From Las Olas estates to Victoria Park remodels, Fort Lauderdale's Miele machines get the platform discipline they were built for: service-mode diagnostics, OEM parts with numbers on the invoice, $59 visit free with repair, 90-day warranty on everything we touch.",
@@ -551,7 +551,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("miele", "boca-raton")]: {
     brand: "miele",
     city: "boca-raton",
-    metaTitle: "Miele Repair Boca Raton — Same-Day · $59 · Berne",
+    metaTitle: "Miele Repair Boca Raton — White-Glove · $59 · Berne",
     metaDescription:
       "Miele repair in Boca Raton from our local office — dishwashers, laundry, coffee systems. East Boca, Boca West, club communities. $59 diagnostic, 90-day warranty.",
     h1City: "Boca Raton",
@@ -601,7 +601,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
   [k("sub-zero", "pinecrest")]: {
     brand: "sub-zero",
     city: "pinecrest",
-    metaTitle: "Sub-Zero Repair Pinecrest · $59 Call · Berne",
+    metaTitle: "Sub-Zero Repair Pinecrest · $59 Diagnostic · Berne",
     metaDescription:
       "Sub-Zero repair in Pinecrest — built-in columns, BI-36/BI-48, wine units on the acre-lot estates. EPA-608 senior techs, $59 diagnostic, 90-day warranty.",
     h1City: "Pinecrest",

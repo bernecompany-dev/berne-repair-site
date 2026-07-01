@@ -32,7 +32,7 @@ const brands = [
     url: "https://www.berne-repair.com/",
     tag: "this site",
     focus: "Premium residential",
-    price: "$59 service call",
+    price: "$59 diagnostic, credited to repair",
     detail:
       "Luxury and high-end residential — Sub-Zero, Wolf, Viking, Thermador, Miele, Bosch built-ins. The crew, parts inventory, and warranty are built for column refrigerators, dual-fuel ranges, and steam ovens.",
     accent:
