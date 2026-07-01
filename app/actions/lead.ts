@@ -70,6 +70,8 @@ const makeLeadSchema = (lang: Lang) => {
     company_url: z.string().max(0).optional().or(z.literal("")),
     /** Time-since-render check (bots fill forms in <2s). Soft validation. */
     ts: z.string().optional().or(z.literal("")),
+    /** Marketing attribution summary (utm/gclid/referrer) from lib/attribution.ts. */
+    attrib: z.string().trim().max(600).optional().or(z.literal("")),
     locale: z.enum(["en", "es"]).optional().or(z.literal("")),
   });
 };
@@ -116,7 +118,7 @@ export async function submitLead(
   const raw = Object.fromEntries(formData.entries()) as Record<string, string>;
   for (const k of [
     "name", "phone", "city", "appliance", "email", "brand",
-    "description", "consent", "company_url", "ts", "locale",
+    "description", "consent", "company_url", "ts", "locale", "attrib",
   ]) {
     if (typeof raw[k] !== "string") raw[k] = "";
   }
@@ -164,6 +166,8 @@ export async function submitLead(
   }
 
   const { name, phone, email, brand, description } = parsed.data;
+  // Header-injection chars stripped: the value lands in an HTML email row.
+  const attrib = (parsed.data.attrib ?? "").replace(/[\r\n<>]/g, "").slice(0, 600);
   const city = parsed.data.city ?? "";
   const appliance = parsed.data.appliance ?? "";
   const cityName = city ? CITY_BY_SLUG[city]?.name ?? city : "—";
@@ -193,6 +197,7 @@ export async function submitLead(
   const subject = `ЗАКАЗ — ${name} · ${cityName} · ${applianceName}`;
   const html = renderLeadEmail({
     name, phone, email, cityName, applianceName, brand, description, locale: lang,
+    attrib,
   });
 
   try {
@@ -221,6 +226,7 @@ function renderLeadEmail(p: {
   brand?: string;
   description?: string;
   locale: Lang;
+  attrib?: string;
 }) {
   const row = (label: string, value?: string) =>
     value
@@ -241,6 +247,7 @@ function renderLeadEmail(p: {
         ${row("Appliance", p.applianceName)}
         ${row("Brand", p.brand)}
         ${row("Description", p.description)}
+        ${row("Source", p.attrib)}
         ${row("Language", p.locale.toUpperCase())}
       </table>
       <div style="padding:14px 24px;border-top:1px solid rgba(255,255,255,.06);color:#7a8aa3;font-size:12px">

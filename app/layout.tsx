@@ -14,6 +14,7 @@ import { MetaPixel } from "@/components/site/meta-pixel";
 import { OpenAIPixel } from "@/components/site/openai-pixel";
 import { Clarity } from "@/components/site/clarity";
 import { AnalyticsEvents } from "@/components/site/analytics-events";
+import { AttributionCapture } from "@/components/site/attribution-capture";
 import { localBusinessJsonLd, websiteJsonLd, organizationJsonLd } from "@/lib/seo";
 import { COMPANY } from "@/data/company";
 import "./globals.css";
@@ -210,6 +211,7 @@ export default function RootLayout({
           "users" before gating).
         */}
         <AnalyticsEvents />
+        <AttributionCapture />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? "G-5HM8N741LM"} />
         {/*
           Google Ads conversion tracking (tag AW-18232464152, baked-in default

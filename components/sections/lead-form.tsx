@@ -4,6 +4,7 @@ import { useActionState, useId, useState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { Send, ShieldCheck, Loader2, CheckCircle2, AlertTriangle } from "lucide-react";
 import { submitLead } from "@/app/actions/lead";
+import { readAttribution } from "@/lib/attribution";
 import { initialLeadState } from "@/lib/lead-types";
 import { COMPANY } from "@/data/company";
 import { CITIES } from "@/data/cities";
@@ -37,11 +38,22 @@ export function LeadForm({
   const d = getDictionary(locale).leadForm;
   const formId = useId();
   const [renderedAt, setRenderedAt] = useState("");
+  const [attrib, setAttrib] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
   const successHeadingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     setRenderedAt(String(Date.now()));
+    // Marketing attribution (utm/gclid/referrer, first-touch) captured by
+    // AttributionCapture in the layout — flattened here into one hidden field
+    // so the dispatch email can report the true channel (see lib/attribution.ts).
+    const a = readAttribution();
+    setAttrib(
+      Object.entries(a)
+        .map(([k, v]) => `${k.replace(/^attr_/, "")}=${v}`)
+        .join(" | ")
+        .slice(0, 600),
+    );
   }, []);
 
   // Fire GA4 `generate_lead` once, only after the server action resolves with
@@ -120,6 +132,7 @@ export function LeadForm({
     <form ref={formRef} action={action} className="surface-card p-6 sm:p-8" noValidate aria-labelledby={`${formId}-title`}>
       <input type="hidden" name="locale" value={locale} />
       <input type="hidden" name="ts" value={renderedAt} />
+      <input type="hidden" name="attrib" value={attrib} />
 
       <div className="mb-6 flex flex-col gap-1.5">
         <h3 id={`${formId}-title`} className="text-2xl font-semibold tracking-tight">{d.title}</h3>
