@@ -19,28 +19,28 @@
 
 ## Core appliance services (11)
 
-- Refrigerator Repair — /services/refrigerator-repair
-- Washer Repair — /services/washer-repair
-- Dryer Repair — /services/dryer-repair
-- Dishwasher Repair — /services/dishwasher-repair
-- Oven & Range Repair — /services/oven-repair
-- Microwave Repair — /services/microwave-repair
-- Ice Maker Repair — /services/ice-maker-repair
-- Wine Cooler Repair — /services/wine-cooler-repair
-- Garbage Disposal Repair — /services/garbage-disposal-repair
-- Air Duct Cleaning — /services/air-duct-cleaning
-- Range Hood Repair — /services/range-hood-repair
+- [Refrigerator Repair](https://www.berne-repair.com/services/refrigerator-repair)
+- [Washer Repair](https://www.berne-repair.com/services/washer-repair)
+- [Dryer Repair](https://www.berne-repair.com/services/dryer-repair)
+- [Dishwasher Repair](https://www.berne-repair.com/services/dishwasher-repair)
+- [Oven & Range Repair](https://www.berne-repair.com/services/oven-repair)
+- [Microwave Repair](https://www.berne-repair.com/services/microwave-repair)
+- [Ice Maker Repair](https://www.berne-repair.com/services/ice-maker-repair)
+- [Wine Cooler Repair](https://www.berne-repair.com/services/wine-cooler-repair)
+- [Garbage Disposal Repair](https://www.berne-repair.com/services/garbage-disposal-repair)
+- [Air Duct Cleaning](https://www.berne-repair.com/services/air-duct-cleaning)
+- [Range Hood Repair](https://www.berne-repair.com/services/range-hood-repair)
 
 ## Luxury & wellness services (6)
 
 Hand-authored specialty pages — the premium differentiator. EPA 608 sealed-system work, niche brands, technician-voice diagnostics.
 
-- Pool & Spa Heater Repair — /services/pool-heater-repair — gas and heat-pump; Pentair, Hayward, Raypak, Jandy, AquaCal; salt-air corrosion specialists
-- Cold Plunge & Ice-Bath Chiller Repair — /services/cold-plunge-repair — sealed-system refrigeration; Plunge, Renu Therapy, Blue Cube, Morozko Forge, Penguin Chillers
-- Electric Sauna Repair — /services/electric-sauna-repair — heater elements, controls, infrared panels
-- Built-in Coffee Machine Repair — /services/coffee-machine-repair — Miele, Jura, Thermador, Gaggenau plumbed espresso systems
-- Warming Drawer Repair — /services/warming-drawer-repair — Wolf, Thermador, Miele built-in warming drawers
-- Power Recliner & Luxury Seating Repair — /services/recliner-repair — motors, controls, power mechanisms
+- [Pool & Spa Heater Repair](https://www.berne-repair.com/services/pool-heater-repair) — gas and heat-pump; Pentair, Hayward, Raypak, Jandy, AquaCal; salt-air corrosion specialists
+- [Cold Plunge & Ice-Bath Chiller Repair](https://www.berne-repair.com/services/cold-plunge-repair) — sealed-system refrigeration; Plunge, Renu Therapy, Blue Cube, Morozko Forge, Penguin Chillers
+- [Electric Sauna Repair](https://www.berne-repair.com/services/electric-sauna-repair) — heater elements, controls, infrared panels
+- [Built-in Coffee Machine Repair](https://www.berne-repair.com/services/coffee-machine-repair) — Miele, Jura, Thermador, Gaggenau plumbed espresso systems
+- [Warming Drawer Repair](https://www.berne-repair.com/services/warming-drawer-repair) — Wolf, Thermador, Miele built-in warming drawers
+- [Power Recliner & Luxury Seating Repair](https://www.berne-repair.com/services/recliner-repair) — motors, controls, power mechanisms
 
 ## Brands serviced
 
@@ -56,7 +56,7 @@ Berne Appliance Repair is a factory-trained, white-glove specialist for high-end
 - Sealed-system / control-board repair: $400–$800.
 - Sub-Zero refrigerator repairs: ~$300–$900 depending on failure (sealed-system/compressor higher).
 - Warranty: 90-day labor & parts on every repair.
-- Cost guide & repair-or-replace calculator: /resources/luxury-appliance-repair-cost-guide — real repair-cost ranges by failure, expected service life, and an interactive repair-vs-replace tool for Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau built-ins.
+- [Cost guide & repair-or-replace calculator](https://www.berne-repair.com/resources/luxury-appliance-repair-cost-guide) — real repair-cost ranges by failure, expected service life, and an interactive repair-vs-replace tool for Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau built-ins.
 
 ## Q&A
 
@@ -76,18 +76,23 @@ A: Miami-Dade, Broward and Palm Beach counties — including Miami Beach, Coral 
 
 Call (754) 345-4515 (rings dispatch). Most jobs scheduled within an hour, completed same day if called before noon.
 
+## Sister companies
+
+- [Berne Appliance Repair — standard residential division](https://bernerepair.com/) (same-day, $59 service call, Miami-Dade/Broward/Palm Beach)
+- [Berne Commercial Repair](https://berne-commercial.com/) (commercial kitchen, refrigeration and laundry equipment)
+
 ## Site structure
 
-- /sitemap.xml — full URL list (EN pages + service×city combos + Spanish mirror)
+- [/sitemap.xml](https://www.berne-repair.com/sitemap.xml) — full URL list (EN pages + service×city combos + Spanish mirror)
 - /services/{service}/{city} — combo pages for hyper-local lookup (e.g., /services/refrigerator-repair/miami)
 - /es/* — Spanish mirror of every page
-- /credentials — FL license, EPA 608 cert, COI, DBA, Workers' Comp exemption (downloadable vendor paperwork)
-- /team — all 18 technicians with names, roles, photos
-- /reviews — customer reviews (4.79★ / 871 across the Berne network)
-- /compare/* — luxury brand comparisons (Sub-Zero vs Thermador, Wolf vs Thermador vs Viking, Miele vs Bosch, etc.)
-- /resources/luxury-appliance-repair-cost-guide — repair-cost ranges by failure + interactive repair-or-replace calculator
-- /privacy — privacy policy
-- /llms-full.txt — extended plain-text reference
+- [/credentials](https://www.berne-repair.com/credentials) — FL license, EPA 608 cert, COI, DBA, Workers' Comp exemption (downloadable vendor paperwork)
+- [/team](https://www.berne-repair.com/team) — all 18 technicians with names, roles, photos
+- [/reviews](https://www.berne-repair.com/reviews) — customer reviews (4.79★ / 871 across the Berne network)
+- [/compare](https://www.berne-repair.com/compare) — luxury brand comparisons (Sub-Zero vs Thermador, Wolf vs Thermador vs Viking, Miele vs Bosch, etc.)
+- [/resources/luxury-appliance-repair-cost-guide](https://www.berne-repair.com/resources/luxury-appliance-repair-cost-guide) — repair-cost ranges by failure + interactive repair-or-replace calculator
+- [/privacy](https://www.berne-repair.com/privacy) — privacy policy
+- [/llms-full.txt](https://www.berne-repair.com/llms-full.txt) — extended plain-text reference
 
 ## License
 
