@@ -176,6 +176,7 @@ export function ServiceMap() {
           <button
             type="button"
             onClick={() => setMode("pins")}
+            aria-pressed={mode === "pins"}
             className={`rounded-md px-4 py-1.5 font-medium transition ${mode === "pins" ? "bg-brand text-white" : "text-muted-foreground hover:text-foreground"}`}
           >
             Pins
@@ -183,6 +184,7 @@ export function ServiceMap() {
           <button
             type="button"
             onClick={() => setMode("heat")}
+            aria-pressed={mode === "heat"}
             className={`rounded-md px-4 py-1.5 font-medium transition ${mode === "heat" ? "bg-brand text-white" : "text-muted-foreground hover:text-foreground"}`}
           >
             Heatmap
@@ -193,11 +195,15 @@ export function ServiceMap() {
           <div
             ref={ref}
             className="h-[480px] w-full sm:h-[600px]"
+            // aria-label needs a role to be exposed to assistive tech.
+            role="region"
             aria-label="Map of completed appliance repairs across South Florida"
           />
           {err ? (
+            // Raw exception text stays out of the UI (it's developer noise,
+            // not a user next-step).
             <div className="absolute inset-0 flex items-center justify-center bg-background/90 p-6 text-center text-sm text-muted-foreground">
-              Map failed to load ({err}). Coverage spans Miami-Dade, Broward, Palm Beach, plus Tampa Bay and Sarasota.
+              The interactive map could not load. Coverage spans Miami-Dade, Broward, Palm Beach, plus Tampa Bay and Sarasota — call us to confirm your address.
             </div>
           ) : null}
         </div>

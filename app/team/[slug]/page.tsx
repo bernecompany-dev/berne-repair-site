@@ -111,7 +111,9 @@ export default async function TeamMemberPage({ params }: Params) {
     const base = personJsonLd(tech);
     personSchema = {
       ...base,
-      "@id": `${SITE_URL}/team/${slug}#person`,
+      // Keep the canonical sitewide @id from personJsonLd (/team#person-{slug})
+      // — overriding it with /team/{slug}#person forked every technician into
+      // a second, disconnected Person entity (fixed 2026-07-01).
       url: absoluteUrl(`/team/${slug}`),
       mainEntityOfPage: { "@id": absoluteUrl(`/team/${slug}`) },
     };
@@ -134,7 +136,13 @@ export default async function TeamMemberPage({ params }: Params) {
     "@id": `${SITE_URL}/team/${slug}#profilepage`,
     url: absoluteUrl(`/team/${slug}`),
     name: `${name} — ${role}`,
-    mainEntity: { "@id": `${SITE_URL}/team/${slug}#person` },
+    // Techs: canonical sitewide Person @id; back-office keep their own
+    // per-profile node (they have no sitewide personJsonLd node).
+    mainEntity: {
+      "@id": tech
+        ? absoluteUrl(`/team#person-${slug}`)
+        : `${SITE_URL}/team/${slug}#person`,
+    },
     isPartOf: { "@id": absoluteUrl("/#website") },
     about: { "@id": absoluteUrl("/#organization") },
   };

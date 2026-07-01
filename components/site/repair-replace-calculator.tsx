@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Calculator, RotateCcw, CheckCircle2, AlertTriangle, XCircle, Wrench } from "lucide-react";
 import {
@@ -237,12 +238,13 @@ export function RepairReplaceCalculator({ locale = "en" }: { locale?: Locale }) 
             className={`rounded-2xl border p-6 transition-colors ${
               hasInput ? style.ring : "border-border bg-card/40"
             }`}
-            aria-live="polite"
           >
             <span className={labelCls}>{t.result}</span>
             {hasInput ? (
               <>
-                <div className="mt-3 flex items-start gap-3">
+                {/* aria-live scoped to the verdict only — on the whole card
+                    every keystroke re-announced the entire stats table. */}
+                <div className="mt-3 flex items-start gap-3" aria-live="polite">
                   <style.Icon className={`mt-0.5 size-7 shrink-0 ${style.text}`} aria-hidden />
                   <div>
                     <h3 className={`text-xl font-bold tracking-tight ${style.text}`}>
@@ -273,12 +275,12 @@ export function RepairReplaceCalculator({ locale = "en" }: { locale?: Locale }) 
                   </div>
                 </dl>
 
-                <a
+                <Link
                   href={bookHref}
                   className="mt-6 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brand px-5 text-sm font-semibold text-brand-foreground transition-[transform,filter] hover:-translate-y-px hover:brightness-110"
                 >
                   {t.cta}
-                </a>
+                </Link>
                 <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{t.disclaimer}</p>
               </>
             ) : (

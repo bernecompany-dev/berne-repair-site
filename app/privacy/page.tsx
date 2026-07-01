@@ -30,7 +30,7 @@ export default function PrivacyPage() {
         <span className="text-foreground/80">Privacy</span>
       </nav>
       <h1 className="text-4xl font-semibold tracking-tight">Privacy Policy</h1>
-      <p className="mt-3 text-sm text-muted-foreground">Last updated: 2026-05-16</p>
+      <p className="mt-3 text-sm text-muted-foreground">Last updated: 2026-07-01</p>
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/90">
         <p>
@@ -44,7 +44,7 @@ export default function PrivacyPage() {
         <ul className="list-disc pl-6 space-y-1">
           <li><strong>Lead form data</strong>: your name, phone number, optional email, city, appliance type, optional brand and free-text description of the problem.</li>
           <li><strong>Technical data</strong>: anonymized IP address, browser type, pages visited, referral source — collected automatically through Google Analytics 4.</li>
-          <li><strong>Cookies</strong>: GA4 sets first-party cookies to measure visits. We do not run advertising trackers.</li>
+          <li><strong>Cookies</strong>: GA4 sets first-party cookies to measure visits. When our ad campaigns are active, advertising platforms (Google Ads, Microsoft Advertising, Meta) also set conversion-measurement cookies — see the <Link href="/cookies" className="text-brand hover:underline">Cookie Policy</Link> for the full list and opt-outs.</li>
         </ul>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">How we use it</h2>
@@ -79,6 +79,7 @@ export default function PrivacyPage() {
           <li><strong>Resend</strong> — transactional email provider that delivers lead notifications to our inbox.</li>
           <li><strong>Vercel</strong> — hosts the website. Logs minimal request data for ~30 days.</li>
           <li><strong>Google Analytics 4</strong> — aggregate site traffic measurement.</li>
+          <li><strong>Ad platforms</strong> — Google Ads, Microsoft Advertising, and Meta conversion tags measure which of our ads lead to a repair request. Active only while we run campaigns; see the <Link href="/cookies" className="text-brand hover:underline">Cookie Policy</Link> for opt-outs.</li>
           <li><strong>Google Maps</strong> — map embed on city pages. Subject to Google's privacy policy.</li>
         </ul>
 

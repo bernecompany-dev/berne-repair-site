@@ -73,6 +73,10 @@ export function StickyCTA() {
     <div
       aria-label={locale === "es" ? "Acciones rápidas" : "Quick actions"}
       role="region"
+      // `inert` while hidden: the translate/opacity hide left the three CTA
+      // links keyboard-focusable (invisible tab stops) and the region
+      // announced to screen readers before the user ever scrolled.
+      inert={!visible || undefined}
       className={`pointer-events-none fixed inset-x-0 bottom-0 z-40 pb-[env(safe-area-inset-bottom)] lg:hidden transition-[opacity,transform] duration-300 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}

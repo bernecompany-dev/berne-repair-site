@@ -169,7 +169,7 @@ export default async function CityPageES({ params }: Props) {
       <Contact defaultCity={city.slug} locale="es" />
       <CTABand locale="es" />
 
-      <JsonLd data={[cityJsonLd(city), faqJsonLd(cityFaqs), breadcrumbJsonLd(crumbs)]} />
+      <JsonLd data={[cityJsonLd(city, "es"), faqJsonLd(cityFaqs, "es"), breadcrumbJsonLd(crumbs)]} />
     </>
   );
 }

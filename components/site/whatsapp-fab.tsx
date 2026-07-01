@@ -175,6 +175,9 @@ export function WhatsAppFab() {
       aria-label="Chat with Berne Appliance Repair on WhatsApp"
       data-analytics="whatsapp-fab"
       onClick={handleClick}
+      // Remove from tab order + a11y tree while visually hidden — the
+      // opacity-0/pointer-events-none hide alone left an invisible tab stop.
+      inert={formInView || undefined}
       className={`berne-whatsapp-fab fixed bottom-[max(1rem,env(safe-area-inset-bottom))] z-[9998] flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-[bottom,transform,opacity] duration-300 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 right-4 lg:right-4 max-lg:left-4 max-lg:right-auto max-lg:h-12 max-lg:w-12 motion-reduce:transition-none motion-reduce:hover:scale-100 ${
         raised
           ? "max-lg:bottom-[calc(env(safe-area-inset-bottom)+92px)]"

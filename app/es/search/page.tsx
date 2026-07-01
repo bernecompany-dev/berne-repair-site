@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { kindLabelEs, search, toEsUrl } from "@/lib/search-index";
+import { COMPANY } from "@/data/company";
 
 // Spanish search results — uses the same index as /search but re-prefixes
 // EN URLs to /es/* for routes that exist in both locales. Blog stays EN-only
@@ -19,10 +20,22 @@ export const dynamic = "force-dynamic";
 
 type SP = { q?: string | string[] };
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function highlight(text: string, q: string): string {
-  if (!q) return text;
-  const esc = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return text.replace(new RegExp(`(${esc})`, "ig"), "<mark>$1</mark>");
+  // Escape the source text BEFORE inserting <mark> — output goes through
+  // dangerouslySetInnerHTML (mirrors app/search/page.tsx).
+  const safe = escapeHtml(text);
+  if (!q) return safe;
+  const esc = escapeHtml(q).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return safe.replace(new RegExp(`(${esc})`, "ig"), "<mark>$1</mark>");
 }
 
 const POPULAR_ES = [
@@ -93,10 +106,10 @@ export default async function SearchPageEs({
 
         <p className="mt-3 text-sm text-muted-foreground">
           O llama a despacho al{" "}
-          <a href="tel:+17543454515" className="font-semibold text-brand hover:underline">
-            (754) 345-4515
+          <a href={`tel:${COMPANY.phone.tel}`} className="font-semibold text-brand hover:underline">
+            {COMPANY.phone.display}
           </a>{" "}
-          — visita de $59, gratuita con la reparación.
+          — visita de ${COMPANY.serviceCallPrice}, gratuita con la reparación.
         </p>
       </div>
 

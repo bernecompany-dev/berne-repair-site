@@ -468,7 +468,7 @@ export default async function BrandPageES({ params }: PageProps) {
         data={[
           serviceJsonLd,
           brandJsonLd,
-          faqJsonLd(v.faqs),
+          faqJsonLd(v.faqs, "es"),
           breadcrumbJsonLd(crumbs),
         ]}
       />

@@ -69,7 +69,9 @@ export function SiteFooter() {
             </a>
             <div className="flex items-center gap-2.5 text-muted-foreground">
               <Clock className="size-4 text-brand" aria-hidden />
-              <time dateTime="Mo-Su 07:00-21:00">{COMPANY.hours.label}</time>
+              {/* Plain span: "Mo-Su 07:00-21:00" is schema.org openingHours
+                  syntax, not a valid HTML <time datetime> value. */}
+              <span>{COMPANY.hours.label}</span>
             </div>
             {/* Visible NAP street address — GEO/local trust signal (HQ). */}
             <div className="flex items-center gap-2.5 text-muted-foreground">
@@ -214,8 +216,7 @@ export function SiteFooter() {
                 {locale === "es" ? "Carreras" : "Careers"}
               </Link>
               <span aria-hidden>·</span>
-              {/* /contact and /family have no /es mirrors — link the EN paths from both locales */}
-              <Link href="/contact" className="inline-block py-1.5 hover:text-foreground">{t.contactLink}</Link>
+              <Link href={localePath(locale, "/contact")} className="inline-block py-1.5 hover:text-foreground">{t.contactLink}</Link>
               <span aria-hidden>·</span>
               {/* /request-dispatch deliberately not linked from nav/footer —
                   it serves as an ads/SEO landing page only (wave-2 CRO,
@@ -245,7 +246,9 @@ export function SiteFooter() {
               <span aria-hidden>·</span>
               <Link href={localePath(locale, "/cookies")} className="inline-block py-1.5 hover:text-foreground">{t.cookies}</Link>
               <span aria-hidden>·</span>
-              <Link href="/sitemap.xml" className="inline-block py-1.5 hover:text-foreground">{t.sitemap}</Link>
+              {/* Plain <a>: /sitemap.xml is a static file, not an app route —
+                  next/link would prefetch a non-route then hard-navigate anyway. */}
+              <a href="/sitemap.xml" className="inline-block py-1.5 hover:text-foreground">{t.sitemap}</a>
             </p>
           </div>
         </div>

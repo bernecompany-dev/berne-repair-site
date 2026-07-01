@@ -14,7 +14,7 @@
  *   - tags   — extra keyword bag (1× weight) for cross-cutting matches
  */
 
-import { ARTICLES } from "@/lib/blog/articles";
+import { publishedArticles } from "@/lib/blog/articles";
 import { CITIES } from "@/data/cities";
 import { SERVICES } from "@/data/services";
 import { BRANDS } from "@/data/brands";
@@ -122,9 +122,14 @@ const STATIC_PAGES: SearchEntry[] = [
 ];
 
 let cached: SearchEntry[] | null = null;
+let cachedDay: string | null = null;
 
 export function buildIndex(): SearchEntry[] {
-  if (cached) return cached;
+  // Cache keyed by calendar day: the blog drip publishes future-dated posts,
+  // so a process-lifetime cache could keep serving an index built before a
+  // post went live (or, worse, one built at compile time with future posts).
+  const day = new Date().toISOString().slice(0, 10);
+  if (cached && cachedDay === day) return cached;
   const entries: SearchEntry[] = [];
 
   // Services + service×city combos
@@ -180,8 +185,9 @@ export function buildIndex(): SearchEntry[] {
     }
   }
 
-  // Blog articles
-  for (const a of ARTICLES) {
+  // Blog articles — published only. Indexing the full ARTICLES list surfaced
+  // future-dated drip posts whose pages 404 (notFound() until publish date).
+  for (const a of publishedArticles()) {
     entries.push({
       kind: "article",
       title: a.title,
@@ -196,6 +202,7 @@ export function buildIndex(): SearchEntry[] {
   entries.push(...STATIC_PAGES);
 
   cached = entries;
+  cachedDay = day;
   return entries;
 }
 
@@ -278,11 +285,20 @@ export function kindLabelEs(k: SearchKind): string {
   }
 }
 
+// Brand hubs that actually have a Spanish mirror — the rest 404 under
+// /es/brands/<slug> (app/es/brands/[slug] calls notFound() for them).
+const ES_BRAND_SLUGS = new Set(
+  RESIDENTIAL_BRAND_PROFILES.filter((b) => b.es).map((b) => b.slug),
+);
+
 /** Convert an EN URL to its /es equivalent for the Spanish results page. */
 export function toEsUrl(url: string): string {
   if (url === "/") return "/es";
   if (url.startsWith("/es")) return url;
   // Blog stays on EN-only — there's no /es/blog tree today.
   if (url.startsWith("/blog")) return url;
+  // EN-only brand hubs keep their EN URL — /es/brands/<slug> would 404.
+  const brandMatch = url.match(/^\/brands\/([a-z0-9-]+)$/);
+  if (brandMatch && !ES_BRAND_SLUGS.has(brandMatch[1])) return url;
   return `/es${url}`;
 }

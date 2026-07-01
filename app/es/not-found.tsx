@@ -16,11 +16,12 @@ export default function NotFound() {
       </p>
 
       <div className="mt-8 w-full max-w-xl">
-        <CTARow size="md" />
+        {/* 404 has no #lead-form anchor — point Book at the ES dispatch page. */}
+        <CTARow size="md" locale="es" bookHref="/es/request-dispatch" />
       </div>
 
       <form
-        action="/es"
+        action="/es/search"
         method="get"
         role="search"
         aria-label="Búsqueda del sitio"

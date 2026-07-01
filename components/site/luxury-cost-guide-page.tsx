@@ -276,10 +276,10 @@ export function LuxuryCostGuidePage({ locale = "en" }: { locale?: Locale }) {
                 <table className="w-full min-w-[640px] border-collapse text-sm">
                   <thead>
                     <tr className="border-b border-border bg-card/50 text-left">
-                      <th className="px-4 py-3 font-semibold text-foreground/80">{t.colSymptom}</th>
-                      <th className="px-4 py-3 font-semibold text-foreground/80">{t.colPart}</th>
-                      <th className="px-4 py-3 font-semibold text-foreground/80">{t.colCode}</th>
-                      <th className="px-4 py-3 text-right font-semibold text-foreground/80">{t.colCost}</th>
+                      <th scope="col" className="px-4 py-3 font-semibold text-foreground/80">{t.colSymptom}</th>
+                      <th scope="col" className="px-4 py-3 font-semibold text-foreground/80">{t.colPart}</th>
+                      <th scope="col" className="px-4 py-3 font-semibold text-foreground/80">{t.colCode}</th>
+                      <th scope="col" className="px-4 py-3 text-right font-semibold text-foreground/80">{t.colCost}</th>
                     </tr>
                   </thead>
                   <tbody>

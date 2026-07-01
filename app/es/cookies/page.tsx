@@ -30,15 +30,16 @@ export default function CookiesPageES() {
         <span className="text-foreground/80">Cookies</span>
       </nav>
       <h1 className="text-4xl font-semibold tracking-tight">Política de Cookies</h1>
-      <p className="mt-3 text-sm text-muted-foreground">Última actualización: 2026-05-20</p>
+      <p className="mt-3 text-sm text-muted-foreground">Última actualización: 2026-07-01</p>
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/90">
         <p>
           Esta página explica qué cookies y tecnologías de almacenamiento
           similares usa {COMPANY.legalName} en{" "}
           <a href={COMPANY.url} className="text-brand hover:underline">{COMPANY.url}</a>{" "}
-          y cómo controlarlas. Mantenemos el uso de cookies al mínimo: no
-          ejecutamos rastreadores publicitarios de terceros.
+          y cómo controlarlas. Mantenemos el uso de cookies al mínimo:
+          analítica y medición de conversiones de los anuncios que publicamos —
+          y nunca vendemos sus datos.
         </p>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">Qué son las cookies</h2>
@@ -71,6 +72,15 @@ export default function CookiesPageES() {
             personales.
           </li>
           <li>
+            <strong>Publicidad / medición de conversiones</strong> — cuando
+            nuestras campañas publicitarias están activas, las etiquetas de
+            Google Ads, Microsoft Advertising (UET) y Meta pueden establecer
+            cookies (como <code>_gcl_*</code>, <code>_uetsid</code>,{" "}
+            <code>_fbp</code>) para saber qué anuncios generan una solicitud de
+            reparación. Las usamos solo para medir y mejorar nuestras propias
+            campañas.
+          </li>
+          <li>
             <strong>Mapas embebidos</strong> — Google Maps puede establecer sus
             propias cookies cuando un mapa se carga en páginas de ciudades.
             Desactive bloqueando cookies de terceros; el mapa simplemente no se
@@ -80,10 +90,9 @@ export default function CookiesPageES() {
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">Lo que no usamos</h2>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Sin Facebook Pixel ni rastreo de Meta.</li>
-          <li>Sin cookies de retargeting / publicidad.</li>
-          <li>Sin píxeles de rastreo entre sitios.</li>
           <li>Sin venta de datos de ningún tipo.</li>
+          <li>Sin redes publicitarias de terceros más allá de las plataformas listadas arriba.</li>
+          <li>Sin venta ni intercambio de datos del formulario con corredores de datos.</li>
         </ul>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">Cómo controlar las cookies</h2>
@@ -91,6 +100,7 @@ export default function CookiesPageES() {
           <li>Bloquee o elimine cookies en la configuración del navegador (Chrome, Safari, Firefox, Edge — todos soportan control por sitio).</li>
           <li>Active "Do Not Track" o la señal "Global Privacy Control" del navegador — honramos ambas.</li>
           <li>Opte por no participar de Google Analytics instalando la <a className="text-brand hover:underline" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">extensión oficial de exclusión de GA</a>.</li>
+          <li>Excluya la publicidad personalizada en la <a className="text-brand hover:underline" href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">configuración de anuncios de Google</a>, en sus preferencias de anuncios de Meta, o en <a className="text-brand hover:underline" href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer">aboutads.info</a>.</li>
         </ul>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">Actualizaciones</h2>

@@ -112,6 +112,8 @@ export function ServiceMapEmbed({
     <div
       ref={ref}
       className={`${heightClass} w-full overflow-hidden rounded-2xl border border-border bg-card`}
+      // aria-label needs a role to be exposed to assistive tech.
+      role="region"
       aria-label="Map of nearby completed appliance repairs"
     />
   );

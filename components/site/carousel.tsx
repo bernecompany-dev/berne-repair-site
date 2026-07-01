@@ -24,7 +24,19 @@ export function Carousel({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  // WCAG 2.2.2 / prefers-reduced-motion: users who ask for reduced motion get
+  // no autoplay and instant (non-smooth) programmatic scrolls. Touch users
+  // have no hover/focus, so this is also their only autoplay opt-out.
+  const [reducedMotion, setReducedMotion] = useState(false);
   const total = images.length;
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   // Track which slide is most-visible via IntersectionObserver
   useEffect(() => {
@@ -33,7 +45,10 @@ export function Carousel({
     const items = Array.from(root.children) as HTMLElement[];
     const io = new IntersectionObserver(
       (entries) => {
-        let bestIdx = index;
+        // Only update when an entry actually wins — falling back to the
+        // closed-over `index` (stale: deps are [total]) could snap the dot
+        // indicator back to the mount-time slide.
+        let bestIdx = -1;
         let bestRatio = 0;
         for (const e of entries) {
           if (e.intersectionRatio > bestRatio) {
@@ -42,29 +57,32 @@ export function Carousel({
             if (i >= 0) bestIdx = i;
           }
         }
-        setIndex(bestIdx);
+        if (bestIdx >= 0) setIndex(bestIdx);
       },
       { root, threshold: [0.5, 0.75, 1] },
     );
     items.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, [total]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [total]);
 
-  // Autoplay
+  // Autoplay — disabled entirely under prefers-reduced-motion.
   useEffect(() => {
-    if (!autoplayMs || paused || total <= 1) return;
+    if (!autoplayMs || paused || reducedMotion || total <= 1) return;
     const id = window.setInterval(() => {
       goto((index + 1) % total);
     }, autoplayMs);
     return () => window.clearInterval(id);
-  }, [autoplayMs, paused, index, total]);  
+  }, [autoplayMs, paused, reducedMotion, index, total]);
 
   function goto(i: number) {
     const root = scrollRef.current;
     if (!root) return;
     const item = root.children[i] as HTMLElement | undefined;
     if (!item) return;
-    root.scrollTo({ left: item.offsetLeft - root.offsetLeft, behavior: "smooth" });
+    root.scrollTo({
+      left: item.offsetLeft - root.offsetLeft,
+      behavior: reducedMotion ? "auto" : "smooth",
+    });
   }
 
   if (total === 0) return null;
@@ -85,15 +103,20 @@ export function Carousel({
         <div
           ref={scrollRef}
           className={cn(
-            "flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth",
+            "flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth motion-reduce:scroll-auto",
             "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
           )}
+          // aria-roledescription is only valid on elements with a role —
+          // on a bare div assistive tech ignores it.
+          role="region"
           aria-roledescription="carousel"
+          aria-label="Photo gallery"
         >
           {images.map((img, i) => (
             <div
               key={img.src}
               className={cn("relative w-full shrink-0 snap-start", aspectClass)}
+              role="group"
               aria-roledescription="slide"
               aria-label={`${i + 1} of ${total}`}
             >

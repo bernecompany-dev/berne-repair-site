@@ -89,7 +89,7 @@ export default function ReviewsPage() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {REVIEWS.map((r) => (
             <figure
-              key={r.author}
+              key={`${r.author}-${r.datePublished}`}
               className="relative flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6"
             >
               <Quote className="size-6 text-brand/70" aria-hidden />

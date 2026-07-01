@@ -19,16 +19,16 @@ export function SiteHeader() {
   const locale: Locale = pathname.startsWith("/es") ? "es" : "en";
   const t = getDictionary(locale).nav;
   // Real hub pages where they exist; "Why us" stays a home anchor (no
-  // standalone page). /contact has no /es mirror, so it links the EN path
-  // from both locales. `match` is the pathname prefix that marks the item
+  // standalone page). `match` is the pathname prefix that marks the item
   // active (null for anchor links).
   const NAV: Array<{ href: string; label: string; match: string | null }> = [
     { href: localePath(locale, "/services"), label: t.services, match: localePath(locale, "/services") },
     { href: localePath(locale, "/areas"), label: t.areas, match: localePath(locale, "/areas") },
     { href: localePath(locale, "/brands"), label: locale === "es" ? "Marcas" : "Brands", match: localePath(locale, "/brands") },
     { href: localePath(locale, "/team"), label: t.team, match: localePath(locale, "/team") },
-    { href: localePath(locale, "/#why"), label: t.whyUs, match: null },
-    { href: "/contact", label: t.contact, match: "/contact" },
+    // Not localePath: it would emit "/es/#why" (trailing slash → 308 on hard load).
+    { href: locale === "es" ? "/es#why" : "/#why", label: t.whyUs, match: null },
+    { href: localePath(locale, "/contact"), label: t.contact, match: localePath(locale, "/contact") },
   ];
   const normalizedPath = pathname.replace(/\/+$/, "") || "/";
   const isActive = (match: string | null) =>
@@ -102,6 +102,10 @@ export function SiteHeader() {
 
       <div
         id="mobile-nav"
+        // `inert` removes the collapsed menu's links from the tab order and
+        // the accessibility tree — visually hidden via max-h-0/opacity-0 they
+        // were still keyboard-focusable (invisible tab stops on every page).
+        inert={!open || undefined}
         className={cn(
           "lg:hidden overflow-hidden border-t border-border/60 transition-[max-height,opacity] duration-300 ease-out",
           open ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0",

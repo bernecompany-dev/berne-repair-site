@@ -17,7 +17,8 @@ export default function NotFound() {
         online, or head back home.
       </p>
       <div className="mt-8">
-        <CTARow size="md" />
+        {/* 404 has no #lead-form anchor — point Book at the dispatch page. */}
+        <CTARow size="md" bookHref="/request-dispatch" />
       </div>
 
       {/* Internal search — submits to /search with ?q=. The URL pattern matches

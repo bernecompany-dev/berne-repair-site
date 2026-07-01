@@ -30,15 +30,16 @@ export default function CookiesPage() {
         <span className="text-foreground/80">Cookies</span>
       </nav>
       <h1 className="text-4xl font-semibold tracking-tight">Cookie Policy</h1>
-      <p className="mt-3 text-sm text-muted-foreground">Last updated: 2026-05-20</p>
+      <p className="mt-3 text-sm text-muted-foreground">Last updated: 2026-07-01</p>
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/90">
         <p>
           This page explains what cookies and similar storage technologies{" "}
           {COMPANY.legalName} uses on{" "}
           <a href={COMPANY.url} className="text-brand hover:underline">{COMPANY.url}</a>{" "}
-          and how to control them. We keep cookie use minimal: we do not run
-          third-party advertising trackers.
+          and how to control them. We keep cookie use minimal: analytics and
+          conversion measurement for the ads we run — and we never sell your
+          data.
         </p>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">What cookies are</h2>
@@ -70,6 +71,14 @@ export default function CookiesPage() {
             services customers look up. No personal identifiers are sent.
           </li>
           <li>
+            <strong>Advertising / conversion measurement</strong> — when our ad
+            campaigns are active, Google Ads, Microsoft Advertising (UET), and
+            Meta tags may set cookies (such as <code>_gcl_*</code>,{" "}
+            <code>_uetsid</code>, <code>_fbp</code>) so we can tell which ads
+            actually lead to a repair request. We use them to measure and
+            improve our own campaigns only.
+          </li>
+          <li>
             <strong>Map embeds</strong> — Google Maps may set its own cookies
             when a map loads on city pages. Disable by blocking third-party
             cookies; the map will simply not render.
@@ -78,10 +87,9 @@ export default function CookiesPage() {
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">What we do not use</h2>
         <ul className="list-disc pl-6 space-y-1">
-          <li>No Facebook Pixel or Meta tracking.</li>
-          <li>No retargeting / advertising cookies.</li>
-          <li>No cross-site tracking pixels.</li>
           <li>No data sales of any kind.</li>
+          <li>No third-party ad networks beyond the platforms listed above.</li>
+          <li>No selling or sharing of lead-form data with data brokers.</li>
         </ul>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">How to control cookies</h2>
@@ -89,6 +97,7 @@ export default function CookiesPage() {
           <li>Block or delete cookies in your browser settings (Chrome, Safari, Firefox, Edge — all support per-site control).</li>
           <li>Enable "Do Not Track" or browser-level "Global Privacy Control" — we honor both.</li>
           <li>Opt out of Google Analytics by installing the official <a className="text-brand hover:underline" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">GA opt-out extension</a>.</li>
+          <li>Opt out of personalized advertising via <a className="text-brand hover:underline" href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>, your Meta ad preferences, or <a className="text-brand hover:underline" href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer">aboutads.info</a>.</li>
         </ul>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">Updates</h2>

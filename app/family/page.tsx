@@ -29,7 +29,9 @@ const brands = [
   {
     icon: Crown,
     name: "Berne Repair",
-    url: "https://www.berne-repair.com/",
+    // Internal path — the absolute self-URL forced a full external reload
+    // of the site the visitor is already on.
+    url: "/",
     tag: "this site",
     focus: "Premium residential",
     price: "$59 diagnostic, credited to repair",
@@ -101,8 +103,12 @@ export default function FamilyPage() {
 
       <section className="container-prose py-16">
         <div className="grid gap-6 lg:grid-cols-3">
-          {brands.map((b) => (
-            <a
+          {brands.map((b) => {
+            // Internal targets get client-side navigation; sister-brand
+            // domains stay plain external anchors.
+            const CardComp = b.url.startsWith("/") ? Link : "a";
+            return (
+            <CardComp
               key={b.name}
               href={b.url}
               className={`group flex flex-col gap-4 rounded-3xl border p-6 transition-all hover:-translate-y-0.5 ${b.accent}`}
@@ -130,8 +136,8 @@ export default function FamilyPage() {
                 Visit site
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
               </div>
-            </a>
-          ))}
+            </CardComp>
+          );})}
         </div>
 
         <div className="mt-12 rounded-3xl border border-border bg-card/40 p-6 sm:p-8">

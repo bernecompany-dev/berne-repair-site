@@ -480,9 +480,12 @@ export function localBusinessJsonLd() {
     })),
     aggregateRating: AGGREGATE,
     review: REVIEW_NODES,
+    // NOTE: @id must match personJsonLd()'s `/team#person-{slug}` — a split
+    // @id (`/team#{slug}` vs `/team#person-{slug}`) forked every technician
+    // into two disconnected Person entities in the graph (fixed 2026-07-01).
     employee: TEAM.map((m) => ({
       "@type": "Person",
-      "@id": absoluteUrl(`/team#${m.slug}`),
+      "@id": absoluteUrl(`/team#person-${m.slug}`),
       name: m.name,
       jobTitle: m.role,
       image: absoluteUrl(m.photo),
@@ -529,7 +532,11 @@ export function serviceJsonLd(service: Service, locale: "en" | "es" = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": absoluteUrl(`/services/${service.slug}#service`),
+    // Locale-scoped @id: EN and ES pages were publishing two conflicting
+    // definitions (different name/description/url) under one @id.
+    "@id": absoluteUrl(
+      locale === "es" ? `/es/services/${service.slug}#service` : `/services/${service.slug}#service`,
+    ),
     name,
     serviceType: name,
     provider: { "@id": BUSINESS_ID },
@@ -579,7 +586,10 @@ export function highEndServiceJsonLd(args: {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": absoluteUrl(`/services/${args.slug}#service`),
+    // Locale-scoped @id — see serviceJsonLd.
+    "@id": absoluteUrl(
+      locale === "es" ? `/es/services/${args.slug}#service` : `/services/${args.slug}#service`,
+    ),
     name: args.name,
     serviceType: args.name,
     provider: { "@id": BUSINESS_ID },

@@ -61,7 +61,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
-      images: [DEFAULT_OG_IMAGE.url],
+      // No explicit images: the hardcoded generic /opengraph-image was
+      // overriding the per-post image from the opengraph-image.tsx file
+      // convention — Twitter/X falls back to og:image when unset.
     },
   };
 }

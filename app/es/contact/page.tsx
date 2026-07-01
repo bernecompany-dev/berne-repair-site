@@ -6,12 +6,15 @@ import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
+// Absolute — brand already in the string; layout template would double it.
+const TITLE = "Contacto — Berne Appliance Repair · Servicio premium";
+const DESC = `Comuníquese con el despacho de Berne Appliance Repair para servicio premium de electrodomésticos en el sur de Florida. ${COMPANY.phone.display} · ${COMPANY.hours.label}. Despacho prioritario de guante blanco. Con licencia y asegurados.`;
+
 export const metadata: Metadata = {
-  // Absolute — brand already in the string; layout template would double it.
-  title: { absolute: "Contact Berne Appliance Repair — Premium Service" },
-  description: `Reach Berne Appliance Repair dispatch for premium appliance service across South Florida. ${COMPANY.phone.display} · ${COMPANY.hours.label}. Priority white-glove dispatch. Licensed & insured.`,
+  title: { absolute: TITLE },
+  description: DESC,
   alternates: {
-    canonical: "/contact",
+    canonical: "/es/contact",
     languages: {
       "en-US": absoluteUrl("/contact"),
       "es-US": absoluteUrl("/es/contact"),
@@ -19,11 +22,12 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Contact Berne Appliance Repair — Premium Service",
+    title: TITLE,
     description:
-      "Reach Berne Appliance Repair dispatch for premium appliance service across South Florida.",
-    url: absoluteUrl("/contact"),
+      "Comuníquese con el despacho de Berne Appliance Repair para servicio premium de electrodomésticos en el sur de Florida.",
+    url: absoluteUrl("/es/contact"),
     type: "website",
+    locale: "es_US",
     images: [DEFAULT_OG_IMAGE],
   },
 };
@@ -31,8 +35,9 @@ export const metadata: Metadata = {
 const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact Berne Appliance Repair",
-  "url": absoluteUrl("/contact"),
+  "name": "Contacto — Berne Appliance Repair",
+  "url": absoluteUrl("/es/contact"),
+  "inLanguage": "es-US",
   "mainEntity": {
     "@type": "LocalBusiness",
     "@id": absoluteUrl("/#business"),
@@ -45,7 +50,7 @@ const contactPageSchema = {
   },
 };
 
-export default function ContactPage() {
+export default function ContactPageES() {
   return (
     <>
       {/* Hero */}
@@ -59,27 +64,28 @@ export default function ContactPage() {
           }}
         />
         <div className="container-prose pt-14 pb-12 sm:pt-20 sm:pb-16">
-          <nav className="mb-6 flex items-center gap-2 text-xs text-muted-foreground" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-foreground">Home</Link>
+          <nav className="mb-6 flex items-center gap-2 text-xs text-muted-foreground" aria-label="Ruta de navegación">
+            <Link href="/es" className="hover:text-foreground">Inicio</Link>
             <span aria-hidden>/</span>
-            <span className="text-foreground/80">Contact</span>
+            <span className="text-foreground/80">Contacto</span>
           </nav>
 
           <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
             <ShieldCheck className="size-3.5" aria-hidden />
-            Licensed & insured · {COMPANY.socialProof.warranty}
+            Con licencia y asegurados · {COMPANY.socialProof.warranty}
           </span>
 
           <h1 className="heading-hero mt-6 max-w-3xl">
-            Contact{" "}
+            Contacte a{" "}
             <span className="bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
               Berne Appliance Repair.
             </span>
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Premium appliance service across Miami-Dade, Broward, and Palm Beach.
-            Talk to a real dispatcher — no call centers, no answering services.
+            Servicio premium de electrodomésticos en Miami-Dade, Broward y Palm
+            Beach. Hable con un despachador real — sin centros de llamadas ni
+            contestadores automáticos.
           </p>
         </div>
       </section>
@@ -88,10 +94,10 @@ export default function ContactPage() {
       <section className="container-prose py-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight">How to reach us</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Cómo comunicarse</h2>
             <p className="mt-3 text-muted-foreground">
-              We answer the phone seven days a week. Call before noon and same-day is
-              usually on the table.
+              Contestamos el teléfono los siete días de la semana. Si llama antes
+              del mediodía, el servicio el mismo día suele ser posible.
             </p>
 
             <ul className="mt-8 space-y-4 text-base">
@@ -101,7 +107,7 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    Phone &amp; SMS
+                    Teléfono y SMS
                   </div>
                   <div className="mt-1 space-y-1.5">
                     {COMPANY.phones.map((p, i) => (
@@ -127,7 +133,7 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    Email
+                    Correo electrónico
                   </div>
                   <a
                     href={`mailto:${COMPANY.email.public}`}
@@ -143,7 +149,7 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    Hours
+                    Horario
                   </div>
                   <div className="font-semibold text-foreground">
                     {COMPANY.hours.label}
@@ -156,7 +162,7 @@ export default function ContactPage() {
                 </span>
                 <div>
                   <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    Service area
+                    Zona de servicio
                   </div>
                   <div className="font-semibold text-foreground">
                     Miami-Dade · Broward · Palm Beach
@@ -167,24 +173,25 @@ export default function ContactPage() {
 
             <div className="mt-8 rounded-2xl border border-border bg-card/40 p-5">
               <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                Need it faster than the form?
+                ¿Lo necesita más rápido que el formulario?
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                For emergency outages or same-day dispatch, calling is the fastest path.
-                A dispatcher answers — not an auto-attendant.
+                Para averías urgentes o despacho el mismo día, llamar es la vía
+                más rápida. Contesta un despachador — no un contestador
+                automático.
               </p>
               <a
                 href={`tel:${COMPANY.phone.tel}`}
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground hover:brightness-110"
               >
                 <Phone className="size-4" aria-hidden />
-                Call {COMPANY.phone.display}
+                Llame al {COMPANY.phone.display}
               </a>
             </div>
           </div>
 
           <div id="lead-form">
-            <LeadForm />
+            <LeadForm locale="es" />
           </div>
         </div>
       </section>

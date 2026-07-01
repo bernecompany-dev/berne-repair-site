@@ -145,6 +145,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/careers",
     "/request-dispatch",
+    "/contact",
     "/credentials",
     "/privacy",
     "/terms",
@@ -153,10 +154,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}${p}`, lastModified: LAST_MOD, changeFrequency: "monthly" as const, priority: 0.7, alternates: { languages: esCounterpart(p) } },
     { url: `${SITE_URL}/es${p}`, lastModified: REWORKED_MOD, changeFrequency: "monthly" as const, priority: 0.65, alternates: { languages: esCounterpart(p) } },
   ]);
-  // EN-only statics — /es/contact and /es/family do not exist (404). The old
-  // unconditional flatMap put both dead /es URLs into the sitemap with
-  // matching phantom es-US hreflang alternates.
-  const staticsEnOnly: MetadataRoute.Sitemap = ["/contact", "/family", "/reviews", "/service-map"].map((p) => ({
+  // EN-only statics — /es/family etc. do not exist (404). The old
+  // unconditional flatMap put dead /es URLs into the sitemap with
+  // matching phantom es-US hreflang alternates. (/es/contact went live
+  // 2026-07-01 — /contact moved to the paired `statics` list above.)
+  const staticsEnOnly: MetadataRoute.Sitemap = ["/family", "/reviews", "/service-map"].map((p) => ({
     url: `${SITE_URL}${p}`,
     lastModified: LAST_MOD,
     changeFrequency: "monthly" as const,

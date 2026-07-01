@@ -29,7 +29,9 @@ const ES_BRAND_SLUGS = [
 // /es/... URL; otherwise it falls back to the Spanish home.
 const ES_MIRROR_PATTERNS: RegExp[] = [
   /^\/$/,
-  /^\/(about|careers|cookies|credentials|privacy|request-dispatch|search|team|terms)\/?$/,
+  /^\/(about|careers|contact|cookies|credentials|privacy|request-dispatch|search|team|terms)\/?$/,
+  /^\/resources\/?$/,
+  /^\/resources\/luxury-appliance-repair-cost-guide\/?$/,
   /^\/areas\/?$/,
   /^\/areas\/[a-z0-9-]+\/?$/,
   /^\/services\/?$/,

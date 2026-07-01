@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone, CalendarCheck, MessageSquare, MessagesSquare } from "lucide-react";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
@@ -24,6 +25,10 @@ export function CTARow({
 }) {
   const d = getDictionary(locale).cta;
   const smsBody = SMS_BODIES[locale];
+  // Cross-page book targets (e.g. "/#lead-form", "/request-dispatch") get
+  // client-side navigation via next/link; same-page "#lead-form" anchors
+  // stay a plain <a> (pure scroll, no router involvement needed).
+  const BookComp = bookHref.startsWith("/") ? Link : "a";
   const sizes: Record<string, string> = {
     sm: "h-10 px-4 text-sm",
     md: "h-12 px-5 text-[15px]",
@@ -42,7 +47,7 @@ export function CTARow({
         <Phone className="size-4" aria-hidden />
         <span>{d.callPrefix} {COMPANY.phone.display}</span>
       </a>
-      <a
+      <BookComp
         href={bookHref}
         data-analytics="cta-book"
         className={cn(
@@ -52,7 +57,7 @@ export function CTARow({
       >
         <CalendarCheck className="size-4" aria-hidden />
         <span>{d.book}</span>
-      </a>
+      </BookComp>
       <a
         href={`sms:${COMPANY.phone.sms}?&body=${smsBody}`}
         data-analytics="cta-text"

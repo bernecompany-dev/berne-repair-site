@@ -30,7 +30,7 @@ export default function PrivacyPageES() {
         <span className="text-foreground/80">Privacidad</span>
       </nav>
       <h1 className="text-4xl font-semibold tracking-tight">Política de Privacidad</h1>
-      <p className="mt-3 text-sm text-muted-foreground">Última actualización: 2026-05-16</p>
+      <p className="mt-3 text-sm text-muted-foreground">Última actualización: 2026-07-01</p>
 
       <div className="mt-10 space-y-6 text-base leading-relaxed text-foreground/90">
         <p>
@@ -44,7 +44,7 @@ export default function PrivacyPageES() {
         <ul className="list-disc pl-6 space-y-1">
           <li><strong>Datos del formulario</strong>: su nombre, teléfono, correo opcional, ciudad, tipo de electrodoméstico, marca opcional y descripción libre del problema.</li>
           <li><strong>Datos técnicos</strong>: dirección IP anónima, tipo de navegador, páginas visitadas, fuente de referencia — recopilados automáticamente vía Google Analytics 4.</li>
-          <li><strong>Cookies</strong>: GA4 establece cookies de primera parte para medir visitas. No usamos rastreadores publicitarios.</li>
+          <li><strong>Cookies</strong>: GA4 establece cookies de primera parte para medir visitas. Cuando nuestras campañas publicitarias están activas, las plataformas de anuncios (Google Ads, Microsoft Advertising, Meta) también establecen cookies de medición de conversiones — vea la <Link href="/es/cookies" className="text-brand hover:underline">Política de Cookies</Link> para la lista completa y las exclusiones.</li>
         </ul>
 
         <h2 className="text-xl font-semibold tracking-tight mt-10">Cómo la usamos</h2>
@@ -79,6 +79,7 @@ export default function PrivacyPageES() {
           <li><strong>Resend</strong> — proveedor de correo transaccional para notificaciones de leads.</li>
           <li><strong>Vercel</strong> — alojamiento del sitio. Registra datos mínimos por ~30 días.</li>
           <li><strong>Google Analytics 4</strong> — medición de tráfico agregado.</li>
+          <li><strong>Plataformas de anuncios</strong> — las etiquetas de conversión de Google Ads, Microsoft Advertising y Meta miden qué anuncios generan una solicitud de reparación. Activas solo mientras publicamos campañas; vea la <Link href="/es/cookies" className="text-brand hover:underline">Política de Cookies</Link> para las exclusiones.</li>
           <li><strong>Google Maps</strong> — mapas embebidos en páginas de ciudades. Sujeto a la política de Google.</li>
         </ul>
 
