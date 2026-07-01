@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID ?? "xfuw3x40zs";
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID ?? "xfuty713o8";
 
 /**
  * Microsoft Clarity loader.
