@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     template: "%s · Berne Appliance Repair",
   },
   description:
-    "Luxury & high-end appliance repair across Miami-Dade, Broward & Palm Beach. Factory-trained Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau specialists. EPA-608, white-glove service.",
+    "Luxury appliance repair across Miami-Dade, Broward & Palm Beach. Factory-trained Sub-Zero, Wolf, Viking, Thermador & Miele specialists. White-glove service.",
   applicationName: COMPANY.legalName,
   openGraph: {
     type: "website",

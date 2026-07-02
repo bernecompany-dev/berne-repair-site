@@ -8,7 +8,7 @@ import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const TITLE = "Resources — Luxury Appliance Repair Guides";
 const DESCRIPTION =
-  "Reference guides for high-end appliance owners in South Florida — repair-cost ranges, repair-vs-replace tools, and brand-specific know-how from a factory-trained, EPA 608 service desk.";
+  "Reference guides for high-end appliance owners in South Florida — repair-cost ranges, repair-vs-replace tools, and brand-specific know-how from factory-trained techs.";
 
 export const metadata: Metadata = {
   title: TITLE,

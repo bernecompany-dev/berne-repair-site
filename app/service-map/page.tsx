@@ -8,7 +8,7 @@ import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = "Service Map — Where We've Worked";
 const PAGE_DESCRIPTION =
-  "An interactive map of completed appliance repairs from the Miami metro to Tampa Bay and Sarasota — thousands of service calls across hundreds of Florida cities, shown at the neighborhood level for customer privacy.";
+  "Interactive map of completed appliance repairs from the Miami metro to Tampa Bay — thousands of service calls, shown at neighborhood level for privacy.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
