@@ -18,6 +18,11 @@ export async function POST(
   { params }: { params: Promise<{ path: string[] }> },
 ) {
   const path = (await params).path ?? [];
+  // Same dot-segment guard as ads-dash proxy: ".." would be collapsed by URL
+  // normalization in fetch and escape the /angi/lead/ upstream prefix.
+  if (path.some((seg) => seg === "." || seg === "..")) {
+    return new NextResponse("Not found", { status: 404 });
+  }
   const target = UPSTREAM + path.map(encodeURIComponent).join("/");
   const body = await req.arrayBuffer();
   const upstream = await fetch(target, {

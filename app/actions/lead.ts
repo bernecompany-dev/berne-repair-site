@@ -155,9 +155,19 @@ export async function submitLead(
   // Rate limits — per-IP plus a global circuit breaker for distributed floods.
   const h = await headers();
   const ip = pickIp(h);
+  // Per-IP check FIRST and short-circuit: requests already blocked per-IP
+  // must NOT increment the global counter, otherwise a single IP can burn
+  // the global budget (60/h) and lock the form for everyone (cheap DoS).
   const rl = rateLimit({ key: `lead:${ip}`, limit: 5, windowMs: 10 * 60_000 });
+  if (!rl.ok) {
+    return {
+      status: "error",
+      errors: { form: msg.tooMany },
+      values: raw,
+    };
+  }
   const globalRl = globalRateLimit({ limit: 60, windowMs: 60 * 60_000 });
-  if (!rl.ok || !globalRl.ok) {
+  if (!globalRl.ok) {
     return {
       status: "error",
       errors: { form: msg.tooMany },
@@ -206,11 +216,13 @@ export async function submitLead(
       : [COMPANY.email.leads];
     const result = await resend.emails.send({ from, to, replyTo, subject, html });
     if (result.error) {
-      console.error("[lead] resend error:", result.error);
+      // Include contact fields so the lead is recoverable from Vercel logs
+      // (same pattern as the anti-bot / missing-key paths above).
+      console.error("[lead] resend error:", result.error, "| lead:", name, phone);
       return { status: "error", errors: { form: msg.sendFail }, values: raw };
     }
   } catch (err) {
-    console.error("[lead] resend threw:", err);
+    console.error("[lead] resend threw:", err, "| lead:", name, phone);
     return { status: "error", errors: { form: msg.sendFail }, values: raw };
   }
 

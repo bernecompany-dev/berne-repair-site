@@ -17,6 +17,12 @@ const UPSTREAM = "http://157.245.95.117:8000/dash/";
 export const dynamic = "force-dynamic";
 
 async function proxy(req: NextRequest, path: string[]) {
+  // Dot segments ("." / "..") survive encodeURIComponent and get collapsed
+  // by URL normalization inside fetch — "/dash/../x" would escape the /dash/
+  // prefix and reach arbitrary paths on the upstream. Reject them outright.
+  if (path.some((seg) => seg === "." || seg === "..")) {
+    return new NextResponse("Not found", { status: 404 });
+  }
   const target = UPSTREAM + path.map(encodeURIComponent).join("/");
   // Review C1/H8: forward the X-Dash-Key control PIN so the upstream can
   // authenticate control actions. The proxy itself stays dumb (upstream
