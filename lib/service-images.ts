@@ -92,6 +92,11 @@ const SERVICE_ALT_CONTEXT: Record<string, string[]> = {
     "Power recliner actuator and transformer service by Berne Appliance Repair",
     "Premium leather motion furniture mechanism inspection — Berne Appliance Repair",
   ],
+  "yacht-marine-appliance-repair": [
+    "Berne technician servicing an onboard yacht refrigerator dockside in South Florida",
+    "Marine DC refrigeration and condenser inspection by Berne Appliance Repair at the marina",
+    "Yacht galley ice maker and wine cooler diagnostic — Berne Appliance Repair, South Florida",
+  ],
 };
 
 const set = (slug: string, count: number): CarouselImage[] => {

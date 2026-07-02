@@ -5,6 +5,7 @@ import { poolHeaterRepair } from "./pool-heater-repair";
 import { coffeeMachineRepair } from "./coffee-machine-repair";
 import { reclinerRepair } from "./recliner-repair";
 import { warmingDrawerRepair } from "./warming-drawer-repair";
+import { yachtMarineApplianceRepair } from "./yacht-marine-appliance-repair";
 
 export type { HighEndService, HighEndArticle } from "./types";
 
@@ -20,6 +21,7 @@ export const HIGHEND_SERVICES: HighEndService[] = [
   coffeeMachineRepair,
   warmingDrawerRepair,
   reclinerRepair,
+  yachtMarineApplianceRepair,
 ];
 
 export const HIGHEND_SERVICE_BY_SLUG: Record<string, HighEndService> =
