@@ -130,7 +130,7 @@ export function BrandServiceLanding({
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
-              90-day warranty
+              10-yr parts warranty
             </span>
           </div>
 

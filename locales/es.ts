@@ -9,7 +9,7 @@ export const es: Dictionary = {
     // template must not be applied on top (it doubled the brand at 98ch).
     homeTitle: "Berne Appliance Repair — Electrodomésticos de Lujo · Sur de Florida",
     homeDescription:
-      "Reparación premium y de guante blanco de Sub-Zero, Wolf, Miele, Thermador, Viking y Gaggenau en las mejores casas de Miami. EPA-608, con licencia, garantía de 90 días.",
+      "Reparación premium y de guante blanco de Sub-Zero, Wolf, Miele, Thermador, Viking y Gaggenau en las mejores casas de Miami. EPA-608, con licencia, garantía de piezas hasta 10 años.",
   },
   nav: {
     services: "Servicios",
@@ -30,7 +30,7 @@ export const es: Dictionary = {
     bodyHighlight: "Diagnóstico de $59",
     bodySuffix: " — abonado a su reparación.",
     openToday: "Abierto los 7 días · 7 AM – 9 PM",
-    warranty: "Garantía de 90 días en mano de obra y piezas",
+    warranty: "Garantía de piezas hasta 10 años · 90 días mano de obra",
     technicians: "técnicos a tiempo completo",
     priceCardLabel: "Visita de diagnóstico",
     priceCardSuffix: "abonado a su reparación",
@@ -73,10 +73,10 @@ export const es: Dictionary = {
     body: "Reseñas verificadas de Google, citadas tal como fueron publicadas.",
   },
   commercial: {
-    eyebrow: "Comercial",
-    title: "Al servicio de administradores de propiedades, restaurantes y comercios.",
-    body: "Mantenemos electrodomésticos para Target, Publix, Petco y docenas de empresas de administración de propiedades en el sur de Florida. Facturación a crédito (net terms), despacho prioritario, un solo punto de contacto.",
-    segments: ["Retail", "Restaurantes", "Administración de propiedades", "Contratos de volumen"],
+    eyebrow: "Fincas y portafolios",
+    title: "Al servicio de fincas, residencias privadas y portafolios de propiedades.",
+    body: "Atendemos portafolios de residencias de lujo en el sur de Florida — comunidades cerradas, propiedades frente al mar, cocinas de chefs privados y yates — junto a los administradores que los gestionan. Facturación a crédito (net terms), despacho prioritario, un solo punto de contacto.",
+    segments: ["Fincas y residencias", "Yates y marina", "Administración de propiedades", "Contratos de volumen"],
   },
   faq: {
     eyebrow: "Preguntas frecuentes",
@@ -167,8 +167,8 @@ export const es: Dictionary = {
     sameDay: "Prioritario",
     sameDayLabel: "Mayoría de visitas en <1 hora",
     sameDaySub: "Abiertos 7 días · 7 AM – 9 PM",
-    warranty: "90 días",
-    warrantyLabel: "Garantía en mano de obra y piezas",
+    warranty: "10 años",
+    warrantyLabel: "Garantía de piezas hasta 10 años",
     warrantySub: "Con licencia y asegurados",
   },
   processSteps: {
@@ -184,9 +184,9 @@ export const es: Dictionary = {
     s3Title: "Reparación bien hecha",
     s3Body: "Camiones equipados con piezas comunes para las plataformas premium que servimos. La mayoría termina en la primera visita, dejando el área impecable.",
     s3Tag: "Primera visita",
-    s4Title: "Garantía 90 días",
-    s4Body: "Vuelve el problema — volvemos nosotros, sin costo. Recibo y garantía enviados por correo antes de irnos.",
-    s4Tag: "90 días",
+    s4Title: "Garantía escalonada",
+    s4Body: "Piezas cubiertas hasta 10 años (soldaduras del sistema sellado), 2 años mecánicas, 1 año electrónicas — más 90 días de mano de obra. Recibo y garantía por correo antes de irnos.",
+    s4Tag: "Hasta 10 años",
   },
   stickyCta: {
     call: "Llamar",
@@ -198,8 +198,8 @@ export const es: Dictionary = {
     { title: "18 técnicos", body: "Un equipo real, no un solo hombre. El especialista correcto para su Sub-Zero, Wolf o Thermador — no el que esté libre." },
     { title: "Camiones equipados para marcas premium", body: "Sub-Zero, Wolf, Viking, Thermador, Miele, Gaggenau — piezas comunes van en el camión." },
     { title: "Diagnóstico honesto, $59 abonado", body: "Precios claros. El diagnóstico de $59 se abona a su reparación — sin cargos sorpresa en su hogar." },
-    { title: "Garantía 90 días", body: "Piezas y mano de obra respaldadas 90 días. Vuelve el problema, volvemos nosotros — sin costo." },
-    { title: "Clientes comerciales confían en nosotros", body: "Servimos administradores de propiedades, restaurantes y retail — incluyendo Target, Publix, Petco." },
+    { title: "Garantía escalonada", body: "Piezas cubiertas hasta 10 años en soldaduras del sistema sellado, 2 años mecánicas, 1 año electrónicas — más 90 días de mano de obra." },
+    { title: "Fincas y portafolios confían en nosotros", body: "Servimos comunidades cerradas, propiedades frente al mar, cocinas de chefs privados, yates — y a sus administradores." },
   ],
   ownerIntro: {
     eyebrow: "Fundador · Eugene Berne",

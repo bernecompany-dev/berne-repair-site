@@ -57,7 +57,7 @@ const CITY_META_OVERRIDES: Record<string, { title: string; description: string }
   miami: {
     title: "Luxury Appliance Repair Miami, FL — White-Glove Service",
     description:
-      "Factory-trained, white-glove appliance repair across Miami — Brickell towers to Coral Gables estates. Sub-Zero, Wolf, Miele & Thermador specialists. 90-day warranty.",
+      "Factory-trained, white-glove appliance repair across Miami — Brickell towers to Coral Gables estates. Sub-Zero, Wolf, Miele & Thermador specialists. Parts warranty up to 10 years.",
   },
 };
 
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     override?.title ?? `Luxury Appliance Repair in ${city.name}, FL · Berne`;
   const description =
     override?.description ??
-    `Factory-trained, white-glove appliance repair in ${city.name}, ${city.county} County. ${COMPANY.socialProof.technicians} specialists in Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau. 90-day warranty.`;
+    `Factory-trained, white-glove appliance repair in ${city.name}, ${city.county} County. ${COMPANY.socialProof.technicians} specialists in Sub-Zero, Wolf, Viking, Thermador, Miele & Gaggenau. Parts warranty up to 10 years.`;
   return {
     title: { absolute: title },
     description,

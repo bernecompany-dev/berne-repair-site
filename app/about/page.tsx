@@ -314,7 +314,7 @@ export default function AboutPage() {
             />
             <Stat
               icon={<ShieldCheck className="size-5 text-brand" aria-hidden />}
-              value="90-day"
+              value="10-yr parts"
               label="Labor & parts warranty"
               sub="Every job, written, no asterisks"
             />

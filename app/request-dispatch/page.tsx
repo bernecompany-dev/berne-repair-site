@@ -173,8 +173,8 @@ export default function RequestDispatchPage() {
                 Brand &amp; warranty
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                {COMPANY.socialProof.technicians} licensed technicians. 90-day
-                warranty on parts and labor. Independent — not an authorized
+                {COMPANY.socialProof.technicians} licensed technicians. Parts
+                warranty up to 10 years, 90-day labor warranty. Independent — not an authorized
                 service center for any manufacturer.
               </p>
             </div>

@@ -24,12 +24,12 @@ export const GENERAL_FAQS: FAQ[] = [
   {
     question: "What warranty backs your repairs?",
     answer:
-      "A 90-day warranty on labor and on every part we install. If the same fault returns within 90 days, we come back at no charge. On premium platforms we source OEM parts through the factory channel, and the part number goes on your invoice so the repair is fully documented.",
+      "Tiered parts coverage plus a 90-day labor warranty. Parts we install are covered up to 10 years on sealed-system welds, up to 2 years on mechanical parts, and up to 1 year on electronic and electrical components. Labor is backed for 90 days — if the same fault returns, we come back at no charge. On premium platforms we source OEM parts through the factory channel, and the part number goes on your invoice so the repair is fully documented.",
   },
   {
     question: "Do you handle estate, property-management, and commercial accounts?",
     answer:
-      "Yes. We maintain appliances for restaurants, property managers, and retail — including past work with Target, Publix, and Petco — and we look after estate and luxury-residence portfolios on a single point of contact. Ask about scheduled maintenance and volume agreements.",
+      "Yes. We look after estate and luxury-residence portfolios — gated communities, waterfront estates, private-chef kitchens and yachts — plus the restaurants and property managers who serve them, all on a single point of contact. Ask about scheduled maintenance and volume agreements.",
   },
   {
     question: "What payment methods do you accept?",
@@ -67,12 +67,12 @@ export const GENERAL_FAQS_ES: FAQ[] = [
   {
     question: "¿Qué garantía respalda sus reparaciones?",
     answer:
-      "Garantía de 90 días en mano de obra y en cada pieza que instalamos. Si la misma falla regresa dentro de 90 días, volvemos sin costo. En plataformas premium usamos piezas OEM del canal de fábrica, y el número de pieza queda en su factura para que la reparación esté documentada por completo.",
+      "Cobertura escalonada de piezas más garantía de 90 días en mano de obra. Las piezas que instalamos están cubiertas hasta 10 años en soldaduras del sistema sellado, hasta 2 años en piezas mecánicas y hasta 1 año en componentes electrónicos y eléctricos. La mano de obra está respaldada por 90 días — si la misma falla regresa, volvemos sin costo. En plataformas premium usamos piezas OEM del canal de fábrica, y el número de pieza queda en su factura.",
   },
   {
     question: "¿Atienden cuentas de fincas, administración de propiedades y comercios?",
     answer:
-      "Sí. Mantenemos electrodomésticos para restaurantes, administradores de propiedades y retail — incluyendo trabajo previo con Target, Publix y Petco — y atendemos portafolios de fincas y residencias de lujo con un solo punto de contacto. Pregunte por mantenimiento programado y acuerdos de volumen.",
+      "Sí. Atendemos portafolios de fincas y residencias de lujo — comunidades cerradas, propiedades frente al mar, cocinas de chefs privados y yates — además de los restaurantes y administradores de propiedades que los sirven, con un solo punto de contacto. Pregunte por mantenimiento programado y acuerdos de volumen.",
   },
   {
     question: "¿Qué métodos de pago aceptan?",

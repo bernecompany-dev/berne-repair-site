@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // long Spanish template produced 97–99ch titles for long city names —
   // truncated in SERP. Same absolute pattern as the ES service hubs (round-2).
   const title = `Reparación de Electrodomésticos de Lujo en ${city.name}`;
-  const description = `Reparación de guante blanco de electrodomésticos de alta gama en ${city.name}, ${city.county}. ${COMPANY.socialProof.technicians} especialistas Sub-Zero, Wolf, Miele y Thermador. Garantía de 90 días.`;
+  const description = `Reparación de guante blanco de electrodomésticos de alta gama en ${city.name}, ${city.county}. ${COMPANY.socialProof.technicians} especialistas Sub-Zero, Wolf, Miele y Thermador. Garantía de piezas hasta 10 años.`;
   return {
     title: { absolute: title },
     description,

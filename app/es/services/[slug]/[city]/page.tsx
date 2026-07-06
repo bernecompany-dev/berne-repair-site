@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? service.es.seoNoun
     : `reparación de ${service.es.seoNoun}`;
   // ≤155 chars: drop the licencia clause when the long form would truncate.
-  const descBase = `${esNounPhrase.charAt(0).toUpperCase()}${esNounPhrase.slice(1)} de guante blanco en ${city.name}, condado de ${city.county}. Técnicos formados de fábrica, garantía de 90 días.`;
+  const descBase = `${esNounPhrase.charAt(0).toUpperCase()}${esNounPhrase.slice(1)} de guante blanco en ${city.name}, condado de ${city.county}. Técnicos formados de fábrica, garantía de piezas hasta 10 años.`;
   const descTail = ` Llame al ${COMPANY.phone.display}.`;
   const description = `${descBase} Con licencia y seguro.${descTail}`.length <= 155
     ? `${descBase} Con licencia y seguro.${descTail}`

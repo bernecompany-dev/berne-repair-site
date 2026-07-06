@@ -5,7 +5,7 @@ export const en = {
   meta: {
     homeTitle: "Berne Appliance Repair — Luxury & High-End · South Florida",
     homeDescription:
-      "Factory-trained, white-glove repair of Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau across Miami's finest homes. EPA-608, licensed & insured, 90-day warranty.",
+      "Factory-trained, white-glove repair of Sub-Zero, Wolf, Miele, Thermador, Viking & Gaggenau across Miami's finest homes. EPA-608, licensed & insured, parts warranty up to 10 years.",
   },
   nav: {
     services: "Services",
@@ -26,7 +26,7 @@ export const en = {
     bodyHighlight: "$59 diagnostic",
     bodySuffix: " — credited toward your repair.",
     openToday: "Open 7 days · 7 AM – 9 PM",
-    warranty: "90-day labor & parts warranty",
+    warranty: "Parts warranty up to 10 years · 90-day labor",
     technicians: "full-time technicians",
     priceCardLabel: "Diagnostic visit",
     priceCardSuffix: "credited to your repair",
@@ -69,10 +69,10 @@ export const en = {
     body: "Verified Google reviews, quoted as posted.",
   },
   commercial: {
-    eyebrow: "Commercial",
-    title: "On call for property managers, restaurants, retail.",
-    body: "We've maintained appliances for Target, Publix, Petco, and dozens of property management companies across South Florida. Net terms, priority dispatch, single point of contact.",
-    segments: ["Retail", "Restaurants", "Property management", "Volume contracts"],
+    eyebrow: "Estates & portfolios",
+    title: "On call for estates, private residences, property portfolios.",
+    body: "We look after luxury-residence portfolios across South Florida — gated communities, waterfront estates, private-chef kitchens and yachts — alongside the property managers who run them. Net terms, priority dispatch, single point of contact.",
+    segments: ["Estates & residences", "Yachts & marine", "Property management", "Volume contracts"],
   },
   faq: {
     eyebrow: "FAQ",
@@ -163,9 +163,9 @@ export const en = {
     sameDay: "Priority",
     sameDayLabel: "Most visits booked <1 hour",
     sameDaySub: "Open 7 days · 7 AM – 9 PM",
-    warranty: "90-day",
-    warrantyLabel: "Warranty on labor & parts",
-    warrantySub: "Licensed & insured",
+    warranty: "10-yr",
+    warrantyLabel: "Parts warranty up to 10 years",
+    warrantySub: "90-day labor · Licensed & insured",
   },
   processSteps: {
     eyebrow: "How it works",
@@ -180,9 +180,9 @@ export const en = {
     s3Title: "Repair done right",
     s3Body: "Trucks carry common parts for the premium platforms we service. Most repairs finish on the first visit, work area left spotless.",
     s3Tag: "First visit",
-    s4Title: "90-day warranty",
-    s4Body: "Same issue comes back — so do we, no charge. Receipt and warranty emailed before we leave.",
-    s4Tag: "90 days",
+    s4Title: "Tiered warranty",
+    s4Body: "Parts covered up to 10 years (sealed-system welds), 2 years mechanical, 1 year electronics — plus 90 days on labor. Receipt and warranty emailed before we leave.",
+    s4Tag: "Up to 10 yrs",
   },
   stickyCta: {
     call: "Call",
@@ -194,8 +194,8 @@ export const en = {
     { title: "18 technicians", body: "A real bench, not a one-man show. The right specialist for your Sub-Zero, Wolf, or Thermador — not whoever's free." },
     { title: "Trucks stocked for premium brands", body: "Sub-Zero, Wolf, Viking, Thermador, Miele, Gaggenau — common parts ride in the truck." },
     { title: "Honest diagnosis, $59 credited", body: "Transparent pricing. The $59 diagnostic is credited toward your repair — no surprise add-ons in your home." },
-    { title: "90-day warranty", body: "Parts and labor backed for 90 days. Same issue comes back, so do we — at no charge." },
-    { title: "Trusted by commercial clients", body: "We service property management, restaurants, and retail — including Target, Publix, Petco." },
+    { title: "Tiered warranty", body: "Parts covered up to 10 years on sealed-system welds, 2 years mechanical, 1 year electronics — plus 90 days on labor. Same issue comes back, so do we." },
+    { title: "Trusted by estates & portfolios", body: "We service gated communities, waterfront estates, private-chef kitchens, yachts — and the property managers behind them." },
   ],
   ownerIntro: {
     eyebrow: "Founder · Eugene Berne",

@@ -33,7 +33,7 @@ type Locale = "en" | "es";
 const T = {
   en: {
     sameDay: "White-glove priority",
-    warranty: "90-day warranty",
+    warranty: "Parts warranty up to 10 yrs",
     home: "Home",
     services: "Services",
     issuesEyebrow: "What we see most",

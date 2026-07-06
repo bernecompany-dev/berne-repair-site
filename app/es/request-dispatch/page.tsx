@@ -9,7 +9,7 @@ import { absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 // Absolute title: the brand is already in the string — the layout template was
 // appending " · Berne Appliance Repair" a second time (102ch, double brand).
 const TITLE = "Reserve su visita — Berne Appliance Repair · Servicio prioritario de guante blanco";
-const DESC = `Solicite despacho prioritario de guante blanco en el sur de Florida. Diagnóstico $${COMPANY.serviceCallPrice}, abonado a su reparación, ${COMPANY.socialProof.technicians} técnicos formados de fábrica, garantía de 90 días. Sub-Zero, Wolf, Viking, Thermador, Miele y Gaggenau.`;
+const DESC = `Solicite despacho prioritario de guante blanco en el sur de Florida. Diagnóstico $${COMPANY.serviceCallPrice}, abonado a su reparación, ${COMPANY.socialProof.technicians} técnicos formados de fábrica, garantía de piezas hasta 10 años. Sub-Zero, Wolf, Viking, Thermador, Miele y Gaggenau.`;
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

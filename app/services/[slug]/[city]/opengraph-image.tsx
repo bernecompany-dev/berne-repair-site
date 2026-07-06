@@ -111,7 +111,7 @@ export default async function OG({
           }}
         >
           <div>{COMPANY.phone.display}</div>
-          <div>Licensed & insured · 90-day warranty</div>
+          <div>Licensed & insured · Parts warranty up to 10 yrs</div>
         </div>
       </div>
     ),

@@ -337,7 +337,7 @@ export default function AboutPageES() {
             />
             <Stat
               icon={<ShieldCheck className="size-5 text-brand" aria-hidden />}
-              value="90 días"
+              value="10 años piezas"
               label="Garantía de mano de obra y piezas"
               sub="En cada servicio, por escrito, sin asteriscos"
             />

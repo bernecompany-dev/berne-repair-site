@@ -123,7 +123,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const variants = [
     `White-glove ${noun} in ${city.name}, FL. Factory-trained techs, $${COMPANY.serviceCallPrice} diagnostic credited. Call ${phone}.`,
     `Premium ${service.shortName.toLowerCase()} ${isPhraseNoun ? "" : "repair "}for ${city.name} homes — Sub-Zero, Wolf & Miele specialists. ${phone}.`,
-    `Trusted ${noun} in ${city.name}, ${city.county} County. Factory-trained, EPA-608, 90-day warranty. ${phone}.`,
+    `Trusted ${noun} in ${city.name}, ${city.county} County. Factory-trained, EPA-608, parts warranty up to 10 years. ${phone}.`,
     `Luxury ${noun} in ${city.name} — meticulous, panel-ready expertise. $${COMPANY.serviceCallPrice} diagnostic credited. ${phone}.`,
   ];
   // Top-20 uniquified combos (lib/data/combo-unique.ts) carry a hand-written

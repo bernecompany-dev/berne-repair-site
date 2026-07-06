@@ -46,37 +46,37 @@ const META_OVERRIDES: Record<string, { title: string; description: string }> = {
   "refrigerator-repair": {
     title: "Sub-Zero & Built-In Refrigerator Repair · South Florida",
     description:
-      "White-glove repair of Sub-Zero, Viking & Thermador built-in refrigerators in Miami's finest homes. EPA-608 specialists, 90-day warranty, $59 diagnostic credited.",
+      "White-glove repair of Sub-Zero, Viking & Thermador built-in refrigerators in Miami's finest homes. EPA-608 specialists, 10-yr parts warranty, $59 diagnostic credited.",
   },
   "washer-repair": {
     title: "Luxury Washer Repair — Miele & Bosch · South Florida",
     description:
-      "Factory-trained repair of Miele, Bosch & Speed Queen washers across Miami's affluent homes. Precision diagnostics, 90-day warranty, $59 diagnostic credited to repair.",
+      "Factory-trained repair of Miele, Bosch & Speed Queen washers across Miami's affluent homes. Precision diagnostics, 10-yr parts warranty, $59 diagnostic credited to repair.",
   },
   "dryer-repair": {
     title: "High-End Dryer Repair — Miele & Bosch · South Florida",
     description:
-      "Specialist repair of Miele & Bosch heat-pump and premium vented dryers in South Florida's luxury homes. White-glove service, 90-day warranty, $59 diagnostic credited.",
+      "Specialist repair of Miele & Bosch heat-pump and premium vented dryers in South Florida's luxury homes. White-glove service, 10-yr parts warranty, $59 diagnostic credited.",
   },
   "dishwasher-repair": {
     title: "Miele & Bosch Dishwasher Repair · South Florida",
     description:
-      "Senior-tech repair of Miele, Bosch & Thermador panel-ready dishwashers in Miami's finest kitchens. Cabinetry-safe service, 90-day warranty, $59 diagnostic credited.",
+      "Senior-tech repair of Miele, Bosch & Thermador panel-ready dishwashers in Miami's finest kitchens. Cabinetry-safe service, 10-yr parts warranty, $59 diagnostic credited.",
   },
   "oven-repair": {
     title: "Wolf, Viking & Thermador Oven Repair · South Florida",
     description:
-      "Factory-trained repair of Wolf, Viking, Thermador & La Cornue ranges and ovens in South Florida's luxury kitchens. White-glove care, 90-day warranty, $59 diagnostic.",
+      "Factory-trained repair of Wolf, Viking, Thermador & La Cornue ranges and ovens in South Florida's luxury kitchens. White-glove care, 10-yr parts warranty, $59 diagnostic.",
   },
   "ice-maker-repair": {
     title: "Sub-Zero & Scotsman Ice Maker Repair · South Florida",
     description:
-      "Specialist repair of Sub-Zero, Scotsman & U-Line built-in ice makers in Miami's premium homes. EPA-608 sealed-system work, 90-day warranty, $59 diagnostic credited.",
+      "Specialist repair of Sub-Zero, Scotsman & U-Line built-in ice makers in Miami's premium homes. EPA-608 sealed-system work, 10-yr parts warranty, $59 diagnostic credited.",
   },
   "microwave-repair": {
     title: "Built-In & Drawer Microwave Repair · South Florida",
     description:
-      "Senior-tech repair of Wolf, Sharp & Thermador built-in and drawer microwaves in South Florida's luxury kitchens. White-glove service, 90-day warranty, $59 diagnostic.",
+      "Senior-tech repair of Wolf, Sharp & Thermador built-in and drawer microwaves in South Florida's luxury kitchens. White-glove service, 10-yr parts warranty, $59 diagnostic.",
   },
   "air-duct-cleaning": {
     title: "Air Duct & Dryer Vent Cleaning · South Florida",
@@ -86,17 +86,17 @@ const META_OVERRIDES: Record<string, { title: string; description: string }> = {
   "garbage-disposal-repair": {
     title: "InSinkErator Garbage Disposal Repair · South Florida",
     description:
-      "Repair and quiet-mount replacement of InSinkErator & Waste King disposals in Miami's luxury kitchens. Cabinetry-safe, 90-day warranty, $59 diagnostic credited to repair.",
+      "Repair and quiet-mount replacement of InSinkErator & Waste King disposals in Miami's luxury kitchens. Cabinetry-safe, 10-yr parts warranty, $59 diagnostic credited to repair.",
   },
   "range-hood-repair": {
     title: "Wolf & Vent-A-Hood Range Hood Repair · South Florida",
     description:
-      "Senior-tech repair of Wolf, Viking, Thermador & Vent-A-Hood range hoods in South Florida's luxury kitchens. Proprietary boards handled, 90-day warranty, $59 diagnostic.",
+      "Senior-tech repair of Wolf, Viking, Thermador & Vent-A-Hood range hoods in South Florida's luxury kitchens. Proprietary boards handled, 10-yr parts warranty, $59 diagnostic.",
   },
   "wine-cooler-repair": {
     title: "Sub-Zero & EuroCave Wine Cooler Repair · South Florida",
     description:
-      "Specialist repair of Sub-Zero, EuroCave & Marvel wine columns protecting Miami's finest collections. EPA-608 sealed-system work, 90-day warranty, $59 diagnostic credited.",
+      "Specialist repair of Sub-Zero, EuroCave & Marvel wine columns protecting Miami's finest collections. EPA-608 sealed-system work, 10-yr parts warranty, $59 diagnostic credited.",
   },
 };
 
@@ -217,7 +217,7 @@ export default async function ServicePage({ params }: Props) {
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
                   <ShieldCheck className="size-3.5 text-brand" aria-hidden />
-                  90-day warranty
+                  10-yr parts warranty
                 </span>
               </div>
 
