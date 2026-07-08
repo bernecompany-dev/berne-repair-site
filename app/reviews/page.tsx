@@ -126,7 +126,7 @@ export default function ReviewsPage() {
           <h2 className="heading-section mt-3 max-w-2xl">
             Recognized by Yelp — and by customers who take the time to write.
           </h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <figure className="flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6">
               <Image
                 src="/images/awards/yelp-people-love-us-2025-certificate.webp"
@@ -142,6 +142,24 @@ export default function ReviewsPage() {
                   <span className="font-semibold text-foreground">People Love Us on Yelp — 2025.</span>{" "}
                   Yelp&rsquo;s annual award for the highest-rated, best-reviewed businesses
                   on its platform, presented to Berne Appliance Repair in November 2025.
+                </span>
+              </figcaption>
+            </figure>
+            <figure className="flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6">
+              <Image
+                src="/images/awards/yelp-people-love-you-2025-letter.webp"
+                alt="Official 2025 People Love You on Yelp recognition letter to Berne Appliance Repair, Hallandale Beach FL"
+                width={992}
+                height={1255}
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="w-full rounded-lg border border-border/60"
+              />
+              <figcaption className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Award className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+                <span>
+                  <span className="font-semibold text-foreground">Yelp&rsquo;s recognition letter.</span>{" "}
+                  &ldquo;One of the highest-rated and best reviewed businesses on Yelp&rdquo; —
+                  out of nearly 8 million active business pages.
                 </span>
               </figcaption>
             </figure>
