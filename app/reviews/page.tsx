@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { Star, Quote, ShieldCheck } from "lucide-react";
+import { Star, Quote, ShieldCheck, Award } from "lucide-react";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
@@ -115,6 +116,55 @@ export default function ReviewsPage() {
               </figcaption>
             </figure>
           ))}
+        </div>
+      </section>
+
+      {/* Awards & written recognition */}
+      <section className="border-t border-border/60">
+        <div className="container-prose py-16 sm:py-20">
+          <span className="eyebrow">Awards &amp; recognition</span>
+          <h2 className="heading-section mt-3 max-w-2xl">
+            Recognized by Yelp — and by customers who take the time to write.
+          </h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <figure className="flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6">
+              <Image
+                src="/images/awards/yelp-people-love-us-2025-certificate.webp"
+                alt="People Love Us on Yelp 2025 certificate awarded to Berne Appliance Repair, signed by Yelp CEO Jeremy Stoppelman"
+                width={1233}
+                height={960}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="w-full rounded-lg border border-border/60"
+              />
+              <figcaption className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Award className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+                <span>
+                  <span className="font-semibold text-foreground">People Love Us on Yelp — 2025.</span>{" "}
+                  Yelp&rsquo;s annual award for the highest-rated, best-reviewed businesses
+                  on its platform, presented to Berne Appliance Repair in November 2025.
+                </span>
+              </figcaption>
+            </figure>
+            <figure className="flex flex-col gap-4 rounded-2xl border border-border bg-card/50 p-6">
+              <Image
+                src="/images/awards/customer-letter-refrigerator-cooper-city.webp"
+                alt="Hand-signed thank-you letter from a Cooper City customer praising a Berne technician after a refrigerator repair"
+                width={900}
+                height={505}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="w-full rounded-lg border border-border/60"
+              />
+              <figcaption className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Quote className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+                <span>
+                  <span className="font-semibold text-foreground">A letter, not a click.</span>{" "}
+                  Michelle from Cooper City mailed this signed note after her refrigerator
+                  repair — &ldquo;I would refer him without any hesitation.&rdquo; (Home address
+                  removed for privacy.)
+                </span>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
