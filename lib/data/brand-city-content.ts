@@ -10,7 +10,7 @@
  * Each page combines hand-written city copy (below) with a city-rotated
  * slice of the brand profile's failure-mode bank, so no two city pages of
  * the same brand render the same blocks. Facts stay canonical: $59 service
- * call, 18 techs, 4.79/871, 90-day warranty, EPA-608, HQ Hallandale Beach +
+ * call, 18 techs, 4.79/1,373, 90-day warranty, EPA-608, HQ Hallandale Beach +
  * Boca Raton office.
  */
 
@@ -233,7 +233,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       paragraphs: [
         "Boca's Wolf fleet skews large and well-specified: 48- and 60-inch dual-fuel ranges with double griddles in East Boca and Royal Palm estate kitchens, rangetop-plus-wall-oven configurations throughout Boca West, Boca Pointe, and the newer club builds. These are entertainers' kitchens that surge from idle to full-burner holiday duty — exactly the usage pattern that surfaces weak igniters, tired convection fans, and oven-sensor drift right before the dinner party. Our standing Boca advice: if a burner has started lighting lazily or the oven runs visibly behind its display, book the $59 look before the season, not during it.",
         "Operating from 131 S Federal Hwy keeps Wolf response in this city tight — East Boca and Mizner are minutes out, the western communities a short hop, and gate clearances are arranged at booking so the window holds. Senior techs run the platform with the proper instruments: igniter amp draw, sensor resistance against temperature, spark-module isolation when one burner bank drops. The high-frequency parts — igniters, electrodes, thermostats and sensors for the common R-series and DF-series configurations — ride on the Palm Beach trucks.",
-        "Where Boca differs from our other Wolf cities is the proportion of dual-appliance calls: Wolf ranges share these kitchens with Sub-Zero refrigeration almost by default, and a single senior-tech visit frequently services both. Each unit gets its own diagnostic and quote, both carry the 90-day parts-and-labor warranty, and the OEM part numbers go on the invoice — the documentation standard that built a 4.79 rating across 871 reviews.",
+        "Where Boca differs from our other Wolf cities is the proportion of dual-appliance calls: Wolf ranges share these kitchens with Sub-Zero refrigeration almost by default, and a single senior-tech visit frequently services both. Each unit gets its own diagnostic and quote, both carry the 90-day parts-and-labor warranty, and the OEM part numbers go on the invoice — the documentation standard that built a 4.79 rating across 1,373 reviews.",
       ],
     },
     faqs: [

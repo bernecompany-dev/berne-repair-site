@@ -2,7 +2,6 @@ import { COMPANY } from "@/data/company";
 import { CITIES, type City } from "@/data/cities";
 import { SERVICES, type Service } from "@/data/services";
 import { BRANDS } from "@/data/brands";
-import { REVIEWS, REVIEW_AGGREGATE } from "@/data/reviews";
 import { TEAM, type TeamMember } from "@/data/team";
 import type { FAQ } from "@/data/faqs";
 import { SERVICE_IMAGE_PATHS } from "@/lib/service-images";
@@ -107,25 +106,7 @@ const SAME_AS: string[] = [
   "https://www.linkedin.com/company/129744399",
 ];
 
-const AGGREGATE = {
-  "@type": "AggregateRating",
-  ...REVIEW_AGGREGATE,
-};
 
-const REVIEW_NODES = REVIEWS.map((r) => ({
-  "@type": "Review",
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: r.rating,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  author: { "@type": "Person", name: r.author },
-  reviewBody: r.quote,
-  datePublished: r.datePublished,
-  ...(r.location ? { locationCreated: { "@type": "Place", name: `${r.location}, FL` } } : {}),
-  itemReviewed: { "@id": BUSINESS_ID },
-}));
 
 const PHOTO_PATHS = [
   "/images/team/evgenii-knyazev.webp",
@@ -478,8 +459,9 @@ export function localBusinessJsonLd() {
       opens: h.open,
       closes: h.close,
     })),
-    aggregateRating: AGGREGATE,
-    review: REVIEW_NODES,
+    // aggregateRating/review markup removed 2026-07-09 — Google ignores
+    // self-serving review markup (no stars) and it risks a manual action; the
+    // visible rating/counter stays in the UI (data/reviews.ts).
     // NOTE: @id must match personJsonLd()'s `/team#person-{slug}` — a split
     // @id (`/team#{slug}` vs `/team#person-{slug}`) forked every technician
     // into two disconnected Person entities in the graph (fixed 2026-07-01).

@@ -21,7 +21,7 @@ import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl, personJsonLd, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = "About Berne Appliance Repair — Family-Run Since 2015";
-const PAGE_DESCRIPTION = `Part of the Berne family of companies serving South Florida since 2015 — premium division since 2022. 18 W-2 technicians, ${REPAIRS_COMPLETED} services, 4.79/871 reviews.`;
+const PAGE_DESCRIPTION = `Part of the Berne family of companies serving South Florida since 2015 — premium division since 2022. 18 W-2 technicians, ${REPAIRS_COMPLETED} services, 4.79/1,373 reviews.`;
 
 export const metadata: Metadata = {
   // Absolute — the layout template would append " · Berne Appliance Repair"
@@ -51,7 +51,7 @@ export default function AboutPage() {
     name: "About Berne Appliance Repair",
     url: absoluteUrl("/about"),
     description:
-      `Berne Appliance Repair: the premium division of the Berne family of companies, repairing South Florida appliances since 2015 — launched by Eugene Berne in 2022. 18 W-2 technicians, ${REPAIRS_COMPLETED} services completed, 4.79/871 reviews. Sub-Zero, Wolf, Viking, Thermador, Miele service across Miami-Dade, Broward, Palm Beach, and the Gulf Coast.`,
+      `Berne Appliance Repair: the premium division of the Berne family of companies, repairing South Florida appliances since 2015 — launched by Eugene Berne in 2022. 18 W-2 technicians, ${REPAIRS_COMPLETED} services completed, 4.79/1,373 reviews. Sub-Zero, Wolf, Viking, Thermador, Miele service across Miami-Dade, Broward, Palm Beach, and the Gulf Coast.`,
     mainEntity: { "@id": absoluteUrl("/#business") },
     breadcrumb: { "@id": absoluteUrl("/about#breadcrumb") },
   };

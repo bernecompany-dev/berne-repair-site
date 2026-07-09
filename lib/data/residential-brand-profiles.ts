@@ -2520,7 +2520,7 @@ const bertazzoni: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    `Bertazzoni rewards mechanical service culture, and that's what our cooking-side techs bring — the same crew that handles Wolf and Dacor ranges. We test gas oven thermostats against calibrated probes instead of declaring them dead, we carry igniter switches, spark modules, and hinge kits for the common Master and Professional configurations, and we know the brand-specific quirks: the calibration procedure, the burner-cap geometry, the air-shutter tuning that makes the simmer behave. Licensed for gas, insured, 18 technicians across the tri-county map, ${REPAIRS_COMPLETED} completed repairs, and a 4.79-star average across 871 Google reviews. The $59 diagnostic is free with an approved repair and everything we install carries the 90-day parts and labor warranty.`,
+    `Bertazzoni rewards mechanical service culture, and that's what our cooking-side techs bring — the same crew that handles Wolf and Dacor ranges. We test gas oven thermostats against calibrated probes instead of declaring them dead, we carry igniter switches, spark modules, and hinge kits for the common Master and Professional configurations, and we know the brand-specific quirks: the calibration procedure, the burner-cap geometry, the air-shutter tuning that makes the simmer behave. Licensed for gas, insured, 18 technicians across the tri-county map, ${REPAIRS_COMPLETED} completed repairs, and a 4.79-star average across 1,373 customer reviews. The $59 diagnostic is free with an approved repair and everything we install carries the 90-day parts and labor warranty.`,
   relatedServices: [
     { slug: "oven-repair", label: "Oven Repair" },
     { slug: "range-hood-repair", label: "Range Hood Repair" },

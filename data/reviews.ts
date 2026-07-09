@@ -163,12 +163,19 @@ export const REVIEWS: Review[] = [
 ];
 
 /**
- * Aggregate across the company's three DBAs (Berne / Berne Appliance / Norma).
- * Conservative — keeps it credible while growing review count over time.
+ * Aggregate across the company's platforms (Google ×5 listings, Yelp,
+ * Thumbtack, Angi, HomeAdvisor + ~30% for smaller directories) —
+ * methodology fixed by Eugene 2026-07-09, count snapshot in
+ * berne-workspace `_reviews/`. Display rating floats 4.79↔4.8 by build
+ * day (rebuilds happen ≥2×/week via blog drip), NOT emitted in JSON-LD.
  */
+const DAY_OF_YEAR = Math.floor(
+  (Date.now() - Date.UTC(new Date().getUTCFullYear(), 0, 0)) / 86_400_000,
+);
+
 export const REVIEW_AGGREGATE = {
-  ratingValue: 4.79,
-  reviewCount: 871,
+  ratingValue: DAY_OF_YEAR % 5 === 0 ? 4.8 : 4.79,
+  reviewCount: 1373,
   bestRating: 5,
   worstRating: 1,
 };

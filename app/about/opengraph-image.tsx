@@ -106,7 +106,7 @@ export default async function OG() {
           }}
         >
           <span>{COMPANY.phone.display}</span>
-          <span>4.79/5 on 871 reviews · Licensed & insured</span>
+          <span>4.79/5 on 1,373 reviews · Licensed & insured</span>
         </div>
       </div>
     ),

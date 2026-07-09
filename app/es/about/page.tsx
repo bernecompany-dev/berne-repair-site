@@ -20,7 +20,7 @@ import { REVIEW_AGGREGATE } from "@/data/reviews";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
 const PAGE_TITLE = "Sobre Berne Appliance Repair — Empresa familiar desde 2015";
-const PAGE_DESCRIPTION = `Parte de la familia de empresas Berne que sirve al sur de Florida desde 2015 — división premium desde 2022. 18 técnicos W-2, ${REPAIRS_COMPLETED} servicios, 4.79/871 reseñas.`;
+const PAGE_DESCRIPTION = `Parte de la familia de empresas Berne que sirve al sur de Florida desde 2015 — división premium desde 2022. 18 técnicos W-2, ${REPAIRS_COMPLETED} servicios, 4.79/1,373 reseñas.`;
 
 export const metadata: Metadata = {
   // Absolute — brand already in the string; layout template would double it.
@@ -50,7 +50,7 @@ export default function AboutPageES() {
     url: absoluteUrl("/es/about"),
     inLanguage: "es-US",
     description:
-      `Berne Appliance Repair: la división premium de la familia de empresas Berne, reparando electrodomésticos en el sur de Florida desde 2015 — lanzada por Eugene Berne en 2022. 18 técnicos W-2, más de ${REPAIRS_COMPLETED_BARE} servicios completados, 4.79/871 reseñas. Sub-Zero, Wolf, Viking, Thermador y Miele en Miami-Dade, Broward, Palm Beach y la Costa del Golfo.`,
+      `Berne Appliance Repair: la división premium de la familia de empresas Berne, reparando electrodomésticos en el sur de Florida desde 2015 — lanzada por Eugene Berne en 2022. 18 técnicos W-2, más de ${REPAIRS_COMPLETED_BARE} servicios completados, 4.79/1,373 reseñas. Sub-Zero, Wolf, Viking, Thermador y Miele en Miami-Dade, Broward, Palm Beach y la Costa del Golfo.`,
     mainEntity: { "@id": absoluteUrl("/#business") },
     breadcrumb: { "@id": absoluteUrl("/es/about#breadcrumb") },
   };

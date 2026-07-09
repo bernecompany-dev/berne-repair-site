@@ -14,7 +14,7 @@
  *
  * Facts stay canonical: $59 diagnostic (credited to repair), 18 techs, repairs
  * count from data/company.ts (REPAIRS_COMPLETED — import it, don't hardcode),
- * 4.79/871, 90-day warranty, Miami-Dade + Broward + Palm Beach.
+ * 4.79/1,373, 90-day warranty, Miami-Dade + Broward + Palm Beach.
  * Berne is an INDEPENDENT service company — no "authorized/factory" claims.
  */
 

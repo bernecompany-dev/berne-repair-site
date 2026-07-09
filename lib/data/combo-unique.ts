@@ -12,7 +12,7 @@
  * RULES for adding entries:
  *  - Facts only: flat $59 diagnostic credited toward the repair, 18 techs,
  *    completed-repairs count (lives in data/company.ts REPAIRS_COMPLETED —
- *    import it, don't hardcode), 4.79/871 Google rating, 90-day labor & parts
+ *    import it, don't hardcode), 4.79/1,373 Google rating, 90-day labor & parts
  *    warranty, EPA-608, HQ in Hallandale Beach + Boca Raton office. No invented
  *    per-city job counts.
  *  - City color must be true-by-construction (housing stock, salt air,
@@ -408,7 +408,7 @@ export const COMBO_UNIQUE: Record<string, ComboUnique> = {
       heading: "What daily-use households do to washers, and the fixes that last",
       paragraphs: [
         "A Kendall household washer works at commercial cadence — kids' uniforms, towels, linens, every day — and that mileage pattern decides what we find. On the Whirlpool/Maytag vertical-modular top-loaders that fill so many Kendall Lakes laundry rooms, the shift actuator is the classic high-mileage failure: the machine fills, the display counts, but the tub never agitates or spins. It is the single most common one-part washer repair we do, the part rides on every truck, and it is a 45-60 minute fix. On front-loaders, daily use plus South Florida's hard water accelerates drain-pump clogs and door-boot wear — both first-visit repairs when caught early.",
-        "The repair we talk people out of matters too: drum bearings on a 10+ year-old front-loader. Daily use gets a washer to that failure faster here than the brochure suggests, and a $400-600 bearing job on a tub that is often welded shut isn't honest money. We will show you the bearing play, explain the math, and let you decide with real numbers — that is the same honesty that built our 4.79-star rating across 871 verified reviews.",
+        "The repair we talk people out of matters too: drum bearings on a 10+ year-old front-loader. Daily use gets a washer to that failure faster here than the brochure suggests, and a $400-600 bearing job on a tub that is often welded shut isn't honest money. We will show you the bearing play, explain the math, and let you decide with real numbers — that is the same honesty that built our 4.79-star rating across 1,373 verified reviews.",
         "Scheduling fits family logistics: call early and we can usually reach Kendall the same day, with an arrival window confirmed by phone so nobody burns a workday waiting. The flat diagnostic is credited toward the repair when you proceed, and everything we touch carries the 90-day parts-and-labor warranty.",
       ],
     },

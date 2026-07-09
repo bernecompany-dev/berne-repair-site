@@ -311,7 +311,7 @@ export default function ThermadorServiceGuidePage() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 shrink-0 text-brand" aria-hidden />
-                18 techs · {REPAIRS_COMPLETED} repairs · 4.79★ (871 reviews)
+                18 techs · {REPAIRS_COMPLETED} repairs · 4.79★ (1,373 reviews)
               </li>
             </ul>
             <div className="mt-5 grid gap-2">

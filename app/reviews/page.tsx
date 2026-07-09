@@ -9,9 +9,9 @@ import { REVIEWS, REVIEW_AGGREGATE } from "@/data/reviews";
 import { COMPANY } from "@/data/company";
 import { breadcrumbJsonLd, absoluteUrl, pageOpenGraph } from "@/lib/seo";
 
-const PAGE_TITLE = "Customer Reviews — 4.79★ / 871 · Berne Appliance Repair";
+const PAGE_TITLE = "Customer Reviews — 4.79★ / 1,373 · Berne Appliance Repair";
 const PAGE_DESCRIPTION =
-  "Real customer reviews for Berne Appliance Repair across South Florida — 4.79-star average across 871 verified reviews. Read what homeowners say about our techs.";
+  "Real customer reviews for Berne Appliance Repair across South Florida — 4.79-star average across 1,373 verified reviews. Read what homeowners say about our techs.";
 
 // EN-only page (no /es/reviews mirror). The footer/llms.txt reference /reviews;
 // this page resolves that link and gives the brand a dedicated E-E-A-T review

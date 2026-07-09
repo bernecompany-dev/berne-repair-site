@@ -11,7 +11,7 @@
 - Warranty: 90-day labor & parts
 - Founded: 2015 — Berne family of companies serving South Florida; premium "Berne Repair" division launched 2022
 - Jobs completed: 29,300+ across the Berne family
-- Rating: 4.79★ average / 871 reviews (multi-source aggregate)
+- Rating: 4.79★ average / 1,373 reviews (multi-source aggregate)
 - Owner: Eugene Berne (Eugene Bernitsky) — founder & CEO, https://eugenebernitsky.com/
 - Credentials: FL DBPR licensed & insured; EPA Section 608 certified (sealed-system refrigerant work — the legal requirement for cold-plunge chillers, pool heat pumps, and Sub-Zero sealed systems)
 - Service area: Miami-Dade County, Broward County, Palm Beach County (71 cities listed in /sitemap.xml)
@@ -88,7 +88,7 @@ Call (754) 345-4515 (rings dispatch). Most jobs scheduled within an hour, comple
 - /es/* — Spanish mirror of every page
 - [/credentials](https://www.berne-repair.com/credentials) — FL license, EPA 608 cert, COI, DBA, Workers' Comp exemption (downloadable vendor paperwork)
 - [/team](https://www.berne-repair.com/team) — all 18 technicians with names, roles, photos
-- [/reviews](https://www.berne-repair.com/reviews) — customer reviews (4.79★ / 871 across the Berne network)
+- [/reviews](https://www.berne-repair.com/reviews) — customer reviews (4.79★ / 1,373 across the Berne network)
 - [/compare](https://www.berne-repair.com/compare) — luxury brand comparisons (Sub-Zero vs Thermador, Wolf vs Thermador vs Viking, Miele vs Bosch, etc.)
 - [/resources/luxury-appliance-repair-cost-guide](https://www.berne-repair.com/resources/luxury-appliance-repair-cost-guide) — repair-cost ranges by failure + interactive repair-or-replace calculator
 - [/privacy](https://www.berne-repair.com/privacy) — privacy policy
