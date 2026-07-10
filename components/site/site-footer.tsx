@@ -195,7 +195,12 @@ export function SiteFooter() {
             {t.trademarkDisclaimer}
           </p>
           <div className="flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
-            <p>© {new Date().getFullYear()} {COMPANY.legalEntity} · DBA: {COMPANY.dbaNames.join(", ")}</p>
+            {/* Visible anchor for the division site name (dup audit 2026-07-10):
+                Google cross-checks the WebSite-schema name against on-page text,
+                so "Berne Luxury Appliance Repair" must appear visibly. */}
+            <p>© {new Date().getFullYear()} {COMPANY.legalEntity} · Berne Luxury Appliance Repair — the white-glove division of{" "}
+              <a href="https://bernerepair.com/" rel="noopener" className="hover:text-foreground underline underline-offset-2">Berne Appliance Repair</a>
+            </p>
             <p className="flex flex-wrap items-center gap-x-3 gap-y-2">
               <Link href={localePath(locale, "/")} className="inline-block py-1.5 hover:text-foreground">{t.home}</Link>
               <span aria-hidden>·</span>

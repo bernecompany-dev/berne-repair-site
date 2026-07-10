@@ -24,7 +24,7 @@ export const GENERAL_FAQS: FAQ[] = [
   {
     question: "What warranty backs your repairs?",
     answer:
-      "Tiered parts coverage plus a 90-day labor warranty. Parts we install are covered up to 10 years on sealed-system welds, up to 2 years on mechanical parts, and up to 1 year on electronic and electrical components. Labor is backed for 90 days — if the same fault returns, we come back at no charge. On premium platforms we source OEM parts through the factory channel, and the part number goes on your invoice so the repair is fully documented.",
+      "Tiered parts coverage plus a 90-day labor warranty. Sealed-system welds carry our longest protection — a full decade. Mechanical components are protected for two years, electronics and electrical for one. Labor is backed for 90 days — if the same fault returns, we come back at no charge. On premium platforms we source OEM parts through the factory channel, and the part number goes on your invoice so the repair is fully documented.",
   },
   {
     question: "Do you handle estate, property-management, and commercial accounts?",
@@ -265,14 +265,14 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
         "Drain pump impeller is obstructed by broken glass, label adhesive, or food debris; the drain hose loop is kinked; or — very common — the garbage disposal knock-out plug was never removed during a disposal install. The dishwasher will never drain until that plug is out. We check all three on a $59 diagnostic.",
     },
     {
-      question: "What does a Bosch E15 error code mean?",
+      question: "My Bosch dishwasher is flashing E15 — what is it telling me?",
       answer:
-        "E15 is the Bosch leak-detection float telling you water has collected in the base pan under the unit. Resetting the float without finding the leak just buys you a day or two — we open the unit, dye-test the supply connections, inlet valve, and pump seal, and fix the actual leak source. Most E15 calls finish on the first visit.",
+        "E15 means the AquaStop float in the base pan has detected water where it should never be — Bosch's built-in leak protection doing its job. Tilting the machine to reset the float treats the symptom, not the leak. Our technician pulls the unit, traces the water with a dye test through the supply connections, inlet valve, and pump seal, and repairs the true source. Nearly every E15 on a Bosch 300, 500, 800, or Benchmark series is resolved in a single visit.",
     },
     {
-      question: "Why are my dishes still gritty after a full cycle?",
+      question: "Why does a full cycle leave residue on my dishes?",
       answer:
-        "Spray arms are clogged with hard-water scale (very common in South Florida), the chopper or macerator blade has failed and food particles are recirculating, or the wash temperature is not reaching 130 degrees Fahrenheit because the heating element has failed open. We test all three on a service call. Chopper kits stock for Whirlpool and KitchenAid Tall Tub platforms.",
+        "Three usual suspects in South Florida kitchens: hard-water scale blocking the spray-arm jets, a worn chopper or macerator blade letting food circulate back onto the load, or a heater that never brings the wash water up to proper sanitizing temperature. We verify each of them during the diagnostic, descale where needed, and keep chopper kits on the truck for Whirlpool and KitchenAid Tall Tub platforms.",
     },
     {
       question: "Do you service Miele dishwashers?",
@@ -302,19 +302,19 @@ export const SERVICE_FAQS: Record<string, FAQ[]> = {
     {
       question: "Do you handle dishwasher install when we replace?",
       answer:
-        "Yes — supply line, drain hookup, electrical, leveling, and door-spring tension setup. We also haul away the old unit on the same visit. Install runs $185 to $260 depending on whether the under-sink plumbing needs new shutoffs or a fresh dishwasher tailpiece on the garbage disposal. Built-in panel-ready units (Bosch Benchmark, Miele) take longer and we quote those separately.",
+        "Yes — we manage the entire changeover: water supply, drain routing, electrical connection, precise leveling, and balancing the door springs, then remove the old unit before we leave. A standard installation is $185 to $260, with the range driven by the state of the under-sink plumbing (new shutoffs, or a fresh tailpiece on the disposal). Integrated panel-ready models from Miele and Bosch Benchmark are a longer, more careful job — those we quote individually.",
     },
   ],
   "oven-repair": [
     {
       question: "Why is my Wolf oven temperature off by 30 or 40 degrees?",
       answer:
-        "On Wolf the platinum RTD oven sensor can drift up to 50 degrees Fahrenheit either way after 6 to 10 years of use. We verify the actual cavity temperature with a calibrated digital probe and either swap the sensor or recalibrate via the service mode — whichever the unit needs. Wolf calibration is reversible so we always document the as-found offset.",
+        "On Wolf the platinum RTD oven sensor can drift up to 50 degrees Fahrenheit either way after 6 to 10 years of use. We measure the true cavity temperature against a calibrated reference probe, then correct it the right way for that specific unit — replacing the sensor or recalibrating through Wolf's service mode. Wolf calibration is reversible so we always document the as-found offset.",
     },
     {
-      question: "Why won't my Viking oven door unlock after self-clean?",
+      question: "My Viking oven finished self-clean and the door stayed locked — why?",
       answer:
-        "The latch motor that drives the lock cam has burned out, or the cam itself has stripped from the heat of a self-clean cycle. On Viking VESO and VDSO wall ovens we replace the door latch assembly as a unit — typically a 60 to 90 minute job. Sometimes a thermal limit switch in the latch circuit has opened and that is a separate fix.",
+        "Self-clean heat is brutal on the lock mechanism: it can burn out the small motor driving the cam, or strip the cam itself. On Viking VESO and VDSO wall ovens we replace the door latch assembly as a complete unit — typically a 60 to 90 minute job. Sometimes a thermal limit switch in the latch circuit has opened, and that is a separate, simpler fix.",
     },
     {
       question: "My gas oven won't light but the burner clicks — what is wrong?",

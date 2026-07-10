@@ -16,22 +16,6 @@ export type Review = {
  * (Berne Repair / Berne Appliance Repair / Norma Appliance Repair).
  */
 export const REVIEWS: Review[] = [
-  // source: yelp
-  {
-    author: "Nizan M.",
-    rating: 4,
-    datePublished: "2026-04-15",
-    quote:
-      "Came quickly. Took care of the issue. Got the estimate after the job was done.Ask first..Tech spoke some english.",
-  },
-  // source: yelp
-  {
-    author: "Sergio G.",
-    rating: 5,
-    datePublished: "2026-03-25",
-    quote:
-      "refrigerator job was well done. punctual and rapid service. problem identified and clearly explained to me.",
-  },
   // source: google
   {
     author: "Alice Sherwood",
@@ -103,62 +87,6 @@ export const REVIEWS: Review[] = [
     datePublished: "2025-10-23",
     quote:
       "Fairly priced and the tech worked hard to be sure the problem with my LG refrigerator was fixed. He spent the day on a Sunday and thought it was fixed, the problem reoccurred and he immediately came back the next day to ensure the problem was resolved. There was also no further charge for the 2nd visit. Will definitely use again.",
-  },
-  // source: yelp
-  {
-    author: "Greg L.",
-    rating: 5,
-    datePublished: "2025-08-31",
-    quote:
-      "I have used Berne Appliance Repair for several years now. They are professional, honest, and reasonably priced. I strongly recommend them.",
-  },
-  // source: yelp
-  {
-    author: "Jose G.",
-    rating: 5,
-    datePublished: "2025-02-19",
-    quote:
-      "Awesome job Fixing my ice maker. Technician very knowledgeable and friendly. Three months warranty on parts. I will be using them in the future if need arises.",
-  },
-  // source: yelp
-  {
-    author: "Fran S.",
-    rating: 4,
-    datePublished: "2025-02-04",
-    quote:
-      "Victor was professional and was able to fix our washing machine in a timely manner. I would highly recommend Berne and will surely call them again if need be.",
-  },
-  // source: yelp
-  {
-    author: "Nicholas A.",
-    rating: 5,
-    datePublished: "2025-01-17",
-    quote:
-      "Came to fix our washer and dryer were on time and reasonably priced. Would recommend to a friend if they needed service.",
-  },
-  // source: yelp
-  {
-    author: "Annie G.",
-    rating: 5,
-    datePublished: "2024-11-10",
-    quote:
-      "Very fast service. Came in on Friday to see what was wrong with my stove and replaced the part by Sunday. Very good and quick service!",
-  },
-  // source: yelp
-  {
-    author: "Steve ..",
-    rating: 5,
-    datePublished: "2024-10-03",
-    quote:
-      "Came when they said. Did good work. Came back after for a follow up after first tech didn't fully diagnose which was appreciated.",
-  },
-  // source: yelp
-  {
-    author: "Shane",
-    rating: 5,
-    datePublished: "2024-05-01",
-    quote:
-      "Great company was able to fix my situation. 5 Stars very friendly. everything was made right and happy customer",
   },
 ];
 

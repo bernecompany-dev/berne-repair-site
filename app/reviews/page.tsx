@@ -158,8 +158,8 @@ export default function ReviewsPage() {
                 <Award className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
                 <span>
                   <span className="font-semibold text-foreground">Yelp&rsquo;s recognition letter.</span>{" "}
-                  &ldquo;One of the highest-rated and best reviewed businesses on Yelp&rdquo; —
-                  out of nearly 8 million active business pages.
+                  Yelp&rsquo;s own words place Berne among the top-rated, most-reviewed
+                  businesses on the platform — out of nearly 8 million active pages.
                 </span>
               </figcaption>
             </figure>

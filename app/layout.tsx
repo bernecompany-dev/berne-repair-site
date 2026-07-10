@@ -82,14 +82,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Luxury & High-End Appliance Repair — Miami & South Florida",
-    template: "%s · Berne Appliance Repair",
+    // Division brand suffix (dup audit 2026-07-10): berne-repair.com is the
+    // white-glove division — its site name must NOT mirror bernerepair.com's
+    // "Berne Appliance Repair" or Google treats the domains as one entity.
+    // Keep in sync with ENTITY_NAME in lib/seo.ts.
+    template: "%s · Berne Luxury Appliance Repair",
   },
   description:
     "Luxury appliance repair across Miami-Dade, Broward & Palm Beach. Factory-trained Sub-Zero, Wolf, Viking, Thermador & Miele specialists. White-glove service.",
-  applicationName: COMPANY.legalName,
+  applicationName: "Berne Luxury Appliance Repair",
   openGraph: {
     type: "website",
-    siteName: COMPANY.legalName,
+    siteName: "Berne Luxury Appliance Repair",
     title: "Luxury & High-End Appliance Repair — Miami & South Florida",
     description:
       "Built-in & pro-style appliance specialists across South Florida. Sub-Zero, Wolf, Viking, Thermador, Miele. EPA-608, factory-trained, white-glove service.",

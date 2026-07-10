@@ -44,6 +44,19 @@ const BUSINESS_ID = absoluteUrl("/#business");
 const ORG_ID = absoluteUrl("/#organization");
 const FOUNDER_ID = absoluteUrl("/#founder");
 
+/**
+ * Entity name for THIS domain's schema graph (dup audit 2026-07-10).
+ * bernerepair.com and berne-repair.com were publishing the identical
+ * Organization/LocalBusiness `name` + phone + address — to Google, one
+ * entity on two domains (duplicate-site risk). This domain is the
+ * white-glove division, so its nodes carry a distinct division name;
+ * `alternateName` keeps the shared family brand, and
+ * `parentOrganization` → bernerepair.com/#organization declares the
+ * relationship honestly. Do NOT revert to COMPANY.legalName here.
+ */
+const ENTITY_NAME = "Berne Luxury Appliance Repair";
+const ENTITY_ALT_NAMES = [...COMPANY.dbaNames];
+
 /** Primary service-area centroid, shifted slightly north to cover Jupiter. */
 const PRIMARY_GEO = { lat: 26.1, lng: -80.15 };
 /**
@@ -272,8 +285,10 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORG_ID,
-    name: COMPANY.legalName,
-    alternateName: COMPANY.dbaNames,
+    name: ENTITY_NAME,
+    alternateName: ENTITY_ALT_NAMES,
+    description:
+      "The white-glove, high-end division of the Berne family — Sub-Zero, Wolf, Miele, Thermador and built-in appliance repair for luxury residences across South Florida.",
     url: SITE_URL,
     logo: absoluteUrl("/og.png"),
     sameAs: SAME_AS,
@@ -367,8 +382,10 @@ export function websiteJsonLd() {
     "@type": "WebSite",
     "@id": absoluteUrl("/#website"),
     url: SITE_URL,
-    name: COMPANY.legalName,
-    alternateName: COMPANY.dbaNames,
+    // Distinct site name → Google shows "Berne Luxury Appliance Repair" as
+    // this domain's SERP site name instead of duplicating bernerepair.com's.
+    name: ENTITY_NAME,
+    alternateName: ENTITY_ALT_NAMES,
     publisher: { "@id": BUSINESS_ID },
     inLanguage: ["en-US", "es-US"],
     // SearchAction qualifies the site for Google's sitelinks searchbox.
@@ -389,8 +406,14 @@ export function localBusinessJsonLd() {
     "@context": "https://schema.org",
     "@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
     "@id": BUSINESS_ID,
-    name: COMPANY.legalName,
-    alternateName: COMPANY.dbaNames,
+    name: ENTITY_NAME,
+    alternateName: ENTITY_ALT_NAMES,
+    parentOrganization: {
+      "@type": "Organization",
+      "@id": "https://bernerepair.com/#organization",
+      name: "Berne Appliance Repair",
+      url: "https://bernerepair.com/",
+    },
     url: SITE_URL,
     telephone: COMPANY.phone.tel,
     email: COMPANY.email.public,
@@ -640,7 +663,7 @@ export function localBusinessForCityJsonLd(city: City, locale: "en" | "es" = "en
     "@context": "https://schema.org",
     "@type": ["HomeAndConstructionBusiness", "ProfessionalService"],
     "@id": absoluteUrl(`${path}#localbusiness`),
-    name: `${COMPANY.legalName} — ${city.name}`,
+    name: `${ENTITY_NAME} — ${city.name}`,
     url: absoluteUrl(path),
     telephone: COMPANY.phone.tel,
     email: COMPANY.email.public,
@@ -763,7 +786,7 @@ export function blogPostingJsonLd(args: {
     publisher: {
       "@type": "Organization",
       "@id": ORG_ID,
-      name: COMPANY.legalName,
+      name: ENTITY_NAME,
       logo: {
         "@type": "ImageObject",
         url: absoluteUrl("/og.png"),
@@ -879,7 +902,7 @@ export function articleJsonLd(args: {
     publisher: {
       "@type": "Organization",
       "@id": ORG_ID,
-      name: COMPANY.legalName,
+      name: ENTITY_NAME,
       logo: { "@type": "ImageObject", url: absoluteUrl("/og.png") },
     },
     inLanguage: args.locale === "es" ? "es-US" : "en-US",
@@ -913,7 +936,7 @@ export function datasetJsonLd(args: {
     isAccessibleForFree: true,
     inLanguage: args.locale === "es" ? "es-US" : "en-US",
     license: "https://creativecommons.org/licenses/by/4.0/",
-    creator: { "@id": ORG_ID, "@type": "Organization", name: COMPANY.legalName },
+    creator: { "@id": ORG_ID, "@type": "Organization", name: ENTITY_NAME },
     publisher: { "@id": ORG_ID },
     ...(args.keywords && args.keywords.length > 0
       ? { keywords: args.keywords }
@@ -946,7 +969,7 @@ export function imageGalleryJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    name: `${COMPANY.legalName} — Work Gallery`,
+    name: `${ENTITY_NAME} — Work Gallery`,
     description:
       "Real appliance repair and installation jobs by Berne Appliance Repair across South Florida — Sub-Zero, Wolf, Viking, Bosch, LG, Samsung and more.",
     image: PHOTO_OBJECTS,
@@ -987,7 +1010,7 @@ export function pageOpenGraph(args: {
     title: args.title,
     description: args.description,
     url: absoluteUrl(args.path),
-    siteName: COMPANY.legalName,
+    siteName: ENTITY_NAME,
     type: "website" as const,
     locale: args.locale === "es" ? "es_US" : "en_US",
     images: [DEFAULT_OG_IMAGE],
