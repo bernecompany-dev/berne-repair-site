@@ -306,7 +306,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       heading: "A remodel city full of pro-style ranges",
       paragraphs: [
         "Fort Lauderdale renovates constantly, and Viking has been the pro-style range of choice through two decades of those remodels — so the city's fleet mixes lightly-used newer units in Coral Ridge and Flagler Village flips with hard-working classics in Victoria Park and Rio Vista kitchens that have hosted years of real cooking. The classics fail by igniter, valve, and the famous Viking door hinge; the newer electronic generations fail by sensor and control. We carry generation-specific documentation and the high-frequency parts for both.",
-        "The canal-and-coast effect that drives our Sub-Zero and Wolf work here applies equally to Viking: salt air corrodes spark electrodes and burner components on the waterfront streets measurably faster, and outdoor Viking grills in the Isles' summer kitchens age like all dock-side equipment — fast. Indoor or out, the diagnostic discipline is the same: amp-draw and resistance measurements, not parts-cannon guessing, with the $59 visit fee applied to whatever repair you approve.",
+        "The canal-and-coast effect that drives our Sub-Zero and Wolf work here applies equally to Viking: salt air corrodes spark electrodes and burner components on the waterfront streets measurably faster, and outdoor Viking grills in the Isles' summer kitchens age like all dock-side equipment — fast. Indoor or out, the diagnostic discipline is the same: amp-draw and resistance measurements first, with the $59 visit fee applied to whatever repair you approve.",
         "Viking refrigeration and dishwashers ride along in many of these kitchens, and we service the full brand line in one dispatch when needed. Every repair ships with the 90-day parts-and-labor warranty and OEM part numbers on the invoice — and when an aging unit genuinely isn't worth its next repair, we say that plainly with numbers, which is exactly how we'd want to be treated.",
       ],
     },
@@ -612,7 +612,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       heading: "Estate kitchens, paired columns, and a platform we know cold",
       paragraphs: [
         "Pinecrest is built around the kitchen. The custom homes off Old Cutler and through Pinecrest North were specified by owners who chose Sub-Zero on purpose, and what we walk into here is rarely a single refrigerator — it's a paired IC-30 column set flanking a range, a BI-48 built into a millwork wall, and a 427 dual-zone wine unit in a butler's pantry that has to hold a collection to the half-degree. That depth is why every Pinecrest Sub-Zero call goes to the senior rotation: the work is done in place behind custom panels, and a tech who doesn't know the platform damages cabinetry getting to the compressor.",
-        "The maintenance reality out here is the inland-canopy version of Miami's climate. Pinecrest's tree cover keeps the worst salt off, but humidity is relentless and the big estate condensers pull a season of pollen and dust before owners notice the symptom chain — fresh-food side drifting warm, the unit running longer, fear of the compressor when the culprit is almost always a loaded coil, an evaporator fan, or a weak defrost terminator. We diagnose on the platform, not by fear, and we carry gauges for both R-134a and the R-600a isobutane systems in the Designer line.",
+        "The maintenance reality out here is the inland-canopy version of Miami's climate. Pinecrest's tree cover keeps the worst salt off, but humidity is relentless and the big estate condensers pull a season of pollen and dust before owners notice the symptom chain — fresh-food side drifting warm, the unit running longer, and a worried call about the compressor. The culprit is almost always a loaded coil, an evaporator fan, or a weak defrost terminator — the senior techs test each in that order, and they carry gauges for both R-134a and the R-600a isobutane systems in the Designer line.",
         "Parts logistics match the install base: pivot kits, the 4204490 filters, control boards in the 715549 generation, and the common fan and ice-maker modules ride the Miami trucks, so most non-sealed-system repairs on a Pinecrest Sub-Zero close in one visit. When a job genuinely is sealed-system on an aging unit, you get the honest math at the diagnostic — these are rebuildable platforms, and a major repair is often the right money against a five-figure replacement.",
       ],
     },
@@ -683,7 +683,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       eyebrow: "Sub-Zero on Key Biscayne",
       heading: "Island salt rewrites the maintenance schedule",
       paragraphs: [
-        "There's nowhere in Miami-Dade harder on a built-in refrigerator than a barrier island, and Key Biscayne proves it. The oceanfront towers along Harbor Drive and the Cape Florida estates breathe salt year-round, and a Sub-Zero condenser finds it within a season — coils corrode and load, the dual compressors run hot and long, and the result is the warm-compartment call we run most on the island. Our first move on any Key Biscayne Sub-Zero is the condenser, and our standing advice here is an annual coil service, which on this platform in this air is the difference between a component repair and a sealed-system job.",
+        "There's nowhere in Miami-Dade harder on a built-in refrigerator than a barrier island, and Key Biscayne proves it. The oceanfront towers along Harbor Drive and the Cape Florida estates breathe salt year-round, and a Sub-Zero condenser finds it within a season — coils corrode and load, the dual compressors run hot and long, and the result is the warm-compartment call we run most on the island. Our first move on any Key Biscayne Sub-Zero is the condenser, and our standing advice here is a coil service every 10-12 months — on the island, that one habit keeps corrosion at the component level before it reaches the sealed system.",
         "Tower service is its own discipline. A BI-42 on a high floor of a Key Colony or oceanfront building gets diagnosed and repaired in place — there's no wheeling it out — so the building choreography is handled before the appointment: certificate of insurance for the association, service-elevator booking, floor protection. In a managed island tower that logistics work is half the job, and we do it as a matter of course so the actual repair window stays tight.",
         "The install base runs the full modern range — BI built-ins, Designer integrated columns on R-600a, undercounter drawers, and wine storage protecting collections in homes that take humidity seriously. We carry the common platform parts on the trucks and hold EPA-608 Universal certification for the sealed-system work salt-belt units eventually need. When a job is genuinely a leak or a failed compressor, you get the honest version with numbers — rebuild or replace — at the $59 diagnostic.",
       ],
@@ -692,7 +692,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Why does my Key Biscayne Sub-Zero need service more often than friends inland?",
         answer:
-          "Salt air. On a barrier island the condenser corrodes and loads far faster than inland, forcing the compressors to run hot and long. An annual coil cleaning resets that clock and is the single best maintenance dollar on an oceanfront built-in — it's the first thing we check on every warm-unit island call.",
+          "Salt air. On a barrier island the condenser corrodes and loads far faster than inland, so the compressors run hot and long. A yearly coil cleaning costs a fraction of the sealed-system work it prevents — and the condenser is where we start on every warm-unit call here.",
       },
       {
         question: "Do you handle the building COI and elevator booking for tower calls?",
@@ -721,7 +721,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       paragraphs: [
         "Bal Harbour Village is a vertical market — the residences are in the oceanfront towers along Collins, and the Sub-Zeros inside them are built-ins and Designer integrated columns specified to disappear into the cabinetry. That changes how the work is done: a BI-48 or an IC-30 on a high floor is serviced in place, through the front grille and behind the panels, by a senior tech who can do it without marking the millwork. Every Bal Harbour call goes to that rotation, never a generalist.",
         "The building logistics are non-negotiable here, and we run them as routine: certificate of insurance filed with the association, service elevator booked, floor and corridor protection in place before the unit is ever touched. In a Bal Harbour tower the front desk and the management office are part of the appointment, and getting that right is why our arrival windows hold.",
-        "The salt exposure is total — these units sit a few hundred feet from the Atlantic — so condenser service is the headline maintenance item, and the symptom chain is the familiar one: longer run times, a warm fresh-food side, fear of the compressor when the real problem is a loaded coil or an evaporator fan. We carry the platform's common parts and the R-134a and R-600a gauges, hold EPA-608 Universal certification for the sealed-system work, and quote any major repair honestly against the unit's age at the $59 diagnostic.",
+        "The salt exposure is total — these units sit a few hundred feet from the Atlantic — so condenser service is the headline maintenance item, and the symptom chain is the familiar one: longer run times, then a warm fresh-food side. Most of those calls end at a loaded coil or an evaporator fan. We carry the platform's common parts and the R-134a and R-600a gauges, hold EPA-608 Universal certification for the sealed-system work, and quote any major repair honestly against the unit's age at the $59 diagnostic.",
       ],
     },
     faqs: [
@@ -733,7 +733,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "My oceanfront Sub-Zero's food side is warm — is the compressor gone?",
         answer:
-          "Usually not. A few hundred feet from the Atlantic the condenser loads with salt fast, and a warm side most often traces to that loaded coil, an evaporator fan, or a defrost terminator — not the compressor. We test the actual circuit at the $59 diagnostic before anyone uses the word compressor.",
+          "Usually not. A few hundred feet from the Atlantic the condenser loads with salt fast, and that loaded coil — or an evaporator fan, or a defrost terminator — explains most warm sides we see in these towers. The $59 diagnostic tests each circuit in that order; the compressor has to earn its diagnosis.",
       },
       {
         question: "How do you handle access in a managed Bal Harbour building?",
@@ -756,7 +756,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       heading: "Estate-grade kitchens on a barrier island",
       paragraphs: [
         "Palm Beach is where estate refrigeration meets barrier-island salt, and both facts shape the work. The houses on the North End and Mid Island, and the landmark estates off the ocean, were built around serious kitchens — paired Sub-Zero columns, BI-48 French-door builds, undercounter drawers, and wine rooms holding collections that justify the appliance. These go to the senior rotation, serviced in place behind custom panels, with the platform care that flush built-ins demand.",
-        "The island's oceanfront exposure means the same salt-air condenser story we see across the barrier coast — coils load and corrode faster than inland, run times climb, and a warm food side follows. On Palm Beach our standing advice is an annual condenser service, and our first diagnostic move on any warm unit is the coil and airflow path, never a compressor call on spec. We carry gauges for both the R-134a and the R-600a Designer systems.",
+        "The island's oceanfront exposure means the same salt-air condenser story we see across the barrier coast — coils load and corrode faster than inland, run times climb, and a warm food side follows. On Palm Beach our standing advice is an annual condenser service, and our first diagnostic move on any warm unit is the coil and airflow path; the compressor comes up only after those test clean. We carry gauges for both the R-134a and the R-600a Designer systems.",
         "We anchor this work from our office at 131 S Federal Hwy in Boca Raton, which keeps arrival windows on the island tight, and we handle the estate and association logistics — gate clearance, staff coordination, COI where a building requires it — before the appointment. When a sealed-system job comes up on an older unit, you get the honest math at the $59 diagnostic: Sub-Zeros are rebuildable, and a major repair is frequently the right money against replacing a built-in integrated into the architecture.",
       ],
     },
@@ -769,7 +769,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Why does my Palm Beach Sub-Zero's condenser need service so often?",
         answer:
-          "Barrier-island salt. Oceanfront air corrodes and loads the condenser far faster than inland, making the compressors run hot and long. An annual coil cleaning is the single best maintenance dollar here, and it's the first thing we check on every warm-unit island call.",
+          "Barrier-island salt. Oceanfront air corrodes and loads the condenser far faster than inland, and the compressors respond by running hot and long. Put the coil cleaning on a yearly schedule — it costs a fraction of the sealed-system work it prevents, and it's where every warm-unit diagnosis on the island starts.",
       },
       {
         question: "Is a major Sub-Zero repair worth it versus replacing the unit?",
@@ -794,7 +794,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       heading: "The centerpiece range, diagnosed on the platform",
       paragraphs: [
         "In Pinecrest the kitchen is the house, and the Wolf is the kitchen. We walk into 48-inch dual-fuel ranges, paired rangetop-and-wall-oven configurations, and built-in M-Series ovens specified by owners who cook seriously. That's the work we do: sealed-burner service, spark-igniter and electrode replacement, the dual-stacked-element bake/broil diagnostics on the electric-oven side of a dual-fuel, and the electronic-control faults that send owners to a generalist who replaces a board that didn't need replacing.",
-        "South Florida's grid and humidity are the quiet variables on a Wolf. Storm-season power events trip the control lockouts on the newer electronic ranges — most clear with the proper reset procedure, which we verify rather than selling boards on spec — and the spark electrodes and igniters that owners blame for a burner that won't light are frequently just dirty or out of gap, not failed. We diagnose the actual fault before quoting a part.",
+        "South Florida's grid and humidity are the quiet variables on a Wolf. Storm-season power events trip the control lockouts on the newer electronic ranges — most clear with the proper reset procedure, which we run before any board gets discussed — and half the dead-burner calls we take here end with a cleaned, re-gapped spark electrode and no parts at all.",
         "Parts logistics match the install base: igniters, spark modules, burner caps and heads, infrared broiler elements, and the common control components ride the Miami trucks, so most Pinecrest Wolf repairs close in one visit. The senior rotation has the dual-fuel platform knowledge that the brand rewards — a Wolf is a long-term appliance, and it deserves a tech who treats it like one.",
       ],
     },
@@ -812,7 +812,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "My Wolf range locked out after a storm — is the board dead?",
         answer:
-          "Usually not. Storm-season power events trip the control lockouts on newer electronic Wolf ranges, and most clear with the correct reset procedure. We verify that before ever quoting a control board — selling a board on spec is exactly what we don't do.",
+          "More often it's a lockout than a dead board. Storm-season power events trip the protection logic on newer electronic Wolf ranges, and the factory reset sequence clears most of them — running it is part of the $59 diagnostic. A board that genuinely took the surge shows up in the service test, and that quote comes in writing.",
       },
     ],
   },
@@ -879,12 +879,12 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "My Wolf burner sparks but won't light — is it the igniter?",
         answer:
-          "On the island, more often it's a salt-corroded or out-of-gap spark electrode or a clogged port than a failed igniter. We diagnose the actual fault at the $59 diagnostic before quoting any part.",
+          "Test it before buying one. On the island, salt pits the electrode tip and widens the spark gap long before the igniter itself gives out, and a clogged port produces the identical symptom. The $59 diagnostic sorts out which stage failed.",
       },
       {
         question: "My Wolf range locked out after a storm — does it need a new board?",
         answer:
-          "Usually not. Storm-season power events trip the control lockouts on newer Wolf ranges, and most clear with the correct reset procedure. We verify that before quoting a board — never on spec.",
+          "Have it looked at before assuming so. Storm lockouts on the newer electronic ranges usually clear with the factory reset sequence, which we run as part of the $59 diagnostic. If the board genuinely took the surge, the service test confirms it and the quote comes in writing.",
       },
     ],
   },
@@ -904,7 +904,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       heading: "Professional-series cooking and built-in cold, on one platform",
       paragraphs: [
         "Viking in the Gables means the full kitchen — a Professional-series range or rangetop, a built-in wall oven, and increasingly the Viking refrigeration that owners spec to match: built-in columns and the professional French-door units. We service the cooking and the cold on the same platform knowledge, which matters because the brand's failure list spans both: spark electrodes and igniters on the gas side, bake and convection elements on the electric, and condenser and evaporator-fan work on the refrigeration.",
-        "The local variables are the Gables-standard ones — humidity, decades-old units in the older estates, and the occasional storm-season power event that trips an electronic control lockout. On the cooking side, a Viking burner that won't light is usually a dirty or out-of-gap electrode rather than a failed igniter, and we diagnose the actual fault before quoting. On the refrigeration side, a warm built-in is far more often a fouled condenser or a stalled evaporator fan than a compressor — and we check the airflow path first.",
+        "The local variables are the Gables-standard ones — humidity, decades-old units in the older estates, and the occasional storm-season power event that trips an electronic control lockout. On the cooking side, most no-light burner calls close with a cleaned electrode or a cleared port; the igniter itself is the least frequent culprit. On the refrigeration side, heat has to leave through the condenser and cold has to move through the evaporator fan — when either is fouled or stalled, the unit warms up around a perfectly healthy compressor, so the airflow path gets checked first.",
         "We carry the common Viking parts on the Miami trucks — igniters, spark modules, burner components, oven elements, and the refrigeration fan motors — so most Coral Gables Viking repairs close in one visit. The senior rotation brings the cross-category platform experience a Viking kitchen needs, rather than treating the range and the refrigerator as two unrelated jobs.",
       ],
     },
@@ -917,12 +917,12 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "My Viking burner won't light — does it need an igniter?",
         answer:
-          "Often not. A Viking burner that sparks but won't catch is usually a dirty or out-of-gap electrode or a clogged port, not a failed igniter. We diagnose the actual fault at the $59 diagnostic before quoting a part.",
+          "Often not. A Viking burner that sparks but won't catch usually has a dirty or out-of-gap electrode or a clogged port — cleaning and re-gapping is frequently the whole repair. The $59 diagnostic settles it before any part is ordered.",
       },
       {
         question: "My Viking built-in fridge is warm — is the compressor gone?",
         answer:
-          "Usually not. A warm Viking built-in most often traces to a fouled condenser or a stalled evaporator fan rather than the compressor. We check the airflow path and the actual circuit first, at the $59 diagnostic.",
+          "The compressor is the last thing we condemn. A fouled condenser or a stalled evaporator fan produces the same warm compartment and costs a fraction as much to fix — both get tested at the $59 diagnostic before anything bigger enters the conversation.",
       },
     ],
   },
@@ -939,7 +939,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       eyebrow: "Viking on Key Biscayne",
       heading: "Pro-style kitchens against island salt",
       paragraphs: [
-        "Island air is hard on a Viking. The Professional-series ranges and built-in refrigeration in the Harbor Drive towers and the Cape Florida estates take year-round salt, and it shows up on both sides of the platform: corroded spark electrodes and burner hardware on the cooking side, and condensers that load and corrode on an accelerated clock on the refrigeration side. A Viking burner that sparks but won't light here is more often a salt-pitted electrode than a failed igniter, and a warm built-in is more often a salt-loaded condenser than a compressor.",
+        "Island air is hard on a Viking. The Professional-series ranges and built-in refrigeration in the Harbor Drive towers and the Cape Florida estates take year-round salt, and it shows up on both sides of the platform: corroded spark electrodes and burner hardware on the cooking side, and condensers that load and corrode on an accelerated clock on the refrigeration side. A burner that sparks but won't light here usually has a salt-pitted electrode; a built-in running warm usually has a salt-loaded condenser. Both are exposure problems, and both cost far less to fix than the components they imitate.",
         "Tower work on Key Biscayne is its own discipline — a Viking range or built-in column on a high floor is serviced in place, with the building choreography handled first: association COI, service-elevator booking, floor protection. We run that coordination as a matter of course so the repair window stays tight once we're on the floor.",
         "Our first diagnostic move on any warm Viking refrigerator here is the condenser and the airflow path, and our standing advice on the island is an annual coil service — the single best maintenance dollar in salt air. We carry the common Viking igniters, burner components, oven elements, and refrigeration fan motors on the trucks, so most Key Biscayne Viking repairs close on the first visit.",
       ],
@@ -948,7 +948,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "Why does my Key Biscayne Viking need service more than inland units?",
         answer:
-          "Barrier-island salt. It corrodes burner electrodes on the cooking side and loads the condenser on the refrigeration side far faster than inland. An annual condenser cleaning is the best maintenance dollar here, and we check it first on every warm-unit island call.",
+          "Barrier-island salt. It corrodes burner electrodes on the cooking side and loads the condenser on the refrigeration side far faster than inland. Book a condenser cleaning once a year and both problems get caught while they are still cheap.",
       },
       {
         question: "Do you handle building access for Viking calls in Key Biscayne towers?",
@@ -958,7 +958,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "My Viking burner sparks but won't light — is it the igniter?",
         answer:
-          "On the island it's usually a salt-pitted or out-of-gap electrode or a clogged port rather than a failed igniter. We diagnose the actual fault at the $59 diagnostic before quoting any part.",
+          "The usual island finding is a salt-pitted electrode tip or a widened spark gap — the igniter tends to outlive its electrodes here. We test each stage of the ignition circuit at the $59 diagnostic and replace only what actually failed.",
       },
     ],
   },
@@ -991,12 +991,12 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "My Thermador steam oven shows a water fault — does it need a new generator?",
         answer:
-          "Usually not. On the steam ovens a water-system fault is most often a descale or a clog in the water path, not a failed steam generator. We diagnose the actual fault at the $59 diagnostic before quoting any major part.",
+          "Usually not. On the steam ovens a water-system fault points to scale or a clog in the water path far more often than to the generator itself. A descale and water-path service clears most of them — the $59 diagnostic confirms which case yours is.",
       },
       {
         question: "My Thermador range threw a lockout code — is the board dead?",
         answer:
-          "Often not. Power events trip control-lockout codes on modern Thermador ranges, and most clear with the correct reset. We verify that before ever quoting a control board — that judgment is the whole point of a platform-experienced tech.",
+          "Power events trip lockout codes on modern Thermador ranges far more often than they kill boards. The factory reset clears most of them; when a board has genuinely failed, the fault memory says so, and the quote rests on that evidence.",
       },
     ],
   },
@@ -1014,8 +1014,8 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       heading: "Star burners, steam ovens, and the electronics behind them",
       paragraphs: [
         "Thermador has deep roots in the Gables, and the install base runs the full modern range: Star-burner Professional ranges and rangetops, wall-oven towers with steam and speed ovens, and Freedom-series built-in refrigeration. The brand's failures here are as much electronic as mechanical — control-lockout codes after the area's storm-season power events, steam-oven water-system faults, and convection or temperature-sensor drift on the ovens — and the difference between a reset and a board replacement is experience, not guesswork.",
-        "On the cooking side, the Star burner is the signature, and a burner that won't light is usually a dirty or out-of-gap electrode rather than a failed igniter. On the refrigeration side, a warm Freedom column is far more often a fouled condenser or a stalled evaporator fan than a compressor — humidity and decades-old units in the older estates load the coils, and we check the airflow path first.",
-        "We carry the common Thermador range, oven, and refrigeration parts on the Miami trucks, so most Coral Gables calls close in one visit, and the senior rotation knows the platform's electronics well enough to read a lockout code rather than reflexively quote a board. A Thermador suite is a long-term investment, and it deserves a tech who diagnoses it that way.",
+        "On the cooking side, the Star burner is the signature, and its no-light calls usually close with a cleaned, re-gapped electrode. On the refrigeration side, humidity and decades-old units in the older estates load the condenser coils, and a warm Freedom column typically starts there or at the evaporator fan — the airflow path gets checked before anything else.",
+        "We carry the common Thermador range, oven, and refrigeration parts on the Miami trucks, so most Coral Gables calls close in one visit, and the senior rotation knows the platform's electronics well enough to read a lockout code before reaching for the parts catalog. A Thermador suite is a long-term investment, and it deserves a tech who diagnoses it that way.",
       ],
     },
     faqs: [
@@ -1027,12 +1027,12 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "My Thermador range threw a lockout code after a storm — is the board dead?",
         answer:
-          "Usually not. Power events trip Thermador control-lockout codes, and most clear with the correct reset procedure. We verify that before ever quoting a control board.",
+          "Usually not. Storm-season power events trip these codes regularly across the Gables, and the factory reset procedure clears most of them. We run the reset first and test the board only if the fault returns.",
       },
       {
         question: "My Thermador Freedom column is warm — is it the compressor?",
         answer:
-          "Usually not. A warm Freedom-series column most often traces to a fouled condenser or a stalled evaporator fan rather than the compressor. We check the airflow path and the actual circuit first, at the $59 diagnostic.",
+          "Rarely. On Freedom columns the usual finding is a loaded condenser or a stalled evaporator fan — the compressor sits behind both in the failure order. The $59 diagnostic tests airflow and the fan circuit before anything bigger gets discussed.",
       },
     ],
   },
@@ -1052,8 +1052,8 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       heading: "European engineering in a serious kitchen and laundry",
       paragraphs: [
         "Miele owners in the Gables tend to own the whole ecosystem — the G-series dishwasher integrated flush with cabinetry, a built-in coffee system, a wall oven, and the W1/T1 laundry pair that runs on the brand's own logic and error-code language. Servicing Miele well means knowing that language: the F-codes that point to a drain or circulation fault rather than a control failure, the coffee-system brew-group and water-path issues that read as failures but resolve with the right service, and the laundry electronics that a generalist misreads.",
-        "The local variables are the Gables-standard humidity and the occasional power event, but Miele's failures are mostly platform-specific: drain pumps and check valves on the dishwashers, door-seal and hinge work on the integrated units, brew-unit service on the coffee systems, and the drain/door-lock faults on the laundry. We diagnose by the error code and the actual circuit, not by swapping the most expensive part.",
-        "We carry the common Miele parts on the Miami trucks — dishwasher drain pumps and seals, coffee-system service components, and the frequent laundry parts — so most Coral Gables Miele repairs close in one visit. The senior rotation has the European-electronics experience the brand demands, which is the difference between fixing the fault and replacing a board.",
+        "The local variables are the Gables-standard humidity and the occasional power event, but Miele's failures are mostly platform-specific: drain pumps and check valves on the dishwashers, door-seal and hinge work on the integrated units, brew-unit service on the coffee systems, and the drain/door-lock faults on the laundry. We start from the error code and test the circuit it names.",
+        "We carry the common Miele parts on the Miami trucks — dishwasher drain pumps and seals, coffee-system service components, and the frequent laundry parts — so most Coral Gables Miele repairs close in one visit. The senior rotation has the European-electronics experience the brand demands.",
       ],
     },
     faqs: [
@@ -1089,7 +1089,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       paragraphs: [
         "Sunny Isles is a vertical, oceanfront market — the residences are in the Collins Avenue towers, and the Miele inside them is specified to integrate: a G-series dishwasher flush with the cabinetry, a built-in coffee system, a wall oven, and a stacked or side-by-side W1/T1 laundry pair tucked into a closet. That changes the service approach. The work is done in place on a high floor, and it's diagnosed by Miele's own error-code logic — the F-codes that point to a drain or circulation fault, the laundry door-lock and drain faults, the coffee brew-group service — rather than by guessing.",
         "Tower logistics come first here, and we run them as routine: association COI on file, service elevator booked, corridor and floor protection in place before the appointment. In a Sunny Isles building the front desk and management office are part of the visit, and getting that coordination right is why our windows hold.",
-        "The oceanfront exposure matters most for any vented or water-connected appliance, but Miele's failures stay mostly platform-specific — drain pumps and check valves on the dishwashers, brew-unit service on the coffee systems, drain and door-lock faults on the laundry. We carry the common parts on the trucks, so most Sunny Isles Miele repairs close on the first visit, and the senior rotation brings the European-electronics experience the brand requires.",
+        "The oceanfront exposure matters most for any vented or water-connected appliance, but Miele's failures stay mostly platform-specific — drain pumps and check valves on the dishwashers, brew-unit service on the coffee systems, drain and door-lock faults on the laundry. We carry the common parts on the trucks, so most Sunny Isles Miele repairs close on the first visit; anything deeper comes through Miele's US parts network in a typical 2-4 business days.",
       ],
     },
     faqs: [
@@ -1106,7 +1106,7 @@ export const BRAND_CITY_CONTENT: Record<string, BrandCityContent> = {
       {
         question: "How do you handle access in a managed Sunny Isles building?",
         answer:
-          "We coordinate with management and the front desk in advance — COI on file, service elevator reserved, protection laid down. That groundwork is standard for our tower work and keeps the repair window tight once we're on the floor.",
+          "The COI goes to your association when the visit is booked, the service elevator gets reserved, and the tech arrives with corridor protection. The Collins Avenue buildings know the routine, and finishing that paperwork ahead of the appointment is what keeps the repair window tight.",
       },
     ],
   },

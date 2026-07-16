@@ -1933,7 +1933,7 @@ const liebherr: ResidentialBrandProfile = {
     {
       title: "F1 / F2 fault codes — air and evaporator sensor failures",
       detail:
-        "Liebherr's electronic models log sensor faults as F-codes on the display. F1 is typically the air sensor, F2 the evaporator sensor — a failed sensor makes the unit run long, over-freeze, or drift warm depending on where it fails in range. We read the fault log, verify the sensor resistance against spec, and replace the failed probe rather than guessing at the compressor.",
+        "Liebherr's electronic models log sensor faults as F-codes on the display. F1 is typically the air sensor, F2 the evaporator sensor — a failed sensor makes the unit run long, over-freeze, or drift warm depending on where it fails in range. We read the fault log, verify the sensor resistance against spec, and replace the failed probe.",
     },
     {
       title: "Ice maker fill valve and supply faults on Monolith and CS units",
@@ -1943,7 +1943,7 @@ const liebherr: ResidentialBrandProfile = {
     {
       title: "BioFresh compartment running warm or freezing produce",
       detail:
-        "BioFresh holds produce just above 0°C, and its damper actuator and dedicated sensor are the two failure points. Symptom: lettuce freezing in the drawer while the main compartment reads normal, or BioFresh drifting to fridge temperature. Both log faults the display can surface — the fix is the actuator or sensor, not a refrigerant story.",
+        "BioFresh holds produce just above 0°C, and its damper actuator and dedicated sensor are the two failure points. Symptom: lettuce freezing in the drawer while the main compartment reads normal, or BioFresh drifting to fridge temperature. Both log faults the display can surface, and both are one-visit repairs.",
     },
     {
       title: "Evap fan failure behind the rear panel — warm unit, quiet box",
@@ -1972,7 +1972,7 @@ const liebherr: ResidentialBrandProfile = {
     },
   ],
   whyBerne:
-    "Liebherr is a refrigeration-only platform, and we service it with refrigeration-first techs — the same senior rotation that handles Sub-Zero and Thermador built-ins. That matters for three reasons. First, the sealed system: Liebherr runs R-600a isobutane, and our techs carry EPA-608 Universal certification plus the hydrocarbon-rated gauges and recovery equipment the refrigerant legally requires. Second, the diagnosis: we read the platform's fault log and test sensors against spec instead of selling compressors. Third, the install context: integrated HC and Monolith columns live inside custom cabinetry, and we treat the millwork as part of the job — floor protection, panel handling, hinge re-shimming after removal. Parts come through Liebherr's US distribution; common sensors, fans, valves, and gaskets typically land in 2-3 business days when they're not already on the truck.",
+    "Liebherr is a refrigeration-only platform, and we service it with refrigeration-first techs — the same senior rotation that handles Sub-Zero and Thermador built-ins. The sealed system is the hard gate: Liebherr runs R-600a isobutane, and our techs carry EPA-608 Universal certification plus the hydrocarbon-rated gauges and recovery equipment the refrigerant legally requires. On diagnosis, we read the platform's fault log and test sensors against spec instead of selling compressors. And because integrated HC and Monolith columns live inside custom cabinetry, we treat the millwork as part of the job — floor protection, panel handling, hinge re-shimming after removal. Parts come through Liebherr's US distribution; common sensors, fans, valves, and gaskets typically land in 2-3 business days when they're not already on the truck.",
   relatedServices: [
     { slug: "refrigerator-repair", label: "Refrigerator Repair" },
     { slug: "wine-cooler-repair", label: "Wine Cooler Repair" },
@@ -2444,7 +2444,7 @@ const bertazzoni: ResidentialBrandProfile = {
   hq: "Guastalla, Italy",
   tier: "premium",
   teaser:
-    "Italian ranges with mechanical souls — Master, Professional, and Heritage series serviced by techs who understand that a Bertazzoni oven is tuned, not just repaired.",
+    "Italian ranges built deliberately mechanical — Master, Professional, and Heritage series, with brass burners and physical thermostats, serviced by techs who calibrate as well as repair.",
   metaTitle: "Bertazzoni Range Repair South Florida · $59 · Berne",
   metaDescription:
     "Bertazzoni range & oven repair in Miami, Fort Lauderdale & Boca Raton. Igniters, thermostat calibration, convection fans. $59 diagnostic, 90-day warranty.",
