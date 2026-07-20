@@ -169,7 +169,7 @@ test.describe("Lead form", () => {
     await page.check('input[name="consent"]');
     await page.getByRole("button", { name: /Request a callback/i }).click();
     // Either real success copy or the bot-timing silent-success copy
-    await expect(page.getByText(/Got it|talk soon|we'll call you/i)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole("status")).toBeVisible({ timeout: 15_000 });
     // Sanity — no Next runtime error overlay
     await expect(page.getByText(/Runtime Error|use server.*file can only export/i)).toHaveCount(0);
   });

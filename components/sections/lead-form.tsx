@@ -41,6 +41,7 @@ export function LeadForm({
   const [attrib, setAttrib] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
   const successHeadingRef = useRef<HTMLHeadingElement>(null);
+  const trackedLeadIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     setRenderedAt(String(Date.now()));
@@ -56,38 +57,61 @@ export function LeadForm({
     );
   }, []);
 
-  // Fire GA4 `generate_lead` once, only after the server action resolves with
-  // a delivered lead (status === "success"). Uses the same window.gtag transport
-  // as the rest of the site (loaded via <GoogleAnalytics> in app/layout.tsx).
+  // Fire conversion events once, only after Resend confirms delivery.
+  // Neutral anti-bot success states deliberately render the same UX but carry
+  // delivered=false and never reach any analytics or ad platform.
   useEffect(() => {
-    if (state.status !== "success") return;
-    if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+    if (state.status !== "success" || !state.delivered || !state.leadId) return;
+    if (trackedLeadIdRef.current === state.leadId) return;
+    trackedLeadIdRef.current = state.leadId;
+
+    const leadId = state.leadId;
+    const pagePath = window.location.pathname;
+    const common = {
+      site_id: "berne-repair",
+      form_name: "lead_form",
+      page_path: pagePath,
+      lead_id: leadId,
+      locale,
+    };
     try {
-      window.gtag("event", "generate_lead", {
-        form: "lead_form",
-        locale,
-      });
+      window.gtag?.("event", "generate_lead", common);
       // Google Ads "Lead form submit" conversion (secondary). send_to is a
       // public id (visible in page HTML), so the real value is baked in as
       // the default; NEXT_PUBLIC_GADS_LEAD_LABEL overrides it if ever needed.
       const adsLeadLabel =
         process.env.NEXT_PUBLIC_GADS_LEAD_LABEL ??
         "AW-18232464152/dCXNCM-JqL0cEJim9fVD";
-      window.gtag("event", "conversion", { send_to: adsLeadLabel });
+      window.gtag?.("event", "conversion", {
+        send_to: adsLeadLabel,
+        transaction_id: leadId,
+      });
       // Meta standard 'Lead' — form submit is a hard conversion; feeds Meta
       // lead-objective optimisation + the Events Manager custom conversion.
-      window.fbq?.("track", "Lead", { content_category: "lead_form", source: "form_submit", locale });
+      window.fbq?.(
+        "track",
+        "Lead",
+        { content_category: "lead_form", source: "form_submit", ...common },
+        { eventID: leadId },
+      );
       // OpenAI/ChatGPT Ads conversion (registered event: lead_created).
-      window.oaiq?.("measure", "lead_created", { type: "customer_action" });
+      window.oaiq?.("measure", "lead_created", {
+        type: "customer_action",
+        lead_id: leadId,
+      });
       // Microsoft Bing UET — REAL lead conversion. Until now the only UET event
       // was `phone_click` (tel: taps), which inflated Bing "conversions" far
       // above real leads. Fire a dedicated submit_lead event so a Bing goal can
       // count actual form leads (parity with Google/Meta above).
-      window.uetq?.push("event", "submit_lead", { event_category: "lead_form", event_label: locale });
+      window.uetq?.push("event", "submit_lead", {
+        event_category: "lead_form",
+        event_label: locale,
+        lead_id: leadId,
+      });
     } catch {
       /* swallow analytics errors */
     }
-  }, [state.status, locale]);
+  }, [state, locale]);
 
   // Focus management: the form is noValidate, so server-side validation errors
   // arrive after a round-trip with no native focus/scroll. Move focus to the

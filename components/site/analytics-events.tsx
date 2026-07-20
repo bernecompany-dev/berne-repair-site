@@ -13,7 +13,7 @@ import { useEffect } from "react";
  * render plain `tel:` / WhatsApp anchors.
  *
  * Event names are kept consistent across the Berne sites:
- *   - phone_call      → any `tel:` link / call button
+ *   - call_click      → any `tel:` link / call button (intent proxy only)
  *   - whatsapp_click  → any WhatsApp link (the floating FAB fires its own, so
  *                       it is excluded here to avoid double-counting)
  *
@@ -26,15 +26,34 @@ export function AnalyticsEvents() {
     function onClick(e: MouseEvent) {
       const el = e.target instanceof Element ? e.target : null;
       const anchor = el?.closest<HTMLAnchorElement>("a[href]");
-      if (!anchor || typeof window.gtag !== "function") return;
+      if (!anchor) return;
 
       const href = anchor.getAttribute("href") ?? "";
 
       if (href.startsWith("tel:")) {
-        window.gtag("event", "phone_call", {
+        const params = {
+          site_id: "berne-repair",
+          page_path: location.pathname,
+          link_location: anchor.dataset.analytics ?? "link",
+          tracking_number: href.slice("tel:".length),
           event_category: "engagement",
           event_label: location.pathname,
-          phone_number: href.slice("tel:".length),
+        };
+        window.gtag?.("event", "call_click", params);
+        window.uetq?.push("event", "call_click", params);
+        window.fbq?.("trackCustom", "PhoneClick", {
+          site_id: params.site_id,
+          page_path: params.page_path,
+          link_location: params.link_location,
+        });
+        return;
+      }
+
+      if (href.startsWith("mailto:")) {
+        window.fbq?.("trackCustom", "EmailClick", {
+          site_id: "berne-repair",
+          page_path: location.pathname,
+          link_location: anchor.dataset.analytics ?? "link",
         });
         return;
       }
@@ -43,7 +62,7 @@ export function AnalyticsEvents() {
       // own onClick, so skip it here to avoid a duplicate event.
       const isWhatsApp = /(?:wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)/i.test(href);
       if (isWhatsApp && anchor.getAttribute("data-analytics") !== "whatsapp-fab") {
-        window.gtag("event", "whatsapp_click", {
+        window.gtag?.("event", "whatsapp_click", {
           event_category: "engagement",
           event_label: location.pathname,
         });
@@ -62,5 +81,7 @@ export function AnalyticsEvents() {
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
+    uetq?: { push: (...args: unknown[]) => void };
   }
 }

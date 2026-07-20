@@ -225,7 +225,7 @@ export default function RootLayout({
         */}
         <GoogleAdsTag />
         {/*
-          Microsoft Advertising UET (tag 97251280) + phone_click event for
+          Microsoft Advertising UET (tag 97251280) + call_click event for
           the "Phone click" conversion goal — Bing has no number-swap call
           tracking, so tel: clicks are the call proxy.
         */}

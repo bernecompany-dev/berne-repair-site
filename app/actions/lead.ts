@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { randomUUID } from "node:crypto";
 import { headers } from "next/headers";
 import { z } from "zod";
 import { COMPANY } from "@/data/company";
@@ -127,7 +128,7 @@ export async function submitLead(
 
   // Honeypot check first — bots reveal themselves; humans never see this field.
   if (raw.company_url.length > 0) {
-    return { status: "success", message: msg.successHoneypot };
+    return { status: "success", message: msg.successHoneypot, delivered: false };
   }
   // Soft bot check: form rendered in <1.5s means likely a script.
   // Browser autofill users can legitimately be this fast, so log enough to
@@ -139,7 +140,7 @@ export async function submitLead(
       "Recover from logs:",
       raw.name || "(no name)", raw.phone || "(no phone)", raw.city || "(no city)",
     );
-    return { status: "success", message: msg.successHoneypot };
+    return { status: "success", message: msg.successHoneypot, delivered: false };
   }
 
   const parsed = LEAD_SCHEMAS[lang].safeParse(raw);
@@ -202,12 +203,15 @@ export async function submitLead(
   }
 
   const resend = new Resend(apiKey);
+  const leadId = randomUUID();
+  const submittedAt = new Date().toISOString();
+  const phone10 = phone.replace(/\D/g, "").slice(-10);
   // Subject prefix unified across all 3 Berne sites: "ЗАКАЗ" so Eugene can
   // filter/sort leads in Gmail regardless of which site they came from.
-  const subject = `ЗАКАЗ — ${name} · ${cityName} · ${applianceName}`;
+  const subject = `ЗАКАЗ [${leadId}] — ${name} · ${cityName} · ${applianceName}`;
   const html = renderLeadEmail({
     name, phone, email, cityName, applianceName, brand, description, locale: lang,
-    attrib,
+    attrib, leadId, submittedAt, phone10,
   });
 
   try {
@@ -215,18 +219,18 @@ export async function submitLead(
       ? [email, COMPANY.email.leads]
       : [COMPANY.email.leads];
     const result = await resend.emails.send({ from, to, replyTo, subject, html });
-    if (result.error) {
+    if (result.error || !result.data?.id) {
       // Include contact fields so the lead is recoverable from Vercel logs
       // (same pattern as the anti-bot / missing-key paths above).
-      console.error("[lead] resend error:", result.error, "| lead:", name, phone);
+      console.error("[lead] resend error:", result.error ?? "missing message id", "| lead_id:", leadId, "| lead:", name, phone);
       return { status: "error", errors: { form: msg.sendFail }, values: raw };
     }
   } catch (err) {
-    console.error("[lead] resend threw:", err, "| lead:", name, phone);
+    console.error("[lead] resend threw:", err, "| lead_id:", leadId, "| lead:", name, phone);
     return { status: "error", errors: { form: msg.sendFail }, values: raw };
   }
 
-  return { status: "success", message: msg.successCallback };
+  return { status: "success", message: msg.successCallback, delivered: true, leadId };
 }
 
 function renderLeadEmail(p: {
@@ -239,6 +243,9 @@ function renderLeadEmail(p: {
   description?: string;
   locale: Lang;
   attrib?: string;
+  leadId: string;
+  submittedAt: string;
+  phone10: string;
 }) {
   const row = (label: string, value?: string) =>
     value
@@ -252,8 +259,11 @@ function renderLeadEmail(p: {
         <div style="font-size:20px;font-weight:600;margin-top:4px">Berne Appliance Repair · website</div>
       </div>
       <table style="width:100%;border-collapse:collapse;font-size:14px;color:#e6e6e6">
+        ${row("Lead ID", p.leadId)}
+        ${row("Submitted (UTC)", p.submittedAt)}
         ${row("Name", p.name)}
         ${row("Phone", p.phone)}
+        ${row("Phone 10", p.phone10)}
         ${row("Email", p.email)}
         ${row("City", p.cityName)}
         ${row("Appliance", p.applianceName)}

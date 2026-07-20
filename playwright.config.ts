@@ -11,12 +11,26 @@ export default defineConfig({
   },
   webServer: process.env.PW_NO_SERVER
     ? undefined
-    : {
-        command: "npm run dev",
-        url: "http://localhost:3000",
-        reuseExistingServer: true,
-        timeout: 120_000,
-      },
+    : [
+        {
+          command: "node tests/helpers/resend-mock.mjs",
+          url: "http://127.0.0.1:3101/health",
+          reuseExistingServer: true,
+          timeout: 30_000,
+        },
+        {
+          command: "npm run dev",
+          url: "http://localhost:3000",
+          reuseExistingServer: false,
+          timeout: 120_000,
+          env: {
+            ...process.env,
+            RESEND_API_KEY: "re_playwright_test",
+            RESEND_BASE_URL: "http://127.0.0.1:3101",
+            LEAD_TO_EMAIL: "playwright@example.com",
+          },
+        },
+      ],
   projects: [
     { name: "chromium-desktop", use: { ...devices["Desktop Chrome"] } },
     { name: "mobile-chrome", use: { ...devices["Pixel 7"] } },

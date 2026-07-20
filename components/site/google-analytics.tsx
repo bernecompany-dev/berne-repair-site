@@ -15,7 +15,7 @@ import Script from "next/script";
  *    installs `window.gtag` + the dataLayer queue at `afterInteractive`.
  *
  * Conversion wiring stays intact: lead-form `generate_lead`, delegated
- * `phone_call` / `whatsapp_click` (analytics-events.tsx, whatsapp-fab.tsx)
+ * `call_click` / `whatsapp_click` (analytics-events.tsx, whatsapp-fab.tsx)
  * all call `window.gtag(...)` guarded by a typeof check. The stub exists as
  * soon as hydration finishes, so events fired before gtag.js arrives are
  * queued in `dataLayer` and replayed by the library when it loads — the
