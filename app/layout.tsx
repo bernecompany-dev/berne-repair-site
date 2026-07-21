@@ -24,7 +24,11 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
+  // On a throttled first visit, `swap` can replace the fallback after the
+  // hero has painted and cause a large text reflow (0.197 CLS in Lighthouse
+  // on /areas/miami). `optional` keeps the preloaded font on fast paths but
+  // lets slow paths retain the metric-compatible fallback for that visit.
+  display: "optional",
 });
 
 // preload: false — Geist Mono only renders tiny accent labels (hero tech

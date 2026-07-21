@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { type ReactNode } from "react";
+import { articleBySlug, isPublished } from "@/lib/blog/articles";
 
 /**
  * Minimal markdown renderer for the blog. Supports the subset used in
@@ -121,6 +122,16 @@ function renderInline(input: string, keyPrefix: string): ReactNode {
     // link
     const isInternal = tok.href.startsWith("/");
     if (isInternal) {
+      // Scheduled posts may reference other scheduled posts. Keep the anchor
+      // text but do not expose a 404 until the target's publication time;
+      // hourly ISR automatically restores the link once it is live.
+      const blogMatch = tok.href.match(/^\/blog\/([^/?#]+)$/);
+      if (blogMatch) {
+        const target = articleBySlug(blogMatch[1]);
+        if (target && !isPublished(target)) {
+          return <span key={key}>{tok.text}</span>;
+        }
+      }
       return (
         <Link key={key} href={tok.href} className="text-brand underline-offset-4 hover:underline">
           {tok.text}

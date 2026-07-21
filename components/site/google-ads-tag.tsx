@@ -12,10 +12,10 @@ import { COMPANY } from "@/data/company";
  * Production-gated like the other third-party loaders so `next dev`
  * traffic never registers conversions.
  *
- * Coexistence with GA4: both loaders push into the same window.dataLayer,
- * and `window.gtag = window.gtag || gtag` keeps whichever stub installed
- * first. gtag.js tolerates being requested with both a G- and an AW- id;
- * the config commands are deduped by the library.
+ * Coexistence with GA4: both configs push into the same window.dataLayer,
+ * and GoogleAnalytics owns the single gtag.js library request. One gtag.js
+ * instance handles both G- and AW- destinations; loading it again here cost
+ * roughly 146 KB and duplicated main-thread work on every page.
  *
  * "Calls from website" uses Google's website call tracking snippet — the
  * `config` with `phone_conversion_number` below. Google dynamically swaps
@@ -65,11 +65,6 @@ export function GoogleAdsTag() {
             });
           `,
         }}
-      />
-      <Script
-        id="gads-lib"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
-        strategy="lazyOnload"
       />
     </>
   );

@@ -47,10 +47,10 @@ export function BrandSpecialistsBlock({ brandSlug, brandName }: Props) {
         {specialists.length > 0 ? (
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {specialists.map((t) => (
-              <li key={t.slug}>
+              <li key={t.slug} className="min-w-0">
                 <Link
                   href={`/team/${t.slug}`}
-                  className="group flex h-full items-center gap-4 rounded-2xl border border-border bg-card/40 p-4 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
+                  className="group flex h-full min-w-0 w-full items-center gap-4 rounded-2xl border border-border bg-card/40 p-4 transition-all hover:-translate-y-px hover:border-brand/40 hover:bg-card/60"
                 >
                   <div className="relative size-16 shrink-0 overflow-hidden rounded-xl">
                     <Image

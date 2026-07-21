@@ -35,8 +35,12 @@ test.describe("Sitemap + robots integrity", () => {
     const r = await request.get("/sitemap.xml");
     const body = await r.text();
     const urlCount = (body.match(/<url>/g) ?? []).length;
-    expect(urlCount).toBeGreaterThanOrEqual(580);
+    // The templated combo tail is intentionally noindex and excluded. Only
+    // unique combos belong here, so the pre-debloat 580+ floor was stale.
+    expect(urlCount).toBeGreaterThanOrEqual(300);
     expect(body).toContain("/services/refrigerator-repair/miami");
+    expect(body).toContain("<loc>https://www.berne-repair.com/services</loc>");
+    expect(body).toContain("<loc>https://www.berne-repair.com/es/services</loc>");
     expect(body).toContain("/areas/parkland");
     expect(body).toContain("/es");
   });
@@ -54,15 +58,28 @@ test.describe("Sitemap + robots integrity", () => {
       expect(r.headers()["content-type"], url).toContain("image/png");
     }
   });
+
+  test("published posts do not expose links to scheduled 404 targets", async ({ page }) => {
+    const cases = [
+      ["/blog/column-vs-french-door-built-in", "/blog/most-reliable-luxury-refrigerator-brands"],
+      ["/blog/built-in-vs-freestanding-refrigerator-premium", "/blog/panel-ready-vs-stainless-refrigerator"],
+      ["/blog/bluestar-vs-wolf-range", "/blog/bluestar-performance-burner-head-venturi"],
+      ["/blog/bertazzoni-vs-ilve-range", "/blog/bertazzoni-heritage-range-thermostat-igniter"],
+    ];
+    for (const [source, futureTarget] of cases) {
+      await page.goto(source);
+      await expect(page.locator(`a[href="${futureTarget}"]`), `${source} -> ${futureTarget}`).toHaveCount(0);
+    }
+  });
 });
 
 test.describe("Home page structure", () => {
   test("home renders hero, stats, services, team, contact, sticky CTA on mobile", async ({ page, isMobile }) => {
     await page.goto("/");
-    await expect(page).toHaveTitle(/Berne Appliance Repair/);
-    await expect(page.locator("h1").first()).toContainText(/Premium appliance repair/i);
+    await expect(page).toHaveTitle(/Luxury.*Appliance Repair/i);
+    await expect(page.locator("h1").first()).toContainText(/Luxury.*appliance repair/i);
     await expect(page.locator("body")).toContainText("$59");
-    await expect(page.locator("body")).toContainText(/\b1[67]\b/);
+    await expect(page.locator("body")).toContainText(/\b18\b/);
     await expect(page.getByRole("link", { name: /Refrigerator Repair/i }).first()).toBeVisible();
     await expect(page.getByText(/Eugene Berne/i).first()).toBeVisible();
     if (isMobile) {
@@ -93,15 +110,12 @@ test.describe("Service / city / combo pages", () => {
     await expect(page.locator("h1")).toContainText(/Refrigerator Repair/);
     await expect(page.locator('[aria-roledescription="carousel"]').first()).toBeVisible();
     await expect(page.getByRole("navigation", { name: /breadcrumb/i }).first()).toBeVisible();
-    await expect(page.getByText(/From "broken" to "done"/i)).toBeVisible();
+    await expect(page.getByText(/From "down" to "done"/i)).toBeVisible();
   });
 
-  test("city page embeds Google Map iframe", async ({ page }) => {
+  test("city page exposes an accessible completed-repairs map", async ({ page }) => {
     await page.goto("/areas/miami");
-    const iframe = page.locator('iframe[src*="google.com/maps"]');
-    await expect(iframe).toBeVisible();
-    const src = await iframe.getAttribute("src");
-    expect(src).toContain("25.76"); // Miami latitude
+    await expect(page.getByRole("region", { name: /nearby completed appliance repairs/i })).toBeVisible();
   });
 
   test("combo page has both city map and internal cross-links", async ({ page }) => {
@@ -110,8 +124,10 @@ test.describe("Service / city / combo pages", () => {
     await expect(page.locator("h1")).toContainText(/Miami/i);
     await expect(page.locator('iframe[src*="google.com/maps"]')).toBeVisible();
     // Same-service-other-cities + other-services-same-city
-    const otherCityLinks = await page.locator('a[href^="/services/refrigerator-repair/"]:not([href$="/miami"])').count();
-    const otherServiceLinks = await page.locator('a[href$="/miami"][href^="/services/"]:not([href="/services/refrigerator-repair/miami"])').count();
+    const nearbyBlock = page.getByRole("heading", { name: /Refrigerator Repair in nearby cities/i }).locator("..");
+    const otherCityLinks = await nearbyBlock.locator("a[href]").count();
+    const otherServicesBlock = page.getByRole("heading", { name: /Other appliances we repair in Miami/i }).locator("..");
+    const otherServiceLinks = await otherServicesBlock.locator("a[href]").count();
     expect(otherCityLinks).toBeGreaterThanOrEqual(5);
     expect(otherServiceLinks).toBeGreaterThanOrEqual(5);
   });
@@ -138,7 +154,7 @@ test.describe("Service / city / combo pages", () => {
 test.describe("Spanish i18n", () => {
   test("/es renders Spanish hero copy", async ({ page }) => {
     await page.goto("/es");
-    await expect(page.locator("h1")).toContainText(/Reparación premium/i);
+    await expect(page.locator("h1")).toContainText(/Reparación de electrodomésticos de lujo/i);
     await expect(page.getByText(/Visita técnica/i).first()).toBeVisible();
   });
 
@@ -155,6 +171,8 @@ test.describe("Spanish i18n", () => {
 });
 
 test.describe("Lead form", () => {
+  test.skip(process.env.PW_NO_SERVER === "1", "Lead submission tests require the local Resend mock");
+
   test("full happy-path submit lands on success view (no crash)", async ({ page }) => {
     await page.goto("/");
     // Backdate ts so we don't trip the bot-timing silent path

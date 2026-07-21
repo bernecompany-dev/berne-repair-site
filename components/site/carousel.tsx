@@ -104,6 +104,7 @@ export function Carousel({
           ref={scrollRef}
           className={cn(
             "flex w-full snap-x snap-mandatory overflow-x-auto scroll-smooth motion-reduce:scroll-auto",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
             "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
           )}
           // aria-roledescription is only valid on elements with a role —
@@ -111,6 +112,7 @@ export function Carousel({
           role="region"
           aria-roledescription="carousel"
           aria-label="Photo gallery"
+          tabIndex={0}
         >
           {images.map((img, i) => (
             <div
@@ -152,7 +154,7 @@ export function Carousel({
           >
             <ChevronRight className="size-5" aria-hidden />
           </button>
-          <div className="mt-3 flex justify-center gap-1.5">
+          <div className="mt-3 flex justify-center gap-1">
             {images.map((_, i) => (
               <button
                 key={i}
@@ -160,11 +162,16 @@ export function Carousel({
                 onClick={() => goto(i)}
                 aria-label={`Go to photo ${i + 1}`}
                 aria-current={i === index}
-                className={cn(
-                  "h-1.5 rounded-full transition-all",
-                  i === index ? "w-6 bg-brand" : "w-1.5 bg-foreground/30 hover:bg-foreground/60",
-                )}
-              />
+                className="group inline-flex size-6 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <span
+                  aria-hidden
+                  className={cn(
+                    "h-1.5 rounded-full transition-all",
+                    i === index ? "w-6 bg-brand" : "w-1.5 bg-foreground/30 group-hover:bg-foreground/60",
+                  )}
+                />
+              </button>
             ))}
           </div>
         </>

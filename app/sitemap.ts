@@ -81,6 +81,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
+  const servicesIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/services`,
+      lastModified: LAST_MOD,
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: { languages: esCounterpart("/services") },
+    },
+    {
+      url: `${SITE_URL}/es/services`,
+      lastModified: REWORKED_MOD,
+      changeFrequency: "monthly",
+      priority: 0.85,
+      alternates: { languages: esCounterpart("/services") },
+    },
+  ];
+
   // High-end specialty service pages — hand-authored static routes (EN + ES),
   // OUTSIDE the SERVICES array so they never spawn city combos. Both locales
   // are real, indexable pages (full Spanish), so each advertises the reciprocal
@@ -286,6 +303,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...home,
+    ...servicesIndex,
     ...services,
     ...highEndServices,
     ...resources,
