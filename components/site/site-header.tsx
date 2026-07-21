@@ -26,6 +26,7 @@ export function SiteHeader() {
     { href: localePath(locale, "/areas"), label: t.areas, match: localePath(locale, "/areas") },
     { href: localePath(locale, "/brands"), label: locale === "es" ? "Marcas" : "Brands", match: localePath(locale, "/brands") },
     { href: localePath(locale, "/team"), label: t.team, match: localePath(locale, "/team") },
+    { href: localePath(locale, "/careers"), label: locale === "es" ? "Empleo" : "Careers", match: localePath(locale, "/careers") },
     // Not localePath: it would emit "/es/#why" (trailing slash → 308 on hard load).
     { href: locale === "es" ? "/es#why" : "/#why", label: t.whyUs, match: null },
     { href: localePath(locale, "/contact"), label: t.contact, match: localePath(locale, "/contact") },

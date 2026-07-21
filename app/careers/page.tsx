@@ -4,26 +4,24 @@ import {
   Briefcase,
   GraduationCap,
   Phone,
-  Mail,
   ShieldCheck,
   CheckCircle2,
   MapPin,
   Wrench,
-  BadgeDollarSign,
+  CalendarCheck,
 } from "lucide-react";
-import { CTARow } from "@/components/site/cta-row";
-import { Contact } from "@/components/sections/contact";
-import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
+import { CareersApplyForm } from "@/components/sections/careers-apply-form";
 import { COMPANY } from "@/data/company";
-import { CAREERS, POSTING_DATE, VALID_THROUGH } from "@/data/careers";
-import { breadcrumbJsonLd, absoluteUrl, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import { TECH_ROLE, POSTING_DATE, VALID_THROUGH } from "@/data/careers";
+import { breadcrumbJsonLd, absoluteUrl, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  // Absolute — the layout template would append " · Berne Appliance Repair"
-  // a second time, pushing the title to 84+ chars in the SERP.
-  title: { absolute: "Appliance Technician Jobs — South Florida · Berne" },
-  description: `Join Berne Appliance Repair — ${COMPANY.socialProof.industryExperienceYears}+ years in business, ${COMPANY.socialProof.technicians} W-2 technicians. Now hiring senior + junior appliance technicians, customer service, and dispatch in Hallandale Beach and Boca Raton.`,
+  // Absolute — the layout template would append " · Berne Luxury Appliance
+  // Repair" a second time and push the title past 80 chars in the SERP.
+  title: { absolute: "Appliance Repair Technician Jobs — South Florida · Berne" },
+  description:
+    "Berne is hiring appliance repair technicians in Miami-Dade, Broward, and Palm Beach. W-2 employment, in-house training on Sub-Zero, Wolf, Viking, Miele, and Thermador, steady work year round.",
   alternates: {
     canonical: "/careers",
     languages: {
@@ -33,9 +31,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Careers at Berne Appliance Repair — South Florida",
+    title: "Appliance Repair Technician Jobs — South Florida · Berne",
     description:
-      "Now hiring W-2 appliance technicians, customer service, and dispatch across Miami-Dade, Broward, and Palm Beach.",
+      "W-2 employment, luxury-brand training (Sub-Zero, Wolf, Viking, Miele, Thermador), steady work across Miami-Dade, Broward, and Palm Beach.",
     url: absoluteUrl("/careers"),
     type: "website",
     images: [DEFAULT_OG_IMAGE],
@@ -43,70 +41,59 @@ export const metadata: Metadata = {
 };
 
 /**
- * Google for Jobs JobPosting schema per open role.
- * https://developers.google.com/search/docs/appearance/structured-data/job-posting
- *
- * Required fields: title, description, datePosted, hiringOrganization,
- *   jobLocation (or applicantLocationRequirements for remote), validThrough.
- * Strongly recommended: baseSalary, employmentType, identifier.
+ * Google for Jobs JobPosting schema — single open role.
+ * Per Eugene (2026-07-21): no baseSalary anywhere (pay is discussed per
+ * experience); hiringOrganization is the site's schema entity
+ * "Berne Luxury Appliance Repair" (lib/seo.ts ENTITY_NAME — do not rename).
  */
-function jobPostingJsonLd(roleSlug: string) {
-  const role = CAREERS.find((r) => r.slug === roleSlug)!;
-  const hq = COMPANY.address.hq;
+function jobPostingJsonLd() {
+  const countyPlace = (county: string) => ({
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: county,
+      addressRegion: "FL",
+      addressCountry: "US",
+    },
+  });
 
   return {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "@id": absoluteUrl(`/careers#${role.slug}`),
-    title: role.title,
-    description: `<p>${role.description}</p><h3>Requirements</h3><ul>${role.requirements
+    "@id": absoluteUrl(`/careers#${TECH_ROLE.slug}`),
+    title: TECH_ROLE.title,
+    description: `<p>${TECH_ROLE.description}</p><h3>Requirements</h3><ul>${TECH_ROLE.requirements
       .map((r) => `<li>${r}</li>`)
       .join("")}</ul>`,
     identifier: {
       "@type": "PropertyValue",
-      name: COMPANY.legalName,
-      value: `berne-careers-${role.slug}`,
+      name: "Berne Luxury Appliance Repair",
+      value: `berne-careers-${TECH_ROLE.slug}`,
     },
     datePosted: POSTING_DATE,
     validThrough: VALID_THROUGH,
-    employmentType: role.employmentType,
+    employmentType: TECH_ROLE.employmentType,
     industry: "Appliance Repair Service",
     occupationalCategory: "49-9031.00 Home Appliance Repairers",
     hiringOrganization: {
       "@type": "Organization",
       "@id": absoluteUrl("/#organization"),
-      name: COMPANY.legalName,
+      name: "Berne Luxury Appliance Repair",
       sameAs: COMPANY.url,
       logo: absoluteUrl("/og.png"),
     },
-    jobLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: hq.street,
-        addressLocality: hq.city,
-        addressRegion: hq.region,
-        postalCode: hq.postalCode,
-        addressCountry: hq.country,
-      },
-    },
+    jobLocation: [
+      countyPlace("Miami-Dade County"),
+      countyPlace("Broward County"),
+      countyPlace("Palm Beach County"),
+    ],
     applicantLocationRequirements: {
       "@type": "Country",
       name: "US",
     },
-    baseSalary: {
-      "@type": "MonetaryAmount",
-      currency: "USD",
-      value: {
-        "@type": "QuantitativeValue",
-        minValue: role.pay.min,
-        maxValue: role.pay.max,
-        unitText: role.pay.unitText,
-      },
-    },
-    skills: role.skills,
-    qualifications: role.requirements.join("; "),
-    directApply: false,
+    skills: TECH_ROLE.skills,
+    qualifications: TECH_ROLE.requirements.join("; "),
+    directApply: true,
     workHours: COMPANY.hours.label,
   };
 }
@@ -116,26 +103,6 @@ export default function CareersPage() {
     { name: "Home", href: "/" },
     { name: "Careers", href: "/careers" },
   ];
-
-  const jobPostings = CAREERS.map((r) => jobPostingJsonLd(r.slug));
-
-  const collectionPage = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${SITE_URL}/careers#collection`,
-    url: absoluteUrl("/careers"),
-    name: "Careers — Berne Appliance Repair",
-    isPartOf: { "@id": absoluteUrl("/#website") },
-    about: { "@id": absoluteUrl("/#organization") },
-    mainEntity: {
-      "@type": "ItemList",
-      itemListElement: CAREERS.map((r, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        item: { "@id": absoluteUrl(`/careers#${r.slug}`) },
-      })),
-    },
-  };
 
   return (
     <>
@@ -164,7 +131,7 @@ export default function CareersPage() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
               <Briefcase className="size-3.5" aria-hidden />
-              Currently accepting applications
+              Now hiring
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <ShieldCheck className="size-3.5 text-brand" aria-hidden />
@@ -172,74 +139,97 @@ export default function CareersPage() {
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-tint/[0.04] px-3 py-1 text-xs font-medium text-foreground/80">
               <GraduationCap className="size-3.5 text-brand" aria-hidden />
-              MSA-funded OEM training
+              Luxury-brand training in-house
             </span>
           </div>
 
           <h1 className="heading-hero mt-6 max-w-4xl">
-            Build a career with{" "}
+            Appliance Repair Technician —{" "}
             <span className="block bg-gradient-to-r from-brand to-[oklch(0.55_0.12_252)] dark:to-[oklch(0.85_0.06_252)] bg-clip-text text-transparent">
-              Berne Appliance Repair.
+              join the Berne team.
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            We&rsquo;re an {COMPANY.socialProof.industryExperienceYears}-year South Florida
-            appliance repair company actively growing the team. Currently servicing
-            Miami-Dade, Broward, Palm Beach, plus Gulf Coast cities (Tampa, Sarasota,
-            Naples). Open roles below — apply by email with resume and 3 references.
+            Berne has repaired household appliances in South Florida since 2015.
+            Our clients own Sub-Zero, Wolf, Viking, Miele, and Thermador — and they
+            expect a technician who covers the floor, explains the diagnosis, and
+            leaves the kitchen cleaner than he found it. That is the standard we
+            hire for.
           </p>
 
-          <div className="mt-9">
-            <CTARow size="lg" />
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a
+              href="#apply"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-base font-semibold text-brand-foreground shadow-sm transition-transform hover:-translate-y-px"
+            >
+              <Briefcase className="size-4" aria-hidden />
+              Apply below
+            </a>
+            <a
+              href={`tel:${COMPANY.phone.tel}`}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-tint/[0.04] px-7 py-3.5 text-base font-semibold text-foreground transition-colors hover:border-brand/40"
+            >
+              <Phone className="size-4 text-brand" aria-hidden />
+              {COMPANY.phone.display}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Why Berne */}
+      {/* The role — EN */}
       <section className="container-prose py-16 sm:py-20">
         <div className="mb-10 max-w-2xl">
-          <span className="eyebrow">Why work at Berne</span>
+          <span className="eyebrow">The role</span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            What employment here actually looks like.
+            What the job looks like.
           </h2>
         </div>
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div className="max-w-3xl space-y-5 text-base leading-relaxed text-foreground/90">
+          <p>
+            Full-time field work across Miami-Dade, Broward, and Palm Beach. The
+            call volume holds steady year round — South Florida kitchens do not
+            take a season off. The team is {COMPANY.socialProof.technicians} staff
+            technicians, every one a W-2 employee: payroll and taxes handled by
+            the company, no 1099 arrangements.
+          </p>
+          <p>
+            You do not need Sub-Zero experience on day one. We train technicians
+            on the luxury brands in-house — sealed systems, control boards, the
+            quirks each manufacturer never puts in the manual. Refrigerant work
+            follows EPA Section 608 rules. What we need from you: real repair
+            experience or a solid technical base, a driver license, and enough
+            English to walk a homeowner through a diagnosis. A good part of the
+            team also speaks Russian.
+          </p>
+          <p>
+            Pay is discussed based on experience. Tell us what you have repaired
+            and for how long — then we talk numbers.
+          </p>
+        </div>
+
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
               icon: <ShieldCheck className="size-5 text-brand" aria-hidden />,
-              title: "W-2 employment",
-              body:
-                "Not 1099 subcontractor. Payroll, taxes, workers&rsquo; comp handled by the company.",
+              title: "W-2 from day one",
+              body: `${COMPANY.socialProof.technicians} staff technicians on payroll — not subcontractors.`,
             },
             {
               icon: <GraduationCap className="size-5 text-brand" aria-hidden />,
-              title: "Continuous OEM training",
-              body:
-                "Marcone Servicers Association (MSA) — Sub-Zero, Wolf, Miele, LG, Samsung, GE. Company-paid.",
+              title: "Luxury-brand training",
+              body: "Sub-Zero, Wolf, Viking, Miele, Thermador — taught in-house.",
             },
             {
-              icon: <Wrench className="size-5 text-brand" aria-hidden />,
-              title: "Established route + dispatch",
-              body:
-                "HousecallPro back-end. Routes pre-built. Parts pre-staged. No cold-calling.",
-            },
-            {
-              icon: <Briefcase className="size-5 text-brand" aria-hidden />,
-              title: "Bilingual team",
-              body: "English, Spanish, and Russian fluent on most trucks and in dispatch.",
+              icon: <CalendarCheck className="size-5 text-brand" aria-hidden />,
+              title: "Steady work year round",
+              body: "No seasonal slumps — the schedule stays full every month.",
             },
             {
               icon: <MapPin className="size-5 text-brand" aria-hidden />,
-              title: "Two offices",
-              body:
-                "Hallandale Beach HQ + Boca Raton — pick whichever is closer to home.",
-            },
-            {
-              icon: <BadgeDollarSign className="size-5 text-brand" aria-hidden />,
-              title: "Honest pricing culture",
-              body:
-                "90-day labor &amp; parts warranty. No commission-based upsell pressure.",
+              title: "Three counties",
+              body: "Miami-Dade, Broward, and Palm Beach service territory.",
             },
           ].map((b) => (
             <li
@@ -251,185 +241,101 @@ export default function CareersPage() {
               </span>
               <div>
                 <h3 className="text-base font-semibold tracking-tight">{b.title}</h3>
-                <p
-                  className="mt-1 text-sm leading-relaxed text-muted-foreground"
-                  dangerouslySetInnerHTML={{ __html: b.body }}
-                />
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {b.body}
+                </p>
               </div>
             </li>
           ))}
         </ul>
-      </section>
 
-      {/* Open roles */}
-      <section
-        id="open-roles"
-        className="container-prose pb-16 sm:pb-20 scroll-mt-20"
-      >
-        <div className="mb-10 max-w-2xl">
-          <span className="eyebrow">Open roles</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Currently accepting applications.
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            Apply by emailing your resume + 3 references to{" "}
-            <a
-              href={`mailto:${COMPANY.email.public}`}
-              className="text-brand hover:underline"
-            >
-              {COMPANY.email.public}
-            </a>{" "}
-            with the role title in the subject line, or call dispatch at{" "}
-            <a href={`tel:${COMPANY.phone.tel}`} className="text-brand hover:underline">
-              {COMPANY.phone.display}
-            </a>{" "}
-            to talk to a recruiter.
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          {CAREERS.map((role) => (
-            <article
-              key={role.slug}
-              id={role.slug}
-              className="rounded-3xl border border-border bg-card/40 p-6 sm:p-8 scroll-mt-20"
-            >
-              <header className="mb-4 flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                    {role.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {role.workLocation}
-                  </p>
-                </div>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/5 px-3 py-1 text-xs font-medium text-brand">
-                  <BadgeDollarSign className="size-3.5" aria-hidden />
-                  {role.pay.label}
-                </span>
-              </header>
-
-              <p className="text-base leading-relaxed text-foreground/90">
-                {role.description}
-              </p>
-
-              <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                    Requirements
-                  </h4>
-                  <ul className="mt-3 space-y-2 text-sm">
-                    {role.requirements.map((r) => (
-                      <li key={r} className="flex items-start gap-2">
-                        <CheckCircle2
-                          className="mt-0.5 size-4 shrink-0 text-brand"
-                          aria-hidden
-                        />
-                        <span className="text-foreground/85">{r}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-                    Employment details
-                  </h4>
-                  <dl className="mt-3 space-y-1.5 text-sm">
-                    <div className="flex items-baseline justify-between gap-3 border-b border-border/40 pb-1.5">
-                      <dt className="text-muted-foreground">Type</dt>
-                      <dd className="font-medium">Full-time, W-2</dd>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-3 border-b border-border/40 pb-1.5">
-                      <dt className="text-muted-foreground">Location</dt>
-                      <dd className="font-medium text-right">{role.workLocation}</dd>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-3 border-b border-border/40 pb-1.5">
-                      <dt className="text-muted-foreground">Pay</dt>
-                      <dd className="font-medium text-right">{role.pay.label}</dd>
-                    </div>
-                    <div className="flex items-baseline justify-between gap-3 border-b border-border/40 pb-1.5">
-                      <dt className="text-muted-foreground">Posted</dt>
-                      <dd className="font-medium">{POSTING_DATE}</dd>
-                    </div>
-                  </dl>
-                  <div className="mt-5 flex flex-wrap items-center gap-2">
-                    <a
-                      href={`mailto:${COMPANY.email.public}?subject=Application: ${encodeURIComponent(role.title)}`}
-                      className="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand/90"
-                    >
-                      <Mail className="size-4" aria-hidden />
-                      Email resume
-                    </a>
-                    <a
-                      href={`tel:${COMPANY.phone.tel}`}
-                      className="inline-flex items-center gap-2 rounded-lg border border-border bg-tint/[0.04] px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-brand/40"
-                    >
-                      <Phone className="size-4 text-brand" aria-hidden />
-                      Call recruiter
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
+        <div className="mt-10 max-w-3xl">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+            Requirements
+          </h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {TECH_ROLE.requirements.map((r) => (
+              <li key={r} className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+                <span className="text-foreground/85">{r}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* How we hire */}
-      <section
-        id="how-we-hire"
-        className="container-prose pb-16 sm:pb-20 scroll-mt-20"
-      >
-        <div className="mb-8 max-w-2xl">
-          <span className="eyebrow">How we hire</span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            5 steps. About a week, start to finish.
-          </h2>
-        </div>
-        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {[
-            ["1", "Email resume", `Send resume + 3 references to ${COMPANY.email.public}.`],
-            ["2", "Phone screen", "15-minute call with the hiring manager."],
-            ["3", "In-person interview", "30-45 minutes at Hallandale HQ or Boca."],
-            [
-              "4",
-              "Skills assessment",
-              "Technician roles only — a 1-day ride-along with a senior tech.",
-            ],
-            ["5", "Decision within 1 week", "Offer, hire date, and W-2 onboarding."],
-          ].map(([n, title, body]) => (
-            <li
-              key={n}
-              className="flex flex-col gap-2 rounded-2xl border border-border bg-card/40 p-5"
-            >
-              <span className="inline-flex size-9 items-center justify-center rounded-full bg-brand/10 text-base font-semibold text-brand">
-                {n}
-              </span>
-              <h3 className="text-base font-semibold tracking-tight">{title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-8 rounded-2xl border border-brand/30 bg-brand/5 p-5 text-sm leading-relaxed">
-          <p>
-            <strong className="text-foreground">Equal opportunity employer.</strong>{" "}
-            Berne Appliance Repair hires based on skill and attitude. We do not
-            discriminate by race, color, national origin, religion, sex, age,
-            disability, veteran status, or any other protected class.
-          </p>
+      {/* Русский блок */}
+      <section lang="ru" className="border-t border-border/60">
+        <div className="container-prose py-16 sm:py-20">
+          <div className="mb-10 max-w-2xl">
+            <span className="eyebrow">По-русски</span>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Работа в Berne — приглашаем техников.
+            </h2>
+          </div>
+
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-foreground/90">
+            <p>
+              Berne ремонтирует бытовую технику в Южной Флориде с 2015 года. Наши
+              клиенты — владельцы Sub-Zero, Wolf, Viking, Miele и Thermador, дома
+              от Майами-Бич до Бока-Ратона. Такой клиент ждёт аккуратности:
+              бахилы, чистая диагностика, понятное объяснение — что сломалось и
+              что мы будем с этим делать.
+            </p>
+            <p>
+              В штате {COMPANY.socialProof.technicians} техников, все оформлены
+              официально по W-2 — зарплата и налоги через компанию, без схем с
+              1099. Заказы идут круглый год, сезонных провалов нет. Зоны работы —
+              Miami-Dade, Broward и Palm Beach. Работа с фреоном — по стандарту
+              EPA 608.
+            </p>
+            <p>
+              Работе с люксовыми брендами научим: обучение проходит внутри
+              компании, от герметичных контуров Sub-Zero до электроники Miele. От
+              вас нужен опыт ремонта бытовой техники или сильная техническая база
+              (электрика, холодильные системы), водительские права и разговорный
+              английский. В команде многие говорят по-русски, так что освоиться
+              будет просто.
+            </p>
+            <p>
+              Оплата обсуждается по опыту — расскажите, что умеете, и обсудим
+              условия.
+            </p>
+            <p>
+              Откликнуться можно через форму ниже или по телефону{" "}
+              <a href={`tel:${COMPANY.phone.tel}`} className="font-semibold text-brand hover:underline">
+                {COMPANY.phone.display}
+              </a>
+              .
+            </p>
+          </div>
+
+          <div className="mt-8 max-w-3xl">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+              Требования
+            </h3>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {TECH_ROLE.requirementsRu.map((r) => (
+                <li key={r} className="flex items-start gap-2">
+                  <Wrench className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
+                  <span className="text-foreground/85">{r}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      <Contact />
-      <CTABand />
+      {/* Application form */}
+      <section id="apply" className="border-t border-border/60 scroll-mt-20">
+        <div className="container-prose py-16 sm:py-20">
+          <div className="mx-auto max-w-2xl">
+            <CareersApplyForm variant="bilingual" />
+          </div>
+        </div>
+      </section>
 
-      <JsonLd
-        data={[
-          ...jobPostings,
-          collectionPage,
-          breadcrumbJsonLd(crumbs),
-        ]}
-      />
+      <JsonLd data={[jobPostingJsonLd(), breadcrumbJsonLd(crumbs)]} />
     </>
   );
 }
