@@ -22,7 +22,23 @@ const JOBS = [
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
 for (const j of JOBS) {
   // inline the SVG in an HTML wrapper — SVG-as-<img> would not load embedded fonts
-  const svg = fs.readFileSync(path.join(EXPORTS, j.svg), 'utf8').replace(/^<\?xml[^>]*\?>\s*/, '');
+  let svg = fs.readFileSync(path.join(EXPORTS, j.svg), 'utf8').replace(/^<\?xml[^>]*\?>\s*/, '');
+  // Chromium flattens SVG <pattern> fills into a full-page 72 dpi raster when
+  // printing. Replace the grain-pattern rect with explicit 300 dpi image tiles:
+  // direct <image> elements keep their source resolution in the PDF.
+  const patMatch = svg.match(/<pattern id="([a-z]+-grain)"[^>]*>\s*<image href="(data:image\/png;base64,[^"]+)"/);
+  if (patMatch) {
+    const [, patId, dataUri] = patMatch;
+    svg = svg.replace(
+      new RegExp(`<rect width="(\\d+)" height="(\\d+)" fill="url\\(#${patId}\\)" opacity="[\\d.]+"/>`),
+      (m, w, h) => {
+        let tiles = `<g opacity="0.9">`;
+        for (let y = 0; y < +h; y += 300)
+          for (let x = 0; x < +w; x += 300)
+            tiles += `<image href="${dataUri}" x="${x}" y="${y}" width="300" height="300"/>`;
+        return tiles + `</g>`;
+      });
+  }
   const html = `<!doctype html><html><head><style>
     @page { size: ${j.w} ${j.h}; margin: 0; }
     html, body { margin: 0; padding: 0; }
