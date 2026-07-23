@@ -501,7 +501,7 @@ function buildUsaPoster() {
   }
   stTransform.DC = stTransform.MD; // DC sits inside Maryland's bbox
   let cityDots = `<g class="city-dots" fill="${C.line}" fill-opacity="0.5">`;
-  let dotCount = 0;
+  const dotPositions = [];
   for (const c of cityData) {
     const tf = stTransform[c.st];
     if (!tf) continue;
@@ -509,10 +509,10 @@ function buildUsaPoster() {
     if (!p) continue;
     const [ddx, ddy] = tf(p);
     cityDots += `<circle cx="${r2(ddx)}" cy="${r2(ddy)}" r="2.4"/>`;
-    dotCount++;
+    dotPositions.push([ddx, ddy, c]);
   }
   cityDots += `</g>`;
-  console.log(`USA: ${dotCount} population dots`);
+  console.log(`USA: ${dotPositions.length} population dots`);
 
   // ---- labelled major cities (>= 150k population, FL handled separately above)
   const NOT_CITIES = new Set([
@@ -522,7 +522,25 @@ function buildUsaPoster() {
     'North Las Vegas', 'Ironville', 'Meads',
     'Upper West Side', 'Upper East Side', 'Washington Heights', 'Bedford-Stuyvesant',
     'Borough Park', 'Astoria', 'Crown Heights', 'Flatbush', 'East Chattanooga',
+    'West Raleigh', 'East Independence', 'North Atlanta', 'South Suffolk',
   ]);
+  // ocean / gulf names — placed first so city labels avoid them
+  const oceanLabel = (x, y, name, s) =>
+    `<text x="${r2(x)}" y="${r2(y)}" font-family="Libre Baskerville" font-style="italic" font-size="${s}"` +
+    ` letter-spacing="${s * 0.45}" fill="#8B8478" opacity="0.9" text-anchor="middle">${esc(name)}</text>`;
+  const OCEANS = [
+    { x: 470, y: 1345, s: 34, name: 'PACIFIC  OCEAN' },
+    { x: 3235, y: 772, s: 34, name: 'ATLANTIC  OCEAN' },
+    { x: 2260, y: 2095, s: 34, name: 'GULF  OF  AMERICA' },
+  ];
+  let oceanLabels = `<g class="ocean-labels">`;
+  for (const o of OCEANS) {
+    oceanLabels += oceanLabel(o.x, o.y, o.name, o.s);
+    const w = o.name.length * (o.s * 0.68 + o.s * 0.45);
+    obstacleRects.push({ x0: o.x - w / 2, y0: o.y - o.s * 1.1, x1: o.x + w / 2, y1: o.y + o.s * 0.3 });
+  }
+  oceanLabels += `</g>`;
+
   // block header, legend strip, plaque, compass and Florida label columns
   const labeler = makeLabeler(obstacleRects);
   labeler.block(0, 0, W, 545);                       // header zone
@@ -531,24 +549,24 @@ function buildUsaPoster() {
   const LABEL_BOUNDS = [130, 555, 3500, 2205];
   let cityLabels = `<g class="major-city-labels">`;
   let placedCount = 0, droppedCount = 0;
-  for (const c of cityData) {
-    if (c.pop < 150000 || c.st === 'FL' || NOT_CITIES.has(c.name)) continue;
-    const tf = stTransform[c.st];
-    if (!tf) continue;
-    const p = alb([c.lon, c.lat]);
-    if (!p) continue;
-    const [dx, dy] = tf(p);
-    const size = c.pop >= 1e6 ? 16.5 : c.pop >= 400000 ? 15 : 13.5;
-    const spot = labeler.tryPlace(dx, dy, c.name.toUpperCase(), size, { font: 'Oswald', ls: 0.8, bounds: LABEL_BOUNDS });
-    if (!spot) { droppedCount++; continue; }
-    cityLabels += `<circle cx="${r2(dx)}" cy="${r2(dy)}" r="3.6" fill="${C.dark}" fill-opacity="0.85"/>`;
+  const emit = ([dx, dy, c]) => {
+    const size = c.pop >= 1e6 ? 16.5 : c.pop >= 400000 ? 15 : c.pop >= 150000 ? 13.5 : 12;
+    const spot = labeler.tryPlace(dx, dy, c.name.toUpperCase(), size, { font: 'Oswald', ls: 0.8, bounds: LABEL_BOUNDS, gap: 7.5 });
+    if (!spot) { droppedCount++; return; }
+    if (c.pop >= 150000) cityLabels += `<circle cx="${r2(dx)}" cy="${r2(dy)}" r="3.6" fill="${C.dark}" fill-opacity="0.85"/>`;
     cityLabels += text(spot.lx, spot.ly, c.name.toUpperCase(), {
-      f: 'Oswald', w: 500, s: size, ls: 0.8, fill: C.dark, anchor: spot.anchor, halo: 2.6, opacity: 0.95,
+      f: 'Oswald', w: c.pop >= 150000 ? 500 : 400, s: size, ls: 0.8, fill: C.dark, anchor: spot.anchor, halo: 2.6, opacity: 0.95,
     });
     placedCount++;
-  }
+  };
+  const candidates = dotPositions.filter(([, , c]) => c.st !== 'FL' && !NOT_CITIES.has(c.name));
+  // majors (>= 400k) label first — a name outranks the dot texture underneath
+  for (const cand of candidates) if (cand[2].pop >= 400000) emit(cand);
+  // now every dot becomes a small obstacle so smaller labels never sit on one
+  for (const [ddx, ddy] of dotPositions) labeler.block(ddx - 2.2, ddy - 2.2, ddx + 2.2, ddy + 2.2);
+  for (const cand of candidates) if (cand[2].pop < 400000) emit(cand);
   cityLabels += `</g>`;
-  console.log(`USA: ${placedCount} major city labels placed, ${droppedCount} dropped in dense metros`);
+  console.log(`USA: ${placedCount} city labels placed (of ${candidates.length} candidates), ${droppedCount} dropped in dense metros`);
 
   // ---- header
   const cx = W / 2;
@@ -584,6 +602,7 @@ function buildUsaPoster() {
   ${background(W, H, idp)}
   ${header}
   ${mapPaths}
+  ${oceanLabels}
   ${cityDots}
   ${labels}
   ${usCities}
@@ -808,6 +827,15 @@ function buildFloridaPoster() {
     const [lx, ly] = gp.centroid(l.geometry);
     waterLabels += hydroLabel(lx + (cfg.dx || 0), ly + (cfg.dy || 0), l.name, { s: cfg.s });
   }
+  // ocean / gulf names in the open water areas
+  waterLabels += `<text x="430" y="1985" font-family="Libre Baskerville" font-style="italic" font-size="26"` +
+    ` letter-spacing="11" fill="#8B8478" opacity="0.9" text-anchor="middle">GULF  OF</text>`;
+  waterLabels += `<text x="430" y="2032" font-family="Libre Baskerville" font-style="italic" font-size="26"` +
+    ` letter-spacing="11" fill="#8B8478" opacity="0.9" text-anchor="middle">AMERICA</text>`;
+  waterLabels += `<text x="1280" y="2065" font-family="Libre Baskerville" font-style="italic" font-size="22"` +
+    ` letter-spacing="9" fill="#8B8478" opacity="0.9" text-anchor="middle">ATLANTIC  OCEAN</text>`;
+  hydroRects.push({ x0: 1050, y0: 2035, x1: 1500, y1: 2075 });
+  hydroRects.push({ x0: 250, y0: 1950, x1: 610, y1: 2045 });
   waterLabels += `</g>`;
 
   // county labels

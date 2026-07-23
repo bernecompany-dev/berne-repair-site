@@ -64,10 +64,14 @@ node scripts/render-mockup.mjs   # berne_maps_wall_mockup.png
   (971 dots) from GeoNames (`assets/data/us_cities_50k.json`, generated with the
   `geonamescache` PyPI package, CC BY 4.0). Each state's cities are placed with
   a per-state affine fit of the Albers-USA projection onto that state's outline
-  in the base map, so dots never drift across state borders. Cities ≥ 150,000
-  additionally get a name label via a greedy collision-avoiding labeler
-  (8 candidate positions per dot; labels that cannot fit in dense metros stay
-  dot-only). NYC boroughs / neighborhood pseudo-cities are excluded from labels.
+  in the base map, so dots never drift across state borders. All dots are label
+  candidates via a greedy collision-avoiding labeler (8 positions per dot,
+  population priority, ~300 names placed; majors ≥ 400k are laid down before
+  dots become obstacles so a big-city name always outranks the dot texture).
+  NYC boroughs / neighborhood pseudo-cities are excluded from labels.
+  Ocean names (Pacific Ocean, Atlantic Ocean, Gulf of America) are set in
+  letterspaced italic; the Florida poster carries Gulf of America and Atlantic
+  Ocean as well.
 - **Florida cities ≥ 15,000 (Florida poster)** — all 246 from GeoNames
   (`assets/data/fl_cities_15k.json`) as dots; names are placed with the same
   collision-avoiding labeler (population priority), so the Miami–West Palm
