@@ -26,6 +26,7 @@ node scripts/render-previews.mjs   # preview PNGs (Playwright + system Chromium)
 node scripts/render-mockup.mjs     # berne_maps_wall_mockup.png
 node scripts/export-print.mjs      # print PDFs (Chromium, exact size + bleed)
 python3 scripts/pdf_to_outlined_svg.py  # outlined SVGs from the PDFs (PyMuPDF)
+python3 scripts/export-raster-print.py  # 300dpi JPEGs for photo-print services
 ```
 
 `render-previews.mjs --small-only` renders quick low-res QA copies (`exports/qa_*.png`).
@@ -37,6 +38,9 @@ python3 scripts/pdf_to_outlined_svg.py  # outlined SVGs from the PDFs (PyMuPDF)
 - `berne_*_print.pdf` — exact physical size incl. 0.125 in bleed
   (36.25 × 24.25 in and 16.25 × 24.25 in), vector maps/type, embedded subset
   fonts, no crop marks (bleed-only, as most print shops prefer)
+- `berne_*_300dpi.jpg` — flattened 300 dpi JPEG at the exact ordered size
+  (10800 × 7200 px and 4800 × 7200 px, bleed trimmed) for consumer photo-print
+  services like CVS/Walgreens that only accept raster uploads
 - `berne_*_preview.png` — ≥ 3000 px long side, sRGB
 - `berne_maps_wall_mockup.png` — both posters at true relative scale on a neutral wall
 
