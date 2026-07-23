@@ -34,6 +34,9 @@ const C = {
   phase:   '#C5BCAB', // "next phase" state fill (muted grey-brown)
   future:  '#807B70', // future targets outline
   paper2:  '#DED5C2', // slightly darker paper for plates
+  water:   '#B7C6C1', // muted vintage water fill
+  waterLine: '#849C96', // river strokes / lake outlines
+  waterDark: '#5C6F6A', // hydro label ink
 };
 
 const BLEED = 12.5;          // 0.125 in
@@ -49,6 +52,7 @@ function fontFace(family, file, weightRange, style = 'normal') {
 }
 const FONT_CSS = [
   fontFace('Libre Baskerville', 'LibreBaskerville-var.woff2', '400 700'),
+  fontFace('Libre Baskerville', 'LibreBaskerville-400-italic.woff2', '400', 'italic'),
   fontFace('Oswald', 'Oswald-var.woff2', '200 700'),
   fontFace('Roboto Slab', 'RobotoSlab-var.woff2', '100 900'),
 ].join('\n');
@@ -62,6 +66,53 @@ function text(x, y, str, { f = 'Roboto Slab', w = 400, s = 20, ls = 0, fill = C.
     ` fill="${fill}"${opacity !== 1 ? ` opacity="${opacity}"` : ''} text-anchor="${anchor}">${esc(str)}</text>`;
 }
 const r2 = (n) => Math.round(n * 100) / 100;
+
+/* --------------------------------------------------- label collision engine */
+
+// average glyph-width factors (em) for uppercase text, rough but adequate
+const FONT_W = { Oswald: 0.5, 'Roboto Slab': 0.66, 'Libre Baskerville': 0.68 };
+
+/**
+ * Greedy point-label placement. Obstacle-aware; tries E, W, N, S of the dot.
+ * Returns {anchor,lx,ly} or null when nothing fits.
+ */
+function makeLabeler(obstacles = []) {
+  const placed = [...obstacles];
+  const collide = (r) => placed.some((p) => r.x0 < p.x1 && r.x1 > p.x0 && r.y0 < p.y1 && r.y1 > p.y0);
+  return {
+    tryPlace(x, y, name, size, { font = 'Oswald', ls = 0, bounds = null, gap = 9 } = {}) {
+      const w = name.length * (size * FONT_W[font] + ls);
+      const h = size * 1.05;
+      const cands = [
+        { anchor: 'start',  lx: x + gap + 3, ly: y + h * 0.33 },
+        { anchor: 'end',    lx: x - gap - 3, ly: y + h * 0.33 },
+        { anchor: 'middle', lx: x, ly: y - gap - 2 },
+        { anchor: 'middle', lx: x, ly: y + gap + h * 0.85 },
+        { anchor: 'start',  lx: x + gap * 0.8, ly: y - gap * 0.8 },
+        { anchor: 'start',  lx: x + gap * 0.8, ly: y + gap * 0.8 + h * 0.6 },
+        { anchor: 'end',    lx: x - gap * 0.8, ly: y - gap * 0.8 },
+        { anchor: 'end',    lx: x - gap * 0.8, ly: y + gap * 0.8 + h * 0.6 },
+      ];
+      for (const c of cands) {
+        const x0 = c.anchor === 'start' ? c.lx : c.anchor === 'end' ? c.lx - w : c.lx - w / 2;
+        const r = { x0: x0 - 3, y0: c.ly - h, x1: x0 + w + 3, y1: c.ly + h * 0.25 };
+        if (bounds && (r.x0 < bounds[0] || r.y0 < bounds[1] || r.x1 > bounds[2] || r.y1 > bounds[3])) continue;
+        if (collide(r)) continue;
+        placed.push(r);
+        return c;
+      }
+      return null;
+    },
+    block(x0, y0, x1, y1) { placed.push({ x0, y0, x1, y1 }); },
+  };
+}
+
+/** Approximate rect of an emitted text label, for obstacle registration. */
+function textRect(x, y, name, size, { font = 'Roboto Slab', ls = 0, anchor = 'middle' } = {}) {
+  const w = name.length * (size * FONT_W[font] + ls);
+  const x0 = anchor === 'start' ? x : anchor === 'end' ? x - w : x - w / 2;
+  return { x0: x0 - 3, y0: y - size * 1.05, x1: x0 + w + 3, y1: y + size * 0.25 };
+}
 
 /* ------------------------------------------------------- shared decoration */
 
@@ -313,6 +364,7 @@ function buildUsaPoster() {
   mapPaths += `</g>`;
 
   // ---- state labels (poster coordinate space, absolute font sizes)
+  const obstacleRects = [];
   let labels = `<g class="state-labels">`;
   const leaderPos = {};
   // stack leader labels along the Atlantic, top → bottom
@@ -335,6 +387,8 @@ function buildUsaPoster() {
       const { anchor, label } = leaderPos[id];
       labels += `<path d="M ${r2(anchor[0])} ${r2(anchor[1])} L ${r2(label[0] - 12)} ${r2(label[1] - 6)}" stroke="${C.line}" stroke-width="1" fill="none" opacity="0.85"/>`;
       labels += text(label[0], label[1], name, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, anchor: 'start', halo: 3 });
+      obstacleRects.push(textRect(label[0], label[1], name, size, { anchor: 'start', ls: 1.5 }));
+      obstacleRects.push({ x0: anchor[0], y0: anchor[1], x1: label[0], y1: label[1] }); // leader line zone
       continue;
     }
     const b = st.bbox;
@@ -345,8 +399,11 @@ function buildUsaPoster() {
       const [a, bword] = name.split(' ');
       labels += text(lx, lyy - size * 0.55, a, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, halo: 3 });
       labels += text(lx, lyy + size * 0.65, bword, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, halo: 3 });
+      obstacleRects.push(textRect(lx, lyy - size * 0.55, a, size, { ls: 1.5 }));
+      obstacleRects.push(textRect(lx, lyy + size * 0.65, bword, size, { ls: 1.5 }));
     } else {
       labels += text(lx, lyy, name, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, halo: 3 });
+      obstacleRects.push(textRect(lx, lyy, name, size, { ls: 1.5 }));
     }
   }
   labels += `</g>`;
@@ -401,6 +458,7 @@ function buildUsaPoster() {
       const lineEnd = anchor === 'start' ? colX - 8 : colX + 8;
       usCities += `<path d="M ${r2(dx + (anchor === 'start' ? 7 : -7))} ${r2(dy)} L ${r2(lineEnd)} ${r2(ly - 5)}" stroke="${C.line}" stroke-width="0.9" fill="none" opacity="0.8"/>`;
       usCities += text(tx, ly, name.toUpperCase(), { f: 'Oswald', w: 500, s: 14, ls: 1, fill: C.dark, anchor });
+      obstacleRects.push(textRect(tx, ly, name.toUpperCase(), 14, { font: 'Oswald', ls: 1, anchor }));
     }
   };
   col(gulfCol, gulfX, 'end');
@@ -456,6 +514,42 @@ function buildUsaPoster() {
   cityDots += `</g>`;
   console.log(`USA: ${dotCount} population dots`);
 
+  // ---- labelled major cities (>= 150k population, FL handled separately above)
+  const NOT_CITIES = new Set([
+    'Brooklyn', 'Queens', 'Manhattan', 'The Bronx', 'Bronx', 'Staten Island', // NYC boroughs
+    'East Los Angeles', 'Spring Valley', 'Sunrise Manor', 'Paradise', 'Enterprise',
+    'Metairie', 'East New York', 'Jamaica', 'South Boston', 'New South Memphis',
+    'North Las Vegas', 'Ironville', 'Meads',
+    'Upper West Side', 'Upper East Side', 'Washington Heights', 'Bedford-Stuyvesant',
+    'Borough Park', 'Astoria', 'Crown Heights', 'Flatbush', 'East Chattanooga',
+  ]);
+  // block header, legend strip, plaque, compass and Florida label columns
+  const labeler = makeLabeler(obstacleRects);
+  labeler.block(0, 0, W, 545);                       // header zone
+  labeler.block(0, 2218, W, H);                      // legend + plate zone
+  labeler.block(3255 - 165, 1560 - 165, 3255 + 165, 1560 + 165); // compass
+  const LABEL_BOUNDS = [130, 555, 3500, 2205];
+  let cityLabels = `<g class="major-city-labels">`;
+  let placedCount = 0, droppedCount = 0;
+  for (const c of cityData) {
+    if (c.pop < 150000 || c.st === 'FL' || NOT_CITIES.has(c.name)) continue;
+    const tf = stTransform[c.st];
+    if (!tf) continue;
+    const p = alb([c.lon, c.lat]);
+    if (!p) continue;
+    const [dx, dy] = tf(p);
+    const size = c.pop >= 1e6 ? 16.5 : c.pop >= 400000 ? 15 : 13.5;
+    const spot = labeler.tryPlace(dx, dy, c.name.toUpperCase(), size, { font: 'Oswald', ls: 0.8, bounds: LABEL_BOUNDS });
+    if (!spot) { droppedCount++; continue; }
+    cityLabels += `<circle cx="${r2(dx)}" cy="${r2(dy)}" r="3.6" fill="${C.dark}" fill-opacity="0.85"/>`;
+    cityLabels += text(spot.lx, spot.ly, c.name.toUpperCase(), {
+      f: 'Oswald', w: 500, s: size, ls: 0.8, fill: C.dark, anchor: spot.anchor, halo: 2.6, opacity: 0.95,
+    });
+    placedCount++;
+  }
+  cityLabels += `</g>`;
+  console.log(`USA: ${placedCount} major city labels placed, ${droppedCount} dropped in dense metros`);
+
   // ---- header
   const cx = W / 2;
   const header = `<g class="header">
@@ -493,6 +587,7 @@ function buildUsaPoster() {
   ${cityDots}
   ${labels}
   ${usCities}
+  ${cityLabels}
   ${compassRose(3255, 1560, 128)}
   ${legend}
   ${frame(W, H, { bottomPlate: { label: 'SERVING FLORIDA SINCE 2022', width: 760 } })}
@@ -642,15 +737,90 @@ function buildFloridaPoster() {
   }
   zones += `</g>`;
 
+  // ---- hydrography (Natural Earth 10m), clipped to the state outline
+  const hydro = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/data/fl_hydro.json'), 'utf8'));
+  const stateOutline = gp(topojson.merge(topo, topo.objects.counties.geometries.filter((g) => String(g.id).startsWith('12'))));
+  const hydroRects = [];
+  let water = `<clipPath id="fl-state-clip"><path d="${stateOutline}"/></clipPath>`;
+  water += `<g class="hydro" clip-path="url(#fl-state-clip)">`;
+  for (const r of hydro.rivers) {
+    water += `<path d="${gp(r.geometry)}" fill="none" stroke="${C.waterLine}" stroke-width="1.7" stroke-opacity="0.85" stroke-linecap="round"/>`;
+  }
+  for (const l of hydro.lakes) {
+    water += `<path d="${gp(l.geometry)}" fill="${C.water}" stroke="${C.waterLine}" stroke-width="1"/>`;
+  }
+  water += `</g>`;
+
+  // water labels — modern names, classic italic hydro style
+  const riverPts = (geom) => {
+    const c = geom.type === 'LineString' ? [geom.coordinates] : geom.coordinates;
+    const longest = c.reduce((a, b) => (b.length > a.length ? b : a), c[0]);
+    return longest.map((pt) => proj(pt));
+  };
+  const hydroLabel = (x, y, name, { rot = 0, s = 15 } = {}) => {
+    hydroRects.push(textRect(x, y, name, s, { font: 'Libre Baskerville' }));
+    return `<text x="0" y="0" font-family="Libre Baskerville" font-style="italic" font-size="${s}"` +
+      ` fill="${C.waterDark}" text-anchor="middle" paint-order="stroke" stroke="${C.bg}" stroke-width="2.4"` +
+      ` transform="translate(${r2(x)} ${r2(y)}) rotate(${rot})">${esc(name)}</text>`;
+  };
+  // rivers to label: fraction along the polyline + rotation + nudge
+  const RIVER_LABELS = {
+    'Saint Johns':    { label: 'St. Johns River',    at: 0.55, dx: 14, dy: -6 },
+    'Suwannee':       { label: 'Suwannee River',     at: 0.45, dx: -8, dy: 12 },
+    'Peace':          { label: 'Peace River',        at: 0.5,  dx: 12, dy: 10 },
+    'Kissimmee':      { label: 'Kissimmee River',    at: 0.55, dx: 16, dy: 6 },
+    'Caloosahatchee': { label: 'Caloosahatchee River', at: 0.5, dx: 6, dy: 18 },
+    'Withlacoochee':  { label: 'Withlacoochee River', at: 0.45, dx: -14, dy: 8 },
+    'Escambia':       { label: 'Escambia River',     at: 0.7,  dx: 10, dy: 0 },
+    'Choctawhatchee': { label: 'Choctawhatchee River', at: 0.75, dx: 12, dy: 4 },
+    'Ochlockonee':    { label: 'Ochlockonee River',  at: 0.6,  dx: -10, dy: 8 },
+    'St. Marys':      { label: 'St. Marys River',    at: 0.5,  dx: 0, dy: -10 },
+  };
+  let waterLabels = `<g class="hydro-labels">`;
+  const riverByName = {};
+  for (const r of hydro.rivers) {
+    const pts = riverPts(r.geometry);
+    if (!riverByName[r.name] || pts.length > riverByName[r.name].length) riverByName[r.name] = pts;
+  }
+  for (const [key, cfg] of Object.entries(RIVER_LABELS)) {
+    const pts = riverByName[key];
+    if (!pts) continue;
+    const i = Math.max(1, Math.min(pts.length - 1, Math.round(pts.length * cfg.at)));
+    const [x1, y1] = pts[i - 1], [x2, y2] = pts[i];
+    const [mx, my] = [(x1 + x2) / 2 + (cfg.dx || 0), (y1 + y2) / 2 + (cfg.dy || 0)];
+    let rot = (Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI;
+    if (rot > 90) rot -= 180;
+    if (rot < -90) rot += 180;
+    rot = Math.max(-72, Math.min(72, rot));
+    waterLabels += hydroLabel(mx, my, cfg.label, { rot: r2(rot), s: 14 });
+  }
+  // lakes to label (offset from centroid where the lake is too small to hold text)
+  const LAKE_LABELS = {
+    'Lake Okeechobee': { s: 16, dx: 0, dy: 4 },
+    'Lake George':     { s: 13, dx: 46, dy: 16 },
+    'Lake Kissimmee':  { s: 13, dx: 52, dy: 14 },
+    'Lake Apopka':     { s: 13, dx: -40, dy: 22 },
+    'Lake Istokpoga':  { s: 13, dx: 6, dy: 30 },
+  };
+  for (const l of hydro.lakes) {
+    const cfg = LAKE_LABELS[l.name];
+    if (!cfg) continue;
+    const [lx, ly] = gp.centroid(l.geometry);
+    waterLabels += hydroLabel(lx + (cfg.dx || 0), ly + (cfg.dy || 0), l.name, { s: cfg.s });
+  }
+  waterLabels += `</g>`;
+
   // county labels
+  const flObstacles = [...hydroRects];
   let clabels = `<g class="county-labels">`;
   for (const f of fl.features) {
     const name = f.properties.name;
     const t = COUNTY_TWEAK[name] || {};
     const [cx0, cy0] = gp.centroid(f);
     clabels += text(cx0 + (t.dx || 0), cy0 + (t.dy || 0), name.toUpperCase(), {
-      f: 'Roboto Slab', w: 500, s: t.s || 16, ls: 0.4, fill: C.dark, opacity: 0.92,
+      f: 'Roboto Slab', w: 500, s: t.s || 16, ls: 0.4, fill: C.dark, opacity: 0.92, halo: 2.6,
     });
+    flObstacles.push(textRect(cx0 + (t.dx || 0), cy0 + (t.dy || 0), name.toUpperCase(), t.s || 16, { ls: 0.4 }));
   }
   clabels += `</g>`;
 
@@ -675,9 +845,57 @@ function buildFloridaPoster() {
     } else {
       cities += `<circle cx="${r2(px)}" cy="${r2(py)}" r="7.5" fill="${C.dark}" stroke="${C.bg}" stroke-width="2.2"/>`;
     }
-    cities += text(lx, lyy, lbl, { f: 'Oswald', w: 500, s: 20, ls: 1.4, fill: C.dark, anchor });
+    cities += text(lx, lyy, lbl, { f: 'Oswald', w: 500, s: 20, ls: 1.4, fill: C.dark, anchor, halo: 2.6 });
+    flObstacles.push(textRect(lx, lyy, lbl, 20, { font: 'Oswald', ls: 1.4, anchor }));
     if (leader) cities += leader;
   }
+
+  // ---- all Florida cities with population >= 15,000: dots for everyone,
+  // labels for as many as fit without collisions (priority = population)
+  const flCityData = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/data/fl_cities_15k.json'), 'utf8')).cities;
+  const namedAlready = new Set([...CITIES, ...CITIES_EXTRA].map((c) => c.n));
+  const flLabeler = makeLabeler(flObstacles);
+  flLabeler.block(0, 0, W, 640);            // header
+  flLabeler.block(100, 1480, 600, 1840);    // service-areas legend
+  flLabeler.block(0, 2140, W, H);           // bottom block
+  // primary city markers are obstacles too
+  for (const c of [...CITIES, ...CITIES_EXTRA]) {
+    const [mx, my] = proj(c.ll);
+    flLabeler.block(mx - 12, my - 12, mx + 12, my + 12);
+  }
+  const FL_BOUNDS = [118, 650, 1508, 2135];
+  // pass 1: dots (every dot becomes a small obstacle so labels never cross dots)
+  const flSmall = [];
+  let smallCities = `<g class="small-cities">`;
+  for (const c of flCityData) {
+    if (namedAlready.has(c.name)) continue;
+    const [px, py] = proj([c.lon, c.lat]);
+    smallCities += `<circle cx="${r2(px)}" cy="${r2(py)}" r="3.6" fill="${C.line}" fill-opacity="0.75"/>`;
+    flSmall.push({ ...c, px, py });
+    flLabeler.block(px - 2.5, py - 2.5, px + 2.5, py + 2.5);
+  }
+  // pass 2: labels, priority by population; obscure CDPs stay dot-only
+  const FL_DOT_ONLY = new Set([
+    'The Acreage', 'Country Club', 'Kendall West', 'Kendale Lakes', 'The Hammocks',
+    'Fountainebleau', 'Tamiami', 'Westchester', 'Richmond West', 'West Little River',
+    'Golden Glades', 'Ives Estates', 'East Lake', 'East Lake-Orient Park', 'Bayonet Point',
+    'Lake Magdalene', 'Egypt Lake-Leto', 'Palm River-Clair Mel', 'Greater Northdale',
+    'Citrus Park', 'Carrollwood', "Town 'n' Country", 'Lauderhill', 'North Lauderdale',
+    'Cooper City', 'Dania Beach', 'Oakland Park', 'Wilton Manors', 'Lauderdale Lakes',
+    'Hallandale Beach', 'West Park', 'Sunset', 'South Miami', 'Pinecrest', 'Palmetto Bay',
+  ]);
+  let flPlaced = 0, flDropped = 0;
+  for (const c of flSmall) {
+    if (FL_DOT_ONLY.has(c.name)) { flDropped++; continue; }
+    const spot = flLabeler.tryPlace(c.px, c.py, c.name.toUpperCase(), 14, { font: 'Oswald', ls: 0.6, bounds: FL_BOUNDS, gap: 8 });
+    if (!spot) { flDropped++; continue; }
+    smallCities += text(spot.lx, spot.ly, c.name.toUpperCase(), {
+      f: 'Oswald', w: 400, s: 14, ls: 0.6, fill: C.dark, anchor: spot.anchor, halo: 2.4, opacity: 0.92,
+    });
+    flPlaced++;
+  }
+  smallCities += `</g>`;
+  console.log(`FL: ${flPlaced} secondary city labels placed, ${flDropped} dot-only (dense metro)`);
   cities += `</g>`;
 
   // header
@@ -700,6 +918,9 @@ function buildFloridaPoster() {
     legend += `<rect x="${lg.x}" y="${y - 15}" width="20" height="20" fill="${dashed ? 'none' : C.accent}" fill-opacity="${dashed ? 1 : 0.45}" stroke="${dashed ? C.future : C.accent}" stroke-width="${dashed ? 1.5 : 1.2}"${dashed ? ' stroke-dasharray="4 3"' : ''}/>`;
     legend += text(lg.x + 32, y, zn, { f: 'Roboto Slab', w: 500, s: 19, ls: 0.6, fill: C.dark, anchor: 'start' });
   });
+  const yCit = lg.y + 52 + zoneNames.length * lg.lh;
+  legend += `<circle cx="${lg.x + 10}" cy="${yCit - 5}" r="3.6" fill="${C.line}" fill-opacity="0.75"/>`;
+  legend += text(lg.x + 32, yCit, 'CITIES 15,000+', { f: 'Roboto Slab', w: 500, s: 19, ls: 0.6, fill: C.dark, anchor: 'start' });
   legend += `</g>`;
 
   // bottom element
@@ -717,7 +938,10 @@ function buildFloridaPoster() {
   ${header}
   ${counties}
   ${zones}
+  ${water}
   ${clabels}
+  ${waterLabels}
+  ${smallCities}
   ${cities}
   ${legend}
   ${bottom}

@@ -64,7 +64,20 @@ node scripts/render-mockup.mjs   # berne_maps_wall_mockup.png
   (971 dots) from GeoNames (`assets/data/us_cities_50k.json`, generated with the
   `geonamescache` PyPI package, CC BY 4.0). Each state's cities are placed with
   a per-state affine fit of the Albers-USA projection onto that state's outline
-  in the base map, so dots never drift across state borders.
+  in the base map, so dots never drift across state borders. Cities ≥ 150,000
+  additionally get a name label via a greedy collision-avoiding labeler
+  (8 candidate positions per dot; labels that cannot fit in dense metros stay
+  dot-only). NYC boroughs / neighborhood pseudo-cities are excluded from labels.
+- **Florida cities ≥ 15,000 (Florida poster)** — all 246 from GeoNames
+  (`assets/data/fl_cities_15k.json`) as dots; names are placed with the same
+  collision-avoiding labeler (population priority), so the Miami–West Palm
+  corridor keeps only as many names as physically fit at print size.
+- **Hydrography (Florida poster)** — lakes and rivers from Natural Earth 10m
+  physical layers (`assets/data/fl_hydro.json`, public domain), clipped to the
+  state outline, with modern names set in classic italic (St. Johns, Suwannee,
+  Peace, Kissimmee, Caloosahatchee, Withlacoochee, Escambia, Choctawhatchee,
+  Ochlockonee, St. Marys rivers; lakes Okeechobee, George, Kissimmee, Apopka,
+  Istokpoga).
 
 ## Fonts (assets/fonts, all open licenses)
 
