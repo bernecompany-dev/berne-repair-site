@@ -55,9 +55,10 @@ const FONT_CSS = [
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-function text(x, y, str, { f = 'Roboto Slab', w = 400, s = 20, ls = 0, fill = C.dark, anchor = 'middle', opacity = 1 } = {}) {
+function text(x, y, str, { f = 'Roboto Slab', w = 400, s = 20, ls = 0, fill = C.dark, anchor = 'middle', opacity = 1, halo = 0 } = {}) {
   return `<text x="${r2(x)}" y="${r2(y)}" font-family="${f}" font-weight="${w}" font-size="${s}"` +
     (ls ? ` letter-spacing="${ls}"` : '') +
+    (halo ? ` paint-order="stroke" stroke="${C.bg}" stroke-width="${halo}" stroke-linejoin="round"` : '') +
     ` fill="${fill}"${opacity !== 1 ? ` opacity="${opacity}"` : ''} text-anchor="${anchor}">${esc(str)}</text>`;
 }
 const r2 = (n) => Math.round(n * 100) / 100;
@@ -333,7 +334,7 @@ function buildUsaPoster() {
     if (LEADER_STATES.includes(id)) {
       const { anchor, label } = leaderPos[id];
       labels += `<path d="M ${r2(anchor[0])} ${r2(anchor[1])} L ${r2(label[0] - 12)} ${r2(label[1] - 6)}" stroke="${C.line}" stroke-width="1" fill="none" opacity="0.85"/>`;
-      labels += text(label[0], label[1], name, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, anchor: 'start' });
+      labels += text(label[0], label[1], name, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, anchor: 'start', halo: 3 });
       continue;
     }
     const b = st.bbox;
@@ -342,10 +343,10 @@ function buildUsaPoster() {
     const two = name.includes(' ') && !['NEW YORK'].includes(name) && ['NORTH DAKOTA', 'SOUTH DAKOTA', 'NEW MEXICO', 'NORTH CAROLINA', 'SOUTH CAROLINA', 'WEST VIRGINIA', 'NEW HAMPSHIRE', 'RHODE ISLAND'].includes(name);
     if (two) {
       const [a, bword] = name.split(' ');
-      labels += text(lx, lyy - size * 0.55, a, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark });
-      labels += text(lx, lyy + size * 0.65, bword, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark });
+      labels += text(lx, lyy - size * 0.55, a, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, halo: 3 });
+      labels += text(lx, lyy + size * 0.65, bword, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, halo: 3 });
     } else {
-      labels += text(lx, lyy, name, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: id === 'FL' ? C.dark : C.dark });
+      labels += text(lx, lyy, name, { f: 'Roboto Slab', w: 500, s: size, ls: 1.5, fill: C.dark, halo: 3 });
     }
   }
   labels += `</g>`;
@@ -413,8 +414,47 @@ function buildUsaPoster() {
   usCities += text(
     (dots['Fort Myers'][0] + dots['Boca Raton'][0]) / 2 + 2,
     dots['Boca Raton'][1] - 20,
-    'FLORIDA', { f: 'Roboto Slab', w: 500, s: 18, ls: 1, fill: C.dark });
+    'FLORIDA', { f: 'Roboto Slab', w: 500, s: 18, ls: 1, fill: C.dark, halo: 3 });
   usCities += `</g>`;
+
+  // ---- all US cities with population >= 50,000 as small target dots.
+  // Each state's cities are placed with that state's own Albers→base-map fit
+  // so no dot drifts across a state border.
+  const cityData = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/data/us_cities_50k.json'), 'utf8')).cities;
+  const FIPS2POST = {
+    '01': 'AL', '02': 'AK', '04': 'AZ', '05': 'AR', '06': 'CA', '08': 'CO', '09': 'CT', '10': 'DE',
+    '11': 'DC', '12': 'FL', '13': 'GA', '15': 'HI', '16': 'ID', '17': 'IL', '18': 'IN', '19': 'IA',
+    '20': 'KS', '21': 'KY', '22': 'LA', '23': 'ME', '24': 'MD', '25': 'MA', '26': 'MI', '27': 'MN',
+    '28': 'MS', '29': 'MO', '30': 'MT', '31': 'NE', '32': 'NV', '33': 'NH', '34': 'NJ', '35': 'NM',
+    '36': 'NY', '37': 'NC', '38': 'ND', '39': 'OH', '40': 'OK', '41': 'OR', '42': 'PA', '44': 'RI',
+    '45': 'SC', '46': 'SD', '47': 'TN', '48': 'TX', '49': 'UT', '50': 'VT', '51': 'VA', '53': 'WA',
+    '54': 'WV', '55': 'WI', '56': 'WY',
+  };
+  const albPath = geoPath(alb);
+  const stTransform = {};
+  for (const f of topojson.feature(topoStates, topoStates.objects.states).features) {
+    const post = FIPS2POST[f.id];
+    if (!post || !states[post]) continue;
+    const [[bx0, by0], [bx1, by1]] = albPath.bounds(f);
+    const sb = states[post].bbox;
+    const [q0x, q0y] = M([sb[0], sb[1]]), [q1x, q1y] = M([sb[2], sb[3]]);
+    stTransform[post] = ([px, py]) =>
+      [q0x + ((px - bx0) / (bx1 - bx0)) * (q1x - q0x), q0y + ((py - by0) / (by1 - by0)) * (q1y - q0y)];
+  }
+  stTransform.DC = stTransform.MD; // DC sits inside Maryland's bbox
+  let cityDots = `<g class="city-dots" fill="${C.line}" fill-opacity="0.5">`;
+  let dotCount = 0;
+  for (const c of cityData) {
+    const tf = stTransform[c.st];
+    if (!tf) continue;
+    const p = alb([c.lon, c.lat]);
+    if (!p) continue;
+    const [ddx, ddy] = tf(p);
+    cityDots += `<circle cx="${r2(ddx)}" cy="${r2(ddy)}" r="2.4"/>`;
+    dotCount++;
+  }
+  cityDots += `</g>`;
+  console.log(`USA: ${dotCount} population dots`);
 
   // ---- header
   const cx = W / 2;
@@ -437,8 +477,10 @@ function buildUsaPoster() {
     ${text(310, legY + 8, 'LEGEND', { f: 'Oswald', w: 600, s: 26, ls: 6, fill: C.dark, anchor: 'start' })}
     <path d="M 310 ${legY + 24} h 132" stroke="${C.accent}" stroke-width="2"/>
     ${item(540, sw(540, C.accent), 'ESTABLISHED', 'SERVING FLORIDA SINCE 2022')}
-    ${item(1700, sw(1700, C.phase), 'NEXT PHASE', 'EXPANSION')}
-    ${item(2480, sw(2480, null, true), 'FUTURE TARGETS', '')}
+    ${item(1560, sw(1560, C.phase), 'NEXT PHASE', 'EXPANSION')}
+    ${item(2160, sw(2160, null, true), 'FUTURE TARGETS', '')}
+    <circle cx="2760" cy="${legY - 1}" r="4.5" fill="${C.line}" fill-opacity="0.75"/>
+    ${text(2790, legY + 8, 'CITIES 50,000+', { f: 'Oswald', w: 500, s: 25, ls: 3, fill: C.dark, anchor: 'start' })}
   </g>`;
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -448,6 +490,7 @@ function buildUsaPoster() {
   ${background(W, H, idp)}
   ${header}
   ${mapPaths}
+  ${cityDots}
   ${labels}
   ${usCities}
   ${compassRose(3255, 1560, 128)}
@@ -474,6 +517,20 @@ const CITIES = [
   { n: 'Orlando',          ll: [-81.3792, 28.5383], side: 'E', dx: 18, dy: 2 },
   { n: 'Jacksonville',     ll: [-81.6557, 30.3322], side: 'E', dx: 18, dy: -14 },
   { n: 'Tallahassee',      ll: [-84.2807, 30.4383], side: 'N', dy: -16, capital: true },
+];
+
+// additional cities shown only on the Florida poster
+const CITIES_EXTRA = [
+  { n: 'Pensacola',        ll: [-87.2169, 30.4213], side: 'S', dy: 6 },
+  { n: 'Panama City',      ll: [-85.6602, 30.1588], side: 'S', dy: 4 },
+  { n: 'Gainesville',      ll: [-82.3248, 29.6516], side: 'E', dx: 10, dy: -10 },
+  { n: 'Ocala',            ll: [-82.1401, 29.1872], side: 'E', dx: 10, dy: -6 },
+  { n: 'Daytona Beach',    ll: [-81.0228, 29.2108], side: 'E' },
+  { n: 'Melbourne',        ll: [-80.6081, 28.0836], side: 'E' },
+  { n: 'Port St. Lucie',   ll: [-80.3582, 27.2730], side: 'E' },
+  { n: 'Lakeland',         ll: [-81.9498, 28.0395], side: 'N', dy: 2 },
+  { n: 'Cape Coral',       ll: [-81.9495, 26.5629], side: 'W', dy: 16 },
+  { n: 'Key West',         ll: [-81.7800, 24.5551], side: 'W', dy: 2 },
 ];
 
 const ZONES = {
@@ -516,11 +573,11 @@ const COUNTY_TWEAK = {
   'St. Johns':   { s: 12 },
   'Putnam':      { s: 13 },
   'Flagler':     { s: 12 },
-  'Alachua':     { s: 13 },
+  'Alachua':     { s: 13, dx: -18, dy: 20 },
   'Gilchrist':   { s: 10 },
   'Dixie':       { s: 12 },
   'Levy':        { s: 13 },
-  'Marion':      { s: 14 },
+  'Marion':      { s: 14, dx: -10, dy: 22 },
   'Volusia':     { s: 14 },
   'Lake':        { s: 13, dy: 10 },
   'Seminole':    { s: 11, dx: -8 },
@@ -599,7 +656,7 @@ function buildFloridaPoster() {
 
   // cities
   let cities = `<g class="cities">`;
-  for (const c of CITIES) {
+  for (const c of [...CITIES, ...CITIES_EXTRA]) {
     const [px, py] = proj(c.ll);
     const lbl = c.n.toUpperCase();
     let lx = px, lyy = py, anchor = 'start', leader = '';
@@ -607,6 +664,7 @@ function buildFloridaPoster() {
     if (c.side === 'E') { lx = px + D; lyy = py + 7; }
     if (c.side === 'W') { lx = px - D; lyy = py + 7; anchor = 'end'; }
     if (c.side === 'N') { lx = px + 4; lyy = py - 26; anchor = 'middle'; }
+    if (c.side === 'S') { lx = px + 2; lyy = py + 38; anchor = 'middle'; }
     lx += c.dx || 0; lyy += c.dy || 0;
     if (c.capital) {
       const st = (r) => Array.from({ length: 10 }, (_, k) => {

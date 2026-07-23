@@ -52,11 +52,19 @@ node scripts/render-mockup.mjs   # berne_maps_wall_mockup.png
   *Florida Counties with Names.svg* is traced from), filtered to FIPS 12 and
   projected with a transverse-Mercator projection (d3-geo). County borders come
   straight from the data; county-name labels are set as live vector text.
-- **Cities** — the same 12 cities are plotted on both posters from published
+- **Cities** — the 12 service cities are plotted on both posters from published
   lat/lon coordinates as a separate vector layer; Tallahassee is marked with a
-  capital star. On the USA poster the labels fan out into the Gulf and the
-  Atlantic on thin leader lines (positions derived by fitting an Albers-USA
-  projection of Florida onto the base map's Florida outline).
+  capital star. The Florida poster carries 10 additional labelled cities
+  (Pensacola, Panama City, Gainesville, Ocala, Daytona Beach, Melbourne,
+  Port St. Lucie, Lakeland, Cape Coral, Key West). On the USA poster the service
+  city labels fan out into the Gulf and the Atlantic on thin leader lines
+  (positions derived by fitting an Albers-USA projection of Florida onto the
+  base map's Florida outline).
+- **Population dots (USA poster)** — every US city with population ≥ 50,000
+  (971 dots) from GeoNames (`assets/data/us_cities_50k.json`, generated with the
+  `geonamescache` PyPI package, CC BY 4.0). Each state's cities are placed with
+  a per-state affine fit of the Albers-USA projection onto that state's outline
+  in the base map, so dots never drift across state borders.
 
 ## Fonts (assets/fonts, all open licenses)
 
