@@ -13,28 +13,36 @@ and 16.25 × 24.25 in) and keep all content ≥ 0.5 in inside the trim line.
 
 ## Status
 
-**Preview stage — awaiting design approval.**
-Final `*_outlined.svg` and `*_print.pdf` exports are intentionally not generated
-yet; they will be produced after the previews are approved.
+**Final — design approved.** Complete export set is in `exports/`:
+editable SVG (live text), outlined SVG (all text as paths), print PDF at exact
+physical size with 0.125 in bleed, hi-res PNG previews and the wall mockup.
 
 ## Build
 
 ```bash
-npm install                      # us-atlas, topojson-client, d3-geo
-node scripts/build-posters.mjs   # writes editable SVGs to exports/
-node scripts/render-previews.mjs # preview PNGs (Playwright + system Chromium)
-node scripts/render-mockup.mjs   # berne_maps_wall_mockup.png
+npm install                        # us-atlas, topojson-client, d3-geo
+node scripts/build-posters.mjs     # writes editable SVGs to exports/
+node scripts/render-previews.mjs   # preview PNGs (Playwright + system Chromium)
+node scripts/render-mockup.mjs     # berne_maps_wall_mockup.png
+node scripts/export-print.mjs      # print PDFs (Chromium, exact size + bleed)
+python3 scripts/pdf_to_outlined_svg.py  # outlined SVGs from the PDFs (PyMuPDF)
 ```
 
 `render-previews.mjs --small-only` renders quick low-res QA copies (`exports/qa_*.png`).
 
 ## Outputs (exports/)
 
-- `berne_usa_takeover_36x24_editable.svg` — live text, embedded woff2 fonts
-- `berne_florida_service_16x24_editable.svg` — live text, embedded woff2 fonts
-- `berne_usa_takeover_36x24_preview.png` — 3625 px wide, sRGB
-- `berne_florida_service_16x24_preview.png` — 3153 px tall, sRGB
+- `berne_*_editable.svg` — live text, embedded woff2 fonts (design source)
+- `berne_*_outlined.svg` — every glyph converted to vector paths (no fonts needed)
+- `berne_*_print.pdf` — exact physical size incl. 0.125 in bleed
+  (36.25 × 24.25 in and 16.25 × 24.25 in), vector maps/type, embedded subset
+  fonts, no crop marks (bleed-only, as most print shops prefer)
+- `berne_*_preview.png` — ≥ 3000 px long side, sRGB
 - `berne_maps_wall_mockup.png` — both posters at true relative scale on a neutral wall
+
+The paper grain is a seamless 3 × 3 in raster tile at 300 dpi
+(`assets/textures/grain_tile.png`) so print files stay small; everything else
+is vector.
 
 ## Map geometry sources (no hand-drawn / AI-generated geography)
 

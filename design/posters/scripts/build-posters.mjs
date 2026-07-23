@@ -175,12 +175,13 @@ function frame(W, H, { bottomPlate = null } = {}) {
 
 /* ------------------------------------------------------------- background */
 
+const GRAIN_B64 = fs.readFileSync(path.join(ROOT, 'assets/textures/grain_tile.png')).toString('base64');
+
 function backgroundDefs(idp) {
   return `
-  <filter id="${idp}-grain" x="0" y="0" width="100%" height="100%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" seed="7" stitchTiles="stitch"/>
-    <feColorMatrix type="matrix" values="0 0 0 0 0.18  0 0 0 0 0.16  0 0 0 0 0.12  0 0 0 0.045 0"/>
-  </filter>
+  <pattern id="${idp}-grain" patternUnits="userSpaceOnUse" width="300" height="300">
+    <image href="data:image/png;base64,${GRAIN_B64}" width="300" height="300"/>
+  </pattern>
   <radialGradient id="${idp}-vig" cx="50%" cy="48%" r="72%">
     <stop offset="70%" stop-color="#B9AD93" stop-opacity="0"/>
     <stop offset="100%" stop-color="#B9AD93" stop-opacity="0.16"/>
@@ -198,14 +199,15 @@ function background(W, H, idp) {
   <ellipse cx="${W * 0.5}" cy="${H * 0.9}" rx="${W * 0.4}" ry="${H * 0.2}" fill="url(#${idp}-blot)"/>
   <rect width="${W}" height="${H}" fill="url(#${idp}-vig)"/>`;
 }
-// grain goes on top of everything, very light
-const grainOverlay = (W, H, idp) => `<rect width="${W}" height="${H}" filter="url(#${idp}-grain)" opacity="0.9"/>`;
+// grain goes on top of everything, very light (seamless 300 dpi tile, 3×3 in)
+const grainOverlay = (W, H, idp) => `<rect width="${W}" height="${H}" fill="url(#${idp}-grain)" opacity="0.9"/>`;
 
 /* ----------------------------------------------------------------- header */
 
 function brandBlock(cx, y, { ruleHalf = 260, brandSize = 56, tagSize = 26 } = {}) {
-  // BERNE REPAIR flanked by thin rules, tagline underneath
-  const gap = brandSize * 3.2;
+  // BERNE REPAIR flanked by thin rules, tagline underneath.
+  // gap covers the actual set width of the wordmark plus clearance
+  const gap = 'BERNE REPAIR'.length * (brandSize * 0.5 + brandSize * 0.32) + 70;
   return `<g>
     <path d="M ${cx - ruleHalf - gap / 2} ${y - brandSize * 0.32} h ${ruleHalf} M ${cx + gap / 2} ${y - brandSize * 0.32} h ${ruleHalf}"
           stroke="${C.line}" stroke-width="1.4"/>
