@@ -1,0 +1,37 @@
+[
+  {
+    "family": "Libre Baskerville",
+    "file": "LibreBaskerville-var.woff2",
+    "axes": "wght 400-700",
+    "license": "SIL OFL 1.1",
+    "source": "Google Fonts (fonts.gstatic.com)"
+  },
+  {
+    "family": "Libre Baskerville",
+    "file": "LibreBaskerville-400-italic.woff2",
+    "style": "italic",
+    "license": "SIL OFL 1.1",
+    "source": "Google Fonts"
+  },
+  {
+    "family": "Oswald",
+    "file": "Oswald-var.woff2",
+    "axes": "wght 200-700",
+    "license": "SIL OFL 1.1",
+    "source": "Google Fonts"
+  },
+  {
+    "family": "Roboto Slab",
+    "file": "RobotoSlab-var.woff2",
+    "axes": "wght 100-900",
+    "license": "Apache 2.0 / OFL",
+    "source": "Google Fonts"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "file": "CormorantGaramond-var.woff2",
+    "axes": "wght 300-700",
+    "license": "SIL OFL 1.1",
+    "source": "Google Fonts"
+  }
+]
