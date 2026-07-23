@@ -52,8 +52,11 @@ node scripts/render-mockup.mjs   # berne_maps_wall_mockup.png
   *Florida Counties with Names.svg* is traced from), filtered to FIPS 12 and
   projected with a transverse-Mercator projection (d3-geo). County borders come
   straight from the data; county-name labels are set as live vector text.
-- **Cities** — plotted from published lat/lon coordinates as a separate vector
-  layer; Tallahassee marked with a capital star.
+- **Cities** — the same 12 cities are plotted on both posters from published
+  lat/lon coordinates as a separate vector layer; Tallahassee is marked with a
+  capital star. On the USA poster the labels fan out into the Gulf and the
+  Atlantic on thin leader lines (positions derived by fitting an Albers-USA
+  projection of Florida onto the base map's Florida outline).
 
 ## Fonts (assets/fonts, all open licenses)
 

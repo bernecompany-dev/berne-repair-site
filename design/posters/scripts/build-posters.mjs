@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
 import * as topojson from 'topojson-client';
-import { geoTransverseMercator, geoPath } from 'd3-geo';
+import { geoTransverseMercator, geoAlbersUsa, geoPath } from 'd3-geo';
 
 const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..');
 const EXPORTS = path.join(ROOT, 'exports');
@@ -327,6 +327,7 @@ function buildUsaPoster() {
     leaderPos[id].label = [mapRight + 46, ly];
   });
   for (const [id, st] of Object.entries(states)) {
+    if (id === 'FL') continue; // placed later, between the city columns
     const name = STATE_NAMES[id];
     const size = LABEL_SIZE[id] || 25;
     if (LEADER_STATES.includes(id)) {
@@ -348,6 +349,72 @@ function buildUsaPoster() {
     }
   }
   labels += `</g>`;
+
+  // ---- Florida cities layer (same 12 cities as the Florida poster).
+  // Dot positions: project city lat/lon with Albers USA, then fit the projected
+  // Florida bounds onto this map's Florida path bounds (per-axis affine).
+  const topoStates = JSON.parse(fs.readFileSync(path.join(ROOT, 'node_modules/us-atlas/states-10m.json'), 'utf8'));
+  const flFeature = topojson.feature(topoStates, topoStates.objects.states).features.find((f) => f.id === '12');
+  const alb = geoAlbersUsa();
+  const [[ax0, ay0], [ax1, ay1]] = geoPath(alb).bounds(flFeature);
+  const fb = states.FL.bbox;
+  const [p0x, p0y] = M([fb[0], fb[1]]), [p1x, p1y] = M([fb[2], fb[3]]);
+  const cityDot = (ll) => {
+    const [ax, ay] = alb(ll);
+    return [p0x + ((ax - ax0) / (ax1 - ax0)) * (p1x - p0x), p0y + ((ay - ay0) / (ay1 - ay0)) * (p1y - p0y)];
+  };
+  const dots = Object.fromEntries(CITIES.map((c) => [c.n, cityDot(c.ll)]));
+
+  // labels fan out into the Gulf (left column) and the Atlantic (right column)
+  const stagger = (list, minGap) => {
+    let y = -Infinity;
+    return list.map(([name, dy]) => {
+      y = Math.max(y + minGap, dots[name][1] + (dy || 0));
+      return [name, y];
+    });
+  };
+  const gulfCol = stagger([['Tampa', -10], ['St. Petersburg', 8], ['Sarasota', 6], ['Fort Myers', 4], ['Naples', 4]], 30);
+  const atlCol = stagger([['Orlando', -6], ['West Palm Beach', -4], ['Boca Raton', 0], ['Fort Lauderdale', 0], ['Miami', 4]], 30);
+  const gulfX = Math.min(...gulfCol.map(([n]) => dots[n][0])) - 52;
+  const atlX = p1x + 26;
+
+  let usCities = `<g class="fl-cities">`;
+  for (const c of CITIES) {
+    const [dx, dy] = dots[c.n];
+    if (c.capital) {
+      const st = Array.from({ length: 10 }, (_, k) => {
+        const a = (k * Math.PI) / 5 - Math.PI / 2, rr = k % 2 ? 4.5 : 10;
+        return `${r2(dx + rr * Math.cos(a))},${r2(dy + rr * Math.sin(a))}`;
+      }).join(' ');
+      usCities += `<polygon points="${st}" fill="${C.dark}" stroke="${C.bg}" stroke-width="1.2"/>`;
+      usCities += text(dx - 4, dy + 40, 'TALLAHASSEE', { f: 'Oswald', w: 500, s: 14, ls: 1, fill: C.dark });
+      usCities += `<path d="M ${r2(dx)} ${r2(dy + 12)} L ${r2(dx - 3)} ${r2(dy + 27)}" stroke="${C.line}" stroke-width="0.9" fill="none"/>`;
+      continue;
+    }
+    usCities += `<circle cx="${r2(dx)}" cy="${r2(dy)}" r="5.2" fill="${C.dark}" stroke="${C.bg}" stroke-width="1.6"/>`;
+  }
+  const col = (entries, colX, anchor) => {
+    for (const [name, ly] of entries) {
+      const [dx, dy] = dots[name];
+      const tx = anchor === 'start' ? colX : colX;
+      const lineEnd = anchor === 'start' ? colX - 8 : colX + 8;
+      usCities += `<path d="M ${r2(dx + (anchor === 'start' ? 7 : -7))} ${r2(dy)} L ${r2(lineEnd)} ${r2(ly - 5)}" stroke="${C.line}" stroke-width="0.9" fill="none" opacity="0.8"/>`;
+      usCities += text(tx, ly, name.toUpperCase(), { f: 'Oswald', w: 500, s: 14, ls: 1, fill: C.dark, anchor });
+    }
+  };
+  col(gulfCol, gulfX, 'end');
+  col(atlCol, atlX, 'start');
+  // Jacksonville: label straight east of its dot
+  {
+    const [dx, dy] = dots['Jacksonville'];
+    usCities += text(dx + 16, dy - 2, 'JACKSONVILLE', { f: 'Oswald', w: 500, s: 14, ls: 1, fill: C.dark, anchor: 'start' });
+  }
+  // FLORIDA state name in the free interior strip between the two city columns
+  usCities += text(
+    (dots['Fort Myers'][0] + dots['Boca Raton'][0]) / 2 + 2,
+    dots['Boca Raton'][1] - 20,
+    'FLORIDA', { f: 'Roboto Slab', w: 500, s: 18, ls: 1, fill: C.dark });
+  usCities += `</g>`;
 
   // ---- header
   const cx = W / 2;
@@ -382,7 +449,8 @@ function buildUsaPoster() {
   ${header}
   ${mapPaths}
   ${labels}
-  ${compassRose(3220, 1905, 128)}
+  ${usCities}
+  ${compassRose(3255, 1560, 128)}
   ${legend}
   ${frame(W, H, { bottomPlate: { label: 'SERVING FLORIDA SINCE 2022', width: 760 } })}
   ${grainOverlay(W, H, idp)}
