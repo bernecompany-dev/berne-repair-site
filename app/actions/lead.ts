@@ -206,9 +206,13 @@ export async function submitLead(
   const leadId = randomUUID();
   const submittedAt = new Date().toISOString();
   const phone10 = phone.replace(/\D/g, "").slice(-10);
-  // Subject prefix unified across all 3 Berne sites: "ЗАКАЗ" so Eugene can
-  // filter/sort leads in Gmail regardless of which site they came from.
-  const subject = `ЗАКАЗ [${leadId}] — ${name} · ${cityName} · ${applianceName}`;
+  // Subject format unified across all Berne sites (owner spec 2026-07):
+  // "ЗАКАЗ - {site} - {Name} {Phone}". Everything else (lead id, city,
+  // appliance, …) lives in the email body only.
+  const subjectPhone = phone10.length === 10 ? `+1${phone10}` : phone;
+  const subject = ["ЗАКАЗ - berne-repair.com -", name, subjectPhone]
+    .filter(Boolean)
+    .join(" ");
   const html = renderLeadEmail({
     name, phone, email, cityName, applianceName, brand, description, locale: lang,
     attrib, leadId, submittedAt, phone10,
