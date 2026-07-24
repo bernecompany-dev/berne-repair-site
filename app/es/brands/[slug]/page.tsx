@@ -15,6 +15,8 @@ import { StatsStrip } from "@/components/sections/stats-strip";
 import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
+import { BrandGallery } from "@/components/sections/brand-gallery";
+import { getBrandPhotos } from "@/lib/data/brand-photos";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { SERVICE_BY_SLUG } from "@/data/services";
@@ -114,6 +116,7 @@ export default async function BrandPageES({ params }: PageProps) {
 
   const serviceId = absoluteUrl(`/es/brands/${brand.slug}#service-${brand.slug}`);
   const businessId = absoluteUrl("/#business");
+  const brandPhotos = getBrandPhotos(brand.slug);
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -147,6 +150,14 @@ export default async function BrandPageES({ params }: PageProps) {
         : {}),
     },
     url: absoluteUrl(`/es/brands/${brand.slug}`),
+    // Mismas fotos de campo que la página EN (lote 2026-07-24).
+    ...(brandPhotos.length
+      ? {
+          image: brandPhotos.map((p) =>
+            absoluteUrl(`/images/brands/${brand.slug}/${p.file}`),
+          ),
+        }
+      : {}),
     inLanguage: "es-US",
     offers: {
       "@type": "Offer",
@@ -358,6 +369,9 @@ export default async function BrandPageES({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Galería de fotos de campo — mismas fotos que la página EN, lazy */}
+      <BrandGallery brandSlug={brand.slug} brandName={brand.name} locale="es" />
 
       {/* Related services */}
       {relatedServices.length ? (

@@ -16,6 +16,8 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { BrandSpecialistsBlock } from "@/components/sections/brand-specialists";
+import { BrandGallery } from "@/components/sections/brand-gallery";
+import { getBrandPhotos } from "@/lib/data/brand-photos";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
 import { CITIES } from "@/data/cities";
@@ -116,6 +118,7 @@ export default async function BrandPage({ params }: PageProps) {
   // LocalBusiness via @id reference (resolved by layout's localBusinessJsonLd).
   const serviceId = absoluteUrl(`/brands/${brand.slug}#service-${brand.slug}`);
   const businessId = absoluteUrl("/#business");
+  const brandPhotos = getBrandPhotos(brand.slug);
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -149,6 +152,14 @@ export default async function BrandPage({ params }: PageProps) {
         : {}),
     },
     url: absoluteUrl(`/brands/${brand.slug}`),
+    // Real field photos from the on-page gallery (2026-07-24 batch).
+    ...(brandPhotos.length
+      ? {
+          image: brandPhotos.map((p) =>
+            absoluteUrl(`/images/brands/${brand.slug}/${p.file}`),
+          ),
+        }
+      : {}),
     inLanguage: "en-US",
     offers: {
       "@type": "Offer",
@@ -362,6 +373,9 @@ export default async function BrandPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Field-photo gallery — real job shots, below the fold, lazy */}
+      <BrandGallery brandSlug={brand.slug} brandName={brand.name} />
 
       {/* Brand × city landing pages — premium-lane local layer */}
       {cityPages.length ? (
