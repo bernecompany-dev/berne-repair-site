@@ -12,6 +12,7 @@ import {
   Phone,
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
+import { LgAuthorizedBadge } from "@/components/sections/lg-authorized";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
@@ -325,6 +326,8 @@ export default function AboutPage() {
               sub="Florida state credentials on file"
             />
           </div>
+          {/* LG factory authorization (credential added 2026-07-24) */}
+          <LgAuthorizedBadge />
         </div>
       </section>
 

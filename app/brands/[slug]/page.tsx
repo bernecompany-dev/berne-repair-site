@@ -17,6 +17,7 @@ import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { BrandSpecialistsBlock } from "@/components/sections/brand-specialists";
 import { BrandGallery } from "@/components/sections/brand-gallery";
+import { LgAuthorizedBanner } from "@/components/sections/lg-authorized";
 import { getBrandPhotos } from "@/lib/data/brand-photos";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
@@ -251,6 +252,9 @@ export default async function BrandPage({ params }: PageProps) {
 
       {/* Social proof — same position pattern as the service/area templates */}
       <StatsStrip />
+
+      {/* LG factory authorization — LG hub only (credential added 2026-07-24) */}
+      {brand.slug === "lg" ? <LgAuthorizedBanner /> : null}
 
       {/* About */}
       <section className="container-prose py-16 sm:py-20">

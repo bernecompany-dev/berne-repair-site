@@ -16,6 +16,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { BrandGallery } from "@/components/sections/brand-gallery";
+import { LgAuthorizedBanner } from "@/components/sections/lg-authorized";
 import { getBrandPhotos } from "@/lib/data/brand-photos";
 import { JsonLd } from "@/components/site/json-ld";
 import { COMPANY } from "@/data/company";
@@ -249,6 +250,9 @@ export default async function BrandPageES({ params }: PageProps) {
 
       {/* Prueba social — mismo patrón que las plantillas de servicio/área */}
       <StatsStrip locale="es" />
+
+      {/* Autorización de fábrica LG — solo hub LG (credencial 2026-07-24) */}
+      {brand.slug === "lg" ? <LgAuthorizedBanner locale="es" /> : null}
 
       {/* About */}
       <section className="container-prose py-16 sm:py-20">

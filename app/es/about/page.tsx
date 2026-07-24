@@ -12,6 +12,7 @@ import {
   Phone,
 } from "lucide-react";
 import { CTARow } from "@/components/site/cta-row";
+import { LgAuthorizedBadge } from "@/components/sections/lg-authorized";
 import { Contact } from "@/components/sections/contact";
 import { CTABand } from "@/components/sections/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
@@ -348,6 +349,8 @@ export default function AboutPageES() {
               sub="Credenciales del estado de Florida en archivo"
             />
           </div>
+          {/* Autorización de fábrica LG (credencial 2026-07-24) */}
+          <LgAuthorizedBadge locale="es" />
         </div>
       </section>
 
